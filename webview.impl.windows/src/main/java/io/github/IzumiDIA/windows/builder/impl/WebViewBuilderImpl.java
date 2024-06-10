@@ -64,7 +64,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	@Override
 	public WebViewBuilderImpl setUserDataFolder(final Path userDataFolderPath) {
-		this.userDataFolder = userDataFolderPath.toAbsolutePath().toString();
+		this.userDataFolder = userDataFolderPath != null ? userDataFolderPath.toAbsolutePath().toString() : null;
 		return this;
 	}
 	
