@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Enable-Native-Access: webview.impl.windows
+Build-Jdk-Spec: 22
+Specification-Title: Java WebView
+Specification-Version: 1.0
+Specification-Vendor: Izumi Ryuu
+Implementation-Title: WebView Windows Implementation
+Implementation-Version: 1.0
+Implementation-Vendor: Izumi Ryuu

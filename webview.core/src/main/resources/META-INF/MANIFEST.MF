@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Enable-Native-Access: webview.core
+Build-Jdk-Spec: 22
+Specification-Title: Java WebView
+Specification-Version: 1.0
+Specification-Vendor: Izumi Ryuu
