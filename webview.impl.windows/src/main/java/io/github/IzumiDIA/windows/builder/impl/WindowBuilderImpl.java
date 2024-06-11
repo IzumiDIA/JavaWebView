@@ -52,6 +52,9 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		WNDCLASSEXW.hInstance(
 				this.windowClass, hInstance
 		);
+		WNDCLASSEXW.hbrBackground(
+				this.windowClass, MemorySegment.ofAddress(Color.ACTIVEBORDER.ordinal()))
+		;
 	}
 	
 	@Override
@@ -84,7 +87,6 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		return this;
 	}
 	
-	@Override
 	public WindowBuilderImpl setBrushBackground(final @NotNull Color handleBrush) {
 		WNDCLASSEXW.hbrBackground(this.windowClass, MemorySegment.ofAddress(handleBrush.ordinal()));
 		return this;

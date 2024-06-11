@@ -2,7 +2,6 @@ package example;
 
 import io.github.IzumiDIA.WebViewWindow;
 import io.github.IzumiDIA.constant.enums.COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND;
-import io.github.IzumiDIA.constant.enums.Color;
 
 import java.lang.foreign.Arena;
 import java.nio.file.Path;
@@ -18,7 +17,6 @@ final class TestVirtualHostNameToFolderMapping {
 			
 			final var platformWindow = platformWindowBuilder
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
-					                           .setBrushBackground(Color.ACTIVEBORDER)
 					                           .setLpSzClassName("Sample Window Class")
 					                           .setWindowName("Virtual Host Name Mapping To Folder WebView Window")
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
