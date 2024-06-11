@@ -30,6 +30,6 @@ public class PlatformWindowImpl implements PlatformWindow {
 	
 	@Override
 	public boolean postMessage(final int message, final long wParam, final long lParam) {
-		return Windows.PostMessageW(this.hWnd, EXECUTE_SCRIPT, 0L, 0L);
+		return Windows.PostMessageW(this.hWnd, message, 0L, 0L);
 	}
 }

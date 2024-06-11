@@ -3426,7 +3426,7 @@ public class Windows {
 
     private static class DestroyWindow {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_POINTER
         );
 
@@ -3459,13 +3459,13 @@ public class Windows {
      * BOOL DestroyWindow(HWND hWnd)
      * }
      */
-    public static int DestroyWindow(MemorySegment hWnd) {
+    public static boolean DestroyWindow(MemorySegment hWnd) {
         var mh$ = DestroyWindow.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("DestroyWindow", hWnd);
             }
-            return (int)mh$.invokeExact(hWnd);
+            return (boolean)mh$.invokeExact(hWnd);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
