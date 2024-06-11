@@ -18,6 +18,7 @@ import java.util.concurrent.LinkedTransferQueue;
 
 import static io.github.IzumiDIA.windows.builder.impl.WebViewBuilderImpl.S_OK;
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
+import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.WM_CLOSE;
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.WM_DESTROY;
 
 public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWindow {
@@ -56,7 +57,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	
 	@Override
 	public boolean executeScriptAsync(final @NotNull String javascript) {
-		return this.scriptExecutionQueue.offer(javascript) && this.platformWindow.postMessageW(EXECUTE_SCRIPT, 0L, 0L);
+		return this.scriptExecutionQueue.offer(javascript) && this.platformWindow.postMessage(EXECUTE_SCRIPT, 0L, 0L);
 	}
 	
 	@Override
@@ -66,7 +67,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	
 	@Override
 	public boolean terminate() {
-		return this.platformWindow.postMessageW(WM_DESTROY, 0L, 0L);
+		return this.platformWindow.postMessage(WM_CLOSE, 0L, 0L);
 	}
 	
 	public static class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange {

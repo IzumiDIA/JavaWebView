@@ -24,13 +24,12 @@ public class PlatformWindowImpl implements PlatformWindow {
 		return Windows.GetClientRect(this.hWnd, rect);
 	}
 	
-	@Override
 	public long defaultWindowProc(final int message, final long wParam, final long lParam) {
 		return Windows.DefWindowProcW(this.hWnd, message, wParam, lParam);
 	}
 	
 	@Override
-	public boolean postMessageW(final int message, final long wParam, final long lParam) {
+	public boolean postMessage(final int message, final long wParam, final long lParam) {
 		return Windows.PostMessageW(this.hWnd, EXECUTE_SCRIPT, 0L, 0L);
 	}
 }
