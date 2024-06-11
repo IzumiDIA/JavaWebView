@@ -17,6 +17,7 @@ public interface WebViewBuilder {
 	WebViewBuilder enableContextMenu(boolean enabled);
 	WebViewBuilder enabledZoomControl(boolean enabled);
 	WebViewBuilder enableStatusBar(boolean enabled);
+	WebViewBuilder enabledDefaultScriptDialogs(boolean enabled);
 	WebViewBuilder setVirtualHostNameToFolderMapping(final @NotNull String virtualHostName, final Path folderMapping, final @NotNull COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND accessKind);
 	WebViewBuilder setWebMessageListener(final WebMessageListener webMessageListener);
 	WebViewBuilder navigate(final @Language("HTML") @NotNull String content);

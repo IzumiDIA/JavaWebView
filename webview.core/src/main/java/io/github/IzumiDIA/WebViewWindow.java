@@ -20,6 +20,8 @@ public interface WebViewWindow {
 	
 	int consumeScript();
 	
+	boolean terminate();
+	
 	@FunctionalInterface
 	interface WebMessageListener extends EventListener {
 		

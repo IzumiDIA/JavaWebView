@@ -39,7 +39,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 			enableDevTools = false,
 			enableContextMenu = false,
 			enabledZoomControl = false,
-			enableStatusBar = false;
+			enableStatusBar = false,
+			enabledDefaultScriptDialogs = false;
 	private VirtualHostNameToFolderMapping virtualHostNameToFolderMapping = null;
 	private MemorySegment messageReceivedEventHandler = null;
 	
@@ -101,6 +102,12 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	@Override
 	public WebViewBuilderImpl enableStatusBar(final boolean enabled) {
 		this.enableStatusBar = enabled;
+		return this;
+	}
+	
+	@Override
+	public WebViewBuilder enabledDefaultScriptDialogs(final boolean enabled) {
+		this.enabledDefaultScriptDialogs = enabled;
 		return this;
 	}
 	
@@ -382,6 +389,11 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 								ICoreWebView2SettingsVtbl.put_IsStatusBarEnabled(settingsVtbl),
 								settings_P,
 								this.enableStatusBar
+						),
+						ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled.invoke(
+								ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled(settingsVtbl),
+								settings_P,
+								this.enabledDefaultScriptDialogs
 						)
 				)
 				       .dropWhile(hResult -> hResult != S_OK)

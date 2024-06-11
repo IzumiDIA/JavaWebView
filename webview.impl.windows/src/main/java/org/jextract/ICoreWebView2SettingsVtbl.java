@@ -884,7 +884,7 @@ public class ICoreWebView2SettingsVtbl {
         private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
             Windows.C_LONG,
             Windows.C_POINTER,
-            Windows.C_INT
+            Windows.C_BOOL
         );
 
         /**
@@ -909,7 +909,7 @@ public class ICoreWebView2SettingsVtbl {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
             } catch (Throwable ex$) {
