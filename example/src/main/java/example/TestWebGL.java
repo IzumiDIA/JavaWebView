@@ -7,7 +7,7 @@ import java.lang.foreign.Arena;
 import java.net.URI;
 import java.nio.file.Path;
 
-final class TestWebGPU {
+final class TestWebGL {
 	
 	void main() {
 		try (var arena = Arena.ofConfined()) {
@@ -24,14 +24,13 @@ final class TestWebGPU {
 			
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)
 					                          .enableScript(true)
-					                          .enableDevTools(true)
 					                          .setUserDataFolder(Path.of(""))
 					                          .setVirtualHostNameToFolderMapping(
-													  "izumi",
+							                          "izumi",
 							                          Path.of("assets").toAbsolutePath(),
 							                          COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
 					                          )
-					                          .navigate(URI.create("https://izumi/TestWebGPU.html"))
+					                          .navigate(URI.create("https://izumi/Sakura.html"))
 					                          .buildWebView();
 			
 			webViewWindow.run();
