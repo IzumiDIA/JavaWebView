@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#fff">
+	<title>TestWebGPU</title>
+</head>
+<body style="align-content: center; text-align: center;">
+<h1>This is a Java WebView!</h1>
+<p>Thanks for using webview!</p>
+<p>这是由 100% Java 语言编写的 WebView 程序。通过 WebView 视图间接调用 WebGPU 图形API。</p>
+<canvas id="WebGPU-canvas" style="inline-size: 60dvh; block-size: 60dvh; background-color: rgba(255,192,203,.5); margin: auto;"></canvas>
+<script type="module" rel="script">
+	// language="WGSL"
+	const vertex = `
+		@vertex
+		fn main(@location(0) pos: vec3<f32>) -> @builtin(position) vec4<f32> {
+			var pos2 = vec4<f32>(pos, 1.0);
+			pos2.x -= 0.2;
+			pos2.y -= 0.2;
+			return pos2;
+		}`;
+	// language="WGSL"
+	const fragment = `
+		@fragment
+		fn main() -> @location(0) vec4<f32> {
+			return vec4<f32>(1.0, 0, 0, 1.0);
+		}`;
+	/**
+	 * @type {HTMLCanvasElement}
+	 */
+	const canvas = document.getElementById("WebGPU-canvas");
+	const context = canvas.getContext("webgpu");
+	const gpu = window.navigator.gpu;
+	const adapter = await gpu.requestAdapter();
+	const device = await adapter.requestDevice();
+	const format = gpu.getPreferredCanvasFormat();
+	context.configure(
+		{
+			device: device,
+			format: format
+		}
+	);
+	const vertexArray = new Float32Array(
+		[
+			0, 0, 0,
+			1.0, 0, 0,
+			0, 1.0, 0
+		]
+	);
+	const buffer = device.createBuffer(
+		{
+			size: vertexArray.byteLength,
+			usage: window.GPUBufferUsage.VERTEX | window.GPUBufferUsage.COPY_DST
+		}
+	);
+	device.queue.writeBuffer(buffer, 0, vertexArray);
+	const pipeline = device.createRenderPipeline(
+		{
+			layout: "auto",
+			vertex: {
+				module: device.createShaderModule(
+					{
+						code: vertex
+					}
+				),
+				entryPoint: "main",
+				buffers: [
+					{
+						arrayStride: 3 * 4,
+						attributes: [
+							{
+								shaderLocation: 0,
+								format: "float32x3",
+								offset: 0
+							}
+						]
+					}
+				]
+			},
+			fragment: {
+				module: device.createShaderModule(
+					{
+						code: fragment
+					}
+				),
+				entryPoint: "main",
+				targets: [
+					{
+						format: format
+					}
+				]
+			},
+			primitive: {
+				toplology: "triangle-list"
+			}
+		}
+	);
+	const commandEncoder = device.createCommandEncoder();
+	const renderPass = commandEncoder.beginRenderPass(
+		{
+			colorAttachments: [
+				{
+					view: context.getCurrentTexture().createView(),
+					storeOp: "store",
+					loadOp: "clear",
+					clearValue: {
+						r: .1, g: .9, b: .4, a: .1
+					}
+				}
+			]
+		}
+	);
+	renderPass.setPipeline(pipeline);
+	renderPass.setVertexBuffer(0, buffer);
+	renderPass.draw(3);
+	renderPass.end();
+	const commandBuffer = commandEncoder.finish();
+	device.queue.submit([commandBuffer]);
+</script>
+</body>
+</html>

@@ -28,6 +28,7 @@ final class TestVirtualHostNameToFolderMapping {
 							                          Path.of("..", ".."),
 							                          COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
 					                          )
+					                          .enableDevTools(true)
 					                          .setUserDataFolder(Path.of(""))
 					                          .navigate(
 							                          """

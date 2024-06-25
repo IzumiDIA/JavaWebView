@@ -24,24 +24,25 @@ final class TestExecuteScript {
 					                           .buildWindow();
 			
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)
-					                .enableScript(true)
-					                .enableDevTools(true)
-					                .setVirtualHostNameToFolderMapping(
-							                "izumi-ryuu",
-							                Path.of("..", ".."),
-							                COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
-					                )
-					                .setUserDataFolder(Path.of(""))
-					                .navigate(
-							                """
-							                <head><title>Java WebView</title></head>
-							                <body>
-							                <h1>This is a Java WebView!</h1>
-							                <p>Thanks for using webview!</p>
-							                <img src="https://izumi-ryuu/俺の图图呢？.jpg" title="俺の图图呢？" alt="Not Found." style="inline-size: 18rem; object-fit: cover;">
-							                </body>"""
-					                )
-					                .buildWebView();
+					                          .enableScript(true)
+					                          .enableDevTools(true)
+					                          .enabledDefaultScriptDialogs(true)
+					                          .setVirtualHostNameToFolderMapping(
+							                          "izumi-ryuu",
+							                          Path.of("..", ".."),
+							                          COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
+					                          )
+					                          .setUserDataFolder(Path.of(""))
+					                          .navigate(
+							                          """
+							                          <head><title>Java WebView</title></head>
+							                          <body>
+							                          <h1>This is a Java WebView!</h1>
+							                          <p>Thanks for using webview!</p>
+							                          <img src="https://izumi-ryuu/俺の图图呢？.jpg" title="俺の图图呢？" alt="Not Found." style="inline-size: 18rem; object-fit: cover;">
+							                          </body>"""
+					                          )
+					                          .buildWebView();
 			Thread.ofPlatform()
 					.daemon(true)
 					.start(

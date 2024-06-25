@@ -19,7 +19,6 @@ import java.util.concurrent.LinkedTransferQueue;
 import static io.github.IzumiDIA.windows.builder.impl.WebViewBuilderImpl.S_OK;
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.WM_CLOSE;
-import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.WM_DESTROY;
 
 public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWindow {
 	private static final AddressLayout ADDRESS_LAYOUT = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2.layout());
