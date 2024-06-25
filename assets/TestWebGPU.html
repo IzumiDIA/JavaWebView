@@ -33,7 +33,7 @@
 	const canvas = document.getElementById("WebGPU-canvas");
 	const context = canvas.getContext("webgpu");
 	const gpu = window.navigator.gpu;
-	const adapter = await gpu.requestAdapter();
+	const adapter = await gpu.requestAdapter({powerPreference:"high-performance"});
 	const device = await adapter.requestDevice();
 	const format = gpu.getPreferredCanvasFormat();
 	context.configure(
