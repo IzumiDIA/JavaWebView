@@ -25,7 +25,7 @@ final class TestVirtualHostNameToFolderMapping {
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)
 					                          .setVirtualHostNameToFolderMapping(
 							                          "izumi-ryuu",
-							                          Path.of("..", ".."),
+							                          Path.of("assets").toAbsolutePath(),
 							                          COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
 					                          )
 					                          .enableDevTools(true)
@@ -36,7 +36,7 @@ final class TestVirtualHostNameToFolderMapping {
 													  <body>
 													  <h1>This is a Java WebView!</h1>
 													  <p>Thanks for using webview!</p>
-													  <img src="https://izumi-ryuu/俺の图图呢？.jpg" title="俺の图图呢？" alt="Not Found." style="inline-size: 18rem; object-fit: cover;">
+													  <img src="https://izumi-ryuu/俺の图图呢？.webp" title="俺の图图呢？" alt="Not Found." style="inline-size: 18rem; object-fit: cover;">
 													  </body>"""
 					                          )
 					                          .buildWebView();
