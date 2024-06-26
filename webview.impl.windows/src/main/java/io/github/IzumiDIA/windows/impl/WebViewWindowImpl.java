@@ -5,6 +5,7 @@ import io.github.IzumiDIA.WebViewWindow;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.ICoreWebView2;
 import org.jextract.ICoreWebView2Vtbl;
+import org.jextract.ICoreWebView2Vtbl.PostWebMessageAsString;
 import org.jextract.ICoreWebView2WebMessageReceivedEventArgsVtbl;
 import org.jextract.ICoreWebView2WebMessageReceivedEventHandler;
 import org.jextract.MSG;
@@ -16,7 +17,6 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 import java.util.concurrent.LinkedTransferQueue;
 
-import static io.github.IzumiDIA.windows.builder.impl.WebViewBuilderImpl.S_OK;
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.WM_CLOSE;
 
@@ -69,7 +69,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		return this.platformWindow.postMessage(WM_CLOSE, 0L, 0L);
 	}
 	
-	public static class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange {
+	public static class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange<HResult> {
 		private final MemorySegment coreWebView2, webMessageReceivedEventArgs;
 		
 		public EventExchangeImpl(final Arena arena, final MemorySegment coreWebView2, final MemorySegment webMessageReceivedEventArgs) {
@@ -81,42 +81,66 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		@Override
 		public String tryGetWebMessageAsString() {
 			final var bufferAddress = this.createBuffer();
-			return this.tryGetWebMessageAsString(bufferAddress) == S_OK ?
+			return this.tryGetWebMessageAsString(bufferAddress).isOK() ?
 					       this.getString(bufferAddress)
 					       :
 					       null;
 		}
 		
 		@Override
-		public int tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress) {
-			return ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString.invoke(
-					ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString(
-							ICoreWebView2WebMessageReceivedEventHandler.lpVtbl(this.webMessageReceivedEventArgs)
-					),
-					this.webMessageReceivedEventArgs,
-					bufferAddress
+		public HResult tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress) {
+			return HResult.warpResult(
+					ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString.invoke(
+							ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString(
+									ICoreWebView2WebMessageReceivedEventHandler.lpVtbl(this.webMessageReceivedEventArgs)
+							),
+							this.webMessageReceivedEventArgs,
+							bufferAddress
+					)
 			);
 		}
 		
 		@Override
-		public int postWebMessageAsString(final @NotNull String messageToWebView) {
+		public HResult postWebMessageAsString(final @NotNull String messageToWebView) {
 			return this.postWebMessageAsString(this.allocateString(messageToWebView));
 		}
 		
 		@Override
-		public int postWebMessageAsString(final @NotNull MemorySegment messageToWebView) {
-			return ICoreWebView2Vtbl.PostWebMessageAsString.invoke(
-					ICoreWebView2Vtbl.PostWebMessageAsString(
-							ICoreWebView2.lpVtbl(this.coreWebView2)
-					),
-					this.coreWebView2,
-					messageToWebView
+		public HResult postWebMessageAsString(final @NotNull MemorySegment messageToWebView) {
+			return HResult.warpResult(
+					PostWebMessageAsString.invoke(
+							ICoreWebView2Vtbl.PostWebMessageAsString(
+									ICoreWebView2.lpVtbl(this.coreWebView2)
+							),
+							this.coreWebView2,
+							messageToWebView
+					)
 			);
 		}
 		
 		@Override
 		public MemorySegment createBuffer() {
 			return this.arena.allocateFrom(ValueLayout.ADDRESS, MemorySegment.NULL);
+		}
+		
+		@Override
+		public HResult.OK OK() {
+			return HResult.S_OK.SINGLETON;
+		}
+		
+		@Override
+		public HResult.ABORT abort() {
+			return HResult.E_ABORT.SINGLETON;
+		}
+		
+		@Override
+		public HResult.FAIL fail() {
+			return HResult.E_FAIL.SINGLETON;
+		}
+		
+		@Override
+		public HResult.UNEXPECTED unexpected() {
+			return HResult.E_UNEXPECTED.SINGLETON;
 		}
 	}
 }

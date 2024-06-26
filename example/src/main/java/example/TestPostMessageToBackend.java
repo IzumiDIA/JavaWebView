@@ -26,10 +26,9 @@ final class TestPostMessageToBackend {
 							                          eventExchange -> {
 								                          final var bufferAddress = eventExchange.createBuffer();
 								                          final var hResult = eventExchange.tryGetWebMessageAsString(bufferAddress);
-								                          if ( hResult == 0 ) {
+								                          if ( hResult.isOK() ) {
 									                          System.out.println(eventExchange.getString(bufferAddress));
-									                          return 0;
-//									                          return S_OK;
+									                          return eventExchange.OK();
 								                          } else return hResult;
 							                          }
 					                          )

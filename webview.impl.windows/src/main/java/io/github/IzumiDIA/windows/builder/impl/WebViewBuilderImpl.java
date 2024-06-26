@@ -8,6 +8,7 @@ import io.github.IzumiDIA.constant.enums.COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND;
 import io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl;
 import io.github.IzumiDIA.windows.factory.IUnknownFactory;
 import io.github.IzumiDIA.windows.factory.impl.IUnknownFactoryImpl;
+import io.github.IzumiDIA.windows.impl.HResult;
 import io.github.IzumiDIA.windows.impl.WebViewWindowImpl;
 import io.github.IzumiDIA.windows.impl.WebViewWindowImpl.EventExchangeImpl;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
@@ -24,7 +25,7 @@ import java.nio.file.Path;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBuilder {
+public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBuilder<HResult, EventExchangeImpl> {
 	public static final int S_OK = 0;
 	private static final AddressLayout WEBVIEW_2_POINTER_LAYOUT = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2.layout());
 	private static final AddressLayout WEBVIEW_2_22_POINTER_LAYOUT = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2_22.layout());
@@ -106,7 +107,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	}
 	
 	@Override
-	public WebViewBuilder enabledDefaultScriptDialogs(final boolean enabled) {
+	public WebViewBuilderImpl enabledDefaultScriptDialogs(final boolean enabled) {
 		this.enabledDefaultScriptDialogs = enabled;
 		return this;
 	}
@@ -131,7 +132,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	}
 	
 	@Override
-	public WebViewBuilderImpl setWebMessageListener(final WebMessageListener webMessageListener) {
+	public WebViewBuilderImpl setWebMessageListener(final WebMessageListener<HResult, EventExchangeImpl> webMessageListener) {
 		final var messageReceivedEventHandlerVtbl = new IUnknownFactoryImpl<>(
 				this.arena,
 				ICoreWebView2WebMessageReceivedEventHandlerVtbl::allocate,
@@ -144,7 +145,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 										iCoreWebView2,
 										webMessageReceivedEventArgs
 								)
-						),
+						).value(),
 				self ->
 						ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl.AddRef.invoke(
 								ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl.AddRef(

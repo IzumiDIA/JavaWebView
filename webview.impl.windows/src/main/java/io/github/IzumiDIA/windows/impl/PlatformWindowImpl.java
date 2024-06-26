@@ -6,8 +6,6 @@ import org.jextract.Windows;
 
 import java.lang.foreign.MemorySegment;
 
-import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
-
 public class PlatformWindowImpl implements PlatformWindow {
 	private final MemorySegment hWnd;
 	

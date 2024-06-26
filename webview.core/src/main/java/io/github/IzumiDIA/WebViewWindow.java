@@ -1,5 +1,6 @@
 package io.github.IzumiDIA;
 
+import io.github.IzumiDIA.WebViewWindow.WebMessageListener.EventExchange;
 import io.github.IzumiDIA.controller.WebViewController;
 import io.github.IzumiDIA.factory.WebViewFactory;
 import org.intellij.lang.annotations.Language;
@@ -23,20 +24,28 @@ public interface WebViewWindow {
 	boolean terminate();
 	
 	@FunctionalInterface
-	interface WebMessageListener extends EventListener {
+	interface WebMessageListener<R extends Result, T extends EventExchange<R>> extends EventListener {
 		
-		int onWebMessageReceived(final @NotNull EventExchange eventExchange);
+		R onWebMessageReceived(final @NotNull T eventExchange);
 		
-		interface EventExchange {
-			int tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress);
+		interface EventExchange<R extends Result> {
+			R tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress);
 			
 			String tryGetWebMessageAsString();
 			
-			int postWebMessageAsString(final @NotNull MemorySegment messageToWebView);
+			R postWebMessageAsString(final @NotNull MemorySegment messageToWebView);
 			
-			int postWebMessageAsString(final @NotNull String messageToWebView);
+			R postWebMessageAsString(final @NotNull String messageToWebView);
 			
 			MemorySegment createBuffer();
+			
+			Result.OK OK();
+			
+			Result.ABORT abort();
+			
+			Result.FAIL fail();
+			
+			Result.UNEXPECTED unexpected();
 			
 			default String getString(final @NotNull MemorySegment bufferAddress) {
 				return bufferAddress.get(ValueLayout.ADDRESS, 0).reinterpret(Integer.MAX_VALUE).getString(0, StandardCharsets.UTF_16LE);
@@ -45,9 +54,10 @@ public interface WebViewWindow {
 	}
 	
 	@SuppressWarnings("unchecked")
-	static WebViewFactory<WebViewController> createFactory() {
-		return (WebViewFactory<WebViewController>) ServiceLoader.load(WebViewFactory.class)
-				                                                               .findFirst()
-				                                                               .orElseThrow();
+	static WebViewFactory<WebViewController, Result, EventExchange<Result>> createFactory() {
+		return (WebViewFactory<WebViewController, Result, EventExchange<Result>>)
+				       ServiceLoader.load(WebViewFactory.class)
+						       .findFirst()
+						       .orElseThrow();
 	}
 }
