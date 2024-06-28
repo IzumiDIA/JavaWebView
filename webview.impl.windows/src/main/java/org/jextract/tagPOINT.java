@@ -30,7 +30,7 @@ public class tagPOINT {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -42,7 +42,7 @@ public class tagPOINT {
      * LONG x
      * }
      */
-    public static final OfInt x$layout() {
+    public static OfInt x$layout() {
         return x$LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class tagPOINT {
      * LONG x
      * }
      */
-    public static final long x$offset() {
+    public static long x$offset() {
         return x$OFFSET;
     }
 
@@ -86,7 +86,7 @@ public class tagPOINT {
      * LONG y
      * }
      */
-    public static final OfInt y$layout() {
+    public static OfInt y$layout() {
         return y$LAYOUT;
     }
 
@@ -98,7 +98,7 @@ public class tagPOINT {
      * LONG y
      * }
      */
-    public static final long y$offset() {
+    public static long y$offset() {
         return y$OFFSET;
     }
 

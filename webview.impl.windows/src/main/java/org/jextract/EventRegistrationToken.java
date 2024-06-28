@@ -28,7 +28,7 @@ public class EventRegistrationToken {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -40,7 +40,7 @@ public class EventRegistrationToken {
      * long long value
      * }
      */
-    public static final OfLong value$layout() {
+    public static OfLong value$layout() {
         return value$LAYOUT;
     }
 
@@ -52,7 +52,7 @@ public class EventRegistrationToken {
      * long long value
      * }
      */
-    public static final long value$offset() {
+    public static long value$offset() {
         return value$OFFSET;
     }
 

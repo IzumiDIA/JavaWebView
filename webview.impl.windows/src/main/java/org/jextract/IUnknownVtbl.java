@@ -32,7 +32,7 @@ public class IUnknownVtbl {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class IUnknownVtbl {
      * HRESULT (*QueryInterface)(IUnknown *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout QueryInterface$layout() {
+    public static AddressLayout QueryInterface$layout() {
         return QueryInterface$LAYOUT;
     }
 
@@ -112,7 +112,7 @@ public class IUnknownVtbl {
      * HRESULT (*QueryInterface)(IUnknown *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final long QueryInterface$offset() {
+    public static long QueryInterface$offset() {
         return QueryInterface$OFFSET;
     }
 
@@ -198,7 +198,7 @@ public class IUnknownVtbl {
      * ULONG (*AddRef)(IUnknown *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddRef$layout() {
+    public static AddressLayout AddRef$layout() {
         return AddRef$LAYOUT;
     }
 
@@ -210,7 +210,7 @@ public class IUnknownVtbl {
      * ULONG (*AddRef)(IUnknown *) __attribute__((stdcall))
      * }
      */
-    public static final long AddRef$offset() {
+    public static long AddRef$offset() {
         return AddRef$OFFSET;
     }
 
@@ -296,7 +296,7 @@ public class IUnknownVtbl {
      * ULONG (*Release)(IUnknown *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Release$layout() {
+    public static AddressLayout Release$layout() {
         return Release$LAYOUT;
     }
 
@@ -308,7 +308,7 @@ public class IUnknownVtbl {
      * ULONG (*Release)(IUnknown *) __attribute__((stdcall))
      * }
      */
-    public static final long Release$offset() {
+    public static long Release$offset() {
         return Release$OFFSET;
     }
 

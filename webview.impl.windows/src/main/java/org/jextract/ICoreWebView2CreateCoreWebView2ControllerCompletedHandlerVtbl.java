@@ -34,7 +34,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout QueryInterface$layout() {
+    public static AddressLayout QueryInterface$layout() {
         return QueryInterface$LAYOUT;
     }
 
@@ -200,7 +200,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * ULONG (*AddRef)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddRef$layout() {
+    public static AddressLayout AddRef$layout() {
         return AddRef$LAYOUT;
     }
 
@@ -212,7 +212,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * ULONG (*AddRef)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long AddRef$offset() {
+    public static long AddRef$offset() {
         return AddRef$OFFSET;
     }
 
@@ -298,7 +298,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * ULONG (*Release)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Release$layout() {
+    public static AddressLayout Release$layout() {
         return Release$LAYOUT;
     }
 
@@ -310,7 +310,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * ULONG (*Release)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long Release$offset() {
+    public static long Release$offset() {
         return Release$OFFSET;
     }
 
@@ -398,7 +398,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * HRESULT (*Invoke)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *, HRESULT, ICoreWebView2Controller *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Invoke$layout() {
+    public static AddressLayout Invoke$layout() {
         return Invoke$LAYOUT;
     }
 
@@ -410,7 +410,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl {
      * HRESULT (*Invoke)(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *, HRESULT, ICoreWebView2Controller *) __attribute__((stdcall))
      * }
      */
-    public static final long Invoke$offset() {
+    public static long Invoke$offset() {
         return Invoke$OFFSET;
     }
 

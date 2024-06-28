@@ -42,7 +42,7 @@ public class ICoreWebView2EnvironmentVtbl {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -110,7 +110,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2Environment *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout QueryInterface$layout() {
+    public static AddressLayout QueryInterface$layout() {
         return QueryInterface$LAYOUT;
     }
 
@@ -122,7 +122,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2Environment *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final long QueryInterface$offset() {
+    public static long QueryInterface$offset() {
         return QueryInterface$OFFSET;
     }
 
@@ -208,7 +208,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * ULONG (*AddRef)(ICoreWebView2Environment *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddRef$layout() {
+    public static AddressLayout AddRef$layout() {
         return AddRef$LAYOUT;
     }
 
@@ -220,7 +220,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * ULONG (*AddRef)(ICoreWebView2Environment *) __attribute__((stdcall))
      * }
      */
-    public static final long AddRef$offset() {
+    public static long AddRef$offset() {
         return AddRef$OFFSET;
     }
 
@@ -306,7 +306,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * ULONG (*Release)(ICoreWebView2Environment *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Release$layout() {
+    public static AddressLayout Release$layout() {
         return Release$LAYOUT;
     }
 
@@ -318,7 +318,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * ULONG (*Release)(ICoreWebView2Environment *) __attribute__((stdcall))
      * }
      */
-    public static final long Release$offset() {
+    public static long Release$offset() {
         return Release$OFFSET;
     }
 
@@ -406,7 +406,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*CreateCoreWebView2Controller)(ICoreWebView2Environment *, HWND, ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout CreateCoreWebView2Controller$layout() {
+    public static AddressLayout CreateCoreWebView2Controller$layout() {
         return CreateCoreWebView2Controller$LAYOUT;
     }
 
@@ -418,7 +418,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*CreateCoreWebView2Controller)(ICoreWebView2Environment *, HWND, ICoreWebView2CreateCoreWebView2ControllerCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long CreateCoreWebView2Controller$offset() {
+    public static long CreateCoreWebView2Controller$offset() {
         return CreateCoreWebView2Controller$OFFSET;
     }
 
@@ -509,7 +509,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*CreateWebResourceResponse)(ICoreWebView2Environment *, IStream *, int, LPCWSTR, LPCWSTR, ICoreWebView2WebResourceResponse **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout CreateWebResourceResponse$layout() {
+    public static AddressLayout CreateWebResourceResponse$layout() {
         return CreateWebResourceResponse$LAYOUT;
     }
 
@@ -521,7 +521,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*CreateWebResourceResponse)(ICoreWebView2Environment *, IStream *, int, LPCWSTR, LPCWSTR, ICoreWebView2WebResourceResponse **) __attribute__((stdcall))
      * }
      */
-    public static final long CreateWebResourceResponse$offset() {
+    public static long CreateWebResourceResponse$offset() {
         return CreateWebResourceResponse$OFFSET;
     }
 
@@ -608,7 +608,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*get_BrowserVersionString)(ICoreWebView2Environment *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_BrowserVersionString$layout() {
+    public static AddressLayout get_BrowserVersionString$layout() {
         return get_BrowserVersionString$LAYOUT;
     }
 
@@ -620,7 +620,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*get_BrowserVersionString)(ICoreWebView2Environment *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final long get_BrowserVersionString$offset() {
+    public static long get_BrowserVersionString$offset() {
         return get_BrowserVersionString$OFFSET;
     }
 
@@ -708,7 +708,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*add_NewBrowserVersionAvailable)(ICoreWebView2Environment *, ICoreWebView2NewBrowserVersionAvailableEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_NewBrowserVersionAvailable$layout() {
+    public static AddressLayout add_NewBrowserVersionAvailable$layout() {
         return add_NewBrowserVersionAvailable$LAYOUT;
     }
 
@@ -720,7 +720,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*add_NewBrowserVersionAvailable)(ICoreWebView2Environment *, ICoreWebView2NewBrowserVersionAvailableEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_NewBrowserVersionAvailable$offset() {
+    public static long add_NewBrowserVersionAvailable$offset() {
         return add_NewBrowserVersionAvailable$OFFSET;
     }
 
@@ -807,7 +807,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*remove_NewBrowserVersionAvailable)(ICoreWebView2Environment *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_NewBrowserVersionAvailable$layout() {
+    public static AddressLayout remove_NewBrowserVersionAvailable$layout() {
         return remove_NewBrowserVersionAvailable$LAYOUT;
     }
 
@@ -819,7 +819,7 @@ public class ICoreWebView2EnvironmentVtbl {
      * HRESULT (*remove_NewBrowserVersionAvailable)(ICoreWebView2Environment *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_NewBrowserVersionAvailable$offset() {
+    public static long remove_NewBrowserVersionAvailable$offset() {
         return remove_NewBrowserVersionAvailable$OFFSET;
     }
 

@@ -52,7 +52,7 @@ public class tagCREATESTRUCTA {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -64,7 +64,7 @@ public class tagCREATESTRUCTA {
      * LPVOID lpCreateParams
      * }
      */
-    public static final AddressLayout lpCreateParams$layout() {
+    public static AddressLayout lpCreateParams$layout() {
         return lpCreateParams$LAYOUT;
     }
 
@@ -76,7 +76,7 @@ public class tagCREATESTRUCTA {
      * LPVOID lpCreateParams
      * }
      */
-    public static final long lpCreateParams$offset() {
+    public static long lpCreateParams$offset() {
         return lpCreateParams$OFFSET;
     }
 
@@ -108,7 +108,7 @@ public class tagCREATESTRUCTA {
      * HINSTANCE hInstance
      * }
      */
-    public static final AddressLayout hInstance$layout() {
+    public static AddressLayout hInstance$layout() {
         return hInstance$LAYOUT;
     }
 
@@ -120,7 +120,7 @@ public class tagCREATESTRUCTA {
      * HINSTANCE hInstance
      * }
      */
-    public static final long hInstance$offset() {
+    public static long hInstance$offset() {
         return hInstance$OFFSET;
     }
 
@@ -152,7 +152,7 @@ public class tagCREATESTRUCTA {
      * HMENU hMenu
      * }
      */
-    public static final AddressLayout hMenu$layout() {
+    public static AddressLayout hMenu$layout() {
         return hMenu$LAYOUT;
     }
 
@@ -164,7 +164,7 @@ public class tagCREATESTRUCTA {
      * HMENU hMenu
      * }
      */
-    public static final long hMenu$offset() {
+    public static long hMenu$offset() {
         return hMenu$OFFSET;
     }
 
@@ -196,7 +196,7 @@ public class tagCREATESTRUCTA {
      * HWND hwndParent
      * }
      */
-    public static final AddressLayout hwndParent$layout() {
+    public static AddressLayout hwndParent$layout() {
         return hwndParent$LAYOUT;
     }
 
@@ -208,7 +208,7 @@ public class tagCREATESTRUCTA {
      * HWND hwndParent
      * }
      */
-    public static final long hwndParent$offset() {
+    public static long hwndParent$offset() {
         return hwndParent$OFFSET;
     }
 
@@ -240,7 +240,7 @@ public class tagCREATESTRUCTA {
      * int cy
      * }
      */
-    public static final OfInt cy$layout() {
+    public static OfInt cy$layout() {
         return cy$LAYOUT;
     }
 
@@ -252,7 +252,7 @@ public class tagCREATESTRUCTA {
      * int cy
      * }
      */
-    public static final long cy$offset() {
+    public static long cy$offset() {
         return cy$OFFSET;
     }
 
@@ -284,7 +284,7 @@ public class tagCREATESTRUCTA {
      * int cx
      * }
      */
-    public static final OfInt cx$layout() {
+    public static OfInt cx$layout() {
         return cx$LAYOUT;
     }
 
@@ -296,7 +296,7 @@ public class tagCREATESTRUCTA {
      * int cx
      * }
      */
-    public static final long cx$offset() {
+    public static long cx$offset() {
         return cx$OFFSET;
     }
 
@@ -328,7 +328,7 @@ public class tagCREATESTRUCTA {
      * int y
      * }
      */
-    public static final OfInt y$layout() {
+    public static OfInt y$layout() {
         return y$LAYOUT;
     }
 
@@ -340,7 +340,7 @@ public class tagCREATESTRUCTA {
      * int y
      * }
      */
-    public static final long y$offset() {
+    public static long y$offset() {
         return y$OFFSET;
     }
 
@@ -372,7 +372,7 @@ public class tagCREATESTRUCTA {
      * int x
      * }
      */
-    public static final OfInt x$layout() {
+    public static OfInt x$layout() {
         return x$LAYOUT;
     }
 
@@ -384,7 +384,7 @@ public class tagCREATESTRUCTA {
      * int x
      * }
      */
-    public static final long x$offset() {
+    public static long x$offset() {
         return x$OFFSET;
     }
 
@@ -416,7 +416,7 @@ public class tagCREATESTRUCTA {
      * LONG style
      * }
      */
-    public static final OfInt style$layout() {
+    public static OfInt style$layout() {
         return style$LAYOUT;
     }
 
@@ -428,7 +428,7 @@ public class tagCREATESTRUCTA {
      * LONG style
      * }
      */
-    public static final long style$offset() {
+    public static long style$offset() {
         return style$OFFSET;
     }
 
@@ -460,7 +460,7 @@ public class tagCREATESTRUCTA {
      * LPCSTR lpszName
      * }
      */
-    public static final AddressLayout lpszName$layout() {
+    public static AddressLayout lpszName$layout() {
         return lpszName$LAYOUT;
     }
 
@@ -472,7 +472,7 @@ public class tagCREATESTRUCTA {
      * LPCSTR lpszName
      * }
      */
-    public static final long lpszName$offset() {
+    public static long lpszName$offset() {
         return lpszName$OFFSET;
     }
 

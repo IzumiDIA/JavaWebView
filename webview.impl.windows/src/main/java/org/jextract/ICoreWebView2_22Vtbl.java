@@ -276,7 +276,7 @@ public class ICoreWebView2_22Vtbl {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -344,7 +344,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout QueryInterface$layout() {
+    public static AddressLayout QueryInterface$layout() {
         return QueryInterface$LAYOUT;
     }
 
@@ -356,7 +356,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final long QueryInterface$offset() {
+    public static long QueryInterface$offset() {
         return QueryInterface$OFFSET;
     }
 
@@ -442,7 +442,7 @@ public class ICoreWebView2_22Vtbl {
      * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddRef$layout() {
+    public static AddressLayout AddRef$layout() {
         return AddRef$LAYOUT;
     }
 
@@ -454,7 +454,7 @@ public class ICoreWebView2_22Vtbl {
      * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long AddRef$offset() {
+    public static long AddRef$offset() {
         return AddRef$OFFSET;
     }
 
@@ -540,7 +540,7 @@ public class ICoreWebView2_22Vtbl {
      * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Release$layout() {
+    public static AddressLayout Release$layout() {
         return Release$LAYOUT;
     }
 
@@ -552,7 +552,7 @@ public class ICoreWebView2_22Vtbl {
      * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long Release$offset() {
+    public static long Release$offset() {
         return Release$OFFSET;
     }
 
@@ -639,7 +639,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_Settings$layout() {
+    public static AddressLayout get_Settings$layout() {
         return get_Settings$LAYOUT;
     }
 
@@ -651,7 +651,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
      * }
      */
-    public static final long get_Settings$offset() {
+    public static long get_Settings$offset() {
         return get_Settings$OFFSET;
     }
 
@@ -738,7 +738,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_Source$layout() {
+    public static AddressLayout get_Source$layout() {
         return get_Source$LAYOUT;
     }
 
@@ -750,7 +750,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final long get_Source$offset() {
+    public static long get_Source$offset() {
         return get_Source$OFFSET;
     }
 
@@ -837,7 +837,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Navigate$layout() {
+    public static AddressLayout Navigate$layout() {
         return Navigate$LAYOUT;
     }
 
@@ -849,7 +849,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final long Navigate$offset() {
+    public static long Navigate$offset() {
         return Navigate$OFFSET;
     }
 
@@ -936,7 +936,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout NavigateToString$layout() {
+    public static AddressLayout NavigateToString$layout() {
         return NavigateToString$LAYOUT;
     }
 
@@ -948,7 +948,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final long NavigateToString$offset() {
+    public static long NavigateToString$offset() {
         return NavigateToString$OFFSET;
     }
 

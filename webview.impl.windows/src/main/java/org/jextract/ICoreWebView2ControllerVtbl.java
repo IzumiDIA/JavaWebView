@@ -78,7 +78,7 @@ public class ICoreWebView2ControllerVtbl {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout QueryInterface$layout() {
+    public static AddressLayout QueryInterface$layout() {
         return QueryInterface$LAYOUT;
     }
 
@@ -158,7 +158,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
      * }
      */
-    public static final long QueryInterface$offset() {
+    public static long QueryInterface$offset() {
         return QueryInterface$OFFSET;
     }
 
@@ -244,7 +244,7 @@ public class ICoreWebView2ControllerVtbl {
      * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddRef$layout() {
+    public static AddressLayout AddRef$layout() {
         return AddRef$LAYOUT;
     }
 
@@ -256,7 +256,7 @@ public class ICoreWebView2ControllerVtbl {
      * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
      * }
      */
-    public static final long AddRef$offset() {
+    public static long AddRef$offset() {
         return AddRef$OFFSET;
     }
 
@@ -342,7 +342,7 @@ public class ICoreWebView2ControllerVtbl {
      * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Release$layout() {
+    public static AddressLayout Release$layout() {
         return Release$LAYOUT;
     }
 
@@ -354,7 +354,7 @@ public class ICoreWebView2ControllerVtbl {
      * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
      * }
      */
-    public static final long Release$offset() {
+    public static long Release$offset() {
         return Release$OFFSET;
     }
 
@@ -441,7 +441,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_IsVisible$layout() {
+    public static AddressLayout get_IsVisible$layout() {
         return get_IsVisible$LAYOUT;
     }
 
@@ -453,7 +453,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_IsVisible$offset() {
+    public static long get_IsVisible$offset() {
         return get_IsVisible$OFFSET;
     }
 
@@ -540,7 +540,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout put_IsVisible$layout() {
+    public static AddressLayout put_IsVisible$layout() {
         return put_IsVisible$LAYOUT;
     }
 
@@ -552,7 +552,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
      * }
      */
-    public static final long put_IsVisible$offset() {
+    public static long put_IsVisible$offset() {
         return put_IsVisible$OFFSET;
     }
 
@@ -639,7 +639,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_Bounds$layout() {
+    public static AddressLayout get_Bounds$layout() {
         return get_Bounds$LAYOUT;
     }
 
@@ -651,7 +651,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
      * }
      */
-    public static final long get_Bounds$offset() {
+    public static long get_Bounds$offset() {
         return get_Bounds$OFFSET;
     }
 
@@ -738,7 +738,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout put_Bounds$layout() {
+    public static AddressLayout put_Bounds$layout() {
         return put_Bounds$LAYOUT;
     }
 
@@ -750,7 +750,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
      * }
      */
-    public static final long put_Bounds$offset() {
+    public static long put_Bounds$offset() {
         return put_Bounds$OFFSET;
     }
 
@@ -837,7 +837,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_ZoomFactor$layout() {
+    public static AddressLayout get_ZoomFactor$layout() {
         return get_ZoomFactor$LAYOUT;
     }
 
@@ -849,7 +849,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
      * }
      */
-    public static final long get_ZoomFactor$offset() {
+    public static long get_ZoomFactor$offset() {
         return get_ZoomFactor$OFFSET;
     }
 
@@ -1135,7 +1135,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_ZoomFactorChanged$layout() {
+    public static AddressLayout remove_ZoomFactorChanged$layout() {
         return remove_ZoomFactorChanged$LAYOUT;
     }
 
@@ -1147,7 +1147,7 @@ public class ICoreWebView2ControllerVtbl {
      * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_ZoomFactorChanged$offset() {
+    public static long remove_ZoomFactorChanged$offset() {
         return remove_ZoomFactorChanged$OFFSET;
     }
 

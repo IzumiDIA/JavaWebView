@@ -27,7 +27,7 @@ public class ICoreWebView2ExecuteScriptCompletedHandler {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -39,7 +39,7 @@ public class ICoreWebView2ExecuteScriptCompletedHandler {
      * struct ICoreWebView2ExecuteScriptCompletedHandlerVtbl *lpVtbl
      * }
      */
-    public static final AddressLayout lpVtbl$layout() {
+    public static AddressLayout lpVtbl$layout() {
         return lpVtbl$LAYOUT;
     }
 
@@ -51,7 +51,7 @@ public class ICoreWebView2ExecuteScriptCompletedHandler {
      * struct ICoreWebView2ExecuteScriptCompletedHandlerVtbl *lpVtbl
      * }
      */
-    public static final long lpVtbl$offset() {
+    public static long lpVtbl$offset() {
         return lpVtbl$OFFSET;
     }
 

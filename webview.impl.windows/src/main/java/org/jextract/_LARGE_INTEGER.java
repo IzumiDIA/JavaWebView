@@ -368,7 +368,7 @@ public class _LARGE_INTEGER {
      * LONGLONG QuadPart
      * }
      */
-    public static final long QuadPart$offset() {
+    public static long QuadPart$offset() {
         return QuadPart$OFFSET;
     }
 
