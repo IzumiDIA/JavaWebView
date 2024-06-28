@@ -554,96 +554,6 @@ public class Windows {
         }
     }
 
-    private static class GetCommandLineA {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("GetCommandLineA"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * LPSTR GetCommandLineA()
-     * }
-     */
-    public static FunctionDescriptor GetCommandLineA$descriptor() {
-        return GetCommandLineA.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * LPSTR GetCommandLineA()
-     * }
-     */
-    public static MethodHandle GetCommandLineA$handle() {
-        return GetCommandLineA.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * LPSTR GetCommandLineA()
-     * }
-     */
-    public static MemorySegment GetCommandLineA() {
-        var mh$ = GetCommandLineA.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("GetCommandLineA");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class GetCommandLineW {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("GetCommandLineW"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * LPWSTR GetCommandLineW()
-     * }
-     */
-    public static FunctionDescriptor GetCommandLineW$descriptor() {
-        return GetCommandLineW.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * LPWSTR GetCommandLineW()
-     * }
-     */
-    public static MethodHandle GetCommandLineW$handle() {
-        return GetCommandLineW.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * LPWSTR GetCommandLineW()
-     * }
-     */
-    public static MemorySegment GetCommandLineW() {
-        var mh$ = GetCommandLineW.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("GetCommandLineW");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
     private static class CreateFileW {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             Windows.C_POINTER,
@@ -4065,56 +3975,6 @@ public class Windows {
         }
     }
 
-    private static class GetStringTypeW {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT,
-            Windows.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("GetStringTypeW"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * BOOL GetStringTypeW(DWORD dwInfoType, LPCWCH lpSrcStr, int cchSrc, LPWORD lpCharType)
-     * }
-     */
-    public static FunctionDescriptor GetStringTypeW$descriptor() {
-        return GetStringTypeW.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * BOOL GetStringTypeW(DWORD dwInfoType, LPCWCH lpSrcStr, int cchSrc, LPWORD lpCharType)
-     * }
-     */
-    public static MethodHandle GetStringTypeW$handle() {
-        return GetStringTypeW.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * BOOL GetStringTypeW(DWORD dwInfoType, LPCWCH lpSrcStr, int cchSrc, LPWORD lpCharType)
-     * }
-     */
-    public static int GetStringTypeW(int dwInfoType, MemorySegment lpSrcStr, int cchSrc, MemorySegment lpCharType) {
-        var mh$ = GetStringTypeW.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("GetStringTypeW", dwInfoType, lpSrcStr, cchSrc, lpCharType);
-            }
-            return (int)mh$.invokeExact(dwInfoType, lpSrcStr, cchSrc, lpCharType);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
     private static class MultiByteToWideChar {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             Windows.C_INT,
@@ -4360,7 +4220,7 @@ public class Windows {
 
     private static class GetCPInfo {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_INT,
             Windows.C_POINTER
         );
@@ -4394,13 +4254,13 @@ public class Windows {
      * BOOL GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo)
      * }
      */
-    public static int GetCPInfo(int CodePage, MemorySegment lpCPInfo) {
+    public static boolean GetCPInfo(int CodePage, MemorySegment lpCPInfo) {
         var mh$ = GetCPInfo.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("GetCPInfo", CodePage, lpCPInfo);
             }
-            return (int)mh$.invokeExact(CodePage, lpCPInfo);
+            return (boolean)mh$.invokeExact(CodePage, lpCPInfo);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
