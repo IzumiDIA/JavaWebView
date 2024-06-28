@@ -48,7 +48,9 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	public int executeScript(final @NotNull String javascript) {
 		final var webview2Pointer = this.webview2_PP.get(ADDRESS_LAYOUT, 0);
 		return ICoreWebView2Vtbl.ExecuteScript.invoke(
-				ICoreWebView2Vtbl.ExecuteScript(ICoreWebView2.lpVtbl(webview2Pointer)),
+				ICoreWebView2Vtbl.ExecuteScript(
+						ICoreWebView2.lpVtbl(webview2Pointer)
+				),
 				webview2Pointer,
 				this.allocateString(
 						javascript
@@ -59,7 +61,23 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	
 	@Override
 	public boolean executeScriptAsync(final @NotNull String javascript) {
-		return this.scriptExecutionQueue.offer(javascript) && this.platformWindow.postMessage(EXECUTE_SCRIPT, 0L, 0L);
+		return this.scriptExecutionQueue.offer(javascript)
+		       &&
+		       this.platformWindow.postMessage(EXECUTE_SCRIPT, 0L, 0L);
+	}
+	
+	@Override
+	public HResult postWebMessageAsString(final @NotNull String messageToWebView) {
+		final var webview2Pointer = this.webview2_PP.get(ADDRESS_LAYOUT, 0);
+		return HResult.warpResult(
+				PostWebMessageAsString.invoke(
+						ICoreWebView2Vtbl.PostWebMessageAsString(
+								ICoreWebView2.lpVtbl(webview2Pointer)
+						),
+						webview2Pointer,
+						this.allocateString(messageToWebView)
+				)
+		);
 	}
 	
 	@Override

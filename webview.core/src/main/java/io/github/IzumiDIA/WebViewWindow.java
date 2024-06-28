@@ -17,6 +17,8 @@ public interface WebViewWindow {
 	
 	boolean executeScriptAsync(final @Language("JavaScript") @NotNull String javascript);
 	
+	Result postWebMessageAsString(final @NotNull String messageToWebView);
+	
 	int consumeScript();
 	
 	boolean terminate();
