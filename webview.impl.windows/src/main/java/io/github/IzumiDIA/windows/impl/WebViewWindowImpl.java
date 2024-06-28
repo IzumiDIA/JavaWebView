@@ -2,6 +2,7 @@ package io.github.IzumiDIA.windows.impl;
 
 import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.WebViewWindow;
+import io.github.IzumiDIA.windows.impl.HResult.S_OK;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.ICoreWebView2;
 import org.jextract.ICoreWebView2Vtbl;
@@ -15,6 +16,7 @@ import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.LinkedTransferQueue;
 
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
@@ -32,6 +34,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		this.webview2_PP = webview2_PP;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public void run() {
 		final var message = MSG.allocate(this.arena);
@@ -69,8 +72,10 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		return this.platformWindow.postMessage(WM_CLOSE, 0L, 0L);
 	}
 	
-	public static class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange<HResult> {
+	public static final class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange {
 		private final MemorySegment coreWebView2, webMessageReceivedEventArgs;
+		private final MemorySegment bufferAddress = this.createBuffer();
+		private int lastHResult;
 		
 		public EventExchangeImpl(final Arena arena, final MemorySegment coreWebView2, final MemorySegment webMessageReceivedEventArgs) {
 			super(arena);
@@ -80,23 +85,16 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		
 		@Override
 		public String tryGetWebMessageAsString() {
-			final var bufferAddress = this.createBuffer();
-			return this.tryGetWebMessageAsString(bufferAddress).isOK() ?
-					       this.getString(bufferAddress)
+			return this.tryGetWebMessageAsString(this.bufferAddress) == S_OK.SINGLETON.value() ?
+					       this.getString(this.bufferAddress)
 					       :
 					       null;
 		}
 		
 		@Override
-		public HResult tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress) {
+		public HResult tryGetWebMessageAsStringToBuffer(final @NotNull MemorySegment bufferAddress) {
 			return HResult.warpResult(
-					ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString.invoke(
-							ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString(
-									ICoreWebView2WebMessageReceivedEventHandler.lpVtbl(this.webMessageReceivedEventArgs)
-							),
-							this.webMessageReceivedEventArgs,
-							bufferAddress
-					)
+					this.tryGetWebMessageAsString(bufferAddress)
 			);
 		}
 		
@@ -119,28 +117,49 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		}
 		
 		@Override
-		public MemorySegment createBuffer() {
-			return this.arena.allocateFrom(ValueLayout.ADDRESS, MemorySegment.NULL);
+		public HResult getResult() {
+			return HResult.warpResult(this.lastHResult);
 		}
 		
 		@Override
-		public HResult.OK OK() {
+		public HResult.S_OK OK() {
 			return HResult.S_OK.SINGLETON;
 		}
 		
 		@Override
-		public HResult.ABORT abort() {
+		public HResult.E_ABORT abort() {
 			return HResult.E_ABORT.SINGLETON;
 		}
 		
 		@Override
-		public HResult.FAIL fail() {
+		public HResult.E_FAIL fail() {
 			return HResult.E_FAIL.SINGLETON;
 		}
 		
 		@Override
-		public HResult.UNEXPECTED unexpected() {
+		public HResult.E_UNEXPECTED unexpected() {
 			return HResult.E_UNEXPECTED.SINGLETON;
+		}
+		
+		@Override
+		public String getString(final @NotNull MemorySegment bufferAddress) {
+			return bufferAddress.get(ValueLayout.ADDRESS, 0)
+					       .reinterpret(Integer.MAX_VALUE)
+					       .getString(0, StandardCharsets.UTF_16LE);
+		}
+		
+		private MemorySegment createBuffer() {
+			return this.arena.allocateFrom(ValueLayout.ADDRESS, MemorySegment.NULL);
+		}
+		
+		private int tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress) {
+			return this.lastHResult = ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString.invoke(
+					ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString(
+							ICoreWebView2WebMessageReceivedEventHandler.lpVtbl(this.webMessageReceivedEventArgs)
+					),
+					this.webMessageReceivedEventArgs,
+					bufferAddress
+			);
 		}
 	}
 }

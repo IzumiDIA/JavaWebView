@@ -133,6 +133,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	@Override
 	public WebViewBuilderImpl setWebMessageListener(final WebMessageListener<HResult, EventExchangeImpl> webMessageListener) {
+		@SuppressWarnings("SpellCheckingInspection")
 		final var messageReceivedEventHandlerVtbl = new IUnknownFactoryImpl<>(
 				this.arena,
 				ICoreWebView2WebMessageReceivedEventHandlerVtbl::allocate,
@@ -248,6 +249,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	private int getWebView2(final MemorySegment controller) {
 		this.webViewController.setController(controller);
+		@SuppressWarnings("SpellCheckingInspection")
 		final var webviewControllerlpVtbl = ICoreWebView2Controller.lpVtbl(controller);
 		ICoreWebView2ControllerVtbl.AddRef.invoke(
 				ICoreWebView2ControllerVtbl.AddRef(webviewControllerlpVtbl),
@@ -430,7 +432,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 		return this.webview2_PP.get(WEBVIEW_2_POINTER_LAYOUT, 0);
 	}
 	
-	@SuppressWarnings("StaticMethodReferencedViaSubclass")
+	@SuppressWarnings({"StaticMethodReferencedViaSubclass", "java:S3252"})
 	private static final class ICoreWebView2_22Holder {
 		private static final MemorySegment IID_ICoreWebView2_22 = IID.allocate(Arena.ofAuto());
 		

@@ -7,8 +7,6 @@ import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
-import java.nio.charset.StandardCharsets;
 import java.util.EventListener;
 import java.util.ServiceLoader;
 
@@ -24,20 +22,20 @@ public interface WebViewWindow {
 	boolean terminate();
 	
 	@FunctionalInterface
-	interface WebMessageListener<R extends Result, T extends EventExchange<R>> extends EventListener {
+	interface WebMessageListener<R extends Result, T extends EventExchange> extends EventListener {
 		
 		R onWebMessageReceived(final @NotNull T eventExchange);
 		
-		interface EventExchange<R extends Result> {
-			R tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress);
-			
+		interface EventExchange {
 			String tryGetWebMessageAsString();
 			
-			R postWebMessageAsString(final @NotNull MemorySegment messageToWebView);
+			Result tryGetWebMessageAsStringToBuffer(final @NotNull MemorySegment bufferAddress);
 			
-			R postWebMessageAsString(final @NotNull String messageToWebView);
+			Result postWebMessageAsString(final @NotNull MemorySegment messageToWebView);
 			
-			MemorySegment createBuffer();
+			Result postWebMessageAsString(final @NotNull String messageToWebView);
+			
+			Result getResult();
 			
 			Result.OK OK();
 			
@@ -47,15 +45,13 @@ public interface WebViewWindow {
 			
 			Result.UNEXPECTED unexpected();
 			
-			default String getString(final @NotNull MemorySegment bufferAddress) {
-				return bufferAddress.get(ValueLayout.ADDRESS, 0).reinterpret(Integer.MAX_VALUE).getString(0, StandardCharsets.UTF_16LE);
-			}
+			String getString(final @NotNull MemorySegment bufferAddress);
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
-	static WebViewFactory<WebViewController, Result, EventExchange<Result>> createFactory() {
-		return (WebViewFactory<WebViewController, Result, EventExchange<Result>>)
+	static WebViewFactory<WebViewController, Result, EventExchange> createFactory() {
+		return (WebViewFactory<WebViewController, Result, EventExchange>)
 				       ServiceLoader.load(WebViewFactory.class)
 						       .findFirst()
 						       .orElseThrow();

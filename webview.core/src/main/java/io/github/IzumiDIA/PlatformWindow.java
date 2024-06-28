@@ -3,7 +3,6 @@ package io.github.IzumiDIA;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.foreign.MemorySegment;
-import java.util.EventListener;
 
 public interface PlatformWindow {
 	MemorySegment getHandler();

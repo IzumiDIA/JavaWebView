@@ -2,7 +2,6 @@ package io.github.IzumiDIA.builder;
 
 import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.Point2D;
-import io.github.IzumiDIA.constant.enums.Color;
 import io.github.IzumiDIA.controller.WebViewController;
 import org.jetbrains.annotations.NotNull;
 

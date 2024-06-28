@@ -24,10 +24,10 @@ final class TestPostMessageToBackend {
 					                          .enableWebMessage(true)
 					                          .setWebMessageListener(
 							                          eventExchange -> {
-								                          final var bufferAddress = eventExchange.createBuffer();
-								                          final var hResult = eventExchange.tryGetWebMessageAsString(bufferAddress);
+								                          final var webMessage = eventExchange.tryGetWebMessageAsString();
+								                          final var hResult = eventExchange.getResult();
 								                          if ( hResult.isOK() ) {
-									                          System.out.println(eventExchange.getString(bufferAddress));
+									                          System.out.println(webMessage);
 									                          return eventExchange.OK();
 								                          } else return hResult;
 							                          }

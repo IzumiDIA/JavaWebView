@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.net.URI;
 import java.nio.file.Path;
 
-public interface WebViewBuilder<R extends Result, T extends EventExchange<R>> {
+public interface WebViewBuilder<R extends Result, T extends EventExchange> {
 	WebViewBuilder<R, T> setUserDataFolder(final Path userDataFolderPath);
 	WebViewBuilder<R, T> enableScript(boolean enabled);
 	WebViewBuilder<R, T> enableWebMessage(boolean enabled);

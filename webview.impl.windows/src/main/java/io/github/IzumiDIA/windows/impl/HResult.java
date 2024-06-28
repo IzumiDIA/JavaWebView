@@ -2,15 +2,8 @@ package io.github.IzumiDIA.windows.impl;
 
 import io.github.IzumiDIA.Result;
 
-import java.util.Map;
-
+@SuppressWarnings("java:S6548")
 public sealed interface HResult extends Result {
-	Map<Integer, HResult> RESULT_MAP = Map.of(
-			S_OK.SINGLETON.value(), S_OK.SINGLETON,
-			E_ABORT.SINGLETON.value(), E_ABORT.SINGLETON,
-			E_FAIL.SINGLETON.value(), E_FAIL.SINGLETON,
-			E_UNEXPECTED.SINGLETON.value(), E_UNEXPECTED.SINGLETON
-	);
 	
 	int value();
 	

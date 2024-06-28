@@ -34,9 +34,11 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 	private final WindowOnCloseListener windowOnCloseListener;
 	private final WindowOnDestroyListener windowOnDestroyListener;
 	private WebViewWindowImpl webViewWindow = null;
-	private MemorySegment
-			webviewController = null,
-			webviewControllerlpVtbl = null;
+	
+	private MemorySegment webviewController = null;
+	
+	@SuppressWarnings("SpellCheckingInspection")
+	private MemorySegment webviewControllerlpVtbl = null;
 	
 	public WebViewControllerImpl(final Arena arena, final @NotNull WindowOnCloseListener windowOnCloseListener, final @NotNull WindowOnDestroyListener windowOnDestroyListener) {
 		super(arena);

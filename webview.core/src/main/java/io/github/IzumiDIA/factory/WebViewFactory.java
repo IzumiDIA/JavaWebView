@@ -10,10 +10,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.foreign.Arena;
 
-public interface WebViewFactory<F extends WebViewController, R extends Result, E extends EventExchange<R>> {
+public interface WebViewFactory<F extends WebViewController, R extends Result, T extends EventExchange> {
 	WebViewController.Builder createControllerBuilder(final @NotNull Arena arena);
 	
 	WindowBuilder<F> createPlatformWindowBuilder(final @NotNull Arena arena);
 	
-	WebViewBuilder<R, E> createWebViewBuilder(final @NotNull Arena arena, final @NotNull PlatformWindow platformWindow);
+	WebViewBuilder<R, T> createWebViewBuilder(final @NotNull Arena arena, final @NotNull PlatformWindow platformWindow);
 }

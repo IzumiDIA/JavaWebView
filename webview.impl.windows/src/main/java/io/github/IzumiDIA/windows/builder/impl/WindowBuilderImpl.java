@@ -44,7 +44,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	private Point2D position = null;
 	private Dimension dimension = null;
 	
-	
+	@SuppressWarnings("java:S3252")
 	public WindowBuilderImpl(final Arena arena) {
 		super(arena);
 		this.windowClass = WNDCLASSEXW.allocate(this.arena);
@@ -57,12 +57,14 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setStyle(final int style) {
 		WNDCLASSEXW.style(this.windowClass, style);
 		return this;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setController(final @NotNull WebViewControllerImpl windowProcedure) {
 		WNDCLASSEXW.lpfnWndProc(
@@ -75,18 +77,21 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		return this;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setHandleIcon(final @NotNull MemorySegment handleIcon) {
 		WNDCLASSEXW.hIcon(this.windowClass, handleIcon);
 		return this;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setHandleCursor(final @NotNull MemorySegment handleCursor) {
 		WNDCLASSEXW.hCursor(this.windowClass, handleCursor);
 		return this;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	public WindowBuilderImpl setBrushBackground(final @NotNull Color handleBrush) {
 		WNDCLASSEXW.hbrBackground(this.windowClass, MemorySegment.ofAddress(handleBrush.ordinal()));
 		return this;
@@ -98,6 +103,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		return this;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setHandleIconSmall(final @NotNull MemorySegment handleIconSmall) {
 		WNDCLASSEXW.hIconSm(this.windowClass, handleIconSmall);
@@ -128,6 +134,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		return this;
 	}
 	
+	@SuppressWarnings("java:S3252")
 	@Override
 	public PlatformWindow buildWindow() {
 		final var windowClassNameSegment = this.allocateString(
