@@ -609,7 +609,7 @@ public class Windows {
 
     private static class FindClose {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_POINTER
         );
 
@@ -642,13 +642,13 @@ public class Windows {
      * BOOL FindClose(HANDLE hFindFile)
      * }
      */
-    public static int FindClose(MemorySegment hFindFile) {
+    public static boolean FindClose(MemorySegment hFindFile) {
         var mh$ = FindClose.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("FindClose", hFindFile);
             }
-            return (int)mh$.invokeExact(hFindFile);
+            return (boolean)mh$.invokeExact(hFindFile);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1039,7 +1039,7 @@ public class Windows {
 
     private static class CloseHandle {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_POINTER
         );
 
@@ -1072,13 +1072,13 @@ public class Windows {
      * BOOL CloseHandle(HANDLE hObject)
      * }
      */
-    public static int CloseHandle(MemorySegment hObject) {
+    public static boolean CloseHandle(MemorySegment hObject) {
         var mh$ = CloseHandle.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("CloseHandle", hObject);
             }
-            return (int)mh$.invokeExact(hObject);
+            return (boolean)mh$.invokeExact(hObject);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2581,7 +2581,7 @@ public class Windows {
 
     private static class GetModuleHandleExW {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_LONG,
             Windows.C_POINTER,
             Windows.C_POINTER
@@ -2616,13 +2616,13 @@ public class Windows {
      * BOOL GetModuleHandleExW(DWORD dwFlags, LPCWSTR lpModuleName, HMODULE *phModule)
      * }
      */
-    public static int GetModuleHandleExW(int dwFlags, MemorySegment lpModuleName, MemorySegment phModule) {
+    public static boolean GetModuleHandleExW(int dwFlags, MemorySegment lpModuleName, MemorySegment phModule) {
         var mh$ = GetModuleHandleExW.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("GetModuleHandleExW", dwFlags, lpModuleName, phModule);
             }
-            return (int)mh$.invokeExact(dwFlags, lpModuleName, phModule);
+            return (boolean)mh$.invokeExact(dwFlags, lpModuleName, phModule);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4365,7 +4365,7 @@ public class Windows {
 
     private static class GetConsoleMode {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_POINTER,
             Windows.C_POINTER
         );
@@ -4399,13 +4399,13 @@ public class Windows {
      * BOOL GetConsoleMode(HANDLE hConsoleHandle, LPDWORD lpMode)
      * }
      */
-    public static int GetConsoleMode(MemorySegment hConsoleHandle, MemorySegment lpMode) {
+    public static boolean GetConsoleMode(MemorySegment hConsoleHandle, MemorySegment lpMode) {
         var mh$ = GetConsoleMode.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("GetConsoleMode", hConsoleHandle, lpMode);
             }
-            return (int)mh$.invokeExact(hConsoleHandle, lpMode);
+            return (boolean)mh$.invokeExact(hConsoleHandle, lpMode);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
