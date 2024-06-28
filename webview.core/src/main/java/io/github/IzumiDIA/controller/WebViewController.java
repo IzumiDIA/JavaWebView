@@ -1,6 +1,7 @@
 package io.github.IzumiDIA.controller;
 
 import io.github.IzumiDIA.PlatformWindow;
+import io.github.IzumiDIA.Result;
 import io.github.IzumiDIA.listener.WindowOnCloseListener;
 import io.github.IzumiDIA.listener.WindowOnDestroyListener;
 import org.jetbrains.annotations.NotNull;
@@ -12,7 +13,7 @@ public interface WebViewController extends EventListener {
 	
 	void setController(final @NotNull MemorySegment controller);
 	
-	int putBounds(final @NotNull PlatformWindow platformWindow);
+	Result putBounds(final @NotNull PlatformWindow platformWindow);
 	interface Builder {
 		Builder setOnCloseListener(final WindowOnCloseListener windowOnCloseListener);
 		Builder setOnDestroyListener(final WindowOnDestroyListener windowOnDestroyListener);

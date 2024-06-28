@@ -13,13 +13,13 @@ import java.util.ServiceLoader;
 public interface WebViewWindow {
 	void run();
 	
-	int executeScript(final @Language("JavaScript") @NotNull String javascript);
+	Result executeScript(final @Language("JavaScript") @NotNull String javascript);
 	
 	boolean executeScriptAsync(final @Language("JavaScript") @NotNull String javascript);
 	
 	Result postWebMessageAsString(final @NotNull String messageToWebView);
 	
-	int consumeScript();
+	Result consumeScript();
 	
 	boolean terminate();
 	

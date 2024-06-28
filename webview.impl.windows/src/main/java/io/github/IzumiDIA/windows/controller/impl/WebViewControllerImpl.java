@@ -4,6 +4,7 @@ import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.controller.WebViewController;
 import io.github.IzumiDIA.listener.WindowOnCloseListener;
 import io.github.IzumiDIA.listener.WindowOnDestroyListener;
+import io.github.IzumiDIA.windows.impl.HResult;
 import io.github.IzumiDIA.windows.impl.WebViewWindowImpl;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jetbrains.annotations.NotNull;
@@ -17,8 +18,6 @@ import org.jextract.tagRECT;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.util.Optional;
-
-import static io.github.IzumiDIA.windows.builder.impl.WebViewBuilderImpl.S_OK;
 
 public class WebViewControllerImpl extends WindowsNativeObject implements WebViewController, WNDPROC.Function {
 	public static final int
@@ -62,15 +61,17 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 	}
 	
 	@Override
-	public int putBounds(final @NotNull PlatformWindow platformWindow) {
+	public HResult putBounds(final @NotNull PlatformWindow platformWindow) {
 		if ( this.isControllerExisting() ) {
 			platformWindow.getClientRect(this.bounds);
-			return put_Bounds.invoke(
-					ICoreWebView2ControllerVtbl.put_Bounds(this.webviewControllerlpVtbl),
-					this.webviewController,
-					this.bounds
+			return HResult.warpResult(
+					put_Bounds.invoke(
+							ICoreWebView2ControllerVtbl.put_Bounds(this.webviewControllerlpVtbl),
+							this.webviewController,
+							this.bounds
+					)
 			);
-		}else return S_OK;
+		}else return HResult.S_OK.SINGLETON;
 	}
 	
 	private int putBounds(final MemorySegment hWnd) {
@@ -101,7 +102,7 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
 			case EXECUTE_SCRIPT -> {
-				return this.webViewWindow.consumeScript();
+				return this.webViewWindow.consumeScript().value();
 			}
 			default -> {
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);

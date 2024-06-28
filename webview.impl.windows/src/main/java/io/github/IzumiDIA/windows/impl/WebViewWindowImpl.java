@@ -45,17 +45,19 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	}
 	
 	@Override
-	public int executeScript(final @NotNull String javascript) {
+	public HResult executeScript(final @NotNull String javascript) {
 		final var webview2Pointer = this.webview2_PP.get(ADDRESS_LAYOUT, 0);
-		return ICoreWebView2Vtbl.ExecuteScript.invoke(
-				ICoreWebView2Vtbl.ExecuteScript(
-						ICoreWebView2.lpVtbl(webview2Pointer)
-				),
-				webview2Pointer,
-				this.allocateString(
-						javascript
-				),
-				MemorySegment.NULL
+		return HResult.warpResult(
+				ICoreWebView2Vtbl.ExecuteScript.invoke(
+						ICoreWebView2Vtbl.ExecuteScript(
+								ICoreWebView2.lpVtbl(webview2Pointer)
+						),
+						webview2Pointer,
+						this.allocateString(
+								javascript
+						),
+						MemorySegment.NULL
+				)
 		);
 	}
 	
@@ -81,7 +83,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	}
 	
 	@Override
-	public int consumeScript() {
+	public HResult consumeScript() {
 		return this.executeScript(this.scriptExecutionQueue.remove());
 	}
 	
