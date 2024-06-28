@@ -644,98 +644,6 @@ public class Windows {
         }
     }
 
-    private static class GetEnvironmentStringsW {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("GetEnvironmentStringsW"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * LPWCH GetEnvironmentStringsW()
-     * }
-     */
-    public static FunctionDescriptor GetEnvironmentStringsW$descriptor() {
-        return GetEnvironmentStringsW.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * LPWCH GetEnvironmentStringsW()
-     * }
-     */
-    public static MethodHandle GetEnvironmentStringsW$handle() {
-        return GetEnvironmentStringsW.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * LPWCH GetEnvironmentStringsW()
-     * }
-     */
-    public static MemorySegment GetEnvironmentStringsW() {
-        var mh$ = GetEnvironmentStringsW.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("GetEnvironmentStringsW");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class FreeEnvironmentStringsW {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
-            Windows.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("FreeEnvironmentStringsW"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * BOOL FreeEnvironmentStringsW(LPWCH penv)
-     * }
-     */
-    public static FunctionDescriptor FreeEnvironmentStringsW$descriptor() {
-        return FreeEnvironmentStringsW.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * BOOL FreeEnvironmentStringsW(LPWCH penv)
-     * }
-     */
-    public static MethodHandle FreeEnvironmentStringsW$handle() {
-        return FreeEnvironmentStringsW.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * BOOL FreeEnvironmentStringsW(LPWCH penv)
-     * }
-     */
-    public static int FreeEnvironmentStringsW(MemorySegment penv) {
-        var mh$ = FreeEnvironmentStringsW.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("FreeEnvironmentStringsW", penv);
-            }
-            return (int)mh$.invokeExact(penv);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
     private static class CreateFileW {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             Windows.C_POINTER,
@@ -1033,7 +941,7 @@ public class Windows {
 
     private static class SetFilePointerEx {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_POINTER,
             _LARGE_INTEGER.layout(),
             Windows.C_POINTER,
@@ -1069,13 +977,13 @@ public class Windows {
      * BOOL SetFilePointerEx(HANDLE hFile, LARGE_INTEGER liDistanceToMove, PLARGE_INTEGER lpNewFilePointer, DWORD dwMoveMethod)
      * }
      */
-    public static int SetFilePointerEx(MemorySegment hFile, MemorySegment liDistanceToMove, MemorySegment lpNewFilePointer, int dwMoveMethod) {
+    public static boolean SetFilePointerEx(MemorySegment hFile, MemorySegment liDistanceToMove, MemorySegment lpNewFilePointer, int dwMoveMethod) {
         var mh$ = SetFilePointerEx.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("SetFilePointerEx", hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
             }
-            return (int)mh$.invokeExact(hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
+            return (boolean)mh$.invokeExact(hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2248,51 +2156,6 @@ public class Windows {
         }
     }
 
-    private static class GetCurrentProcessId {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_LONG    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("GetCurrentProcessId"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * DWORD GetCurrentProcessId()
-     * }
-     */
-    public static FunctionDescriptor GetCurrentProcessId$descriptor() {
-        return GetCurrentProcessId.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * DWORD GetCurrentProcessId()
-     * }
-     */
-    public static MethodHandle GetCurrentProcessId$handle() {
-        return GetCurrentProcessId.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * DWORD GetCurrentProcessId()
-     * }
-     */
-    public static int GetCurrentProcessId() {
-        var mh$ = GetCurrentProcessId.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("GetCurrentProcessId");
-            }
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
     private static class ExitProcess {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
             Windows.C_INT
@@ -2334,54 +2197,6 @@ public class Windows {
                 traceDowncall("ExitProcess", uExitCode);
             }
             mh$.invokeExact(uExitCode);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class TerminateProcess {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    Windows.findOrThrow("TerminateProcess"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * BOOL TerminateProcess(HANDLE hProcess, UINT uExitCode)
-     * }
-     */
-    public static FunctionDescriptor TerminateProcess$descriptor() {
-        return TerminateProcess.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * BOOL TerminateProcess(HANDLE hProcess, UINT uExitCode)
-     * }
-     */
-    public static MethodHandle TerminateProcess$handle() {
-        return TerminateProcess.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * BOOL TerminateProcess(HANDLE hProcess, UINT uExitCode)
-     * }
-     */
-    public static int TerminateProcess(MemorySegment hProcess, int uExitCode) {
-        var mh$ = TerminateProcess.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("TerminateProcess", hProcess, uExitCode);
-            }
-            return (int)mh$.invokeExact(hProcess, uExitCode);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4205,7 +4020,7 @@ public class Windows {
 
     private static class SetProcessDpiAwarenessContext {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            Windows.C_INT,
+            Windows.C_BOOL,
             Windows.C_POINTER
         );
 
@@ -4238,13 +4053,13 @@ public class Windows {
      * BOOL SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT value)
      * }
      */
-    public static int SetProcessDpiAwarenessContext(MemorySegment value) {
+    public static boolean SetProcessDpiAwarenessContext(MemorySegment value) {
         var mh$ = SetProcessDpiAwarenessContext.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("SetProcessDpiAwarenessContext", value);
             }
-            return (int)mh$.invokeExact(value);
+            return (boolean)mh$.invokeExact(value);
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
