@@ -1036,7 +1036,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_NavigationStarting$layout() {
+    public static AddressLayout add_NavigationStarting$layout() {
         return add_NavigationStarting$LAYOUT;
     }
 
@@ -1048,7 +1048,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_NavigationStarting$offset() {
+    public static long add_NavigationStarting$offset() {
         return add_NavigationStarting$OFFSET;
     }
 
@@ -1135,7 +1135,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_NavigationStarting$layout() {
+    public static AddressLayout remove_NavigationStarting$layout() {
         return remove_NavigationStarting$LAYOUT;
     }
 
@@ -1147,7 +1147,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_NavigationStarting$offset() {
+    public static long remove_NavigationStarting$offset() {
         return remove_NavigationStarting$OFFSET;
     }
 
@@ -1235,7 +1235,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_ContentLoading$layout() {
+    public static AddressLayout add_ContentLoading$layout() {
         return add_ContentLoading$LAYOUT;
     }
 
@@ -1247,7 +1247,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_ContentLoading$offset() {
+    public static long add_ContentLoading$offset() {
         return add_ContentLoading$OFFSET;
     }
 
@@ -1334,7 +1334,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_ContentLoading$layout() {
+    public static AddressLayout remove_ContentLoading$layout() {
         return remove_ContentLoading$LAYOUT;
     }
 
@@ -1346,7 +1346,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_ContentLoading$offset() {
+    public static long remove_ContentLoading$offset() {
         return remove_ContentLoading$OFFSET;
     }
 
@@ -1434,7 +1434,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_SourceChanged$layout() {
+    public static AddressLayout add_SourceChanged$layout() {
         return add_SourceChanged$LAYOUT;
     }
 
@@ -1533,7 +1533,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_SourceChanged$layout() {
+    public static AddressLayout remove_SourceChanged$layout() {
         return remove_SourceChanged$LAYOUT;
     }
 
@@ -1545,7 +1545,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_SourceChanged$offset() {
+    public static long remove_SourceChanged$offset() {
         return remove_SourceChanged$OFFSET;
     }
 
@@ -1633,7 +1633,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_HistoryChanged$layout() {
+    public static AddressLayout add_HistoryChanged$layout() {
         return add_HistoryChanged$LAYOUT;
     }
 
@@ -1645,7 +1645,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_HistoryChanged$offset() {
+    public static long add_HistoryChanged$offset() {
         return add_HistoryChanged$OFFSET;
     }
 
@@ -1732,7 +1732,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_HistoryChanged$layout() {
+    public static AddressLayout remove_HistoryChanged$layout() {
         return remove_HistoryChanged$LAYOUT;
     }
 
@@ -1744,7 +1744,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_HistoryChanged$offset() {
+    public static long remove_HistoryChanged$offset() {
         return remove_HistoryChanged$OFFSET;
     }
 
@@ -1832,7 +1832,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_NavigationCompleted$layout() {
+    public static AddressLayout add_NavigationCompleted$layout() {
         return add_NavigationCompleted$LAYOUT;
     }
 
@@ -1844,7 +1844,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_NavigationCompleted$offset() {
+    public static long add_NavigationCompleted$offset() {
         return add_NavigationCompleted$OFFSET;
     }
 
@@ -1931,7 +1931,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_NavigationCompleted$layout() {
+    public static AddressLayout remove_NavigationCompleted$layout() {
         return remove_NavigationCompleted$LAYOUT;
     }
 
@@ -1943,7 +1943,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_NavigationCompleted$offset() {
+    public static long remove_NavigationCompleted$offset() {
         return remove_NavigationCompleted$OFFSET;
     }
 
@@ -2031,7 +2031,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_FrameNavigationStarting$layout() {
+    public static AddressLayout add_FrameNavigationStarting$layout() {
         return add_FrameNavigationStarting$LAYOUT;
     }
 
@@ -2043,7 +2043,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_FrameNavigationStarting$offset() {
+    public static long add_FrameNavigationStarting$offset() {
         return add_FrameNavigationStarting$OFFSET;
     }
 
@@ -2130,7 +2130,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_FrameNavigationStarting$layout() {
+    public static AddressLayout remove_FrameNavigationStarting$layout() {
         return remove_FrameNavigationStarting$LAYOUT;
     }
 
@@ -2142,7 +2142,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_FrameNavigationStarting$offset() {
+    public static long remove_FrameNavigationStarting$offset() {
         return remove_FrameNavigationStarting$OFFSET;
     }
 
@@ -2242,7 +2242,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_FrameNavigationCompleted$offset() {
+    public static long add_FrameNavigationCompleted$offset() {
         return add_FrameNavigationCompleted$OFFSET;
     }
 
@@ -2329,7 +2329,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_FrameNavigationCompleted$layout() {
+    public static AddressLayout remove_FrameNavigationCompleted$layout() {
         return remove_FrameNavigationCompleted$LAYOUT;
     }
 
@@ -2341,7 +2341,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_FrameNavigationCompleted$offset() {
+    public static long remove_FrameNavigationCompleted$offset() {
         return remove_FrameNavigationCompleted$OFFSET;
     }
 
@@ -2429,7 +2429,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_ScriptDialogOpening$layout() {
+    public static AddressLayout add_ScriptDialogOpening$layout() {
         return add_ScriptDialogOpening$LAYOUT;
     }
 
@@ -2441,7 +2441,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_ScriptDialogOpening$offset() {
+    public static long add_ScriptDialogOpening$offset() {
         return add_ScriptDialogOpening$OFFSET;
     }
 
@@ -2528,7 +2528,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_ScriptDialogOpening$layout() {
+    public static AddressLayout remove_ScriptDialogOpening$layout() {
         return remove_ScriptDialogOpening$LAYOUT;
     }
 
@@ -2540,7 +2540,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_ScriptDialogOpening$offset() {
+    public static long remove_ScriptDialogOpening$offset() {
         return remove_ScriptDialogOpening$OFFSET;
     }
 
@@ -2628,7 +2628,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_PermissionRequested$layout() {
+    public static AddressLayout add_PermissionRequested$layout() {
         return add_PermissionRequested$LAYOUT;
     }
 
@@ -2640,7 +2640,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_PermissionRequested$offset() {
+    public static long add_PermissionRequested$offset() {
         return add_PermissionRequested$OFFSET;
     }
 
@@ -2727,7 +2727,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_PermissionRequested$layout() {
+    public static AddressLayout remove_PermissionRequested$layout() {
         return remove_PermissionRequested$LAYOUT;
     }
 
@@ -2739,7 +2739,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_PermissionRequested$offset() {
+    public static long remove_PermissionRequested$offset() {
         return remove_PermissionRequested$OFFSET;
     }
 
@@ -2827,7 +2827,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_ProcessFailed$layout() {
+    public static AddressLayout add_ProcessFailed$layout() {
         return add_ProcessFailed$LAYOUT;
     }
 
@@ -2839,7 +2839,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_ProcessFailed$offset() {
+    public static long add_ProcessFailed$offset() {
         return add_ProcessFailed$OFFSET;
     }
 
@@ -2926,7 +2926,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_ProcessFailed$layout() {
+    public static AddressLayout remove_ProcessFailed$layout() {
         return remove_ProcessFailed$LAYOUT;
     }
 
@@ -2938,7 +2938,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_ProcessFailed$offset() {
+    public static long remove_ProcessFailed$offset() {
         return remove_ProcessFailed$OFFSET;
     }
 
@@ -3026,7 +3026,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddScriptToExecuteOnDocumentCreated$layout() {
+    public static AddressLayout AddScriptToExecuteOnDocumentCreated$layout() {
         return AddScriptToExecuteOnDocumentCreated$LAYOUT;
     }
 
@@ -3038,7 +3038,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long AddScriptToExecuteOnDocumentCreated$offset() {
+    public static long AddScriptToExecuteOnDocumentCreated$offset() {
         return AddScriptToExecuteOnDocumentCreated$OFFSET;
     }
 
@@ -3125,7 +3125,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$layout() {
+    public static AddressLayout RemoveScriptToExecuteOnDocumentCreated$layout() {
         return RemoveScriptToExecuteOnDocumentCreated$LAYOUT;
     }
 
@@ -3137,7 +3137,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final long RemoveScriptToExecuteOnDocumentCreated$offset() {
+    public static long RemoveScriptToExecuteOnDocumentCreated$offset() {
         return RemoveScriptToExecuteOnDocumentCreated$OFFSET;
     }
 
@@ -3225,7 +3225,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout ExecuteScript$layout() {
+    public static AddressLayout ExecuteScript$layout() {
         return ExecuteScript$LAYOUT;
     }
 
@@ -3237,7 +3237,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long ExecuteScript$offset() {
+    public static long ExecuteScript$offset() {
         return ExecuteScript$OFFSET;
     }
 
@@ -4021,7 +4021,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_BrowserProcessId$layout() {
+    public static AddressLayout get_BrowserProcessId$layout() {
         return get_BrowserProcessId$LAYOUT;
     }
 
@@ -4033,7 +4033,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
      * }
      */
-    public static final long get_BrowserProcessId$offset() {
+    public static long get_BrowserProcessId$offset() {
         return get_BrowserProcessId$OFFSET;
     }
 
@@ -4120,7 +4120,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_CanGoBack$layout() {
+    public static AddressLayout get_CanGoBack$layout() {
         return get_CanGoBack$LAYOUT;
     }
 
@@ -4132,7 +4132,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_CanGoBack$offset() {
+    public static long get_CanGoBack$offset() {
         return get_CanGoBack$OFFSET;
     }
 
@@ -4219,7 +4219,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_CanGoForward$layout() {
+    public static AddressLayout get_CanGoForward$layout() {
         return get_CanGoForward$LAYOUT;
     }
 
@@ -4231,7 +4231,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_CanGoForward$offset() {
+    public static long get_CanGoForward$offset() {
         return get_CanGoForward$OFFSET;
     }
 
@@ -4317,7 +4317,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout GoBack$layout() {
+    public static AddressLayout GoBack$layout() {
         return GoBack$LAYOUT;
     }
 
@@ -4329,7 +4329,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long GoBack$offset() {
+    public static long GoBack$offset() {
         return GoBack$OFFSET;
     }
 
@@ -4415,7 +4415,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout GoForward$layout() {
+    public static AddressLayout GoForward$layout() {
         return GoForward$LAYOUT;
     }
 
@@ -4427,7 +4427,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long GoForward$offset() {
+    public static long GoForward$offset() {
         return GoForward$OFFSET;
     }
 
@@ -4515,7 +4515,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout GetDevToolsProtocolEventReceiver$layout() {
+    public static AddressLayout GetDevToolsProtocolEventReceiver$layout() {
         return GetDevToolsProtocolEventReceiver$LAYOUT;
     }
 
@@ -4527,7 +4527,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
      * }
      */
-    public static final long GetDevToolsProtocolEventReceiver$offset() {
+    public static long GetDevToolsProtocolEventReceiver$offset() {
         return GetDevToolsProtocolEventReceiver$OFFSET;
     }
 
@@ -4613,7 +4613,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Stop$layout() {
+    public static AddressLayout Stop$layout() {
         return Stop$LAYOUT;
     }
 
@@ -4625,7 +4625,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long Stop$offset() {
+    public static long Stop$offset() {
         return Stop$OFFSET;
     }
 
@@ -4713,7 +4713,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_NewWindowRequested$layout() {
+    public static AddressLayout add_NewWindowRequested$layout() {
         return add_NewWindowRequested$LAYOUT;
     }
 
@@ -4725,7 +4725,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_NewWindowRequested$offset() {
+    public static long add_NewWindowRequested$offset() {
         return add_NewWindowRequested$OFFSET;
     }
 
@@ -4812,7 +4812,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_NewWindowRequested$layout() {
+    public static AddressLayout remove_NewWindowRequested$layout() {
         return remove_NewWindowRequested$LAYOUT;
     }
 
@@ -5407,7 +5407,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout OpenDevToolsWindow$layout() {
+    public static AddressLayout OpenDevToolsWindow$layout() {
         return OpenDevToolsWindow$LAYOUT;
     }
 
@@ -5419,7 +5419,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long OpenDevToolsWindow$offset() {
+    public static long OpenDevToolsWindow$offset() {
         return OpenDevToolsWindow$OFFSET;
     }
 
@@ -5705,7 +5705,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_ContainsFullScreenElement$layout() {
+    public static AddressLayout get_ContainsFullScreenElement$layout() {
         return get_ContainsFullScreenElement$LAYOUT;
     }
 
@@ -5717,7 +5717,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_ContainsFullScreenElement$offset() {
+    public static long get_ContainsFullScreenElement$offset() {
         return get_ContainsFullScreenElement$OFFSET;
     }
 
@@ -5805,7 +5805,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_WebResourceRequested$layout() {
+    public static AddressLayout add_WebResourceRequested$layout() {
         return add_WebResourceRequested$LAYOUT;
     }
 
@@ -5817,7 +5817,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_WebResourceRequested$offset() {
+    public static long add_WebResourceRequested$offset() {
         return add_WebResourceRequested$OFFSET;
     }
 
@@ -5904,7 +5904,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_WebResourceRequested$layout() {
+    public static AddressLayout remove_WebResourceRequested$layout() {
         return remove_WebResourceRequested$LAYOUT;
     }
 
@@ -5916,7 +5916,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_WebResourceRequested$offset() {
+    public static long remove_WebResourceRequested$offset() {
         return remove_WebResourceRequested$OFFSET;
     }
 
@@ -6004,7 +6004,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddWebResourceRequestedFilter$layout() {
+    public static AddressLayout AddWebResourceRequestedFilter$layout() {
         return AddWebResourceRequestedFilter$LAYOUT;
     }
 
@@ -6016,7 +6016,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
      * }
      */
-    public static final long AddWebResourceRequestedFilter$offset() {
+    public static long AddWebResourceRequestedFilter$offset() {
         return AddWebResourceRequestedFilter$OFFSET;
     }
 
@@ -6104,7 +6104,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout RemoveWebResourceRequestedFilter$layout() {
+    public static AddressLayout RemoveWebResourceRequestedFilter$layout() {
         return RemoveWebResourceRequestedFilter$LAYOUT;
     }
 
@@ -6116,7 +6116,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
      * }
      */
-    public static final long RemoveWebResourceRequestedFilter$offset() {
+    public static long RemoveWebResourceRequestedFilter$offset() {
         return RemoveWebResourceRequestedFilter$OFFSET;
     }
 
@@ -6204,7 +6204,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_WindowCloseRequested$layout() {
+    public static AddressLayout add_WindowCloseRequested$layout() {
         return add_WindowCloseRequested$LAYOUT;
     }
 
@@ -6216,7 +6216,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_WindowCloseRequested$offset() {
+    public static long add_WindowCloseRequested$offset() {
         return add_WindowCloseRequested$OFFSET;
     }
 
@@ -6303,7 +6303,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_WindowCloseRequested$layout() {
+    public static AddressLayout remove_WindowCloseRequested$layout() {
         return remove_WindowCloseRequested$LAYOUT;
     }
 
@@ -6315,7 +6315,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_WindowCloseRequested$offset() {
+    public static long remove_WindowCloseRequested$offset() {
         return remove_WindowCloseRequested$OFFSET;
     }
 
@@ -6403,7 +6403,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_WebResourceResponseReceived$layout() {
+    public static AddressLayout add_WebResourceResponseReceived$layout() {
         return add_WebResourceResponseReceived$LAYOUT;
     }
 
@@ -6415,7 +6415,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_WebResourceResponseReceived$offset() {
+    public static long add_WebResourceResponseReceived$offset() {
         return add_WebResourceResponseReceived$OFFSET;
     }
 
@@ -6502,7 +6502,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_WebResourceResponseReceived$layout() {
+    public static AddressLayout remove_WebResourceResponseReceived$layout() {
         return remove_WebResourceResponseReceived$LAYOUT;
     }
 
@@ -6514,7 +6514,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_WebResourceResponseReceived$offset() {
+    public static long remove_WebResourceResponseReceived$offset() {
         return remove_WebResourceResponseReceived$OFFSET;
     }
 
@@ -6601,7 +6601,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout NavigateWithWebResourceRequest$layout() {
+    public static AddressLayout NavigateWithWebResourceRequest$layout() {
         return NavigateWithWebResourceRequest$LAYOUT;
     }
 
@@ -6613,7 +6613,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
      * }
      */
-    public static final long NavigateWithWebResourceRequest$offset() {
+    public static long NavigateWithWebResourceRequest$offset() {
         return NavigateWithWebResourceRequest$OFFSET;
     }
 
@@ -6701,7 +6701,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_DOMContentLoaded$layout() {
+    public static AddressLayout add_DOMContentLoaded$layout() {
         return add_DOMContentLoaded$LAYOUT;
     }
 
@@ -6713,7 +6713,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_DOMContentLoaded$offset() {
+    public static long add_DOMContentLoaded$offset() {
         return add_DOMContentLoaded$OFFSET;
     }
 
@@ -6800,7 +6800,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_DOMContentLoaded$layout() {
+    public static AddressLayout remove_DOMContentLoaded$layout() {
         return remove_DOMContentLoaded$LAYOUT;
     }
 
@@ -6812,7 +6812,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_DOMContentLoaded$offset() {
+    public static long remove_DOMContentLoaded$offset() {
         return remove_DOMContentLoaded$OFFSET;
     }
 
@@ -6899,7 +6899,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_CookieManager$layout() {
+    public static AddressLayout get_CookieManager$layout() {
         return get_CookieManager$LAYOUT;
     }
 
@@ -6911,7 +6911,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
      * }
      */
-    public static final long get_CookieManager$offset() {
+    public static long get_CookieManager$offset() {
         return get_CookieManager$OFFSET;
     }
 
@@ -6998,7 +6998,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_Environment$layout() {
+    public static AddressLayout get_Environment$layout() {
         return get_Environment$LAYOUT;
     }
 
@@ -7010,7 +7010,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
      * }
      */
-    public static final long get_Environment$offset() {
+    public static long get_Environment$offset() {
         return get_Environment$OFFSET;
     }
 
@@ -7097,7 +7097,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout TrySuspend$layout() {
+    public static AddressLayout TrySuspend$layout() {
         return TrySuspend$LAYOUT;
     }
 
@@ -7109,7 +7109,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long TrySuspend$offset() {
+    public static long TrySuspend$offset() {
         return TrySuspend$OFFSET;
     }
 
@@ -7195,7 +7195,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Resume$layout() {
+    public static AddressLayout Resume$layout() {
         return Resume$LAYOUT;
     }
 
@@ -7207,7 +7207,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long Resume$offset() {
+    public static long Resume$offset() {
         return Resume$OFFSET;
     }
 
@@ -7294,7 +7294,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_IsSuspended$layout() {
+    public static AddressLayout get_IsSuspended$layout() {
         return get_IsSuspended$LAYOUT;
     }
 
@@ -7306,7 +7306,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_IsSuspended$offset() {
+    public static long get_IsSuspended$offset() {
         return get_IsSuspended$OFFSET;
     }
 
@@ -7395,7 +7395,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout SetVirtualHostNameToFolderMapping$layout() {
+    public static AddressLayout SetVirtualHostNameToFolderMapping$layout() {
         return SetVirtualHostNameToFolderMapping$LAYOUT;
     }
 
@@ -7793,7 +7793,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_DownloadStarting$layout() {
+    public static AddressLayout add_DownloadStarting$layout() {
         return add_DownloadStarting$LAYOUT;
     }
 
@@ -7805,7 +7805,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_DownloadStarting$offset() {
+    public static long add_DownloadStarting$offset() {
         return add_DownloadStarting$OFFSET;
     }
 
@@ -7892,7 +7892,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_DownloadStarting$layout() {
+    public static AddressLayout remove_DownloadStarting$layout() {
         return remove_DownloadStarting$LAYOUT;
     }
 
@@ -7904,7 +7904,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_DownloadStarting$offset() {
+    public static long remove_DownloadStarting$offset() {
         return remove_DownloadStarting$OFFSET;
     }
 
@@ -7992,7 +7992,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_ClientCertificateRequested$layout() {
+    public static AddressLayout add_ClientCertificateRequested$layout() {
         return add_ClientCertificateRequested$LAYOUT;
     }
 
@@ -8004,7 +8004,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_ClientCertificateRequested$offset() {
+    public static long add_ClientCertificateRequested$offset() {
         return add_ClientCertificateRequested$OFFSET;
     }
 
@@ -8091,7 +8091,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_ClientCertificateRequested$layout() {
+    public static AddressLayout remove_ClientCertificateRequested$layout() {
         return remove_ClientCertificateRequested$LAYOUT;
     }
 
@@ -8103,7 +8103,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_ClientCertificateRequested$offset() {
+    public static long remove_ClientCertificateRequested$offset() {
         return remove_ClientCertificateRequested$OFFSET;
     }
 
@@ -8189,7 +8189,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout OpenTaskManagerWindow$layout() {
+    public static AddressLayout OpenTaskManagerWindow$layout() {
         return OpenTaskManagerWindow$LAYOUT;
     }
 
@@ -8201,7 +8201,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long OpenTaskManagerWindow$offset() {
+    public static long OpenTaskManagerWindow$offset() {
         return OpenTaskManagerWindow$OFFSET;
     }
 
@@ -11368,7 +11368,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_FaviconUri$layout() {
+    public static AddressLayout get_FaviconUri$layout() {
         return get_FaviconUri$LAYOUT;
     }
 
@@ -11380,7 +11380,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final long get_FaviconUri$offset() {
+    public static long get_FaviconUri$offset() {
         return get_FaviconUri$OFFSET;
     }
 
@@ -11468,7 +11468,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout GetFavicon$layout() {
+    public static AddressLayout GetFavicon$layout() {
         return GetFavicon$LAYOUT;
     }
 
@@ -11480,7 +11480,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long GetFavicon$offset() {
+    public static long GetFavicon$offset() {
         return GetFavicon$OFFSET;
     }
 
@@ -11568,7 +11568,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout Print$layout() {
+    public static AddressLayout Print$layout() {
         return Print$LAYOUT;
     }
 
@@ -11580,7 +11580,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long Print$offset() {
+    public static long Print$offset() {
         return Print$OFFSET;
     }
 
@@ -11667,7 +11667,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout ShowPrintUI$layout() {
+    public static AddressLayout ShowPrintUI$layout() {
         return ShowPrintUI$LAYOUT;
     }
 
@@ -11679,7 +11679,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
      * }
      */
-    public static final long ShowPrintUI$offset() {
+    public static long ShowPrintUI$offset() {
         return ShowPrintUI$OFFSET;
     }
 
@@ -11767,7 +11767,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout PrintToPdfStream$layout() {
+    public static AddressLayout PrintToPdfStream$layout() {
         return PrintToPdfStream$LAYOUT;
     }
 
@@ -11779,7 +11779,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long PrintToPdfStream$offset() {
+    public static long PrintToPdfStream$offset() {
         return PrintToPdfStream$OFFSET;
     }
 
@@ -11868,7 +11868,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout PostSharedBufferToScript$layout() {
+    public static AddressLayout PostSharedBufferToScript$layout() {
         return PostSharedBufferToScript$LAYOUT;
     }
 
@@ -11880,7 +11880,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final long PostSharedBufferToScript$offset() {
+    public static long PostSharedBufferToScript$offset() {
         return PostSharedBufferToScript$OFFSET;
     }
 
@@ -11968,7 +11968,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_LaunchingExternalUriScheme$layout() {
+    public static AddressLayout add_LaunchingExternalUriScheme$layout() {
         return add_LaunchingExternalUriScheme$LAYOUT;
     }
 
@@ -11980,7 +11980,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_LaunchingExternalUriScheme$offset() {
+    public static long add_LaunchingExternalUriScheme$offset() {
         return add_LaunchingExternalUriScheme$OFFSET;
     }
 
@@ -12067,7 +12067,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_LaunchingExternalUriScheme$layout() {
+    public static AddressLayout remove_LaunchingExternalUriScheme$layout() {
         return remove_LaunchingExternalUriScheme$LAYOUT;
     }
 
@@ -12079,7 +12079,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_LaunchingExternalUriScheme$offset() {
+    public static long remove_LaunchingExternalUriScheme$offset() {
         return remove_LaunchingExternalUriScheme$OFFSET;
     }
 
@@ -12166,7 +12166,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_MemoryUsageTargetLevel$layout() {
+    public static AddressLayout get_MemoryUsageTargetLevel$layout() {
         return get_MemoryUsageTargetLevel$LAYOUT;
     }
 
@@ -12178,7 +12178,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_MemoryUsageTargetLevel$offset() {
+    public static long get_MemoryUsageTargetLevel$offset() {
         return get_MemoryUsageTargetLevel$OFFSET;
     }
 
@@ -12265,7 +12265,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout put_MemoryUsageTargetLevel$layout() {
+    public static AddressLayout put_MemoryUsageTargetLevel$layout() {
         return put_MemoryUsageTargetLevel$LAYOUT;
     }
 
@@ -12277,7 +12277,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
      * }
      */
-    public static final long put_MemoryUsageTargetLevel$offset() {
+    public static long put_MemoryUsageTargetLevel$offset() {
         return put_MemoryUsageTargetLevel$OFFSET;
     }
 
@@ -12364,7 +12364,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_FrameId$layout() {
+    public static AddressLayout get_FrameId$layout() {
         return get_FrameId$LAYOUT;
     }
 
@@ -12376,7 +12376,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
      * }
      */
-    public static final long get_FrameId$offset() {
+    public static long get_FrameId$offset() {
         return get_FrameId$OFFSET;
     }
 
@@ -12464,7 +12464,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout ExecuteScriptWithResult$layout() {
+    public static AddressLayout ExecuteScriptWithResult$layout() {
         return ExecuteScriptWithResult$LAYOUT;
     }
 
@@ -12476,7 +12476,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
      * }
      */
-    public static final long ExecuteScriptWithResult$offset() {
+    public static long ExecuteScriptWithResult$offset() {
         return ExecuteScriptWithResult$OFFSET;
     }
 
@@ -12565,7 +12565,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddWebResourceRequestedFilterWithRequestSourceKinds$layout() {
+    public static AddressLayout AddWebResourceRequestedFilterWithRequestSourceKinds$layout() {
         return AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT;
     }
 
@@ -12577,7 +12577,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
      * }
      */
-    public static final long AddWebResourceRequestedFilterWithRequestSourceKinds$offset() {
+    public static long AddWebResourceRequestedFilterWithRequestSourceKinds$offset() {
         return AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET;
     }
 
@@ -12666,7 +12666,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout RemoveWebResourceRequestedFilterWithRequestSourceKinds$layout() {
+    public static AddressLayout RemoveWebResourceRequestedFilterWithRequestSourceKinds$layout() {
         return RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT;
     }
 
@@ -12678,7 +12678,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
      * }
      */
-    public static final long RemoveWebResourceRequestedFilterWithRequestSourceKinds$offset() {
+    public static long RemoveWebResourceRequestedFilterWithRequestSourceKinds$offset() {
         return RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET;
     }
 
