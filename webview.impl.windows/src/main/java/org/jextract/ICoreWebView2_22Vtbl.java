@@ -5110,7 +5110,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_DocumentTitle$layout() {
+    public static AddressLayout get_DocumentTitle$layout() {
         return get_DocumentTitle$LAYOUT;
     }
 
@@ -5122,7 +5122,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
      * }
      */
-    public static final long get_DocumentTitle$offset() {
+    public static long get_DocumentTitle$offset() {
         return get_DocumentTitle$OFFSET;
     }
 
@@ -5210,7 +5210,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout AddHostObjectToScript$layout() {
+    public static AddressLayout AddHostObjectToScript$layout() {
         return AddHostObjectToScript$LAYOUT;
     }
 
@@ -5222,7 +5222,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
      * }
      */
-    public static final long AddHostObjectToScript$offset() {
+    public static long AddHostObjectToScript$offset() {
         return AddHostObjectToScript$OFFSET;
     }
 
@@ -5309,7 +5309,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout RemoveHostObjectFromScript$layout() {
+    public static AddressLayout RemoveHostObjectFromScript$layout() {
         return RemoveHostObjectFromScript$LAYOUT;
     }
 
@@ -5321,7 +5321,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
      * }
      */
-    public static final long RemoveHostObjectFromScript$offset() {
+    public static long RemoveHostObjectFromScript$offset() {
         return RemoveHostObjectFromScript$OFFSET;
     }
 
@@ -5507,7 +5507,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_ContainsFullScreenElementChanged$layout() {
+    public static AddressLayout add_ContainsFullScreenElementChanged$layout() {
         return add_ContainsFullScreenElementChanged$LAYOUT;
     }
 
@@ -5519,7 +5519,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_ContainsFullScreenElementChanged$offset() {
+    public static long add_ContainsFullScreenElementChanged$offset() {
         return add_ContainsFullScreenElementChanged$OFFSET;
     }
 
@@ -5606,7 +5606,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_ContainsFullScreenElementChanged$layout() {
+    public static AddressLayout remove_ContainsFullScreenElementChanged$layout() {
         return remove_ContainsFullScreenElementChanged$LAYOUT;
     }
 
@@ -5618,7 +5618,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_ContainsFullScreenElementChanged$offset() {
+    public static long remove_ContainsFullScreenElementChanged$offset() {
         return remove_ContainsFullScreenElementChanged$OFFSET;
     }
 
@@ -7594,7 +7594,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_FrameCreated$layout() {
+    public static AddressLayout add_FrameCreated$layout() {
         return add_FrameCreated$LAYOUT;
     }
 
@@ -7606,7 +7606,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_FrameCreated$offset() {
+    public static long add_FrameCreated$offset() {
         return add_FrameCreated$OFFSET;
     }
 
@@ -7693,7 +7693,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_FrameCreated$layout() {
+    public static AddressLayout remove_FrameCreated$layout() {
         return remove_FrameCreated$LAYOUT;
     }
 
@@ -7705,7 +7705,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_FrameCreated$offset() {
+    public static long remove_FrameCreated$offset() {
         return remove_FrameCreated$OFFSET;
     }
 
@@ -8402,7 +8402,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_IsMutedChanged$offset() {
+    public static long add_IsMutedChanged$offset() {
         return add_IsMutedChanged$OFFSET;
     }
 
@@ -8489,7 +8489,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_IsMutedChanged$layout() {
+    public static AddressLayout remove_IsMutedChanged$layout() {
         return remove_IsMutedChanged$LAYOUT;
     }
 
@@ -8501,7 +8501,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_IsMutedChanged$offset() {
+    public static long remove_IsMutedChanged$offset() {
         return remove_IsMutedChanged$OFFSET;
     }
 
@@ -8588,7 +8588,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_IsMuted$layout() {
+    public static AddressLayout get_IsMuted$layout() {
         return get_IsMuted$LAYOUT;
     }
 
@@ -8600,7 +8600,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_IsMuted$offset() {
+    public static long get_IsMuted$offset() {
         return get_IsMuted$OFFSET;
     }
 
@@ -8687,7 +8687,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout put_IsMuted$layout() {
+    public static AddressLayout put_IsMuted$layout() {
         return put_IsMuted$LAYOUT;
     }
 
@@ -8699,7 +8699,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
      * }
      */
-    public static final long put_IsMuted$offset() {
+    public static long put_IsMuted$offset() {
         return put_IsMuted$OFFSET;
     }
 
@@ -8985,7 +8985,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_IsDocumentPlayingAudio$layout() {
+    public static AddressLayout get_IsDocumentPlayingAudio$layout() {
         return get_IsDocumentPlayingAudio$LAYOUT;
     }
 
@@ -8997,7 +8997,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_IsDocumentPlayingAudio$offset() {
+    public static long get_IsDocumentPlayingAudio$offset() {
         return get_IsDocumentPlayingAudio$OFFSET;
     }
 
@@ -9085,7 +9085,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout add_IsDefaultDownloadDialogOpenChanged$layout() {
+    public static AddressLayout add_IsDefaultDownloadDialogOpenChanged$layout() {
         return add_IsDefaultDownloadDialogOpenChanged$LAYOUT;
     }
 
@@ -9097,7 +9097,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
      * }
      */
-    public static final long add_IsDefaultDownloadDialogOpenChanged$offset() {
+    public static long add_IsDefaultDownloadDialogOpenChanged$offset() {
         return add_IsDefaultDownloadDialogOpenChanged$OFFSET;
     }
 
@@ -9184,7 +9184,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout remove_IsDefaultDownloadDialogOpenChanged$layout() {
+    public static AddressLayout remove_IsDefaultDownloadDialogOpenChanged$layout() {
         return remove_IsDefaultDownloadDialogOpenChanged$LAYOUT;
     }
 
@@ -9196,7 +9196,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
      * }
      */
-    public static final long remove_IsDefaultDownloadDialogOpenChanged$offset() {
+    public static long remove_IsDefaultDownloadDialogOpenChanged$offset() {
         return remove_IsDefaultDownloadDialogOpenChanged$OFFSET;
     }
 
@@ -9283,7 +9283,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_IsDefaultDownloadDialogOpen$layout() {
+    public static AddressLayout get_IsDefaultDownloadDialogOpen$layout() {
         return get_IsDefaultDownloadDialogOpen$LAYOUT;
     }
 
@@ -9295,7 +9295,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
      * }
      */
-    public static final long get_IsDefaultDownloadDialogOpen$offset() {
+    public static long get_IsDefaultDownloadDialogOpen$offset() {
         return get_IsDefaultDownloadDialogOpen$OFFSET;
     }
 
@@ -9381,7 +9381,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout OpenDefaultDownloadDialog$layout() {
+    public static AddressLayout OpenDefaultDownloadDialog$layout() {
         return OpenDefaultDownloadDialog$LAYOUT;
     }
 
@@ -9393,7 +9393,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long OpenDefaultDownloadDialog$offset() {
+    public static long OpenDefaultDownloadDialog$offset() {
         return OpenDefaultDownloadDialog$OFFSET;
     }
 
@@ -9479,7 +9479,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout CloseDefaultDownloadDialog$layout() {
+    public static AddressLayout CloseDefaultDownloadDialog$layout() {
         return CloseDefaultDownloadDialog$LAYOUT;
     }
 
@@ -9491,7 +9491,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
      * }
      */
-    public static final long CloseDefaultDownloadDialog$offset() {
+    public static long CloseDefaultDownloadDialog$offset() {
         return CloseDefaultDownloadDialog$OFFSET;
     }
 
@@ -9578,7 +9578,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_DefaultDownloadDialogCornerAlignment$layout() {
+    public static AddressLayout get_DefaultDownloadDialogCornerAlignment$layout() {
         return get_DefaultDownloadDialogCornerAlignment$LAYOUT;
     }
 
@@ -9590,7 +9590,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
      * }
      */
-    public static final long get_DefaultDownloadDialogCornerAlignment$offset() {
+    public static long get_DefaultDownloadDialogCornerAlignment$offset() {
         return get_DefaultDownloadDialogCornerAlignment$OFFSET;
     }
 
@@ -9677,7 +9677,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout put_DefaultDownloadDialogCornerAlignment$layout() {
+    public static AddressLayout put_DefaultDownloadDialogCornerAlignment$layout() {
         return put_DefaultDownloadDialogCornerAlignment$LAYOUT;
     }
 
@@ -9689,7 +9689,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
      * }
      */
-    public static final long put_DefaultDownloadDialogCornerAlignment$offset() {
+    public static long put_DefaultDownloadDialogCornerAlignment$offset() {
         return put_DefaultDownloadDialogCornerAlignment$OFFSET;
     }
 
@@ -9776,7 +9776,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout get_DefaultDownloadDialogMargin$layout() {
+    public static AddressLayout get_DefaultDownloadDialogMargin$layout() {
         return get_DefaultDownloadDialogMargin$LAYOUT;
     }
 
@@ -9788,7 +9788,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
      * }
      */
-    public static final long get_DefaultDownloadDialogMargin$offset() {
+    public static long get_DefaultDownloadDialogMargin$offset() {
         return get_DefaultDownloadDialogMargin$OFFSET;
     }
 
@@ -9875,7 +9875,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
      * }
      */
-    public static final AddressLayout put_DefaultDownloadDialogMargin$layout() {
+    public static AddressLayout put_DefaultDownloadDialogMargin$layout() {
         return put_DefaultDownloadDialogMargin$LAYOUT;
     }
 
@@ -9887,7 +9887,7 @@ public class ICoreWebView2_22Vtbl {
      * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
      * }
      */
-    public static final long put_DefaultDownloadDialogMargin$offset() {
+    public static long put_DefaultDownloadDialogMargin$offset() {
         return put_DefaultDownloadDialogMargin$OFFSET;
     }
 
