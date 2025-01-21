@@ -18,8 +18,8 @@ package org.jextract;
  * }
  */
 public class LARGE_INTEGER extends _LARGE_INTEGER {
-
-    LARGE_INTEGER() {
-        // Should not be called directly
-    }
+	
+	LARGE_INTEGER() {
+		// Should not be called directly
+	}
 }

@@ -13,8 +13,8 @@ package org.jextract;
  * }
  */
 public class GUID extends _GUID {
-
-    GUID() {
-        // Should not be called directly
-    }
+	
+	GUID() {
+		// Should not be called directly
+	}
 }

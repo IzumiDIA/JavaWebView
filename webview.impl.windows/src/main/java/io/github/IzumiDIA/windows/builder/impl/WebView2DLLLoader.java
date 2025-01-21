@@ -24,11 +24,11 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 	private final MethodHandle createWebViewEnvironmentWithOptionsInternal;
 	private final Arena confinedArena = Arena.ofConfined();
 	
-	@SuppressWarnings({"HardcodedFileSeparator", "preview"})
+	@SuppressWarnings({"HardcodedFileSeparator"})
 	WebView2DLLLoader(final Arena arena) {
 		super(arena);
 		final var embeddedBrowserWebViewSymbolLookup = SymbolLookup.libraryLookup(
-				STR."\{this.queryRegValue()}\\EBWebView\\x64\\EmbeddedBrowserWebView",
+				this.queryRegValue() + "\\EBWebView\\x64\\EmbeddedBrowserWebView",
 				this.confinedArena
 		);
 		this.createWebViewEnvironmentWithOptionsInternal =
@@ -67,17 +67,17 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 	}
 	
 	private String queryRegValue() {
-		try (var regValueQueryer = new RegValueQueryer()) {
-			return regValueQueryer.get();
+		try (var regValueQuerier = new RegValueQuerier()) {
+			return regValueQuerier.get();
 		}
 	}
 	
-	@SuppressWarnings({"preview", "NegativeIntConstantInLongContext", "SpellCheckingInspection"})
-	private final class RegValueQueryer implements Supplier<String>, AutoCloseable {
+	@SuppressWarnings({"NegativeIntConstantInLongContext", "SpellCheckingInspection"})
+	private final class RegValueQuerier implements Supplier<String>, AutoCloseable {
 		private static final AddressLayout layout = ValueLayout.ADDRESS.withTargetLayout(HKEY__.layout());
 		private final MemorySegment phkResultPointer;
 		
-		private RegValueQueryer() {
+		private RegValueQuerier() {
 			this.phkResultPointer = WebView2DLLLoader.this.confinedArena.allocateFrom(
 					layout,
 					HKEY__.allocate(WebView2DLLLoader.this.confinedArena)
@@ -90,7 +90,7 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 					this.phkResultPointer
 			);
 			if ( LSTATUS != 0 ) {
-				throw new IllegalStateException(STR."Unable to RegOpenKeyExW. LSTATUS: \{LSTATUS}");
+				throw new IllegalStateException("Unable to RegOpenKeyExW. LSTATUS: " + LSTATUS);
 			}
 		}
 		
@@ -108,14 +108,14 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 					cbPathPointer
 			);
 			if ( LSTATUS == 0 ) return path.getString(0, StandardCharsets.UTF_16LE);
-			else throw new IllegalStateException(STR."Unable to RegQueryValueExW. LSTATUS: \{LSTATUS}");
+			else throw new IllegalStateException("Unable to RegQueryValueExW. LSTATUS: " + LSTATUS);
 		}
 		
 		@Override
 		public void close() {
 			final var LSTATUS = Windows.RegCloseKey(this.phkResultPointer.get(layout, 0));
 			if ( LSTATUS != 0 ) {
-				throw new IllegalStateException(STR."Unable to RegCloseKey. LSTATUS: \{LSTATUS}");
+				throw new IllegalStateException("Unable to RegCloseKey. LSTATUS: " + LSTATUS);
 			}
 		}
 	}

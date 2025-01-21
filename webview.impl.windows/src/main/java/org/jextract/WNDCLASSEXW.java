@@ -21,8 +21,8 @@ package org.jextract;
  * }
  */
 public class WNDCLASSEXW extends tagWNDCLASSEXW {
-
-    WNDCLASSEXW() {
-        // Should not be called directly
-    }
+	
+	WNDCLASSEXW() {
+		// Should not be called directly
+	}
 }

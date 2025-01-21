@@ -15,7 +15,7 @@
 	</modules>
 	
 	<properties>
-		<java.version>22</java.version>
+		<java.version>23</java.version>
 		<author.nickname>Izumi Ryuu</author.nickname>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -29,7 +29,7 @@
 			<dependency>
 				<groupId>org.jetbrains</groupId>
 				<artifactId>annotations</artifactId>
-				<version>24.1.0</version>
+				<version>[26.0.1,)</version>
 				<scope>compile</scope>
 			</dependency>
 		</dependencies>
@@ -55,7 +55,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.4.1</version>
+					<version>3.4.2</version>
 					<configuration>
 						<archive>
 							<manifestEntries>

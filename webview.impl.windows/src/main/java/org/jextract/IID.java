@@ -8,8 +8,8 @@ package org.jextract;
  * }
  */
 public class IID extends _GUID {
-
-    IID() {
-        // Should not be called directly
-    }
+	
+	IID() {
+		// Should not be called directly
+	}
 }

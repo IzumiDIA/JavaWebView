@@ -11,8 +11,8 @@ package org.jextract;
  * }
  */
 public class POINT extends tagPOINT {
-
-    POINT() {
-        // Should not be called directly
-    }
+	
+	POINT() {
+		// Should not be called directly
+	}
 }

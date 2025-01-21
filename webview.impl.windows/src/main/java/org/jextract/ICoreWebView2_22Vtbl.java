@@ -140,12609 +140,12609 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * }
  */
 public class ICoreWebView2_22Vtbl {
-
-    ICoreWebView2_22Vtbl() {
-        // Should not be called directly
-    }
-
-    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        Windows.C_POINTER.withName("QueryInterface"),
-        Windows.C_POINTER.withName("AddRef"),
-        Windows.C_POINTER.withName("Release"),
-        Windows.C_POINTER.withName("get_Settings"),
-        Windows.C_POINTER.withName("get_Source"),
-        Windows.C_POINTER.withName("Navigate"),
-        Windows.C_POINTER.withName("NavigateToString"),
-        Windows.C_POINTER.withName("add_NavigationStarting"),
-        Windows.C_POINTER.withName("remove_NavigationStarting"),
-        Windows.C_POINTER.withName("add_ContentLoading"),
-        Windows.C_POINTER.withName("remove_ContentLoading"),
-        Windows.C_POINTER.withName("add_SourceChanged"),
-        Windows.C_POINTER.withName("remove_SourceChanged"),
-        Windows.C_POINTER.withName("add_HistoryChanged"),
-        Windows.C_POINTER.withName("remove_HistoryChanged"),
-        Windows.C_POINTER.withName("add_NavigationCompleted"),
-        Windows.C_POINTER.withName("remove_NavigationCompleted"),
-        Windows.C_POINTER.withName("add_FrameNavigationStarting"),
-        Windows.C_POINTER.withName("remove_FrameNavigationStarting"),
-        Windows.C_POINTER.withName("add_FrameNavigationCompleted"),
-        Windows.C_POINTER.withName("remove_FrameNavigationCompleted"),
-        Windows.C_POINTER.withName("add_ScriptDialogOpening"),
-        Windows.C_POINTER.withName("remove_ScriptDialogOpening"),
-        Windows.C_POINTER.withName("add_PermissionRequested"),
-        Windows.C_POINTER.withName("remove_PermissionRequested"),
-        Windows.C_POINTER.withName("add_ProcessFailed"),
-        Windows.C_POINTER.withName("remove_ProcessFailed"),
-        Windows.C_POINTER.withName("AddScriptToExecuteOnDocumentCreated"),
-        Windows.C_POINTER.withName("RemoveScriptToExecuteOnDocumentCreated"),
-        Windows.C_POINTER.withName("ExecuteScript"),
-        Windows.C_POINTER.withName("CapturePreview"),
-        Windows.C_POINTER.withName("Reload"),
-        Windows.C_POINTER.withName("PostWebMessageAsJson"),
-        Windows.C_POINTER.withName("PostWebMessageAsString"),
-        Windows.C_POINTER.withName("add_WebMessageReceived"),
-        Windows.C_POINTER.withName("remove_WebMessageReceived"),
-        Windows.C_POINTER.withName("CallDevToolsProtocolMethod"),
-        Windows.C_POINTER.withName("get_BrowserProcessId"),
-        Windows.C_POINTER.withName("get_CanGoBack"),
-        Windows.C_POINTER.withName("get_CanGoForward"),
-        Windows.C_POINTER.withName("GoBack"),
-        Windows.C_POINTER.withName("GoForward"),
-        Windows.C_POINTER.withName("GetDevToolsProtocolEventReceiver"),
-        Windows.C_POINTER.withName("Stop"),
-        Windows.C_POINTER.withName("add_NewWindowRequested"),
-        Windows.C_POINTER.withName("remove_NewWindowRequested"),
-        Windows.C_POINTER.withName("add_DocumentTitleChanged"),
-        Windows.C_POINTER.withName("remove_DocumentTitleChanged"),
-        Windows.C_POINTER.withName("get_DocumentTitle"),
-        Windows.C_POINTER.withName("AddHostObjectToScript"),
-        Windows.C_POINTER.withName("RemoveHostObjectFromScript"),
-        Windows.C_POINTER.withName("OpenDevToolsWindow"),
-        Windows.C_POINTER.withName("add_ContainsFullScreenElementChanged"),
-        Windows.C_POINTER.withName("remove_ContainsFullScreenElementChanged"),
-        Windows.C_POINTER.withName("get_ContainsFullScreenElement"),
-        Windows.C_POINTER.withName("add_WebResourceRequested"),
-        Windows.C_POINTER.withName("remove_WebResourceRequested"),
-        Windows.C_POINTER.withName("AddWebResourceRequestedFilter"),
-        Windows.C_POINTER.withName("RemoveWebResourceRequestedFilter"),
-        Windows.C_POINTER.withName("add_WindowCloseRequested"),
-        Windows.C_POINTER.withName("remove_WindowCloseRequested"),
-        Windows.C_POINTER.withName("add_WebResourceResponseReceived"),
-        Windows.C_POINTER.withName("remove_WebResourceResponseReceived"),
-        Windows.C_POINTER.withName("NavigateWithWebResourceRequest"),
-        Windows.C_POINTER.withName("add_DOMContentLoaded"),
-        Windows.C_POINTER.withName("remove_DOMContentLoaded"),
-        Windows.C_POINTER.withName("get_CookieManager"),
-        Windows.C_POINTER.withName("get_Environment"),
-        Windows.C_POINTER.withName("TrySuspend"),
-        Windows.C_POINTER.withName("Resume"),
-        Windows.C_POINTER.withName("get_IsSuspended"),
-        Windows.C_POINTER.withName("SetVirtualHostNameToFolderMapping"),
-        Windows.C_POINTER.withName("ClearVirtualHostNameToFolderMapping"),
-        Windows.C_POINTER.withName("add_FrameCreated"),
-        Windows.C_POINTER.withName("remove_FrameCreated"),
-        Windows.C_POINTER.withName("add_DownloadStarting"),
-        Windows.C_POINTER.withName("remove_DownloadStarting"),
-        Windows.C_POINTER.withName("add_ClientCertificateRequested"),
-        Windows.C_POINTER.withName("remove_ClientCertificateRequested"),
-        Windows.C_POINTER.withName("OpenTaskManagerWindow"),
-        Windows.C_POINTER.withName("PrintToPdf"),
-        Windows.C_POINTER.withName("add_IsMutedChanged"),
-        Windows.C_POINTER.withName("remove_IsMutedChanged"),
-        Windows.C_POINTER.withName("get_IsMuted"),
-        Windows.C_POINTER.withName("put_IsMuted"),
-        Windows.C_POINTER.withName("add_IsDocumentPlayingAudioChanged"),
-        Windows.C_POINTER.withName("remove_IsDocumentPlayingAudioChanged"),
-        Windows.C_POINTER.withName("get_IsDocumentPlayingAudio"),
-        Windows.C_POINTER.withName("add_IsDefaultDownloadDialogOpenChanged"),
-        Windows.C_POINTER.withName("remove_IsDefaultDownloadDialogOpenChanged"),
-        Windows.C_POINTER.withName("get_IsDefaultDownloadDialogOpen"),
-        Windows.C_POINTER.withName("OpenDefaultDownloadDialog"),
-        Windows.C_POINTER.withName("CloseDefaultDownloadDialog"),
-        Windows.C_POINTER.withName("get_DefaultDownloadDialogCornerAlignment"),
-        Windows.C_POINTER.withName("put_DefaultDownloadDialogCornerAlignment"),
-        Windows.C_POINTER.withName("get_DefaultDownloadDialogMargin"),
-        Windows.C_POINTER.withName("put_DefaultDownloadDialogMargin"),
-        Windows.C_POINTER.withName("add_BasicAuthenticationRequested"),
-        Windows.C_POINTER.withName("remove_BasicAuthenticationRequested"),
-        Windows.C_POINTER.withName("CallDevToolsProtocolMethodForSession"),
-        Windows.C_POINTER.withName("add_ContextMenuRequested"),
-        Windows.C_POINTER.withName("remove_ContextMenuRequested"),
-        Windows.C_POINTER.withName("add_StatusBarTextChanged"),
-        Windows.C_POINTER.withName("remove_StatusBarTextChanged"),
-        Windows.C_POINTER.withName("get_StatusBarText"),
-        Windows.C_POINTER.withName("get_Profile"),
-        Windows.C_POINTER.withName("add_ServerCertificateErrorDetected"),
-        Windows.C_POINTER.withName("remove_ServerCertificateErrorDetected"),
-        Windows.C_POINTER.withName("ClearServerCertificateErrorActions"),
-        Windows.C_POINTER.withName("add_FaviconChanged"),
-        Windows.C_POINTER.withName("remove_FaviconChanged"),
-        Windows.C_POINTER.withName("get_FaviconUri"),
-        Windows.C_POINTER.withName("GetFavicon"),
-        Windows.C_POINTER.withName("Print"),
-        Windows.C_POINTER.withName("ShowPrintUI"),
-        Windows.C_POINTER.withName("PrintToPdfStream"),
-        Windows.C_POINTER.withName("PostSharedBufferToScript"),
-        Windows.C_POINTER.withName("add_LaunchingExternalUriScheme"),
-        Windows.C_POINTER.withName("remove_LaunchingExternalUriScheme"),
-        Windows.C_POINTER.withName("get_MemoryUsageTargetLevel"),
-        Windows.C_POINTER.withName("put_MemoryUsageTargetLevel"),
-        Windows.C_POINTER.withName("get_FrameId"),
-        Windows.C_POINTER.withName("ExecuteScriptWithResult"),
-        Windows.C_POINTER.withName("AddWebResourceRequestedFilterWithRequestSourceKinds"),
-        Windows.C_POINTER.withName("RemoveWebResourceRequestedFilterWithRequestSourceKinds")
-    ).withName("ICoreWebView2_22Vtbl");
-
-    /**
-     * The layout of this struct
-     */
-    public static GroupLayout layout() {
-        return $LAYOUT;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
-     * }
-     */
-    public static class QueryInterface {
-
-        QueryInterface() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(QueryInterface.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout QueryInterface$layout() {
-        return QueryInterface$LAYOUT;
-    }
-
-    private static final long QueryInterface$OFFSET = 0;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
-     * }
-     */
-    public static long QueryInterface$offset() {
-        return QueryInterface$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment QueryInterface(MemorySegment struct) {
-        return struct.get(QueryInterface$LAYOUT, QueryInterface$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
-     * }
-     */
-    public static void QueryInterface(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(QueryInterface$LAYOUT, QueryInterface$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class AddRef {
-
-        AddRef() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(AddRef.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(AddRef.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout AddRef$layout() {
-        return AddRef$LAYOUT;
-    }
-
-    private static final long AddRef$OFFSET = 8;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long AddRef$offset() {
-        return AddRef$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment AddRef(MemorySegment struct) {
-        return struct.get(AddRef$LAYOUT, AddRef$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void AddRef(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(AddRef$LAYOUT, AddRef$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class Release {
-
-        Release() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(Release.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(Release.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout Release$layout() {
-        return Release$LAYOUT;
-    }
-
-    private static final long Release$OFFSET = 16;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long Release$offset() {
-        return Release$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment Release(MemorySegment struct) {
-        return struct.get(Release$LAYOUT, Release$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void Release(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
-     * }
-     */
-    public static class get_Settings {
-
-        get_Settings() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_Settings.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_Settings.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_Settings$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Settings"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_Settings$layout() {
-        return get_Settings$LAYOUT;
-    }
-
-    private static final long get_Settings$OFFSET = 24;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
-     * }
-     */
-    public static long get_Settings$offset() {
-        return get_Settings$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_Settings(MemorySegment struct) {
-        return struct.get(get_Settings$LAYOUT, get_Settings$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
-     * }
-     */
-    public static void get_Settings(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_Settings$LAYOUT, get_Settings$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_Source {
-
-        get_Source() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_Source.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_Source.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Source"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_Source$layout() {
-        return get_Source$LAYOUT;
-    }
-
-    private static final long get_Source$OFFSET = 32;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_Source$offset() {
-        return get_Source$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_Source(MemorySegment struct) {
-        return struct.get(get_Source$LAYOUT, get_Source$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_Source(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_Source$LAYOUT, get_Source$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class Navigate {
-
-        Navigate() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(Navigate.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(Navigate.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout Navigate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Navigate"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout Navigate$layout() {
-        return Navigate$LAYOUT;
-    }
-
-    private static final long Navigate$OFFSET = 40;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static long Navigate$offset() {
-        return Navigate$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment Navigate(MemorySegment struct) {
-        return struct.get(Navigate$LAYOUT, Navigate$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void Navigate(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(Navigate$LAYOUT, Navigate$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class NavigateToString {
-
-        NavigateToString() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(NavigateToString.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(NavigateToString.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout NavigateToString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("NavigateToString"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout NavigateToString$layout() {
-        return NavigateToString$LAYOUT;
-    }
-
-    private static final long NavigateToString$OFFSET = 48;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static long NavigateToString$offset() {
-        return NavigateToString$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment NavigateToString(MemorySegment struct) {
-        return struct.get(NavigateToString$LAYOUT, NavigateToString$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void NavigateToString(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(NavigateToString$LAYOUT, NavigateToString$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_NavigationStarting {
-
-        add_NavigationStarting() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_NavigationStarting.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_NavigationStarting.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NavigationStarting"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_NavigationStarting$layout() {
-        return add_NavigationStarting$LAYOUT;
-    }
-
-    private static final long add_NavigationStarting$OFFSET = 56;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_NavigationStarting$offset() {
-        return add_NavigationStarting$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_NavigationStarting(MemorySegment struct) {
-        return struct.get(add_NavigationStarting$LAYOUT, add_NavigationStarting$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_NavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_NavigationStarting$LAYOUT, add_NavigationStarting$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_NavigationStarting {
-
-        remove_NavigationStarting() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NavigationStarting.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_NavigationStarting.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NavigationStarting"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_NavigationStarting$layout() {
-        return remove_NavigationStarting$LAYOUT;
-    }
-
-    private static final long remove_NavigationStarting$OFFSET = 64;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_NavigationStarting$offset() {
-        return remove_NavigationStarting$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_NavigationStarting(MemorySegment struct) {
-        return struct.get(remove_NavigationStarting$LAYOUT, remove_NavigationStarting$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_NavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_NavigationStarting$LAYOUT, remove_NavigationStarting$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ContentLoading {
-
-        add_ContentLoading() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContentLoading.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ContentLoading.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContentLoading"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_ContentLoading$layout() {
-        return add_ContentLoading$LAYOUT;
-    }
-
-    private static final long add_ContentLoading$OFFSET = 72;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_ContentLoading$offset() {
-        return add_ContentLoading$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ContentLoading(MemorySegment struct) {
-        return struct.get(add_ContentLoading$LAYOUT, add_ContentLoading$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ContentLoading(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ContentLoading$LAYOUT, add_ContentLoading$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ContentLoading {
-
-        remove_ContentLoading() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContentLoading.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ContentLoading.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContentLoading"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_ContentLoading$layout() {
-        return remove_ContentLoading$LAYOUT;
-    }
-
-    private static final long remove_ContentLoading$OFFSET = 80;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_ContentLoading$offset() {
-        return remove_ContentLoading$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ContentLoading(MemorySegment struct) {
-        return struct.get(remove_ContentLoading$LAYOUT, remove_ContentLoading$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ContentLoading(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ContentLoading$LAYOUT, remove_ContentLoading$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_SourceChanged {
-
-        add_SourceChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_SourceChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_SourceChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_SourceChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_SourceChanged$layout() {
-        return add_SourceChanged$LAYOUT;
-    }
-
-    private static final long add_SourceChanged$OFFSET = 88;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_SourceChanged$offset() {
-        return add_SourceChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_SourceChanged(MemorySegment struct) {
-        return struct.get(add_SourceChanged$LAYOUT, add_SourceChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_SourceChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_SourceChanged$LAYOUT, add_SourceChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_SourceChanged {
-
-        remove_SourceChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_SourceChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_SourceChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_SourceChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_SourceChanged$layout() {
-        return remove_SourceChanged$LAYOUT;
-    }
-
-    private static final long remove_SourceChanged$OFFSET = 96;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_SourceChanged$offset() {
-        return remove_SourceChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_SourceChanged(MemorySegment struct) {
-        return struct.get(remove_SourceChanged$LAYOUT, remove_SourceChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_SourceChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_SourceChanged$LAYOUT, remove_SourceChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_HistoryChanged {
-
-        add_HistoryChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_HistoryChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_HistoryChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_HistoryChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_HistoryChanged$layout() {
-        return add_HistoryChanged$LAYOUT;
-    }
-
-    private static final long add_HistoryChanged$OFFSET = 104;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_HistoryChanged$offset() {
-        return add_HistoryChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_HistoryChanged(MemorySegment struct) {
-        return struct.get(add_HistoryChanged$LAYOUT, add_HistoryChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_HistoryChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_HistoryChanged$LAYOUT, add_HistoryChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_HistoryChanged {
-
-        remove_HistoryChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_HistoryChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_HistoryChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_HistoryChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_HistoryChanged$layout() {
-        return remove_HistoryChanged$LAYOUT;
-    }
-
-    private static final long remove_HistoryChanged$OFFSET = 112;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_HistoryChanged$offset() {
-        return remove_HistoryChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_HistoryChanged(MemorySegment struct) {
-        return struct.get(remove_HistoryChanged$LAYOUT, remove_HistoryChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_HistoryChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_HistoryChanged$LAYOUT, remove_HistoryChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_NavigationCompleted {
-
-        add_NavigationCompleted() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_NavigationCompleted.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_NavigationCompleted.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NavigationCompleted"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_NavigationCompleted$layout() {
-        return add_NavigationCompleted$LAYOUT;
-    }
-
-    private static final long add_NavigationCompleted$OFFSET = 120;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_NavigationCompleted$offset() {
-        return add_NavigationCompleted$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_NavigationCompleted(MemorySegment struct) {
-        return struct.get(add_NavigationCompleted$LAYOUT, add_NavigationCompleted$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_NavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_NavigationCompleted$LAYOUT, add_NavigationCompleted$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_NavigationCompleted {
-
-        remove_NavigationCompleted() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NavigationCompleted.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_NavigationCompleted.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NavigationCompleted"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_NavigationCompleted$layout() {
-        return remove_NavigationCompleted$LAYOUT;
-    }
-
-    private static final long remove_NavigationCompleted$OFFSET = 128;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_NavigationCompleted$offset() {
-        return remove_NavigationCompleted$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_NavigationCompleted(MemorySegment struct) {
-        return struct.get(remove_NavigationCompleted$LAYOUT, remove_NavigationCompleted$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_NavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_NavigationCompleted$LAYOUT, remove_NavigationCompleted$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_FrameNavigationStarting {
-
-        add_FrameNavigationStarting() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameNavigationStarting.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_FrameNavigationStarting.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameNavigationStarting"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_FrameNavigationStarting$layout() {
-        return add_FrameNavigationStarting$LAYOUT;
-    }
-
-    private static final long add_FrameNavigationStarting$OFFSET = 136;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_FrameNavigationStarting$offset() {
-        return add_FrameNavigationStarting$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_FrameNavigationStarting(MemorySegment struct) {
-        return struct.get(add_FrameNavigationStarting$LAYOUT, add_FrameNavigationStarting$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_FrameNavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_FrameNavigationStarting$LAYOUT, add_FrameNavigationStarting$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_FrameNavigationStarting {
-
-        remove_FrameNavigationStarting() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameNavigationStarting.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_FrameNavigationStarting.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameNavigationStarting"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_FrameNavigationStarting$layout() {
-        return remove_FrameNavigationStarting$LAYOUT;
-    }
-
-    private static final long remove_FrameNavigationStarting$OFFSET = 144;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_FrameNavigationStarting$offset() {
-        return remove_FrameNavigationStarting$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_FrameNavigationStarting(MemorySegment struct) {
-        return struct.get(remove_FrameNavigationStarting$LAYOUT, remove_FrameNavigationStarting$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_FrameNavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_FrameNavigationStarting$LAYOUT, remove_FrameNavigationStarting$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_FrameNavigationCompleted {
-
-        add_FrameNavigationCompleted() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameNavigationCompleted.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_FrameNavigationCompleted.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameNavigationCompleted"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_FrameNavigationCompleted$layout() {
-        return add_FrameNavigationCompleted$LAYOUT;
-    }
-
-    private static final long add_FrameNavigationCompleted$OFFSET = 152;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_FrameNavigationCompleted$offset() {
-        return add_FrameNavigationCompleted$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_FrameNavigationCompleted(MemorySegment struct) {
-        return struct.get(add_FrameNavigationCompleted$LAYOUT, add_FrameNavigationCompleted$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_FrameNavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_FrameNavigationCompleted$LAYOUT, add_FrameNavigationCompleted$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_FrameNavigationCompleted {
-
-        remove_FrameNavigationCompleted() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameNavigationCompleted.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_FrameNavigationCompleted.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameNavigationCompleted"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_FrameNavigationCompleted$layout() {
-        return remove_FrameNavigationCompleted$LAYOUT;
-    }
-
-    private static final long remove_FrameNavigationCompleted$OFFSET = 160;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_FrameNavigationCompleted$offset() {
-        return remove_FrameNavigationCompleted$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_FrameNavigationCompleted(MemorySegment struct) {
-        return struct.get(remove_FrameNavigationCompleted$LAYOUT, remove_FrameNavigationCompleted$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_FrameNavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_FrameNavigationCompleted$LAYOUT, remove_FrameNavigationCompleted$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ScriptDialogOpening {
-
-        add_ScriptDialogOpening() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ScriptDialogOpening.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ScriptDialogOpening.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ScriptDialogOpening"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_ScriptDialogOpening$layout() {
-        return add_ScriptDialogOpening$LAYOUT;
-    }
-
-    private static final long add_ScriptDialogOpening$OFFSET = 168;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_ScriptDialogOpening$offset() {
-        return add_ScriptDialogOpening$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ScriptDialogOpening(MemorySegment struct) {
-        return struct.get(add_ScriptDialogOpening$LAYOUT, add_ScriptDialogOpening$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ScriptDialogOpening(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ScriptDialogOpening$LAYOUT, add_ScriptDialogOpening$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ScriptDialogOpening {
-
-        remove_ScriptDialogOpening() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ScriptDialogOpening.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ScriptDialogOpening.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ScriptDialogOpening"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_ScriptDialogOpening$layout() {
-        return remove_ScriptDialogOpening$LAYOUT;
-    }
-
-    private static final long remove_ScriptDialogOpening$OFFSET = 176;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_ScriptDialogOpening$offset() {
-        return remove_ScriptDialogOpening$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ScriptDialogOpening(MemorySegment struct) {
-        return struct.get(remove_ScriptDialogOpening$LAYOUT, remove_ScriptDialogOpening$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ScriptDialogOpening(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ScriptDialogOpening$LAYOUT, remove_ScriptDialogOpening$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_PermissionRequested {
-
-        add_PermissionRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_PermissionRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_PermissionRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_PermissionRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_PermissionRequested$layout() {
-        return add_PermissionRequested$LAYOUT;
-    }
-
-    private static final long add_PermissionRequested$OFFSET = 184;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_PermissionRequested$offset() {
-        return add_PermissionRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_PermissionRequested(MemorySegment struct) {
-        return struct.get(add_PermissionRequested$LAYOUT, add_PermissionRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_PermissionRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_PermissionRequested$LAYOUT, add_PermissionRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_PermissionRequested {
-
-        remove_PermissionRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_PermissionRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_PermissionRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_PermissionRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_PermissionRequested$layout() {
-        return remove_PermissionRequested$LAYOUT;
-    }
-
-    private static final long remove_PermissionRequested$OFFSET = 192;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_PermissionRequested$offset() {
-        return remove_PermissionRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_PermissionRequested(MemorySegment struct) {
-        return struct.get(remove_PermissionRequested$LAYOUT, remove_PermissionRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_PermissionRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_PermissionRequested$LAYOUT, remove_PermissionRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ProcessFailed {
-
-        add_ProcessFailed() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ProcessFailed.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ProcessFailed.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ProcessFailed"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_ProcessFailed$layout() {
-        return add_ProcessFailed$LAYOUT;
-    }
-
-    private static final long add_ProcessFailed$OFFSET = 200;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_ProcessFailed$offset() {
-        return add_ProcessFailed$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ProcessFailed(MemorySegment struct) {
-        return struct.get(add_ProcessFailed$LAYOUT, add_ProcessFailed$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ProcessFailed(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ProcessFailed$LAYOUT, add_ProcessFailed$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ProcessFailed {
-
-        remove_ProcessFailed() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ProcessFailed.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ProcessFailed.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ProcessFailed"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_ProcessFailed$layout() {
-        return remove_ProcessFailed$LAYOUT;
-    }
-
-    private static final long remove_ProcessFailed$OFFSET = 208;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_ProcessFailed$offset() {
-        return remove_ProcessFailed$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ProcessFailed(MemorySegment struct) {
-        return struct.get(remove_ProcessFailed$LAYOUT, remove_ProcessFailed$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ProcessFailed(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ProcessFailed$LAYOUT, remove_ProcessFailed$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class AddScriptToExecuteOnDocumentCreated {
-
-        AddScriptToExecuteOnDocumentCreated() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(AddScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(AddScriptToExecuteOnDocumentCreated.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout AddScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddScriptToExecuteOnDocumentCreated"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout AddScriptToExecuteOnDocumentCreated$layout() {
-        return AddScriptToExecuteOnDocumentCreated$LAYOUT;
-    }
-
-    private static final long AddScriptToExecuteOnDocumentCreated$OFFSET = 216;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long AddScriptToExecuteOnDocumentCreated$offset() {
-        return AddScriptToExecuteOnDocumentCreated$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment AddScriptToExecuteOnDocumentCreated(MemorySegment struct) {
-        return struct.get(AddScriptToExecuteOnDocumentCreated$LAYOUT, AddScriptToExecuteOnDocumentCreated$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void AddScriptToExecuteOnDocumentCreated(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(AddScriptToExecuteOnDocumentCreated$LAYOUT, AddScriptToExecuteOnDocumentCreated$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class RemoveScriptToExecuteOnDocumentCreated {
-
-        RemoveScriptToExecuteOnDocumentCreated() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(RemoveScriptToExecuteOnDocumentCreated.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveScriptToExecuteOnDocumentCreated"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout RemoveScriptToExecuteOnDocumentCreated$layout() {
-        return RemoveScriptToExecuteOnDocumentCreated$LAYOUT;
-    }
-
-    private static final long RemoveScriptToExecuteOnDocumentCreated$OFFSET = 224;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static long RemoveScriptToExecuteOnDocumentCreated$offset() {
-        return RemoveScriptToExecuteOnDocumentCreated$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment RemoveScriptToExecuteOnDocumentCreated(MemorySegment struct) {
-        return struct.get(RemoveScriptToExecuteOnDocumentCreated$LAYOUT, RemoveScriptToExecuteOnDocumentCreated$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void RemoveScriptToExecuteOnDocumentCreated(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(RemoveScriptToExecuteOnDocumentCreated$LAYOUT, RemoveScriptToExecuteOnDocumentCreated$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class ExecuteScript {
-
-        ExecuteScript() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(ExecuteScript.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(ExecuteScript.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout ExecuteScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ExecuteScript"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout ExecuteScript$layout() {
-        return ExecuteScript$LAYOUT;
-    }
-
-    private static final long ExecuteScript$OFFSET = 232;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long ExecuteScript$offset() {
-        return ExecuteScript$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment ExecuteScript(MemorySegment struct) {
-        return struct.get(ExecuteScript$LAYOUT, ExecuteScript$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void ExecuteScript(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(ExecuteScript$LAYOUT, ExecuteScript$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class CapturePreview {
-
-        CapturePreview() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(CapturePreview.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(CapturePreview.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout CapturePreview$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CapturePreview"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout CapturePreview$layout() {
-        return CapturePreview$LAYOUT;
-    }
-
-    private static final long CapturePreview$OFFSET = 240;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final long CapturePreview$offset() {
-        return CapturePreview$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment CapturePreview(MemorySegment struct) {
-        return struct.get(CapturePreview$LAYOUT, CapturePreview$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void CapturePreview(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(CapturePreview$LAYOUT, CapturePreview$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class Reload {
-
-        Reload() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(Reload.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(Reload.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout Reload$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Reload"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout Reload$layout() {
-        return Reload$LAYOUT;
-    }
-
-    private static final long Reload$OFFSET = 248;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static final long Reload$offset() {
-        return Reload$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment Reload(MemorySegment struct) {
-        return struct.get(Reload$LAYOUT, Reload$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void Reload(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(Reload$LAYOUT, Reload$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class PostWebMessageAsJson {
-
-        PostWebMessageAsJson() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(PostWebMessageAsJson.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(PostWebMessageAsJson.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout PostWebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostWebMessageAsJson"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout PostWebMessageAsJson$layout() {
-        return PostWebMessageAsJson$LAYOUT;
-    }
-
-    private static final long PostWebMessageAsJson$OFFSET = 256;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static final long PostWebMessageAsJson$offset() {
-        return PostWebMessageAsJson$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment PostWebMessageAsJson(MemorySegment struct) {
-        return struct.get(PostWebMessageAsJson$LAYOUT, PostWebMessageAsJson$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void PostWebMessageAsJson(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(PostWebMessageAsJson$LAYOUT, PostWebMessageAsJson$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class PostWebMessageAsString {
-
-        PostWebMessageAsString() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(PostWebMessageAsString.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(PostWebMessageAsString.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout PostWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostWebMessageAsString"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout PostWebMessageAsString$layout() {
-        return PostWebMessageAsString$LAYOUT;
-    }
-
-    private static final long PostWebMessageAsString$OFFSET = 264;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static final long PostWebMessageAsString$offset() {
-        return PostWebMessageAsString$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment PostWebMessageAsString(MemorySegment struct) {
-        return struct.get(PostWebMessageAsString$LAYOUT, PostWebMessageAsString$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void PostWebMessageAsString(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(PostWebMessageAsString$LAYOUT, PostWebMessageAsString$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_WebMessageReceived {
-
-        add_WebMessageReceived() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebMessageReceived.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_WebMessageReceived.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebMessageReceived"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_WebMessageReceived$layout() {
-        return add_WebMessageReceived$LAYOUT;
-    }
-
-    private static final long add_WebMessageReceived$OFFSET = 272;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_WebMessageReceived$offset() {
-        return add_WebMessageReceived$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_WebMessageReceived(MemorySegment struct) {
-        return struct.get(add_WebMessageReceived$LAYOUT, add_WebMessageReceived$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_WebMessageReceived(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_WebMessageReceived$LAYOUT, add_WebMessageReceived$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_WebMessageReceived {
-
-        remove_WebMessageReceived() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebMessageReceived.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_WebMessageReceived.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebMessageReceived"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_WebMessageReceived$layout() {
-        return remove_WebMessageReceived$LAYOUT;
-    }
-
-    private static final long remove_WebMessageReceived$OFFSET = 280;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_WebMessageReceived$offset() {
-        return remove_WebMessageReceived$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_WebMessageReceived(MemorySegment struct) {
-        return struct.get(remove_WebMessageReceived$LAYOUT, remove_WebMessageReceived$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_WebMessageReceived(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_WebMessageReceived$LAYOUT, remove_WebMessageReceived$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class CallDevToolsProtocolMethod {
-
-        CallDevToolsProtocolMethod() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(CallDevToolsProtocolMethod.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(CallDevToolsProtocolMethod.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout CallDevToolsProtocolMethod$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CallDevToolsProtocolMethod"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout CallDevToolsProtocolMethod$layout() {
-        return CallDevToolsProtocolMethod$LAYOUT;
-    }
-
-    private static final long CallDevToolsProtocolMethod$OFFSET = 288;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final long CallDevToolsProtocolMethod$offset() {
-        return CallDevToolsProtocolMethod$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment CallDevToolsProtocolMethod(MemorySegment struct) {
-        return struct.get(CallDevToolsProtocolMethod$LAYOUT, CallDevToolsProtocolMethod$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void CallDevToolsProtocolMethod(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(CallDevToolsProtocolMethod$LAYOUT, CallDevToolsProtocolMethod$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_BrowserProcessId {
-
-        get_BrowserProcessId() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_BrowserProcessId.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_BrowserProcessId.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_BrowserProcessId$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_BrowserProcessId"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_BrowserProcessId$layout() {
-        return get_BrowserProcessId$LAYOUT;
-    }
-
-    private static final long get_BrowserProcessId$OFFSET = 296;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_BrowserProcessId$offset() {
-        return get_BrowserProcessId$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_BrowserProcessId(MemorySegment struct) {
-        return struct.get(get_BrowserProcessId$LAYOUT, get_BrowserProcessId$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_BrowserProcessId(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_BrowserProcessId$LAYOUT, get_BrowserProcessId$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_CanGoBack {
-
-        get_CanGoBack() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_CanGoBack.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_CanGoBack.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_CanGoBack$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CanGoBack"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_CanGoBack$layout() {
-        return get_CanGoBack$LAYOUT;
-    }
-
-    private static final long get_CanGoBack$OFFSET = 304;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_CanGoBack$offset() {
-        return get_CanGoBack$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_CanGoBack(MemorySegment struct) {
-        return struct.get(get_CanGoBack$LAYOUT, get_CanGoBack$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_CanGoBack(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_CanGoBack$LAYOUT, get_CanGoBack$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_CanGoForward {
-
-        get_CanGoForward() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_CanGoForward.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_CanGoForward.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_CanGoForward$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CanGoForward"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_CanGoForward$layout() {
-        return get_CanGoForward$LAYOUT;
-    }
-
-    private static final long get_CanGoForward$OFFSET = 312;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_CanGoForward$offset() {
-        return get_CanGoForward$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_CanGoForward(MemorySegment struct) {
-        return struct.get(get_CanGoForward$LAYOUT, get_CanGoForward$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_CanGoForward(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_CanGoForward$LAYOUT, get_CanGoForward$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class GoBack {
-
-        GoBack() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(GoBack.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(GoBack.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout GoBack$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GoBack"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout GoBack$layout() {
-        return GoBack$LAYOUT;
-    }
-
-    private static final long GoBack$OFFSET = 320;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long GoBack$offset() {
-        return GoBack$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment GoBack(MemorySegment struct) {
-        return struct.get(GoBack$LAYOUT, GoBack$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void GoBack(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(GoBack$LAYOUT, GoBack$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class GoForward {
-
-        GoForward() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(GoForward.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(GoForward.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout GoForward$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GoForward"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout GoForward$layout() {
-        return GoForward$LAYOUT;
-    }
-
-    private static final long GoForward$OFFSET = 328;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long GoForward$offset() {
-        return GoForward$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment GoForward(MemorySegment struct) {
-        return struct.get(GoForward$LAYOUT, GoForward$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void GoForward(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(GoForward$LAYOUT, GoForward$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-     * }
-     */
-    public static class GetDevToolsProtocolEventReceiver {
-
-        GetDevToolsProtocolEventReceiver() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(GetDevToolsProtocolEventReceiver.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(GetDevToolsProtocolEventReceiver.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout GetDevToolsProtocolEventReceiver$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GetDevToolsProtocolEventReceiver"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout GetDevToolsProtocolEventReceiver$layout() {
-        return GetDevToolsProtocolEventReceiver$LAYOUT;
-    }
-
-    private static final long GetDevToolsProtocolEventReceiver$OFFSET = 336;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-     * }
-     */
-    public static long GetDevToolsProtocolEventReceiver$offset() {
-        return GetDevToolsProtocolEventReceiver$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment GetDevToolsProtocolEventReceiver(MemorySegment struct) {
-        return struct.get(GetDevToolsProtocolEventReceiver$LAYOUT, GetDevToolsProtocolEventReceiver$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-     * }
-     */
-    public static void GetDevToolsProtocolEventReceiver(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(GetDevToolsProtocolEventReceiver$LAYOUT, GetDevToolsProtocolEventReceiver$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class Stop {
-
-        Stop() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(Stop.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(Stop.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout Stop$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Stop"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout Stop$layout() {
-        return Stop$LAYOUT;
-    }
-
-    private static final long Stop$OFFSET = 344;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long Stop$offset() {
-        return Stop$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment Stop(MemorySegment struct) {
-        return struct.get(Stop$LAYOUT, Stop$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void Stop(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(Stop$LAYOUT, Stop$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_NewWindowRequested {
-
-        add_NewWindowRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_NewWindowRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_NewWindowRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NewWindowRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_NewWindowRequested$layout() {
-        return add_NewWindowRequested$LAYOUT;
-    }
-
-    private static final long add_NewWindowRequested$OFFSET = 352;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_NewWindowRequested$offset() {
-        return add_NewWindowRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_NewWindowRequested(MemorySegment struct) {
-        return struct.get(add_NewWindowRequested$LAYOUT, add_NewWindowRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_NewWindowRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_NewWindowRequested$LAYOUT, add_NewWindowRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_NewWindowRequested {
-
-        remove_NewWindowRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NewWindowRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_NewWindowRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NewWindowRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_NewWindowRequested$layout() {
-        return remove_NewWindowRequested$LAYOUT;
-    }
-
-    private static final long remove_NewWindowRequested$OFFSET = 360;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_NewWindowRequested$offset() {
-        return remove_NewWindowRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_NewWindowRequested(MemorySegment struct) {
-        return struct.get(remove_NewWindowRequested$LAYOUT, remove_NewWindowRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_NewWindowRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_NewWindowRequested$LAYOUT, remove_NewWindowRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_DocumentTitleChanged {
-
-        add_DocumentTitleChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_DocumentTitleChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_DocumentTitleChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DocumentTitleChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_DocumentTitleChanged$layout() {
-        return add_DocumentTitleChanged$LAYOUT;
-    }
-
-    private static final long add_DocumentTitleChanged$OFFSET = 368;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_DocumentTitleChanged$offset() {
-        return add_DocumentTitleChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_DocumentTitleChanged(MemorySegment struct) {
-        return struct.get(add_DocumentTitleChanged$LAYOUT, add_DocumentTitleChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_DocumentTitleChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_DocumentTitleChanged$LAYOUT, add_DocumentTitleChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_DocumentTitleChanged {
-
-        remove_DocumentTitleChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DocumentTitleChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_DocumentTitleChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DocumentTitleChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_DocumentTitleChanged$layout() {
-        return remove_DocumentTitleChanged$LAYOUT;
-    }
-
-    private static final long remove_DocumentTitleChanged$OFFSET = 376;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_DocumentTitleChanged$offset() {
-        return remove_DocumentTitleChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_DocumentTitleChanged(MemorySegment struct) {
-        return struct.get(remove_DocumentTitleChanged$LAYOUT, remove_DocumentTitleChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_DocumentTitleChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_DocumentTitleChanged$LAYOUT, remove_DocumentTitleChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_DocumentTitle {
-
-        get_DocumentTitle() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_DocumentTitle.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_DocumentTitle.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_DocumentTitle$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DocumentTitle"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_DocumentTitle$layout() {
-        return get_DocumentTitle$LAYOUT;
-    }
-
-    private static final long get_DocumentTitle$OFFSET = 384;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_DocumentTitle$offset() {
-        return get_DocumentTitle$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_DocumentTitle(MemorySegment struct) {
-        return struct.get(get_DocumentTitle$LAYOUT, get_DocumentTitle$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_DocumentTitle(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_DocumentTitle$LAYOUT, get_DocumentTitle$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-     * }
-     */
-    public static class AddHostObjectToScript {
-
-        AddHostObjectToScript() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(AddHostObjectToScript.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(AddHostObjectToScript.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout AddHostObjectToScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddHostObjectToScript"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout AddHostObjectToScript$layout() {
-        return AddHostObjectToScript$LAYOUT;
-    }
-
-    private static final long AddHostObjectToScript$OFFSET = 392;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-     * }
-     */
-    public static long AddHostObjectToScript$offset() {
-        return AddHostObjectToScript$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment AddHostObjectToScript(MemorySegment struct) {
-        return struct.get(AddHostObjectToScript$LAYOUT, AddHostObjectToScript$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-     * }
-     */
-    public static void AddHostObjectToScript(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(AddHostObjectToScript$LAYOUT, AddHostObjectToScript$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class RemoveHostObjectFromScript {
-
-        RemoveHostObjectFromScript() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveHostObjectFromScript.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(RemoveHostObjectFromScript.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout RemoveHostObjectFromScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveHostObjectFromScript"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout RemoveHostObjectFromScript$layout() {
-        return RemoveHostObjectFromScript$LAYOUT;
-    }
-
-    private static final long RemoveHostObjectFromScript$OFFSET = 400;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static long RemoveHostObjectFromScript$offset() {
-        return RemoveHostObjectFromScript$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment RemoveHostObjectFromScript(MemorySegment struct) {
-        return struct.get(RemoveHostObjectFromScript$LAYOUT, RemoveHostObjectFromScript$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void RemoveHostObjectFromScript(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(RemoveHostObjectFromScript$LAYOUT, RemoveHostObjectFromScript$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class OpenDevToolsWindow {
-
-        OpenDevToolsWindow() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(OpenDevToolsWindow.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(OpenDevToolsWindow.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout OpenDevToolsWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenDevToolsWindow"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout OpenDevToolsWindow$layout() {
-        return OpenDevToolsWindow$LAYOUT;
-    }
-
-    private static final long OpenDevToolsWindow$OFFSET = 408;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long OpenDevToolsWindow$offset() {
-        return OpenDevToolsWindow$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment OpenDevToolsWindow(MemorySegment struct) {
-        return struct.get(OpenDevToolsWindow$LAYOUT, OpenDevToolsWindow$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void OpenDevToolsWindow(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(OpenDevToolsWindow$LAYOUT, OpenDevToolsWindow$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ContainsFullScreenElementChanged {
-
-        add_ContainsFullScreenElementChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ContainsFullScreenElementChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContainsFullScreenElementChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_ContainsFullScreenElementChanged$layout() {
-        return add_ContainsFullScreenElementChanged$LAYOUT;
-    }
-
-    private static final long add_ContainsFullScreenElementChanged$OFFSET = 416;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_ContainsFullScreenElementChanged$offset() {
-        return add_ContainsFullScreenElementChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ContainsFullScreenElementChanged(MemorySegment struct) {
-        return struct.get(add_ContainsFullScreenElementChanged$LAYOUT, add_ContainsFullScreenElementChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ContainsFullScreenElementChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ContainsFullScreenElementChanged$LAYOUT, add_ContainsFullScreenElementChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ContainsFullScreenElementChanged {
-
-        remove_ContainsFullScreenElementChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ContainsFullScreenElementChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContainsFullScreenElementChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_ContainsFullScreenElementChanged$layout() {
-        return remove_ContainsFullScreenElementChanged$LAYOUT;
-    }
-
-    private static final long remove_ContainsFullScreenElementChanged$OFFSET = 424;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_ContainsFullScreenElementChanged$offset() {
-        return remove_ContainsFullScreenElementChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ContainsFullScreenElementChanged(MemorySegment struct) {
-        return struct.get(remove_ContainsFullScreenElementChanged$LAYOUT, remove_ContainsFullScreenElementChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ContainsFullScreenElementChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ContainsFullScreenElementChanged$LAYOUT, remove_ContainsFullScreenElementChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_ContainsFullScreenElement {
-
-        get_ContainsFullScreenElement() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_ContainsFullScreenElement.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_ContainsFullScreenElement.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_ContainsFullScreenElement$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_ContainsFullScreenElement"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_ContainsFullScreenElement$layout() {
-        return get_ContainsFullScreenElement$LAYOUT;
-    }
-
-    private static final long get_ContainsFullScreenElement$OFFSET = 432;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_ContainsFullScreenElement$offset() {
-        return get_ContainsFullScreenElement$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_ContainsFullScreenElement(MemorySegment struct) {
-        return struct.get(get_ContainsFullScreenElement$LAYOUT, get_ContainsFullScreenElement$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_ContainsFullScreenElement(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_ContainsFullScreenElement$LAYOUT, get_ContainsFullScreenElement$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_WebResourceRequested {
-
-        add_WebResourceRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebResourceRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_WebResourceRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebResourceRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_WebResourceRequested$layout() {
-        return add_WebResourceRequested$LAYOUT;
-    }
-
-    private static final long add_WebResourceRequested$OFFSET = 440;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_WebResourceRequested$offset() {
-        return add_WebResourceRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_WebResourceRequested(MemorySegment struct) {
-        return struct.get(add_WebResourceRequested$LAYOUT, add_WebResourceRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_WebResourceRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_WebResourceRequested$LAYOUT, add_WebResourceRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_WebResourceRequested {
-
-        remove_WebResourceRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebResourceRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_WebResourceRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebResourceRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_WebResourceRequested$layout() {
-        return remove_WebResourceRequested$LAYOUT;
-    }
-
-    private static final long remove_WebResourceRequested$OFFSET = 448;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_WebResourceRequested$offset() {
-        return remove_WebResourceRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_WebResourceRequested(MemorySegment struct) {
-        return struct.get(remove_WebResourceRequested$LAYOUT, remove_WebResourceRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_WebResourceRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_WebResourceRequested$LAYOUT, remove_WebResourceRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static class AddWebResourceRequestedFilter {
-
-        AddWebResourceRequestedFilter() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, int _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(AddWebResourceRequestedFilter.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(AddWebResourceRequestedFilter.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout AddWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddWebResourceRequestedFilter"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout AddWebResourceRequestedFilter$layout() {
-        return AddWebResourceRequestedFilter$LAYOUT;
-    }
-
-    private static final long AddWebResourceRequestedFilter$OFFSET = 456;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static long AddWebResourceRequestedFilter$offset() {
-        return AddWebResourceRequestedFilter$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment AddWebResourceRequestedFilter(MemorySegment struct) {
-        return struct.get(AddWebResourceRequestedFilter$LAYOUT, AddWebResourceRequestedFilter$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static void AddWebResourceRequestedFilter(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(AddWebResourceRequestedFilter$LAYOUT, AddWebResourceRequestedFilter$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static class RemoveWebResourceRequestedFilter {
-
-        RemoveWebResourceRequestedFilter() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, int _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveWebResourceRequestedFilter.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(RemoveWebResourceRequestedFilter.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout RemoveWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveWebResourceRequestedFilter"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout RemoveWebResourceRequestedFilter$layout() {
-        return RemoveWebResourceRequestedFilter$LAYOUT;
-    }
-
-    private static final long RemoveWebResourceRequestedFilter$OFFSET = 464;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static long RemoveWebResourceRequestedFilter$offset() {
-        return RemoveWebResourceRequestedFilter$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment RemoveWebResourceRequestedFilter(MemorySegment struct) {
-        return struct.get(RemoveWebResourceRequestedFilter$LAYOUT, RemoveWebResourceRequestedFilter$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-     * }
-     */
-    public static void RemoveWebResourceRequestedFilter(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(RemoveWebResourceRequestedFilter$LAYOUT, RemoveWebResourceRequestedFilter$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_WindowCloseRequested {
-
-        add_WindowCloseRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_WindowCloseRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_WindowCloseRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WindowCloseRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_WindowCloseRequested$layout() {
-        return add_WindowCloseRequested$LAYOUT;
-    }
-
-    private static final long add_WindowCloseRequested$OFFSET = 472;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_WindowCloseRequested$offset() {
-        return add_WindowCloseRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_WindowCloseRequested(MemorySegment struct) {
-        return struct.get(add_WindowCloseRequested$LAYOUT, add_WindowCloseRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_WindowCloseRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_WindowCloseRequested$LAYOUT, add_WindowCloseRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_WindowCloseRequested {
-
-        remove_WindowCloseRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WindowCloseRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_WindowCloseRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WindowCloseRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_WindowCloseRequested$layout() {
-        return remove_WindowCloseRequested$LAYOUT;
-    }
-
-    private static final long remove_WindowCloseRequested$OFFSET = 480;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_WindowCloseRequested$offset() {
-        return remove_WindowCloseRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_WindowCloseRequested(MemorySegment struct) {
-        return struct.get(remove_WindowCloseRequested$LAYOUT, remove_WindowCloseRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_WindowCloseRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_WindowCloseRequested$LAYOUT, remove_WindowCloseRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_WebResourceResponseReceived {
-
-        add_WebResourceResponseReceived() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebResourceResponseReceived.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_WebResourceResponseReceived.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_WebResourceResponseReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebResourceResponseReceived"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_WebResourceResponseReceived$layout() {
-        return add_WebResourceResponseReceived$LAYOUT;
-    }
-
-    private static final long add_WebResourceResponseReceived$OFFSET = 488;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_WebResourceResponseReceived$offset() {
-        return add_WebResourceResponseReceived$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_WebResourceResponseReceived(MemorySegment struct) {
-        return struct.get(add_WebResourceResponseReceived$LAYOUT, add_WebResourceResponseReceived$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_WebResourceResponseReceived(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_WebResourceResponseReceived$LAYOUT, add_WebResourceResponseReceived$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_WebResourceResponseReceived {
-
-        remove_WebResourceResponseReceived() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebResourceResponseReceived.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_WebResourceResponseReceived.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_WebResourceResponseReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebResourceResponseReceived"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_WebResourceResponseReceived$layout() {
-        return remove_WebResourceResponseReceived$LAYOUT;
-    }
-
-    private static final long remove_WebResourceResponseReceived$OFFSET = 496;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_WebResourceResponseReceived$offset() {
-        return remove_WebResourceResponseReceived$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_WebResourceResponseReceived(MemorySegment struct) {
-        return struct.get(remove_WebResourceResponseReceived$LAYOUT, remove_WebResourceResponseReceived$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_WebResourceResponseReceived(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_WebResourceResponseReceived$LAYOUT, remove_WebResourceResponseReceived$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
-     * }
-     */
-    public static class NavigateWithWebResourceRequest {
-
-        NavigateWithWebResourceRequest() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(NavigateWithWebResourceRequest.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(NavigateWithWebResourceRequest.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout NavigateWithWebResourceRequest$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("NavigateWithWebResourceRequest"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout NavigateWithWebResourceRequest$layout() {
-        return NavigateWithWebResourceRequest$LAYOUT;
-    }
-
-    private static final long NavigateWithWebResourceRequest$OFFSET = 504;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
-     * }
-     */
-    public static long NavigateWithWebResourceRequest$offset() {
-        return NavigateWithWebResourceRequest$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment NavigateWithWebResourceRequest(MemorySegment struct) {
-        return struct.get(NavigateWithWebResourceRequest$LAYOUT, NavigateWithWebResourceRequest$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
-     * }
-     */
-    public static void NavigateWithWebResourceRequest(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(NavigateWithWebResourceRequest$LAYOUT, NavigateWithWebResourceRequest$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_DOMContentLoaded {
-
-        add_DOMContentLoaded() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_DOMContentLoaded.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_DOMContentLoaded.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_DOMContentLoaded$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DOMContentLoaded"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_DOMContentLoaded$layout() {
-        return add_DOMContentLoaded$LAYOUT;
-    }
-
-    private static final long add_DOMContentLoaded$OFFSET = 512;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_DOMContentLoaded$offset() {
-        return add_DOMContentLoaded$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_DOMContentLoaded(MemorySegment struct) {
-        return struct.get(add_DOMContentLoaded$LAYOUT, add_DOMContentLoaded$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_DOMContentLoaded(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_DOMContentLoaded$LAYOUT, add_DOMContentLoaded$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_DOMContentLoaded {
-
-        remove_DOMContentLoaded() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DOMContentLoaded.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_DOMContentLoaded.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_DOMContentLoaded$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DOMContentLoaded"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_DOMContentLoaded$layout() {
-        return remove_DOMContentLoaded$LAYOUT;
-    }
-
-    private static final long remove_DOMContentLoaded$OFFSET = 520;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_DOMContentLoaded$offset() {
-        return remove_DOMContentLoaded$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_DOMContentLoaded(MemorySegment struct) {
-        return struct.get(remove_DOMContentLoaded$LAYOUT, remove_DOMContentLoaded$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_DOMContentLoaded(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_DOMContentLoaded$LAYOUT, remove_DOMContentLoaded$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
-     * }
-     */
-    public static class get_CookieManager {
-
-        get_CookieManager() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_CookieManager.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_CookieManager.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_CookieManager$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CookieManager"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_CookieManager$layout() {
-        return get_CookieManager$LAYOUT;
-    }
-
-    private static final long get_CookieManager$OFFSET = 528;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
-     * }
-     */
-    public static long get_CookieManager$offset() {
-        return get_CookieManager$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_CookieManager(MemorySegment struct) {
-        return struct.get(get_CookieManager$LAYOUT, get_CookieManager$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
-     * }
-     */
-    public static void get_CookieManager(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_CookieManager$LAYOUT, get_CookieManager$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
-     * }
-     */
-    public static class get_Environment {
-
-        get_Environment() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_Environment.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_Environment.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_Environment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Environment"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_Environment$layout() {
-        return get_Environment$LAYOUT;
-    }
-
-    private static final long get_Environment$OFFSET = 536;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
-     * }
-     */
-    public static long get_Environment$offset() {
-        return get_Environment$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_Environment(MemorySegment struct) {
-        return struct.get(get_Environment$LAYOUT, get_Environment$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
-     * }
-     */
-    public static void get_Environment(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_Environment$LAYOUT, get_Environment$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class TrySuspend {
-
-        TrySuspend() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(TrySuspend.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(TrySuspend.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout TrySuspend$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("TrySuspend"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout TrySuspend$layout() {
-        return TrySuspend$LAYOUT;
-    }
-
-    private static final long TrySuspend$OFFSET = 544;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long TrySuspend$offset() {
-        return TrySuspend$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment TrySuspend(MemorySegment struct) {
-        return struct.get(TrySuspend$LAYOUT, TrySuspend$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void TrySuspend(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(TrySuspend$LAYOUT, TrySuspend$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class Resume {
-
-        Resume() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(Resume.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(Resume.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout Resume$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Resume"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout Resume$layout() {
-        return Resume$LAYOUT;
-    }
-
-    private static final long Resume$OFFSET = 552;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long Resume$offset() {
-        return Resume$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment Resume(MemorySegment struct) {
-        return struct.get(Resume$LAYOUT, Resume$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void Resume(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(Resume$LAYOUT, Resume$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_IsSuspended {
-
-        get_IsSuspended() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsSuspended.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_IsSuspended.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_IsSuspended$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsSuspended"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_IsSuspended$layout() {
-        return get_IsSuspended$LAYOUT;
-    }
-
-    private static final long get_IsSuspended$OFFSET = 560;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_IsSuspended$offset() {
-        return get_IsSuspended$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_IsSuspended(MemorySegment struct) {
-        return struct.get(get_IsSuspended$LAYOUT, get_IsSuspended$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_IsSuspended(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_IsSuspended$LAYOUT, get_IsSuspended$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static class SetVirtualHostNameToFolderMapping {
-
-        SetVirtualHostNameToFolderMapping() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(SetVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(SetVirtualHostNameToFolderMapping.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout SetVirtualHostNameToFolderMapping$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("SetVirtualHostNameToFolderMapping"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout SetVirtualHostNameToFolderMapping$layout() {
-        return SetVirtualHostNameToFolderMapping$LAYOUT;
-    }
-
-    private static final long SetVirtualHostNameToFolderMapping$OFFSET = 568;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static final long SetVirtualHostNameToFolderMapping$offset() {
-        return SetVirtualHostNameToFolderMapping$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment SetVirtualHostNameToFolderMapping(MemorySegment struct) {
-        return struct.get(SetVirtualHostNameToFolderMapping$LAYOUT, SetVirtualHostNameToFolderMapping$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static void SetVirtualHostNameToFolderMapping(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(SetVirtualHostNameToFolderMapping$LAYOUT, SetVirtualHostNameToFolderMapping$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class ClearVirtualHostNameToFolderMapping {
-
-        ClearVirtualHostNameToFolderMapping() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(ClearVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(ClearVirtualHostNameToFolderMapping.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout ClearVirtualHostNameToFolderMapping$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ClearVirtualHostNameToFolderMapping"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout ClearVirtualHostNameToFolderMapping$layout() {
-        return ClearVirtualHostNameToFolderMapping$LAYOUT;
-    }
-
-    private static final long ClearVirtualHostNameToFolderMapping$OFFSET = 576;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static final long ClearVirtualHostNameToFolderMapping$offset() {
-        return ClearVirtualHostNameToFolderMapping$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment ClearVirtualHostNameToFolderMapping(MemorySegment struct) {
-        return struct.get(ClearVirtualHostNameToFolderMapping$LAYOUT, ClearVirtualHostNameToFolderMapping$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void ClearVirtualHostNameToFolderMapping(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(ClearVirtualHostNameToFolderMapping$LAYOUT, ClearVirtualHostNameToFolderMapping$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_FrameCreated {
-
-        add_FrameCreated() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameCreated.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_FrameCreated.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_FrameCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameCreated"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_FrameCreated$layout() {
-        return add_FrameCreated$LAYOUT;
-    }
-
-    private static final long add_FrameCreated$OFFSET = 584;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_FrameCreated$offset() {
-        return add_FrameCreated$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_FrameCreated(MemorySegment struct) {
-        return struct.get(add_FrameCreated$LAYOUT, add_FrameCreated$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_FrameCreated(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_FrameCreated$LAYOUT, add_FrameCreated$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_FrameCreated {
-
-        remove_FrameCreated() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameCreated.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_FrameCreated.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_FrameCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameCreated"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_FrameCreated$layout() {
-        return remove_FrameCreated$LAYOUT;
-    }
-
-    private static final long remove_FrameCreated$OFFSET = 592;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_FrameCreated$offset() {
-        return remove_FrameCreated$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_FrameCreated(MemorySegment struct) {
-        return struct.get(remove_FrameCreated$LAYOUT, remove_FrameCreated$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_FrameCreated(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_FrameCreated$LAYOUT, remove_FrameCreated$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_DownloadStarting {
-
-        add_DownloadStarting() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_DownloadStarting.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_DownloadStarting.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_DownloadStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DownloadStarting"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_DownloadStarting$layout() {
-        return add_DownloadStarting$LAYOUT;
-    }
-
-    private static final long add_DownloadStarting$OFFSET = 600;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_DownloadStarting$offset() {
-        return add_DownloadStarting$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_DownloadStarting(MemorySegment struct) {
-        return struct.get(add_DownloadStarting$LAYOUT, add_DownloadStarting$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_DownloadStarting(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_DownloadStarting$LAYOUT, add_DownloadStarting$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_DownloadStarting {
-
-        remove_DownloadStarting() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DownloadStarting.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_DownloadStarting.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_DownloadStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DownloadStarting"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_DownloadStarting$layout() {
-        return remove_DownloadStarting$LAYOUT;
-    }
-
-    private static final long remove_DownloadStarting$OFFSET = 608;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_DownloadStarting$offset() {
-        return remove_DownloadStarting$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_DownloadStarting(MemorySegment struct) {
-        return struct.get(remove_DownloadStarting$LAYOUT, remove_DownloadStarting$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_DownloadStarting(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_DownloadStarting$LAYOUT, remove_DownloadStarting$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ClientCertificateRequested {
-
-        add_ClientCertificateRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ClientCertificateRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ClientCertificateRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ClientCertificateRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ClientCertificateRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_ClientCertificateRequested$layout() {
-        return add_ClientCertificateRequested$LAYOUT;
-    }
-
-    private static final long add_ClientCertificateRequested$OFFSET = 616;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_ClientCertificateRequested$offset() {
-        return add_ClientCertificateRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ClientCertificateRequested(MemorySegment struct) {
-        return struct.get(add_ClientCertificateRequested$LAYOUT, add_ClientCertificateRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ClientCertificateRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ClientCertificateRequested$LAYOUT, add_ClientCertificateRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ClientCertificateRequested {
-
-        remove_ClientCertificateRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ClientCertificateRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ClientCertificateRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ClientCertificateRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ClientCertificateRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_ClientCertificateRequested$layout() {
-        return remove_ClientCertificateRequested$LAYOUT;
-    }
-
-    private static final long remove_ClientCertificateRequested$OFFSET = 624;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_ClientCertificateRequested$offset() {
-        return remove_ClientCertificateRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ClientCertificateRequested(MemorySegment struct) {
-        return struct.get(remove_ClientCertificateRequested$LAYOUT, remove_ClientCertificateRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ClientCertificateRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ClientCertificateRequested$LAYOUT, remove_ClientCertificateRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class OpenTaskManagerWindow {
-
-        OpenTaskManagerWindow() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(OpenTaskManagerWindow.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(OpenTaskManagerWindow.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout OpenTaskManagerWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenTaskManagerWindow"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout OpenTaskManagerWindow$layout() {
-        return OpenTaskManagerWindow$LAYOUT;
-    }
-
-    private static final long OpenTaskManagerWindow$OFFSET = 632;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long OpenTaskManagerWindow$offset() {
-        return OpenTaskManagerWindow$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment OpenTaskManagerWindow(MemorySegment struct) {
-        return struct.get(OpenTaskManagerWindow$LAYOUT, OpenTaskManagerWindow$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void OpenTaskManagerWindow(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(OpenTaskManagerWindow$LAYOUT, OpenTaskManagerWindow$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class PrintToPdf {
-
-        PrintToPdf() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(PrintToPdf.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(PrintToPdf.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout PrintToPdf$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PrintToPdf"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout PrintToPdf$layout() {
-        return PrintToPdf$LAYOUT;
-    }
-
-    private static final long PrintToPdf$OFFSET = 640;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final long PrintToPdf$offset() {
-        return PrintToPdf$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment PrintToPdf(MemorySegment struct) {
-        return struct.get(PrintToPdf$LAYOUT, PrintToPdf$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void PrintToPdf(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(PrintToPdf$LAYOUT, PrintToPdf$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_IsMutedChanged {
-
-        add_IsMutedChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsMutedChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_IsMutedChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_IsMutedChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_IsMutedChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_IsMutedChanged$layout() {
-        return add_IsMutedChanged$LAYOUT;
-    }
-
-    private static final long add_IsMutedChanged$OFFSET = 648;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_IsMutedChanged$offset() {
-        return add_IsMutedChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_IsMutedChanged(MemorySegment struct) {
-        return struct.get(add_IsMutedChanged$LAYOUT, add_IsMutedChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_IsMutedChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_IsMutedChanged$LAYOUT, add_IsMutedChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_IsMutedChanged {
-
-        remove_IsMutedChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsMutedChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_IsMutedChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_IsMutedChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_IsMutedChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_IsMutedChanged$layout() {
-        return remove_IsMutedChanged$LAYOUT;
-    }
-
-    private static final long remove_IsMutedChanged$OFFSET = 656;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_IsMutedChanged$offset() {
-        return remove_IsMutedChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_IsMutedChanged(MemorySegment struct) {
-        return struct.get(remove_IsMutedChanged$LAYOUT, remove_IsMutedChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_IsMutedChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_IsMutedChanged$LAYOUT, remove_IsMutedChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_IsMuted {
-
-        get_IsMuted() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsMuted.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_IsMuted.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_IsMuted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsMuted"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_IsMuted$layout() {
-        return get_IsMuted$LAYOUT;
-    }
-
-    private static final long get_IsMuted$OFFSET = 664;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_IsMuted$offset() {
-        return get_IsMuted$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_IsMuted(MemorySegment struct) {
-        return struct.get(get_IsMuted$LAYOUT, get_IsMuted$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_IsMuted(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_IsMuted$LAYOUT, get_IsMuted$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
-     * }
-     */
-    public static class put_IsMuted {
-
-        put_IsMuted() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, int _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsMuted.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(put_IsMuted.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout put_IsMuted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsMuted"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout put_IsMuted$layout() {
-        return put_IsMuted$LAYOUT;
-    }
-
-    private static final long put_IsMuted$OFFSET = 672;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
-     * }
-     */
-    public static long put_IsMuted$offset() {
-        return put_IsMuted$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment put_IsMuted(MemorySegment struct) {
-        return struct.get(put_IsMuted$LAYOUT, put_IsMuted$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
-     * }
-     */
-    public static void put_IsMuted(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(put_IsMuted$LAYOUT, put_IsMuted$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_IsDocumentPlayingAudioChanged {
-
-        add_IsDocumentPlayingAudioChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_IsDocumentPlayingAudioChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_IsDocumentPlayingAudioChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_IsDocumentPlayingAudioChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_IsDocumentPlayingAudioChanged$layout() {
-        return add_IsDocumentPlayingAudioChanged$LAYOUT;
-    }
-
-    private static final long add_IsDocumentPlayingAudioChanged$OFFSET = 680;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_IsDocumentPlayingAudioChanged$offset() {
-        return add_IsDocumentPlayingAudioChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_IsDocumentPlayingAudioChanged(MemorySegment struct) {
-        return struct.get(add_IsDocumentPlayingAudioChanged$LAYOUT, add_IsDocumentPlayingAudioChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_IsDocumentPlayingAudioChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_IsDocumentPlayingAudioChanged$LAYOUT, add_IsDocumentPlayingAudioChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_IsDocumentPlayingAudioChanged {
-
-        remove_IsDocumentPlayingAudioChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_IsDocumentPlayingAudioChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_IsDocumentPlayingAudioChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_IsDocumentPlayingAudioChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_IsDocumentPlayingAudioChanged$layout() {
-        return remove_IsDocumentPlayingAudioChanged$LAYOUT;
-    }
-
-    private static final long remove_IsDocumentPlayingAudioChanged$OFFSET = 688;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_IsDocumentPlayingAudioChanged$offset() {
-        return remove_IsDocumentPlayingAudioChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_IsDocumentPlayingAudioChanged(MemorySegment struct) {
-        return struct.get(remove_IsDocumentPlayingAudioChanged$LAYOUT, remove_IsDocumentPlayingAudioChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_IsDocumentPlayingAudioChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_IsDocumentPlayingAudioChanged$LAYOUT, remove_IsDocumentPlayingAudioChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_IsDocumentPlayingAudio {
-
-        get_IsDocumentPlayingAudio() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsDocumentPlayingAudio.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_IsDocumentPlayingAudio.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_IsDocumentPlayingAudio$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsDocumentPlayingAudio"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_IsDocumentPlayingAudio$layout() {
-        return get_IsDocumentPlayingAudio$LAYOUT;
-    }
-
-    private static final long get_IsDocumentPlayingAudio$OFFSET = 696;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_IsDocumentPlayingAudio$offset() {
-        return get_IsDocumentPlayingAudio$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_IsDocumentPlayingAudio(MemorySegment struct) {
-        return struct.get(get_IsDocumentPlayingAudio$LAYOUT, get_IsDocumentPlayingAudio$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_IsDocumentPlayingAudio(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_IsDocumentPlayingAudio$LAYOUT, get_IsDocumentPlayingAudio$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_IsDefaultDownloadDialogOpenChanged {
-
-        add_IsDefaultDownloadDialogOpenChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_IsDefaultDownloadDialogOpenChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_IsDefaultDownloadDialogOpenChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_IsDefaultDownloadDialogOpenChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_IsDefaultDownloadDialogOpenChanged$layout() {
-        return add_IsDefaultDownloadDialogOpenChanged$LAYOUT;
-    }
-
-    private static final long add_IsDefaultDownloadDialogOpenChanged$OFFSET = 704;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_IsDefaultDownloadDialogOpenChanged$offset() {
-        return add_IsDefaultDownloadDialogOpenChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_IsDefaultDownloadDialogOpenChanged(MemorySegment struct) {
-        return struct.get(add_IsDefaultDownloadDialogOpenChanged$LAYOUT, add_IsDefaultDownloadDialogOpenChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_IsDefaultDownloadDialogOpenChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_IsDefaultDownloadDialogOpenChanged$LAYOUT, add_IsDefaultDownloadDialogOpenChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_IsDefaultDownloadDialogOpenChanged {
-
-        remove_IsDefaultDownloadDialogOpenChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_IsDefaultDownloadDialogOpenChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_IsDefaultDownloadDialogOpenChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_IsDefaultDownloadDialogOpenChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_IsDefaultDownloadDialogOpenChanged$layout() {
-        return remove_IsDefaultDownloadDialogOpenChanged$LAYOUT;
-    }
-
-    private static final long remove_IsDefaultDownloadDialogOpenChanged$OFFSET = 712;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_IsDefaultDownloadDialogOpenChanged$offset() {
-        return remove_IsDefaultDownloadDialogOpenChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_IsDefaultDownloadDialogOpenChanged(MemorySegment struct) {
-        return struct.get(remove_IsDefaultDownloadDialogOpenChanged$LAYOUT, remove_IsDefaultDownloadDialogOpenChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_IsDefaultDownloadDialogOpenChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_IsDefaultDownloadDialogOpenChanged$LAYOUT, remove_IsDefaultDownloadDialogOpenChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_IsDefaultDownloadDialogOpen {
-
-        get_IsDefaultDownloadDialogOpen() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsDefaultDownloadDialogOpen.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_IsDefaultDownloadDialogOpen.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_IsDefaultDownloadDialogOpen$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsDefaultDownloadDialogOpen"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_IsDefaultDownloadDialogOpen$layout() {
-        return get_IsDefaultDownloadDialogOpen$LAYOUT;
-    }
-
-    private static final long get_IsDefaultDownloadDialogOpen$OFFSET = 720;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_IsDefaultDownloadDialogOpen$offset() {
-        return get_IsDefaultDownloadDialogOpen$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_IsDefaultDownloadDialogOpen(MemorySegment struct) {
-        return struct.get(get_IsDefaultDownloadDialogOpen$LAYOUT, get_IsDefaultDownloadDialogOpen$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_IsDefaultDownloadDialogOpen(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_IsDefaultDownloadDialogOpen$LAYOUT, get_IsDefaultDownloadDialogOpen$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class OpenDefaultDownloadDialog {
-
-        OpenDefaultDownloadDialog() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(OpenDefaultDownloadDialog.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(OpenDefaultDownloadDialog.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout OpenDefaultDownloadDialog$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenDefaultDownloadDialog"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout OpenDefaultDownloadDialog$layout() {
-        return OpenDefaultDownloadDialog$LAYOUT;
-    }
-
-    private static final long OpenDefaultDownloadDialog$OFFSET = 728;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long OpenDefaultDownloadDialog$offset() {
-        return OpenDefaultDownloadDialog$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment OpenDefaultDownloadDialog(MemorySegment struct) {
-        return struct.get(OpenDefaultDownloadDialog$LAYOUT, OpenDefaultDownloadDialog$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void OpenDefaultDownloadDialog(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(OpenDefaultDownloadDialog$LAYOUT, OpenDefaultDownloadDialog$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static class CloseDefaultDownloadDialog {
-
-        CloseDefaultDownloadDialog() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(CloseDefaultDownloadDialog.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(CloseDefaultDownloadDialog.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout CloseDefaultDownloadDialog$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CloseDefaultDownloadDialog"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout CloseDefaultDownloadDialog$layout() {
-        return CloseDefaultDownloadDialog$LAYOUT;
-    }
-
-    private static final long CloseDefaultDownloadDialog$OFFSET = 736;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static long CloseDefaultDownloadDialog$offset() {
-        return CloseDefaultDownloadDialog$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment CloseDefaultDownloadDialog(MemorySegment struct) {
-        return struct.get(CloseDefaultDownloadDialog$LAYOUT, CloseDefaultDownloadDialog$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
-     * }
-     */
-    public static void CloseDefaultDownloadDialog(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(CloseDefaultDownloadDialog$LAYOUT, CloseDefaultDownloadDialog$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_DefaultDownloadDialogCornerAlignment {
-
-        get_DefaultDownloadDialogCornerAlignment() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_DefaultDownloadDialogCornerAlignment.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_DefaultDownloadDialogCornerAlignment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DefaultDownloadDialogCornerAlignment"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_DefaultDownloadDialogCornerAlignment$layout() {
-        return get_DefaultDownloadDialogCornerAlignment$LAYOUT;
-    }
-
-    private static final long get_DefaultDownloadDialogCornerAlignment$OFFSET = 744;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_DefaultDownloadDialogCornerAlignment$offset() {
-        return get_DefaultDownloadDialogCornerAlignment$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_DefaultDownloadDialogCornerAlignment(MemorySegment struct) {
-        return struct.get(get_DefaultDownloadDialogCornerAlignment$LAYOUT, get_DefaultDownloadDialogCornerAlignment$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_DefaultDownloadDialogCornerAlignment(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_DefaultDownloadDialogCornerAlignment$LAYOUT, get_DefaultDownloadDialogCornerAlignment$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
-     * }
-     */
-    public static class put_DefaultDownloadDialogCornerAlignment {
-
-        put_DefaultDownloadDialogCornerAlignment() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, int _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(put_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(put_DefaultDownloadDialogCornerAlignment.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout put_DefaultDownloadDialogCornerAlignment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_DefaultDownloadDialogCornerAlignment"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout put_DefaultDownloadDialogCornerAlignment$layout() {
-        return put_DefaultDownloadDialogCornerAlignment$LAYOUT;
-    }
-
-    private static final long put_DefaultDownloadDialogCornerAlignment$OFFSET = 752;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
-     * }
-     */
-    public static long put_DefaultDownloadDialogCornerAlignment$offset() {
-        return put_DefaultDownloadDialogCornerAlignment$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment put_DefaultDownloadDialogCornerAlignment(MemorySegment struct) {
-        return struct.get(put_DefaultDownloadDialogCornerAlignment$LAYOUT, put_DefaultDownloadDialogCornerAlignment$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
-     * }
-     */
-    public static void put_DefaultDownloadDialogCornerAlignment(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(put_DefaultDownloadDialogCornerAlignment$LAYOUT, put_DefaultDownloadDialogCornerAlignment$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_DefaultDownloadDialogMargin {
-
-        get_DefaultDownloadDialogMargin() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_DefaultDownloadDialogMargin.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_DefaultDownloadDialogMargin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DefaultDownloadDialogMargin"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_DefaultDownloadDialogMargin$layout() {
-        return get_DefaultDownloadDialogMargin$LAYOUT;
-    }
-
-    private static final long get_DefaultDownloadDialogMargin$OFFSET = 760;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_DefaultDownloadDialogMargin$offset() {
-        return get_DefaultDownloadDialogMargin$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_DefaultDownloadDialogMargin(MemorySegment struct) {
-        return struct.get(get_DefaultDownloadDialogMargin$LAYOUT, get_DefaultDownloadDialogMargin$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_DefaultDownloadDialogMargin(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_DefaultDownloadDialogMargin$LAYOUT, get_DefaultDownloadDialogMargin$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
-     * }
-     */
-    public static class put_DefaultDownloadDialogMargin {
-
-        put_DefaultDownloadDialogMargin() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            tagPOINT.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(put_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(put_DefaultDownloadDialogMargin.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout put_DefaultDownloadDialogMargin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_DefaultDownloadDialogMargin"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout put_DefaultDownloadDialogMargin$layout() {
-        return put_DefaultDownloadDialogMargin$LAYOUT;
-    }
-
-    private static final long put_DefaultDownloadDialogMargin$OFFSET = 768;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
-     * }
-     */
-    public static long put_DefaultDownloadDialogMargin$offset() {
-        return put_DefaultDownloadDialogMargin$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment put_DefaultDownloadDialogMargin(MemorySegment struct) {
-        return struct.get(put_DefaultDownloadDialogMargin$LAYOUT, put_DefaultDownloadDialogMargin$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
-     * }
-     */
-    public static void put_DefaultDownloadDialogMargin(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(put_DefaultDownloadDialogMargin$LAYOUT, put_DefaultDownloadDialogMargin$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_BasicAuthenticationRequested {
-
-        add_BasicAuthenticationRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_BasicAuthenticationRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_BasicAuthenticationRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_BasicAuthenticationRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_BasicAuthenticationRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_BasicAuthenticationRequested$layout() {
-        return add_BasicAuthenticationRequested$LAYOUT;
-    }
-
-    private static final long add_BasicAuthenticationRequested$OFFSET = 776;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_BasicAuthenticationRequested$offset() {
-        return add_BasicAuthenticationRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_BasicAuthenticationRequested(MemorySegment struct) {
-        return struct.get(add_BasicAuthenticationRequested$LAYOUT, add_BasicAuthenticationRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_BasicAuthenticationRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_BasicAuthenticationRequested$LAYOUT, add_BasicAuthenticationRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_BasicAuthenticationRequested {
-
-        remove_BasicAuthenticationRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_BasicAuthenticationRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_BasicAuthenticationRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_BasicAuthenticationRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_BasicAuthenticationRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_BasicAuthenticationRequested$layout() {
-        return remove_BasicAuthenticationRequested$LAYOUT;
-    }
-
-    private static final long remove_BasicAuthenticationRequested$OFFSET = 784;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_BasicAuthenticationRequested$offset() {
-        return remove_BasicAuthenticationRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_BasicAuthenticationRequested(MemorySegment struct) {
-        return struct.get(remove_BasicAuthenticationRequested$LAYOUT, remove_BasicAuthenticationRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_BasicAuthenticationRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_BasicAuthenticationRequested$LAYOUT, remove_BasicAuthenticationRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class CallDevToolsProtocolMethodForSession {
-
-        CallDevToolsProtocolMethodForSession() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(CallDevToolsProtocolMethodForSession.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(CallDevToolsProtocolMethodForSession.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout CallDevToolsProtocolMethodForSession$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CallDevToolsProtocolMethodForSession"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout CallDevToolsProtocolMethodForSession$layout() {
-        return CallDevToolsProtocolMethodForSession$LAYOUT;
-    }
-
-    private static final long CallDevToolsProtocolMethodForSession$OFFSET = 792;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final long CallDevToolsProtocolMethodForSession$offset() {
-        return CallDevToolsProtocolMethodForSession$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment CallDevToolsProtocolMethodForSession(MemorySegment struct) {
-        return struct.get(CallDevToolsProtocolMethodForSession$LAYOUT, CallDevToolsProtocolMethodForSession$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void CallDevToolsProtocolMethodForSession(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(CallDevToolsProtocolMethodForSession$LAYOUT, CallDevToolsProtocolMethodForSession$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ContextMenuRequested {
-
-        add_ContextMenuRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContextMenuRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ContextMenuRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ContextMenuRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContextMenuRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_ContextMenuRequested$layout() {
-        return add_ContextMenuRequested$LAYOUT;
-    }
-
-    private static final long add_ContextMenuRequested$OFFSET = 800;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_ContextMenuRequested$offset() {
-        return add_ContextMenuRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ContextMenuRequested(MemorySegment struct) {
-        return struct.get(add_ContextMenuRequested$LAYOUT, add_ContextMenuRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ContextMenuRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ContextMenuRequested$LAYOUT, add_ContextMenuRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ContextMenuRequested {
-
-        remove_ContextMenuRequested() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContextMenuRequested.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ContextMenuRequested.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ContextMenuRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContextMenuRequested"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_ContextMenuRequested$layout() {
-        return remove_ContextMenuRequested$LAYOUT;
-    }
-
-    private static final long remove_ContextMenuRequested$OFFSET = 808;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_ContextMenuRequested$offset() {
-        return remove_ContextMenuRequested$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ContextMenuRequested(MemorySegment struct) {
-        return struct.get(remove_ContextMenuRequested$LAYOUT, remove_ContextMenuRequested$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ContextMenuRequested(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ContextMenuRequested$LAYOUT, remove_ContextMenuRequested$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_StatusBarTextChanged {
-
-        add_StatusBarTextChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_StatusBarTextChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_StatusBarTextChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_StatusBarTextChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_StatusBarTextChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_StatusBarTextChanged$layout() {
-        return add_StatusBarTextChanged$LAYOUT;
-    }
-
-    private static final long add_StatusBarTextChanged$OFFSET = 816;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_StatusBarTextChanged$offset() {
-        return add_StatusBarTextChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_StatusBarTextChanged(MemorySegment struct) {
-        return struct.get(add_StatusBarTextChanged$LAYOUT, add_StatusBarTextChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_StatusBarTextChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_StatusBarTextChanged$LAYOUT, add_StatusBarTextChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_StatusBarTextChanged {
-
-        remove_StatusBarTextChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_StatusBarTextChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_StatusBarTextChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_StatusBarTextChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_StatusBarTextChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_StatusBarTextChanged$layout() {
-        return remove_StatusBarTextChanged$LAYOUT;
-    }
-
-    private static final long remove_StatusBarTextChanged$OFFSET = 824;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_StatusBarTextChanged$offset() {
-        return remove_StatusBarTextChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_StatusBarTextChanged(MemorySegment struct) {
-        return struct.get(remove_StatusBarTextChanged$LAYOUT, remove_StatusBarTextChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_StatusBarTextChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_StatusBarTextChanged$LAYOUT, remove_StatusBarTextChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_StatusBarText {
-
-        get_StatusBarText() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_StatusBarText.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_StatusBarText.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_StatusBarText$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_StatusBarText"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout get_StatusBarText$layout() {
-        return get_StatusBarText$LAYOUT;
-    }
-
-    private static final long get_StatusBarText$OFFSET = 832;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static final long get_StatusBarText$offset() {
-        return get_StatusBarText$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_StatusBarText(MemorySegment struct) {
-        return struct.get(get_StatusBarText$LAYOUT, get_StatusBarText$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_StatusBarText(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_StatusBarText$LAYOUT, get_StatusBarText$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
-     * }
-     */
-    public static class get_Profile {
-
-        get_Profile() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_Profile.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_Profile.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_Profile$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Profile"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout get_Profile$layout() {
-        return get_Profile$LAYOUT;
-    }
-
-    private static final long get_Profile$OFFSET = 840;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
-     * }
-     */
-    public static final long get_Profile$offset() {
-        return get_Profile$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_Profile(MemorySegment struct) {
-        return struct.get(get_Profile$LAYOUT, get_Profile$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
-     * }
-     */
-    public static void get_Profile(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_Profile$LAYOUT, get_Profile$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_ServerCertificateErrorDetected {
-
-        add_ServerCertificateErrorDetected() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_ServerCertificateErrorDetected.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_ServerCertificateErrorDetected$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ServerCertificateErrorDetected"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_ServerCertificateErrorDetected$layout() {
-        return add_ServerCertificateErrorDetected$LAYOUT;
-    }
-
-    private static final long add_ServerCertificateErrorDetected$OFFSET = 848;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_ServerCertificateErrorDetected$offset() {
-        return add_ServerCertificateErrorDetected$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_ServerCertificateErrorDetected(MemorySegment struct) {
-        return struct.get(add_ServerCertificateErrorDetected$LAYOUT, add_ServerCertificateErrorDetected$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_ServerCertificateErrorDetected(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_ServerCertificateErrorDetected$LAYOUT, add_ServerCertificateErrorDetected$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_ServerCertificateErrorDetected {
-
-        remove_ServerCertificateErrorDetected() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_ServerCertificateErrorDetected.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_ServerCertificateErrorDetected$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ServerCertificateErrorDetected"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_ServerCertificateErrorDetected$layout() {
-        return remove_ServerCertificateErrorDetected$LAYOUT;
-    }
-
-    private static final long remove_ServerCertificateErrorDetected$OFFSET = 856;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_ServerCertificateErrorDetected$offset() {
-        return remove_ServerCertificateErrorDetected$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_ServerCertificateErrorDetected(MemorySegment struct) {
-        return struct.get(remove_ServerCertificateErrorDetected$LAYOUT, remove_ServerCertificateErrorDetected$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_ServerCertificateErrorDetected(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_ServerCertificateErrorDetected$LAYOUT, remove_ServerCertificateErrorDetected$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class ClearServerCertificateErrorActions {
-
-        ClearServerCertificateErrorActions() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(ClearServerCertificateErrorActions.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(ClearServerCertificateErrorActions.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout ClearServerCertificateErrorActions$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ClearServerCertificateErrorActions"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout ClearServerCertificateErrorActions$layout() {
-        return ClearServerCertificateErrorActions$LAYOUT;
-    }
-
-    private static final long ClearServerCertificateErrorActions$OFFSET = 864;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static final long ClearServerCertificateErrorActions$offset() {
-        return ClearServerCertificateErrorActions$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment ClearServerCertificateErrorActions(MemorySegment struct) {
-        return struct.get(ClearServerCertificateErrorActions$LAYOUT, ClearServerCertificateErrorActions$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void ClearServerCertificateErrorActions(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(ClearServerCertificateErrorActions$LAYOUT, ClearServerCertificateErrorActions$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_FaviconChanged {
-
-        add_FaviconChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_FaviconChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_FaviconChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_FaviconChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FaviconChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout add_FaviconChanged$layout() {
-        return add_FaviconChanged$LAYOUT;
-    }
-
-    private static final long add_FaviconChanged$OFFSET = 872;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static final long add_FaviconChanged$offset() {
-        return add_FaviconChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_FaviconChanged(MemorySegment struct) {
-        return struct.get(add_FaviconChanged$LAYOUT, add_FaviconChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_FaviconChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_FaviconChanged$LAYOUT, add_FaviconChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_FaviconChanged {
-
-        remove_FaviconChanged() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FaviconChanged.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_FaviconChanged.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_FaviconChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FaviconChanged"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final AddressLayout remove_FaviconChanged$layout() {
-        return remove_FaviconChanged$LAYOUT;
-    }
-
-    private static final long remove_FaviconChanged$OFFSET = 880;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static final long remove_FaviconChanged$offset() {
-        return remove_FaviconChanged$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_FaviconChanged(MemorySegment struct) {
-        return struct.get(remove_FaviconChanged$LAYOUT, remove_FaviconChanged$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_FaviconChanged(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_FaviconChanged$LAYOUT, remove_FaviconChanged$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_FaviconUri {
-
-        get_FaviconUri() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_FaviconUri.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_FaviconUri.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_FaviconUri$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_FaviconUri"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_FaviconUri$layout() {
-        return get_FaviconUri$LAYOUT;
-    }
-
-    private static final long get_FaviconUri$OFFSET = 888;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_FaviconUri$offset() {
-        return get_FaviconUri$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_FaviconUri(MemorySegment struct) {
-        return struct.get(get_FaviconUri$LAYOUT, get_FaviconUri$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_FaviconUri(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_FaviconUri$LAYOUT, get_FaviconUri$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class GetFavicon {
-
-        GetFavicon() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, int _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(GetFavicon.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(GetFavicon.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout GetFavicon$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GetFavicon"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout GetFavicon$layout() {
-        return GetFavicon$LAYOUT;
-    }
-
-    private static final long GetFavicon$OFFSET = 896;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long GetFavicon$offset() {
-        return GetFavicon$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment GetFavicon(MemorySegment struct) {
-        return struct.get(GetFavicon$LAYOUT, GetFavicon$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void GetFavicon(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(GetFavicon$LAYOUT, GetFavicon$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class Print {
-
-        Print() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(Print.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(Print.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout Print$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Print"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout Print$layout() {
-        return Print$LAYOUT;
-    }
-
-    private static final long Print$OFFSET = 904;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long Print$offset() {
-        return Print$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment Print(MemorySegment struct) {
-        return struct.get(Print$LAYOUT, Print$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void Print(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(Print$LAYOUT, Print$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static class ShowPrintUI {
-
-        ShowPrintUI() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, int _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(ShowPrintUI.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(ShowPrintUI.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout ShowPrintUI$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ShowPrintUI"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout ShowPrintUI$layout() {
-        return ShowPrintUI$LAYOUT;
-    }
-
-    private static final long ShowPrintUI$OFFSET = 912;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static long ShowPrintUI$offset() {
-        return ShowPrintUI$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment ShowPrintUI(MemorySegment struct) {
-        return struct.get(ShowPrintUI$LAYOUT, ShowPrintUI$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
-     * }
-     */
-    public static void ShowPrintUI(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(ShowPrintUI$LAYOUT, ShowPrintUI$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class PrintToPdfStream {
-
-        PrintToPdfStream() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(PrintToPdfStream.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(PrintToPdfStream.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout PrintToPdfStream$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PrintToPdfStream"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout PrintToPdfStream$layout() {
-        return PrintToPdfStream$LAYOUT;
-    }
-
-    private static final long PrintToPdfStream$OFFSET = 920;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long PrintToPdfStream$offset() {
-        return PrintToPdfStream$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment PrintToPdfStream(MemorySegment struct) {
-        return struct.get(PrintToPdfStream$LAYOUT, PrintToPdfStream$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void PrintToPdfStream(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(PrintToPdfStream$LAYOUT, PrintToPdfStream$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static class PostSharedBufferToScript {
-
-        PostSharedBufferToScript() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_INT,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(PostSharedBufferToScript.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(PostSharedBufferToScript.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout PostSharedBufferToScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostSharedBufferToScript"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout PostSharedBufferToScript$layout() {
-        return PostSharedBufferToScript$LAYOUT;
-    }
-
-    private static final long PostSharedBufferToScript$OFFSET = 928;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static long PostSharedBufferToScript$offset() {
-        return PostSharedBufferToScript$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment PostSharedBufferToScript(MemorySegment struct) {
-        return struct.get(PostSharedBufferToScript$LAYOUT, PostSharedBufferToScript$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
-     * }
-     */
-    public static void PostSharedBufferToScript(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(PostSharedBufferToScript$LAYOUT, PostSharedBufferToScript$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static class add_LaunchingExternalUriScheme {
-
-        add_LaunchingExternalUriScheme() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(add_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(add_LaunchingExternalUriScheme.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout add_LaunchingExternalUriScheme$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_LaunchingExternalUriScheme"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout add_LaunchingExternalUriScheme$layout() {
-        return add_LaunchingExternalUriScheme$LAYOUT;
-    }
-
-    private static final long add_LaunchingExternalUriScheme$OFFSET = 936;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static long add_LaunchingExternalUriScheme$offset() {
-        return add_LaunchingExternalUriScheme$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment add_LaunchingExternalUriScheme(MemorySegment struct) {
-        return struct.get(add_LaunchingExternalUriScheme$LAYOUT, add_LaunchingExternalUriScheme$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-     * }
-     */
-    public static void add_LaunchingExternalUriScheme(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(add_LaunchingExternalUriScheme$LAYOUT, add_LaunchingExternalUriScheme$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static class remove_LaunchingExternalUriScheme {
-
-        remove_LaunchingExternalUriScheme() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            EventRegistrationToken.layout()
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(remove_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(remove_LaunchingExternalUriScheme.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout remove_LaunchingExternalUriScheme$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_LaunchingExternalUriScheme"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout remove_LaunchingExternalUriScheme$layout() {
-        return remove_LaunchingExternalUriScheme$LAYOUT;
-    }
-
-    private static final long remove_LaunchingExternalUriScheme$OFFSET = 944;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static long remove_LaunchingExternalUriScheme$offset() {
-        return remove_LaunchingExternalUriScheme$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment remove_LaunchingExternalUriScheme(MemorySegment struct) {
-        return struct.get(remove_LaunchingExternalUriScheme$LAYOUT, remove_LaunchingExternalUriScheme$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
-     * }
-     */
-    public static void remove_LaunchingExternalUriScheme(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(remove_LaunchingExternalUriScheme$LAYOUT, remove_LaunchingExternalUriScheme$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_MemoryUsageTargetLevel {
-
-        get_MemoryUsageTargetLevel() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_MemoryUsageTargetLevel.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_MemoryUsageTargetLevel$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_MemoryUsageTargetLevel"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_MemoryUsageTargetLevel$layout() {
-        return get_MemoryUsageTargetLevel$LAYOUT;
-    }
-
-    private static final long get_MemoryUsageTargetLevel$OFFSET = 952;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_MemoryUsageTargetLevel$offset() {
-        return get_MemoryUsageTargetLevel$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_MemoryUsageTargetLevel(MemorySegment struct) {
-        return struct.get(get_MemoryUsageTargetLevel$LAYOUT, get_MemoryUsageTargetLevel$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_MemoryUsageTargetLevel(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_MemoryUsageTargetLevel$LAYOUT, get_MemoryUsageTargetLevel$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
-     * }
-     */
-    public static class put_MemoryUsageTargetLevel {
-
-        put_MemoryUsageTargetLevel() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, int _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(put_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(put_MemoryUsageTargetLevel.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout put_MemoryUsageTargetLevel$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_MemoryUsageTargetLevel"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout put_MemoryUsageTargetLevel$layout() {
-        return put_MemoryUsageTargetLevel$LAYOUT;
-    }
-
-    private static final long put_MemoryUsageTargetLevel$OFFSET = 960;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
-     * }
-     */
-    public static long put_MemoryUsageTargetLevel$offset() {
-        return put_MemoryUsageTargetLevel$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment put_MemoryUsageTargetLevel(MemorySegment struct) {
-        return struct.get(put_MemoryUsageTargetLevel$LAYOUT, put_MemoryUsageTargetLevel$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
-     * }
-     */
-    public static void put_MemoryUsageTargetLevel(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(put_MemoryUsageTargetLevel$LAYOUT, put_MemoryUsageTargetLevel$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static class get_FrameId {
-
-        get_FrameId() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(get_FrameId.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(get_FrameId.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout get_FrameId$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_FrameId"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout get_FrameId$layout() {
-        return get_FrameId$LAYOUT;
-    }
-
-    private static final long get_FrameId$OFFSET = 968;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static long get_FrameId$offset() {
-        return get_FrameId$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment get_FrameId(MemorySegment struct) {
-        return struct.get(get_FrameId$LAYOUT, get_FrameId$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
-     * }
-     */
-    public static void get_FrameId(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(get_FrameId$LAYOUT, get_FrameId$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static class ExecuteScriptWithResult {
-
-        ExecuteScriptWithResult() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_POINTER
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(ExecuteScriptWithResult.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(ExecuteScriptWithResult.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout ExecuteScriptWithResult$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ExecuteScriptWithResult"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout ExecuteScriptWithResult$layout() {
-        return ExecuteScriptWithResult$LAYOUT;
-    }
-
-    private static final long ExecuteScriptWithResult$OFFSET = 976;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static long ExecuteScriptWithResult$offset() {
-        return ExecuteScriptWithResult$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment ExecuteScriptWithResult(MemorySegment struct) {
-        return struct.get(ExecuteScriptWithResult$LAYOUT, ExecuteScriptWithResult$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
-     * }
-     */
-    public static void ExecuteScriptWithResult(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(ExecuteScriptWithResult$LAYOUT, ExecuteScriptWithResult$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static class AddWebResourceRequestedFilterWithRequestSourceKinds {
-
-        AddWebResourceRequestedFilterWithRequestSourceKinds() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_INT,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(AddWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(AddWebResourceRequestedFilterWithRequestSourceKinds.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddWebResourceRequestedFilterWithRequestSourceKinds"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout AddWebResourceRequestedFilterWithRequestSourceKinds$layout() {
-        return AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT;
-    }
-
-    private static final long AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET = 984;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static long AddWebResourceRequestedFilterWithRequestSourceKinds$offset() {
-        return AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment AddWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct) {
-        return struct.get(AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static void AddWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET, fieldValue);
-    }
-
-    /**
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static class RemoveWebResourceRequestedFilterWithRequestSourceKinds {
-
-        RemoveWebResourceRequestedFilterWithRequestSourceKinds() {
-            // Should not be called directly
-        }
-
-        /**
-         * The function pointer signature, expressed as a functional interface
-         */
-        public interface Function {
-            int apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3);
-        }
-
-        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-            Windows.C_LONG,
-            Windows.C_POINTER,
-            Windows.C_POINTER,
-            Windows.C_INT,
-            Windows.C_INT
-        );
-
-        /**
-         * The descriptor of this function pointer
-         */
-        public static FunctionDescriptor descriptor() {
-            return $DESC;
-        }
-
-        private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
-
-        /**
-         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
-         * The lifetime of the returned segment is managed by {@code arena}
-         */
-        public static MemorySegment allocate(RemoveWebResourceRequestedFilterWithRequestSourceKinds.Function fi, Arena arena) {
-            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
-        }
-
-        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
-
-        /**
-         * Invoke the upcall stub {@code funcPtr}, with given parameters
-         */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
-            try {
-                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static final AddressLayout RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveWebResourceRequestedFilterWithRequestSourceKinds"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static AddressLayout RemoveWebResourceRequestedFilterWithRequestSourceKinds$layout() {
-        return RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT;
-    }
-
-    private static final long RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET = 992;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static long RemoveWebResourceRequestedFilterWithRequestSourceKinds$offset() {
-        return RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static MemorySegment RemoveWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct) {
-        return struct.get(RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
-     * }
-     */
-    public static void RemoveWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct, MemorySegment fieldValue) {
-        struct.set(RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET, fieldValue);
-    }
-
-    /**
-     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
-     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
-     */
-    public static MemorySegment asSlice(MemorySegment array, long index) {
-        return array.asSlice(layout().byteSize() * index);
-    }
-
-    /**
-     * The size (in bytes) of this struct
-     */
-    public static long sizeof() { return layout().byteSize(); }
-
-    /**
-     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
-     */
-    public static MemorySegment allocate(SegmentAllocator allocator) {
-        return allocator.allocate(layout());
-    }
-
-    /**
-     * Allocate an array of size {@code elementCount} using {@code allocator}.
-     * The returned segment has size {@code elementCount * layout().byteSize()}.
-     */
-    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
-    }
-
-    /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
-     * The returned segment has size {@code layout().byteSize()}
-     */
-    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
-        return reinterpret(addr, 1, arena, cleanup);
-    }
-
-    /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
-     * The returned segment has size {@code elementCount * layout().byteSize()}
-     */
-    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
-        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
-    }
+	
+	ICoreWebView2_22Vtbl() {
+		// Should not be called directly
+	}
+	
+	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+			Windows.C_POINTER.withName("QueryInterface"),
+			Windows.C_POINTER.withName("AddRef"),
+			Windows.C_POINTER.withName("Release"),
+			Windows.C_POINTER.withName("get_Settings"),
+			Windows.C_POINTER.withName("get_Source"),
+			Windows.C_POINTER.withName("Navigate"),
+			Windows.C_POINTER.withName("NavigateToString"),
+			Windows.C_POINTER.withName("add_NavigationStarting"),
+			Windows.C_POINTER.withName("remove_NavigationStarting"),
+			Windows.C_POINTER.withName("add_ContentLoading"),
+			Windows.C_POINTER.withName("remove_ContentLoading"),
+			Windows.C_POINTER.withName("add_SourceChanged"),
+			Windows.C_POINTER.withName("remove_SourceChanged"),
+			Windows.C_POINTER.withName("add_HistoryChanged"),
+			Windows.C_POINTER.withName("remove_HistoryChanged"),
+			Windows.C_POINTER.withName("add_NavigationCompleted"),
+			Windows.C_POINTER.withName("remove_NavigationCompleted"),
+			Windows.C_POINTER.withName("add_FrameNavigationStarting"),
+			Windows.C_POINTER.withName("remove_FrameNavigationStarting"),
+			Windows.C_POINTER.withName("add_FrameNavigationCompleted"),
+			Windows.C_POINTER.withName("remove_FrameNavigationCompleted"),
+			Windows.C_POINTER.withName("add_ScriptDialogOpening"),
+			Windows.C_POINTER.withName("remove_ScriptDialogOpening"),
+			Windows.C_POINTER.withName("add_PermissionRequested"),
+			Windows.C_POINTER.withName("remove_PermissionRequested"),
+			Windows.C_POINTER.withName("add_ProcessFailed"),
+			Windows.C_POINTER.withName("remove_ProcessFailed"),
+			Windows.C_POINTER.withName("AddScriptToExecuteOnDocumentCreated"),
+			Windows.C_POINTER.withName("RemoveScriptToExecuteOnDocumentCreated"),
+			Windows.C_POINTER.withName("ExecuteScript"),
+			Windows.C_POINTER.withName("CapturePreview"),
+			Windows.C_POINTER.withName("Reload"),
+			Windows.C_POINTER.withName("PostWebMessageAsJson"),
+			Windows.C_POINTER.withName("PostWebMessageAsString"),
+			Windows.C_POINTER.withName("add_WebMessageReceived"),
+			Windows.C_POINTER.withName("remove_WebMessageReceived"),
+			Windows.C_POINTER.withName("CallDevToolsProtocolMethod"),
+			Windows.C_POINTER.withName("get_BrowserProcessId"),
+			Windows.C_POINTER.withName("get_CanGoBack"),
+			Windows.C_POINTER.withName("get_CanGoForward"),
+			Windows.C_POINTER.withName("GoBack"),
+			Windows.C_POINTER.withName("GoForward"),
+			Windows.C_POINTER.withName("GetDevToolsProtocolEventReceiver"),
+			Windows.C_POINTER.withName("Stop"),
+			Windows.C_POINTER.withName("add_NewWindowRequested"),
+			Windows.C_POINTER.withName("remove_NewWindowRequested"),
+			Windows.C_POINTER.withName("add_DocumentTitleChanged"),
+			Windows.C_POINTER.withName("remove_DocumentTitleChanged"),
+			Windows.C_POINTER.withName("get_DocumentTitle"),
+			Windows.C_POINTER.withName("AddHostObjectToScript"),
+			Windows.C_POINTER.withName("RemoveHostObjectFromScript"),
+			Windows.C_POINTER.withName("OpenDevToolsWindow"),
+			Windows.C_POINTER.withName("add_ContainsFullScreenElementChanged"),
+			Windows.C_POINTER.withName("remove_ContainsFullScreenElementChanged"),
+			Windows.C_POINTER.withName("get_ContainsFullScreenElement"),
+			Windows.C_POINTER.withName("add_WebResourceRequested"),
+			Windows.C_POINTER.withName("remove_WebResourceRequested"),
+			Windows.C_POINTER.withName("AddWebResourceRequestedFilter"),
+			Windows.C_POINTER.withName("RemoveWebResourceRequestedFilter"),
+			Windows.C_POINTER.withName("add_WindowCloseRequested"),
+			Windows.C_POINTER.withName("remove_WindowCloseRequested"),
+			Windows.C_POINTER.withName("add_WebResourceResponseReceived"),
+			Windows.C_POINTER.withName("remove_WebResourceResponseReceived"),
+			Windows.C_POINTER.withName("NavigateWithWebResourceRequest"),
+			Windows.C_POINTER.withName("add_DOMContentLoaded"),
+			Windows.C_POINTER.withName("remove_DOMContentLoaded"),
+			Windows.C_POINTER.withName("get_CookieManager"),
+			Windows.C_POINTER.withName("get_Environment"),
+			Windows.C_POINTER.withName("TrySuspend"),
+			Windows.C_POINTER.withName("Resume"),
+			Windows.C_POINTER.withName("get_IsSuspended"),
+			Windows.C_POINTER.withName("SetVirtualHostNameToFolderMapping"),
+			Windows.C_POINTER.withName("ClearVirtualHostNameToFolderMapping"),
+			Windows.C_POINTER.withName("add_FrameCreated"),
+			Windows.C_POINTER.withName("remove_FrameCreated"),
+			Windows.C_POINTER.withName("add_DownloadStarting"),
+			Windows.C_POINTER.withName("remove_DownloadStarting"),
+			Windows.C_POINTER.withName("add_ClientCertificateRequested"),
+			Windows.C_POINTER.withName("remove_ClientCertificateRequested"),
+			Windows.C_POINTER.withName("OpenTaskManagerWindow"),
+			Windows.C_POINTER.withName("PrintToPdf"),
+			Windows.C_POINTER.withName("add_IsMutedChanged"),
+			Windows.C_POINTER.withName("remove_IsMutedChanged"),
+			Windows.C_POINTER.withName("get_IsMuted"),
+			Windows.C_POINTER.withName("put_IsMuted"),
+			Windows.C_POINTER.withName("add_IsDocumentPlayingAudioChanged"),
+			Windows.C_POINTER.withName("remove_IsDocumentPlayingAudioChanged"),
+			Windows.C_POINTER.withName("get_IsDocumentPlayingAudio"),
+			Windows.C_POINTER.withName("add_IsDefaultDownloadDialogOpenChanged"),
+			Windows.C_POINTER.withName("remove_IsDefaultDownloadDialogOpenChanged"),
+			Windows.C_POINTER.withName("get_IsDefaultDownloadDialogOpen"),
+			Windows.C_POINTER.withName("OpenDefaultDownloadDialog"),
+			Windows.C_POINTER.withName("CloseDefaultDownloadDialog"),
+			Windows.C_POINTER.withName("get_DefaultDownloadDialogCornerAlignment"),
+			Windows.C_POINTER.withName("put_DefaultDownloadDialogCornerAlignment"),
+			Windows.C_POINTER.withName("get_DefaultDownloadDialogMargin"),
+			Windows.C_POINTER.withName("put_DefaultDownloadDialogMargin"),
+			Windows.C_POINTER.withName("add_BasicAuthenticationRequested"),
+			Windows.C_POINTER.withName("remove_BasicAuthenticationRequested"),
+			Windows.C_POINTER.withName("CallDevToolsProtocolMethodForSession"),
+			Windows.C_POINTER.withName("add_ContextMenuRequested"),
+			Windows.C_POINTER.withName("remove_ContextMenuRequested"),
+			Windows.C_POINTER.withName("add_StatusBarTextChanged"),
+			Windows.C_POINTER.withName("remove_StatusBarTextChanged"),
+			Windows.C_POINTER.withName("get_StatusBarText"),
+			Windows.C_POINTER.withName("get_Profile"),
+			Windows.C_POINTER.withName("add_ServerCertificateErrorDetected"),
+			Windows.C_POINTER.withName("remove_ServerCertificateErrorDetected"),
+			Windows.C_POINTER.withName("ClearServerCertificateErrorActions"),
+			Windows.C_POINTER.withName("add_FaviconChanged"),
+			Windows.C_POINTER.withName("remove_FaviconChanged"),
+			Windows.C_POINTER.withName("get_FaviconUri"),
+			Windows.C_POINTER.withName("GetFavicon"),
+			Windows.C_POINTER.withName("Print"),
+			Windows.C_POINTER.withName("ShowPrintUI"),
+			Windows.C_POINTER.withName("PrintToPdfStream"),
+			Windows.C_POINTER.withName("PostSharedBufferToScript"),
+			Windows.C_POINTER.withName("add_LaunchingExternalUriScheme"),
+			Windows.C_POINTER.withName("remove_LaunchingExternalUriScheme"),
+			Windows.C_POINTER.withName("get_MemoryUsageTargetLevel"),
+			Windows.C_POINTER.withName("put_MemoryUsageTargetLevel"),
+			Windows.C_POINTER.withName("get_FrameId"),
+			Windows.C_POINTER.withName("ExecuteScriptWithResult"),
+			Windows.C_POINTER.withName("AddWebResourceRequestedFilterWithRequestSourceKinds"),
+			Windows.C_POINTER.withName("RemoveWebResourceRequestedFilterWithRequestSourceKinds")
+	).withName("ICoreWebView2_22Vtbl");
+	
+	/**
+	 * The layout of this struct
+	 */
+	public static GroupLayout layout() {
+		return $LAYOUT;
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
+	 * }
+	 */
+	public static class QueryInterface {
+		
+		QueryInterface() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(QueryInterface.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout QueryInterface$layout() {
+		return QueryInterface$LAYOUT;
+	}
+	
+	private static final long QueryInterface$OFFSET = 0;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
+	 * }
+	 */
+	public static long QueryInterface$offset() {
+		return QueryInterface$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment QueryInterface(MemorySegment struct) {
+		return struct.get(QueryInterface$LAYOUT, QueryInterface$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*QueryInterface)(ICoreWebView2_22 *, const IID *const, void **) __attribute__((stdcall))
+	 * }
+	 */
+	public static void QueryInterface(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(QueryInterface$LAYOUT, QueryInterface$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class AddRef {
+		
+		AddRef() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(AddRef.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(AddRef.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout AddRef$layout() {
+		return AddRef$LAYOUT;
+	}
+	
+	private static final long AddRef$OFFSET = 8;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long AddRef$offset() {
+		return AddRef$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment AddRef(MemorySegment struct) {
+		return struct.get(AddRef$LAYOUT, AddRef$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * ULONG (*AddRef)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void AddRef(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(AddRef$LAYOUT, AddRef$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class Release {
+		
+		Release() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(Release.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(Release.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout Release$layout() {
+		return Release$LAYOUT;
+	}
+	
+	private static final long Release$OFFSET = 16;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long Release$offset() {
+		return Release$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment Release(MemorySegment struct) {
+		return struct.get(Release$LAYOUT, Release$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * ULONG (*Release)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void Release(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_Settings {
+		
+		get_Settings() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Settings.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_Settings.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_Settings$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Settings"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_Settings$layout() {
+		return get_Settings$LAYOUT;
+	}
+	
+	private static final long get_Settings$OFFSET = 24;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_Settings$offset() {
+		return get_Settings$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_Settings(MemorySegment struct) {
+		return struct.get(get_Settings$LAYOUT, get_Settings$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Settings)(ICoreWebView2_22 *, ICoreWebView2Settings **) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_Settings(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_Settings$LAYOUT, get_Settings$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_Source {
+		
+		get_Source() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Source.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_Source.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Source"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_Source$layout() {
+		return get_Source$LAYOUT;
+	}
+	
+	private static final long get_Source$OFFSET = 32;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_Source$offset() {
+		return get_Source$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_Source(MemorySegment struct) {
+		return struct.get(get_Source$LAYOUT, get_Source$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Source)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_Source(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_Source$LAYOUT, get_Source$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class Navigate {
+		
+		Navigate() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(Navigate.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(Navigate.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout Navigate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Navigate"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout Navigate$layout() {
+		return Navigate$LAYOUT;
+	}
+	
+	private static final long Navigate$OFFSET = 40;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long Navigate$offset() {
+		return Navigate$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment Navigate(MemorySegment struct) {
+		return struct.get(Navigate$LAYOUT, Navigate$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Navigate)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void Navigate(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(Navigate$LAYOUT, Navigate$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class NavigateToString {
+		
+		NavigateToString() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(NavigateToString.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(NavigateToString.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout NavigateToString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("NavigateToString"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout NavigateToString$layout() {
+		return NavigateToString$LAYOUT;
+	}
+	
+	private static final long NavigateToString$OFFSET = 48;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long NavigateToString$offset() {
+		return NavigateToString$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment NavigateToString(MemorySegment struct) {
+		return struct.get(NavigateToString$LAYOUT, NavigateToString$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateToString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void NavigateToString(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(NavigateToString$LAYOUT, NavigateToString$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_NavigationStarting {
+		
+		add_NavigationStarting() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NavigationStarting.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_NavigationStarting.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NavigationStarting"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_NavigationStarting$layout() {
+		return add_NavigationStarting$LAYOUT;
+	}
+	
+	private static final long add_NavigationStarting$OFFSET = 56;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_NavigationStarting$offset() {
+		return add_NavigationStarting$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_NavigationStarting(MemorySegment struct) {
+		return struct.get(add_NavigationStarting$LAYOUT, add_NavigationStarting$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_NavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_NavigationStarting$LAYOUT, add_NavigationStarting$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_NavigationStarting {
+		
+		remove_NavigationStarting() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NavigationStarting.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_NavigationStarting.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NavigationStarting"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_NavigationStarting$layout() {
+		return remove_NavigationStarting$LAYOUT;
+	}
+	
+	private static final long remove_NavigationStarting$OFFSET = 64;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_NavigationStarting$offset() {
+		return remove_NavigationStarting$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_NavigationStarting(MemorySegment struct) {
+		return struct.get(remove_NavigationStarting$LAYOUT, remove_NavigationStarting$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_NavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_NavigationStarting$LAYOUT, remove_NavigationStarting$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ContentLoading {
+		
+		add_ContentLoading() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContentLoading.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ContentLoading.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContentLoading"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ContentLoading$layout() {
+		return add_ContentLoading$LAYOUT;
+	}
+	
+	private static final long add_ContentLoading$OFFSET = 72;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ContentLoading$offset() {
+		return add_ContentLoading$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ContentLoading(MemorySegment struct) {
+		return struct.get(add_ContentLoading$LAYOUT, add_ContentLoading$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContentLoading)(ICoreWebView2_22 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ContentLoading(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ContentLoading$LAYOUT, add_ContentLoading$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ContentLoading {
+		
+		remove_ContentLoading() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContentLoading.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ContentLoading.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContentLoading"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ContentLoading$layout() {
+		return remove_ContentLoading$LAYOUT;
+	}
+	
+	private static final long remove_ContentLoading$OFFSET = 80;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ContentLoading$offset() {
+		return remove_ContentLoading$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ContentLoading(MemorySegment struct) {
+		return struct.get(remove_ContentLoading$LAYOUT, remove_ContentLoading$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContentLoading)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ContentLoading(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ContentLoading$LAYOUT, remove_ContentLoading$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_SourceChanged {
+		
+		add_SourceChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_SourceChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_SourceChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_SourceChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_SourceChanged$layout() {
+		return add_SourceChanged$LAYOUT;
+	}
+	
+	private static final long add_SourceChanged$OFFSET = 88;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_SourceChanged$offset() {
+		return add_SourceChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_SourceChanged(MemorySegment struct) {
+		return struct.get(add_SourceChanged$LAYOUT, add_SourceChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_SourceChanged)(ICoreWebView2_22 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_SourceChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_SourceChanged$LAYOUT, add_SourceChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_SourceChanged {
+		
+		remove_SourceChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_SourceChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_SourceChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_SourceChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_SourceChanged$layout() {
+		return remove_SourceChanged$LAYOUT;
+	}
+	
+	private static final long remove_SourceChanged$OFFSET = 96;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_SourceChanged$offset() {
+		return remove_SourceChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_SourceChanged(MemorySegment struct) {
+		return struct.get(remove_SourceChanged$LAYOUT, remove_SourceChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_SourceChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_SourceChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_SourceChanged$LAYOUT, remove_SourceChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_HistoryChanged {
+		
+		add_HistoryChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_HistoryChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_HistoryChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_HistoryChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_HistoryChanged$layout() {
+		return add_HistoryChanged$LAYOUT;
+	}
+	
+	private static final long add_HistoryChanged$OFFSET = 104;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_HistoryChanged$offset() {
+		return add_HistoryChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_HistoryChanged(MemorySegment struct) {
+		return struct.get(add_HistoryChanged$LAYOUT, add_HistoryChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_HistoryChanged)(ICoreWebView2_22 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_HistoryChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_HistoryChanged$LAYOUT, add_HistoryChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_HistoryChanged {
+		
+		remove_HistoryChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_HistoryChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_HistoryChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_HistoryChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_HistoryChanged$layout() {
+		return remove_HistoryChanged$LAYOUT;
+	}
+	
+	private static final long remove_HistoryChanged$OFFSET = 112;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_HistoryChanged$offset() {
+		return remove_HistoryChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_HistoryChanged(MemorySegment struct) {
+		return struct.get(remove_HistoryChanged$LAYOUT, remove_HistoryChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_HistoryChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_HistoryChanged$LAYOUT, remove_HistoryChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_NavigationCompleted {
+		
+		add_NavigationCompleted() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NavigationCompleted.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_NavigationCompleted.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NavigationCompleted"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_NavigationCompleted$layout() {
+		return add_NavigationCompleted$LAYOUT;
+	}
+	
+	private static final long add_NavigationCompleted$OFFSET = 120;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_NavigationCompleted$offset() {
+		return add_NavigationCompleted$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_NavigationCompleted(MemorySegment struct) {
+		return struct.get(add_NavigationCompleted$LAYOUT, add_NavigationCompleted$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_NavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_NavigationCompleted$LAYOUT, add_NavigationCompleted$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_NavigationCompleted {
+		
+		remove_NavigationCompleted() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NavigationCompleted.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_NavigationCompleted.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NavigationCompleted"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_NavigationCompleted$layout() {
+		return remove_NavigationCompleted$LAYOUT;
+	}
+	
+	private static final long remove_NavigationCompleted$OFFSET = 128;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_NavigationCompleted$offset() {
+		return remove_NavigationCompleted$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_NavigationCompleted(MemorySegment struct) {
+		return struct.get(remove_NavigationCompleted$LAYOUT, remove_NavigationCompleted$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_NavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_NavigationCompleted$LAYOUT, remove_NavigationCompleted$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_FrameNavigationStarting {
+		
+		add_FrameNavigationStarting() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameNavigationStarting.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_FrameNavigationStarting.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameNavigationStarting"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_FrameNavigationStarting$layout() {
+		return add_FrameNavigationStarting$LAYOUT;
+	}
+	
+	private static final long add_FrameNavigationStarting$OFFSET = 136;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_FrameNavigationStarting$offset() {
+		return add_FrameNavigationStarting$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_FrameNavigationStarting(MemorySegment struct) {
+		return struct.get(add_FrameNavigationStarting$LAYOUT, add_FrameNavigationStarting$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2_22 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_FrameNavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_FrameNavigationStarting$LAYOUT, add_FrameNavigationStarting$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_FrameNavigationStarting {
+		
+		remove_FrameNavigationStarting() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameNavigationStarting.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_FrameNavigationStarting.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameNavigationStarting"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_FrameNavigationStarting$layout() {
+		return remove_FrameNavigationStarting$LAYOUT;
+	}
+	
+	private static final long remove_FrameNavigationStarting$OFFSET = 144;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_FrameNavigationStarting$offset() {
+		return remove_FrameNavigationStarting$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_FrameNavigationStarting(MemorySegment struct) {
+		return struct.get(remove_FrameNavigationStarting$LAYOUT, remove_FrameNavigationStarting$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_FrameNavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_FrameNavigationStarting$LAYOUT, remove_FrameNavigationStarting$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_FrameNavigationCompleted {
+		
+		add_FrameNavigationCompleted() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameNavigationCompleted.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_FrameNavigationCompleted.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameNavigationCompleted"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_FrameNavigationCompleted$layout() {
+		return add_FrameNavigationCompleted$LAYOUT;
+	}
+	
+	private static final long add_FrameNavigationCompleted$OFFSET = 152;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_FrameNavigationCompleted$offset() {
+		return add_FrameNavigationCompleted$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_FrameNavigationCompleted(MemorySegment struct) {
+		return struct.get(add_FrameNavigationCompleted$LAYOUT, add_FrameNavigationCompleted$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2_22 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_FrameNavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_FrameNavigationCompleted$LAYOUT, add_FrameNavigationCompleted$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_FrameNavigationCompleted {
+		
+		remove_FrameNavigationCompleted() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameNavigationCompleted.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_FrameNavigationCompleted.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameNavigationCompleted"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_FrameNavigationCompleted$layout() {
+		return remove_FrameNavigationCompleted$LAYOUT;
+	}
+	
+	private static final long remove_FrameNavigationCompleted$OFFSET = 160;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_FrameNavigationCompleted$offset() {
+		return remove_FrameNavigationCompleted$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_FrameNavigationCompleted(MemorySegment struct) {
+		return struct.get(remove_FrameNavigationCompleted$LAYOUT, remove_FrameNavigationCompleted$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_FrameNavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_FrameNavigationCompleted$LAYOUT, remove_FrameNavigationCompleted$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ScriptDialogOpening {
+		
+		add_ScriptDialogOpening() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ScriptDialogOpening.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ScriptDialogOpening.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ScriptDialogOpening"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ScriptDialogOpening$layout() {
+		return add_ScriptDialogOpening$LAYOUT;
+	}
+	
+	private static final long add_ScriptDialogOpening$OFFSET = 168;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ScriptDialogOpening$offset() {
+		return add_ScriptDialogOpening$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ScriptDialogOpening(MemorySegment struct) {
+		return struct.get(add_ScriptDialogOpening$LAYOUT, add_ScriptDialogOpening$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2_22 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ScriptDialogOpening(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ScriptDialogOpening$LAYOUT, add_ScriptDialogOpening$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ScriptDialogOpening {
+		
+		remove_ScriptDialogOpening() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ScriptDialogOpening.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ScriptDialogOpening.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ScriptDialogOpening"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ScriptDialogOpening$layout() {
+		return remove_ScriptDialogOpening$LAYOUT;
+	}
+	
+	private static final long remove_ScriptDialogOpening$OFFSET = 176;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ScriptDialogOpening$offset() {
+		return remove_ScriptDialogOpening$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ScriptDialogOpening(MemorySegment struct) {
+		return struct.get(remove_ScriptDialogOpening$LAYOUT, remove_ScriptDialogOpening$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ScriptDialogOpening(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ScriptDialogOpening$LAYOUT, remove_ScriptDialogOpening$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_PermissionRequested {
+		
+		add_PermissionRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_PermissionRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_PermissionRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_PermissionRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_PermissionRequested$layout() {
+		return add_PermissionRequested$LAYOUT;
+	}
+	
+	private static final long add_PermissionRequested$OFFSET = 184;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_PermissionRequested$offset() {
+		return add_PermissionRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_PermissionRequested(MemorySegment struct) {
+		return struct.get(add_PermissionRequested$LAYOUT, add_PermissionRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_PermissionRequested)(ICoreWebView2_22 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_PermissionRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_PermissionRequested$LAYOUT, add_PermissionRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_PermissionRequested {
+		
+		remove_PermissionRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_PermissionRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_PermissionRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_PermissionRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_PermissionRequested$layout() {
+		return remove_PermissionRequested$LAYOUT;
+	}
+	
+	private static final long remove_PermissionRequested$OFFSET = 192;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_PermissionRequested$offset() {
+		return remove_PermissionRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_PermissionRequested(MemorySegment struct) {
+		return struct.get(remove_PermissionRequested$LAYOUT, remove_PermissionRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_PermissionRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_PermissionRequested$LAYOUT, remove_PermissionRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ProcessFailed {
+		
+		add_ProcessFailed() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ProcessFailed.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ProcessFailed.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ProcessFailed"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ProcessFailed$layout() {
+		return add_ProcessFailed$LAYOUT;
+	}
+	
+	private static final long add_ProcessFailed$OFFSET = 200;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ProcessFailed$offset() {
+		return add_ProcessFailed$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ProcessFailed(MemorySegment struct) {
+		return struct.get(add_ProcessFailed$LAYOUT, add_ProcessFailed$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ProcessFailed)(ICoreWebView2_22 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ProcessFailed(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ProcessFailed$LAYOUT, add_ProcessFailed$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ProcessFailed {
+		
+		remove_ProcessFailed() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ProcessFailed.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ProcessFailed.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ProcessFailed"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ProcessFailed$layout() {
+		return remove_ProcessFailed$LAYOUT;
+	}
+	
+	private static final long remove_ProcessFailed$OFFSET = 208;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ProcessFailed$offset() {
+		return remove_ProcessFailed$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ProcessFailed(MemorySegment struct) {
+		return struct.get(remove_ProcessFailed$LAYOUT, remove_ProcessFailed$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ProcessFailed(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ProcessFailed$LAYOUT, remove_ProcessFailed$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class AddScriptToExecuteOnDocumentCreated {
+		
+		AddScriptToExecuteOnDocumentCreated() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(AddScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(AddScriptToExecuteOnDocumentCreated.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout AddScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddScriptToExecuteOnDocumentCreated"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout AddScriptToExecuteOnDocumentCreated$layout() {
+		return AddScriptToExecuteOnDocumentCreated$LAYOUT;
+	}
+	
+	private static final long AddScriptToExecuteOnDocumentCreated$OFFSET = 216;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long AddScriptToExecuteOnDocumentCreated$offset() {
+		return AddScriptToExecuteOnDocumentCreated$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment AddScriptToExecuteOnDocumentCreated(MemorySegment struct) {
+		return struct.get(AddScriptToExecuteOnDocumentCreated$LAYOUT, AddScriptToExecuteOnDocumentCreated$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void AddScriptToExecuteOnDocumentCreated(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(AddScriptToExecuteOnDocumentCreated$LAYOUT, AddScriptToExecuteOnDocumentCreated$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class RemoveScriptToExecuteOnDocumentCreated {
+		
+		RemoveScriptToExecuteOnDocumentCreated() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(RemoveScriptToExecuteOnDocumentCreated.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveScriptToExecuteOnDocumentCreated"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout RemoveScriptToExecuteOnDocumentCreated$layout() {
+		return RemoveScriptToExecuteOnDocumentCreated$LAYOUT;
+	}
+	
+	private static final long RemoveScriptToExecuteOnDocumentCreated$OFFSET = 224;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long RemoveScriptToExecuteOnDocumentCreated$offset() {
+		return RemoveScriptToExecuteOnDocumentCreated$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment RemoveScriptToExecuteOnDocumentCreated(MemorySegment struct) {
+		return struct.get(RemoveScriptToExecuteOnDocumentCreated$LAYOUT, RemoveScriptToExecuteOnDocumentCreated$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void RemoveScriptToExecuteOnDocumentCreated(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(RemoveScriptToExecuteOnDocumentCreated$LAYOUT, RemoveScriptToExecuteOnDocumentCreated$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class ExecuteScript {
+		
+		ExecuteScript() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(ExecuteScript.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(ExecuteScript.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout ExecuteScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ExecuteScript"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout ExecuteScript$layout() {
+		return ExecuteScript$LAYOUT;
+	}
+	
+	private static final long ExecuteScript$OFFSET = 232;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long ExecuteScript$offset() {
+		return ExecuteScript$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment ExecuteScript(MemorySegment struct) {
+		return struct.get(ExecuteScript$LAYOUT, ExecuteScript$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScript)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void ExecuteScript(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(ExecuteScript$LAYOUT, ExecuteScript$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class CapturePreview {
+		
+		CapturePreview() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_INT,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(CapturePreview.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(CapturePreview.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout CapturePreview$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CapturePreview"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout CapturePreview$layout() {
+		return CapturePreview$LAYOUT;
+	}
+	
+	private static final long CapturePreview$OFFSET = 240;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long CapturePreview$offset() {
+		return CapturePreview$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment CapturePreview(MemorySegment struct) {
+		return struct.get(CapturePreview$LAYOUT, CapturePreview$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CapturePreview)(ICoreWebView2_22 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void CapturePreview(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(CapturePreview$LAYOUT, CapturePreview$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class Reload {
+		
+		Reload() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(Reload.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(Reload.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout Reload$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Reload"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout Reload$layout() {
+		return Reload$LAYOUT;
+	}
+	
+	private static final long Reload$OFFSET = 248;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long Reload$offset() {
+		return Reload$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment Reload(MemorySegment struct) {
+		return struct.get(Reload$LAYOUT, Reload$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Reload)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void Reload(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(Reload$LAYOUT, Reload$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class PostWebMessageAsJson {
+		
+		PostWebMessageAsJson() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(PostWebMessageAsJson.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(PostWebMessageAsJson.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout PostWebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostWebMessageAsJson"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout PostWebMessageAsJson$layout() {
+		return PostWebMessageAsJson$LAYOUT;
+	}
+	
+	private static final long PostWebMessageAsJson$OFFSET = 256;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long PostWebMessageAsJson$offset() {
+		return PostWebMessageAsJson$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment PostWebMessageAsJson(MemorySegment struct) {
+		return struct.get(PostWebMessageAsJson$LAYOUT, PostWebMessageAsJson$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void PostWebMessageAsJson(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(PostWebMessageAsJson$LAYOUT, PostWebMessageAsJson$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class PostWebMessageAsString {
+		
+		PostWebMessageAsString() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(PostWebMessageAsString.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(PostWebMessageAsString.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout PostWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostWebMessageAsString"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout PostWebMessageAsString$layout() {
+		return PostWebMessageAsString$LAYOUT;
+	}
+	
+	private static final long PostWebMessageAsString$OFFSET = 264;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long PostWebMessageAsString$offset() {
+		return PostWebMessageAsString$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment PostWebMessageAsString(MemorySegment struct) {
+		return struct.get(PostWebMessageAsString$LAYOUT, PostWebMessageAsString$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void PostWebMessageAsString(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(PostWebMessageAsString$LAYOUT, PostWebMessageAsString$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_WebMessageReceived {
+		
+		add_WebMessageReceived() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebMessageReceived.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_WebMessageReceived.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebMessageReceived"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_WebMessageReceived$layout() {
+		return add_WebMessageReceived$LAYOUT;
+	}
+	
+	private static final long add_WebMessageReceived$OFFSET = 272;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_WebMessageReceived$offset() {
+		return add_WebMessageReceived$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_WebMessageReceived(MemorySegment struct) {
+		return struct.get(add_WebMessageReceived$LAYOUT, add_WebMessageReceived$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2_22 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_WebMessageReceived(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_WebMessageReceived$LAYOUT, add_WebMessageReceived$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_WebMessageReceived {
+		
+		remove_WebMessageReceived() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebMessageReceived.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_WebMessageReceived.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebMessageReceived"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_WebMessageReceived$layout() {
+		return remove_WebMessageReceived$LAYOUT;
+	}
+	
+	private static final long remove_WebMessageReceived$OFFSET = 280;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_WebMessageReceived$offset() {
+		return remove_WebMessageReceived$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_WebMessageReceived(MemorySegment struct) {
+		return struct.get(remove_WebMessageReceived$LAYOUT, remove_WebMessageReceived$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_WebMessageReceived(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_WebMessageReceived$LAYOUT, remove_WebMessageReceived$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class CallDevToolsProtocolMethod {
+		
+		CallDevToolsProtocolMethod() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(CallDevToolsProtocolMethod.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(CallDevToolsProtocolMethod.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout CallDevToolsProtocolMethod$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CallDevToolsProtocolMethod"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout CallDevToolsProtocolMethod$layout() {
+		return CallDevToolsProtocolMethod$LAYOUT;
+	}
+	
+	private static final long CallDevToolsProtocolMethod$OFFSET = 288;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long CallDevToolsProtocolMethod$offset() {
+		return CallDevToolsProtocolMethod$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment CallDevToolsProtocolMethod(MemorySegment struct) {
+		return struct.get(CallDevToolsProtocolMethod$LAYOUT, CallDevToolsProtocolMethod$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void CallDevToolsProtocolMethod(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(CallDevToolsProtocolMethod$LAYOUT, CallDevToolsProtocolMethod$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_BrowserProcessId {
+		
+		get_BrowserProcessId() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_BrowserProcessId.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_BrowserProcessId.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_BrowserProcessId$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_BrowserProcessId"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_BrowserProcessId$layout() {
+		return get_BrowserProcessId$LAYOUT;
+	}
+	
+	private static final long get_BrowserProcessId$OFFSET = 296;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_BrowserProcessId$offset() {
+		return get_BrowserProcessId$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_BrowserProcessId(MemorySegment struct) {
+		return struct.get(get_BrowserProcessId$LAYOUT, get_BrowserProcessId$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_BrowserProcessId(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_BrowserProcessId$LAYOUT, get_BrowserProcessId$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_CanGoBack {
+		
+		get_CanGoBack() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CanGoBack.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_CanGoBack.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_CanGoBack$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CanGoBack"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_CanGoBack$layout() {
+		return get_CanGoBack$LAYOUT;
+	}
+	
+	private static final long get_CanGoBack$OFFSET = 304;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_CanGoBack$offset() {
+		return get_CanGoBack$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_CanGoBack(MemorySegment struct) {
+		return struct.get(get_CanGoBack$LAYOUT, get_CanGoBack$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoBack)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_CanGoBack(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_CanGoBack$LAYOUT, get_CanGoBack$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_CanGoForward {
+		
+		get_CanGoForward() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CanGoForward.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_CanGoForward.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_CanGoForward$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CanGoForward"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_CanGoForward$layout() {
+		return get_CanGoForward$LAYOUT;
+	}
+	
+	private static final long get_CanGoForward$OFFSET = 312;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_CanGoForward$offset() {
+		return get_CanGoForward$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_CanGoForward(MemorySegment struct) {
+		return struct.get(get_CanGoForward$LAYOUT, get_CanGoForward$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CanGoForward)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_CanGoForward(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_CanGoForward$LAYOUT, get_CanGoForward$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class GoBack {
+		
+		GoBack() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(GoBack.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(GoBack.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout GoBack$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GoBack"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout GoBack$layout() {
+		return GoBack$LAYOUT;
+	}
+	
+	private static final long GoBack$OFFSET = 320;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long GoBack$offset() {
+		return GoBack$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment GoBack(MemorySegment struct) {
+		return struct.get(GoBack$LAYOUT, GoBack$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoBack)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void GoBack(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(GoBack$LAYOUT, GoBack$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class GoForward {
+		
+		GoForward() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(GoForward.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(GoForward.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout GoForward$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GoForward"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout GoForward$layout() {
+		return GoForward$LAYOUT;
+	}
+	
+	private static final long GoForward$OFFSET = 328;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long GoForward$offset() {
+		return GoForward$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment GoForward(MemorySegment struct) {
+		return struct.get(GoForward$LAYOUT, GoForward$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GoForward)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void GoForward(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(GoForward$LAYOUT, GoForward$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
+	 * }
+	 */
+	public static class GetDevToolsProtocolEventReceiver {
+		
+		GetDevToolsProtocolEventReceiver() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(GetDevToolsProtocolEventReceiver.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(GetDevToolsProtocolEventReceiver.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout GetDevToolsProtocolEventReceiver$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GetDevToolsProtocolEventReceiver"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout GetDevToolsProtocolEventReceiver$layout() {
+		return GetDevToolsProtocolEventReceiver$LAYOUT;
+	}
+	
+	private static final long GetDevToolsProtocolEventReceiver$OFFSET = 336;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
+	 * }
+	 */
+	public static long GetDevToolsProtocolEventReceiver$offset() {
+		return GetDevToolsProtocolEventReceiver$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment GetDevToolsProtocolEventReceiver(MemorySegment struct) {
+		return struct.get(GetDevToolsProtocolEventReceiver$LAYOUT, GetDevToolsProtocolEventReceiver$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
+	 * }
+	 */
+	public static void GetDevToolsProtocolEventReceiver(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(GetDevToolsProtocolEventReceiver$LAYOUT, GetDevToolsProtocolEventReceiver$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class Stop {
+		
+		Stop() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(Stop.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(Stop.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout Stop$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Stop"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout Stop$layout() {
+		return Stop$LAYOUT;
+	}
+	
+	private static final long Stop$OFFSET = 344;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long Stop$offset() {
+		return Stop$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment Stop(MemorySegment struct) {
+		return struct.get(Stop$LAYOUT, Stop$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Stop)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void Stop(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(Stop$LAYOUT, Stop$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_NewWindowRequested {
+		
+		add_NewWindowRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NewWindowRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_NewWindowRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NewWindowRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_NewWindowRequested$layout() {
+		return add_NewWindowRequested$LAYOUT;
+	}
+	
+	private static final long add_NewWindowRequested$OFFSET = 352;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_NewWindowRequested$offset() {
+		return add_NewWindowRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_NewWindowRequested(MemorySegment struct) {
+		return struct.get(add_NewWindowRequested$LAYOUT, add_NewWindowRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2_22 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_NewWindowRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_NewWindowRequested$LAYOUT, add_NewWindowRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_NewWindowRequested {
+		
+		remove_NewWindowRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NewWindowRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_NewWindowRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NewWindowRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_NewWindowRequested$layout() {
+		return remove_NewWindowRequested$LAYOUT;
+	}
+	
+	private static final long remove_NewWindowRequested$OFFSET = 360;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_NewWindowRequested$offset() {
+		return remove_NewWindowRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_NewWindowRequested(MemorySegment struct) {
+		return struct.get(remove_NewWindowRequested$LAYOUT, remove_NewWindowRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_NewWindowRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_NewWindowRequested$LAYOUT, remove_NewWindowRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_DocumentTitleChanged {
+		
+		add_DocumentTitleChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_DocumentTitleChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_DocumentTitleChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DocumentTitleChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_DocumentTitleChanged$layout() {
+		return add_DocumentTitleChanged$LAYOUT;
+	}
+	
+	private static final long add_DocumentTitleChanged$OFFSET = 368;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_DocumentTitleChanged$offset() {
+		return add_DocumentTitleChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_DocumentTitleChanged(MemorySegment struct) {
+		return struct.get(add_DocumentTitleChanged$LAYOUT, add_DocumentTitleChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2_22 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_DocumentTitleChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_DocumentTitleChanged$LAYOUT, add_DocumentTitleChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_DocumentTitleChanged {
+		
+		remove_DocumentTitleChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DocumentTitleChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_DocumentTitleChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DocumentTitleChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_DocumentTitleChanged$layout() {
+		return remove_DocumentTitleChanged$LAYOUT;
+	}
+	
+	private static final long remove_DocumentTitleChanged$OFFSET = 376;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_DocumentTitleChanged$offset() {
+		return remove_DocumentTitleChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_DocumentTitleChanged(MemorySegment struct) {
+		return struct.get(remove_DocumentTitleChanged$LAYOUT, remove_DocumentTitleChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_DocumentTitleChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_DocumentTitleChanged$LAYOUT, remove_DocumentTitleChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_DocumentTitle {
+		
+		get_DocumentTitle() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_DocumentTitle.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_DocumentTitle.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_DocumentTitle$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DocumentTitle"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_DocumentTitle$layout() {
+		return get_DocumentTitle$LAYOUT;
+	}
+	
+	private static final long get_DocumentTitle$OFFSET = 384;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_DocumentTitle$offset() {
+		return get_DocumentTitle$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_DocumentTitle(MemorySegment struct) {
+		return struct.get(get_DocumentTitle$LAYOUT, get_DocumentTitle$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DocumentTitle)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_DocumentTitle(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_DocumentTitle$LAYOUT, get_DocumentTitle$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class AddHostObjectToScript {
+		
+		AddHostObjectToScript() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(AddHostObjectToScript.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(AddHostObjectToScript.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout AddHostObjectToScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddHostObjectToScript"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout AddHostObjectToScript$layout() {
+		return AddHostObjectToScript$LAYOUT;
+	}
+	
+	private static final long AddHostObjectToScript$OFFSET = 392;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long AddHostObjectToScript$offset() {
+		return AddHostObjectToScript$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment AddHostObjectToScript(MemorySegment struct) {
+		return struct.get(AddHostObjectToScript$LAYOUT, AddHostObjectToScript$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2_22 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void AddHostObjectToScript(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(AddHostObjectToScript$LAYOUT, AddHostObjectToScript$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class RemoveHostObjectFromScript {
+		
+		RemoveHostObjectFromScript() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveHostObjectFromScript.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(RemoveHostObjectFromScript.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout RemoveHostObjectFromScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveHostObjectFromScript"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout RemoveHostObjectFromScript$layout() {
+		return RemoveHostObjectFromScript$LAYOUT;
+	}
+	
+	private static final long RemoveHostObjectFromScript$OFFSET = 400;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long RemoveHostObjectFromScript$offset() {
+		return RemoveHostObjectFromScript$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment RemoveHostObjectFromScript(MemorySegment struct) {
+		return struct.get(RemoveHostObjectFromScript$LAYOUT, RemoveHostObjectFromScript$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void RemoveHostObjectFromScript(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(RemoveHostObjectFromScript$LAYOUT, RemoveHostObjectFromScript$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class OpenDevToolsWindow {
+		
+		OpenDevToolsWindow() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(OpenDevToolsWindow.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(OpenDevToolsWindow.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout OpenDevToolsWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenDevToolsWindow"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout OpenDevToolsWindow$layout() {
+		return OpenDevToolsWindow$LAYOUT;
+	}
+	
+	private static final long OpenDevToolsWindow$OFFSET = 408;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long OpenDevToolsWindow$offset() {
+		return OpenDevToolsWindow$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment OpenDevToolsWindow(MemorySegment struct) {
+		return struct.get(OpenDevToolsWindow$LAYOUT, OpenDevToolsWindow$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void OpenDevToolsWindow(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(OpenDevToolsWindow$LAYOUT, OpenDevToolsWindow$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ContainsFullScreenElementChanged {
+		
+		add_ContainsFullScreenElementChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ContainsFullScreenElementChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContainsFullScreenElementChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ContainsFullScreenElementChanged$layout() {
+		return add_ContainsFullScreenElementChanged$LAYOUT;
+	}
+	
+	private static final long add_ContainsFullScreenElementChanged$OFFSET = 416;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ContainsFullScreenElementChanged$offset() {
+		return add_ContainsFullScreenElementChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ContainsFullScreenElementChanged(MemorySegment struct) {
+		return struct.get(add_ContainsFullScreenElementChanged$LAYOUT, add_ContainsFullScreenElementChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ContainsFullScreenElementChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ContainsFullScreenElementChanged$LAYOUT, add_ContainsFullScreenElementChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ContainsFullScreenElementChanged {
+		
+		remove_ContainsFullScreenElementChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ContainsFullScreenElementChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContainsFullScreenElementChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ContainsFullScreenElementChanged$layout() {
+		return remove_ContainsFullScreenElementChanged$LAYOUT;
+	}
+	
+	private static final long remove_ContainsFullScreenElementChanged$OFFSET = 424;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ContainsFullScreenElementChanged$offset() {
+		return remove_ContainsFullScreenElementChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ContainsFullScreenElementChanged(MemorySegment struct) {
+		return struct.get(remove_ContainsFullScreenElementChanged$LAYOUT, remove_ContainsFullScreenElementChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ContainsFullScreenElementChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ContainsFullScreenElementChanged$LAYOUT, remove_ContainsFullScreenElementChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_ContainsFullScreenElement {
+		
+		get_ContainsFullScreenElement() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_ContainsFullScreenElement.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_ContainsFullScreenElement.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_ContainsFullScreenElement$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_ContainsFullScreenElement"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_ContainsFullScreenElement$layout() {
+		return get_ContainsFullScreenElement$LAYOUT;
+	}
+	
+	private static final long get_ContainsFullScreenElement$OFFSET = 432;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_ContainsFullScreenElement$offset() {
+		return get_ContainsFullScreenElement$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_ContainsFullScreenElement(MemorySegment struct) {
+		return struct.get(get_ContainsFullScreenElement$LAYOUT, get_ContainsFullScreenElement$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_ContainsFullScreenElement(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_ContainsFullScreenElement$LAYOUT, get_ContainsFullScreenElement$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_WebResourceRequested {
+		
+		add_WebResourceRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebResourceRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_WebResourceRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebResourceRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_WebResourceRequested$layout() {
+		return add_WebResourceRequested$LAYOUT;
+	}
+	
+	private static final long add_WebResourceRequested$OFFSET = 440;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_WebResourceRequested$offset() {
+		return add_WebResourceRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_WebResourceRequested(MemorySegment struct) {
+		return struct.get(add_WebResourceRequested$LAYOUT, add_WebResourceRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_WebResourceRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_WebResourceRequested$LAYOUT, add_WebResourceRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_WebResourceRequested {
+		
+		remove_WebResourceRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebResourceRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_WebResourceRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebResourceRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_WebResourceRequested$layout() {
+		return remove_WebResourceRequested$LAYOUT;
+	}
+	
+	private static final long remove_WebResourceRequested$OFFSET = 448;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_WebResourceRequested$offset() {
+		return remove_WebResourceRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_WebResourceRequested(MemorySegment struct) {
+		return struct.get(remove_WebResourceRequested$LAYOUT, remove_WebResourceRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_WebResourceRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_WebResourceRequested$LAYOUT, remove_WebResourceRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static class AddWebResourceRequestedFilter {
+		
+		AddWebResourceRequestedFilter() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, int _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(AddWebResourceRequestedFilter.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(AddWebResourceRequestedFilter.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout AddWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddWebResourceRequestedFilter"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout AddWebResourceRequestedFilter$layout() {
+		return AddWebResourceRequestedFilter$LAYOUT;
+	}
+	
+	private static final long AddWebResourceRequestedFilter$OFFSET = 456;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static long AddWebResourceRequestedFilter$offset() {
+		return AddWebResourceRequestedFilter$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment AddWebResourceRequestedFilter(MemorySegment struct) {
+		return struct.get(AddWebResourceRequestedFilter$LAYOUT, AddWebResourceRequestedFilter$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static void AddWebResourceRequestedFilter(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(AddWebResourceRequestedFilter$LAYOUT, AddWebResourceRequestedFilter$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static class RemoveWebResourceRequestedFilter {
+		
+		RemoveWebResourceRequestedFilter() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, int _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveWebResourceRequestedFilter.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(RemoveWebResourceRequestedFilter.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout RemoveWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveWebResourceRequestedFilter"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout RemoveWebResourceRequestedFilter$layout() {
+		return RemoveWebResourceRequestedFilter$LAYOUT;
+	}
+	
+	private static final long RemoveWebResourceRequestedFilter$OFFSET = 464;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static long RemoveWebResourceRequestedFilter$offset() {
+		return RemoveWebResourceRequestedFilter$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment RemoveWebResourceRequestedFilter(MemorySegment struct) {
+		return struct.get(RemoveWebResourceRequestedFilter$LAYOUT, RemoveWebResourceRequestedFilter$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
+	 * }
+	 */
+	public static void RemoveWebResourceRequestedFilter(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(RemoveWebResourceRequestedFilter$LAYOUT, RemoveWebResourceRequestedFilter$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_WindowCloseRequested {
+		
+		add_WindowCloseRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WindowCloseRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_WindowCloseRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WindowCloseRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_WindowCloseRequested$layout() {
+		return add_WindowCloseRequested$LAYOUT;
+	}
+	
+	private static final long add_WindowCloseRequested$OFFSET = 472;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_WindowCloseRequested$offset() {
+		return add_WindowCloseRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_WindowCloseRequested(MemorySegment struct) {
+		return struct.get(add_WindowCloseRequested$LAYOUT, add_WindowCloseRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2_22 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_WindowCloseRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_WindowCloseRequested$LAYOUT, add_WindowCloseRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_WindowCloseRequested {
+		
+		remove_WindowCloseRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WindowCloseRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_WindowCloseRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WindowCloseRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_WindowCloseRequested$layout() {
+		return remove_WindowCloseRequested$LAYOUT;
+	}
+	
+	private static final long remove_WindowCloseRequested$OFFSET = 480;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_WindowCloseRequested$offset() {
+		return remove_WindowCloseRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_WindowCloseRequested(MemorySegment struct) {
+		return struct.get(remove_WindowCloseRequested$LAYOUT, remove_WindowCloseRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_WindowCloseRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_WindowCloseRequested$LAYOUT, remove_WindowCloseRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_WebResourceResponseReceived {
+		
+		add_WebResourceResponseReceived() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebResourceResponseReceived.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_WebResourceResponseReceived.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_WebResourceResponseReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebResourceResponseReceived"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_WebResourceResponseReceived$layout() {
+		return add_WebResourceResponseReceived$LAYOUT;
+	}
+	
+	private static final long add_WebResourceResponseReceived$OFFSET = 488;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_WebResourceResponseReceived$offset() {
+		return add_WebResourceResponseReceived$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_WebResourceResponseReceived(MemorySegment struct) {
+		return struct.get(add_WebResourceResponseReceived$LAYOUT, add_WebResourceResponseReceived$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_WebResourceResponseReceived)(ICoreWebView2_22 *, ICoreWebView2WebResourceResponseReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_WebResourceResponseReceived(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_WebResourceResponseReceived$LAYOUT, add_WebResourceResponseReceived$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_WebResourceResponseReceived {
+		
+		remove_WebResourceResponseReceived() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebResourceResponseReceived.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_WebResourceResponseReceived.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_WebResourceResponseReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebResourceResponseReceived"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_WebResourceResponseReceived$layout() {
+		return remove_WebResourceResponseReceived$LAYOUT;
+	}
+	
+	private static final long remove_WebResourceResponseReceived$OFFSET = 496;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_WebResourceResponseReceived$offset() {
+		return remove_WebResourceResponseReceived$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_WebResourceResponseReceived(MemorySegment struct) {
+		return struct.get(remove_WebResourceResponseReceived$LAYOUT, remove_WebResourceResponseReceived$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_WebResourceResponseReceived)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_WebResourceResponseReceived(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_WebResourceResponseReceived$LAYOUT, remove_WebResourceResponseReceived$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class NavigateWithWebResourceRequest {
+		
+		NavigateWithWebResourceRequest() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(NavigateWithWebResourceRequest.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(NavigateWithWebResourceRequest.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout NavigateWithWebResourceRequest$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("NavigateWithWebResourceRequest"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout NavigateWithWebResourceRequest$layout() {
+		return NavigateWithWebResourceRequest$LAYOUT;
+	}
+	
+	private static final long NavigateWithWebResourceRequest$OFFSET = 504;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long NavigateWithWebResourceRequest$offset() {
+		return NavigateWithWebResourceRequest$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment NavigateWithWebResourceRequest(MemorySegment struct) {
+		return struct.get(NavigateWithWebResourceRequest$LAYOUT, NavigateWithWebResourceRequest$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*NavigateWithWebResourceRequest)(ICoreWebView2_22 *, ICoreWebView2WebResourceRequest *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void NavigateWithWebResourceRequest(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(NavigateWithWebResourceRequest$LAYOUT, NavigateWithWebResourceRequest$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_DOMContentLoaded {
+		
+		add_DOMContentLoaded() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_DOMContentLoaded.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_DOMContentLoaded.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_DOMContentLoaded$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DOMContentLoaded"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_DOMContentLoaded$layout() {
+		return add_DOMContentLoaded$LAYOUT;
+	}
+	
+	private static final long add_DOMContentLoaded$OFFSET = 512;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_DOMContentLoaded$offset() {
+		return add_DOMContentLoaded$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_DOMContentLoaded(MemorySegment struct) {
+		return struct.get(add_DOMContentLoaded$LAYOUT, add_DOMContentLoaded$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DOMContentLoaded)(ICoreWebView2_22 *, ICoreWebView2DOMContentLoadedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_DOMContentLoaded(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_DOMContentLoaded$LAYOUT, add_DOMContentLoaded$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_DOMContentLoaded {
+		
+		remove_DOMContentLoaded() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DOMContentLoaded.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_DOMContentLoaded.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_DOMContentLoaded$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DOMContentLoaded"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_DOMContentLoaded$layout() {
+		return remove_DOMContentLoaded$LAYOUT;
+	}
+	
+	private static final long remove_DOMContentLoaded$OFFSET = 520;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_DOMContentLoaded$offset() {
+		return remove_DOMContentLoaded$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_DOMContentLoaded(MemorySegment struct) {
+		return struct.get(remove_DOMContentLoaded$LAYOUT, remove_DOMContentLoaded$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DOMContentLoaded)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_DOMContentLoaded(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_DOMContentLoaded$LAYOUT, remove_DOMContentLoaded$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_CookieManager {
+		
+		get_CookieManager() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CookieManager.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_CookieManager.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_CookieManager$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CookieManager"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_CookieManager$layout() {
+		return get_CookieManager$LAYOUT;
+	}
+	
+	private static final long get_CookieManager$OFFSET = 528;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_CookieManager$offset() {
+		return get_CookieManager$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_CookieManager(MemorySegment struct) {
+		return struct.get(get_CookieManager$LAYOUT, get_CookieManager$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_CookieManager)(ICoreWebView2_22 *, ICoreWebView2CookieManager **) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_CookieManager(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_CookieManager$LAYOUT, get_CookieManager$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_Environment {
+		
+		get_Environment() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Environment.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_Environment.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_Environment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Environment"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_Environment$layout() {
+		return get_Environment$LAYOUT;
+	}
+	
+	private static final long get_Environment$OFFSET = 536;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_Environment$offset() {
+		return get_Environment$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_Environment(MemorySegment struct) {
+		return struct.get(get_Environment$LAYOUT, get_Environment$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Environment)(ICoreWebView2_22 *, ICoreWebView2Environment **) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_Environment(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_Environment$LAYOUT, get_Environment$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class TrySuspend {
+		
+		TrySuspend() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(TrySuspend.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(TrySuspend.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout TrySuspend$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("TrySuspend"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout TrySuspend$layout() {
+		return TrySuspend$LAYOUT;
+	}
+	
+	private static final long TrySuspend$OFFSET = 544;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long TrySuspend$offset() {
+		return TrySuspend$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment TrySuspend(MemorySegment struct) {
+		return struct.get(TrySuspend$LAYOUT, TrySuspend$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*TrySuspend)(ICoreWebView2_22 *, ICoreWebView2TrySuspendCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void TrySuspend(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(TrySuspend$LAYOUT, TrySuspend$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class Resume {
+		
+		Resume() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(Resume.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(Resume.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout Resume$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Resume"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout Resume$layout() {
+		return Resume$LAYOUT;
+	}
+	
+	private static final long Resume$OFFSET = 552;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long Resume$offset() {
+		return Resume$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment Resume(MemorySegment struct) {
+		return struct.get(Resume$LAYOUT, Resume$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Resume)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void Resume(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(Resume$LAYOUT, Resume$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_IsSuspended {
+		
+		get_IsSuspended() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsSuspended.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_IsSuspended.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_IsSuspended$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsSuspended"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_IsSuspended$layout() {
+		return get_IsSuspended$LAYOUT;
+	}
+	
+	private static final long get_IsSuspended$OFFSET = 560;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_IsSuspended$offset() {
+		return get_IsSuspended$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_IsSuspended(MemorySegment struct) {
+		return struct.get(get_IsSuspended$LAYOUT, get_IsSuspended$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsSuspended)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_IsSuspended(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_IsSuspended$LAYOUT, get_IsSuspended$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static class SetVirtualHostNameToFolderMapping {
+		
+		SetVirtualHostNameToFolderMapping() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(SetVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(SetVirtualHostNameToFolderMapping.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout SetVirtualHostNameToFolderMapping$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("SetVirtualHostNameToFolderMapping"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout SetVirtualHostNameToFolderMapping$layout() {
+		return SetVirtualHostNameToFolderMapping$LAYOUT;
+	}
+	
+	private static final long SetVirtualHostNameToFolderMapping$OFFSET = 568;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static final long SetVirtualHostNameToFolderMapping$offset() {
+		return SetVirtualHostNameToFolderMapping$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment SetVirtualHostNameToFolderMapping(MemorySegment struct) {
+		return struct.get(SetVirtualHostNameToFolderMapping$LAYOUT, SetVirtualHostNameToFolderMapping$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static void SetVirtualHostNameToFolderMapping(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(SetVirtualHostNameToFolderMapping$LAYOUT, SetVirtualHostNameToFolderMapping$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class ClearVirtualHostNameToFolderMapping {
+		
+		ClearVirtualHostNameToFolderMapping() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(ClearVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(ClearVirtualHostNameToFolderMapping.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout ClearVirtualHostNameToFolderMapping$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ClearVirtualHostNameToFolderMapping"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout ClearVirtualHostNameToFolderMapping$layout() {
+		return ClearVirtualHostNameToFolderMapping$LAYOUT;
+	}
+	
+	private static final long ClearVirtualHostNameToFolderMapping$OFFSET = 576;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long ClearVirtualHostNameToFolderMapping$offset() {
+		return ClearVirtualHostNameToFolderMapping$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment ClearVirtualHostNameToFolderMapping(MemorySegment struct) {
+		return struct.get(ClearVirtualHostNameToFolderMapping$LAYOUT, ClearVirtualHostNameToFolderMapping$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void ClearVirtualHostNameToFolderMapping(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(ClearVirtualHostNameToFolderMapping$LAYOUT, ClearVirtualHostNameToFolderMapping$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_FrameCreated {
+		
+		add_FrameCreated() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameCreated.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_FrameCreated.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_FrameCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameCreated"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_FrameCreated$layout() {
+		return add_FrameCreated$LAYOUT;
+	}
+	
+	private static final long add_FrameCreated$OFFSET = 584;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_FrameCreated$offset() {
+		return add_FrameCreated$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_FrameCreated(MemorySegment struct) {
+		return struct.get(add_FrameCreated$LAYOUT, add_FrameCreated$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FrameCreated)(ICoreWebView2_22 *, ICoreWebView2FrameCreatedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_FrameCreated(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_FrameCreated$LAYOUT, add_FrameCreated$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_FrameCreated {
+		
+		remove_FrameCreated() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameCreated.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_FrameCreated.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_FrameCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameCreated"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_FrameCreated$layout() {
+		return remove_FrameCreated$LAYOUT;
+	}
+	
+	private static final long remove_FrameCreated$OFFSET = 592;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_FrameCreated$offset() {
+		return remove_FrameCreated$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_FrameCreated(MemorySegment struct) {
+		return struct.get(remove_FrameCreated$LAYOUT, remove_FrameCreated$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FrameCreated)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_FrameCreated(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_FrameCreated$LAYOUT, remove_FrameCreated$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_DownloadStarting {
+		
+		add_DownloadStarting() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_DownloadStarting.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_DownloadStarting.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_DownloadStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DownloadStarting"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_DownloadStarting$layout() {
+		return add_DownloadStarting$LAYOUT;
+	}
+	
+	private static final long add_DownloadStarting$OFFSET = 600;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_DownloadStarting$offset() {
+		return add_DownloadStarting$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_DownloadStarting(MemorySegment struct) {
+		return struct.get(add_DownloadStarting$LAYOUT, add_DownloadStarting$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_DownloadStarting)(ICoreWebView2_22 *, ICoreWebView2DownloadStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_DownloadStarting(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_DownloadStarting$LAYOUT, add_DownloadStarting$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_DownloadStarting {
+		
+		remove_DownloadStarting() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DownloadStarting.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_DownloadStarting.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_DownloadStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DownloadStarting"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_DownloadStarting$layout() {
+		return remove_DownloadStarting$LAYOUT;
+	}
+	
+	private static final long remove_DownloadStarting$OFFSET = 608;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_DownloadStarting$offset() {
+		return remove_DownloadStarting$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_DownloadStarting(MemorySegment struct) {
+		return struct.get(remove_DownloadStarting$LAYOUT, remove_DownloadStarting$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_DownloadStarting)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_DownloadStarting(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_DownloadStarting$LAYOUT, remove_DownloadStarting$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ClientCertificateRequested {
+		
+		add_ClientCertificateRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ClientCertificateRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ClientCertificateRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ClientCertificateRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ClientCertificateRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ClientCertificateRequested$layout() {
+		return add_ClientCertificateRequested$LAYOUT;
+	}
+	
+	private static final long add_ClientCertificateRequested$OFFSET = 616;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ClientCertificateRequested$offset() {
+		return add_ClientCertificateRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ClientCertificateRequested(MemorySegment struct) {
+		return struct.get(add_ClientCertificateRequested$LAYOUT, add_ClientCertificateRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ClientCertificateRequested)(ICoreWebView2_22 *, ICoreWebView2ClientCertificateRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ClientCertificateRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ClientCertificateRequested$LAYOUT, add_ClientCertificateRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ClientCertificateRequested {
+		
+		remove_ClientCertificateRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ClientCertificateRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ClientCertificateRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ClientCertificateRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ClientCertificateRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ClientCertificateRequested$layout() {
+		return remove_ClientCertificateRequested$LAYOUT;
+	}
+	
+	private static final long remove_ClientCertificateRequested$OFFSET = 624;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ClientCertificateRequested$offset() {
+		return remove_ClientCertificateRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ClientCertificateRequested(MemorySegment struct) {
+		return struct.get(remove_ClientCertificateRequested$LAYOUT, remove_ClientCertificateRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ClientCertificateRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ClientCertificateRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ClientCertificateRequested$LAYOUT, remove_ClientCertificateRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class OpenTaskManagerWindow {
+		
+		OpenTaskManagerWindow() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(OpenTaskManagerWindow.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(OpenTaskManagerWindow.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout OpenTaskManagerWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenTaskManagerWindow"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout OpenTaskManagerWindow$layout() {
+		return OpenTaskManagerWindow$LAYOUT;
+	}
+	
+	private static final long OpenTaskManagerWindow$OFFSET = 632;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long OpenTaskManagerWindow$offset() {
+		return OpenTaskManagerWindow$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment OpenTaskManagerWindow(MemorySegment struct) {
+		return struct.get(OpenTaskManagerWindow$LAYOUT, OpenTaskManagerWindow$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenTaskManagerWindow)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void OpenTaskManagerWindow(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(OpenTaskManagerWindow$LAYOUT, OpenTaskManagerWindow$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class PrintToPdf {
+		
+		PrintToPdf() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(PrintToPdf.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(PrintToPdf.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout PrintToPdf$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PrintToPdf"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout PrintToPdf$layout() {
+		return PrintToPdf$LAYOUT;
+	}
+	
+	private static final long PrintToPdf$OFFSET = 640;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long PrintToPdf$offset() {
+		return PrintToPdf$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment PrintToPdf(MemorySegment struct) {
+		return struct.get(PrintToPdf$LAYOUT, PrintToPdf$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdf)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void PrintToPdf(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(PrintToPdf$LAYOUT, PrintToPdf$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_IsMutedChanged {
+		
+		add_IsMutedChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsMutedChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_IsMutedChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_IsMutedChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_IsMutedChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_IsMutedChanged$layout() {
+		return add_IsMutedChanged$LAYOUT;
+	}
+	
+	private static final long add_IsMutedChanged$OFFSET = 648;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_IsMutedChanged$offset() {
+		return add_IsMutedChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_IsMutedChanged(MemorySegment struct) {
+		return struct.get(add_IsMutedChanged$LAYOUT, add_IsMutedChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsMutedChanged)(ICoreWebView2_22 *, ICoreWebView2IsMutedChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_IsMutedChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_IsMutedChanged$LAYOUT, add_IsMutedChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_IsMutedChanged {
+		
+		remove_IsMutedChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsMutedChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_IsMutedChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_IsMutedChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_IsMutedChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_IsMutedChanged$layout() {
+		return remove_IsMutedChanged$LAYOUT;
+	}
+	
+	private static final long remove_IsMutedChanged$OFFSET = 656;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_IsMutedChanged$offset() {
+		return remove_IsMutedChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_IsMutedChanged(MemorySegment struct) {
+		return struct.get(remove_IsMutedChanged$LAYOUT, remove_IsMutedChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsMutedChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_IsMutedChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_IsMutedChanged$LAYOUT, remove_IsMutedChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_IsMuted {
+		
+		get_IsMuted() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsMuted.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_IsMuted.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_IsMuted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsMuted"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_IsMuted$layout() {
+		return get_IsMuted$LAYOUT;
+	}
+	
+	private static final long get_IsMuted$OFFSET = 664;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_IsMuted$offset() {
+		return get_IsMuted$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_IsMuted(MemorySegment struct) {
+		return struct.get(get_IsMuted$LAYOUT, get_IsMuted$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsMuted)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_IsMuted(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_IsMuted$LAYOUT, get_IsMuted$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
+	 * }
+	 */
+	public static class put_IsMuted {
+		
+		put_IsMuted() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, int _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsMuted.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(put_IsMuted.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout put_IsMuted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsMuted"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout put_IsMuted$layout() {
+		return put_IsMuted$LAYOUT;
+	}
+	
+	private static final long put_IsMuted$OFFSET = 672;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
+	 * }
+	 */
+	public static long put_IsMuted$offset() {
+		return put_IsMuted$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment put_IsMuted(MemorySegment struct) {
+		return struct.get(put_IsMuted$LAYOUT, put_IsMuted$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_IsMuted)(ICoreWebView2_22 *, BOOL) __attribute__((stdcall))
+	 * }
+	 */
+	public static void put_IsMuted(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(put_IsMuted$LAYOUT, put_IsMuted$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_IsDocumentPlayingAudioChanged {
+		
+		add_IsDocumentPlayingAudioChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_IsDocumentPlayingAudioChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_IsDocumentPlayingAudioChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_IsDocumentPlayingAudioChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_IsDocumentPlayingAudioChanged$layout() {
+		return add_IsDocumentPlayingAudioChanged$LAYOUT;
+	}
+	
+	private static final long add_IsDocumentPlayingAudioChanged$OFFSET = 680;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_IsDocumentPlayingAudioChanged$offset() {
+		return add_IsDocumentPlayingAudioChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_IsDocumentPlayingAudioChanged(MemorySegment struct) {
+		return struct.get(add_IsDocumentPlayingAudioChanged$LAYOUT, add_IsDocumentPlayingAudioChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, ICoreWebView2IsDocumentPlayingAudioChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_IsDocumentPlayingAudioChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_IsDocumentPlayingAudioChanged$LAYOUT, add_IsDocumentPlayingAudioChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_IsDocumentPlayingAudioChanged {
+		
+		remove_IsDocumentPlayingAudioChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_IsDocumentPlayingAudioChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_IsDocumentPlayingAudioChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_IsDocumentPlayingAudioChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_IsDocumentPlayingAudioChanged$layout() {
+		return remove_IsDocumentPlayingAudioChanged$LAYOUT;
+	}
+	
+	private static final long remove_IsDocumentPlayingAudioChanged$OFFSET = 688;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_IsDocumentPlayingAudioChanged$offset() {
+		return remove_IsDocumentPlayingAudioChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_IsDocumentPlayingAudioChanged(MemorySegment struct) {
+		return struct.get(remove_IsDocumentPlayingAudioChanged$LAYOUT, remove_IsDocumentPlayingAudioChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDocumentPlayingAudioChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_IsDocumentPlayingAudioChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_IsDocumentPlayingAudioChanged$LAYOUT, remove_IsDocumentPlayingAudioChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_IsDocumentPlayingAudio {
+		
+		get_IsDocumentPlayingAudio() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsDocumentPlayingAudio.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_IsDocumentPlayingAudio.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_IsDocumentPlayingAudio$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsDocumentPlayingAudio"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_IsDocumentPlayingAudio$layout() {
+		return get_IsDocumentPlayingAudio$LAYOUT;
+	}
+	
+	private static final long get_IsDocumentPlayingAudio$OFFSET = 696;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_IsDocumentPlayingAudio$offset() {
+		return get_IsDocumentPlayingAudio$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_IsDocumentPlayingAudio(MemorySegment struct) {
+		return struct.get(get_IsDocumentPlayingAudio$LAYOUT, get_IsDocumentPlayingAudio$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDocumentPlayingAudio)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_IsDocumentPlayingAudio(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_IsDocumentPlayingAudio$LAYOUT, get_IsDocumentPlayingAudio$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_IsDefaultDownloadDialogOpenChanged {
+		
+		add_IsDefaultDownloadDialogOpenChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_IsDefaultDownloadDialogOpenChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_IsDefaultDownloadDialogOpenChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_IsDefaultDownloadDialogOpenChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_IsDefaultDownloadDialogOpenChanged$layout() {
+		return add_IsDefaultDownloadDialogOpenChanged$LAYOUT;
+	}
+	
+	private static final long add_IsDefaultDownloadDialogOpenChanged$OFFSET = 704;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_IsDefaultDownloadDialogOpenChanged$offset() {
+		return add_IsDefaultDownloadDialogOpenChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_IsDefaultDownloadDialogOpenChanged(MemorySegment struct) {
+		return struct.get(add_IsDefaultDownloadDialogOpenChanged$LAYOUT, add_IsDefaultDownloadDialogOpenChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_IsDefaultDownloadDialogOpenChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_IsDefaultDownloadDialogOpenChanged$LAYOUT, add_IsDefaultDownloadDialogOpenChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_IsDefaultDownloadDialogOpenChanged {
+		
+		remove_IsDefaultDownloadDialogOpenChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_IsDefaultDownloadDialogOpenChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_IsDefaultDownloadDialogOpenChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_IsDefaultDownloadDialogOpenChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_IsDefaultDownloadDialogOpenChanged$layout() {
+		return remove_IsDefaultDownloadDialogOpenChanged$LAYOUT;
+	}
+	
+	private static final long remove_IsDefaultDownloadDialogOpenChanged$OFFSET = 712;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_IsDefaultDownloadDialogOpenChanged$offset() {
+		return remove_IsDefaultDownloadDialogOpenChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_IsDefaultDownloadDialogOpenChanged(MemorySegment struct) {
+		return struct.get(remove_IsDefaultDownloadDialogOpenChanged$LAYOUT, remove_IsDefaultDownloadDialogOpenChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_IsDefaultDownloadDialogOpenChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_IsDefaultDownloadDialogOpenChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_IsDefaultDownloadDialogOpenChanged$LAYOUT, remove_IsDefaultDownloadDialogOpenChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_IsDefaultDownloadDialogOpen {
+		
+		get_IsDefaultDownloadDialogOpen() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsDefaultDownloadDialogOpen.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_IsDefaultDownloadDialogOpen.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_IsDefaultDownloadDialogOpen$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsDefaultDownloadDialogOpen"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_IsDefaultDownloadDialogOpen$layout() {
+		return get_IsDefaultDownloadDialogOpen$LAYOUT;
+	}
+	
+	private static final long get_IsDefaultDownloadDialogOpen$OFFSET = 720;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_IsDefaultDownloadDialogOpen$offset() {
+		return get_IsDefaultDownloadDialogOpen$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_IsDefaultDownloadDialogOpen(MemorySegment struct) {
+		return struct.get(get_IsDefaultDownloadDialogOpen$LAYOUT, get_IsDefaultDownloadDialogOpen$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_IsDefaultDownloadDialogOpen)(ICoreWebView2_22 *, BOOL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_IsDefaultDownloadDialogOpen(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_IsDefaultDownloadDialogOpen$LAYOUT, get_IsDefaultDownloadDialogOpen$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class OpenDefaultDownloadDialog {
+		
+		OpenDefaultDownloadDialog() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(OpenDefaultDownloadDialog.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(OpenDefaultDownloadDialog.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout OpenDefaultDownloadDialog$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenDefaultDownloadDialog"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout OpenDefaultDownloadDialog$layout() {
+		return OpenDefaultDownloadDialog$LAYOUT;
+	}
+	
+	private static final long OpenDefaultDownloadDialog$OFFSET = 728;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long OpenDefaultDownloadDialog$offset() {
+		return OpenDefaultDownloadDialog$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment OpenDefaultDownloadDialog(MemorySegment struct) {
+		return struct.get(OpenDefaultDownloadDialog$LAYOUT, OpenDefaultDownloadDialog$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*OpenDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void OpenDefaultDownloadDialog(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(OpenDefaultDownloadDialog$LAYOUT, OpenDefaultDownloadDialog$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class CloseDefaultDownloadDialog {
+		
+		CloseDefaultDownloadDialog() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(CloseDefaultDownloadDialog.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(CloseDefaultDownloadDialog.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout CloseDefaultDownloadDialog$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CloseDefaultDownloadDialog"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout CloseDefaultDownloadDialog$layout() {
+		return CloseDefaultDownloadDialog$LAYOUT;
+	}
+	
+	private static final long CloseDefaultDownloadDialog$OFFSET = 736;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long CloseDefaultDownloadDialog$offset() {
+		return CloseDefaultDownloadDialog$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment CloseDefaultDownloadDialog(MemorySegment struct) {
+		return struct.get(CloseDefaultDownloadDialog$LAYOUT, CloseDefaultDownloadDialog$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CloseDefaultDownloadDialog)(ICoreWebView2_22 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void CloseDefaultDownloadDialog(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(CloseDefaultDownloadDialog$LAYOUT, CloseDefaultDownloadDialog$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_DefaultDownloadDialogCornerAlignment {
+		
+		get_DefaultDownloadDialogCornerAlignment() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_DefaultDownloadDialogCornerAlignment.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_DefaultDownloadDialogCornerAlignment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DefaultDownloadDialogCornerAlignment"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_DefaultDownloadDialogCornerAlignment$layout() {
+		return get_DefaultDownloadDialogCornerAlignment$LAYOUT;
+	}
+	
+	private static final long get_DefaultDownloadDialogCornerAlignment$OFFSET = 744;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_DefaultDownloadDialogCornerAlignment$offset() {
+		return get_DefaultDownloadDialogCornerAlignment$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_DefaultDownloadDialogCornerAlignment(MemorySegment struct) {
+		return struct.get(get_DefaultDownloadDialogCornerAlignment$LAYOUT, get_DefaultDownloadDialogCornerAlignment$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_DefaultDownloadDialogCornerAlignment(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_DefaultDownloadDialogCornerAlignment$LAYOUT, get_DefaultDownloadDialogCornerAlignment$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
+	 * }
+	 */
+	public static class put_DefaultDownloadDialogCornerAlignment {
+		
+		put_DefaultDownloadDialogCornerAlignment() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, int _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(put_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(put_DefaultDownloadDialogCornerAlignment.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout put_DefaultDownloadDialogCornerAlignment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_DefaultDownloadDialogCornerAlignment"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout put_DefaultDownloadDialogCornerAlignment$layout() {
+		return put_DefaultDownloadDialogCornerAlignment$LAYOUT;
+	}
+	
+	private static final long put_DefaultDownloadDialogCornerAlignment$OFFSET = 752;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
+	 * }
+	 */
+	public static long put_DefaultDownloadDialogCornerAlignment$offset() {
+		return put_DefaultDownloadDialogCornerAlignment$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment put_DefaultDownloadDialogCornerAlignment(MemorySegment struct) {
+		return struct.get(put_DefaultDownloadDialogCornerAlignment$LAYOUT, put_DefaultDownloadDialogCornerAlignment$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogCornerAlignment)(ICoreWebView2_22 *, COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT) __attribute__((stdcall))
+	 * }
+	 */
+	public static void put_DefaultDownloadDialogCornerAlignment(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(put_DefaultDownloadDialogCornerAlignment$LAYOUT, put_DefaultDownloadDialogCornerAlignment$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_DefaultDownloadDialogMargin {
+		
+		get_DefaultDownloadDialogMargin() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_DefaultDownloadDialogMargin.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_DefaultDownloadDialogMargin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DefaultDownloadDialogMargin"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_DefaultDownloadDialogMargin$layout() {
+		return get_DefaultDownloadDialogMargin$LAYOUT;
+	}
+	
+	private static final long get_DefaultDownloadDialogMargin$OFFSET = 760;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_DefaultDownloadDialogMargin$offset() {
+		return get_DefaultDownloadDialogMargin$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_DefaultDownloadDialogMargin(MemorySegment struct) {
+		return struct.get(get_DefaultDownloadDialogMargin$LAYOUT, get_DefaultDownloadDialogMargin$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_DefaultDownloadDialogMargin(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_DefaultDownloadDialogMargin$LAYOUT, get_DefaultDownloadDialogMargin$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
+	 * }
+	 */
+	public static class put_DefaultDownloadDialogMargin {
+		
+		put_DefaultDownloadDialogMargin() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				tagPOINT.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(put_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(put_DefaultDownloadDialogMargin.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout put_DefaultDownloadDialogMargin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_DefaultDownloadDialogMargin"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout put_DefaultDownloadDialogMargin$layout() {
+		return put_DefaultDownloadDialogMargin$LAYOUT;
+	}
+	
+	private static final long put_DefaultDownloadDialogMargin$OFFSET = 768;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
+	 * }
+	 */
+	public static long put_DefaultDownloadDialogMargin$offset() {
+		return put_DefaultDownloadDialogMargin$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment put_DefaultDownloadDialogMargin(MemorySegment struct) {
+		return struct.get(put_DefaultDownloadDialogMargin$LAYOUT, put_DefaultDownloadDialogMargin$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_DefaultDownloadDialogMargin)(ICoreWebView2_22 *, POINT) __attribute__((stdcall))
+	 * }
+	 */
+	public static void put_DefaultDownloadDialogMargin(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(put_DefaultDownloadDialogMargin$LAYOUT, put_DefaultDownloadDialogMargin$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_BasicAuthenticationRequested {
+		
+		add_BasicAuthenticationRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_BasicAuthenticationRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_BasicAuthenticationRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_BasicAuthenticationRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_BasicAuthenticationRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static final AddressLayout add_BasicAuthenticationRequested$layout() {
+		return add_BasicAuthenticationRequested$LAYOUT;
+	}
+	
+	private static final long add_BasicAuthenticationRequested$OFFSET = 776;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_BasicAuthenticationRequested$offset() {
+		return add_BasicAuthenticationRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_BasicAuthenticationRequested(MemorySegment struct) {
+		return struct.get(add_BasicAuthenticationRequested$LAYOUT, add_BasicAuthenticationRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_BasicAuthenticationRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_BasicAuthenticationRequested$LAYOUT, add_BasicAuthenticationRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_BasicAuthenticationRequested {
+		
+		remove_BasicAuthenticationRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_BasicAuthenticationRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_BasicAuthenticationRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_BasicAuthenticationRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_BasicAuthenticationRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_BasicAuthenticationRequested$layout() {
+		return remove_BasicAuthenticationRequested$LAYOUT;
+	}
+	
+	private static final long remove_BasicAuthenticationRequested$OFFSET = 784;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_BasicAuthenticationRequested$offset() {
+		return remove_BasicAuthenticationRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_BasicAuthenticationRequested(MemorySegment struct) {
+		return struct.get(remove_BasicAuthenticationRequested$LAYOUT, remove_BasicAuthenticationRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_BasicAuthenticationRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_BasicAuthenticationRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_BasicAuthenticationRequested$LAYOUT, remove_BasicAuthenticationRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class CallDevToolsProtocolMethodForSession {
+		
+		CallDevToolsProtocolMethodForSession() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(CallDevToolsProtocolMethodForSession.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(CallDevToolsProtocolMethodForSession.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout CallDevToolsProtocolMethodForSession$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CallDevToolsProtocolMethodForSession"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout CallDevToolsProtocolMethodForSession$layout() {
+		return CallDevToolsProtocolMethodForSession$LAYOUT;
+	}
+	
+	private static final long CallDevToolsProtocolMethodForSession$OFFSET = 792;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long CallDevToolsProtocolMethodForSession$offset() {
+		return CallDevToolsProtocolMethodForSession$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment CallDevToolsProtocolMethodForSession(MemorySegment struct) {
+		return struct.get(CallDevToolsProtocolMethodForSession$LAYOUT, CallDevToolsProtocolMethodForSession$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*CallDevToolsProtocolMethodForSession)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void CallDevToolsProtocolMethodForSession(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(CallDevToolsProtocolMethodForSession$LAYOUT, CallDevToolsProtocolMethodForSession$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ContextMenuRequested {
+		
+		add_ContextMenuRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContextMenuRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ContextMenuRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ContextMenuRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContextMenuRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ContextMenuRequested$layout() {
+		return add_ContextMenuRequested$LAYOUT;
+	}
+	
+	private static final long add_ContextMenuRequested$OFFSET = 800;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ContextMenuRequested$offset() {
+		return add_ContextMenuRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ContextMenuRequested(MemorySegment struct) {
+		return struct.get(add_ContextMenuRequested$LAYOUT, add_ContextMenuRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ContextMenuRequested)(ICoreWebView2_22 *, ICoreWebView2ContextMenuRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ContextMenuRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ContextMenuRequested$LAYOUT, add_ContextMenuRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ContextMenuRequested {
+		
+		remove_ContextMenuRequested() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContextMenuRequested.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ContextMenuRequested.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ContextMenuRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContextMenuRequested"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ContextMenuRequested$layout() {
+		return remove_ContextMenuRequested$LAYOUT;
+	}
+	
+	private static final long remove_ContextMenuRequested$OFFSET = 808;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ContextMenuRequested$offset() {
+		return remove_ContextMenuRequested$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ContextMenuRequested(MemorySegment struct) {
+		return struct.get(remove_ContextMenuRequested$LAYOUT, remove_ContextMenuRequested$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ContextMenuRequested)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ContextMenuRequested(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ContextMenuRequested$LAYOUT, remove_ContextMenuRequested$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_StatusBarTextChanged {
+		
+		add_StatusBarTextChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_StatusBarTextChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_StatusBarTextChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_StatusBarTextChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_StatusBarTextChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_StatusBarTextChanged$layout() {
+		return add_StatusBarTextChanged$LAYOUT;
+	}
+	
+	private static final long add_StatusBarTextChanged$OFFSET = 816;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_StatusBarTextChanged$offset() {
+		return add_StatusBarTextChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_StatusBarTextChanged(MemorySegment struct) {
+		return struct.get(add_StatusBarTextChanged$LAYOUT, add_StatusBarTextChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_StatusBarTextChanged)(ICoreWebView2_22 *, ICoreWebView2StatusBarTextChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_StatusBarTextChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_StatusBarTextChanged$LAYOUT, add_StatusBarTextChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_StatusBarTextChanged {
+		
+		remove_StatusBarTextChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_StatusBarTextChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_StatusBarTextChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_StatusBarTextChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_StatusBarTextChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_StatusBarTextChanged$layout() {
+		return remove_StatusBarTextChanged$LAYOUT;
+	}
+	
+	private static final long remove_StatusBarTextChanged$OFFSET = 824;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_StatusBarTextChanged$offset() {
+		return remove_StatusBarTextChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_StatusBarTextChanged(MemorySegment struct) {
+		return struct.get(remove_StatusBarTextChanged$LAYOUT, remove_StatusBarTextChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_StatusBarTextChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_StatusBarTextChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_StatusBarTextChanged$LAYOUT, remove_StatusBarTextChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_StatusBarText {
+		
+		get_StatusBarText() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_StatusBarText.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_StatusBarText.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_StatusBarText$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_StatusBarText"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_StatusBarText$layout() {
+		return get_StatusBarText$LAYOUT;
+	}
+	
+	private static final long get_StatusBarText$OFFSET = 832;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_StatusBarText$offset() {
+		return get_StatusBarText$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_StatusBarText(MemorySegment struct) {
+		return struct.get(get_StatusBarText$LAYOUT, get_StatusBarText$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_StatusBarText)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_StatusBarText(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_StatusBarText$LAYOUT, get_StatusBarText$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_Profile {
+		
+		get_Profile() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Profile.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_Profile.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_Profile$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Profile"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_Profile$layout() {
+		return get_Profile$LAYOUT;
+	}
+	
+	private static final long get_Profile$OFFSET = 840;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_Profile$offset() {
+		return get_Profile$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_Profile(MemorySegment struct) {
+		return struct.get(get_Profile$LAYOUT, get_Profile$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_Profile)(ICoreWebView2_22 *, ICoreWebView2Profile **) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_Profile(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_Profile$LAYOUT, get_Profile$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_ServerCertificateErrorDetected {
+		
+		add_ServerCertificateErrorDetected() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_ServerCertificateErrorDetected.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_ServerCertificateErrorDetected$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ServerCertificateErrorDetected"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_ServerCertificateErrorDetected$layout() {
+		return add_ServerCertificateErrorDetected$LAYOUT;
+	}
+	
+	private static final long add_ServerCertificateErrorDetected$OFFSET = 848;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_ServerCertificateErrorDetected$offset() {
+		return add_ServerCertificateErrorDetected$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_ServerCertificateErrorDetected(MemorySegment struct) {
+		return struct.get(add_ServerCertificateErrorDetected$LAYOUT, add_ServerCertificateErrorDetected$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_ServerCertificateErrorDetected)(ICoreWebView2_22 *, ICoreWebView2ServerCertificateErrorDetectedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_ServerCertificateErrorDetected(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_ServerCertificateErrorDetected$LAYOUT, add_ServerCertificateErrorDetected$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_ServerCertificateErrorDetected {
+		
+		remove_ServerCertificateErrorDetected() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_ServerCertificateErrorDetected.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_ServerCertificateErrorDetected$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ServerCertificateErrorDetected"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_ServerCertificateErrorDetected$layout() {
+		return remove_ServerCertificateErrorDetected$LAYOUT;
+	}
+	
+	private static final long remove_ServerCertificateErrorDetected$OFFSET = 856;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_ServerCertificateErrorDetected$offset() {
+		return remove_ServerCertificateErrorDetected$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_ServerCertificateErrorDetected(MemorySegment struct) {
+		return struct.get(remove_ServerCertificateErrorDetected$LAYOUT, remove_ServerCertificateErrorDetected$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_ServerCertificateErrorDetected)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_ServerCertificateErrorDetected(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_ServerCertificateErrorDetected$LAYOUT, remove_ServerCertificateErrorDetected$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class ClearServerCertificateErrorActions {
+		
+		ClearServerCertificateErrorActions() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(ClearServerCertificateErrorActions.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(ClearServerCertificateErrorActions.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout ClearServerCertificateErrorActions$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ClearServerCertificateErrorActions"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout ClearServerCertificateErrorActions$layout() {
+		return ClearServerCertificateErrorActions$LAYOUT;
+	}
+	
+	private static final long ClearServerCertificateErrorActions$OFFSET = 864;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long ClearServerCertificateErrorActions$offset() {
+		return ClearServerCertificateErrorActions$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment ClearServerCertificateErrorActions(MemorySegment struct) {
+		return struct.get(ClearServerCertificateErrorActions$LAYOUT, ClearServerCertificateErrorActions$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ClearServerCertificateErrorActions)(ICoreWebView2_22 *, ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void ClearServerCertificateErrorActions(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(ClearServerCertificateErrorActions$LAYOUT, ClearServerCertificateErrorActions$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_FaviconChanged {
+		
+		add_FaviconChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FaviconChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_FaviconChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_FaviconChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FaviconChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_FaviconChanged$layout() {
+		return add_FaviconChanged$LAYOUT;
+	}
+	
+	private static final long add_FaviconChanged$OFFSET = 872;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_FaviconChanged$offset() {
+		return add_FaviconChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_FaviconChanged(MemorySegment struct) {
+		return struct.get(add_FaviconChanged$LAYOUT, add_FaviconChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_FaviconChanged)(ICoreWebView2_22 *, ICoreWebView2FaviconChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_FaviconChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_FaviconChanged$LAYOUT, add_FaviconChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_FaviconChanged {
+		
+		remove_FaviconChanged() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FaviconChanged.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_FaviconChanged.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_FaviconChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FaviconChanged"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_FaviconChanged$layout() {
+		return remove_FaviconChanged$LAYOUT;
+	}
+	
+	private static final long remove_FaviconChanged$OFFSET = 880;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_FaviconChanged$offset() {
+		return remove_FaviconChanged$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_FaviconChanged(MemorySegment struct) {
+		return struct.get(remove_FaviconChanged$LAYOUT, remove_FaviconChanged$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_FaviconChanged)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_FaviconChanged(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_FaviconChanged$LAYOUT, remove_FaviconChanged$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_FaviconUri {
+		
+		get_FaviconUri() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_FaviconUri.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_FaviconUri.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_FaviconUri$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_FaviconUri"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_FaviconUri$layout() {
+		return get_FaviconUri$LAYOUT;
+	}
+	
+	private static final long get_FaviconUri$OFFSET = 888;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_FaviconUri$offset() {
+		return get_FaviconUri$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_FaviconUri(MemorySegment struct) {
+		return struct.get(get_FaviconUri$LAYOUT, get_FaviconUri$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FaviconUri)(ICoreWebView2_22 *, LPWSTR *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_FaviconUri(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_FaviconUri$LAYOUT, get_FaviconUri$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class GetFavicon {
+		
+		GetFavicon() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, int _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_INT,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(GetFavicon.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(GetFavicon.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout GetFavicon$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GetFavicon"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout GetFavicon$layout() {
+		return GetFavicon$LAYOUT;
+	}
+	
+	private static final long GetFavicon$OFFSET = 896;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long GetFavicon$offset() {
+		return GetFavicon$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment GetFavicon(MemorySegment struct) {
+		return struct.get(GetFavicon$LAYOUT, GetFavicon$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*GetFavicon)(ICoreWebView2_22 *, COREWEBVIEW2_FAVICON_IMAGE_FORMAT, ICoreWebView2GetFaviconCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void GetFavicon(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(GetFavicon$LAYOUT, GetFavicon$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class Print {
+		
+		Print() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(Print.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(Print.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout Print$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Print"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout Print$layout() {
+		return Print$LAYOUT;
+	}
+	
+	private static final long Print$OFFSET = 904;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long Print$offset() {
+		return Print$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment Print(MemorySegment struct) {
+		return struct.get(Print$LAYOUT, Print$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*Print)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void Print(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(Print$LAYOUT, Print$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static class ShowPrintUI {
+		
+		ShowPrintUI() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, int _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(ShowPrintUI.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(ShowPrintUI.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout ShowPrintUI$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ShowPrintUI"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout ShowPrintUI$layout() {
+		return ShowPrintUI$LAYOUT;
+	}
+	
+	private static final long ShowPrintUI$OFFSET = 912;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static long ShowPrintUI$offset() {
+		return ShowPrintUI$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment ShowPrintUI(MemorySegment struct) {
+		return struct.get(ShowPrintUI$LAYOUT, ShowPrintUI$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ShowPrintUI)(ICoreWebView2_22 *, COREWEBVIEW2_PRINT_DIALOG_KIND) __attribute__((stdcall))
+	 * }
+	 */
+	public static void ShowPrintUI(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(ShowPrintUI$LAYOUT, ShowPrintUI$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class PrintToPdfStream {
+		
+		PrintToPdfStream() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(PrintToPdfStream.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(PrintToPdfStream.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout PrintToPdfStream$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PrintToPdfStream"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout PrintToPdfStream$layout() {
+		return PrintToPdfStream$LAYOUT;
+	}
+	
+	private static final long PrintToPdfStream$OFFSET = 920;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long PrintToPdfStream$offset() {
+		return PrintToPdfStream$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment PrintToPdfStream(MemorySegment struct) {
+		return struct.get(PrintToPdfStream$LAYOUT, PrintToPdfStream$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PrintToPdfStream)(ICoreWebView2_22 *, ICoreWebView2PrintSettings *, ICoreWebView2PrintToPdfStreamCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void PrintToPdfStream(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(PrintToPdfStream$LAYOUT, PrintToPdfStream$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static class PostSharedBufferToScript {
+		
+		PostSharedBufferToScript() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_INT,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(PostSharedBufferToScript.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(PostSharedBufferToScript.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout PostSharedBufferToScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostSharedBufferToScript"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout PostSharedBufferToScript$layout() {
+		return PostSharedBufferToScript$LAYOUT;
+	}
+	
+	private static final long PostSharedBufferToScript$OFFSET = 928;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static long PostSharedBufferToScript$offset() {
+		return PostSharedBufferToScript$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment PostSharedBufferToScript(MemorySegment struct) {
+		return struct.get(PostSharedBufferToScript$LAYOUT, PostSharedBufferToScript$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*PostSharedBufferToScript)(ICoreWebView2_22 *, ICoreWebView2SharedBuffer *, COREWEBVIEW2_SHARED_BUFFER_ACCESS, LPCWSTR) __attribute__((stdcall))
+	 * }
+	 */
+	public static void PostSharedBufferToScript(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(PostSharedBufferToScript$LAYOUT, PostSharedBufferToScript$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class add_LaunchingExternalUriScheme {
+		
+		add_LaunchingExternalUriScheme() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(add_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(add_LaunchingExternalUriScheme.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout add_LaunchingExternalUriScheme$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_LaunchingExternalUriScheme"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout add_LaunchingExternalUriScheme$layout() {
+		return add_LaunchingExternalUriScheme$LAYOUT;
+	}
+	
+	private static final long add_LaunchingExternalUriScheme$OFFSET = 936;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long add_LaunchingExternalUriScheme$offset() {
+		return add_LaunchingExternalUriScheme$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment add_LaunchingExternalUriScheme(MemorySegment struct) {
+		return struct.get(add_LaunchingExternalUriScheme$LAYOUT, add_LaunchingExternalUriScheme$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*add_LaunchingExternalUriScheme)(ICoreWebView2_22 *, ICoreWebView2LaunchingExternalUriSchemeEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void add_LaunchingExternalUriScheme(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(add_LaunchingExternalUriScheme$LAYOUT, add_LaunchingExternalUriScheme$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static class remove_LaunchingExternalUriScheme {
+		
+		remove_LaunchingExternalUriScheme() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				EventRegistrationToken.layout()
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(remove_LaunchingExternalUriScheme.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout remove_LaunchingExternalUriScheme$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_LaunchingExternalUriScheme"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout remove_LaunchingExternalUriScheme$layout() {
+		return remove_LaunchingExternalUriScheme$LAYOUT;
+	}
+	
+	private static final long remove_LaunchingExternalUriScheme$OFFSET = 944;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static long remove_LaunchingExternalUriScheme$offset() {
+		return remove_LaunchingExternalUriScheme$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment remove_LaunchingExternalUriScheme(MemorySegment struct) {
+		return struct.get(remove_LaunchingExternalUriScheme$LAYOUT, remove_LaunchingExternalUriScheme$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*remove_LaunchingExternalUriScheme)(ICoreWebView2_22 *, EventRegistrationToken) __attribute__((stdcall))
+	 * }
+	 */
+	public static void remove_LaunchingExternalUriScheme(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(remove_LaunchingExternalUriScheme$LAYOUT, remove_LaunchingExternalUriScheme$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_MemoryUsageTargetLevel {
+		
+		get_MemoryUsageTargetLevel() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_MemoryUsageTargetLevel.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_MemoryUsageTargetLevel$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_MemoryUsageTargetLevel"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_MemoryUsageTargetLevel$layout() {
+		return get_MemoryUsageTargetLevel$LAYOUT;
+	}
+	
+	private static final long get_MemoryUsageTargetLevel$OFFSET = 952;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_MemoryUsageTargetLevel$offset() {
+		return get_MemoryUsageTargetLevel$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_MemoryUsageTargetLevel(MemorySegment struct) {
+		return struct.get(get_MemoryUsageTargetLevel$LAYOUT, get_MemoryUsageTargetLevel$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_MemoryUsageTargetLevel(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_MemoryUsageTargetLevel$LAYOUT, get_MemoryUsageTargetLevel$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
+	 * }
+	 */
+	public static class put_MemoryUsageTargetLevel {
+		
+		put_MemoryUsageTargetLevel() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, int _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(put_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(put_MemoryUsageTargetLevel.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout put_MemoryUsageTargetLevel$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_MemoryUsageTargetLevel"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout put_MemoryUsageTargetLevel$layout() {
+		return put_MemoryUsageTargetLevel$LAYOUT;
+	}
+	
+	private static final long put_MemoryUsageTargetLevel$OFFSET = 960;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
+	 * }
+	 */
+	public static long put_MemoryUsageTargetLevel$offset() {
+		return put_MemoryUsageTargetLevel$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment put_MemoryUsageTargetLevel(MemorySegment struct) {
+		return struct.get(put_MemoryUsageTargetLevel$LAYOUT, put_MemoryUsageTargetLevel$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*put_MemoryUsageTargetLevel)(ICoreWebView2_22 *, COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL) __attribute__((stdcall))
+	 * }
+	 */
+	public static void put_MemoryUsageTargetLevel(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(put_MemoryUsageTargetLevel$LAYOUT, put_MemoryUsageTargetLevel$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class get_FrameId {
+		
+		get_FrameId() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(get_FrameId.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(get_FrameId.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout get_FrameId$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_FrameId"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout get_FrameId$layout() {
+		return get_FrameId$LAYOUT;
+	}
+	
+	private static final long get_FrameId$OFFSET = 968;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long get_FrameId$offset() {
+		return get_FrameId$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment get_FrameId(MemorySegment struct) {
+		return struct.get(get_FrameId$LAYOUT, get_FrameId$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*get_FrameId)(ICoreWebView2_22 *, UINT32 *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void get_FrameId(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(get_FrameId$LAYOUT, get_FrameId$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static class ExecuteScriptWithResult {
+		
+		ExecuteScriptWithResult() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_POINTER
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(ExecuteScriptWithResult.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(ExecuteScriptWithResult.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout ExecuteScriptWithResult$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ExecuteScriptWithResult"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout ExecuteScriptWithResult$layout() {
+		return ExecuteScriptWithResult$LAYOUT;
+	}
+	
+	private static final long ExecuteScriptWithResult$OFFSET = 976;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static long ExecuteScriptWithResult$offset() {
+		return ExecuteScriptWithResult$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment ExecuteScriptWithResult(MemorySegment struct) {
+		return struct.get(ExecuteScriptWithResult$LAYOUT, ExecuteScriptWithResult$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*ExecuteScriptWithResult)(ICoreWebView2_22 *, LPCWSTR, ICoreWebView2ExecuteScriptWithResultCompletedHandler *) __attribute__((stdcall))
+	 * }
+	 */
+	public static void ExecuteScriptWithResult(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(ExecuteScriptWithResult$LAYOUT, ExecuteScriptWithResult$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static class AddWebResourceRequestedFilterWithRequestSourceKinds {
+		
+		AddWebResourceRequestedFilterWithRequestSourceKinds() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_INT,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(AddWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(AddWebResourceRequestedFilterWithRequestSourceKinds.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddWebResourceRequestedFilterWithRequestSourceKinds"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout AddWebResourceRequestedFilterWithRequestSourceKinds$layout() {
+		return AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT;
+	}
+	
+	private static final long AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET = 984;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static long AddWebResourceRequestedFilterWithRequestSourceKinds$offset() {
+		return AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment AddWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct) {
+		return struct.get(AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*AddWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static void AddWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(AddWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, AddWebResourceRequestedFilterWithRequestSourceKinds$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static class RemoveWebResourceRequestedFilterWithRequestSourceKinds {
+		
+		RemoveWebResourceRequestedFilterWithRequestSourceKinds() {
+			// Should not be called directly
+		}
+		
+		/**
+		 * The function pointer signature, expressed as a functional interface
+		 */
+		public interface Function {
+			int apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3);
+		}
+		
+		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+				Windows.C_LONG,
+				Windows.C_POINTER,
+				Windows.C_POINTER,
+				Windows.C_INT,
+				Windows.C_INT
+		);
+		
+		/**
+		 * The descriptor of this function pointer
+		 */
+		public static FunctionDescriptor descriptor() {
+			return $DESC;
+		}
+		
+		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
+		
+		/**
+		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+		 * The lifetime of the returned segment is managed by {@code arena}
+		 */
+		public static MemorySegment allocate(RemoveWebResourceRequestedFilterWithRequestSourceKinds.Function fi, Arena arena) {
+			return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+		}
+		
+		private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+		
+		/**
+		 * Invoke the upcall stub {@code funcPtr}, with given parameters
+		 */
+		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+			try {
+				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+	}
+	
+	private static final AddressLayout RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveWebResourceRequestedFilterWithRequestSourceKinds"));
+	
+	/**
+	 * Layout for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static AddressLayout RemoveWebResourceRequestedFilterWithRequestSourceKinds$layout() {
+		return RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT;
+	}
+	
+	private static final long RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET = 992;
+	
+	/**
+	 * Offset for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static long RemoveWebResourceRequestedFilterWithRequestSourceKinds$offset() {
+		return RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET;
+	}
+	
+	/**
+	 * Getter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static MemorySegment RemoveWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct) {
+		return struct.get(RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET);
+	}
+	
+	/**
+	 * Setter for field:
+	 * {@snippet lang=c :
+	 * HRESULT (*RemoveWebResourceRequestedFilterWithRequestSourceKinds)(ICoreWebView2_22 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT, const COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS) __attribute__((stdcall))
+	 * }
+	 */
+	public static void RemoveWebResourceRequestedFilterWithRequestSourceKinds(MemorySegment struct, MemorySegment fieldValue) {
+		struct.set(RemoveWebResourceRequestedFilterWithRequestSourceKinds$LAYOUT, RemoveWebResourceRequestedFilterWithRequestSourceKinds$OFFSET, fieldValue);
+	}
+	
+	/**
+	 * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+	 * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+	 */
+	public static MemorySegment asSlice(MemorySegment array, long index) {
+		return array.asSlice(layout().byteSize() * index);
+	}
+	
+	/**
+	 * The size (in bytes) of this struct
+	 */
+	public static long sizeof() { return layout().byteSize(); }
+	
+	/**
+	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+	 */
+	public static MemorySegment allocate(SegmentAllocator allocator) {
+		return allocator.allocate(layout());
+	}
+	
+	/**
+	 * Allocate an array of size {@code elementCount} using {@code allocator}.
+	 * The returned segment has size {@code elementCount * layout().byteSize()}.
+	 */
+	public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+		return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+	}
+	
+	/**
+	 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+	 * The returned segment has size {@code layout().byteSize()}
+	 */
+	public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+		return reinterpret(addr, 1, arena, cleanup);
+	}
+	
+	/**
+	 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+	 * The returned segment has size {@code elementCount * layout().byteSize()}
+	 */
+	public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+	}
 }

@@ -15,8 +15,8 @@ package org.jextract;
  * }
  */
 public class MSG extends tagMSG {
-
-    MSG() {
-        // Should not be called directly
-    }
+	
+	MSG() {
+		// Should not be called directly
+	}
 }

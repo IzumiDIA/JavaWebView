@@ -1,5 +1,6 @@
 package io.github.IzumiDIA.constant.enums;
 
+@SuppressWarnings("SpellCheckingInspection")
 public enum Color {
 	SCROLLBAR,
 	BACKGROUND,

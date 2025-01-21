@@ -50,7 +50,7 @@ public class tagWNDCLASSEXW {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -62,7 +62,7 @@ public class tagWNDCLASSEXW {
      * UINT cbSize
      * }
      */
-    public static final OfInt cbSize$layout() {
+    public static OfInt cbSize$layout() {
         return cbSize$LAYOUT;
     }
 
@@ -74,7 +74,7 @@ public class tagWNDCLASSEXW {
      * UINT cbSize
      * }
      */
-    public static final long cbSize$offset() {
+    public static long cbSize$offset() {
         return cbSize$OFFSET;
     }
 
@@ -106,7 +106,7 @@ public class tagWNDCLASSEXW {
      * UINT style
      * }
      */
-    public static final OfInt style$layout() {
+    public static OfInt style$layout() {
         return style$LAYOUT;
     }
 
@@ -118,7 +118,7 @@ public class tagWNDCLASSEXW {
      * UINT style
      * }
      */
-    public static final long style$offset() {
+    public static long style$offset() {
         return style$OFFSET;
     }
 
@@ -150,7 +150,7 @@ public class tagWNDCLASSEXW {
      * WNDPROC lpfnWndProc
      * }
      */
-    public static final AddressLayout lpfnWndProc$layout() {
+    public static AddressLayout lpfnWndProc$layout() {
         return lpfnWndProc$LAYOUT;
     }
 
@@ -162,7 +162,7 @@ public class tagWNDCLASSEXW {
      * WNDPROC lpfnWndProc
      * }
      */
-    public static final long lpfnWndProc$offset() {
+    public static long lpfnWndProc$offset() {
         return lpfnWndProc$OFFSET;
     }
 
@@ -194,7 +194,7 @@ public class tagWNDCLASSEXW {
      * int cbClsExtra
      * }
      */
-    public static final OfInt cbClsExtra$layout() {
+    public static OfInt cbClsExtra$layout() {
         return cbClsExtra$LAYOUT;
     }
 
@@ -206,7 +206,7 @@ public class tagWNDCLASSEXW {
      * int cbClsExtra
      * }
      */
-    public static final long cbClsExtra$offset() {
+    public static long cbClsExtra$offset() {
         return cbClsExtra$OFFSET;
     }
 
@@ -238,7 +238,7 @@ public class tagWNDCLASSEXW {
      * int cbWndExtra
      * }
      */
-    public static final OfInt cbWndExtra$layout() {
+    public static OfInt cbWndExtra$layout() {
         return cbWndExtra$LAYOUT;
     }
 
@@ -250,7 +250,7 @@ public class tagWNDCLASSEXW {
      * int cbWndExtra
      * }
      */
-    public static final long cbWndExtra$offset() {
+    public static long cbWndExtra$offset() {
         return cbWndExtra$OFFSET;
     }
 
@@ -282,7 +282,7 @@ public class tagWNDCLASSEXW {
      * HINSTANCE hInstance
      * }
      */
-    public static final AddressLayout hInstance$layout() {
+    public static AddressLayout hInstance$layout() {
         return hInstance$LAYOUT;
     }
 
@@ -294,7 +294,7 @@ public class tagWNDCLASSEXW {
      * HINSTANCE hInstance
      * }
      */
-    public static final long hInstance$offset() {
+    public static long hInstance$offset() {
         return hInstance$OFFSET;
     }
 
@@ -326,7 +326,7 @@ public class tagWNDCLASSEXW {
      * HICON hIcon
      * }
      */
-    public static final AddressLayout hIcon$layout() {
+    public static AddressLayout hIcon$layout() {
         return hIcon$LAYOUT;
     }
 
@@ -338,7 +338,7 @@ public class tagWNDCLASSEXW {
      * HICON hIcon
      * }
      */
-    public static final long hIcon$offset() {
+    public static long hIcon$offset() {
         return hIcon$OFFSET;
     }
 
@@ -370,7 +370,7 @@ public class tagWNDCLASSEXW {
      * HCURSOR hCursor
      * }
      */
-    public static final AddressLayout hCursor$layout() {
+    public static AddressLayout hCursor$layout() {
         return hCursor$LAYOUT;
     }
 
@@ -382,7 +382,7 @@ public class tagWNDCLASSEXW {
      * HCURSOR hCursor
      * }
      */
-    public static final long hCursor$offset() {
+    public static long hCursor$offset() {
         return hCursor$OFFSET;
     }
 
@@ -414,7 +414,7 @@ public class tagWNDCLASSEXW {
      * HBRUSH hbrBackground
      * }
      */
-    public static final AddressLayout hbrBackground$layout() {
+    public static AddressLayout hbrBackground$layout() {
         return hbrBackground$LAYOUT;
     }
 
@@ -426,7 +426,7 @@ public class tagWNDCLASSEXW {
      * HBRUSH hbrBackground
      * }
      */
-    public static final long hbrBackground$offset() {
+    public static long hbrBackground$offset() {
         return hbrBackground$OFFSET;
     }
 
@@ -458,7 +458,7 @@ public class tagWNDCLASSEXW {
      * LPCWSTR lpszMenuName
      * }
      */
-    public static final AddressLayout lpszMenuName$layout() {
+    public static AddressLayout lpszMenuName$layout() {
         return lpszMenuName$LAYOUT;
     }
 
@@ -470,7 +470,7 @@ public class tagWNDCLASSEXW {
      * LPCWSTR lpszMenuName
      * }
      */
-    public static final long lpszMenuName$offset() {
+    public static long lpszMenuName$offset() {
         return lpszMenuName$OFFSET;
     }
 
@@ -502,7 +502,7 @@ public class tagWNDCLASSEXW {
      * LPCWSTR lpszClassName
      * }
      */
-    public static final AddressLayout lpszClassName$layout() {
+    public static AddressLayout lpszClassName$layout() {
         return lpszClassName$LAYOUT;
     }
 
@@ -514,7 +514,7 @@ public class tagWNDCLASSEXW {
      * LPCWSTR lpszClassName
      * }
      */
-    public static final long lpszClassName$offset() {
+    public static long lpszClassName$offset() {
         return lpszClassName$OFFSET;
     }
 
@@ -546,7 +546,7 @@ public class tagWNDCLASSEXW {
      * HICON hIconSm
      * }
      */
-    public static final AddressLayout hIconSm$layout() {
+    public static AddressLayout hIconSm$layout() {
         return hIconSm$LAYOUT;
     }
 
@@ -558,7 +558,7 @@ public class tagWNDCLASSEXW {
      * HICON hIconSm
      * }
      */
-    public static final long hIconSm$offset() {
+    public static long hIconSm$offset() {
         return hIconSm$OFFSET;
     }
 

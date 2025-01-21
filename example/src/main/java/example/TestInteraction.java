@@ -27,7 +27,7 @@ final class TestInteraction {
 								                          final var stringFromWeb = eventExchange.tryGetWebMessageAsString();
 								                          System.out.println(stringFromWeb);
 								                          return eventExchange.postWebMessageAsString(
-										                          STR."后端进程已接收到数据：\{stringFromWeb}"
+										                          "后端进程已接收到数据：" + stringFromWeb
 								                          );
 							                          }
 					                          )
