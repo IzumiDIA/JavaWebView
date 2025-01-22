@@ -2,11 +2,16 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +61,7 @@ public class tagCREATESTRUCTA {
 		return $LAYOUT;
 	}
 	
-	private static final AddressLayout lpCreateParams$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpCreateParams"));
+	private static final AddressLayout lpCreateParams$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("lpCreateParams"));
 	
 	/**
 	 * Layout for field:
@@ -68,7 +73,7 @@ public class tagCREATESTRUCTA {
 		return lpCreateParams$LAYOUT;
 	}
 	
-	private static final long lpCreateParams$OFFSET = 0;
+	private static final long lpCreateParams$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("lpCreateParams"));
 	
 	/**
 	 * Offset for field:
@@ -100,7 +105,7 @@ public class tagCREATESTRUCTA {
 		struct.set(lpCreateParams$LAYOUT, lpCreateParams$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hInstance$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hInstance"));
+	private static final AddressLayout hInstance$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("hInstance"));
 	
 	/**
 	 * Layout for field:
@@ -112,7 +117,7 @@ public class tagCREATESTRUCTA {
 		return hInstance$LAYOUT;
 	}
 	
-	private static final long hInstance$OFFSET = 8;
+	private static final long hInstance$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("hInstance"));
 	
 	/**
 	 * Offset for field:
@@ -144,7 +149,7 @@ public class tagCREATESTRUCTA {
 		struct.set(hInstance$LAYOUT, hInstance$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hMenu$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hMenu"));
+	private static final AddressLayout hMenu$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("hMenu"));
 	
 	/**
 	 * Layout for field:
@@ -156,7 +161,7 @@ public class tagCREATESTRUCTA {
 		return hMenu$LAYOUT;
 	}
 	
-	private static final long hMenu$OFFSET = 16;
+	private static final long hMenu$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("hMenu"));
 	
 	/**
 	 * Offset for field:
@@ -188,7 +193,7 @@ public class tagCREATESTRUCTA {
 		struct.set(hMenu$LAYOUT, hMenu$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hwndParent$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hwndParent"));
+	private static final AddressLayout hwndParent$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("hwndParent"));
 	
 	/**
 	 * Layout for field:
@@ -200,7 +205,7 @@ public class tagCREATESTRUCTA {
 		return hwndParent$LAYOUT;
 	}
 	
-	private static final long hwndParent$OFFSET = 24;
+	private static final long hwndParent$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("hwndParent"));
 	
 	/**
 	 * Offset for field:
@@ -232,7 +237,7 @@ public class tagCREATESTRUCTA {
 		struct.set(hwndParent$LAYOUT, hwndParent$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cy$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cy"));
+	private static final OfInt cy$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("cy"));
 	
 	/**
 	 * Layout for field:
@@ -244,7 +249,7 @@ public class tagCREATESTRUCTA {
 		return cy$LAYOUT;
 	}
 	
-	private static final long cy$OFFSET = 32;
+	private static final long cy$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("cy"));
 	
 	/**
 	 * Offset for field:
@@ -276,7 +281,7 @@ public class tagCREATESTRUCTA {
 		struct.set(cy$LAYOUT, cy$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cx$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cx"));
+	private static final OfInt cx$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("cx"));
 	
 	/**
 	 * Layout for field:
@@ -288,7 +293,7 @@ public class tagCREATESTRUCTA {
 		return cx$LAYOUT;
 	}
 	
-	private static final long cx$OFFSET = 36;
+	private static final long cx$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("cx"));
 	
 	/**
 	 * Offset for field:
@@ -320,7 +325,7 @@ public class tagCREATESTRUCTA {
 		struct.set(cx$LAYOUT, cx$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt y$LAYOUT = (OfInt)$LAYOUT.select(groupElement("y"));
+	private static final OfInt y$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("y"));
 	
 	/**
 	 * Layout for field:
@@ -332,7 +337,7 @@ public class tagCREATESTRUCTA {
 		return y$LAYOUT;
 	}
 	
-	private static final long y$OFFSET = 40;
+	private static final long y$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("y"));
 	
 	/**
 	 * Offset for field:
@@ -364,7 +369,7 @@ public class tagCREATESTRUCTA {
 		struct.set(y$LAYOUT, y$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt x$LAYOUT = (OfInt)$LAYOUT.select(groupElement("x"));
+	private static final OfInt x$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("x"));
 	
 	/**
 	 * Layout for field:
@@ -376,7 +381,7 @@ public class tagCREATESTRUCTA {
 		return x$LAYOUT;
 	}
 	
-	private static final long x$OFFSET = 44;
+	private static final long x$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("x"));
 	
 	/**
 	 * Offset for field:
@@ -408,7 +413,7 @@ public class tagCREATESTRUCTA {
 		struct.set(x$LAYOUT, x$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt style$LAYOUT = (OfInt)$LAYOUT.select(groupElement("style"));
+	private static final OfInt style$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("style"));
 	
 	/**
 	 * Layout for field:
@@ -420,7 +425,7 @@ public class tagCREATESTRUCTA {
 		return style$LAYOUT;
 	}
 	
-	private static final long style$OFFSET = 48;
+	private static final long style$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("style"));
 	
 	/**
 	 * Offset for field:
@@ -452,7 +457,7 @@ public class tagCREATESTRUCTA {
 		struct.set(style$LAYOUT, style$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpszName$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpszName"));
+	private static final AddressLayout lpszName$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("lpszName"));
 	
 	/**
 	 * Layout for field:
@@ -464,7 +469,7 @@ public class tagCREATESTRUCTA {
 		return lpszName$LAYOUT;
 	}
 	
-	private static final long lpszName$OFFSET = 56;
+	private static final long lpszName$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("lpszName"));
 	
 	/**
 	 * Offset for field:
@@ -496,7 +501,7 @@ public class tagCREATESTRUCTA {
 		struct.set(lpszName$LAYOUT, lpszName$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpszClass$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpszClass"));
+	private static final AddressLayout lpszClass$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("lpszClass"));
 	
 	/**
 	 * Layout for field:
@@ -508,7 +513,7 @@ public class tagCREATESTRUCTA {
 		return lpszClass$LAYOUT;
 	}
 	
-	private static final long lpszClass$OFFSET = 64;
+	private static final long lpszClass$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("lpszClass"));
 	
 	/**
 	 * Offset for field:
@@ -540,7 +545,7 @@ public class tagCREATESTRUCTA {
 		struct.set(lpszClass$LAYOUT, lpszClass$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt dwExStyle$LAYOUT = (OfInt)$LAYOUT.select(groupElement("dwExStyle"));
+	private static final OfInt dwExStyle$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("dwExStyle"));
 	
 	/**
 	 * Layout for field:
@@ -552,7 +557,7 @@ public class tagCREATESTRUCTA {
 		return dwExStyle$LAYOUT;
 	}
 	
-	private static final long dwExStyle$OFFSET = 72;
+	private static final long dwExStyle$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("dwExStyle"));
 	
 	/**
 	 * Offset for field:

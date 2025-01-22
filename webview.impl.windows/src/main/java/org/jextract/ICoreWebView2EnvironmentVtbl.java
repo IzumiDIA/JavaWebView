@@ -2,11 +2,17 @@
 
 package org.jextract;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
 /**
  * {@snippet lang=c :
@@ -102,7 +108,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
@@ -114,7 +120,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return QueryInterface$LAYOUT;
 	}
 	
-	private static final long QueryInterface$OFFSET = 0;
+	private static final long QueryInterface$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Offset for field:
@@ -200,7 +206,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
@@ -212,7 +218,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return AddRef$LAYOUT;
 	}
 	
-	private static final long AddRef$OFFSET = 8;
+	private static final long AddRef$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Offset for field:
@@ -298,7 +304,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
@@ -310,7 +316,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return Release$LAYOUT;
 	}
 	
-	private static final long Release$OFFSET = 16;
+	private static final long Release$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Release"));
 	
 	/**
 	 * Offset for field:
@@ -398,7 +404,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout CreateCoreWebView2Controller$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CreateCoreWebView2Controller"));
+	private static final AddressLayout CreateCoreWebView2Controller$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("CreateCoreWebView2Controller"));
 	
 	/**
 	 * Layout for field:
@@ -410,7 +416,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return CreateCoreWebView2Controller$LAYOUT;
 	}
 	
-	private static final long CreateCoreWebView2Controller$OFFSET = 24;
+	private static final long CreateCoreWebView2Controller$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("CreateCoreWebView2Controller"));
 	
 	/**
 	 * Offset for field:
@@ -501,7 +507,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout CreateWebResourceResponse$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CreateWebResourceResponse"));
+	private static final AddressLayout CreateWebResourceResponse$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("CreateWebResourceResponse"));
 	
 	/**
 	 * Layout for field:
@@ -513,7 +519,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return CreateWebResourceResponse$LAYOUT;
 	}
 	
-	private static final long CreateWebResourceResponse$OFFSET = 32;
+	private static final long CreateWebResourceResponse$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("CreateWebResourceResponse"));
 	
 	/**
 	 * Offset for field:
@@ -600,7 +606,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_BrowserVersionString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_BrowserVersionString"));
+	private static final AddressLayout get_BrowserVersionString$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_BrowserVersionString"));
 	
 	/**
 	 * Layout for field:
@@ -612,7 +618,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return get_BrowserVersionString$LAYOUT;
 	}
 	
-	private static final long get_BrowserVersionString$OFFSET = 40;
+	private static final long get_BrowserVersionString$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_BrowserVersionString"));
 	
 	/**
 	 * Offset for field:
@@ -700,7 +706,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NewBrowserVersionAvailable$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NewBrowserVersionAvailable"));
+	private static final AddressLayout add_NewBrowserVersionAvailable$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NewBrowserVersionAvailable"));
 	
 	/**
 	 * Layout for field:
@@ -712,7 +718,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return add_NewBrowserVersionAvailable$LAYOUT;
 	}
 	
-	private static final long add_NewBrowserVersionAvailable$OFFSET = 48;
+	private static final long add_NewBrowserVersionAvailable$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_NewBrowserVersionAvailable"));
 	
 	/**
 	 * Offset for field:
@@ -799,7 +805,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NewBrowserVersionAvailable$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NewBrowserVersionAvailable"));
+	private static final AddressLayout remove_NewBrowserVersionAvailable$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NewBrowserVersionAvailable"));
 	
 	/**
 	 * Layout for field:
@@ -811,7 +817,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		return remove_NewBrowserVersionAvailable$LAYOUT;
 	}
 	
-	private static final long remove_NewBrowserVersionAvailable$OFFSET = 56;
+	private static final long remove_NewBrowserVersionAvailable$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_NewBrowserVersionAvailable"));
 	
 	/**
 	 * Offset for field:

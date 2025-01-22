@@ -2,10 +2,16 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -43,7 +49,7 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 		return lpVtbl$LAYOUT;
 	}
 	
-	private static final long lpVtbl$OFFSET = 0;
+	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Offset for field:

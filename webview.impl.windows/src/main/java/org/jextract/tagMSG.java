@@ -2,11 +2,18 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -44,7 +51,7 @@ public class tagMSG {
 		return $LAYOUT;
 	}
 	
-	private static final AddressLayout hwnd$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hwnd"));
+	private static final AddressLayout hwnd$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hwnd"));
 	
 	/**
 	 * Layout for field:
@@ -56,7 +63,7 @@ public class tagMSG {
 		return hwnd$LAYOUT;
 	}
 	
-	private static final long hwnd$OFFSET = 0;
+	private static final long hwnd$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("hwnd"));
 	
 	/**
 	 * Offset for field:
@@ -88,7 +95,7 @@ public class tagMSG {
 		struct.set(hwnd$LAYOUT, hwnd$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt message$LAYOUT = (OfInt)$LAYOUT.select(groupElement("message"));
+	private static final OfInt message$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("message"));
 	
 	/**
 	 * Layout for field:
@@ -100,7 +107,7 @@ public class tagMSG {
 		return message$LAYOUT;
 	}
 	
-	private static final long message$OFFSET = 8;
+	private static final long message$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("message"));
 	
 	/**
 	 * Offset for field:
@@ -132,7 +139,7 @@ public class tagMSG {
 		struct.set(message$LAYOUT, message$OFFSET, fieldValue);
 	}
 	
-	private static final OfLong wParam$LAYOUT = (OfLong)$LAYOUT.select(groupElement("wParam"));
+	private static final OfLong wParam$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("wParam"));
 	
 	/**
 	 * Layout for field:
@@ -144,7 +151,7 @@ public class tagMSG {
 		return wParam$LAYOUT;
 	}
 	
-	private static final long wParam$OFFSET = 16;
+	private static final long wParam$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("wParam"));
 	
 	/**
 	 * Offset for field:
@@ -176,7 +183,7 @@ public class tagMSG {
 		struct.set(wParam$LAYOUT, wParam$OFFSET, fieldValue);
 	}
 	
-	private static final OfLong lParam$LAYOUT = (OfLong)$LAYOUT.select(groupElement("lParam"));
+	private static final OfLong lParam$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("lParam"));
 	
 	/**
 	 * Layout for field:
@@ -188,7 +195,7 @@ public class tagMSG {
 		return lParam$LAYOUT;
 	}
 	
-	private static final long lParam$OFFSET = 24;
+	private static final long lParam$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("lParam"));
 	
 	/**
 	 * Offset for field:
@@ -220,7 +227,7 @@ public class tagMSG {
 		struct.set(lParam$LAYOUT, lParam$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt time$LAYOUT = (OfInt)$LAYOUT.select(groupElement("time"));
+	private static final OfInt time$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("time"));
 	
 	/**
 	 * Layout for field:
@@ -232,7 +239,7 @@ public class tagMSG {
 		return time$LAYOUT;
 	}
 	
-	private static final long time$OFFSET = 32;
+	private static final long time$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("time"));
 	
 	/**
 	 * Offset for field:
@@ -264,7 +271,7 @@ public class tagMSG {
 		struct.set(time$LAYOUT, time$OFFSET, fieldValue);
 	}
 	
-	private static final GroupLayout pt$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("pt"));
+	private static final GroupLayout pt$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("pt"));
 	
 	/**
 	 * Layout for field:
@@ -276,7 +283,7 @@ public class tagMSG {
 		return pt$LAYOUT;
 	}
 	
-	private static final long pt$OFFSET = 36;
+	private static final long pt$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("pt"));
 	
 	/**
 	 * Offset for field:

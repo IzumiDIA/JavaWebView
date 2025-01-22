@@ -2,11 +2,16 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -34,7 +39,7 @@ public class tagSIZE {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt cx$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cx"));
+	private static final OfInt cx$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cx"));
 	
 	/**
 	 * Layout for field:
@@ -46,7 +51,7 @@ public class tagSIZE {
 		return cx$LAYOUT;
 	}
 	
-	private static final long cx$OFFSET = 0;
+	private static final long cx$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("cx"));
 	
 	/**
 	 * Offset for field:
@@ -78,7 +83,7 @@ public class tagSIZE {
 		struct.set(cx$LAYOUT, cx$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cy$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cy"));
+	private static final OfInt cy$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cy"));
 	
 	/**
 	 * Layout for field:
@@ -90,7 +95,7 @@ public class tagSIZE {
 		return cy$LAYOUT;
 	}
 	
-	private static final long cy$OFFSET = 4;
+	private static final long cy$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("cy"));
 	
 	/**
 	 * Offset for field:

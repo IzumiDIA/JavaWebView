@@ -2,17 +2,21 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2Controller {
  *     struct ICoreWebView2ControllerVtbl *lpVtbl;
  * }
- * }
+ *}
  */
 public class ICoreWebView2Controller {
 	
@@ -31,25 +35,25 @@ public class ICoreWebView2Controller {
 		return $LAYOUT;
 	}
 	
-	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpVtbl"));
+	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2ControllerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
 	
-	private static final long lpVtbl$OFFSET = 0;
+	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2ControllerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static long lpVtbl$offset() {
 		return lpVtbl$OFFSET;
@@ -57,9 +61,9 @@ public class ICoreWebView2Controller {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2ControllerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpVtbl(MemorySegment struct) {
 		return struct.get(lpVtbl$LAYOUT, lpVtbl$OFFSET);
@@ -67,9 +71,9 @@ public class ICoreWebView2Controller {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2ControllerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static void lpVtbl(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpVtbl$LAYOUT, lpVtbl$OFFSET, fieldValue);
@@ -86,7 +90,9 @@ public class ICoreWebView2Controller {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

@@ -2,11 +2,17 @@
 
 package org.jextract;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
 /**
  * {@snippet lang=c :
@@ -128,7 +134,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
@@ -140,7 +146,7 @@ public class ICoreWebView2SettingsVtbl {
 		return QueryInterface$LAYOUT;
 	}
 	
-	private static final long QueryInterface$OFFSET = 0;
+	private static final long QueryInterface$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Offset for field:
@@ -226,7 +232,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
@@ -238,7 +244,7 @@ public class ICoreWebView2SettingsVtbl {
 		return AddRef$LAYOUT;
 	}
 	
-	private static final long AddRef$OFFSET = 8;
+	private static final long AddRef$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Offset for field:
@@ -324,7 +330,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
@@ -336,7 +342,7 @@ public class ICoreWebView2SettingsVtbl {
 		return Release$LAYOUT;
 	}
 	
-	private static final long Release$OFFSET = 16;
+	private static final long Release$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Release"));
 	
 	/**
 	 * Offset for field:
@@ -423,7 +429,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsScriptEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsScriptEnabled"));
+	private static final AddressLayout get_IsScriptEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsScriptEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -435,7 +441,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_IsScriptEnabled$LAYOUT;
 	}
 	
-	private static final long get_IsScriptEnabled$OFFSET = 24;
+	private static final long get_IsScriptEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_IsScriptEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -522,7 +528,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsScriptEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsScriptEnabled"));
+	private static final AddressLayout put_IsScriptEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsScriptEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -534,7 +540,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_IsScriptEnabled$LAYOUT;
 	}
 	
-	private static final long put_IsScriptEnabled$OFFSET = 32;
+	private static final long put_IsScriptEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_IsScriptEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -621,7 +627,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsWebMessageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsWebMessageEnabled"));
+	private static final AddressLayout get_IsWebMessageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsWebMessageEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -633,7 +639,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_IsWebMessageEnabled$LAYOUT;
 	}
 	
-	private static final long get_IsWebMessageEnabled$OFFSET = 40;
+	private static final long get_IsWebMessageEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_IsWebMessageEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -720,7 +726,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsWebMessageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsWebMessageEnabled"));
+	private static final AddressLayout put_IsWebMessageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsWebMessageEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -732,7 +738,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_IsWebMessageEnabled$LAYOUT;
 	}
 	
-	private static final long put_IsWebMessageEnabled$OFFSET = 48;
+	private static final long put_IsWebMessageEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_IsWebMessageEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -819,7 +825,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_AreDefaultScriptDialogsEnabled"));
+	private static final AddressLayout get_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreDefaultScriptDialogsEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -831,7 +837,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_AreDefaultScriptDialogsEnabled$LAYOUT;
 	}
 	
-	private static final long get_AreDefaultScriptDialogsEnabled$OFFSET = 56;
+	private static final long get_AreDefaultScriptDialogsEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_AreDefaultScriptDialogsEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -918,7 +924,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_AreDefaultScriptDialogsEnabled"));
+	private static final AddressLayout put_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreDefaultScriptDialogsEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -930,7 +936,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_AreDefaultScriptDialogsEnabled$LAYOUT;
 	}
 	
-	private static final long put_AreDefaultScriptDialogsEnabled$OFFSET = 64;
+	private static final long put_AreDefaultScriptDialogsEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_AreDefaultScriptDialogsEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1017,7 +1023,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsStatusBarEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsStatusBarEnabled"));
+	private static final AddressLayout get_IsStatusBarEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsStatusBarEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1029,7 +1035,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_IsStatusBarEnabled$LAYOUT;
 	}
 	
-	private static final long get_IsStatusBarEnabled$OFFSET = 72;
+	private static final long get_IsStatusBarEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_IsStatusBarEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1116,7 +1122,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsStatusBarEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsStatusBarEnabled"));
+	private static final AddressLayout put_IsStatusBarEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsStatusBarEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1128,7 +1134,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_IsStatusBarEnabled$LAYOUT;
 	}
 	
-	private static final long put_IsStatusBarEnabled$OFFSET = 80;
+	private static final long put_IsStatusBarEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_IsStatusBarEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1215,7 +1221,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreDevToolsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_AreDevToolsEnabled"));
+	private static final AddressLayout get_AreDevToolsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreDevToolsEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1227,7 +1233,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_AreDevToolsEnabled$LAYOUT;
 	}
 	
-	private static final long get_AreDevToolsEnabled$OFFSET = 88;
+	private static final long get_AreDevToolsEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_AreDevToolsEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1314,7 +1320,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreDevToolsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_AreDevToolsEnabled"));
+	private static final AddressLayout put_AreDevToolsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreDevToolsEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1326,7 +1332,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_AreDevToolsEnabled$LAYOUT;
 	}
 	
-	private static final long put_AreDevToolsEnabled$OFFSET = 96;
+	private static final long put_AreDevToolsEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_AreDevToolsEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1413,7 +1419,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_AreDefaultContextMenusEnabled"));
+	private static final AddressLayout get_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreDefaultContextMenusEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1425,7 +1431,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_AreDefaultContextMenusEnabled$LAYOUT;
 	}
 	
-	private static final long get_AreDefaultContextMenusEnabled$OFFSET = 104;
+	private static final long get_AreDefaultContextMenusEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_AreDefaultContextMenusEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1512,7 +1518,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_AreDefaultContextMenusEnabled"));
+	private static final AddressLayout put_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreDefaultContextMenusEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1524,7 +1530,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_AreDefaultContextMenusEnabled$LAYOUT;
 	}
 	
-	private static final long put_AreDefaultContextMenusEnabled$OFFSET = 112;
+	private static final long put_AreDefaultContextMenusEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_AreDefaultContextMenusEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1611,7 +1617,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreHostObjectsAllowed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_AreHostObjectsAllowed"));
+	private static final AddressLayout get_AreHostObjectsAllowed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreHostObjectsAllowed"));
 	
 	/**
 	 * Layout for field:
@@ -1623,7 +1629,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_AreHostObjectsAllowed$LAYOUT;
 	}
 	
-	private static final long get_AreHostObjectsAllowed$OFFSET = 120;
+	private static final long get_AreHostObjectsAllowed$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_AreHostObjectsAllowed"));
 	
 	/**
 	 * Offset for field:
@@ -1710,7 +1716,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreHostObjectsAllowed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_AreHostObjectsAllowed"));
+	private static final AddressLayout put_AreHostObjectsAllowed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreHostObjectsAllowed"));
 	
 	/**
 	 * Layout for field:
@@ -1722,7 +1728,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_AreHostObjectsAllowed$LAYOUT;
 	}
 	
-	private static final long put_AreHostObjectsAllowed$OFFSET = 128;
+	private static final long put_AreHostObjectsAllowed$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_AreHostObjectsAllowed"));
 	
 	/**
 	 * Offset for field:
@@ -1809,7 +1815,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsZoomControlEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsZoomControlEnabled"));
+	private static final AddressLayout get_IsZoomControlEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsZoomControlEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1821,7 +1827,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_IsZoomControlEnabled$LAYOUT;
 	}
 	
-	private static final long get_IsZoomControlEnabled$OFFSET = 136;
+	private static final long get_IsZoomControlEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_IsZoomControlEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -1908,7 +1914,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsZoomControlEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsZoomControlEnabled"));
+	private static final AddressLayout put_IsZoomControlEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsZoomControlEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -1920,7 +1926,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_IsZoomControlEnabled$LAYOUT;
 	}
 	
-	private static final long put_IsZoomControlEnabled$OFFSET = 144;
+	private static final long put_IsZoomControlEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_IsZoomControlEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -2007,7 +2013,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsBuiltInErrorPageEnabled"));
+	private static final AddressLayout get_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsBuiltInErrorPageEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -2019,7 +2025,7 @@ public class ICoreWebView2SettingsVtbl {
 		return get_IsBuiltInErrorPageEnabled$LAYOUT;
 	}
 	
-	private static final long get_IsBuiltInErrorPageEnabled$OFFSET = 152;
+	private static final long get_IsBuiltInErrorPageEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_IsBuiltInErrorPageEnabled"));
 	
 	/**
 	 * Offset for field:
@@ -2106,7 +2112,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsBuiltInErrorPageEnabled"));
+	private static final AddressLayout put_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsBuiltInErrorPageEnabled"));
 	
 	/**
 	 * Layout for field:
@@ -2118,7 +2124,7 @@ public class ICoreWebView2SettingsVtbl {
 		return put_IsBuiltInErrorPageEnabled$LAYOUT;
 	}
 	
-	private static final long put_IsBuiltInErrorPageEnabled$OFFSET = 160;
+	private static final long put_IsBuiltInErrorPageEnabled$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_IsBuiltInErrorPageEnabled"));
 	
 	/**
 	 * Offset for field:

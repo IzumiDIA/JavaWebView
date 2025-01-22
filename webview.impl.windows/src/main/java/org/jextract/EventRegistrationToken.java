@@ -2,11 +2,16 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -32,7 +37,7 @@ public class EventRegistrationToken {
 		return $LAYOUT;
 	}
 	
-	private static final OfLong value$LAYOUT = (OfLong)$LAYOUT.select(groupElement("value"));
+	private static final OfLong value$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("value"));
 	
 	/**
 	 * Layout for field:
@@ -44,7 +49,7 @@ public class EventRegistrationToken {
 		return value$LAYOUT;
 	}
 	
-	private static final long value$OFFSET = 0;
+	private static final long value$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("value"));
 	
 	/**
 	 * Offset for field:

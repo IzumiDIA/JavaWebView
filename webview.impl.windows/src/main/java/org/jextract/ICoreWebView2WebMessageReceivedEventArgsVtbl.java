@@ -2,11 +2,17 @@
 
 package org.jextract;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
 /**
  * {@snippet lang=c :
@@ -98,7 +104,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
@@ -110,7 +116,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		return QueryInterface$LAYOUT;
 	}
 	
-	private static final long QueryInterface$OFFSET = 0;
+	private static final long QueryInterface$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Offset for field:
@@ -196,7 +202,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
@@ -208,7 +214,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		return AddRef$LAYOUT;
 	}
 	
-	private static final long AddRef$OFFSET = 8;
+	private static final long AddRef$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Offset for field:
@@ -294,7 +300,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
@@ -306,7 +312,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		return Release$LAYOUT;
 	}
 	
-	private static final long Release$OFFSET = 16;
+	private static final long Release$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Release"));
 	
 	/**
 	 * Offset for field:
@@ -393,7 +399,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Source"));
+	private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Source"));
 	
 	/**
 	 * Layout for field:
@@ -405,7 +411,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		return get_Source$LAYOUT;
 	}
 	
-	private static final long get_Source$OFFSET = 24;
+	private static final long get_Source$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_Source"));
 	
 	/**
 	 * Offset for field:
@@ -492,7 +498,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_WebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_WebMessageAsJson"));
+	private static final AddressLayout get_WebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_WebMessageAsJson"));
 	
 	/**
 	 * Layout for field:
@@ -504,7 +510,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		return get_WebMessageAsJson$LAYOUT;
 	}
 	
-	private static final long get_WebMessageAsJson$OFFSET = 32;
+	private static final long get_WebMessageAsJson$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_WebMessageAsJson"));
 	
 	/**
 	 * Offset for field:
@@ -591,7 +597,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 	}
 	
-	private static final AddressLayout TryGetWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("TryGetWebMessageAsString"));
+	private static final AddressLayout TryGetWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("TryGetWebMessageAsString"));
 	
 	/**
 	 * Layout for field:
@@ -603,7 +609,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		return TryGetWebMessageAsString$LAYOUT;
 	}
 	
-	private static final long TryGetWebMessageAsString$OFFSET = 40;
+	private static final long TryGetWebMessageAsString$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("TryGetWebMessageAsString"));
 	
 	/**
 	 * Offset for field:

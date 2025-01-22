@@ -2,11 +2,16 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -38,7 +43,7 @@ public class tagRECT {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt left$LAYOUT = (OfInt)$LAYOUT.select(groupElement("left"));
+	private static final OfInt left$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("left"));
 	
 	/**
 	 * Layout for field:
@@ -50,7 +55,7 @@ public class tagRECT {
 		return left$LAYOUT;
 	}
 	
-	private static final long left$OFFSET = 0;
+	private static final long left$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("left"));
 	
 	/**
 	 * Offset for field:
@@ -82,7 +87,7 @@ public class tagRECT {
 		struct.set(left$LAYOUT, left$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt top$LAYOUT = (OfInt)$LAYOUT.select(groupElement("top"));
+	private static final OfInt top$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("top"));
 	
 	/**
 	 * Layout for field:
@@ -94,7 +99,7 @@ public class tagRECT {
 		return top$LAYOUT;
 	}
 	
-	private static final long top$OFFSET = 4;
+	private static final long top$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("top"));
 	
 	/**
 	 * Offset for field:
@@ -126,7 +131,7 @@ public class tagRECT {
 		struct.set(top$LAYOUT, top$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt right$LAYOUT = (OfInt)$LAYOUT.select(groupElement("right"));
+	private static final OfInt right$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("right"));
 	
 	/**
 	 * Layout for field:
@@ -138,7 +143,7 @@ public class tagRECT {
 		return right$LAYOUT;
 	}
 	
-	private static final long right$OFFSET = 8;
+	private static final long right$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("right"));
 	
 	/**
 	 * Offset for field:
@@ -170,7 +175,7 @@ public class tagRECT {
 		struct.set(right$LAYOUT, right$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt bottom$LAYOUT = (OfInt)$LAYOUT.select(groupElement("bottom"));
+	private static final OfInt bottom$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("bottom"));
 	
 	/**
 	 * Layout for field:
@@ -182,7 +187,7 @@ public class tagRECT {
 		return bottom$LAYOUT;
 	}
 	
-	private static final long bottom$OFFSET = 12;
+	private static final long bottom$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("bottom"));
 	
 	/**
 	 * Offset for field:

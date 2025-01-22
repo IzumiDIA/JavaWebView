@@ -2,11 +2,16 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -32,7 +37,7 @@ public class HKEY__ {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt unused$LAYOUT = (OfInt)$LAYOUT.select(groupElement("unused"));
+	private static final OfInt unused$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("unused"));
 	
 	/**
 	 * Layout for field:
@@ -44,7 +49,7 @@ public class HKEY__ {
 		return unused$LAYOUT;
 	}
 	
-	private static final long unused$OFFSET = 0;
+	private static final long unused$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("unused"));
 	
 	/**
 	 * Offset for field:

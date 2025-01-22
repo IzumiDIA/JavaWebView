@@ -2,11 +2,15 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -34,7 +38,7 @@ public class tagPOINT {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt x$LAYOUT = (OfInt)$LAYOUT.select(groupElement("x"));
+	private static final OfInt x$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("x"));
 	
 	/**
 	 * Layout for field:
@@ -46,7 +50,7 @@ public class tagPOINT {
 		return x$LAYOUT;
 	}
 	
-	private static final long x$OFFSET = 0;
+	private static final long x$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("x"));
 	
 	/**
 	 * Offset for field:
@@ -78,7 +82,7 @@ public class tagPOINT {
 		struct.set(x$LAYOUT, x$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt y$LAYOUT = (OfInt)$LAYOUT.select(groupElement("y"));
+	private static final OfInt y$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("y"));
 	
 	/**
 	 * Layout for field:
@@ -90,7 +94,7 @@ public class tagPOINT {
 		return y$LAYOUT;
 	}
 	
-	private static final long y$OFFSET = 4;
+	private static final long y$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("y"));
 	
 	/**
 	 * Offset for field:

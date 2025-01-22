@@ -2,11 +2,17 @@
 
 package org.jextract;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
 /**
  * {@snippet lang=c :
@@ -138,7 +144,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
@@ -150,7 +156,7 @@ public class ICoreWebView2ControllerVtbl {
 		return QueryInterface$LAYOUT;
 	}
 	
-	private static final long QueryInterface$OFFSET = 0;
+	private static final long QueryInterface$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Offset for field:
@@ -236,7 +242,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
@@ -248,7 +254,7 @@ public class ICoreWebView2ControllerVtbl {
 		return AddRef$LAYOUT;
 	}
 	
-	private static final long AddRef$OFFSET = 8;
+	private static final long AddRef$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Offset for field:
@@ -334,7 +340,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
@@ -346,7 +352,7 @@ public class ICoreWebView2ControllerVtbl {
 		return Release$LAYOUT;
 	}
 	
-	private static final long Release$OFFSET = 16;
+	private static final long Release$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Release"));
 	
 	/**
 	 * Offset for field:
@@ -433,7 +439,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsVisible$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_IsVisible"));
+	private static final AddressLayout get_IsVisible$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsVisible"));
 	
 	/**
 	 * Layout for field:
@@ -445,7 +451,7 @@ public class ICoreWebView2ControllerVtbl {
 		return get_IsVisible$LAYOUT;
 	}
 	
-	private static final long get_IsVisible$OFFSET = 24;
+	private static final long get_IsVisible$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_IsVisible"));
 	
 	/**
 	 * Offset for field:
@@ -532,7 +538,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsVisible$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_IsVisible"));
+	private static final AddressLayout put_IsVisible$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsVisible"));
 	
 	/**
 	 * Layout for field:
@@ -544,7 +550,7 @@ public class ICoreWebView2ControllerVtbl {
 		return put_IsVisible$LAYOUT;
 	}
 	
-	private static final long put_IsVisible$OFFSET = 32;
+	private static final long put_IsVisible$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_IsVisible"));
 	
 	/**
 	 * Offset for field:
@@ -631,7 +637,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_Bounds$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Bounds"));
+	private static final AddressLayout get_Bounds$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Bounds"));
 	
 	/**
 	 * Layout for field:
@@ -643,7 +649,7 @@ public class ICoreWebView2ControllerVtbl {
 		return get_Bounds$LAYOUT;
 	}
 	
-	private static final long get_Bounds$OFFSET = 40;
+	private static final long get_Bounds$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_Bounds"));
 	
 	/**
 	 * Offset for field:
@@ -730,7 +736,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_Bounds$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_Bounds"));
+	private static final AddressLayout put_Bounds$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_Bounds"));
 	
 	/**
 	 * Layout for field:
@@ -742,7 +748,7 @@ public class ICoreWebView2ControllerVtbl {
 		return put_Bounds$LAYOUT;
 	}
 	
-	private static final long put_Bounds$OFFSET = 48;
+	private static final long put_Bounds$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_Bounds"));
 	
 	/**
 	 * Offset for field:
@@ -829,7 +835,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_ZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_ZoomFactor"));
+	private static final AddressLayout get_ZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_ZoomFactor"));
 	
 	/**
 	 * Layout for field:
@@ -841,7 +847,7 @@ public class ICoreWebView2ControllerVtbl {
 		return get_ZoomFactor$LAYOUT;
 	}
 	
-	private static final long get_ZoomFactor$OFFSET = 56;
+	private static final long get_ZoomFactor$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_ZoomFactor"));
 	
 	/**
 	 * Offset for field:
@@ -928,7 +934,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_ZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_ZoomFactor"));
+	private static final AddressLayout put_ZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_ZoomFactor"));
 	
 	/**
 	 * Layout for field:
@@ -940,7 +946,7 @@ public class ICoreWebView2ControllerVtbl {
 		return put_ZoomFactor$LAYOUT;
 	}
 	
-	private static final long put_ZoomFactor$OFFSET = 64;
+	private static final long put_ZoomFactor$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_ZoomFactor"));
 	
 	/**
 	 * Offset for field:
@@ -1028,7 +1034,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ZoomFactorChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ZoomFactorChanged"));
+	private static final AddressLayout add_ZoomFactorChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ZoomFactorChanged"));
 	
 	/**
 	 * Layout for field:
@@ -1040,7 +1046,7 @@ public class ICoreWebView2ControllerVtbl {
 		return add_ZoomFactorChanged$LAYOUT;
 	}
 	
-	private static final long add_ZoomFactorChanged$OFFSET = 72;
+	private static final long add_ZoomFactorChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_ZoomFactorChanged"));
 	
 	/**
 	 * Offset for field:
@@ -1127,7 +1133,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ZoomFactorChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ZoomFactorChanged"));
+	private static final AddressLayout remove_ZoomFactorChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ZoomFactorChanged"));
 	
 	/**
 	 * Layout for field:
@@ -1139,7 +1145,7 @@ public class ICoreWebView2ControllerVtbl {
 		return remove_ZoomFactorChanged$LAYOUT;
 	}
 	
-	private static final long remove_ZoomFactorChanged$OFFSET = 80;
+	private static final long remove_ZoomFactorChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_ZoomFactorChanged"));
 	
 	/**
 	 * Offset for field:
@@ -1227,7 +1233,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout SetBoundsAndZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("SetBoundsAndZoomFactor"));
+	private static final AddressLayout SetBoundsAndZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("SetBoundsAndZoomFactor"));
 	
 	/**
 	 * Layout for field:
@@ -1239,7 +1245,7 @@ public class ICoreWebView2ControllerVtbl {
 		return SetBoundsAndZoomFactor$LAYOUT;
 	}
 	
-	private static final long SetBoundsAndZoomFactor$OFFSET = 88;
+	private static final long SetBoundsAndZoomFactor$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("SetBoundsAndZoomFactor"));
 	
 	/**
 	 * Offset for field:
@@ -1326,7 +1332,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout MoveFocus$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("MoveFocus"));
+	private static final AddressLayout MoveFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("MoveFocus"));
 	
 	/**
 	 * Layout for field:
@@ -1338,7 +1344,7 @@ public class ICoreWebView2ControllerVtbl {
 		return MoveFocus$LAYOUT;
 	}
 	
-	private static final long MoveFocus$OFFSET = 96;
+	private static final long MoveFocus$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("MoveFocus"));
 	
 	/**
 	 * Offset for field:
@@ -1426,7 +1432,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout add_MoveFocusRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_MoveFocusRequested"));
+	private static final AddressLayout add_MoveFocusRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_MoveFocusRequested"));
 	
 	/**
 	 * Layout for field:
@@ -1438,7 +1444,7 @@ public class ICoreWebView2ControllerVtbl {
 		return add_MoveFocusRequested$LAYOUT;
 	}
 	
-	private static final long add_MoveFocusRequested$OFFSET = 104;
+	private static final long add_MoveFocusRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_MoveFocusRequested"));
 	
 	/**
 	 * Offset for field:
@@ -1525,7 +1531,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_MoveFocusRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_MoveFocusRequested"));
+	private static final AddressLayout remove_MoveFocusRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_MoveFocusRequested"));
 	
 	/**
 	 * Layout for field:
@@ -1537,7 +1543,7 @@ public class ICoreWebView2ControllerVtbl {
 		return remove_MoveFocusRequested$LAYOUT;
 	}
 	
-	private static final long remove_MoveFocusRequested$OFFSET = 112;
+	private static final long remove_MoveFocusRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_MoveFocusRequested"));
 	
 	/**
 	 * Offset for field:
@@ -1625,7 +1631,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout add_GotFocus$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_GotFocus"));
+	private static final AddressLayout add_GotFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_GotFocus"));
 	
 	/**
 	 * Layout for field:
@@ -1637,7 +1643,7 @@ public class ICoreWebView2ControllerVtbl {
 		return add_GotFocus$LAYOUT;
 	}
 	
-	private static final long add_GotFocus$OFFSET = 120;
+	private static final long add_GotFocus$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_GotFocus"));
 	
 	/**
 	 * Offset for field:
@@ -1724,7 +1730,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_GotFocus$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_GotFocus"));
+	private static final AddressLayout remove_GotFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_GotFocus"));
 	
 	/**
 	 * Layout for field:
@@ -1736,7 +1742,7 @@ public class ICoreWebView2ControllerVtbl {
 		return remove_GotFocus$LAYOUT;
 	}
 	
-	private static final long remove_GotFocus$OFFSET = 128;
+	private static final long remove_GotFocus$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_GotFocus"));
 	
 	/**
 	 * Offset for field:
@@ -1824,7 +1830,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout add_LostFocus$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_LostFocus"));
+	private static final AddressLayout add_LostFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_LostFocus"));
 	
 	/**
 	 * Layout for field:
@@ -1836,7 +1842,7 @@ public class ICoreWebView2ControllerVtbl {
 		return add_LostFocus$LAYOUT;
 	}
 	
-	private static final long add_LostFocus$OFFSET = 136;
+	private static final long add_LostFocus$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_LostFocus"));
 	
 	/**
 	 * Offset for field:
@@ -1923,7 +1929,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_LostFocus$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_LostFocus"));
+	private static final AddressLayout remove_LostFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_LostFocus"));
 	
 	/**
 	 * Layout for field:
@@ -1935,7 +1941,7 @@ public class ICoreWebView2ControllerVtbl {
 		return remove_LostFocus$LAYOUT;
 	}
 	
-	private static final long remove_LostFocus$OFFSET = 144;
+	private static final long remove_LostFocus$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_LostFocus"));
 	
 	/**
 	 * Offset for field:
@@ -2023,7 +2029,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout add_AcceleratorKeyPressed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_AcceleratorKeyPressed"));
+	private static final AddressLayout add_AcceleratorKeyPressed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_AcceleratorKeyPressed"));
 	
 	/**
 	 * Layout for field:
@@ -2035,7 +2041,7 @@ public class ICoreWebView2ControllerVtbl {
 		return add_AcceleratorKeyPressed$LAYOUT;
 	}
 	
-	private static final long add_AcceleratorKeyPressed$OFFSET = 152;
+	private static final long add_AcceleratorKeyPressed$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_AcceleratorKeyPressed"));
 	
 	/**
 	 * Offset for field:
@@ -2122,7 +2128,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_AcceleratorKeyPressed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_AcceleratorKeyPressed"));
+	private static final AddressLayout remove_AcceleratorKeyPressed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_AcceleratorKeyPressed"));
 	
 	/**
 	 * Layout for field:
@@ -2134,7 +2140,7 @@ public class ICoreWebView2ControllerVtbl {
 		return remove_AcceleratorKeyPressed$LAYOUT;
 	}
 	
-	private static final long remove_AcceleratorKeyPressed$OFFSET = 160;
+	private static final long remove_AcceleratorKeyPressed$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_AcceleratorKeyPressed"));
 	
 	/**
 	 * Offset for field:
@@ -2221,7 +2227,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_ParentWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_ParentWindow"));
+	private static final AddressLayout get_ParentWindow$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_ParentWindow"));
 	
 	/**
 	 * Layout for field:
@@ -2233,7 +2239,7 @@ public class ICoreWebView2ControllerVtbl {
 		return get_ParentWindow$LAYOUT;
 	}
 	
-	private static final long get_ParentWindow$OFFSET = 168;
+	private static final long get_ParentWindow$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_ParentWindow"));
 	
 	/**
 	 * Offset for field:
@@ -2320,7 +2326,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_ParentWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("put_ParentWindow"));
+	private static final AddressLayout put_ParentWindow$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_ParentWindow"));
 	
 	/**
 	 * Layout for field:
@@ -2332,7 +2338,7 @@ public class ICoreWebView2ControllerVtbl {
 		return put_ParentWindow$LAYOUT;
 	}
 	
-	private static final long put_ParentWindow$OFFSET = 176;
+	private static final long put_ParentWindow$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("put_ParentWindow"));
 	
 	/**
 	 * Offset for field:
@@ -2418,7 +2424,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout NotifyParentWindowPositionChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("NotifyParentWindowPositionChanged"));
+	private static final AddressLayout NotifyParentWindowPositionChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("NotifyParentWindowPositionChanged"));
 	
 	/**
 	 * Layout for field:
@@ -2430,7 +2436,7 @@ public class ICoreWebView2ControllerVtbl {
 		return NotifyParentWindowPositionChanged$LAYOUT;
 	}
 	
-	private static final long NotifyParentWindowPositionChanged$OFFSET = 184;
+	private static final long NotifyParentWindowPositionChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("NotifyParentWindowPositionChanged"));
 	
 	/**
 	 * Offset for field:
@@ -2516,7 +2522,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout Close$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Close"));
+	private static final AddressLayout Close$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Close"));
 	
 	/**
 	 * Layout for field:
@@ -2528,7 +2534,7 @@ public class ICoreWebView2ControllerVtbl {
 		return Close$LAYOUT;
 	}
 	
-	private static final long Close$OFFSET = 192;
+	private static final long Close$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Close"));
 	
 	/**
 	 * Offset for field:
@@ -2615,7 +2621,7 @@ public class ICoreWebView2ControllerVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_CoreWebView2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CoreWebView2"));
+	private static final AddressLayout get_CoreWebView2$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_CoreWebView2"));
 	
 	/**
 	 * Layout for field:
@@ -2627,7 +2633,7 @@ public class ICoreWebView2ControllerVtbl {
 		return get_CoreWebView2$LAYOUT;
 	}
 	
-	private static final long get_CoreWebView2$OFFSET = 200;
+	private static final long get_CoreWebView2$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_CoreWebView2"));
 	
 	/**
 	 * Offset for field:

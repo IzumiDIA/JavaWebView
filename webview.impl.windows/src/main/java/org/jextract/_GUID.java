@@ -2,12 +2,18 @@
 
 package org.jextract;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.util.function.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.SequenceLayout;
+import java.lang.foreign.ValueLayout;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.OfShort;
 
 /**
  * {@snippet lang=c :
@@ -39,7 +45,7 @@ public class _GUID {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt Data1$LAYOUT = (OfInt)$LAYOUT.select(groupElement("Data1"));
+	private static final OfInt Data1$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data1"));
 	
 	/**
 	 * Layout for field:
@@ -51,7 +57,7 @@ public class _GUID {
 		return Data1$LAYOUT;
 	}
 	
-	private static final long Data1$OFFSET = 0;
+	private static final long Data1$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("Data1"));
 	
 	/**
 	 * Offset for field:
@@ -83,7 +89,7 @@ public class _GUID {
 		struct.set(Data1$LAYOUT, Data1$OFFSET, fieldValue);
 	}
 	
-	private static final OfShort Data2$LAYOUT = (OfShort)$LAYOUT.select(groupElement("Data2"));
+	private static final OfShort Data2$LAYOUT = (OfShort)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data2"));
 	
 	/**
 	 * Layout for field:
@@ -95,7 +101,7 @@ public class _GUID {
 		return Data2$LAYOUT;
 	}
 	
-	private static final long Data2$OFFSET = 4;
+	private static final long Data2$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("Data2"));
 	
 	/**
 	 * Offset for field:
@@ -127,7 +133,7 @@ public class _GUID {
 		struct.set(Data2$LAYOUT, Data2$OFFSET, fieldValue);
 	}
 	
-	private static final OfShort Data3$LAYOUT = (OfShort)$LAYOUT.select(groupElement("Data3"));
+	private static final OfShort Data3$LAYOUT = (OfShort)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data3"));
 	
 	/**
 	 * Layout for field:
@@ -139,7 +145,7 @@ public class _GUID {
 		return Data3$LAYOUT;
 	}
 	
-	private static final long Data3$OFFSET = 6;
+	private static final long Data3$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("Data3"));
 	
 	/**
 	 * Offset for field:
@@ -171,7 +177,7 @@ public class _GUID {
 		struct.set(Data3$LAYOUT, Data3$OFFSET, fieldValue);
 	}
 	
-	private static final SequenceLayout Data4$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("Data4"));
+	private static final SequenceLayout Data4$LAYOUT = (SequenceLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data4"));
 	
 	/**
 	 * Layout for field:
@@ -183,7 +189,7 @@ public class _GUID {
 		return Data4$LAYOUT;
 	}
 	
-	private static final long Data4$OFFSET = 8;
+	private static final long Data4$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("Data4"));
 	
 	/**
 	 * Offset for field:
@@ -226,7 +232,7 @@ public class _GUID {
 	public static long[] Data4$dimensions() {
 		return Data4$DIMS;
 	}
-	private static final VarHandle Data4$ELEM_HANDLE = Data4$LAYOUT.varHandle(sequenceElement());
+	private static final VarHandle Data4$ELEM_HANDLE = Data4$LAYOUT.varHandle(ValueLayout.PathElement.sequenceElement());
 	
 	/**
 	 * Indexed getter for field:

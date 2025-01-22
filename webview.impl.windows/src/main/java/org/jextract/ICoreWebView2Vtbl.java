@@ -2,11 +2,17 @@
 
 package org.jextract;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
 /**
  * {@snippet lang=c :
@@ -208,7 +214,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
@@ -220,7 +226,7 @@ public class ICoreWebView2Vtbl {
 		return QueryInterface$LAYOUT;
 	}
 	
-	private static final long QueryInterface$OFFSET = 0;
+	private static final long QueryInterface$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Offset for field:
@@ -306,7 +312,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
@@ -318,7 +324,7 @@ public class ICoreWebView2Vtbl {
 		return AddRef$LAYOUT;
 	}
 	
-	private static final long AddRef$OFFSET = 8;
+	private static final long AddRef$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Offset for field:
@@ -404,7 +410,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
@@ -416,7 +422,7 @@ public class ICoreWebView2Vtbl {
 		return Release$LAYOUT;
 	}
 	
-	private static final long Release$OFFSET = 16;
+	private static final long Release$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Release"));
 	
 	/**
 	 * Offset for field:
@@ -503,7 +509,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_Settings$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Settings"));
+	private static final AddressLayout get_Settings$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Settings"));
 	
 	/**
 	 * Layout for field:
@@ -515,7 +521,7 @@ public class ICoreWebView2Vtbl {
 		return get_Settings$LAYOUT;
 	}
 	
-	private static final long get_Settings$OFFSET = 24;
+	private static final long get_Settings$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_Settings"));
 	
 	/**
 	 * Offset for field:
@@ -602,7 +608,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_Source"));
+	private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Source"));
 	
 	/**
 	 * Layout for field:
@@ -614,7 +620,7 @@ public class ICoreWebView2Vtbl {
 		return get_Source$LAYOUT;
 	}
 	
-	private static final long get_Source$OFFSET = 32;
+	private static final long get_Source$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_Source"));
 	
 	/**
 	 * Offset for field:
@@ -701,7 +707,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Navigate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Navigate"));
+	private static final AddressLayout Navigate$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Navigate"));
 	
 	/**
 	 * Layout for field:
@@ -713,7 +719,7 @@ public class ICoreWebView2Vtbl {
 		return Navigate$LAYOUT;
 	}
 	
-	private static final long Navigate$OFFSET = 40;
+	private static final long Navigate$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Navigate"));
 	
 	/**
 	 * Offset for field:
@@ -800,7 +806,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout NavigateToString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("NavigateToString"));
+	private static final AddressLayout NavigateToString$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("NavigateToString"));
 	
 	/**
 	 * Layout for field:
@@ -812,7 +818,7 @@ public class ICoreWebView2Vtbl {
 		return NavigateToString$LAYOUT;
 	}
 	
-	private static final long NavigateToString$OFFSET = 48;
+	private static final long NavigateToString$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("NavigateToString"));
 	
 	/**
 	 * Offset for field:
@@ -900,7 +906,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NavigationStarting"));
+	private static final AddressLayout add_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NavigationStarting"));
 	
 	/**
 	 * Layout for field:
@@ -912,7 +918,7 @@ public class ICoreWebView2Vtbl {
 		return add_NavigationStarting$LAYOUT;
 	}
 	
-	private static final long add_NavigationStarting$OFFSET = 56;
+	private static final long add_NavigationStarting$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_NavigationStarting"));
 	
 	/**
 	 * Offset for field:
@@ -999,7 +1005,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NavigationStarting"));
+	private static final AddressLayout remove_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NavigationStarting"));
 	
 	/**
 	 * Layout for field:
@@ -1011,7 +1017,7 @@ public class ICoreWebView2Vtbl {
 		return remove_NavigationStarting$LAYOUT;
 	}
 	
-	private static final long remove_NavigationStarting$OFFSET = 64;
+	private static final long remove_NavigationStarting$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_NavigationStarting"));
 	
 	/**
 	 * Offset for field:
@@ -1099,7 +1105,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContentLoading"));
+	private static final AddressLayout add_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ContentLoading"));
 	
 	/**
 	 * Layout for field:
@@ -1111,7 +1117,7 @@ public class ICoreWebView2Vtbl {
 		return add_ContentLoading$LAYOUT;
 	}
 	
-	private static final long add_ContentLoading$OFFSET = 72;
+	private static final long add_ContentLoading$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_ContentLoading"));
 	
 	/**
 	 * Offset for field:
@@ -1198,7 +1204,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContentLoading"));
+	private static final AddressLayout remove_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ContentLoading"));
 	
 	/**
 	 * Layout for field:
@@ -1210,7 +1216,7 @@ public class ICoreWebView2Vtbl {
 		return remove_ContentLoading$LAYOUT;
 	}
 	
-	private static final long remove_ContentLoading$OFFSET = 80;
+	private static final long remove_ContentLoading$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_ContentLoading"));
 	
 	/**
 	 * Offset for field:
@@ -1298,7 +1304,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_SourceChanged"));
+	private static final AddressLayout add_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_SourceChanged"));
 	
 	/**
 	 * Layout for field:
@@ -1310,7 +1316,7 @@ public class ICoreWebView2Vtbl {
 		return add_SourceChanged$LAYOUT;
 	}
 	
-	private static final long add_SourceChanged$OFFSET = 88;
+	private static final long add_SourceChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_SourceChanged"));
 	
 	/**
 	 * Offset for field:
@@ -1397,7 +1403,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_SourceChanged"));
+	private static final AddressLayout remove_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_SourceChanged"));
 	
 	/**
 	 * Layout for field:
@@ -1409,7 +1415,7 @@ public class ICoreWebView2Vtbl {
 		return remove_SourceChanged$LAYOUT;
 	}
 	
-	private static final long remove_SourceChanged$OFFSET = 96;
+	private static final long remove_SourceChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_SourceChanged"));
 	
 	/**
 	 * Offset for field:
@@ -1497,7 +1503,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_HistoryChanged"));
+	private static final AddressLayout add_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_HistoryChanged"));
 	
 	/**
 	 * Layout for field:
@@ -1509,7 +1515,7 @@ public class ICoreWebView2Vtbl {
 		return add_HistoryChanged$LAYOUT;
 	}
 	
-	private static final long add_HistoryChanged$OFFSET = 104;
+	private static final long add_HistoryChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_HistoryChanged"));
 	
 	/**
 	 * Offset for field:
@@ -1596,7 +1602,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_HistoryChanged"));
+	private static final AddressLayout remove_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_HistoryChanged"));
 	
 	/**
 	 * Layout for field:
@@ -1608,7 +1614,7 @@ public class ICoreWebView2Vtbl {
 		return remove_HistoryChanged$LAYOUT;
 	}
 	
-	private static final long remove_HistoryChanged$OFFSET = 112;
+	private static final long remove_HistoryChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_HistoryChanged"));
 	
 	/**
 	 * Offset for field:
@@ -1696,7 +1702,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NavigationCompleted"));
+	private static final AddressLayout add_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NavigationCompleted"));
 	
 	/**
 	 * Layout for field:
@@ -1708,7 +1714,7 @@ public class ICoreWebView2Vtbl {
 		return add_NavigationCompleted$LAYOUT;
 	}
 	
-	private static final long add_NavigationCompleted$OFFSET = 120;
+	private static final long add_NavigationCompleted$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_NavigationCompleted"));
 	
 	/**
 	 * Offset for field:
@@ -1795,7 +1801,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NavigationCompleted"));
+	private static final AddressLayout remove_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NavigationCompleted"));
 	
 	/**
 	 * Layout for field:
@@ -1807,7 +1813,7 @@ public class ICoreWebView2Vtbl {
 		return remove_NavigationCompleted$LAYOUT;
 	}
 	
-	private static final long remove_NavigationCompleted$OFFSET = 128;
+	private static final long remove_NavigationCompleted$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_NavigationCompleted"));
 	
 	/**
 	 * Offset for field:
@@ -1895,7 +1901,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameNavigationStarting"));
+	private static final AddressLayout add_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_FrameNavigationStarting"));
 	
 	/**
 	 * Layout for field:
@@ -1907,7 +1913,7 @@ public class ICoreWebView2Vtbl {
 		return add_FrameNavigationStarting$LAYOUT;
 	}
 	
-	private static final long add_FrameNavigationStarting$OFFSET = 136;
+	private static final long add_FrameNavigationStarting$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_FrameNavigationStarting"));
 	
 	/**
 	 * Offset for field:
@@ -1994,7 +2000,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameNavigationStarting"));
+	private static final AddressLayout remove_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_FrameNavigationStarting"));
 	
 	/**
 	 * Layout for field:
@@ -2006,7 +2012,7 @@ public class ICoreWebView2Vtbl {
 		return remove_FrameNavigationStarting$LAYOUT;
 	}
 	
-	private static final long remove_FrameNavigationStarting$OFFSET = 144;
+	private static final long remove_FrameNavigationStarting$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_FrameNavigationStarting"));
 	
 	/**
 	 * Offset for field:
@@ -2094,7 +2100,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_FrameNavigationCompleted"));
+	private static final AddressLayout add_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_FrameNavigationCompleted"));
 	
 	/**
 	 * Layout for field:
@@ -2106,7 +2112,7 @@ public class ICoreWebView2Vtbl {
 		return add_FrameNavigationCompleted$LAYOUT;
 	}
 	
-	private static final long add_FrameNavigationCompleted$OFFSET = 152;
+	private static final long add_FrameNavigationCompleted$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_FrameNavigationCompleted"));
 	
 	/**
 	 * Offset for field:
@@ -2193,7 +2199,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_FrameNavigationCompleted"));
+	private static final AddressLayout remove_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_FrameNavigationCompleted"));
 	
 	/**
 	 * Layout for field:
@@ -2205,7 +2211,7 @@ public class ICoreWebView2Vtbl {
 		return remove_FrameNavigationCompleted$LAYOUT;
 	}
 	
-	private static final long remove_FrameNavigationCompleted$OFFSET = 160;
+	private static final long remove_FrameNavigationCompleted$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_FrameNavigationCompleted"));
 	
 	/**
 	 * Offset for field:
@@ -2293,7 +2299,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ScriptDialogOpening"));
+	private static final AddressLayout add_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ScriptDialogOpening"));
 	
 	/**
 	 * Layout for field:
@@ -2305,7 +2311,7 @@ public class ICoreWebView2Vtbl {
 		return add_ScriptDialogOpening$LAYOUT;
 	}
 	
-	private static final long add_ScriptDialogOpening$OFFSET = 168;
+	private static final long add_ScriptDialogOpening$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_ScriptDialogOpening"));
 	
 	/**
 	 * Offset for field:
@@ -2392,7 +2398,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ScriptDialogOpening"));
+	private static final AddressLayout remove_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ScriptDialogOpening"));
 	
 	/**
 	 * Layout for field:
@@ -2404,7 +2410,7 @@ public class ICoreWebView2Vtbl {
 		return remove_ScriptDialogOpening$LAYOUT;
 	}
 	
-	private static final long remove_ScriptDialogOpening$OFFSET = 176;
+	private static final long remove_ScriptDialogOpening$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_ScriptDialogOpening"));
 	
 	/**
 	 * Offset for field:
@@ -2492,7 +2498,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_PermissionRequested"));
+	private static final AddressLayout add_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_PermissionRequested"));
 	
 	/**
 	 * Layout for field:
@@ -2504,7 +2510,7 @@ public class ICoreWebView2Vtbl {
 		return add_PermissionRequested$LAYOUT;
 	}
 	
-	private static final long add_PermissionRequested$OFFSET = 184;
+	private static final long add_PermissionRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_PermissionRequested"));
 	
 	/**
 	 * Offset for field:
@@ -2591,7 +2597,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_PermissionRequested"));
+	private static final AddressLayout remove_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_PermissionRequested"));
 	
 	/**
 	 * Layout for field:
@@ -2603,7 +2609,7 @@ public class ICoreWebView2Vtbl {
 		return remove_PermissionRequested$LAYOUT;
 	}
 	
-	private static final long remove_PermissionRequested$OFFSET = 192;
+	private static final long remove_PermissionRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_PermissionRequested"));
 	
 	/**
 	 * Offset for field:
@@ -2691,7 +2697,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ProcessFailed"));
+	private static final AddressLayout add_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ProcessFailed"));
 	
 	/**
 	 * Layout for field:
@@ -2703,7 +2709,7 @@ public class ICoreWebView2Vtbl {
 		return add_ProcessFailed$LAYOUT;
 	}
 	
-	private static final long add_ProcessFailed$OFFSET = 200;
+	private static final long add_ProcessFailed$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_ProcessFailed"));
 	
 	/**
 	 * Offset for field:
@@ -2790,7 +2796,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ProcessFailed"));
+	private static final AddressLayout remove_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ProcessFailed"));
 	
 	/**
 	 * Layout for field:
@@ -2802,7 +2808,7 @@ public class ICoreWebView2Vtbl {
 		return remove_ProcessFailed$LAYOUT;
 	}
 	
-	private static final long remove_ProcessFailed$OFFSET = 208;
+	private static final long remove_ProcessFailed$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_ProcessFailed"));
 	
 	/**
 	 * Offset for field:
@@ -2890,7 +2896,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddScriptToExecuteOnDocumentCreated"));
+	private static final AddressLayout AddScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddScriptToExecuteOnDocumentCreated"));
 	
 	/**
 	 * Layout for field:
@@ -2902,7 +2908,7 @@ public class ICoreWebView2Vtbl {
 		return AddScriptToExecuteOnDocumentCreated$LAYOUT;
 	}
 	
-	private static final long AddScriptToExecuteOnDocumentCreated$OFFSET = 216;
+	private static final long AddScriptToExecuteOnDocumentCreated$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddScriptToExecuteOnDocumentCreated"));
 	
 	/**
 	 * Offset for field:
@@ -2989,7 +2995,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveScriptToExecuteOnDocumentCreated"));
+	private static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("RemoveScriptToExecuteOnDocumentCreated"));
 	
 	/**
 	 * Layout for field:
@@ -3001,7 +3007,7 @@ public class ICoreWebView2Vtbl {
 		return RemoveScriptToExecuteOnDocumentCreated$LAYOUT;
 	}
 	
-	private static final long RemoveScriptToExecuteOnDocumentCreated$OFFSET = 224;
+	private static final long RemoveScriptToExecuteOnDocumentCreated$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("RemoveScriptToExecuteOnDocumentCreated"));
 	
 	/**
 	 * Offset for field:
@@ -3089,7 +3095,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout ExecuteScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ExecuteScript"));
+	private static final AddressLayout ExecuteScript$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("ExecuteScript"));
 	
 	/**
 	 * Layout for field:
@@ -3101,7 +3107,7 @@ public class ICoreWebView2Vtbl {
 		return ExecuteScript$LAYOUT;
 	}
 	
-	private static final long ExecuteScript$OFFSET = 232;
+	private static final long ExecuteScript$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("ExecuteScript"));
 	
 	/**
 	 * Offset for field:
@@ -3190,7 +3196,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout CapturePreview$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CapturePreview"));
+	private static final AddressLayout CapturePreview$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("CapturePreview"));
 	
 	/**
 	 * Layout for field:
@@ -3202,7 +3208,7 @@ public class ICoreWebView2Vtbl {
 		return CapturePreview$LAYOUT;
 	}
 	
-	private static final long CapturePreview$OFFSET = 240;
+	private static final long CapturePreview$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("CapturePreview"));
 	
 	/**
 	 * Offset for field:
@@ -3288,7 +3294,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Reload$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Reload"));
+	private static final AddressLayout Reload$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Reload"));
 	
 	/**
 	 * Layout for field:
@@ -3300,7 +3306,7 @@ public class ICoreWebView2Vtbl {
 		return Reload$LAYOUT;
 	}
 	
-	private static final long Reload$OFFSET = 248;
+	private static final long Reload$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Reload"));
 	
 	/**
 	 * Offset for field:
@@ -3387,7 +3393,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout PostWebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostWebMessageAsJson"));
+	private static final AddressLayout PostWebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("PostWebMessageAsJson"));
 	
 	/**
 	 * Layout for field:
@@ -3399,7 +3405,7 @@ public class ICoreWebView2Vtbl {
 		return PostWebMessageAsJson$LAYOUT;
 	}
 	
-	private static final long PostWebMessageAsJson$OFFSET = 256;
+	private static final long PostWebMessageAsJson$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("PostWebMessageAsJson"));
 	
 	/**
 	 * Offset for field:
@@ -3486,7 +3492,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout PostWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("PostWebMessageAsString"));
+	private static final AddressLayout PostWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("PostWebMessageAsString"));
 	
 	/**
 	 * Layout for field:
@@ -3498,7 +3504,7 @@ public class ICoreWebView2Vtbl {
 		return PostWebMessageAsString$LAYOUT;
 	}
 	
-	private static final long PostWebMessageAsString$OFFSET = 264;
+	private static final long PostWebMessageAsString$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("PostWebMessageAsString"));
 	
 	/**
 	 * Offset for field:
@@ -3586,7 +3592,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebMessageReceived"));
+	private static final AddressLayout add_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_WebMessageReceived"));
 	
 	/**
 	 * Layout for field:
@@ -3598,7 +3604,7 @@ public class ICoreWebView2Vtbl {
 		return add_WebMessageReceived$LAYOUT;
 	}
 	
-	private static final long add_WebMessageReceived$OFFSET = 272;
+	private static final long add_WebMessageReceived$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_WebMessageReceived"));
 	
 	/**
 	 * Offset for field:
@@ -3685,7 +3691,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebMessageReceived"));
+	private static final AddressLayout remove_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_WebMessageReceived"));
 	
 	/**
 	 * Layout for field:
@@ -3697,7 +3703,7 @@ public class ICoreWebView2Vtbl {
 		return remove_WebMessageReceived$LAYOUT;
 	}
 	
-	private static final long remove_WebMessageReceived$OFFSET = 280;
+	private static final long remove_WebMessageReceived$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_WebMessageReceived"));
 	
 	/**
 	 * Offset for field:
@@ -3786,7 +3792,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout CallDevToolsProtocolMethod$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("CallDevToolsProtocolMethod"));
+	private static final AddressLayout CallDevToolsProtocolMethod$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("CallDevToolsProtocolMethod"));
 	
 	/**
 	 * Layout for field:
@@ -3798,7 +3804,7 @@ public class ICoreWebView2Vtbl {
 		return CallDevToolsProtocolMethod$LAYOUT;
 	}
 	
-	private static final long CallDevToolsProtocolMethod$OFFSET = 288;
+	private static final long CallDevToolsProtocolMethod$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("CallDevToolsProtocolMethod"));
 	
 	/**
 	 * Offset for field:
@@ -3885,7 +3891,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_BrowserProcessId$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_BrowserProcessId"));
+	private static final AddressLayout get_BrowserProcessId$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_BrowserProcessId"));
 	
 	/**
 	 * Layout for field:
@@ -3897,7 +3903,7 @@ public class ICoreWebView2Vtbl {
 		return get_BrowserProcessId$LAYOUT;
 	}
 	
-	private static final long get_BrowserProcessId$OFFSET = 296;
+	private static final long get_BrowserProcessId$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_BrowserProcessId"));
 	
 	/**
 	 * Offset for field:
@@ -3984,7 +3990,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_CanGoBack$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CanGoBack"));
+	private static final AddressLayout get_CanGoBack$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_CanGoBack"));
 	
 	/**
 	 * Layout for field:
@@ -3996,7 +4002,7 @@ public class ICoreWebView2Vtbl {
 		return get_CanGoBack$LAYOUT;
 	}
 	
-	private static final long get_CanGoBack$OFFSET = 304;
+	private static final long get_CanGoBack$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_CanGoBack"));
 	
 	/**
 	 * Offset for field:
@@ -4083,7 +4089,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_CanGoForward$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_CanGoForward"));
+	private static final AddressLayout get_CanGoForward$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_CanGoForward"));
 	
 	/**
 	 * Layout for field:
@@ -4095,7 +4101,7 @@ public class ICoreWebView2Vtbl {
 		return get_CanGoForward$LAYOUT;
 	}
 	
-	private static final long get_CanGoForward$OFFSET = 312;
+	private static final long get_CanGoForward$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_CanGoForward"));
 	
 	/**
 	 * Offset for field:
@@ -4181,7 +4187,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout GoBack$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GoBack"));
+	private static final AddressLayout GoBack$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("GoBack"));
 	
 	/**
 	 * Layout for field:
@@ -4193,7 +4199,7 @@ public class ICoreWebView2Vtbl {
 		return GoBack$LAYOUT;
 	}
 	
-	private static final long GoBack$OFFSET = 320;
+	private static final long GoBack$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("GoBack"));
 	
 	/**
 	 * Offset for field:
@@ -4279,7 +4285,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout GoForward$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GoForward"));
+	private static final AddressLayout GoForward$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("GoForward"));
 	
 	/**
 	 * Layout for field:
@@ -4291,7 +4297,7 @@ public class ICoreWebView2Vtbl {
 		return GoForward$LAYOUT;
 	}
 	
-	private static final long GoForward$OFFSET = 328;
+	private static final long GoForward$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("GoForward"));
 	
 	/**
 	 * Offset for field:
@@ -4379,7 +4385,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout GetDevToolsProtocolEventReceiver$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("GetDevToolsProtocolEventReceiver"));
+	private static final AddressLayout GetDevToolsProtocolEventReceiver$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("GetDevToolsProtocolEventReceiver"));
 	
 	/**
 	 * Layout for field:
@@ -4391,7 +4397,7 @@ public class ICoreWebView2Vtbl {
 		return GetDevToolsProtocolEventReceiver$LAYOUT;
 	}
 	
-	private static final long GetDevToolsProtocolEventReceiver$OFFSET = 336;
+	private static final long GetDevToolsProtocolEventReceiver$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("GetDevToolsProtocolEventReceiver"));
 	
 	/**
 	 * Offset for field:
@@ -4477,7 +4483,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Stop$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("Stop"));
+	private static final AddressLayout Stop$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Stop"));
 	
 	/**
 	 * Layout for field:
@@ -4489,7 +4495,7 @@ public class ICoreWebView2Vtbl {
 		return Stop$LAYOUT;
 	}
 	
-	private static final long Stop$OFFSET = 344;
+	private static final long Stop$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("Stop"));
 	
 	/**
 	 * Offset for field:
@@ -4577,7 +4583,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_NewWindowRequested"));
+	private static final AddressLayout add_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NewWindowRequested"));
 	
 	/**
 	 * Layout for field:
@@ -4589,7 +4595,7 @@ public class ICoreWebView2Vtbl {
 		return add_NewWindowRequested$LAYOUT;
 	}
 	
-	private static final long add_NewWindowRequested$OFFSET = 352;
+	private static final long add_NewWindowRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_NewWindowRequested"));
 	
 	/**
 	 * Offset for field:
@@ -4676,7 +4682,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_NewWindowRequested"));
+	private static final AddressLayout remove_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NewWindowRequested"));
 	
 	/**
 	 * Layout for field:
@@ -4688,7 +4694,7 @@ public class ICoreWebView2Vtbl {
 		return remove_NewWindowRequested$LAYOUT;
 	}
 	
-	private static final long remove_NewWindowRequested$OFFSET = 360;
+	private static final long remove_NewWindowRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_NewWindowRequested"));
 	
 	/**
 	 * Offset for field:
@@ -4776,7 +4782,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_DocumentTitleChanged"));
+	private static final AddressLayout add_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_DocumentTitleChanged"));
 	
 	/**
 	 * Layout for field:
@@ -4788,7 +4794,7 @@ public class ICoreWebView2Vtbl {
 		return add_DocumentTitleChanged$LAYOUT;
 	}
 	
-	private static final long add_DocumentTitleChanged$OFFSET = 368;
+	private static final long add_DocumentTitleChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_DocumentTitleChanged"));
 	
 	/**
 	 * Offset for field:
@@ -4875,7 +4881,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_DocumentTitleChanged"));
+	private static final AddressLayout remove_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_DocumentTitleChanged"));
 	
 	/**
 	 * Layout for field:
@@ -4887,7 +4893,7 @@ public class ICoreWebView2Vtbl {
 		return remove_DocumentTitleChanged$LAYOUT;
 	}
 	
-	private static final long remove_DocumentTitleChanged$OFFSET = 376;
+	private static final long remove_DocumentTitleChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_DocumentTitleChanged"));
 	
 	/**
 	 * Offset for field:
@@ -4974,7 +4980,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_DocumentTitle$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_DocumentTitle"));
+	private static final AddressLayout get_DocumentTitle$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_DocumentTitle"));
 	
 	/**
 	 * Layout for field:
@@ -4986,7 +4992,7 @@ public class ICoreWebView2Vtbl {
 		return get_DocumentTitle$LAYOUT;
 	}
 	
-	private static final long get_DocumentTitle$OFFSET = 384;
+	private static final long get_DocumentTitle$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_DocumentTitle"));
 	
 	/**
 	 * Offset for field:
@@ -5074,7 +5080,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddHostObjectToScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddHostObjectToScript"));
+	private static final AddressLayout AddHostObjectToScript$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddHostObjectToScript"));
 	
 	/**
 	 * Layout for field:
@@ -5086,7 +5092,7 @@ public class ICoreWebView2Vtbl {
 		return AddHostObjectToScript$LAYOUT;
 	}
 	
-	private static final long AddHostObjectToScript$OFFSET = 392;
+	private static final long AddHostObjectToScript$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddHostObjectToScript"));
 	
 	/**
 	 * Offset for field:
@@ -5173,7 +5179,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout RemoveHostObjectFromScript$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveHostObjectFromScript"));
+	private static final AddressLayout RemoveHostObjectFromScript$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("RemoveHostObjectFromScript"));
 	
 	/**
 	 * Layout for field:
@@ -5185,7 +5191,7 @@ public class ICoreWebView2Vtbl {
 		return RemoveHostObjectFromScript$LAYOUT;
 	}
 	
-	private static final long RemoveHostObjectFromScript$OFFSET = 400;
+	private static final long RemoveHostObjectFromScript$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("RemoveHostObjectFromScript"));
 	
 	/**
 	 * Offset for field:
@@ -5271,7 +5277,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout OpenDevToolsWindow$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("OpenDevToolsWindow"));
+	private static final AddressLayout OpenDevToolsWindow$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("OpenDevToolsWindow"));
 	
 	/**
 	 * Layout for field:
@@ -5283,7 +5289,7 @@ public class ICoreWebView2Vtbl {
 		return OpenDevToolsWindow$LAYOUT;
 	}
 	
-	private static final long OpenDevToolsWindow$OFFSET = 408;
+	private static final long OpenDevToolsWindow$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("OpenDevToolsWindow"));
 	
 	/**
 	 * Offset for field:
@@ -5371,7 +5377,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_ContainsFullScreenElementChanged"));
+	private static final AddressLayout add_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ContainsFullScreenElementChanged"));
 	
 	/**
 	 * Layout for field:
@@ -5383,7 +5389,7 @@ public class ICoreWebView2Vtbl {
 		return add_ContainsFullScreenElementChanged$LAYOUT;
 	}
 	
-	private static final long add_ContainsFullScreenElementChanged$OFFSET = 416;
+	private static final long add_ContainsFullScreenElementChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_ContainsFullScreenElementChanged"));
 	
 	/**
 	 * Offset for field:
@@ -5470,7 +5476,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_ContainsFullScreenElementChanged"));
+	private static final AddressLayout remove_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ContainsFullScreenElementChanged"));
 	
 	/**
 	 * Layout for field:
@@ -5482,7 +5488,7 @@ public class ICoreWebView2Vtbl {
 		return remove_ContainsFullScreenElementChanged$LAYOUT;
 	}
 	
-	private static final long remove_ContainsFullScreenElementChanged$OFFSET = 424;
+	private static final long remove_ContainsFullScreenElementChanged$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_ContainsFullScreenElementChanged"));
 	
 	/**
 	 * Offset for field:
@@ -5569,7 +5575,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_ContainsFullScreenElement$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_ContainsFullScreenElement"));
+	private static final AddressLayout get_ContainsFullScreenElement$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_ContainsFullScreenElement"));
 	
 	/**
 	 * Layout for field:
@@ -5581,7 +5587,7 @@ public class ICoreWebView2Vtbl {
 		return get_ContainsFullScreenElement$LAYOUT;
 	}
 	
-	private static final long get_ContainsFullScreenElement$OFFSET = 432;
+	private static final long get_ContainsFullScreenElement$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("get_ContainsFullScreenElement"));
 	
 	/**
 	 * Offset for field:
@@ -5669,7 +5675,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WebResourceRequested"));
+	private static final AddressLayout add_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_WebResourceRequested"));
 	
 	/**
 	 * Layout for field:
@@ -5681,7 +5687,7 @@ public class ICoreWebView2Vtbl {
 		return add_WebResourceRequested$LAYOUT;
 	}
 	
-	private static final long add_WebResourceRequested$OFFSET = 440;
+	private static final long add_WebResourceRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_WebResourceRequested"));
 	
 	/**
 	 * Offset for field:
@@ -5768,7 +5774,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WebResourceRequested"));
+	private static final AddressLayout remove_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_WebResourceRequested"));
 	
 	/**
 	 * Layout for field:
@@ -5780,7 +5786,7 @@ public class ICoreWebView2Vtbl {
 		return remove_WebResourceRequested$LAYOUT;
 	}
 	
-	private static final long remove_WebResourceRequested$OFFSET = 448;
+	private static final long remove_WebResourceRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_WebResourceRequested"));
 	
 	/**
 	 * Offset for field:
@@ -5868,7 +5874,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("AddWebResourceRequestedFilter"));
+	private static final AddressLayout AddWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddWebResourceRequestedFilter"));
 	
 	/**
 	 * Layout for field:
@@ -5880,7 +5886,7 @@ public class ICoreWebView2Vtbl {
 		return AddWebResourceRequestedFilter$LAYOUT;
 	}
 	
-	private static final long AddWebResourceRequestedFilter$OFFSET = 456;
+	private static final long AddWebResourceRequestedFilter$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("AddWebResourceRequestedFilter"));
 	
 	/**
 	 * Offset for field:
@@ -5968,7 +5974,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout RemoveWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("RemoveWebResourceRequestedFilter"));
+	private static final AddressLayout RemoveWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("RemoveWebResourceRequestedFilter"));
 	
 	/**
 	 * Layout for field:
@@ -5980,7 +5986,7 @@ public class ICoreWebView2Vtbl {
 		return RemoveWebResourceRequestedFilter$LAYOUT;
 	}
 	
-	private static final long RemoveWebResourceRequestedFilter$OFFSET = 464;
+	private static final long RemoveWebResourceRequestedFilter$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("RemoveWebResourceRequestedFilter"));
 	
 	/**
 	 * Offset for field:
@@ -6068,7 +6074,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_WindowCloseRequested"));
+	private static final AddressLayout add_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_WindowCloseRequested"));
 	
 	/**
 	 * Layout for field:
@@ -6080,7 +6086,7 @@ public class ICoreWebView2Vtbl {
 		return add_WindowCloseRequested$LAYOUT;
 	}
 	
-	private static final long add_WindowCloseRequested$OFFSET = 472;
+	private static final long add_WindowCloseRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("add_WindowCloseRequested"));
 	
 	/**
 	 * Offset for field:
@@ -6167,7 +6173,7 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_WindowCloseRequested"));
+	private static final AddressLayout remove_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_WindowCloseRequested"));
 	
 	/**
 	 * Layout for field:
@@ -6179,7 +6185,7 @@ public class ICoreWebView2Vtbl {
 		return remove_WindowCloseRequested$LAYOUT;
 	}
 	
-	private static final long remove_WindowCloseRequested$OFFSET = 480;
+	private static final long remove_WindowCloseRequested$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("remove_WindowCloseRequested"));
 	
 	/**
 	 * Offset for field:

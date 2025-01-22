@@ -2,10 +2,13 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
-import java.util.function.*;
-
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.GroupLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.util.function.Consumer;
 
 /**
  * {@snippet lang=c :
@@ -39,7 +42,7 @@ public class tagMINMAXINFO {
 		return $LAYOUT;
 	}
 	
-	private static final GroupLayout ptReserved$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("ptReserved"));
+	private static final GroupLayout ptReserved$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptReserved"));
 	
 	/**
 	 * Layout for field:
@@ -51,7 +54,7 @@ public class tagMINMAXINFO {
 		return ptReserved$LAYOUT;
 	}
 	
-	private static final long ptReserved$OFFSET = 0;
+	private static final long ptReserved$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("ptReserved"));
 	
 	/**
 	 * Offset for field:
@@ -83,7 +86,7 @@ public class tagMINMAXINFO {
 		MemorySegment.copy(fieldValue, 0L, struct, ptReserved$OFFSET, ptReserved$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMaxSize$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("ptMaxSize"));
+	private static final GroupLayout ptMaxSize$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMaxSize"));
 	
 	/**
 	 * Layout for field:
@@ -95,7 +98,7 @@ public class tagMINMAXINFO {
 		return ptMaxSize$LAYOUT;
 	}
 	
-	private static final long ptMaxSize$OFFSET = 8;
+	private static final long ptMaxSize$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("ptMaxSize"));
 	
 	/**
 	 * Offset for field:
@@ -127,7 +130,7 @@ public class tagMINMAXINFO {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMaxSize$OFFSET, ptMaxSize$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMaxPosition$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("ptMaxPosition"));
+	private static final GroupLayout ptMaxPosition$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMaxPosition"));
 	
 	/**
 	 * Layout for field:
@@ -139,7 +142,7 @@ public class tagMINMAXINFO {
 		return ptMaxPosition$LAYOUT;
 	}
 	
-	private static final long ptMaxPosition$OFFSET = 16;
+	private static final long ptMaxPosition$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("ptMaxPosition"));
 	
 	/**
 	 * Offset for field:
@@ -171,7 +174,7 @@ public class tagMINMAXINFO {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMaxPosition$OFFSET, ptMaxPosition$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMinTrackSize$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("ptMinTrackSize"));
+	private static final GroupLayout ptMinTrackSize$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMinTrackSize"));
 	
 	/**
 	 * Layout for field:
@@ -183,7 +186,7 @@ public class tagMINMAXINFO {
 		return ptMinTrackSize$LAYOUT;
 	}
 	
-	private static final long ptMinTrackSize$OFFSET = 24;
+	private static final long ptMinTrackSize$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("ptMinTrackSize"));
 	
 	/**
 	 * Offset for field:
@@ -215,7 +218,7 @@ public class tagMINMAXINFO {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMinTrackSize$OFFSET, ptMinTrackSize$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMaxTrackSize$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("ptMaxTrackSize"));
+	private static final GroupLayout ptMaxTrackSize$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMaxTrackSize"));
 	
 	/**
 	 * Layout for field:
@@ -227,7 +230,7 @@ public class tagMINMAXINFO {
 		return ptMaxTrackSize$LAYOUT;
 	}
 	
-	private static final long ptMaxTrackSize$OFFSET = 32;
+	private static final long ptMaxTrackSize$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("ptMaxTrackSize"));
 	
 	/**
 	 * Offset for field:

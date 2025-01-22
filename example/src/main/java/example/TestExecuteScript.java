@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 final class TestExecuteScript {
 	
-	@SuppressWarnings({"InconsistentTextBlockIndent", "LanguageMismatch"})
+	@SuppressWarnings({"InconsistentTextBlockIndent", "LanguageMismatch", "java:S6881", "java:S6203", "SpellCheckingInspection"})
 	void main() {
 		try (var arena = Arena.ofConfined()) {
 			

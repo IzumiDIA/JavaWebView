@@ -19,6 +19,7 @@ final class TestPostMessageToBackend {
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();
 			
+			@SuppressWarnings("JSUnresolvedReference")
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)
 					                          .enableScript(true)
 					                          .enableWebMessage(true)

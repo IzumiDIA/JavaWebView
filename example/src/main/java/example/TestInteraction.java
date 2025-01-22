@@ -6,7 +6,7 @@ import java.lang.foreign.Arena;
 import java.nio.file.Path;
 
 final class TestInteraction {
-	@SuppressWarnings({"InconsistentTextBlockIndent", "preview"})
+	@SuppressWarnings({"InconsistentTextBlockIndent", "JSUnresolvedReference"})
 	void main() {
 		try (var arena = Arena.ofConfined()) {
 			
@@ -19,6 +19,7 @@ final class TestInteraction {
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();
 			
+			@SuppressWarnings("SpellCheckingInspection")
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)
 					                          .enableScript(true)
 					                          .enableWebMessage(true)
