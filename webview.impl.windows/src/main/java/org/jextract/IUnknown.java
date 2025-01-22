@@ -23,7 +23,7 @@ public class IUnknown {
 	IUnknown() {
 		// Should not be called directly
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
 			Windows.C_POINTER.withName("lpVtbl")
 	).withName("IUnknown");
@@ -34,7 +34,7 @@ public class IUnknown {
 	public static GroupLayout layout() {
 		return $LAYOUT;
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
@@ -46,7 +46,7 @@ public class IUnknown {
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**

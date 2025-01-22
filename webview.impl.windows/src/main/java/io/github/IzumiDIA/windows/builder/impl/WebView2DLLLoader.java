@@ -1,5 +1,6 @@
 package io.github.IzumiDIA.windows.builder.impl;
 
+import io.github.IzumiDIA.windows.impl.HResult;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jextract.HKEY__;
 import org.jextract.ICoreWebView2CreateCoreWebView2ControllerCompletedHandler;
@@ -46,18 +47,20 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 						);
 	}
 	
-	int createWebViewEnvironmentWithOptionsInternal(
+	HResult createWebViewEnvironmentWithOptionsInternal(
 			final int runtimeType,
 			final MemorySegment userDataDir,
 			final MemorySegment environmentOptions,
 			final MemorySegment coreWebView2EnvironmentCompletedHandler
 	) throws Throwable {
-		return (int) this.createWebViewEnvironmentWithOptionsInternal.invokeExact(
-				true,
-				runtimeType,
-				userDataDir,
-				environmentOptions,
-				coreWebView2EnvironmentCompletedHandler
+		return HResult.warpResult(
+				(int) this.createWebViewEnvironmentWithOptionsInternal.invokeExact(
+						true,
+						runtimeType,
+						userDataDir,
+						environmentOptions,
+						coreWebView2EnvironmentCompletedHandler
+				)
 		);
 	}
 	

@@ -43,6 +43,7 @@ public class Windows {
 		System.out.printf("%s(%s)\n", name, traceArgs);
 	}
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	static MethodHandle upcallHandle(Class<?> fi, String name, FunctionDescriptor fdesc) {
 		try {
 			return MethodHandles.lookup().findVirtual(fi, name, fdesc.toMethodType());
@@ -65,15 +66,7 @@ public class Windows {
 		};
 	}
 	
-	static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.libraryLookup(System.mapLibraryName("USER32"), LIBRARY_ARENA)
-			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("ADVAPI32"), LIBRARY_ARENA))
-			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("ole32"), LIBRARY_ARENA))
-			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHELL32"), LIBRARY_ARENA))
-			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHLWAPI"), LIBRARY_ARENA))
-			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("VERSION"), LIBRARY_ARENA))
-			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("KERNEL32"), LIBRARY_ARENA))
-			                                          .or(SymbolLookup.loaderLookup())
-			                                          .or(Linker.nativeLinker().defaultLookup());
+	static final SymbolLookup SYMBOL_LOOKUP;
 	public static final ValueLayout.OfBoolean C_BOOL;
 	public static final ValueLayout.OfByte C_CHAR;
 	public static final ValueLayout.OfShort C_SHORT;
@@ -86,7 +79,17 @@ public class Windows {
 	public static final ValueLayout.OfDouble C_LONG_DOUBLE;
 	
 	static {
-		final var canonicalLayouts = Linker.nativeLinker().canonicalLayouts();
+		final var nativeLinker = Linker.nativeLinker();
+		SYMBOL_LOOKUP = SymbolLookup.libraryLookup(System.mapLibraryName("USER32"), LIBRARY_ARENA)
+				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("ADVAPI32"), LIBRARY_ARENA))
+				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("ole32"), LIBRARY_ARENA))
+				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHELL32"), LIBRARY_ARENA))
+				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHLWAPI"), LIBRARY_ARENA))
+				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("VERSION"), LIBRARY_ARENA))
+				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("KERNEL32"), LIBRARY_ARENA))
+				                .or(SymbolLookup.loaderLookup())
+				                .or(nativeLinker.defaultLookup());
+		final var canonicalLayouts = nativeLinker.canonicalLayouts();
 		C_BOOL = (OfBoolean) canonicalLayouts.get("bool");
 		C_CHAR = (OfByte) canonicalLayouts.get("char");
 		C_SHORT = (OfShort) canonicalLayouts.get("short");
@@ -129,18 +132,21 @@ public class Windows {
 	 * typedef WCHAR *LPWSTR
 	 *}
 	 */
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPWSTR = Windows.C_POINTER;
 	/**
 	 * {@snippet lang = c:
 	 * typedef const WCHAR *LPCWSTR
 	 *}
 	 */
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPCWSTR = Windows.C_POINTER;
 	/**
 	 * {@snippet lang = c:
 	 * typedef const WCHAR *PCWSTR
 	 *}
 	 */
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout PCWSTR = Windows.C_POINTER;
 	/**
 	 * {@snippet lang = c:

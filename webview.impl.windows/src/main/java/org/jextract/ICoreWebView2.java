@@ -24,6 +24,7 @@ public class ICoreWebView2 {
 		// Should not be called directly
 	}
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
 			Windows.C_POINTER.withName("lpVtbl")
 	).withName("ICoreWebView2");
@@ -35,6 +36,7 @@ public class ICoreWebView2 {
 		return $LAYOUT;
 	}
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
@@ -46,7 +48,7 @@ public class ICoreWebView2 {
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**

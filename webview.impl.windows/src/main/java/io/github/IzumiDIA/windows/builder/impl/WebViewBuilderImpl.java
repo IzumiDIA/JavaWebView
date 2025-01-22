@@ -132,7 +132,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	@Override
 	public WebViewBuilderImpl setWebMessageListener(final WebMessageListener<HResult, EventExchangeImpl> webMessageListener) {
-		@SuppressWarnings("SpellCheckingInspection") final var messageReceivedEventHandlerVtbl = new IUnknownFactoryImpl<>(
+		@SuppressWarnings("SpellCheckingInspection")
+		final var messageReceivedEventHandlerVtbl = new IUnknownFactoryImpl<>(
 				this.arena,
 				ICoreWebView2WebMessageReceivedEventHandlerVtbl::allocate,
 				Invoke::allocate
@@ -173,7 +174,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	@Override
 	public WebViewWindowImpl buildWebView() {
 		try (var webView2DLLLoader = new WebView2DLLLoader(this.arena)) {
-			webView2DLLLoader.createWebViewEnvironmentWithOptionsInternal(
+			final var hResult = webView2DLLLoader.createWebViewEnvironmentWithOptionsInternal(
 					0,
 					Optional.ofNullable(this.userDataFolder)
 							.map(this::allocateString)
@@ -183,6 +184,9 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 							this.createCoreWebView2ControllerCompletedHandler()
 					)
 			);
+			if ( !(hResult instanceof HResult.S_OK) ) {
+				throw new RuntimeException(hResult.toString());
+			}
 		} catch (final Throwable e) {
 			throw new RuntimeException(e);
 		}
@@ -219,7 +223,10 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 			final MemorySegment webView2Controller
 	) {
 		if ( !MemorySegment.NULL.equals(webView2Controller) ) {
-			this.getWebView2(webView2Controller);
+			var hResult = HResult.warpResult(this.getWebView2(webView2Controller));
+			if ( !(hResult instanceof HResult.S_OK) ) {
+				throw new RuntimeException(hResult.toString());
+			}
 		}
 		final var S_OK = HResult.S_OK.SINGLETON.value();
 		final var webview2Pointer = this.getWebview2Pointer();
@@ -248,7 +255,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	private int getWebView2(final MemorySegment controller) {
 		this.webViewController.setController(controller);
-		@SuppressWarnings("SpellCheckingInspection") final var webviewControllerlpVtbl = ICoreWebView2Controller.lpVtbl(controller);
+		@SuppressWarnings("SpellCheckingInspection")
+		final var webviewControllerlpVtbl = ICoreWebView2Controller.lpVtbl(controller);
 		ICoreWebView2ControllerVtbl.AddRef.invoke(
 				ICoreWebView2ControllerVtbl.AddRef(webviewControllerlpVtbl),
 				controller
@@ -292,7 +300,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	}
 	
 	private MemorySegment createCoreWebView2EnvironmentCompletedHandler(final MemorySegment controllerCompletedHandler) {
-		@SuppressWarnings("SpellCheckingInspection") final var environmentCompletedHandlerVtbl = new IUnknownFactoryImpl<IUnknownFactory.Invoke>(
+		@SuppressWarnings("SpellCheckingInspection")
+		final var environmentCompletedHandlerVtbl = new IUnknownFactoryImpl<IUnknownFactory.Invoke>(
 				this.arena,
 				ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl::allocate,
 				(f, a) -> ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl.Invoke.allocate(f::invoke, a)
@@ -359,7 +368,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 				settings_PP
 		);
 		final var settings_P = settings_PP.get(settingsTargetLayout, 0);
-		@SuppressWarnings("SpellCheckingInspection") final var settingsVtbl = ICoreWebView2Settings.lpVtbl(settings_P);
+		@SuppressWarnings("SpellCheckingInspection")
+		final var settingsVtbl = ICoreWebView2Settings.lpVtbl(settings_P);
 		return this.putWebView2Settings(settingsVtbl, settings_P);
 	}
 	

@@ -25,7 +25,7 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	ICoreWebView2WebMessageReceivedEventHandler() {
 		// Should not be called directly
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
 			Windows.C_POINTER.withName("lpVtbl")
 	).withName("ICoreWebView2WebMessageReceivedEventHandler");
@@ -36,7 +36,7 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	public static GroupLayout layout() {
 		return $LAYOUT;
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpVtbl"));
 	
 	/**
@@ -48,7 +48,7 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
-	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**

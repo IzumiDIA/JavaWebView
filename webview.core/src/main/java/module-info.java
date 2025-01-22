@@ -1,7 +1,6 @@
-import io.github.IzumiDIA.factory.WebViewFactory;
-
+@SuppressWarnings("UnnecessaryFullyQualifiedName")
 module webview.core {
-	uses WebViewFactory;
+	uses io.github.IzumiDIA.factory.WebViewFactory;
 	
 	exports io.github.IzumiDIA;
 	exports io.github.IzumiDIA.builder;

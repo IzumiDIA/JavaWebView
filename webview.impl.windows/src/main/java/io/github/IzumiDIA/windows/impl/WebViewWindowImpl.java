@@ -39,8 +39,9 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	public void run() {
 		final var message = MSG.allocate(this.arena);
 		while ( Windows.GetMessageW(message, MemorySegment.NULL, 0, 0) ) {
-			Windows.TranslateMessage(message);
-			Windows.DispatchMessageW(message);
+			if ( !Windows.TranslateMessage(message) ) {
+				Windows.DispatchMessageW(message);
+			}
 		}
 	}
 	

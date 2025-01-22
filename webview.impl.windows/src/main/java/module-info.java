@@ -1,9 +1,9 @@
-import io.github.IzumiDIA.factory.WebViewFactory;
 import io.github.IzumiDIA.windows.factory.impl.WebViewFactoryImpl;
 
+@SuppressWarnings("UnnecessaryFullyQualifiedName")
 module webview.impl.windows {
 	requires static org.jetbrains.annotations;
 	requires transitive webview.core;
 	
-	provides WebViewFactory with WebViewFactoryImpl;
+	provides io.github.IzumiDIA.factory.WebViewFactory with WebViewFactoryImpl;
 }

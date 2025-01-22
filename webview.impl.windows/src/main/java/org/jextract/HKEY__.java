@@ -26,6 +26,7 @@ public class HKEY__ {
 		// Should not be called directly
 	}
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
 			Windows.C_INT.withName("unused")
 	).withName("HKEY__");

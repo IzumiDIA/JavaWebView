@@ -12,7 +12,9 @@ import org.jextract.WNDCLASSEXW;
 import org.jextract.WNDPROC;
 import org.jextract.Windows;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GraphicsEnvironment;
+import java.awt.Toolkit;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.util.Optional;
@@ -178,10 +180,11 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 					MemorySegment.NULL
 			);
 			if ( MemorySegment.NULL.equals(handleWindow) ) throw new RuntimeException();
-			else {
-				Windows.ShowWindow(handleWindow, SW_SHOW);
-				Windows.UpdateWindow(handleWindow);
-				return new PlatformWindowImpl(handleWindow);
+			else if ( Windows.ShowWindow(handleWindow, SW_SHOW) ) {
+				throw new RuntimeException();
+			} else {
+				if ( Windows.UpdateWindow(handleWindow) ) return new PlatformWindowImpl(handleWindow);
+				else throw new RuntimeException();
 			}
 		} else throw new RuntimeException();
 	}
