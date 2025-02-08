@@ -2,6 +2,7 @@ package io.github.IzumiDIA.windows.impl;
 
 import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.WebViewWindow;
+import io.github.IzumiDIA.windows.impl.HResult.E_UNEXPECTED;
 import io.github.IzumiDIA.windows.impl.HResult.S_OK;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.ICoreWebView2;
@@ -17,6 +18,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 import java.nio.charset.StandardCharsets;
+import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedTransferQueue;
 
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
@@ -83,9 +85,15 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		);
 	}
 	
+	@SuppressWarnings("CallToPrintStackTrace")
 	@Override
 	public HResult consumeScript() {
-		return this.executeScript(this.scriptExecutionQueue.remove());
+		try {
+			return this.executeScript(this.scriptExecutionQueue.remove());
+		}catch (final NoSuchElementException noSuchElementException) {
+			noSuchElementException.printStackTrace();
+			return E_UNEXPECTED.SINGLETON;
+		}
 	}
 	
 	@Override
