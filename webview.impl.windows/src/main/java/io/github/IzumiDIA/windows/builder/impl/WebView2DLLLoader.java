@@ -4,6 +4,7 @@ import io.github.IzumiDIA.windows.impl.HResult;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jextract.HKEY__;
 import org.jextract.ICoreWebView2CreateCoreWebView2ControllerCompletedHandler;
+import org.jextract.LayoutUtils;
 import org.jextract.Windows;
 
 import java.lang.foreign.AddressLayout;
@@ -40,7 +41,7 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 										ValueLayout.JAVA_INT,
 										ValueLayout.JAVA_BOOLEAN,
 										ValueLayout.JAVA_INT,
-										Windows.PCWSTR,
+										LayoutUtils.PCWSTR,
 										ValueLayout.ADDRESS,
 										ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2CreateCoreWebView2ControllerCompletedHandler.layout())
 								)
@@ -100,8 +101,8 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 		@Override
 		public String get() {
 			final var path = WebView2DLLLoader.this.confinedArena.allocate(256);
-			final var cbPath = WebView2DLLLoader.this.confinedArena.allocateFrom(Windows.DWORD, 256);
-			final var cbPathPointer = WebView2DLLLoader.this.confinedArena.allocateFrom(ValueLayout.ADDRESS.withTargetLayout(Windows.DWORD), cbPath);
+			final var cbPath = WebView2DLLLoader.this.confinedArena.allocateFrom(LayoutUtils.DWORD, 256);
+			final var cbPathPointer = WebView2DLLLoader.this.confinedArena.allocateFrom(ValueLayout.ADDRESS.withTargetLayout(LayoutUtils.DWORD), cbPath);
 			final var LSTATUS = Windows.RegQueryValueExW(
 					this.phkResultPointer.get(layout, 0),
 					WebView2DLLLoader.this.allocateString("EBWebView"),

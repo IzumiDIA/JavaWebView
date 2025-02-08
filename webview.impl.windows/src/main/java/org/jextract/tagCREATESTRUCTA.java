@@ -2,16 +2,9 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
+import java.lang.foreign.*;
+import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -37,27 +30,27 @@ public class tagCREATESTRUCTA {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("lpCreateParams"),
-			Windows.C_POINTER.withName("hInstance"),
-			Windows.C_POINTER.withName("hMenu"),
-			Windows.C_POINTER.withName("hwndParent"),
-			Windows.C_INT.withName("cy"),
-			Windows.C_INT.withName("cx"),
-			Windows.C_INT.withName("y"),
-			Windows.C_INT.withName("x"),
-			Windows.C_LONG.withName("style"),
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.LPVOID.withName("lpCreateParams"),
+			LayoutUtils.HINSTANCE.withName("hInstance"),
+			LayoutUtils.HMENU.withName("hMenu"),
+			LayoutUtils.HWND.withName("hwndParent"),
+			LayoutUtils.C_INT.withName("cy"),
+			LayoutUtils.C_INT.withName("cx"),
+			LayoutUtils.C_INT.withName("y"),
+			LayoutUtils.C_INT.withName("x"),
+			LayoutUtils.LONG.withName("style"),
 			MemoryLayout.paddingLayout(4),
-			Windows.C_POINTER.withName("lpszName"),
-			Windows.C_POINTER.withName("lpszClass"),
-			Windows.C_LONG.withName("dwExStyle"),
+			LayoutUtils.LPCSTR.withName("lpszName"),
+			LayoutUtils.LPCSTR.withName("lpszClass"),
+			LayoutUtils.DWORD.withName("dwExStyle"),
 			MemoryLayout.paddingLayout(4)
 	).withName("tagCREATESTRUCTA");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	

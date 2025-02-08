@@ -2,30 +2,10 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.PaddingLayout;
-import java.lang.foreign.SequenceLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.foreign.SymbolLookup;
-import java.lang.foreign.ValueLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
-import static java.lang.foreign.ValueLayout.OfBoolean;
-import static java.lang.foreign.ValueLayout.OfByte;
-import static java.lang.foreign.ValueLayout.OfDouble;
-import static java.lang.foreign.ValueLayout.OfFloat;
-import static java.lang.foreign.ValueLayout.OfInt;
-import static java.lang.foreign.ValueLayout.OfLong;
-import static java.lang.foreign.ValueLayout.OfShort;
 
 public class Windows {
 	
@@ -33,141 +13,13 @@ public class Windows {
 		// Should not be called directly
 	}
 	
-	static final Arena LIBRARY_ARENA = Arena.ofAuto();
-	static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
-	
-	static void traceDowncall(String name, Object... args) {
-		String traceArgs = Arrays.stream(args)
-				                   .map(Object::toString)
-				                   .collect(Collectors.joining(", "));
-		System.out.printf("%s(%s)\n", name, traceArgs);
-	}
-	
-	@SuppressWarnings("SpellCheckingInspection")
-	static MethodHandle upcallHandle(Class<?> fi, String name, FunctionDescriptor fdesc) {
-		try {
-			return MethodHandles.lookup().findVirtual(fi, name, fdesc.toMethodType());
-		} catch (ReflectiveOperationException ex) {
-			throw new AssertionError(ex);
-		}
-	}
-	
-	static MemoryLayout align(MemoryLayout layout, long align) {
-		return switch (layout) {
-			case PaddingLayout p -> p;
-			case ValueLayout v -> v.withByteAlignment(align);
-			case GroupLayout g -> {
-				MemoryLayout[] alignedMembers = g.memberLayouts().stream()
-						                                .map(m -> align(m, align)).toArray(MemoryLayout[]::new);
-				yield g instanceof StructLayout ?
-						      MemoryLayout.structLayout(alignedMembers) : MemoryLayout.unionLayout(alignedMembers);
-			}
-			case SequenceLayout s -> MemoryLayout.sequenceLayout(s.elementCount(), align(s.elementLayout(), align));
-		};
-	}
-	
-	static final SymbolLookup SYMBOL_LOOKUP;
-	public static final ValueLayout.OfBoolean C_BOOL;
-	public static final ValueLayout.OfByte C_CHAR;
-	public static final ValueLayout.OfShort C_SHORT;
-	public static final ValueLayout.OfInt C_INT;
-	public static final ValueLayout.OfLong C_LONG_LONG;
-	public static final ValueLayout.OfFloat C_FLOAT;
-	public static final ValueLayout.OfDouble C_DOUBLE;
-	public static final AddressLayout C_POINTER;
-	public static final ValueLayout.OfInt C_LONG;
-	public static final ValueLayout.OfDouble C_LONG_DOUBLE;
-	
-	static {
-		final var nativeLinker = Linker.nativeLinker();
-		SYMBOL_LOOKUP = SymbolLookup.libraryLookup(System.mapLibraryName("USER32"), LIBRARY_ARENA)
-				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("ADVAPI32"), LIBRARY_ARENA))
-				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("ole32"), LIBRARY_ARENA))
-				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHELL32"), LIBRARY_ARENA))
-				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHLWAPI"), LIBRARY_ARENA))
-				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("VERSION"), LIBRARY_ARENA))
-				                .or(SymbolLookup.libraryLookup(System.mapLibraryName("KERNEL32"), LIBRARY_ARENA))
-				                .or(SymbolLookup.loaderLookup())
-				                .or(nativeLinker.defaultLookup());
-		final var canonicalLayouts = nativeLinker.canonicalLayouts();
-		C_BOOL = (OfBoolean) canonicalLayouts.get("bool");
-		C_CHAR = (OfByte) canonicalLayouts.get("char");
-		C_SHORT = (OfShort) canonicalLayouts.get("short");
-		C_INT = (OfInt) canonicalLayouts.get("int");
-		C_LONG_LONG = (OfLong) canonicalLayouts.get("long long");
-		C_FLOAT = (OfFloat) canonicalLayouts.get("float");
-		C_DOUBLE = (OfDouble) canonicalLayouts.get("double");
-		C_POINTER = ((AddressLayout) canonicalLayouts.get("void*"))
-				            .withTargetLayout(MemoryLayout.sequenceLayout(Long.MAX_VALUE, C_CHAR));
-		C_LONG = (OfInt) canonicalLayouts.get("long");
-		C_LONG_DOUBLE = (OfDouble) canonicalLayouts.get("double");
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * typedef unsigned long DWORD
-	 *}
-	 */
-	public static final OfInt DWORD = Windows.C_LONG;
-	/**
-	 * {@snippet lang = c:
-	 * typedef void *LPVOID
-	 *}
-	 */
-	public static final AddressLayout LPVOID = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef long long LONG_PTR
-	 *}
-	 */
-	public static final OfLong LONG_PTR = Windows.C_LONG_LONG;
-	/**
-	 * {@snippet lang = c:
-	 * typedef long LONG
-	 *}
-	 */
-	public static final OfInt LONG = Windows.C_LONG;
-	/**
-	 * {@snippet lang = c:
-	 * typedef WCHAR *LPWSTR
-	 *}
-	 */
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout LPWSTR = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef const WCHAR *LPCWSTR
-	 *}
-	 */
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout LPCWSTR = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef const WCHAR *PCWSTR
-	 *}
-	 */
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout PCWSTR = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef const CHAR *LPCSTR
-	 *}
-	 */
-	public static final AddressLayout LPCSTR = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef LARGE_INTEGER *PLARGE_INTEGER
-	 *}
-	 */
-	public static final AddressLayout PLARGE_INTEGER = Windows.C_POINTER;
-	
 	private static class RtlCaptureContext {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RtlCaptureContext"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlCaptureContext"),
 				DESC);
 	}
 	
@@ -199,8 +51,8 @@ public class Windows {
 	public static void RtlCaptureContext(MemorySegment ContextRecord) {
 		var mh$ = RtlCaptureContext.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RtlCaptureContext", ContextRecord);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RtlCaptureContext", ContextRecord);
 			}
 			mh$.invokeExact(ContextRecord);
 		} catch (Throwable ex$) {
@@ -210,14 +62,14 @@ public class Windows {
 	
 	private static class RtlLookupFunctionEntry {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RtlLookupFunctionEntry"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlLookupFunctionEntry"),
 				DESC);
 	}
 	
@@ -249,8 +101,8 @@ public class Windows {
 	public static MemorySegment RtlLookupFunctionEntry(long ControlPc, MemorySegment ImageBase, MemorySegment HistoryTable) {
 		var mh$ = RtlLookupFunctionEntry.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RtlLookupFunctionEntry", ControlPc, ImageBase, HistoryTable);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RtlLookupFunctionEntry", ControlPc, ImageBase, HistoryTable);
 			}
 			return (MemorySegment) mh$.invokeExact(ControlPc, ImageBase, HistoryTable);
 		} catch (Throwable ex$) {
@@ -260,16 +112,16 @@ public class Windows {
 	
 	private static class RtlUnwindEx {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RtlUnwindEx"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlUnwindEx"),
 				DESC);
 	}
 	
@@ -301,8 +153,8 @@ public class Windows {
 	public static void RtlUnwindEx(MemorySegment TargetFrame, MemorySegment TargetIp, MemorySegment ExceptionRecord, MemorySegment ReturnValue, MemorySegment ContextRecord, MemorySegment HistoryTable) {
 		var mh$ = RtlUnwindEx.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RtlUnwindEx", TargetFrame, TargetIp, ExceptionRecord, ReturnValue, ContextRecord, HistoryTable);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RtlUnwindEx", TargetFrame, TargetIp, ExceptionRecord, ReturnValue, ContextRecord, HistoryTable);
 			}
 			mh$.invokeExact(TargetFrame, TargetIp, ExceptionRecord, ReturnValue, ContextRecord, HistoryTable);
 		} catch (Throwable ex$) {
@@ -312,19 +164,19 @@ public class Windows {
 	
 	private static class RtlVirtualUnwind {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_LONG_LONG,
-				Windows.C_LONG_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG_LONG,
+				LayoutUtils.C_LONG_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RtlVirtualUnwind"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlVirtualUnwind"),
 				DESC);
 	}
 	
@@ -356,8 +208,8 @@ public class Windows {
 	public static MemorySegment RtlVirtualUnwind(int HandlerType, long ImageBase, long ControlPc, MemorySegment FunctionEntry, MemorySegment ContextRecord, MemorySegment HandlerData, MemorySegment EstablisherFrame, MemorySegment ContextPointers) {
 		var mh$ = RtlVirtualUnwind.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RtlVirtualUnwind", HandlerType, ImageBase, ControlPc, FunctionEntry, ContextRecord, HandlerData, EstablisherFrame, ContextPointers);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RtlVirtualUnwind", HandlerType, ImageBase, ControlPc, FunctionEntry, ContextRecord, HandlerData, EstablisherFrame, ContextPointers);
 			}
 			return (MemorySegment) mh$.invokeExact(HandlerType, ImageBase, ControlPc, FunctionEntry, ContextRecord, HandlerData, EstablisherFrame, ContextPointers);
 		} catch (Throwable ex$) {
@@ -367,13 +219,13 @@ public class Windows {
 	
 	private static class RtlPcToFileHeader {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RtlPcToFileHeader"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlPcToFileHeader"),
 				DESC);
 	}
 	
@@ -405,8 +257,8 @@ public class Windows {
 	public static MemorySegment RtlPcToFileHeader(MemorySegment PcValue, MemorySegment BaseOfImage) {
 		var mh$ = RtlPcToFileHeader.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RtlPcToFileHeader", PcValue, BaseOfImage);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RtlPcToFileHeader", PcValue, BaseOfImage);
 			}
 			return (MemorySegment) mh$.invokeExact(PcValue, BaseOfImage);
 		} catch (Throwable ex$) {
@@ -414,98 +266,14 @@ public class Windows {
 		}
 	}
 	
-	/**
-	 * {@snippet lang = c:
-	 * typedef UINT_PTR WPARAM
-	 *}
-	 */
-	public static final OfLong WPARAM = Windows.C_LONG_LONG;
-	/**
-	 * {@snippet lang = c:
-	 * typedef LONG_PTR LPARAM
-	 *}
-	 */
-	public static final OfLong LPARAM = Windows.C_LONG_LONG;
-	/**
-	 * {@snippet lang = c:
-	 * typedef LONG_PTR LRESULT
-	 *}
-	 */
-	public static final OfLong LRESULT = Windows.C_LONG_LONG;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct HKEY__ {
-	 *     int unused;
-	 * } *HKEY
-	 *}
-	 */
-	public static final AddressLayout HKEY = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct HINSTANCE__ {
-	 *     int unused;
-	 * } *HINSTANCE
-	 *}
-	 */
-	public static final AddressLayout HINSTANCE = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct HWND__ {
-	 *     int unused;
-	 * } *HWND
-	 *}
-	 */
-	public static final AddressLayout HWND = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct HBRUSH__ {
-	 *     int unused;
-	 * } *HBRUSH
-	 *}
-	 */
-	public static final AddressLayout HBRUSH = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct HICON__ {
-	 *     int unused;
-	 * } *HICON
-	 *}
-	 */
-	public static final AddressLayout HICON = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct HMENU__ {
-	 *     int unused;
-	 * } *HMENU
-	 *}
-	 */
-	public static final AddressLayout HMENU = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef HICON HCURSOR
-	 *}
-	 */
-	public static final AddressLayout HCURSOR = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct tagRECT {
-	 *     LONG left;
-	 *     LONG top;
-	 *     LONG right;
-	 *     LONG bottom;
-	 * } *LPRECT
-	 *}
-	 */
-	public static final AddressLayout LPRECT = Windows.C_POINTER;
-	
 	private static class GetStdHandle {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetStdHandle"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetStdHandle"),
 				DESC);
 	}
 	
@@ -537,8 +305,8 @@ public class Windows {
 	public static MemorySegment GetStdHandle(int nStdHandle) {
 		var mh$ = GetStdHandle.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetStdHandle", nStdHandle);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetStdHandle", nStdHandle);
 			}
 			return (MemorySegment) mh$.invokeExact(nStdHandle);
 		} catch (Throwable ex$) {
@@ -548,13 +316,13 @@ public class Windows {
 	
 	private static class SetStdHandle {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetStdHandle"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetStdHandle"),
 				DESC);
 	}
 	
@@ -586,8 +354,8 @@ public class Windows {
 	public static boolean SetStdHandle(int nStdHandle, MemorySegment hHandle) {
 		var mh$ = SetStdHandle.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetStdHandle", nStdHandle, hHandle);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetStdHandle", nStdHandle, hHandle);
 			}
 			return (boolean) mh$.invokeExact(nStdHandle, hHandle);
 		} catch (Throwable ex$) {
@@ -597,18 +365,18 @@ public class Windows {
 	
 	private static class CreateFileW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CreateFileW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CreateFileW"),
 				DESC);
 	}
 	
@@ -640,8 +408,8 @@ public class Windows {
 	public static MemorySegment CreateFileW(MemorySegment lpFileName, int dwDesiredAccess, int dwShareMode, MemorySegment lpSecurityAttributes, int dwCreationDisposition, int dwFlagsAndAttributes, MemorySegment hTemplateFile) {
 		var mh$ = CreateFileW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CreateFileW", lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CreateFileW", lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
 			}
 			return (MemorySegment) mh$.invokeExact(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
 		} catch (Throwable ex$) {
@@ -651,12 +419,12 @@ public class Windows {
 	
 	private static class FindClose {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FindClose"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FindClose"),
 				DESC);
 	}
 	
@@ -688,8 +456,8 @@ public class Windows {
 	public static boolean FindClose(MemorySegment hFindFile) {
 		var mh$ = FindClose.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FindClose", hFindFile);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FindClose", hFindFile);
 			}
 			return (boolean) mh$.invokeExact(hFindFile);
 		} catch (Throwable ex$) {
@@ -699,17 +467,17 @@ public class Windows {
 	
 	private static class FindFirstFileExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FindFirstFileExW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FindFirstFileExW"),
 				DESC);
 	}
 	
@@ -741,8 +509,8 @@ public class Windows {
 	public static MemorySegment FindFirstFileExW(MemorySegment lpFileName, int fInfoLevelId, MemorySegment lpFindFileData, int fSearchOp, MemorySegment lpSearchFilter, int dwAdditionalFlags) {
 		var mh$ = FindFirstFileExW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FindFirstFileExW", lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FindFirstFileExW", lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
 			}
 			return (MemorySegment) mh$.invokeExact(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
 		} catch (Throwable ex$) {
@@ -752,13 +520,13 @@ public class Windows {
 	
 	private static class FindNextFileW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FindNextFileW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FindNextFileW"),
 				DESC);
 	}
 	
@@ -790,8 +558,8 @@ public class Windows {
 	public static boolean FindNextFileW(MemorySegment hFindFile, MemorySegment lpFindFileData) {
 		var mh$ = FindNextFileW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FindNextFileW", hFindFile, lpFindFileData);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FindNextFileW", hFindFile, lpFindFileData);
 			}
 			return (boolean) mh$.invokeExact(hFindFile, lpFindFileData);
 		} catch (Throwable ex$) {
@@ -801,13 +569,13 @@ public class Windows {
 	
 	private static class GetFileSizeEx {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetFileSizeEx"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetFileSizeEx"),
 				DESC);
 	}
 	
@@ -839,8 +607,8 @@ public class Windows {
 	public static boolean GetFileSizeEx(MemorySegment hFile, MemorySegment lpFileSize) {
 		var mh$ = GetFileSizeEx.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetFileSizeEx", hFile, lpFileSize);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetFileSizeEx", hFile, lpFileSize);
 			}
 			return (boolean) mh$.invokeExact(hFile, lpFileSize);
 		} catch (Throwable ex$) {
@@ -850,12 +618,12 @@ public class Windows {
 	
 	private static class GetFileType {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetFileType"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetFileType"),
 				DESC);
 	}
 	
@@ -887,8 +655,8 @@ public class Windows {
 	public static int GetFileType(MemorySegment hFile) {
 		var mh$ = GetFileType.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetFileType", hFile);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetFileType", hFile);
 			}
 			return (int) mh$.invokeExact(hFile);
 		} catch (Throwable ex$) {
@@ -898,15 +666,15 @@ public class Windows {
 	
 	private static class SetFilePointerEx {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER,
 				_LARGE_INTEGER.layout(),
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetFilePointerEx"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetFilePointerEx"),
 				DESC);
 	}
 	
@@ -938,8 +706,8 @@ public class Windows {
 	public static boolean SetFilePointerEx(MemorySegment hFile, MemorySegment liDistanceToMove, MemorySegment lpNewFilePointer, int dwMoveMethod) {
 		var mh$ = SetFilePointerEx.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetFilePointerEx", hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetFilePointerEx", hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
 			}
 			return (boolean) mh$.invokeExact(hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
 		} catch (Throwable ex$) {
@@ -949,10 +717,10 @@ public class Windows {
 	
 	private static class IsDebuggerPresent {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL);
+				LayoutUtils.C_BOOL);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("IsDebuggerPresent"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("IsDebuggerPresent"),
 				DESC);
 	}
 	
@@ -984,8 +752,8 @@ public class Windows {
 	public static boolean IsDebuggerPresent() {
 		var mh$ = IsDebuggerPresent.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("IsDebuggerPresent");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("IsDebuggerPresent");
 			}
 			return (boolean) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -995,11 +763,11 @@ public class Windows {
 	
 	private static class OutputDebugStringW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("OutputDebugStringW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("OutputDebugStringW"),
 				DESC);
 	}
 	
@@ -1031,8 +799,8 @@ public class Windows {
 	public static void OutputDebugStringW(MemorySegment lpOutputString) {
 		var mh$ = OutputDebugStringW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("OutputDebugStringW", lpOutputString);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("OutputDebugStringW", lpOutputString);
 			}
 			mh$.invokeExact(lpOutputString);
 		} catch (Throwable ex$) {
@@ -1042,12 +810,12 @@ public class Windows {
 	
 	private static class EncodePointer {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("EncodePointer"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("EncodePointer"),
 				DESC);
 	}
 	
@@ -1079,8 +847,8 @@ public class Windows {
 	public static MemorySegment EncodePointer(MemorySegment Ptr) {
 		var mh$ = EncodePointer.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("EncodePointer", Ptr);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("EncodePointer", Ptr);
 			}
 			return (MemorySegment) mh$.invokeExact(Ptr);
 		} catch (Throwable ex$) {
@@ -1090,12 +858,12 @@ public class Windows {
 	
 	private static class CloseHandle {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CloseHandle"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CloseHandle"),
 				DESC);
 	}
 	
@@ -1127,8 +895,8 @@ public class Windows {
 	public static boolean CloseHandle(MemorySegment hObject) {
 		var mh$ = CloseHandle.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CloseHandle", hObject);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CloseHandle", hObject);
 			}
 			return (boolean) mh$.invokeExact(hObject);
 		} catch (Throwable ex$) {
@@ -1138,14 +906,14 @@ public class Windows {
 	
 	private static class RaiseException {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RaiseException"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RaiseException"),
 				DESC);
 	}
 	
@@ -1177,8 +945,8 @@ public class Windows {
 	public static void RaiseException(int dwExceptionCode, int dwExceptionFlags, int nNumberOfArguments, MemorySegment lpArguments) {
 		var mh$ = RaiseException.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RaiseException", dwExceptionCode, dwExceptionFlags, nNumberOfArguments, lpArguments);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RaiseException", dwExceptionCode, dwExceptionFlags, nNumberOfArguments, lpArguments);
 			}
 			mh$.invokeExact(dwExceptionCode, dwExceptionFlags, nNumberOfArguments, lpArguments);
 		} catch (Throwable ex$) {
@@ -1188,12 +956,12 @@ public class Windows {
 	
 	private static class UnhandledExceptionFilter {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("UnhandledExceptionFilter"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("UnhandledExceptionFilter"),
 				DESC);
 	}
 	
@@ -1225,8 +993,8 @@ public class Windows {
 	public static int UnhandledExceptionFilter(MemorySegment ExceptionInfo) {
 		var mh$ = UnhandledExceptionFilter.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("UnhandledExceptionFilter", ExceptionInfo);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("UnhandledExceptionFilter", ExceptionInfo);
 			}
 			return (int) mh$.invokeExact(ExceptionInfo);
 		} catch (Throwable ex$) {
@@ -1236,12 +1004,12 @@ public class Windows {
 	
 	private static class SetUnhandledExceptionFilter {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetUnhandledExceptionFilter"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetUnhandledExceptionFilter"),
 				DESC);
 	}
 	
@@ -1273,8 +1041,8 @@ public class Windows {
 	public static MemorySegment SetUnhandledExceptionFilter(MemorySegment lpTopLevelExceptionFilter) {
 		var mh$ = SetUnhandledExceptionFilter.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetUnhandledExceptionFilter", lpTopLevelExceptionFilter);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetUnhandledExceptionFilter", lpTopLevelExceptionFilter);
 			}
 			return (MemorySegment) mh$.invokeExact(lpTopLevelExceptionFilter);
 		} catch (Throwable ex$) {
@@ -1284,10 +1052,10 @@ public class Windows {
 	
 	private static class GetLastError {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG);
+				LayoutUtils.C_LONG);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetLastError"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetLastError"),
 				DESC);
 	}
 	
@@ -1319,8 +1087,8 @@ public class Windows {
 	public static int GetLastError() {
 		var mh$ = GetLastError.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetLastError");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetLastError");
 			}
 			return (int) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -1330,11 +1098,11 @@ public class Windows {
 	
 	private static class SetLastError {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_LONG
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetLastError"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetLastError"),
 				DESC);
 	}
 	
@@ -1366,8 +1134,8 @@ public class Windows {
 	public static void SetLastError(int dwErrCode) {
 		var mh$ = SetLastError.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetLastError", dwErrCode);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetLastError", dwErrCode);
 			}
 			mh$.invokeExact(dwErrCode);
 		} catch (Throwable ex$) {
@@ -1377,12 +1145,12 @@ public class Windows {
 	
 	private static class FlsAlloc {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FlsAlloc"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsAlloc"),
 				DESC);
 	}
 	
@@ -1414,8 +1182,8 @@ public class Windows {
 	public static int FlsAlloc(MemorySegment lpCallback) {
 		var mh$ = FlsAlloc.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FlsAlloc", lpCallback);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FlsAlloc", lpCallback);
 			}
 			return (int) mh$.invokeExact(lpCallback);
 		} catch (Throwable ex$) {
@@ -1425,12 +1193,12 @@ public class Windows {
 	
 	private static class FlsGetValue {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FlsGetValue"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsGetValue"),
 				DESC);
 	}
 	
@@ -1462,8 +1230,8 @@ public class Windows {
 	public static MemorySegment FlsGetValue(int dwFlsIndex) {
 		var mh$ = FlsGetValue.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FlsGetValue", dwFlsIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FlsGetValue", dwFlsIndex);
 			}
 			return (MemorySegment) mh$.invokeExact(dwFlsIndex);
 		} catch (Throwable ex$) {
@@ -1473,13 +1241,13 @@ public class Windows {
 	
 	private static class FlsSetValue {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FlsSetValue"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsSetValue"),
 				DESC);
 	}
 	
@@ -1511,8 +1279,8 @@ public class Windows {
 	public static boolean FlsSetValue(int dwFlsIndex, MemorySegment lpFlsData) {
 		var mh$ = FlsSetValue.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FlsSetValue", dwFlsIndex, lpFlsData);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FlsSetValue", dwFlsIndex, lpFlsData);
 			}
 			return (boolean) mh$.invokeExact(dwFlsIndex, lpFlsData);
 		} catch (Throwable ex$) {
@@ -1522,12 +1290,12 @@ public class Windows {
 	
 	private static class FlsFree {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_LONG
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("FlsFree"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsFree"),
 				DESC);
 	}
 	
@@ -1559,8 +1327,8 @@ public class Windows {
 	public static int FlsFree(int dwFlsIndex) {
 		var mh$ = FlsFree.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("FlsFree", dwFlsIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("FlsFree", dwFlsIndex);
 			}
 			return (int) mh$.invokeExact(dwFlsIndex);
 		} catch (Throwable ex$) {
@@ -1570,12 +1338,12 @@ public class Windows {
 	
 	private static class QueryPerformanceCounter {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("QueryPerformanceCounter"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("QueryPerformanceCounter"),
 				DESC);
 	}
 	
@@ -1607,8 +1375,8 @@ public class Windows {
 	public static int QueryPerformanceCounter(MemorySegment lpPerformanceCount) {
 		var mh$ = QueryPerformanceCounter.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("QueryPerformanceCounter", lpPerformanceCount);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("QueryPerformanceCounter", lpPerformanceCount);
 			}
 			return (int) mh$.invokeExact(lpPerformanceCount);
 		} catch (Throwable ex$) {
@@ -1618,11 +1386,11 @@ public class Windows {
 	
 	private static class ReleaseSRWLockExclusive {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("ReleaseSRWLockExclusive"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("ReleaseSRWLockExclusive"),
 				DESC);
 	}
 	
@@ -1654,8 +1422,8 @@ public class Windows {
 	public static void ReleaseSRWLockExclusive(MemorySegment SRWLock) {
 		var mh$ = ReleaseSRWLockExclusive.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("ReleaseSRWLockExclusive", SRWLock);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("ReleaseSRWLockExclusive", SRWLock);
 			}
 			mh$.invokeExact(SRWLock);
 		} catch (Throwable ex$) {
@@ -1665,11 +1433,11 @@ public class Windows {
 	
 	private static class AcquireSRWLockExclusive {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("AcquireSRWLockExclusive"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("AcquireSRWLockExclusive"),
 				DESC);
 	}
 	
@@ -1701,8 +1469,8 @@ public class Windows {
 	public static void AcquireSRWLockExclusive(MemorySegment SRWLock) {
 		var mh$ = AcquireSRWLockExclusive.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("AcquireSRWLockExclusive", SRWLock);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("AcquireSRWLockExclusive", SRWLock);
 			}
 			mh$.invokeExact(SRWLock);
 		} catch (Throwable ex$) {
@@ -1712,11 +1480,11 @@ public class Windows {
 	
 	private static class EnterCriticalSection {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("EnterCriticalSection"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("EnterCriticalSection"),
 				DESC);
 	}
 	
@@ -1748,8 +1516,8 @@ public class Windows {
 	public static void EnterCriticalSection(MemorySegment lpCriticalSection) {
 		var mh$ = EnterCriticalSection.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("EnterCriticalSection", lpCriticalSection);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("EnterCriticalSection", lpCriticalSection);
 			}
 			mh$.invokeExact(lpCriticalSection);
 		} catch (Throwable ex$) {
@@ -1759,11 +1527,11 @@ public class Windows {
 	
 	private static class LeaveCriticalSection {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("LeaveCriticalSection"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LeaveCriticalSection"),
 				DESC);
 	}
 	
@@ -1795,8 +1563,8 @@ public class Windows {
 	public static void LeaveCriticalSection(MemorySegment lpCriticalSection) {
 		var mh$ = LeaveCriticalSection.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("LeaveCriticalSection", lpCriticalSection);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("LeaveCriticalSection", lpCriticalSection);
 			}
 			mh$.invokeExact(lpCriticalSection);
 		} catch (Throwable ex$) {
@@ -1806,13 +1574,13 @@ public class Windows {
 	
 	private static class InitializeCriticalSectionAndSpinCount {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("InitializeCriticalSectionAndSpinCount"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("InitializeCriticalSectionAndSpinCount"),
 				DESC);
 	}
 	
@@ -1844,8 +1612,8 @@ public class Windows {
 	public static int InitializeCriticalSectionAndSpinCount(MemorySegment lpCriticalSection, int dwSpinCount) {
 		var mh$ = InitializeCriticalSectionAndSpinCount.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("InitializeCriticalSectionAndSpinCount", lpCriticalSection, dwSpinCount);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("InitializeCriticalSectionAndSpinCount", lpCriticalSection, dwSpinCount);
 			}
 			return (int) mh$.invokeExact(lpCriticalSection, dwSpinCount);
 		} catch (Throwable ex$) {
@@ -1855,11 +1623,11 @@ public class Windows {
 	
 	private static class DeleteCriticalSection {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("DeleteCriticalSection"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DeleteCriticalSection"),
 				DESC);
 	}
 	
@@ -1891,8 +1659,8 @@ public class Windows {
 	public static void DeleteCriticalSection(MemorySegment lpCriticalSection) {
 		var mh$ = DeleteCriticalSection.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("DeleteCriticalSection", lpCriticalSection);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("DeleteCriticalSection", lpCriticalSection);
 			}
 			mh$.invokeExact(lpCriticalSection);
 		} catch (Throwable ex$) {
@@ -1902,11 +1670,11 @@ public class Windows {
 	
 	private static class WakeAllConditionVariable {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("WakeAllConditionVariable"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("WakeAllConditionVariable"),
 				DESC);
 	}
 	
@@ -1938,8 +1706,8 @@ public class Windows {
 	public static void WakeAllConditionVariable(MemorySegment ConditionVariable) {
 		var mh$ = WakeAllConditionVariable.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("WakeAllConditionVariable", ConditionVariable);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("WakeAllConditionVariable", ConditionVariable);
 			}
 			mh$.invokeExact(ConditionVariable);
 		} catch (Throwable ex$) {
@@ -1949,15 +1717,15 @@ public class Windows {
 	
 	private static class SleepConditionVariableSRW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_LONG
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SleepConditionVariableSRW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SleepConditionVariableSRW"),
 				DESC);
 	}
 	
@@ -1989,8 +1757,8 @@ public class Windows {
 	public static int SleepConditionVariableSRW(MemorySegment ConditionVariable, MemorySegment SRWLock, int dwMilliseconds, int Flags) {
 		var mh$ = SleepConditionVariableSRW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SleepConditionVariableSRW", ConditionVariable, SRWLock, dwMilliseconds, Flags);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SleepConditionVariableSRW", ConditionVariable, SRWLock, dwMilliseconds, Flags);
 			}
 			return (int) mh$.invokeExact(ConditionVariable, SRWLock, dwMilliseconds, Flags);
 		} catch (Throwable ex$) {
@@ -2000,11 +1768,11 @@ public class Windows {
 	
 	private static class InitializeSListHead {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("InitializeSListHead"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("InitializeSListHead"),
 				DESC);
 	}
 	
@@ -2036,8 +1804,8 @@ public class Windows {
 	public static void InitializeSListHead(MemorySegment ListHead) {
 		var mh$ = InitializeSListHead.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("InitializeSListHead", ListHead);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("InitializeSListHead", ListHead);
 			}
 			mh$.invokeExact(ListHead);
 		} catch (Throwable ex$) {
@@ -2047,12 +1815,12 @@ public class Windows {
 	
 	private static class InterlockedFlushSList {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("InterlockedFlushSList"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("InterlockedFlushSList"),
 				DESC);
 	}
 	
@@ -2084,8 +1852,8 @@ public class Windows {
 	public static MemorySegment InterlockedFlushSList(MemorySegment ListHead) {
 		var mh$ = InterlockedFlushSList.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("InterlockedFlushSList", ListHead);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("InterlockedFlushSList", ListHead);
 			}
 			return (MemorySegment) mh$.invokeExact(ListHead);
 		} catch (Throwable ex$) {
@@ -2095,10 +1863,10 @@ public class Windows {
 	
 	private static class GetCurrentProcess {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER);
+				LayoutUtils.C_POINTER);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetCurrentProcess"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetCurrentProcess"),
 				DESC);
 	}
 	
@@ -2130,8 +1898,8 @@ public class Windows {
 	public static MemorySegment GetCurrentProcess() {
 		var mh$ = GetCurrentProcess.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetCurrentProcess");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetCurrentProcess");
 			}
 			return (MemorySegment) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -2141,11 +1909,11 @@ public class Windows {
 	
 	private static class ExitProcess {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_INT
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("ExitProcess"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("ExitProcess"),
 				DESC);
 	}
 	
@@ -2177,8 +1945,8 @@ public class Windows {
 	public static void ExitProcess(int uExitCode) {
 		var mh$ = ExitProcess.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("ExitProcess", uExitCode);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("ExitProcess", uExitCode);
 			}
 			mh$.invokeExact(uExitCode);
 		} catch (Throwable ex$) {
@@ -2188,10 +1956,10 @@ public class Windows {
 	
 	private static class GetCurrentThreadId {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG);
+				LayoutUtils.C_LONG);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetCurrentThreadId"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetCurrentThreadId"),
 				DESC);
 	}
 	
@@ -2223,8 +1991,8 @@ public class Windows {
 	public static int GetCurrentThreadId() {
 		var mh$ = GetCurrentThreadId.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetCurrentThreadId");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetCurrentThreadId");
 			}
 			return (int) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -2234,10 +2002,10 @@ public class Windows {
 	
 	private static class TlsAlloc {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG);
+				LayoutUtils.C_LONG);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("TlsAlloc"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsAlloc"),
 				DESC);
 	}
 	
@@ -2269,8 +2037,8 @@ public class Windows {
 	public static int TlsAlloc() {
 		var mh$ = TlsAlloc.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("TlsAlloc");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("TlsAlloc");
 			}
 			return (int) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -2280,12 +2048,12 @@ public class Windows {
 	
 	private static class TlsGetValue {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("TlsGetValue"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsGetValue"),
 				DESC);
 	}
 	
@@ -2317,8 +2085,8 @@ public class Windows {
 	public static MemorySegment TlsGetValue(int dwTlsIndex) {
 		var mh$ = TlsGetValue.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("TlsGetValue", dwTlsIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("TlsGetValue", dwTlsIndex);
 			}
 			return (MemorySegment) mh$.invokeExact(dwTlsIndex);
 		} catch (Throwable ex$) {
@@ -2328,13 +2096,13 @@ public class Windows {
 	
 	private static class TlsSetValue {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("TlsSetValue"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsSetValue"),
 				DESC);
 	}
 	
@@ -2366,8 +2134,8 @@ public class Windows {
 	public static int TlsSetValue(int dwTlsIndex, MemorySegment lpTlsValue) {
 		var mh$ = TlsSetValue.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("TlsSetValue", dwTlsIndex, lpTlsValue);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("TlsSetValue", dwTlsIndex, lpTlsValue);
 			}
 			return (int) mh$.invokeExact(dwTlsIndex, lpTlsValue);
 		} catch (Throwable ex$) {
@@ -2377,12 +2145,12 @@ public class Windows {
 	
 	private static class TlsFree {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_LONG
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("TlsFree"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsFree"),
 				DESC);
 	}
 	
@@ -2414,8 +2182,8 @@ public class Windows {
 	public static int TlsFree(int dwTlsIndex) {
 		var mh$ = TlsFree.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("TlsFree", dwTlsIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("TlsFree", dwTlsIndex);
 			}
 			return (int) mh$.invokeExact(dwTlsIndex);
 		} catch (Throwable ex$) {
@@ -2425,11 +2193,11 @@ public class Windows {
 	
 	private static class GetStartupInfoW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetStartupInfoW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetStartupInfoW"),
 				DESC);
 	}
 	
@@ -2461,8 +2229,8 @@ public class Windows {
 	public static void GetStartupInfoW(MemorySegment lpStartupInfo) {
 		var mh$ = GetStartupInfoW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetStartupInfoW", lpStartupInfo);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetStartupInfoW", lpStartupInfo);
 			}
 			mh$.invokeExact(lpStartupInfo);
 		} catch (Throwable ex$) {
@@ -2472,12 +2240,12 @@ public class Windows {
 	
 	private static class IsProcessorFeaturePresent {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_LONG
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("IsProcessorFeaturePresent"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("IsProcessorFeaturePresent"),
 				DESC);
 	}
 	
@@ -2509,8 +2277,8 @@ public class Windows {
 	public static int IsProcessorFeaturePresent(int ProcessorFeature) {
 		var mh$ = IsProcessorFeaturePresent.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("IsProcessorFeaturePresent", ProcessorFeature);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("IsProcessorFeaturePresent", ProcessorFeature);
 			}
 			return (int) mh$.invokeExact(ProcessorFeature);
 		} catch (Throwable ex$) {
@@ -2520,11 +2288,11 @@ public class Windows {
 	
 	private static class GetSystemTimeAsFileTime {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetSystemTimeAsFileTime"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetSystemTimeAsFileTime"),
 				DESC);
 	}
 	
@@ -2556,8 +2324,8 @@ public class Windows {
 	public static void GetSystemTimeAsFileTime(MemorySegment lpSystemTimeAsFileTime) {
 		var mh$ = GetSystemTimeAsFileTime.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetSystemTimeAsFileTime", lpSystemTimeAsFileTime);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetSystemTimeAsFileTime", lpSystemTimeAsFileTime);
 			}
 			mh$.invokeExact(lpSystemTimeAsFileTime);
 		} catch (Throwable ex$) {
@@ -2567,14 +2335,14 @@ public class Windows {
 	
 	private static class GetModuleFileNameW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.DWORD,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.LPWSTR,
+				LayoutUtils.DWORD
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetModuleFileNameW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleFileNameW"),
 				DESC);
 	}
 	
@@ -2606,8 +2374,8 @@ public class Windows {
 	public static int GetModuleFileNameW(MemorySegment hModule, MemorySegment lpFilename, int nSize) {
 		var mh$ = GetModuleFileNameW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetModuleFileNameW", hModule, lpFilename, nSize);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetModuleFileNameW", hModule, lpFilename, nSize);
 			}
 			return (int) mh$.invokeExact(hModule, lpFilename, nSize);
 		} catch (Throwable ex$) {
@@ -2616,13 +2384,13 @@ public class Windows {
 	}
 	
 	private static class GetModuleHandleA {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER
+		private static final FunctionDescriptor DESC = FunctionDescriptor.of(
+				LayoutUtils.C_POINTER,
+				LayoutUtils.LPCSTR
 		);
 		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetModuleHandleA"),
+		private static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleHandleA"),
 				DESC);
 	}
 	
@@ -2654,8 +2422,8 @@ public class Windows {
 	public static MemorySegment GetModuleHandleA(MemorySegment lpModuleName) {
 		var mh$ = GetModuleHandleA.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetModuleHandleA", lpModuleName);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetModuleHandleA", lpModuleName);
 			}
 			return (MemorySegment) mh$.invokeExact(lpModuleName);
 		} catch (Throwable ex$) {
@@ -2665,14 +2433,14 @@ public class Windows {
 	
 	private static class GetModuleHandleExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetModuleHandleExW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleHandleExW"),
 				DESC);
 	}
 	
@@ -2704,8 +2472,8 @@ public class Windows {
 	public static boolean GetModuleHandleExW(int dwFlags, MemorySegment lpModuleName, MemorySegment phModule) {
 		var mh$ = GetModuleHandleExW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetModuleHandleExW", dwFlags, lpModuleName, phModule);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetModuleHandleExW", dwFlags, lpModuleName, phModule);
 			}
 			return (boolean) mh$.invokeExact(dwFlags, lpModuleName, phModule);
 		} catch (Throwable ex$) {
@@ -2715,13 +2483,13 @@ public class Windows {
 	
 	private static class lstrcmpW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("lstrcmpW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("lstrcmpW"),
 				DESC);
 	}
 	
@@ -2753,8 +2521,8 @@ public class Windows {
 	public static int lstrcmpW(MemorySegment lpString1, MemorySegment lpString2) {
 		var mh$ = lstrcmpW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("lstrcmpW", lpString1, lpString2);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("lstrcmpW", lpString1, lpString2);
 			}
 			return (int) mh$.invokeExact(lpString1, lpString2);
 		} catch (Throwable ex$) {
@@ -2762,49 +2530,17 @@ public class Windows {
 		}
 	}
 	
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct tagMSG {
-	 *     HWND hwnd;
-	 *     UINT message;
-	 *     WPARAM wParam;
-	 *     LPARAM lParam;
-	 *     DWORD time;
-	 *     POINT pt;
-	 * } *LPMSG
-	 *}
-	 */
-	public static final AddressLayout LPMSG = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef struct tagMINMAXINFO {
-	 *     POINT ptReserved;
-	 *     POINT ptMaxSize;
-	 *     POINT ptMaxPosition;
-	 *     POINT ptMinTrackSize;
-	 *     POINT ptMaxTrackSize;
-	 * } *LPMINMAXINFO
-	 *}
-	 */
-	public static final AddressLayout LPMINMAXINFO = Windows.C_POINTER;
-	/**
-	 * {@snippet lang = c:
-	 * typedef LPCREATESTRUCTA LPCREATESTRUCT
-	 *}
-	 */
-	public static final AddressLayout LPCREATESTRUCT = Windows.C_POINTER;
-	
 	private static class GetMessageW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_BOOL,
+				LayoutUtils.LPMSG,
+				LayoutUtils.HWND,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetMessageW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetMessageW"),
 				DESC);
 	}
 	
@@ -2836,8 +2572,8 @@ public class Windows {
 	public static boolean GetMessageW(MemorySegment lpMsg, MemorySegment hWnd, int wMsgFilterMin, int wMsgFilterMax) {
 		var mh$ = GetMessageW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetMessageW", lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetMessageW", lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax);
 			}
 			return (boolean) mh$.invokeExact(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax);
 		} catch (Throwable ex$) {
@@ -2847,12 +2583,12 @@ public class Windows {
 	
 	private static class TranslateMessage {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER.withTargetLayout(MSG.layout())
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("TranslateMessage"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TranslateMessage"),
 				DESC);
 	}
 	
@@ -2884,8 +2620,8 @@ public class Windows {
 	public static boolean TranslateMessage(MemorySegment lpMsg) {
 		var mh$ = TranslateMessage.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("TranslateMessage", lpMsg);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("TranslateMessage", lpMsg);
 			}
 			return (boolean) mh$.invokeExact(lpMsg);
 		} catch (Throwable ex$) {
@@ -2895,12 +2631,12 @@ public class Windows {
 	
 	private static class DispatchMessageW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG_LONG,
-				Windows.C_POINTER
+				LayoutUtils.LRESULT,
+				LayoutUtils.C_POINTER.withTargetLayout(MSG.layout())
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("DispatchMessageW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DispatchMessageW"),
 				DESC);
 	}
 	
@@ -2932,8 +2668,8 @@ public class Windows {
 	public static long DispatchMessageW(MemorySegment lpMsg) {
 		var mh$ = DispatchMessageW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("DispatchMessageW", lpMsg);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("DispatchMessageW", lpMsg);
 			}
 			return (long) mh$.invokeExact(lpMsg);
 		} catch (Throwable ex$) {
@@ -2943,15 +2679,15 @@ public class Windows {
 	
 	private static class PostMessageW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_LONG_LONG,
-				Windows.C_LONG_LONG
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND,
+				LayoutUtils.C_INT,
+				LayoutUtils.WPARAM,
+				LayoutUtils.LPARAM
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("PostMessageW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("PostMessageW"),
 				DESC);
 	}
 	
@@ -2983,8 +2719,8 @@ public class Windows {
 	public static boolean PostMessageW(MemorySegment hWnd, int Msg, long wParam, long lParam) {
 		var mh$ = PostMessageW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("PostMessageW", hWnd, Msg, wParam, lParam);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("PostMessageW", hWnd, Msg, wParam, lParam);
 			}
 			return (boolean) mh$.invokeExact(hWnd, Msg, wParam, lParam);
 		} catch (Throwable ex$) {
@@ -2994,15 +2730,15 @@ public class Windows {
 	
 	private static class DefWindowProcW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_LONG_LONG,
-				Windows.C_LONG_LONG
+				LayoutUtils.LRESULT,
+				LayoutUtils.HWND,
+				LayoutUtils.C_INT,
+				LayoutUtils.WPARAM,
+				LayoutUtils.LPARAM
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("DefWindowProcW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DefWindowProcW"),
 				DESC);
 	}
 	
@@ -3034,8 +2770,8 @@ public class Windows {
 	public static long DefWindowProcW(MemorySegment hWnd, int Msg, long wParam, long lParam) {
 		var mh$ = DefWindowProcW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("DefWindowProcW", hWnd, Msg, wParam, lParam);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("DefWindowProcW", hWnd, Msg, wParam, lParam);
 			}
 			return (long) mh$.invokeExact(hWnd, Msg, wParam, lParam);
 		} catch (Throwable ex$) {
@@ -3045,11 +2781,11 @@ public class Windows {
 	
 	private static class PostQuitMessage {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_INT
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("PostQuitMessage"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("PostQuitMessage"),
 				DESC);
 	}
 	
@@ -3081,8 +2817,8 @@ public class Windows {
 	public static void PostQuitMessage(int nExitCode) {
 		var mh$ = PostQuitMessage.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("PostQuitMessage", nExitCode);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("PostQuitMessage", nExitCode);
 			}
 			mh$.invokeExact(nExitCode);
 		} catch (Throwable ex$) {
@@ -3092,12 +2828,12 @@ public class Windows {
 	
 	private static class RegisterClassExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_SHORT,
-				Windows.C_POINTER
+				LayoutUtils.C_SHORT,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RegisterClassExW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RegisterClassExW"),
 				DESC);
 	}
 	
@@ -3129,8 +2865,8 @@ public class Windows {
 	public static short RegisterClassExW(MemorySegment x0) {
 		var mh$ = RegisterClassExW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RegisterClassExW", x0);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RegisterClassExW", x0);
 			}
 			return (short) mh$.invokeExact(x0);
 		} catch (Throwable ex$) {
@@ -3140,23 +2876,23 @@ public class Windows {
 	
 	private static class CreateWindowExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CreateWindowExW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CreateWindowExW"),
 				DESC);
 	}
 	
@@ -3188,8 +2924,8 @@ public class Windows {
 	public static MemorySegment CreateWindowExW(int dwExStyle, MemorySegment lpClassName, MemorySegment lpWindowName, int dwStyle, int X, int Y, int nWidth, int nHeight, MemorySegment hWndParent, MemorySegment hMenu, MemorySegment hInstance, MemorySegment lpParam) {
 		var mh$ = CreateWindowExW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CreateWindowExW", dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CreateWindowExW", dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 			}
 			return (MemorySegment) mh$.invokeExact(dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 		} catch (Throwable ex$) {
@@ -3199,12 +2935,12 @@ public class Windows {
 	
 	private static class IsWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("IsWindow"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("IsWindow"),
 				DESC);
 	}
 	
@@ -3236,8 +2972,8 @@ public class Windows {
 	public static int IsWindow(MemorySegment hWnd) {
 		var mh$ = IsWindow.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("IsWindow", hWnd);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("IsWindow", hWnd);
 			}
 			return (int) mh$.invokeExact(hWnd);
 		} catch (Throwable ex$) {
@@ -3247,12 +2983,12 @@ public class Windows {
 	
 	private static class DestroyWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("DestroyWindow"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DestroyWindow"),
 				DESC);
 	}
 	
@@ -3284,8 +3020,8 @@ public class Windows {
 	public static boolean DestroyWindow(MemorySegment hWnd) {
 		var mh$ = DestroyWindow.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("DestroyWindow", hWnd);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("DestroyWindow", hWnd);
 			}
 			return (boolean) mh$.invokeExact(hWnd);
 		} catch (Throwable ex$) {
@@ -3295,13 +3031,13 @@ public class Windows {
 	
 	private static class ShowWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("ShowWindow"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("ShowWindow"),
 				DESC);
 	}
 	
@@ -3333,8 +3069,8 @@ public class Windows {
 	public static boolean ShowWindow(MemorySegment hWnd, int nCmdShow) {
 		var mh$ = ShowWindow.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("ShowWindow", hWnd, nCmdShow);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("ShowWindow", hWnd, nCmdShow);
 			}
 			return (boolean) mh$.invokeExact(hWnd, nCmdShow);
 		} catch (Throwable ex$) {
@@ -3344,17 +3080,17 @@ public class Windows {
 	
 	private static class MoveWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("MoveWindow"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("MoveWindow"),
 				DESC);
 	}
 	
@@ -3386,8 +3122,8 @@ public class Windows {
 	public static int MoveWindow(MemorySegment hWnd, int X, int Y, int nWidth, int nHeight, int bRepaint) {
 		var mh$ = MoveWindow.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("MoveWindow", hWnd, X, Y, nWidth, nHeight, bRepaint);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("MoveWindow", hWnd, X, Y, nWidth, nHeight, bRepaint);
 			}
 			return (int) mh$.invokeExact(hWnd, X, Y, nWidth, nHeight, bRepaint);
 		} catch (Throwable ex$) {
@@ -3397,18 +3133,18 @@ public class Windows {
 	
 	private static class SetWindowPos {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetWindowPos"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetWindowPos"),
 				DESC);
 	}
 	
@@ -3440,8 +3176,8 @@ public class Windows {
 	public static int SetWindowPos(MemorySegment hWnd, MemorySegment hWndInsertAfter, int X, int Y, int cx, int cy, int uFlags) {
 		var mh$ = SetWindowPos.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetWindowPos", hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetWindowPos", hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 			}
 			return (int) mh$.invokeExact(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 		} catch (Throwable ex$) {
@@ -3451,12 +3187,12 @@ public class Windows {
 	
 	private static class SetFocus {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetFocus"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetFocus"),
 				DESC);
 	}
 	
@@ -3488,8 +3224,8 @@ public class Windows {
 	public static MemorySegment SetFocus(MemorySegment hWnd) {
 		var mh$ = SetFocus.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetFocus", hWnd);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetFocus", hWnd);
 			}
 			return (MemorySegment) mh$.invokeExact(hWnd);
 		} catch (Throwable ex$) {
@@ -3499,12 +3235,12 @@ public class Windows {
 	
 	private static class GetSystemMetrics {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetSystemMetrics"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetSystemMetrics"),
 				DESC);
 	}
 	
@@ -3536,8 +3272,8 @@ public class Windows {
 	public static int GetSystemMetrics(int nIndex) {
 		var mh$ = GetSystemMetrics.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetSystemMetrics", nIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetSystemMetrics", nIndex);
 			}
 			return (int) mh$.invokeExact(nIndex);
 		} catch (Throwable ex$) {
@@ -3547,12 +3283,12 @@ public class Windows {
 	
 	private static class UpdateWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("UpdateWindow"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("UpdateWindow"),
 				DESC);
 	}
 	
@@ -3584,8 +3320,8 @@ public class Windows {
 	public static boolean UpdateWindow(MemorySegment hWnd) {
 		var mh$ = UpdateWindow.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("UpdateWindow", hWnd);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("UpdateWindow", hWnd);
 			}
 			return (boolean) mh$.invokeExact(hWnd);
 		} catch (Throwable ex$) {
@@ -3595,13 +3331,13 @@ public class Windows {
 	
 	private static class SetWindowTextW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetWindowTextW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetWindowTextW"),
 				DESC);
 	}
 	
@@ -3633,8 +3369,8 @@ public class Windows {
 	public static int SetWindowTextW(MemorySegment hWnd, MemorySegment lpString) {
 		var mh$ = SetWindowTextW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetWindowTextW", hWnd, lpString);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetWindowTextW", hWnd, lpString);
 			}
 			return (int) mh$.invokeExact(hWnd, lpString);
 		} catch (Throwable ex$) {
@@ -3644,13 +3380,13 @@ public class Windows {
 	
 	private static class GetClientRect {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetClientRect"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetClientRect"),
 				DESC);
 	}
 	
@@ -3682,8 +3418,8 @@ public class Windows {
 	public static boolean GetClientRect(MemorySegment hWnd, MemorySegment lpRect) {
 		var mh$ = GetClientRect.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetClientRect", hWnd, lpRect);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetClientRect", hWnd, lpRect);
 			}
 			return (boolean) mh$.invokeExact(hWnd, lpRect);
 		} catch (Throwable ex$) {
@@ -3693,14 +3429,14 @@ public class Windows {
 	
 	private static class AdjustWindowRect {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_INT
+				LayoutUtils.C_BOOL,
+				LayoutUtils.LPRECT,
+				LayoutUtils.DWORD,
+				LayoutUtils.C_BOOL
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("AdjustWindowRect"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("AdjustWindowRect"),
 				DESC);
 	}
 	
@@ -3729,11 +3465,11 @@ public class Windows {
 	 * BOOL AdjustWindowRect(LPRECT lpRect, DWORD dwStyle, BOOL bMenu)
 	 *}
 	 */
-	public static boolean AdjustWindowRect(MemorySegment lpRect, int dwStyle, int bMenu) {
+	public static boolean AdjustWindowRect(MemorySegment lpRect, int dwStyle, boolean bMenu) {
 		var mh$ = AdjustWindowRect.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("AdjustWindowRect", lpRect, dwStyle, bMenu);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("AdjustWindowRect", lpRect, dwStyle, bMenu);
 			}
 			return (boolean) mh$.invokeExact(lpRect, dwStyle, bMenu);
 		} catch (Throwable ex$) {
@@ -3743,13 +3479,13 @@ public class Windows {
 	
 	private static class GetWindowLongA {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetWindowLongA"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetWindowLongA"),
 				DESC);
 	}
 	
@@ -3781,8 +3517,8 @@ public class Windows {
 	public static int GetWindowLongA(MemorySegment hWnd, int nIndex) {
 		var mh$ = GetWindowLongA.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetWindowLongA", hWnd, nIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetWindowLongA", hWnd, nIndex);
 			}
 			return (int) mh$.invokeExact(hWnd, nIndex);
 		} catch (Throwable ex$) {
@@ -3792,14 +3528,14 @@ public class Windows {
 	
 	private static class SetWindowLongA {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_LONG
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetWindowLongA"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetWindowLongA"),
 				DESC);
 	}
 	
@@ -3831,8 +3567,8 @@ public class Windows {
 	public static int SetWindowLongA(MemorySegment hWnd, int nIndex, int dwNewLong) {
 		var mh$ = SetWindowLongA.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetWindowLongA", hWnd, nIndex, dwNewLong);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetWindowLongA", hWnd, nIndex, dwNewLong);
 			}
 			return (int) mh$.invokeExact(hWnd, nIndex, dwNewLong);
 		} catch (Throwable ex$) {
@@ -3842,13 +3578,13 @@ public class Windows {
 	
 	private static class GetWindowLongPtrW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetWindowLongPtrW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetWindowLongPtrW"),
 				DESC);
 	}
 	
@@ -3880,8 +3616,8 @@ public class Windows {
 	public static long GetWindowLongPtrW(MemorySegment hWnd, int nIndex) {
 		var mh$ = GetWindowLongPtrW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetWindowLongPtrW", hWnd, nIndex);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetWindowLongPtrW", hWnd, nIndex);
 			}
 			return (long) mh$.invokeExact(hWnd, nIndex);
 		} catch (Throwable ex$) {
@@ -3891,14 +3627,14 @@ public class Windows {
 	
 	private static class SetWindowLongPtrW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_LONG_LONG
+				LayoutUtils.C_LONG_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetWindowLongPtrW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetWindowLongPtrW"),
 				DESC);
 	}
 	
@@ -3930,8 +3666,8 @@ public class Windows {
 	public static long SetWindowLongPtrW(MemorySegment hWnd, int nIndex, long dwNewLong) {
 		var mh$ = SetWindowLongPtrW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetWindowLongPtrW", hWnd, nIndex, dwNewLong);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetWindowLongPtrW", hWnd, nIndex, dwNewLong);
 			}
 			return (long) mh$.invokeExact(hWnd, nIndex, dwNewLong);
 		} catch (Throwable ex$) {
@@ -3941,12 +3677,12 @@ public class Windows {
 	
 	private static class GetParent {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetParent"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetParent"),
 				DESC);
 	}
 	
@@ -3978,8 +3714,8 @@ public class Windows {
 	public static MemorySegment GetParent(MemorySegment hWnd) {
 		var mh$ = GetParent.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetParent", hWnd);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetParent", hWnd);
 			}
 			return (MemorySegment) mh$.invokeExact(hWnd);
 		} catch (Throwable ex$) {
@@ -3989,17 +3725,17 @@ public class Windows {
 	
 	private static class LoadImageA {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("LoadImageA"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LoadImageA"),
 				DESC);
 	}
 	
@@ -4031,8 +3767,8 @@ public class Windows {
 	public static MemorySegment LoadImageA(MemorySegment hInst, MemorySegment name, int type, int cx, int cy, int fuLoad) {
 		var mh$ = LoadImageA.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("LoadImageA", hInst, name, type, cx, cy, fuLoad);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("LoadImageA", hInst, name, type, cx, cy, fuLoad);
 			}
 			return (MemorySegment) mh$.invokeExact(hInst, name, type, cx, cy, fuLoad);
 		} catch (Throwable ex$) {
@@ -4042,12 +3778,12 @@ public class Windows {
 	
 	private static class SetProcessDpiAwarenessContext {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("SetProcessDpiAwarenessContext"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetProcessDpiAwarenessContext"),
 				DESC);
 	}
 	
@@ -4079,8 +3815,8 @@ public class Windows {
 	public static boolean SetProcessDpiAwarenessContext(MemorySegment value) {
 		var mh$ = SetProcessDpiAwarenessContext.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("SetProcessDpiAwarenessContext", value);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetProcessDpiAwarenessContext", value);
 			}
 			return (boolean) mh$.invokeExact(value);
 		} catch (Throwable ex$) {
@@ -4090,17 +3826,17 @@ public class Windows {
 	
 	private static class MultiByteToWideChar {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("MultiByteToWideChar"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("MultiByteToWideChar"),
 				DESC);
 	}
 	
@@ -4132,8 +3868,8 @@ public class Windows {
 	public static int MultiByteToWideChar(int CodePage, int dwFlags, MemorySegment lpMultiByteStr, int cbMultiByte, MemorySegment lpWideCharStr, int cchWideChar) {
 		var mh$ = MultiByteToWideChar.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("MultiByteToWideChar", CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("MultiByteToWideChar", CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar);
 			}
 			return (int) mh$.invokeExact(CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar);
 		} catch (Throwable ex$) {
@@ -4143,19 +3879,19 @@ public class Windows {
 	
 	private static class WideCharToMultiByte {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_INT,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("WideCharToMultiByte"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("WideCharToMultiByte"),
 				DESC);
 	}
 	
@@ -4187,8 +3923,8 @@ public class Windows {
 	public static int WideCharToMultiByte(int CodePage, int dwFlags, MemorySegment lpWideCharStr, int cchWideChar, MemorySegment lpMultiByteStr, int cbMultiByte, MemorySegment lpDefaultChar, MemorySegment lpUsedDefaultChar) {
 		var mh$ = WideCharToMultiByte.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("WideCharToMultiByte", CodePage, dwFlags, lpWideCharStr, cchWideChar, lpMultiByteStr, cbMultiByte, lpDefaultChar, lpUsedDefaultChar);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("WideCharToMultiByte", CodePage, dwFlags, lpWideCharStr, cchWideChar, lpMultiByteStr, cbMultiByte, lpDefaultChar, lpUsedDefaultChar);
 			}
 			return (int) mh$.invokeExact(CodePage, dwFlags, lpWideCharStr, cchWideChar, lpMultiByteStr, cbMultiByte, lpDefaultChar, lpUsedDefaultChar);
 		} catch (Throwable ex$) {
@@ -4198,12 +3934,12 @@ public class Windows {
 	
 	private static class IsValidCodePage {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("IsValidCodePage"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("IsValidCodePage"),
 				DESC);
 	}
 	
@@ -4235,8 +3971,8 @@ public class Windows {
 	public static int IsValidCodePage(int CodePage) {
 		var mh$ = IsValidCodePage.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("IsValidCodePage", CodePage);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("IsValidCodePage", CodePage);
 			}
 			return (int) mh$.invokeExact(CodePage);
 		} catch (Throwable ex$) {
@@ -4246,10 +3982,10 @@ public class Windows {
 	
 	private static class GetACP {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT);
+				LayoutUtils.C_INT);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetACP"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetACP"),
 				DESC);
 	}
 	
@@ -4281,8 +4017,8 @@ public class Windows {
 	public static int GetACP() {
 		var mh$ = GetACP.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetACP");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetACP");
 			}
 			return (int) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -4292,10 +4028,10 @@ public class Windows {
 	
 	private static class GetOEMCP {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT);
+				LayoutUtils.C_INT);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetOEMCP"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetOEMCP"),
 				DESC);
 	}
 	
@@ -4327,8 +4063,8 @@ public class Windows {
 	public static int GetOEMCP() {
 		var mh$ = GetOEMCP.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetOEMCP");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetOEMCP");
 			}
 			return (int) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -4338,13 +4074,13 @@ public class Windows {
 	
 	private static class GetCPInfo {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_INT,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetCPInfo"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetCPInfo"),
 				DESC);
 	}
 	
@@ -4376,8 +4112,8 @@ public class Windows {
 	public static boolean GetCPInfo(int CodePage, MemorySegment lpCPInfo) {
 		var mh$ = GetCPInfo.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetCPInfo", CodePage, lpCPInfo);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetCPInfo", CodePage, lpCPInfo);
 			}
 			return (boolean) mh$.invokeExact(CodePage, lpCPInfo);
 		} catch (Throwable ex$) {
@@ -4387,17 +4123,17 @@ public class Windows {
 	
 	private static class LCMapStringW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("LCMapStringW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LCMapStringW"),
 				DESC);
 	}
 	
@@ -4429,8 +4165,8 @@ public class Windows {
 	public static int LCMapStringW(int Locale, int dwMapFlags, MemorySegment lpSrcStr, int cchSrc, MemorySegment lpDestStr, int cchDest) {
 		var mh$ = LCMapStringW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("LCMapStringW", Locale, dwMapFlags, lpSrcStr, cchSrc, lpDestStr, cchDest);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("LCMapStringW", Locale, dwMapFlags, lpSrcStr, cchSrc, lpDestStr, cchDest);
 			}
 			return (int) mh$.invokeExact(Locale, dwMapFlags, lpSrcStr, cchSrc, lpDestStr, cchDest);
 		} catch (Throwable ex$) {
@@ -4440,10 +4176,10 @@ public class Windows {
 	
 	private static class GetConsoleOutputCP {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT);
+				LayoutUtils.C_INT);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetConsoleOutputCP"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetConsoleOutputCP"),
 				DESC);
 	}
 	
@@ -4475,8 +4211,8 @@ public class Windows {
 	public static int GetConsoleOutputCP() {
 		var mh$ = GetConsoleOutputCP.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetConsoleOutputCP");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetConsoleOutputCP");
 			}
 			return (int) mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -4486,13 +4222,13 @@ public class Windows {
 	
 	private static class GetConsoleMode {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_BOOL,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetConsoleMode"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetConsoleMode"),
 				DESC);
 	}
 	
@@ -4524,8 +4260,8 @@ public class Windows {
 	public static boolean GetConsoleMode(MemorySegment hConsoleHandle, MemorySegment lpMode) {
 		var mh$ = GetConsoleMode.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetConsoleMode", hConsoleHandle, lpMode);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetConsoleMode", hConsoleHandle, lpMode);
 			}
 			return (boolean) mh$.invokeExact(hConsoleHandle, lpMode);
 		} catch (Throwable ex$) {
@@ -4535,16 +4271,16 @@ public class Windows {
 	
 	private static class WriteConsoleW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("WriteConsoleW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("WriteConsoleW"),
 				DESC);
 	}
 	
@@ -4576,8 +4312,8 @@ public class Windows {
 	public static int WriteConsoleW(MemorySegment hConsoleOutput, MemorySegment lpBuffer, int nNumberOfCharsToWrite, MemorySegment lpNumberOfCharsWritten, MemorySegment lpReserved) {
 		var mh$ = WriteConsoleW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("WriteConsoleW", hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("WriteConsoleW", hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
 			}
 			return (int) mh$.invokeExact(hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
 		} catch (Throwable ex$) {
@@ -4587,13 +4323,13 @@ public class Windows {
 	
 	private static class GetFileVersionInfoSizeW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetFileVersionInfoSizeW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetFileVersionInfoSizeW"),
 				DESC);
 	}
 	
@@ -4625,8 +4361,8 @@ public class Windows {
 	public static int GetFileVersionInfoSizeW(MemorySegment lptstrFilename, MemorySegment lpdwHandle) {
 		var mh$ = GetFileVersionInfoSizeW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetFileVersionInfoSizeW", lptstrFilename, lpdwHandle);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetFileVersionInfoSizeW", lptstrFilename, lpdwHandle);
 			}
 			return (int) mh$.invokeExact(lptstrFilename, lpdwHandle);
 		} catch (Throwable ex$) {
@@ -4636,15 +4372,15 @@ public class Windows {
 	
 	private static class GetFileVersionInfoW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("GetFileVersionInfoW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetFileVersionInfoW"),
 				DESC);
 	}
 	
@@ -4676,8 +4412,8 @@ public class Windows {
 	public static int GetFileVersionInfoW(MemorySegment lptstrFilename, int dwHandle, int dwLen, MemorySegment lpData) {
 		var mh$ = GetFileVersionInfoW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("GetFileVersionInfoW", lptstrFilename, dwHandle, dwLen, lpData);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetFileVersionInfoW", lptstrFilename, dwHandle, dwLen, lpData);
 			}
 			return (int) mh$.invokeExact(lptstrFilename, dwHandle, dwLen, lpData);
 		} catch (Throwable ex$) {
@@ -4687,15 +4423,15 @@ public class Windows {
 	
 	private static class VerQueryValueW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("VerQueryValueW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("VerQueryValueW"),
 				DESC);
 	}
 	
@@ -4727,8 +4463,8 @@ public class Windows {
 	public static int VerQueryValueW(MemorySegment pBlock, MemorySegment lpSubBlock, MemorySegment lplpBuffer, MemorySegment puLen) {
 		var mh$ = VerQueryValueW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("VerQueryValueW", pBlock, lpSubBlock, lplpBuffer, puLen);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("VerQueryValueW", pBlock, lpSubBlock, lplpBuffer, puLen);
 			}
 			return (int) mh$.invokeExact(pBlock, lpSubBlock, lplpBuffer, puLen);
 		} catch (Throwable ex$) {
@@ -4738,12 +4474,12 @@ public class Windows {
 	
 	private static class RegCloseKey {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.HKEY
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RegCloseKey"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RegCloseKey"),
 				DESC);
 	}
 	
@@ -4775,8 +4511,8 @@ public class Windows {
 	public static int RegCloseKey(MemorySegment hKey) {
 		var mh$ = RegCloseKey.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RegCloseKey", hKey);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RegCloseKey", hKey);
 			}
 			return (int) mh$.invokeExact(hKey);
 		} catch (Throwable ex$) {
@@ -4786,16 +4522,16 @@ public class Windows {
 	
 	private static class RegOpenKeyExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_LONG,
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.HKEY,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.DWORD,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RegOpenKeyExW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RegOpenKeyExW"),
 				DESC);
 	}
 	
@@ -4827,8 +4563,8 @@ public class Windows {
 	public static int RegOpenKeyExW(MemorySegment hKey, MemorySegment lpSubKey, int ulOptions, int samDesired, MemorySegment phkResult) {
 		var mh$ = RegOpenKeyExW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RegOpenKeyExW", hKey, lpSubKey, ulOptions, samDesired, phkResult);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RegOpenKeyExW", hKey, lpSubKey, ulOptions, samDesired, phkResult);
 			}
 			return (int) mh$.invokeExact(hKey, lpSubKey, ulOptions, samDesired, phkResult);
 		} catch (Throwable ex$) {
@@ -4838,17 +4574,17 @@ public class Windows {
 	
 	private static class RegQueryValueExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.HKEY,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("RegQueryValueExW"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RegQueryValueExW"),
 				DESC);
 	}
 	
@@ -4880,8 +4616,8 @@ public class Windows {
 	public static int RegQueryValueExW(MemorySegment hKey, MemorySegment lpValueName, MemorySegment lpReserved, MemorySegment lpType, MemorySegment lpData, MemorySegment lpcbData) {
 		var mh$ = RegQueryValueExW.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("RegQueryValueExW", hKey, lpValueName, lpReserved, lpType, lpData, lpcbData);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("RegQueryValueExW", hKey, lpValueName, lpReserved, lpType, lpData, lpcbData);
 			}
 			return (int) mh$.invokeExact(hKey, lpValueName, lpReserved, lpType, lpData, lpcbData);
 		} catch (Throwable ex$) {
@@ -4893,7 +4629,7 @@ public class Windows {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid();
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CoUninitialize"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoUninitialize"),
 				DESC);
 	}
 	
@@ -4925,8 +4661,8 @@ public class Windows {
 	public static void CoUninitialize() {
 		var mh$ = CoUninitialize.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CoUninitialize");
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CoUninitialize");
 			}
 			mh$.invokeExact();
 		} catch (Throwable ex$) {
@@ -4936,13 +4672,13 @@ public class Windows {
 	
 	private static class CoInitializeEx {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_LONG
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CoInitializeEx"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoInitializeEx"),
 				DESC);
 	}
 	
@@ -4974,8 +4710,8 @@ public class Windows {
 	public static int CoInitializeEx(MemorySegment pvReserved, int dwCoInit) {
 		var mh$ = CoInitializeEx.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CoInitializeEx", pvReserved, dwCoInit);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CoInitializeEx", pvReserved, dwCoInit);
 			}
 			return (int) mh$.invokeExact(pvReserved, dwCoInit);
 		} catch (Throwable ex$) {
@@ -4985,12 +4721,12 @@ public class Windows {
 	
 	private static class CoTaskMemAlloc {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				Windows.C_POINTER,
-				Windows.C_LONG_LONG
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_LONG_LONG
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CoTaskMemAlloc"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoTaskMemAlloc"),
 				DESC);
 	}
 	
@@ -5022,8 +4758,8 @@ public class Windows {
 	public static MemorySegment CoTaskMemAlloc(long cb) {
 		var mh$ = CoTaskMemAlloc.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CoTaskMemAlloc", cb);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CoTaskMemAlloc", cb);
 			}
 			return (MemorySegment) mh$.invokeExact(cb);
 		} catch (Throwable ex$) {
@@ -5033,11 +4769,11 @@ public class Windows {
 	
 	private static class CoTaskMemFree {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				Windows.C_POINTER
+				LayoutUtils.C_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				SYMBOL_LOOKUP.findOrThrow("CoTaskMemFree"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoTaskMemFree"),
 				DESC);
 	}
 	
@@ -5069,8 +4805,8 @@ public class Windows {
 	public static void CoTaskMemFree(MemorySegment pv) {
 		var mh$ = CoTaskMemFree.HANDLE;
 		try {
-			if ( TRACE_DOWNCALLS ) {
-				traceDowncall("CoTaskMemFree", pv);
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("CoTaskMemFree", pv);
 			}
 			mh$.invokeExact(pv);
 		} catch (Throwable ex$) {

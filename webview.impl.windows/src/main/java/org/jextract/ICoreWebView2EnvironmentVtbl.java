@@ -2,15 +2,8 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
@@ -34,21 +27,21 @@ public class ICoreWebView2EnvironmentVtbl {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("QueryInterface"),
-			Windows.C_POINTER.withName("AddRef"),
-			Windows.C_POINTER.withName("Release"),
-			Windows.C_POINTER.withName("CreateCoreWebView2Controller"),
-			Windows.C_POINTER.withName("CreateWebResourceResponse"),
-			Windows.C_POINTER.withName("get_BrowserVersionString"),
-			Windows.C_POINTER.withName("add_NewBrowserVersionAvailable"),
-			Windows.C_POINTER.withName("remove_NewBrowserVersionAvailable")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("QueryInterface"),
+			LayoutUtils.C_POINTER.withName("AddRef"),
+			LayoutUtils.C_POINTER.withName("Release"),
+			LayoutUtils.C_POINTER.withName("CreateCoreWebView2Controller"),
+			LayoutUtils.C_POINTER.withName("CreateWebResourceResponse"),
+			LayoutUtils.C_POINTER.withName("get_BrowserVersionString"),
+			LayoutUtils.C_POINTER.withName("add_NewBrowserVersionAvailable"),
+			LayoutUtils.C_POINTER.withName("remove_NewBrowserVersionAvailable")
 	).withName("ICoreWebView2EnvironmentVtbl");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
@@ -71,10 +64,10 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -84,7 +77,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -171,8 +164,8 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -182,7 +175,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddRef.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddRef.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -269,8 +262,8 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -280,7 +273,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Release.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Release.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -367,10 +360,10 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -380,7 +373,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(CreateCoreWebView2Controller.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(CreateCoreWebView2Controller.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -467,13 +460,13 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -483,7 +476,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(CreateWebResourceResponse.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(CreateWebResourceResponse.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -570,9 +563,9 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -582,7 +575,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_BrowserVersionString.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_BrowserVersionString.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -669,10 +662,10 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -682,7 +675,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NewBrowserVersionAvailable.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_NewBrowserVersionAvailable.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -769,8 +762,8 @@ public class ICoreWebView2EnvironmentVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -781,7 +774,7 @@ public class ICoreWebView2EnvironmentVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NewBrowserVersionAvailable.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_NewBrowserVersionAvailable.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.

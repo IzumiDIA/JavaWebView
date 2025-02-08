@@ -2,18 +2,11 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
+import java.lang.foreign.ValueLayout.OfInt;
+import java.lang.foreign.ValueLayout.OfLong;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.ValueLayout.OfInt;
-import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -33,13 +26,13 @@ public class tagMSG {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("hwnd"),
-			Windows.C_INT.withName("message"),
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.HWND.withName("hwnd"),
+			LayoutUtils.UINT.withName("message"),
 			MemoryLayout.paddingLayout(4),
-			Windows.C_LONG_LONG.withName("wParam"),
-			Windows.C_LONG_LONG.withName("lParam"),
-			Windows.C_LONG.withName("time"),
+			LayoutUtils.WPARAM.withName("wParam"),
+			LayoutUtils.LPARAM.withName("lParam"),
+			LayoutUtils.DWORD.withName("time"),
 			tagPOINT.layout().withName("pt"),
 			MemoryLayout.paddingLayout(4)
 	).withName("tagMSG");
@@ -47,7 +40,7 @@ public class tagMSG {
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	

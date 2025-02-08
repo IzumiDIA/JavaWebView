@@ -3,15 +3,14 @@
 package org.jextract;
 
 import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.StructLayout;
 import java.lang.foreign.ValueLayout;
+import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -29,17 +28,17 @@ public class tagRECT {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_LONG.withName("left"),
-			Windows.C_LONG.withName("top"),
-			Windows.C_LONG.withName("right"),
-			Windows.C_LONG.withName("bottom")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.LONG.withName("left"),
+			LayoutUtils.LONG.withName("top"),
+			LayoutUtils.LONG.withName("right"),
+			LayoutUtils.LONG.withName("bottom")
 	).withName("tagRECT");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	

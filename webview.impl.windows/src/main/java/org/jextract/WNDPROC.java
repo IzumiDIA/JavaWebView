@@ -27,11 +27,11 @@ public class WNDPROC {
 	}
 	
 	private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-			Windows.C_LONG_LONG,
-			Windows.C_POINTER,
-			Windows.C_INT,
-			Windows.C_LONG_LONG,
-			Windows.C_LONG_LONG
+			LayoutUtils.LRESULT,
+			LayoutUtils.HWND,
+			LayoutUtils.C_INT,
+			LayoutUtils.WPARAM,
+			LayoutUtils.LPARAM
 	);
 	
 	/**
@@ -41,7 +41,7 @@ public class WNDPROC {
 		return $DESC;
 	}
 	
-	private static final MethodHandle UP$MH = Windows.upcallHandle(WNDPROC.Function.class, "apply", $DESC);
+	private static final MethodHandle UP$MH = FFMUtils.upcallHandle(WNDPROC.Function.class, "apply", $DESC);
 	
 	/**
 	 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.

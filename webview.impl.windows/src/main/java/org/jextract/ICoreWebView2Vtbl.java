@@ -2,20 +2,13 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2Vtbl {
  *     HRESULT (*QueryInterface)(ICoreWebView2 *, const IID *const, void **) __attribute__((stdcall));
  *     ULONG (*AddRef)(ICoreWebView2 *) __attribute__((stdcall));
@@ -79,7 +72,7 @@ import java.util.function.Consumer;
  *     HRESULT (*add_WindowCloseRequested)(ICoreWebView2 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall));
  *     HRESULT (*remove_WindowCloseRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall));
  * }
- * }
+ *}
  */
 public class ICoreWebView2Vtbl {
 	
@@ -87,81 +80,81 @@ public class ICoreWebView2Vtbl {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("QueryInterface"),
-			Windows.C_POINTER.withName("AddRef"),
-			Windows.C_POINTER.withName("Release"),
-			Windows.C_POINTER.withName("get_Settings"),
-			Windows.C_POINTER.withName("get_Source"),
-			Windows.C_POINTER.withName("Navigate"),
-			Windows.C_POINTER.withName("NavigateToString"),
-			Windows.C_POINTER.withName("add_NavigationStarting"),
-			Windows.C_POINTER.withName("remove_NavigationStarting"),
-			Windows.C_POINTER.withName("add_ContentLoading"),
-			Windows.C_POINTER.withName("remove_ContentLoading"),
-			Windows.C_POINTER.withName("add_SourceChanged"),
-			Windows.C_POINTER.withName("remove_SourceChanged"),
-			Windows.C_POINTER.withName("add_HistoryChanged"),
-			Windows.C_POINTER.withName("remove_HistoryChanged"),
-			Windows.C_POINTER.withName("add_NavigationCompleted"),
-			Windows.C_POINTER.withName("remove_NavigationCompleted"),
-			Windows.C_POINTER.withName("add_FrameNavigationStarting"),
-			Windows.C_POINTER.withName("remove_FrameNavigationStarting"),
-			Windows.C_POINTER.withName("add_FrameNavigationCompleted"),
-			Windows.C_POINTER.withName("remove_FrameNavigationCompleted"),
-			Windows.C_POINTER.withName("add_ScriptDialogOpening"),
-			Windows.C_POINTER.withName("remove_ScriptDialogOpening"),
-			Windows.C_POINTER.withName("add_PermissionRequested"),
-			Windows.C_POINTER.withName("remove_PermissionRequested"),
-			Windows.C_POINTER.withName("add_ProcessFailed"),
-			Windows.C_POINTER.withName("remove_ProcessFailed"),
-			Windows.C_POINTER.withName("AddScriptToExecuteOnDocumentCreated"),
-			Windows.C_POINTER.withName("RemoveScriptToExecuteOnDocumentCreated"),
-			Windows.C_POINTER.withName("ExecuteScript"),
-			Windows.C_POINTER.withName("CapturePreview"),
-			Windows.C_POINTER.withName("Reload"),
-			Windows.C_POINTER.withName("PostWebMessageAsJson"),
-			Windows.C_POINTER.withName("PostWebMessageAsString"),
-			Windows.C_POINTER.withName("add_WebMessageReceived"),
-			Windows.C_POINTER.withName("remove_WebMessageReceived"),
-			Windows.C_POINTER.withName("CallDevToolsProtocolMethod"),
-			Windows.C_POINTER.withName("get_BrowserProcessId"),
-			Windows.C_POINTER.withName("get_CanGoBack"),
-			Windows.C_POINTER.withName("get_CanGoForward"),
-			Windows.C_POINTER.withName("GoBack"),
-			Windows.C_POINTER.withName("GoForward"),
-			Windows.C_POINTER.withName("GetDevToolsProtocolEventReceiver"),
-			Windows.C_POINTER.withName("Stop"),
-			Windows.C_POINTER.withName("add_NewWindowRequested"),
-			Windows.C_POINTER.withName("remove_NewWindowRequested"),
-			Windows.C_POINTER.withName("add_DocumentTitleChanged"),
-			Windows.C_POINTER.withName("remove_DocumentTitleChanged"),
-			Windows.C_POINTER.withName("get_DocumentTitle"),
-			Windows.C_POINTER.withName("AddHostObjectToScript"),
-			Windows.C_POINTER.withName("RemoveHostObjectFromScript"),
-			Windows.C_POINTER.withName("OpenDevToolsWindow"),
-			Windows.C_POINTER.withName("add_ContainsFullScreenElementChanged"),
-			Windows.C_POINTER.withName("remove_ContainsFullScreenElementChanged"),
-			Windows.C_POINTER.withName("get_ContainsFullScreenElement"),
-			Windows.C_POINTER.withName("add_WebResourceRequested"),
-			Windows.C_POINTER.withName("remove_WebResourceRequested"),
-			Windows.C_POINTER.withName("AddWebResourceRequestedFilter"),
-			Windows.C_POINTER.withName("RemoveWebResourceRequestedFilter"),
-			Windows.C_POINTER.withName("add_WindowCloseRequested"),
-			Windows.C_POINTER.withName("remove_WindowCloseRequested")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("QueryInterface"),
+			LayoutUtils.C_POINTER.withName("AddRef"),
+			LayoutUtils.C_POINTER.withName("Release"),
+			LayoutUtils.C_POINTER.withName("get_Settings"),
+			LayoutUtils.C_POINTER.withName("get_Source"),
+			LayoutUtils.C_POINTER.withName("Navigate"),
+			LayoutUtils.C_POINTER.withName("NavigateToString"),
+			LayoutUtils.C_POINTER.withName("add_NavigationStarting"),
+			LayoutUtils.C_POINTER.withName("remove_NavigationStarting"),
+			LayoutUtils.C_POINTER.withName("add_ContentLoading"),
+			LayoutUtils.C_POINTER.withName("remove_ContentLoading"),
+			LayoutUtils.C_POINTER.withName("add_SourceChanged"),
+			LayoutUtils.C_POINTER.withName("remove_SourceChanged"),
+			LayoutUtils.C_POINTER.withName("add_HistoryChanged"),
+			LayoutUtils.C_POINTER.withName("remove_HistoryChanged"),
+			LayoutUtils.C_POINTER.withName("add_NavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("remove_NavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("add_FrameNavigationStarting"),
+			LayoutUtils.C_POINTER.withName("remove_FrameNavigationStarting"),
+			LayoutUtils.C_POINTER.withName("add_FrameNavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("remove_FrameNavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("add_ScriptDialogOpening"),
+			LayoutUtils.C_POINTER.withName("remove_ScriptDialogOpening"),
+			LayoutUtils.C_POINTER.withName("add_PermissionRequested"),
+			LayoutUtils.C_POINTER.withName("remove_PermissionRequested"),
+			LayoutUtils.C_POINTER.withName("add_ProcessFailed"),
+			LayoutUtils.C_POINTER.withName("remove_ProcessFailed"),
+			LayoutUtils.C_POINTER.withName("AddScriptToExecuteOnDocumentCreated"),
+			LayoutUtils.C_POINTER.withName("RemoveScriptToExecuteOnDocumentCreated"),
+			LayoutUtils.C_POINTER.withName("ExecuteScript"),
+			LayoutUtils.C_POINTER.withName("CapturePreview"),
+			LayoutUtils.C_POINTER.withName("Reload"),
+			LayoutUtils.C_POINTER.withName("PostWebMessageAsJson"),
+			LayoutUtils.C_POINTER.withName("PostWebMessageAsString"),
+			LayoutUtils.C_POINTER.withName("add_WebMessageReceived"),
+			LayoutUtils.C_POINTER.withName("remove_WebMessageReceived"),
+			LayoutUtils.C_POINTER.withName("CallDevToolsProtocolMethod"),
+			LayoutUtils.C_POINTER.withName("get_BrowserProcessId"),
+			LayoutUtils.C_POINTER.withName("get_CanGoBack"),
+			LayoutUtils.C_POINTER.withName("get_CanGoForward"),
+			LayoutUtils.C_POINTER.withName("GoBack"),
+			LayoutUtils.C_POINTER.withName("GoForward"),
+			LayoutUtils.C_POINTER.withName("GetDevToolsProtocolEventReceiver"),
+			LayoutUtils.C_POINTER.withName("Stop"),
+			LayoutUtils.C_POINTER.withName("add_NewWindowRequested"),
+			LayoutUtils.C_POINTER.withName("remove_NewWindowRequested"),
+			LayoutUtils.C_POINTER.withName("add_DocumentTitleChanged"),
+			LayoutUtils.C_POINTER.withName("remove_DocumentTitleChanged"),
+			LayoutUtils.C_POINTER.withName("get_DocumentTitle"),
+			LayoutUtils.C_POINTER.withName("AddHostObjectToScript"),
+			LayoutUtils.C_POINTER.withName("RemoveHostObjectFromScript"),
+			LayoutUtils.C_POINTER.withName("OpenDevToolsWindow"),
+			LayoutUtils.C_POINTER.withName("add_ContainsFullScreenElementChanged"),
+			LayoutUtils.C_POINTER.withName("remove_ContainsFullScreenElementChanged"),
+			LayoutUtils.C_POINTER.withName("get_ContainsFullScreenElement"),
+			LayoutUtils.C_POINTER.withName("add_WebResourceRequested"),
+			LayoutUtils.C_POINTER.withName("remove_WebResourceRequested"),
+			LayoutUtils.C_POINTER.withName("AddWebResourceRequestedFilter"),
+			LayoutUtils.C_POINTER.withName("RemoveWebResourceRequestedFilter"),
+			LayoutUtils.C_POINTER.withName("add_WindowCloseRequested"),
+			LayoutUtils.C_POINTER.withName("remove_WindowCloseRequested")
 	).withName("ICoreWebView2Vtbl");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2 *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class QueryInterface {
 		
@@ -177,10 +170,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				LayoutUtils.IID_POINTER,
+				LayoutUtils.VOID_POINTER_POINTER
 		);
 		
 		/**
@@ -190,7 +183,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -205,7 +198,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -214,13 +207,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2 *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout QueryInterface$layout() {
 		return QueryInterface$LAYOUT;
@@ -230,9 +223,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2 *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long QueryInterface$offset() {
 		return QueryInterface$OFFSET;
@@ -240,9 +233,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2 *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment QueryInterface(MemorySegment struct) {
 		return struct.get(QueryInterface$LAYOUT, QueryInterface$OFFSET);
@@ -250,18 +243,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2 *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void QueryInterface(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(QueryInterface$LAYOUT, QueryInterface$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class AddRef {
 		
@@ -277,8 +270,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER
 		);
 		
 		/**
@@ -288,7 +281,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddRef.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddRef.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -303,7 +296,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -312,13 +305,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout AddRef$layout() {
 		return AddRef$LAYOUT;
@@ -328,9 +321,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long AddRef$offset() {
 		return AddRef$OFFSET;
@@ -338,9 +331,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment AddRef(MemorySegment struct) {
 		return struct.get(AddRef$LAYOUT, AddRef$OFFSET);
@@ -348,18 +341,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void AddRef(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(AddRef$LAYOUT, AddRef$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Release {
 		
@@ -375,8 +368,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER
 		);
 		
 		/**
@@ -386,7 +379,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Release.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Release.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -401,7 +394,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -410,13 +403,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Release$layout() {
 		return Release$LAYOUT;
@@ -426,9 +419,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Release$offset() {
 		return Release$OFFSET;
@@ -436,9 +429,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Release(MemorySegment struct) {
 		return struct.get(Release$LAYOUT, Release$OFFSET);
@@ -446,18 +439,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Release(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Settings)(ICoreWebView2 *, ICoreWebView2Settings **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_Settings {
 		
@@ -473,9 +466,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
 		/**
@@ -485,7 +478,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Settings.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_Settings.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -500,7 +493,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -509,13 +502,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_Settings$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Settings"));
+	private static final AddressLayout get_Settings$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_Settings"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Settings)(ICoreWebView2 *, ICoreWebView2Settings **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_Settings$layout() {
 		return get_Settings$LAYOUT;
@@ -525,9 +518,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Settings)(ICoreWebView2 *, ICoreWebView2Settings **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_Settings$offset() {
 		return get_Settings$OFFSET;
@@ -535,9 +528,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Settings)(ICoreWebView2 *, ICoreWebView2Settings **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_Settings(MemorySegment struct) {
 		return struct.get(get_Settings$LAYOUT, get_Settings$OFFSET);
@@ -545,18 +538,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Settings)(ICoreWebView2 *, ICoreWebView2Settings **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_Settings(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_Settings$LAYOUT, get_Settings$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Source)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_Source {
 		
@@ -572,9 +565,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -584,7 +577,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Source.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_Source.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -599,7 +592,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -608,13 +601,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_Source$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Source"));
+	private static final AddressLayout get_Source$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_Source"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Source)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_Source$layout() {
 		return get_Source$LAYOUT;
@@ -624,9 +617,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Source)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_Source$offset() {
 		return get_Source$OFFSET;
@@ -634,9 +627,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Source)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_Source(MemorySegment struct) {
 		return struct.get(get_Source$LAYOUT, get_Source$OFFSET);
@@ -644,18 +637,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Source)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_Source(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_Source$LAYOUT, get_Source$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Navigate)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Navigate {
 		
@@ -671,9 +664,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -683,7 +676,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Navigate.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Navigate.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -698,7 +691,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -707,13 +700,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Navigate$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Navigate"));
+	private static final AddressLayout Navigate$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Navigate"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Navigate)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Navigate$layout() {
 		return Navigate$LAYOUT;
@@ -723,9 +716,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Navigate)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Navigate$offset() {
 		return Navigate$OFFSET;
@@ -733,9 +726,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Navigate)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Navigate(MemorySegment struct) {
 		return struct.get(Navigate$LAYOUT, Navigate$OFFSET);
@@ -743,18 +736,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Navigate)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Navigate(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Navigate$LAYOUT, Navigate$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NavigateToString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class NavigateToString {
 		
@@ -770,9 +763,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -782,7 +775,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(NavigateToString.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(NavigateToString.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -797,7 +790,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -806,13 +799,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout NavigateToString$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("NavigateToString"));
+	private static final AddressLayout NavigateToString$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("NavigateToString"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NavigateToString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout NavigateToString$layout() {
 		return NavigateToString$LAYOUT;
@@ -822,9 +815,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NavigateToString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long NavigateToString$offset() {
 		return NavigateToString$OFFSET;
@@ -832,9 +825,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NavigateToString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment NavigateToString(MemorySegment struct) {
 		return struct.get(NavigateToString$LAYOUT, NavigateToString$OFFSET);
@@ -842,18 +835,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NavigateToString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void NavigateToString(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(NavigateToString$LAYOUT, NavigateToString$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_NavigationStarting {
 		
@@ -869,10 +862,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -882,7 +875,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NavigationStarting.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_NavigationStarting.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -897,7 +890,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -906,13 +899,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NavigationStarting"));
+	private static final AddressLayout add_NavigationStarting$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_NavigationStarting"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_NavigationStarting$layout() {
 		return add_NavigationStarting$LAYOUT;
@@ -922,9 +915,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_NavigationStarting$offset() {
 		return add_NavigationStarting$OFFSET;
@@ -932,9 +925,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_NavigationStarting(MemorySegment struct) {
 		return struct.get(add_NavigationStarting$LAYOUT, add_NavigationStarting$OFFSET);
@@ -942,18 +935,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_NavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_NavigationStarting$LAYOUT, add_NavigationStarting$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_NavigationStarting {
 		
@@ -969,8 +962,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -981,7 +974,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NavigationStarting.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_NavigationStarting.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -996,7 +989,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1005,13 +998,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NavigationStarting"));
+	private static final AddressLayout remove_NavigationStarting$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_NavigationStarting"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_NavigationStarting$layout() {
 		return remove_NavigationStarting$LAYOUT;
@@ -1021,9 +1014,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_NavigationStarting$offset() {
 		return remove_NavigationStarting$OFFSET;
@@ -1031,9 +1024,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_NavigationStarting(MemorySegment struct) {
 		return struct.get(remove_NavigationStarting$LAYOUT, remove_NavigationStarting$OFFSET);
@@ -1041,18 +1034,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_NavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_NavigationStarting$LAYOUT, remove_NavigationStarting$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContentLoading)(ICoreWebView2 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_ContentLoading {
 		
@@ -1068,10 +1061,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1081,7 +1074,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContentLoading.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ContentLoading.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1096,7 +1089,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -1105,13 +1098,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ContentLoading"));
+	private static final AddressLayout add_ContentLoading$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_ContentLoading"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContentLoading)(ICoreWebView2 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_ContentLoading$layout() {
 		return add_ContentLoading$LAYOUT;
@@ -1121,9 +1114,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContentLoading)(ICoreWebView2 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_ContentLoading$offset() {
 		return add_ContentLoading$OFFSET;
@@ -1131,9 +1124,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContentLoading)(ICoreWebView2 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_ContentLoading(MemorySegment struct) {
 		return struct.get(add_ContentLoading$LAYOUT, add_ContentLoading$OFFSET);
@@ -1141,18 +1134,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContentLoading)(ICoreWebView2 *, ICoreWebView2ContentLoadingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_ContentLoading(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_ContentLoading$LAYOUT, add_ContentLoading$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContentLoading)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_ContentLoading {
 		
@@ -1168,8 +1161,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1180,7 +1173,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContentLoading.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ContentLoading.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1195,7 +1188,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1204,13 +1197,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ContentLoading$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ContentLoading"));
+	private static final AddressLayout remove_ContentLoading$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_ContentLoading"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContentLoading)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_ContentLoading$layout() {
 		return remove_ContentLoading$LAYOUT;
@@ -1220,9 +1213,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContentLoading)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_ContentLoading$offset() {
 		return remove_ContentLoading$OFFSET;
@@ -1230,9 +1223,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContentLoading)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_ContentLoading(MemorySegment struct) {
 		return struct.get(remove_ContentLoading$LAYOUT, remove_ContentLoading$OFFSET);
@@ -1240,18 +1233,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContentLoading)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_ContentLoading(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_ContentLoading$LAYOUT, remove_ContentLoading$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_SourceChanged)(ICoreWebView2 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_SourceChanged {
 		
@@ -1267,10 +1260,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1280,7 +1273,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_SourceChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_SourceChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1295,7 +1288,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -1304,13 +1297,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_SourceChanged"));
+	private static final AddressLayout add_SourceChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_SourceChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_SourceChanged)(ICoreWebView2 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_SourceChanged$layout() {
 		return add_SourceChanged$LAYOUT;
@@ -1320,9 +1313,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_SourceChanged)(ICoreWebView2 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_SourceChanged$offset() {
 		return add_SourceChanged$OFFSET;
@@ -1330,9 +1323,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_SourceChanged)(ICoreWebView2 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_SourceChanged(MemorySegment struct) {
 		return struct.get(add_SourceChanged$LAYOUT, add_SourceChanged$OFFSET);
@@ -1340,18 +1333,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_SourceChanged)(ICoreWebView2 *, ICoreWebView2SourceChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_SourceChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_SourceChanged$LAYOUT, add_SourceChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_SourceChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_SourceChanged {
 		
@@ -1367,8 +1360,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1379,7 +1372,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_SourceChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_SourceChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1394,7 +1387,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1403,13 +1396,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_SourceChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_SourceChanged"));
+	private static final AddressLayout remove_SourceChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_SourceChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_SourceChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_SourceChanged$layout() {
 		return remove_SourceChanged$LAYOUT;
@@ -1419,9 +1412,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_SourceChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_SourceChanged$offset() {
 		return remove_SourceChanged$OFFSET;
@@ -1429,9 +1422,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_SourceChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_SourceChanged(MemorySegment struct) {
 		return struct.get(remove_SourceChanged$LAYOUT, remove_SourceChanged$OFFSET);
@@ -1439,18 +1432,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_SourceChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_SourceChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_SourceChanged$LAYOUT, remove_SourceChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_HistoryChanged)(ICoreWebView2 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_HistoryChanged {
 		
@@ -1466,10 +1459,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1479,7 +1472,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_HistoryChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_HistoryChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1494,7 +1487,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -1503,13 +1496,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_HistoryChanged"));
+	private static final AddressLayout add_HistoryChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_HistoryChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_HistoryChanged)(ICoreWebView2 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_HistoryChanged$layout() {
 		return add_HistoryChanged$LAYOUT;
@@ -1519,9 +1512,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_HistoryChanged)(ICoreWebView2 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_HistoryChanged$offset() {
 		return add_HistoryChanged$OFFSET;
@@ -1529,9 +1522,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_HistoryChanged)(ICoreWebView2 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_HistoryChanged(MemorySegment struct) {
 		return struct.get(add_HistoryChanged$LAYOUT, add_HistoryChanged$OFFSET);
@@ -1539,18 +1532,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_HistoryChanged)(ICoreWebView2 *, ICoreWebView2HistoryChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_HistoryChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_HistoryChanged$LAYOUT, add_HistoryChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_HistoryChanged {
 		
@@ -1566,8 +1559,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1578,7 +1571,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_HistoryChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_HistoryChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1593,7 +1586,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1602,13 +1595,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_HistoryChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_HistoryChanged"));
+	private static final AddressLayout remove_HistoryChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_HistoryChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_HistoryChanged$layout() {
 		return remove_HistoryChanged$LAYOUT;
@@ -1618,9 +1611,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_HistoryChanged$offset() {
 		return remove_HistoryChanged$OFFSET;
@@ -1628,9 +1621,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_HistoryChanged(MemorySegment struct) {
 		return struct.get(remove_HistoryChanged$LAYOUT, remove_HistoryChanged$OFFSET);
@@ -1638,18 +1631,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_HistoryChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_HistoryChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_HistoryChanged$LAYOUT, remove_HistoryChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_NavigationCompleted {
 		
@@ -1665,10 +1658,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1678,7 +1671,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NavigationCompleted.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_NavigationCompleted.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1693,7 +1686,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -1702,13 +1695,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NavigationCompleted"));
+	private static final AddressLayout add_NavigationCompleted$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_NavigationCompleted"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_NavigationCompleted$layout() {
 		return add_NavigationCompleted$LAYOUT;
@@ -1718,9 +1711,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_NavigationCompleted$offset() {
 		return add_NavigationCompleted$OFFSET;
@@ -1728,9 +1721,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_NavigationCompleted(MemorySegment struct) {
 		return struct.get(add_NavigationCompleted$LAYOUT, add_NavigationCompleted$OFFSET);
@@ -1738,18 +1731,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_NavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_NavigationCompleted$LAYOUT, add_NavigationCompleted$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_NavigationCompleted {
 		
@@ -1765,8 +1758,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1777,7 +1770,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NavigationCompleted.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_NavigationCompleted.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1792,7 +1785,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1801,13 +1794,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NavigationCompleted"));
+	private static final AddressLayout remove_NavigationCompleted$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_NavigationCompleted"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_NavigationCompleted$layout() {
 		return remove_NavigationCompleted$LAYOUT;
@@ -1817,9 +1810,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_NavigationCompleted$offset() {
 		return remove_NavigationCompleted$OFFSET;
@@ -1827,9 +1820,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_NavigationCompleted(MemorySegment struct) {
 		return struct.get(remove_NavigationCompleted$LAYOUT, remove_NavigationCompleted$OFFSET);
@@ -1837,18 +1830,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_NavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_NavigationCompleted$LAYOUT, remove_NavigationCompleted$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_FrameNavigationStarting {
 		
@@ -1864,10 +1857,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1877,7 +1870,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameNavigationStarting.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_FrameNavigationStarting.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1892,7 +1885,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -1901,13 +1894,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_FrameNavigationStarting"));
+	private static final AddressLayout add_FrameNavigationStarting$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_FrameNavigationStarting"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_FrameNavigationStarting$layout() {
 		return add_FrameNavigationStarting$LAYOUT;
@@ -1917,9 +1910,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_FrameNavigationStarting$offset() {
 		return add_FrameNavigationStarting$OFFSET;
@@ -1927,9 +1920,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_FrameNavigationStarting(MemorySegment struct) {
 		return struct.get(add_FrameNavigationStarting$LAYOUT, add_FrameNavigationStarting$OFFSET);
@@ -1937,18 +1930,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationStarting)(ICoreWebView2 *, ICoreWebView2NavigationStartingEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_FrameNavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_FrameNavigationStarting$LAYOUT, add_FrameNavigationStarting$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_FrameNavigationStarting {
 		
@@ -1964,8 +1957,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1976,7 +1969,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameNavigationStarting.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_FrameNavigationStarting.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1991,7 +1984,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2000,13 +1993,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_FrameNavigationStarting$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_FrameNavigationStarting"));
+	private static final AddressLayout remove_FrameNavigationStarting$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_FrameNavigationStarting"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_FrameNavigationStarting$layout() {
 		return remove_FrameNavigationStarting$LAYOUT;
@@ -2016,9 +2009,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_FrameNavigationStarting$offset() {
 		return remove_FrameNavigationStarting$OFFSET;
@@ -2026,9 +2019,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_FrameNavigationStarting(MemorySegment struct) {
 		return struct.get(remove_FrameNavigationStarting$LAYOUT, remove_FrameNavigationStarting$OFFSET);
@@ -2036,18 +2029,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationStarting)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_FrameNavigationStarting(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_FrameNavigationStarting$LAYOUT, remove_FrameNavigationStarting$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_FrameNavigationCompleted {
 		
@@ -2063,10 +2056,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2076,7 +2069,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameNavigationCompleted.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_FrameNavigationCompleted.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2091,7 +2084,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -2100,13 +2093,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_FrameNavigationCompleted"));
+	private static final AddressLayout add_FrameNavigationCompleted$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_FrameNavigationCompleted"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_FrameNavigationCompleted$layout() {
 		return add_FrameNavigationCompleted$LAYOUT;
@@ -2116,9 +2109,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_FrameNavigationCompleted$offset() {
 		return add_FrameNavigationCompleted$OFFSET;
@@ -2126,9 +2119,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_FrameNavigationCompleted(MemorySegment struct) {
 		return struct.get(add_FrameNavigationCompleted$LAYOUT, add_FrameNavigationCompleted$OFFSET);
@@ -2136,18 +2129,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_FrameNavigationCompleted)(ICoreWebView2 *, ICoreWebView2NavigationCompletedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_FrameNavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_FrameNavigationCompleted$LAYOUT, add_FrameNavigationCompleted$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_FrameNavigationCompleted {
 		
@@ -2163,8 +2156,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2175,7 +2168,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameNavigationCompleted.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_FrameNavigationCompleted.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2190,7 +2183,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2199,13 +2192,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_FrameNavigationCompleted$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_FrameNavigationCompleted"));
+	private static final AddressLayout remove_FrameNavigationCompleted$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_FrameNavigationCompleted"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_FrameNavigationCompleted$layout() {
 		return remove_FrameNavigationCompleted$LAYOUT;
@@ -2215,9 +2208,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_FrameNavigationCompleted$offset() {
 		return remove_FrameNavigationCompleted$OFFSET;
@@ -2225,9 +2218,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_FrameNavigationCompleted(MemorySegment struct) {
 		return struct.get(remove_FrameNavigationCompleted$LAYOUT, remove_FrameNavigationCompleted$OFFSET);
@@ -2235,18 +2228,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_FrameNavigationCompleted)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_FrameNavigationCompleted(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_FrameNavigationCompleted$LAYOUT, remove_FrameNavigationCompleted$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_ScriptDialogOpening {
 		
@@ -2262,10 +2255,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2275,7 +2268,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ScriptDialogOpening.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ScriptDialogOpening.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2290,7 +2283,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -2299,13 +2292,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ScriptDialogOpening"));
+	private static final AddressLayout add_ScriptDialogOpening$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_ScriptDialogOpening"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_ScriptDialogOpening$layout() {
 		return add_ScriptDialogOpening$LAYOUT;
@@ -2315,9 +2308,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_ScriptDialogOpening$offset() {
 		return add_ScriptDialogOpening$OFFSET;
@@ -2325,9 +2318,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_ScriptDialogOpening(MemorySegment struct) {
 		return struct.get(add_ScriptDialogOpening$LAYOUT, add_ScriptDialogOpening$OFFSET);
@@ -2335,18 +2328,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ScriptDialogOpening)(ICoreWebView2 *, ICoreWebView2ScriptDialogOpeningEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_ScriptDialogOpening(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_ScriptDialogOpening$LAYOUT, add_ScriptDialogOpening$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_ScriptDialogOpening {
 		
@@ -2362,8 +2355,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2374,7 +2367,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ScriptDialogOpening.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ScriptDialogOpening.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2389,7 +2382,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2398,13 +2391,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ScriptDialogOpening$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ScriptDialogOpening"));
+	private static final AddressLayout remove_ScriptDialogOpening$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_ScriptDialogOpening"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_ScriptDialogOpening$layout() {
 		return remove_ScriptDialogOpening$LAYOUT;
@@ -2414,9 +2407,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_ScriptDialogOpening$offset() {
 		return remove_ScriptDialogOpening$OFFSET;
@@ -2424,9 +2417,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_ScriptDialogOpening(MemorySegment struct) {
 		return struct.get(remove_ScriptDialogOpening$LAYOUT, remove_ScriptDialogOpening$OFFSET);
@@ -2434,18 +2427,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ScriptDialogOpening)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_ScriptDialogOpening(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_ScriptDialogOpening$LAYOUT, remove_ScriptDialogOpening$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_PermissionRequested)(ICoreWebView2 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_PermissionRequested {
 		
@@ -2461,10 +2454,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2474,7 +2467,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_PermissionRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_PermissionRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2489,7 +2482,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -2498,13 +2491,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_PermissionRequested"));
+	private static final AddressLayout add_PermissionRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_PermissionRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_PermissionRequested)(ICoreWebView2 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_PermissionRequested$layout() {
 		return add_PermissionRequested$LAYOUT;
@@ -2514,9 +2507,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_PermissionRequested)(ICoreWebView2 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_PermissionRequested$offset() {
 		return add_PermissionRequested$OFFSET;
@@ -2524,9 +2517,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_PermissionRequested)(ICoreWebView2 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_PermissionRequested(MemorySegment struct) {
 		return struct.get(add_PermissionRequested$LAYOUT, add_PermissionRequested$OFFSET);
@@ -2534,18 +2527,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_PermissionRequested)(ICoreWebView2 *, ICoreWebView2PermissionRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_PermissionRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_PermissionRequested$LAYOUT, add_PermissionRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_PermissionRequested {
 		
@@ -2561,8 +2554,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2573,7 +2566,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_PermissionRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_PermissionRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2588,7 +2581,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2597,13 +2590,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_PermissionRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_PermissionRequested"));
+	private static final AddressLayout remove_PermissionRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_PermissionRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_PermissionRequested$layout() {
 		return remove_PermissionRequested$LAYOUT;
@@ -2613,9 +2606,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_PermissionRequested$offset() {
 		return remove_PermissionRequested$OFFSET;
@@ -2623,9 +2616,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_PermissionRequested(MemorySegment struct) {
 		return struct.get(remove_PermissionRequested$LAYOUT, remove_PermissionRequested$OFFSET);
@@ -2633,18 +2626,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_PermissionRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_PermissionRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_PermissionRequested$LAYOUT, remove_PermissionRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ProcessFailed)(ICoreWebView2 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_ProcessFailed {
 		
@@ -2660,10 +2653,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2673,7 +2666,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ProcessFailed.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ProcessFailed.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2688,7 +2681,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -2697,13 +2690,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ProcessFailed"));
+	private static final AddressLayout add_ProcessFailed$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_ProcessFailed"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ProcessFailed)(ICoreWebView2 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_ProcessFailed$layout() {
 		return add_ProcessFailed$LAYOUT;
@@ -2713,9 +2706,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ProcessFailed)(ICoreWebView2 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_ProcessFailed$offset() {
 		return add_ProcessFailed$OFFSET;
@@ -2723,9 +2716,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ProcessFailed)(ICoreWebView2 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_ProcessFailed(MemorySegment struct) {
 		return struct.get(add_ProcessFailed$LAYOUT, add_ProcessFailed$OFFSET);
@@ -2733,18 +2726,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ProcessFailed)(ICoreWebView2 *, ICoreWebView2ProcessFailedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_ProcessFailed(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_ProcessFailed$LAYOUT, add_ProcessFailed$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_ProcessFailed {
 		
@@ -2760,8 +2753,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2772,7 +2765,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ProcessFailed.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ProcessFailed.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2787,7 +2780,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2796,13 +2789,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ProcessFailed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ProcessFailed"));
+	private static final AddressLayout remove_ProcessFailed$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_ProcessFailed"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_ProcessFailed$layout() {
 		return remove_ProcessFailed$LAYOUT;
@@ -2812,9 +2805,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_ProcessFailed$offset() {
 		return remove_ProcessFailed$OFFSET;
@@ -2822,9 +2815,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_ProcessFailed(MemorySegment struct) {
 		return struct.get(remove_ProcessFailed$LAYOUT, remove_ProcessFailed$OFFSET);
@@ -2832,18 +2825,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ProcessFailed)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_ProcessFailed(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_ProcessFailed$LAYOUT, remove_ProcessFailed$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class AddScriptToExecuteOnDocumentCreated {
 		
@@ -2859,10 +2852,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2872,7 +2865,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2887,7 +2880,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -2896,13 +2889,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddScriptToExecuteOnDocumentCreated"));
+	private static final AddressLayout AddScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("AddScriptToExecuteOnDocumentCreated"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout AddScriptToExecuteOnDocumentCreated$layout() {
 		return AddScriptToExecuteOnDocumentCreated$LAYOUT;
@@ -2912,9 +2905,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long AddScriptToExecuteOnDocumentCreated$offset() {
 		return AddScriptToExecuteOnDocumentCreated$OFFSET;
@@ -2922,9 +2915,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment AddScriptToExecuteOnDocumentCreated(MemorySegment struct) {
 		return struct.get(AddScriptToExecuteOnDocumentCreated$LAYOUT, AddScriptToExecuteOnDocumentCreated$OFFSET);
@@ -2932,18 +2925,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void AddScriptToExecuteOnDocumentCreated(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(AddScriptToExecuteOnDocumentCreated$LAYOUT, AddScriptToExecuteOnDocumentCreated$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class RemoveScriptToExecuteOnDocumentCreated {
 		
@@ -2959,9 +2952,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2971,7 +2964,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(RemoveScriptToExecuteOnDocumentCreated.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2986,7 +2979,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2995,13 +2988,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("RemoveScriptToExecuteOnDocumentCreated"));
+	private static final AddressLayout RemoveScriptToExecuteOnDocumentCreated$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("RemoveScriptToExecuteOnDocumentCreated"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout RemoveScriptToExecuteOnDocumentCreated$layout() {
 		return RemoveScriptToExecuteOnDocumentCreated$LAYOUT;
@@ -3011,9 +3004,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long RemoveScriptToExecuteOnDocumentCreated$offset() {
 		return RemoveScriptToExecuteOnDocumentCreated$OFFSET;
@@ -3021,9 +3014,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment RemoveScriptToExecuteOnDocumentCreated(MemorySegment struct) {
 		return struct.get(RemoveScriptToExecuteOnDocumentCreated$LAYOUT, RemoveScriptToExecuteOnDocumentCreated$OFFSET);
@@ -3031,18 +3024,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveScriptToExecuteOnDocumentCreated)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void RemoveScriptToExecuteOnDocumentCreated(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(RemoveScriptToExecuteOnDocumentCreated$LAYOUT, RemoveScriptToExecuteOnDocumentCreated$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*ExecuteScript)(ICoreWebView2 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class ExecuteScript {
 		
@@ -3058,10 +3051,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3071,7 +3064,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(ExecuteScript.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(ExecuteScript.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3086,7 +3079,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -3095,13 +3088,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout ExecuteScript$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("ExecuteScript"));
+	private static final AddressLayout ExecuteScript$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("ExecuteScript"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*ExecuteScript)(ICoreWebView2 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout ExecuteScript$layout() {
 		return ExecuteScript$LAYOUT;
@@ -3111,9 +3104,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*ExecuteScript)(ICoreWebView2 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long ExecuteScript$offset() {
 		return ExecuteScript$OFFSET;
@@ -3121,9 +3114,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*ExecuteScript)(ICoreWebView2 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment ExecuteScript(MemorySegment struct) {
 		return struct.get(ExecuteScript$LAYOUT, ExecuteScript$OFFSET);
@@ -3131,18 +3124,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*ExecuteScript)(ICoreWebView2 *, LPCWSTR, ICoreWebView2ExecuteScriptCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void ExecuteScript(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(ExecuteScript$LAYOUT, ExecuteScript$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CapturePreview)(ICoreWebView2 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class CapturePreview {
 		
@@ -3158,11 +3151,11 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3172,7 +3165,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(CapturePreview.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(CapturePreview.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3187,7 +3180,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
 			} catch (Throwable ex$) {
@@ -3196,13 +3189,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout CapturePreview$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("CapturePreview"));
+	private static final AddressLayout CapturePreview$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("CapturePreview"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CapturePreview)(ICoreWebView2 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout CapturePreview$layout() {
 		return CapturePreview$LAYOUT;
@@ -3212,9 +3205,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CapturePreview)(ICoreWebView2 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long CapturePreview$offset() {
 		return CapturePreview$OFFSET;
@@ -3222,9 +3215,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CapturePreview)(ICoreWebView2 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment CapturePreview(MemorySegment struct) {
 		return struct.get(CapturePreview$LAYOUT, CapturePreview$OFFSET);
@@ -3232,18 +3225,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CapturePreview)(ICoreWebView2 *, COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT, IStream *, ICoreWebView2CapturePreviewCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void CapturePreview(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(CapturePreview$LAYOUT, CapturePreview$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Reload)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Reload {
 		
@@ -3259,8 +3252,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3270,7 +3263,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Reload.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Reload.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3285,7 +3278,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -3294,13 +3287,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Reload$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Reload"));
+	private static final AddressLayout Reload$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Reload"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Reload)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Reload$layout() {
 		return Reload$LAYOUT;
@@ -3310,9 +3303,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Reload)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Reload$offset() {
 		return Reload$OFFSET;
@@ -3320,9 +3313,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Reload)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Reload(MemorySegment struct) {
 		return struct.get(Reload$LAYOUT, Reload$OFFSET);
@@ -3330,18 +3323,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Reload)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Reload(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Reload$LAYOUT, Reload$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class PostWebMessageAsJson {
 		
@@ -3357,9 +3350,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3369,7 +3362,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(PostWebMessageAsJson.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(PostWebMessageAsJson.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3384,7 +3377,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -3393,13 +3386,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout PostWebMessageAsJson$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("PostWebMessageAsJson"));
+	private static final AddressLayout PostWebMessageAsJson$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("PostWebMessageAsJson"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout PostWebMessageAsJson$layout() {
 		return PostWebMessageAsJson$LAYOUT;
@@ -3409,9 +3402,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long PostWebMessageAsJson$offset() {
 		return PostWebMessageAsJson$OFFSET;
@@ -3419,9 +3412,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment PostWebMessageAsJson(MemorySegment struct) {
 		return struct.get(PostWebMessageAsJson$LAYOUT, PostWebMessageAsJson$OFFSET);
@@ -3429,18 +3422,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsJson)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void PostWebMessageAsJson(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(PostWebMessageAsJson$LAYOUT, PostWebMessageAsJson$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class PostWebMessageAsString {
 		
@@ -3456,9 +3449,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3468,7 +3461,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(PostWebMessageAsString.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(PostWebMessageAsString.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3483,7 +3476,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -3492,13 +3485,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout PostWebMessageAsString$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("PostWebMessageAsString"));
+	private static final AddressLayout PostWebMessageAsString$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("PostWebMessageAsString"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout PostWebMessageAsString$layout() {
 		return PostWebMessageAsString$LAYOUT;
@@ -3508,9 +3501,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long PostWebMessageAsString$offset() {
 		return PostWebMessageAsString$OFFSET;
@@ -3518,9 +3511,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment PostWebMessageAsString(MemorySegment struct) {
 		return struct.get(PostWebMessageAsString$LAYOUT, PostWebMessageAsString$OFFSET);
@@ -3528,18 +3521,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*PostWebMessageAsString)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void PostWebMessageAsString(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(PostWebMessageAsString$LAYOUT, PostWebMessageAsString$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_WebMessageReceived {
 		
@@ -3555,10 +3548,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3568,7 +3561,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebMessageReceived.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_WebMessageReceived.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3583,7 +3576,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -3592,13 +3585,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_WebMessageReceived"));
+	private static final AddressLayout add_WebMessageReceived$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_WebMessageReceived"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_WebMessageReceived$layout() {
 		return add_WebMessageReceived$LAYOUT;
@@ -3608,9 +3601,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_WebMessageReceived$offset() {
 		return add_WebMessageReceived$OFFSET;
@@ -3618,9 +3611,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_WebMessageReceived(MemorySegment struct) {
 		return struct.get(add_WebMessageReceived$LAYOUT, add_WebMessageReceived$OFFSET);
@@ -3628,18 +3621,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebMessageReceived)(ICoreWebView2 *, ICoreWebView2WebMessageReceivedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_WebMessageReceived(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_WebMessageReceived$LAYOUT, add_WebMessageReceived$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_WebMessageReceived {
 		
@@ -3655,8 +3648,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -3667,7 +3660,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebMessageReceived.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_WebMessageReceived.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3682,7 +3675,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -3691,13 +3684,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_WebMessageReceived$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_WebMessageReceived"));
+	private static final AddressLayout remove_WebMessageReceived$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_WebMessageReceived"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_WebMessageReceived$layout() {
 		return remove_WebMessageReceived$LAYOUT;
@@ -3707,9 +3700,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_WebMessageReceived$offset() {
 		return remove_WebMessageReceived$OFFSET;
@@ -3717,9 +3710,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_WebMessageReceived(MemorySegment struct) {
 		return struct.get(remove_WebMessageReceived$LAYOUT, remove_WebMessageReceived$OFFSET);
@@ -3727,18 +3720,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebMessageReceived)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_WebMessageReceived(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_WebMessageReceived$LAYOUT, remove_WebMessageReceived$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class CallDevToolsProtocolMethod {
 		
@@ -3754,11 +3747,11 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3768,7 +3761,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(CallDevToolsProtocolMethod.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(CallDevToolsProtocolMethod.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3783,7 +3776,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
 			} catch (Throwable ex$) {
@@ -3792,13 +3785,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout CallDevToolsProtocolMethod$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("CallDevToolsProtocolMethod"));
+	private static final AddressLayout CallDevToolsProtocolMethod$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("CallDevToolsProtocolMethod"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout CallDevToolsProtocolMethod$layout() {
 		return CallDevToolsProtocolMethod$LAYOUT;
@@ -3808,9 +3801,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long CallDevToolsProtocolMethod$offset() {
 		return CallDevToolsProtocolMethod$OFFSET;
@@ -3818,9 +3811,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment CallDevToolsProtocolMethod(MemorySegment struct) {
 		return struct.get(CallDevToolsProtocolMethod$LAYOUT, CallDevToolsProtocolMethod$OFFSET);
@@ -3828,18 +3821,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*CallDevToolsProtocolMethod)(ICoreWebView2 *, LPCWSTR, LPCWSTR, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void CallDevToolsProtocolMethod(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(CallDevToolsProtocolMethod$LAYOUT, CallDevToolsProtocolMethod$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2 *, UINT32 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_BrowserProcessId {
 		
@@ -3855,9 +3848,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3867,7 +3860,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_BrowserProcessId.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_BrowserProcessId.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3882,7 +3875,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -3891,13 +3884,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_BrowserProcessId$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_BrowserProcessId"));
+	private static final AddressLayout get_BrowserProcessId$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_BrowserProcessId"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2 *, UINT32 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_BrowserProcessId$layout() {
 		return get_BrowserProcessId$LAYOUT;
@@ -3907,9 +3900,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2 *, UINT32 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_BrowserProcessId$offset() {
 		return get_BrowserProcessId$OFFSET;
@@ -3917,9 +3910,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2 *, UINT32 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_BrowserProcessId(MemorySegment struct) {
 		return struct.get(get_BrowserProcessId$LAYOUT, get_BrowserProcessId$OFFSET);
@@ -3927,18 +3920,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_BrowserProcessId)(ICoreWebView2 *, UINT32 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_BrowserProcessId(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_BrowserProcessId$LAYOUT, get_BrowserProcessId$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoBack)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_CanGoBack {
 		
@@ -3954,9 +3947,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -3966,7 +3959,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CanGoBack.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_CanGoBack.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3981,7 +3974,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -3990,13 +3983,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_CanGoBack$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_CanGoBack"));
+	private static final AddressLayout get_CanGoBack$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_CanGoBack"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoBack)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_CanGoBack$layout() {
 		return get_CanGoBack$LAYOUT;
@@ -4006,9 +3999,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoBack)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_CanGoBack$offset() {
 		return get_CanGoBack$OFFSET;
@@ -4016,9 +4009,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoBack)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_CanGoBack(MemorySegment struct) {
 		return struct.get(get_CanGoBack$LAYOUT, get_CanGoBack$OFFSET);
@@ -4026,18 +4019,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoBack)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_CanGoBack(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_CanGoBack$LAYOUT, get_CanGoBack$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoForward)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_CanGoForward {
 		
@@ -4053,9 +4046,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -4065,7 +4058,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CanGoForward.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_CanGoForward.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4080,7 +4073,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -4089,13 +4082,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_CanGoForward$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_CanGoForward"));
+	private static final AddressLayout get_CanGoForward$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_CanGoForward"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoForward)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_CanGoForward$layout() {
 		return get_CanGoForward$LAYOUT;
@@ -4105,9 +4098,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoForward)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_CanGoForward$offset() {
 		return get_CanGoForward$OFFSET;
@@ -4115,9 +4108,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoForward)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_CanGoForward(MemorySegment struct) {
 		return struct.get(get_CanGoForward$LAYOUT, get_CanGoForward$OFFSET);
@@ -4125,18 +4118,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CanGoForward)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_CanGoForward(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_CanGoForward$LAYOUT, get_CanGoForward$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoBack)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class GoBack {
 		
@@ -4152,8 +4145,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4163,7 +4156,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(GoBack.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(GoBack.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4178,7 +4171,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -4187,13 +4180,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout GoBack$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("GoBack"));
+	private static final AddressLayout GoBack$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("GoBack"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoBack)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout GoBack$layout() {
 		return GoBack$LAYOUT;
@@ -4203,9 +4196,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoBack)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long GoBack$offset() {
 		return GoBack$OFFSET;
@@ -4213,9 +4206,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoBack)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment GoBack(MemorySegment struct) {
 		return struct.get(GoBack$LAYOUT, GoBack$OFFSET);
@@ -4223,18 +4216,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoBack)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void GoBack(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(GoBack$LAYOUT, GoBack$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoForward)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class GoForward {
 		
@@ -4250,8 +4243,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4261,7 +4254,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(GoForward.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(GoForward.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4276,7 +4269,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -4285,13 +4278,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout GoForward$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("GoForward"));
+	private static final AddressLayout GoForward$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("GoForward"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoForward)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout GoForward$layout() {
 		return GoForward$LAYOUT;
@@ -4301,9 +4294,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoForward)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long GoForward$offset() {
 		return GoForward$OFFSET;
@@ -4311,9 +4304,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoForward)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment GoForward(MemorySegment struct) {
 		return struct.get(GoForward$LAYOUT, GoForward$OFFSET);
@@ -4321,18 +4314,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GoForward)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void GoForward(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(GoForward$LAYOUT, GoForward$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class GetDevToolsProtocolEventReceiver {
 		
@@ -4348,10 +4341,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4361,7 +4354,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(GetDevToolsProtocolEventReceiver.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(GetDevToolsProtocolEventReceiver.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4376,7 +4369,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -4385,13 +4378,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout GetDevToolsProtocolEventReceiver$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("GetDevToolsProtocolEventReceiver"));
+	private static final AddressLayout GetDevToolsProtocolEventReceiver$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("GetDevToolsProtocolEventReceiver"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout GetDevToolsProtocolEventReceiver$layout() {
 		return GetDevToolsProtocolEventReceiver$LAYOUT;
@@ -4401,9 +4394,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long GetDevToolsProtocolEventReceiver$offset() {
 		return GetDevToolsProtocolEventReceiver$OFFSET;
@@ -4411,9 +4404,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment GetDevToolsProtocolEventReceiver(MemorySegment struct) {
 		return struct.get(GetDevToolsProtocolEventReceiver$LAYOUT, GetDevToolsProtocolEventReceiver$OFFSET);
@@ -4421,18 +4414,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*GetDevToolsProtocolEventReceiver)(ICoreWebView2 *, LPCWSTR, ICoreWebView2DevToolsProtocolEventReceiver **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void GetDevToolsProtocolEventReceiver(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(GetDevToolsProtocolEventReceiver$LAYOUT, GetDevToolsProtocolEventReceiver$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Stop)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Stop {
 		
@@ -4448,8 +4441,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4459,7 +4452,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Stop.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Stop.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4474,7 +4467,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -4483,13 +4476,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout Stop$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Stop"));
+	private static final AddressLayout Stop$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Stop"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Stop)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Stop$layout() {
 		return Stop$LAYOUT;
@@ -4499,9 +4492,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Stop)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Stop$offset() {
 		return Stop$OFFSET;
@@ -4509,9 +4502,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Stop)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Stop(MemorySegment struct) {
 		return struct.get(Stop$LAYOUT, Stop$OFFSET);
@@ -4519,18 +4512,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Stop)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Stop(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Stop$LAYOUT, Stop$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_NewWindowRequested {
 		
@@ -4546,10 +4539,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4559,7 +4552,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_NewWindowRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_NewWindowRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4574,7 +4567,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -4583,13 +4576,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_NewWindowRequested"));
+	private static final AddressLayout add_NewWindowRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_NewWindowRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_NewWindowRequested$layout() {
 		return add_NewWindowRequested$LAYOUT;
@@ -4599,9 +4592,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_NewWindowRequested$offset() {
 		return add_NewWindowRequested$OFFSET;
@@ -4609,9 +4602,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_NewWindowRequested(MemorySegment struct) {
 		return struct.get(add_NewWindowRequested$LAYOUT, add_NewWindowRequested$OFFSET);
@@ -4619,18 +4612,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_NewWindowRequested)(ICoreWebView2 *, ICoreWebView2NewWindowRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_NewWindowRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_NewWindowRequested$LAYOUT, add_NewWindowRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_NewWindowRequested {
 		
@@ -4646,8 +4639,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4658,7 +4651,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_NewWindowRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_NewWindowRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4673,7 +4666,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -4682,13 +4675,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_NewWindowRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_NewWindowRequested"));
+	private static final AddressLayout remove_NewWindowRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_NewWindowRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_NewWindowRequested$layout() {
 		return remove_NewWindowRequested$LAYOUT;
@@ -4698,9 +4691,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_NewWindowRequested$offset() {
 		return remove_NewWindowRequested$OFFSET;
@@ -4708,9 +4701,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_NewWindowRequested(MemorySegment struct) {
 		return struct.get(remove_NewWindowRequested$LAYOUT, remove_NewWindowRequested$OFFSET);
@@ -4718,18 +4711,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_NewWindowRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_NewWindowRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_NewWindowRequested$LAYOUT, remove_NewWindowRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_DocumentTitleChanged {
 		
@@ -4745,10 +4738,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4758,7 +4751,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_DocumentTitleChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_DocumentTitleChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4773,7 +4766,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -4782,13 +4775,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_DocumentTitleChanged"));
+	private static final AddressLayout add_DocumentTitleChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_DocumentTitleChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_DocumentTitleChanged$layout() {
 		return add_DocumentTitleChanged$LAYOUT;
@@ -4798,9 +4791,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_DocumentTitleChanged$offset() {
 		return add_DocumentTitleChanged$OFFSET;
@@ -4808,9 +4801,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_DocumentTitleChanged(MemorySegment struct) {
 		return struct.get(add_DocumentTitleChanged$LAYOUT, add_DocumentTitleChanged$OFFSET);
@@ -4818,18 +4811,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_DocumentTitleChanged)(ICoreWebView2 *, ICoreWebView2DocumentTitleChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_DocumentTitleChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_DocumentTitleChanged$LAYOUT, add_DocumentTitleChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_DocumentTitleChanged {
 		
@@ -4845,8 +4838,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4857,7 +4850,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DocumentTitleChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_DocumentTitleChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4872,7 +4865,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -4881,13 +4874,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_DocumentTitleChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_DocumentTitleChanged"));
+	private static final AddressLayout remove_DocumentTitleChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_DocumentTitleChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_DocumentTitleChanged$layout() {
 		return remove_DocumentTitleChanged$LAYOUT;
@@ -4897,9 +4890,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_DocumentTitleChanged$offset() {
 		return remove_DocumentTitleChanged$OFFSET;
@@ -4907,9 +4900,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_DocumentTitleChanged(MemorySegment struct) {
 		return struct.get(remove_DocumentTitleChanged$LAYOUT, remove_DocumentTitleChanged$OFFSET);
@@ -4917,18 +4910,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_DocumentTitleChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_DocumentTitleChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_DocumentTitleChanged$LAYOUT, remove_DocumentTitleChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_DocumentTitle)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_DocumentTitle {
 		
@@ -4944,9 +4937,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4956,7 +4949,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_DocumentTitle.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_DocumentTitle.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4971,7 +4964,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -4980,13 +4973,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_DocumentTitle$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_DocumentTitle"));
+	private static final AddressLayout get_DocumentTitle$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_DocumentTitle"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_DocumentTitle)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_DocumentTitle$layout() {
 		return get_DocumentTitle$LAYOUT;
@@ -4996,9 +4989,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_DocumentTitle)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_DocumentTitle$offset() {
 		return get_DocumentTitle$OFFSET;
@@ -5006,9 +4999,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_DocumentTitle)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_DocumentTitle(MemorySegment struct) {
 		return struct.get(get_DocumentTitle$LAYOUT, get_DocumentTitle$OFFSET);
@@ -5016,18 +5009,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_DocumentTitle)(ICoreWebView2 *, LPWSTR *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_DocumentTitle(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_DocumentTitle$LAYOUT, get_DocumentTitle$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class AddHostObjectToScript {
 		
@@ -5043,10 +5036,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5056,7 +5049,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddHostObjectToScript.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddHostObjectToScript.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5071,7 +5064,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -5080,13 +5073,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddHostObjectToScript$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddHostObjectToScript"));
+	private static final AddressLayout AddHostObjectToScript$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("AddHostObjectToScript"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout AddHostObjectToScript$layout() {
 		return AddHostObjectToScript$LAYOUT;
@@ -5096,9 +5089,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long AddHostObjectToScript$offset() {
 		return AddHostObjectToScript$OFFSET;
@@ -5106,9 +5099,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment AddHostObjectToScript(MemorySegment struct) {
 		return struct.get(AddHostObjectToScript$LAYOUT, AddHostObjectToScript$OFFSET);
@@ -5116,18 +5109,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddHostObjectToScript)(ICoreWebView2 *, LPCWSTR, VARIANT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void AddHostObjectToScript(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(AddHostObjectToScript$LAYOUT, AddHostObjectToScript$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class RemoveHostObjectFromScript {
 		
@@ -5143,9 +5136,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5155,7 +5148,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveHostObjectFromScript.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(RemoveHostObjectFromScript.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5170,7 +5163,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -5179,13 +5172,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout RemoveHostObjectFromScript$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("RemoveHostObjectFromScript"));
+	private static final AddressLayout RemoveHostObjectFromScript$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("RemoveHostObjectFromScript"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout RemoveHostObjectFromScript$layout() {
 		return RemoveHostObjectFromScript$LAYOUT;
@@ -5195,9 +5188,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long RemoveHostObjectFromScript$offset() {
 		return RemoveHostObjectFromScript$OFFSET;
@@ -5205,9 +5198,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment RemoveHostObjectFromScript(MemorySegment struct) {
 		return struct.get(RemoveHostObjectFromScript$LAYOUT, RemoveHostObjectFromScript$OFFSET);
@@ -5215,18 +5208,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveHostObjectFromScript)(ICoreWebView2 *, LPCWSTR) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void RemoveHostObjectFromScript(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(RemoveHostObjectFromScript$LAYOUT, RemoveHostObjectFromScript$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class OpenDevToolsWindow {
 		
@@ -5242,8 +5235,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5253,7 +5246,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(OpenDevToolsWindow.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(OpenDevToolsWindow.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5268,7 +5261,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -5277,13 +5270,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout OpenDevToolsWindow$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("OpenDevToolsWindow"));
+	private static final AddressLayout OpenDevToolsWindow$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("OpenDevToolsWindow"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout OpenDevToolsWindow$layout() {
 		return OpenDevToolsWindow$LAYOUT;
@@ -5293,9 +5286,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long OpenDevToolsWindow$offset() {
 		return OpenDevToolsWindow$OFFSET;
@@ -5303,9 +5296,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment OpenDevToolsWindow(MemorySegment struct) {
 		return struct.get(OpenDevToolsWindow$LAYOUT, OpenDevToolsWindow$OFFSET);
@@ -5313,18 +5306,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*OpenDevToolsWindow)(ICoreWebView2 *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void OpenDevToolsWindow(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(OpenDevToolsWindow$LAYOUT, OpenDevToolsWindow$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_ContainsFullScreenElementChanged {
 		
@@ -5340,10 +5333,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5353,7 +5346,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5368,7 +5361,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -5377,13 +5370,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ContainsFullScreenElementChanged"));
+	private static final AddressLayout add_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_ContainsFullScreenElementChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_ContainsFullScreenElementChanged$layout() {
 		return add_ContainsFullScreenElementChanged$LAYOUT;
@@ -5393,9 +5386,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_ContainsFullScreenElementChanged$offset() {
 		return add_ContainsFullScreenElementChanged$OFFSET;
@@ -5403,9 +5396,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_ContainsFullScreenElementChanged(MemorySegment struct) {
 		return struct.get(add_ContainsFullScreenElementChanged$LAYOUT, add_ContainsFullScreenElementChanged$OFFSET);
@@ -5413,18 +5406,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ContainsFullScreenElementChanged)(ICoreWebView2 *, ICoreWebView2ContainsFullScreenElementChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_ContainsFullScreenElementChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_ContainsFullScreenElementChanged$LAYOUT, add_ContainsFullScreenElementChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_ContainsFullScreenElementChanged {
 		
@@ -5440,8 +5433,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -5452,7 +5445,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ContainsFullScreenElementChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5467,7 +5460,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -5476,13 +5469,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ContainsFullScreenElementChanged"));
+	private static final AddressLayout remove_ContainsFullScreenElementChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_ContainsFullScreenElementChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_ContainsFullScreenElementChanged$layout() {
 		return remove_ContainsFullScreenElementChanged$LAYOUT;
@@ -5492,9 +5485,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_ContainsFullScreenElementChanged$offset() {
 		return remove_ContainsFullScreenElementChanged$OFFSET;
@@ -5502,9 +5495,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_ContainsFullScreenElementChanged(MemorySegment struct) {
 		return struct.get(remove_ContainsFullScreenElementChanged$LAYOUT, remove_ContainsFullScreenElementChanged$OFFSET);
@@ -5512,18 +5505,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ContainsFullScreenElementChanged)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_ContainsFullScreenElementChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_ContainsFullScreenElementChanged$LAYOUT, remove_ContainsFullScreenElementChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_ContainsFullScreenElement {
 		
@@ -5539,9 +5532,9 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -5551,7 +5544,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_ContainsFullScreenElement.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_ContainsFullScreenElement.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5566,7 +5559,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -5575,13 +5568,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout get_ContainsFullScreenElement$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_ContainsFullScreenElement"));
+	private static final AddressLayout get_ContainsFullScreenElement$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_ContainsFullScreenElement"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_ContainsFullScreenElement$layout() {
 		return get_ContainsFullScreenElement$LAYOUT;
@@ -5591,9 +5584,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_ContainsFullScreenElement$offset() {
 		return get_ContainsFullScreenElement$OFFSET;
@@ -5601,9 +5594,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_ContainsFullScreenElement(MemorySegment struct) {
 		return struct.get(get_ContainsFullScreenElement$LAYOUT, get_ContainsFullScreenElement$OFFSET);
@@ -5611,18 +5604,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ContainsFullScreenElement)(ICoreWebView2 *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_ContainsFullScreenElement(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_ContainsFullScreenElement$LAYOUT, get_ContainsFullScreenElement$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_WebResourceRequested {
 		
@@ -5638,10 +5631,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5651,7 +5644,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebResourceRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_WebResourceRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5666,7 +5659,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -5675,13 +5668,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_WebResourceRequested"));
+	private static final AddressLayout add_WebResourceRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_WebResourceRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_WebResourceRequested$layout() {
 		return add_WebResourceRequested$LAYOUT;
@@ -5691,9 +5684,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_WebResourceRequested$offset() {
 		return add_WebResourceRequested$OFFSET;
@@ -5701,9 +5694,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_WebResourceRequested(MemorySegment struct) {
 		return struct.get(add_WebResourceRequested$LAYOUT, add_WebResourceRequested$OFFSET);
@@ -5711,18 +5704,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WebResourceRequested)(ICoreWebView2 *, ICoreWebView2WebResourceRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_WebResourceRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_WebResourceRequested$LAYOUT, add_WebResourceRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_WebResourceRequested {
 		
@@ -5738,8 +5731,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -5750,7 +5743,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebResourceRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_WebResourceRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5765,7 +5758,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -5774,13 +5767,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_WebResourceRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_WebResourceRequested"));
+	private static final AddressLayout remove_WebResourceRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_WebResourceRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_WebResourceRequested$layout() {
 		return remove_WebResourceRequested$LAYOUT;
@@ -5790,9 +5783,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_WebResourceRequested$offset() {
 		return remove_WebResourceRequested$OFFSET;
@@ -5800,9 +5793,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_WebResourceRequested(MemorySegment struct) {
 		return struct.get(remove_WebResourceRequested$LAYOUT, remove_WebResourceRequested$OFFSET);
@@ -5810,18 +5803,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WebResourceRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_WebResourceRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_WebResourceRequested$LAYOUT, remove_WebResourceRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class AddWebResourceRequestedFilter {
 		
@@ -5837,10 +5830,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -5850,7 +5843,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddWebResourceRequestedFilter.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddWebResourceRequestedFilter.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5865,7 +5858,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -5874,13 +5867,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout AddWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddWebResourceRequestedFilter"));
+	private static final AddressLayout AddWebResourceRequestedFilter$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("AddWebResourceRequestedFilter"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout AddWebResourceRequestedFilter$layout() {
 		return AddWebResourceRequestedFilter$LAYOUT;
@@ -5890,9 +5883,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long AddWebResourceRequestedFilter$offset() {
 		return AddWebResourceRequestedFilter$OFFSET;
@@ -5900,9 +5893,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment AddWebResourceRequestedFilter(MemorySegment struct) {
 		return struct.get(AddWebResourceRequestedFilter$LAYOUT, AddWebResourceRequestedFilter$OFFSET);
@@ -5910,18 +5903,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*AddWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void AddWebResourceRequestedFilter(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(AddWebResourceRequestedFilter$LAYOUT, AddWebResourceRequestedFilter$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class RemoveWebResourceRequestedFilter {
 		
@@ -5937,10 +5930,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -5950,7 +5943,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveWebResourceRequestedFilter.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(RemoveWebResourceRequestedFilter.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5965,7 +5958,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -5974,13 +5967,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout RemoveWebResourceRequestedFilter$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("RemoveWebResourceRequestedFilter"));
+	private static final AddressLayout RemoveWebResourceRequestedFilter$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("RemoveWebResourceRequestedFilter"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout RemoveWebResourceRequestedFilter$layout() {
 		return RemoveWebResourceRequestedFilter$LAYOUT;
@@ -5990,9 +5983,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long RemoveWebResourceRequestedFilter$offset() {
 		return RemoveWebResourceRequestedFilter$OFFSET;
@@ -6000,9 +5993,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment RemoveWebResourceRequestedFilter(MemorySegment struct) {
 		return struct.get(RemoveWebResourceRequestedFilter$LAYOUT, RemoveWebResourceRequestedFilter$OFFSET);
@@ -6010,18 +6003,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*RemoveWebResourceRequestedFilter)(ICoreWebView2 *, const LPCWSTR, const COREWEBVIEW2_WEB_RESOURCE_CONTEXT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void RemoveWebResourceRequestedFilter(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(RemoveWebResourceRequestedFilter$LAYOUT, RemoveWebResourceRequestedFilter$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_WindowCloseRequested {
 		
@@ -6037,10 +6030,10 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -6050,7 +6043,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WindowCloseRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_WindowCloseRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6065,7 +6058,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -6074,13 +6067,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout add_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_WindowCloseRequested"));
+	private static final AddressLayout add_WindowCloseRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_WindowCloseRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_WindowCloseRequested$layout() {
 		return add_WindowCloseRequested$LAYOUT;
@@ -6090,9 +6083,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_WindowCloseRequested$offset() {
 		return add_WindowCloseRequested$OFFSET;
@@ -6100,9 +6093,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_WindowCloseRequested(MemorySegment struct) {
 		return struct.get(add_WindowCloseRequested$LAYOUT, add_WindowCloseRequested$OFFSET);
@@ -6110,18 +6103,18 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_WindowCloseRequested)(ICoreWebView2 *, ICoreWebView2WindowCloseRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_WindowCloseRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_WindowCloseRequested$LAYOUT, add_WindowCloseRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_WindowCloseRequested {
 		
@@ -6137,8 +6130,8 @@ public class ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -6149,7 +6142,7 @@ public class ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WindowCloseRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_WindowCloseRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6164,7 +6157,7 @@ public class ICoreWebView2Vtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -6173,13 +6166,13 @@ public class ICoreWebView2Vtbl {
 		}
 	}
 	
-	private static final AddressLayout remove_WindowCloseRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_WindowCloseRequested"));
+	private static final AddressLayout remove_WindowCloseRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_WindowCloseRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_WindowCloseRequested$layout() {
 		return remove_WindowCloseRequested$LAYOUT;
@@ -6189,9 +6182,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_WindowCloseRequested$offset() {
 		return remove_WindowCloseRequested$OFFSET;
@@ -6199,9 +6192,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_WindowCloseRequested(MemorySegment struct) {
 		return struct.get(remove_WindowCloseRequested$LAYOUT, remove_WindowCloseRequested$OFFSET);
@@ -6209,9 +6202,9 @@ public class ICoreWebView2Vtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_WindowCloseRequested)(ICoreWebView2 *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_WindowCloseRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_WindowCloseRequested$LAYOUT, remove_WindowCloseRequested$OFFSET, fieldValue);
@@ -6228,7 +6221,9 @@ public class ICoreWebView2Vtbl {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

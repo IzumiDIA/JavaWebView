@@ -2,18 +2,11 @@
 
 package org.jextract;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.SequenceLayout;
-import java.lang.foreign.ValueLayout;
+import java.lang.foreign.*;
+import java.lang.foreign.ValueLayout.OfInt;
+import java.lang.foreign.ValueLayout.OfShort;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.ValueLayout.OfInt;
-import static java.lang.foreign.ValueLayout.OfShort;
 
 /**
  * {@snippet lang=c :
@@ -31,17 +24,17 @@ public class _GUID {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_LONG.withName("Data1"),
-			Windows.C_SHORT.withName("Data2"),
-			Windows.C_SHORT.withName("Data3"),
-			MemoryLayout.sequenceLayout(8, Windows.C_CHAR).withName("Data4")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_LONG.withName("Data1"),
+			LayoutUtils.C_SHORT.withName("Data2"),
+			LayoutUtils.C_SHORT.withName("Data3"),
+			MemoryLayout.sequenceLayout(8, LayoutUtils.C_CHAR).withName("Data4")
 	).withName("_GUID");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	

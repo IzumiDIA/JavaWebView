@@ -4,15 +4,14 @@ package org.jextract;
 
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 import static java.lang.foreign.ValueLayout.OfInt;
-import static java.lang.foreign.ValueLayout.PathElement;
 
 /**
  * {@snippet lang=c :
@@ -38,29 +37,29 @@ public class tagWNDCLASSEXW {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_INT.withName("cbSize"),
-			Windows.C_INT.withName("style"),
-			Windows.C_POINTER.withName("lpfnWndProc"),
-			Windows.C_INT.withName("cbClsExtra"),
-			Windows.C_INT.withName("cbWndExtra"),
-			Windows.C_POINTER.withName("hInstance"),
-			Windows.C_POINTER.withName("hIcon"),
-			Windows.C_POINTER.withName("hCursor"),
-			Windows.C_POINTER.withName("hbrBackground"),
-			Windows.C_POINTER.withName("lpszMenuName"),
-			Windows.C_POINTER.withName("lpszClassName"),
-			Windows.C_POINTER.withName("hIconSm")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.UINT.withName("cbSize"),
+			LayoutUtils.UINT.withName("style"),
+			LayoutUtils.WNDPROC_POINTER.withName("lpfnWndProc"),
+			LayoutUtils.C_INT.withName("cbClsExtra"),
+			LayoutUtils.C_INT.withName("cbWndExtra"),
+			LayoutUtils.HINSTANCE.withName("hInstance"),
+			LayoutUtils.HICON.withName("hIcon"),
+			LayoutUtils.HCURSOR.withName("hCursor"),
+			LayoutUtils.HBRUSH.withName("hbrBackground"),
+			LayoutUtils.LPCWSTR.withName("lpszMenuName"),
+			LayoutUtils.LPCWSTR.withName("lpszClassName"),
+			LayoutUtils.HICON.withName("hIconSm")
 	).withName("tagWNDCLASSEXW");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt cbSize$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cbSize"));
+	private static final OfInt cbSize$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cbSize"));
 	
 	/**
 	 * Layout for field:
@@ -104,7 +103,7 @@ public class tagWNDCLASSEXW {
 		struct.set(cbSize$LAYOUT, cbSize$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt style$LAYOUT = (OfInt)$LAYOUT.select(groupElement("style"));
+	private static final OfInt style$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("style"));
 	
 	/**
 	 * Layout for field:
@@ -148,7 +147,7 @@ public class tagWNDCLASSEXW {
 		struct.set(style$LAYOUT, style$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpfnWndProc$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpfnWndProc"));
+	private static final AddressLayout lpfnWndProc$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpfnWndProc"));
 	
 	/**
 	 * Layout for field:
@@ -192,7 +191,7 @@ public class tagWNDCLASSEXW {
 		struct.set(lpfnWndProc$LAYOUT, lpfnWndProc$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cbClsExtra$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cbClsExtra"));
+	private static final OfInt cbClsExtra$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cbClsExtra"));
 	
 	/**
 	 * Layout for field:
@@ -236,7 +235,7 @@ public class tagWNDCLASSEXW {
 		struct.set(cbClsExtra$LAYOUT, cbClsExtra$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cbWndExtra$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cbWndExtra"));
+	private static final OfInt cbWndExtra$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cbWndExtra"));
 	
 	/**
 	 * Layout for field:
@@ -280,7 +279,7 @@ public class tagWNDCLASSEXW {
 		struct.set(cbWndExtra$LAYOUT, cbWndExtra$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hInstance$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hInstance"));
+	private static final AddressLayout hInstance$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hInstance"));
 	
 	/**
 	 * Layout for field:
@@ -324,7 +323,7 @@ public class tagWNDCLASSEXW {
 		struct.set(hInstance$LAYOUT, hInstance$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hIcon$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hIcon"));
+	private static final AddressLayout hIcon$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hIcon"));
 	
 	/**
 	 * Layout for field:
@@ -368,7 +367,7 @@ public class tagWNDCLASSEXW {
 		struct.set(hIcon$LAYOUT, hIcon$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hCursor$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hCursor"));
+	private static final AddressLayout hCursor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hCursor"));
 	
 	/**
 	 * Layout for field:
@@ -412,7 +411,7 @@ public class tagWNDCLASSEXW {
 		struct.set(hCursor$LAYOUT, hCursor$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hbrBackground$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hbrBackground"));
+	private static final AddressLayout hbrBackground$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hbrBackground"));
 	
 	/**
 	 * Layout for field:
@@ -456,7 +455,7 @@ public class tagWNDCLASSEXW {
 		struct.set(hbrBackground$LAYOUT, hbrBackground$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpszMenuName$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpszMenuName"));
+	private static final AddressLayout lpszMenuName$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpszMenuName"));
 	
 	/**
 	 * Layout for field:
@@ -500,7 +499,7 @@ public class tagWNDCLASSEXW {
 		struct.set(lpszMenuName$LAYOUT, lpszMenuName$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpszClassName$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpszClassName"));
+	private static final AddressLayout lpszClassName$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpszClassName"));
 	
 	/**
 	 * Layout for field:
@@ -544,7 +543,7 @@ public class tagWNDCLASSEXW {
 		struct.set(lpszClassName$LAYOUT, lpszClassName$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hIconSm$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hIconSm"));
+	private static final AddressLayout hIconSm$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hIconSm"));
 	
 	/**
 	 * Layout for field:

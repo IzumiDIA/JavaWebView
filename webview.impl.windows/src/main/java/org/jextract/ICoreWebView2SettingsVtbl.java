@@ -2,15 +2,8 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
@@ -47,34 +40,34 @@ public class ICoreWebView2SettingsVtbl {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("QueryInterface"),
-			Windows.C_POINTER.withName("AddRef"),
-			Windows.C_POINTER.withName("Release"),
-			Windows.C_POINTER.withName("get_IsScriptEnabled"),
-			Windows.C_POINTER.withName("put_IsScriptEnabled"),
-			Windows.C_POINTER.withName("get_IsWebMessageEnabled"),
-			Windows.C_POINTER.withName("put_IsWebMessageEnabled"),
-			Windows.C_POINTER.withName("get_AreDefaultScriptDialogsEnabled"),
-			Windows.C_POINTER.withName("put_AreDefaultScriptDialogsEnabled"),
-			Windows.C_POINTER.withName("get_IsStatusBarEnabled"),
-			Windows.C_POINTER.withName("put_IsStatusBarEnabled"),
-			Windows.C_POINTER.withName("get_AreDevToolsEnabled"),
-			Windows.C_POINTER.withName("put_AreDevToolsEnabled"),
-			Windows.C_POINTER.withName("get_AreDefaultContextMenusEnabled"),
-			Windows.C_POINTER.withName("put_AreDefaultContextMenusEnabled"),
-			Windows.C_POINTER.withName("get_AreHostObjectsAllowed"),
-			Windows.C_POINTER.withName("put_AreHostObjectsAllowed"),
-			Windows.C_POINTER.withName("get_IsZoomControlEnabled"),
-			Windows.C_POINTER.withName("put_IsZoomControlEnabled"),
-			Windows.C_POINTER.withName("get_IsBuiltInErrorPageEnabled"),
-			Windows.C_POINTER.withName("put_IsBuiltInErrorPageEnabled")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("QueryInterface"),
+			LayoutUtils.C_POINTER.withName("AddRef"),
+			LayoutUtils.C_POINTER.withName("Release"),
+			LayoutUtils.C_POINTER.withName("get_IsScriptEnabled"),
+			LayoutUtils.C_POINTER.withName("put_IsScriptEnabled"),
+			LayoutUtils.C_POINTER.withName("get_IsWebMessageEnabled"),
+			LayoutUtils.C_POINTER.withName("put_IsWebMessageEnabled"),
+			LayoutUtils.C_POINTER.withName("get_AreDefaultScriptDialogsEnabled"),
+			LayoutUtils.C_POINTER.withName("put_AreDefaultScriptDialogsEnabled"),
+			LayoutUtils.C_POINTER.withName("get_IsStatusBarEnabled"),
+			LayoutUtils.C_POINTER.withName("put_IsStatusBarEnabled"),
+			LayoutUtils.C_POINTER.withName("get_AreDevToolsEnabled"),
+			LayoutUtils.C_POINTER.withName("put_AreDevToolsEnabled"),
+			LayoutUtils.C_POINTER.withName("get_AreDefaultContextMenusEnabled"),
+			LayoutUtils.C_POINTER.withName("put_AreDefaultContextMenusEnabled"),
+			LayoutUtils.C_POINTER.withName("get_AreHostObjectsAllowed"),
+			LayoutUtils.C_POINTER.withName("put_AreHostObjectsAllowed"),
+			LayoutUtils.C_POINTER.withName("get_IsZoomControlEnabled"),
+			LayoutUtils.C_POINTER.withName("put_IsZoomControlEnabled"),
+			LayoutUtils.C_POINTER.withName("get_IsBuiltInErrorPageEnabled"),
+			LayoutUtils.C_POINTER.withName("put_IsBuiltInErrorPageEnabled")
 	).withName("ICoreWebView2SettingsVtbl");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
@@ -97,10 +90,10 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+				LayoutUtils.IID_POINTER,
+				LayoutUtils.VOID_POINTER_POINTER
 		);
 		
 		/**
@@ -110,7 +103,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -197,8 +190,8 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
 		/**
@@ -208,7 +201,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddRef.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddRef.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -295,8 +288,8 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
 		/**
@@ -306,7 +299,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Release.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Release.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -393,9 +386,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+				LayoutUtils.C_LONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -405,7 +398,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsScriptEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsScriptEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -492,9 +485,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -504,7 +497,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsScriptEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsScriptEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -591,9 +584,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -603,7 +596,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsWebMessageEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsWebMessageEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -690,9 +683,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -702,7 +695,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsWebMessageEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsWebMessageEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -789,9 +782,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -801,7 +794,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_AreDefaultScriptDialogsEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_AreDefaultScriptDialogsEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -888,9 +881,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -900,7 +893,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_AreDefaultScriptDialogsEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_AreDefaultScriptDialogsEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -987,9 +980,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -999,7 +992,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsStatusBarEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsStatusBarEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1086,9 +1079,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -1098,7 +1091,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsStatusBarEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsStatusBarEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1185,9 +1178,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1197,7 +1190,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_AreDevToolsEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_AreDevToolsEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1284,9 +1277,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -1296,7 +1289,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_AreDevToolsEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_AreDevToolsEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1383,9 +1376,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1395,7 +1388,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_AreDefaultContextMenusEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_AreDefaultContextMenusEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1482,9 +1475,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -1494,7 +1487,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_AreDefaultContextMenusEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_AreDefaultContextMenusEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1581,9 +1574,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1593,7 +1586,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_AreHostObjectsAllowed.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_AreHostObjectsAllowed.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1680,9 +1673,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -1692,7 +1685,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_AreHostObjectsAllowed.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_AreHostObjectsAllowed.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1779,9 +1772,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1791,7 +1784,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsZoomControlEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsZoomControlEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1878,9 +1871,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -1890,7 +1883,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsZoomControlEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsZoomControlEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1977,9 +1970,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1989,7 +1982,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsBuiltInErrorPageEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsBuiltInErrorPageEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2076,9 +2069,9 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -2088,7 +2081,7 @@ public class ICoreWebView2SettingsVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsBuiltInErrorPageEnabled.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsBuiltInErrorPageEnabled.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.

@@ -2,15 +2,8 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
@@ -52,39 +45,39 @@ public class ICoreWebView2ControllerVtbl {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("QueryInterface"),
-			Windows.C_POINTER.withName("AddRef"),
-			Windows.C_POINTER.withName("Release"),
-			Windows.C_POINTER.withName("get_IsVisible"),
-			Windows.C_POINTER.withName("put_IsVisible"),
-			Windows.C_POINTER.withName("get_Bounds"),
-			Windows.C_POINTER.withName("put_Bounds"),
-			Windows.C_POINTER.withName("get_ZoomFactor"),
-			Windows.C_POINTER.withName("put_ZoomFactor"),
-			Windows.C_POINTER.withName("add_ZoomFactorChanged"),
-			Windows.C_POINTER.withName("remove_ZoomFactorChanged"),
-			Windows.C_POINTER.withName("SetBoundsAndZoomFactor"),
-			Windows.C_POINTER.withName("MoveFocus"),
-			Windows.C_POINTER.withName("add_MoveFocusRequested"),
-			Windows.C_POINTER.withName("remove_MoveFocusRequested"),
-			Windows.C_POINTER.withName("add_GotFocus"),
-			Windows.C_POINTER.withName("remove_GotFocus"),
-			Windows.C_POINTER.withName("add_LostFocus"),
-			Windows.C_POINTER.withName("remove_LostFocus"),
-			Windows.C_POINTER.withName("add_AcceleratorKeyPressed"),
-			Windows.C_POINTER.withName("remove_AcceleratorKeyPressed"),
-			Windows.C_POINTER.withName("get_ParentWindow"),
-			Windows.C_POINTER.withName("put_ParentWindow"),
-			Windows.C_POINTER.withName("NotifyParentWindowPositionChanged"),
-			Windows.C_POINTER.withName("Close"),
-			Windows.C_POINTER.withName("get_CoreWebView2")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("QueryInterface"),
+			LayoutUtils.C_POINTER.withName("AddRef"),
+			LayoutUtils.C_POINTER.withName("Release"),
+			LayoutUtils.C_POINTER.withName("get_IsVisible"),
+			LayoutUtils.C_POINTER.withName("put_IsVisible"),
+			LayoutUtils.C_POINTER.withName("get_Bounds"),
+			LayoutUtils.C_POINTER.withName("put_Bounds"),
+			LayoutUtils.C_POINTER.withName("get_ZoomFactor"),
+			LayoutUtils.C_POINTER.withName("put_ZoomFactor"),
+			LayoutUtils.C_POINTER.withName("add_ZoomFactorChanged"),
+			LayoutUtils.C_POINTER.withName("remove_ZoomFactorChanged"),
+			LayoutUtils.C_POINTER.withName("SetBoundsAndZoomFactor"),
+			LayoutUtils.C_POINTER.withName("MoveFocus"),
+			LayoutUtils.C_POINTER.withName("add_MoveFocusRequested"),
+			LayoutUtils.C_POINTER.withName("remove_MoveFocusRequested"),
+			LayoutUtils.C_POINTER.withName("add_GotFocus"),
+			LayoutUtils.C_POINTER.withName("remove_GotFocus"),
+			LayoutUtils.C_POINTER.withName("add_LostFocus"),
+			LayoutUtils.C_POINTER.withName("remove_LostFocus"),
+			LayoutUtils.C_POINTER.withName("add_AcceleratorKeyPressed"),
+			LayoutUtils.C_POINTER.withName("remove_AcceleratorKeyPressed"),
+			LayoutUtils.C_POINTER.withName("get_ParentWindow"),
+			LayoutUtils.C_POINTER.withName("put_ParentWindow"),
+			LayoutUtils.C_POINTER.withName("NotifyParentWindowPositionChanged"),
+			LayoutUtils.C_POINTER.withName("Close"),
+			LayoutUtils.C_POINTER.withName("get_CoreWebView2")
 	).withName("ICoreWebView2ControllerVtbl");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
@@ -107,10 +100,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -120,7 +113,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(QueryInterface.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -207,8 +200,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -218,7 +211,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddRef.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddRef.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -305,8 +298,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -316,7 +309,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Release.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Release.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -403,9 +396,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_BOOL)
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -415,7 +408,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsVisible.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsVisible.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -502,9 +495,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_BOOL
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -514,7 +507,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsVisible.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsVisible.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -601,9 +594,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -613,7 +606,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Bounds.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_Bounds.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -700,8 +693,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				tagRECT.layout()
 		);
 		
@@ -712,7 +705,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_Bounds.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_Bounds.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -799,9 +792,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER.withTargetLayout(Windows.C_DOUBLE)
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER.withTargetLayout(LayoutUtils.C_DOUBLE)
 		);
 		
 		/**
@@ -811,7 +804,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_ZoomFactor.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_ZoomFactor.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -898,9 +891,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_DOUBLE
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_DOUBLE
 		);
 		
 		/**
@@ -910,7 +903,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_ZoomFactor.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_ZoomFactor.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -997,10 +990,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1010,7 +1003,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ZoomFactorChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ZoomFactorChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1097,8 +1090,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1109,7 +1102,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ZoomFactorChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ZoomFactorChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1196,10 +1189,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				tagRECT.layout(),
-				Windows.C_DOUBLE
+				LayoutUtils.C_DOUBLE
 		);
 		
 		/**
@@ -1209,7 +1202,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(SetBoundsAndZoomFactor.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(SetBoundsAndZoomFactor.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1296,9 +1289,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -1308,7 +1301,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(MoveFocus.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(MoveFocus.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1395,10 +1388,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1408,7 +1401,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_MoveFocusRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_MoveFocusRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1495,8 +1488,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1507,7 +1500,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_MoveFocusRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_MoveFocusRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1594,10 +1587,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1607,7 +1600,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_GotFocus.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_GotFocus.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1694,8 +1687,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1706,7 +1699,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_GotFocus.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_GotFocus.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1793,10 +1786,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1806,7 +1799,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_LostFocus.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_LostFocus.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1893,8 +1886,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1905,7 +1898,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_LostFocus.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_LostFocus.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1992,10 +1985,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2005,7 +1998,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_AcceleratorKeyPressed.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_AcceleratorKeyPressed.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2092,8 +2085,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2104,7 +2097,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_AcceleratorKeyPressed.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_AcceleratorKeyPressed.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2191,9 +2184,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2203,7 +2196,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_ParentWindow.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_ParentWindow.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2290,9 +2283,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2302,7 +2295,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_ParentWindow.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_ParentWindow.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2389,8 +2382,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2400,7 +2393,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(NotifyParentWindowPositionChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(NotifyParentWindowPositionChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2487,8 +2480,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2498,7 +2491,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Close.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Close.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2585,9 +2578,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2597,7 +2590,7 @@ public class ICoreWebView2ControllerVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CoreWebView2.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_CoreWebView2.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.

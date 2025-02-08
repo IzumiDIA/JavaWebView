@@ -3,15 +3,14 @@
 package org.jextract;
 
 import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.StructLayout;
 import java.lang.foreign.ValueLayout;
+import java.lang.foreign.ValueLayout.OfLong;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -26,14 +25,14 @@ public class EventRegistrationToken {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_LONG_LONG.withName("value")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_LONG_LONG.withName("value")
 	).withName("EventRegistrationToken");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	

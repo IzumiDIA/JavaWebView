@@ -5,13 +5,14 @@ package org.jextract;
 import java.lang.foreign.Arena;
 import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.UnionLayout;
 import java.lang.foreign.ValueLayout;
+import java.lang.foreign.ValueLayout.OfInt;
+import java.lang.foreign.ValueLayout.OfLong;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.ValueLayout.OfInt;
-import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -34,23 +35,23 @@ public class _LARGE_INTEGER {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+	private static final UnionLayout $LAYOUT = MemoryLayout.unionLayout(
 			MemoryLayout.structLayout(
-					Windows.C_LONG.withName("LowPart"),
-					Windows.C_LONG.withName("HighPart")
+					LayoutUtils.DWORD.withName("LowPart"),
+					LayoutUtils.LONG.withName("HighPart")
 			).withName("$anon$875:5"),
 			_LARGE_INTEGER.u.layout().withName("u"),
-			Windows.C_LONG_LONG.withName("QuadPart")
+			LayoutUtils.LONGLONG.withName("QuadPart")
 	).withName("_LARGE_INTEGER");
 	
 	/**
 	 * The layout of this union
 	 */
-	public static GroupLayout layout() {
+	public static UnionLayout layout() {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt LowPart$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("$anon$875:5"), ValueLayout.PathElement.groupElement("LowPart"));
+	private static final OfInt LowPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("LowPart"));
 	
 	/**
 	 * Layout for field:
@@ -62,7 +63,7 @@ public class _LARGE_INTEGER {
 		return LowPart$LAYOUT;
 	}
 	
-	private static final long LowPart$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("LowPart"));
+	private static final long LowPart$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("LowPart"));
 	
 	/**
 	 * Offset for field:
@@ -94,7 +95,7 @@ public class _LARGE_INTEGER {
 		union.set(LowPart$LAYOUT, LowPart$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt HighPart$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("$anon$875:5"), ValueLayout.PathElement.groupElement("HighPart"));
+	private static final OfInt HighPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("HighPart"));
 	
 	/**
 	 * Layout for field:
@@ -106,7 +107,7 @@ public class _LARGE_INTEGER {
 		return HighPart$LAYOUT;
 	}
 	
-	private static final long HighPart$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("HighPart"));
+	private static final long HighPart$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("HighPart"));
 	
 	/**
 	 * Offset for field:
@@ -153,8 +154,8 @@ public class _LARGE_INTEGER {
 		}
 		
 		private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-				Windows.C_LONG.withName("LowPart"),
-				Windows.C_LONG.withName("HighPart")
+				LayoutUtils.DWORD.withName("LowPart"),
+				LayoutUtils.LONG.withName("HighPart")
 		).withName("$anon$879:5");
 		
 		/**
@@ -164,7 +165,7 @@ public class _LARGE_INTEGER {
 			return $LAYOUT;
 		}
 		
-		private static final OfInt LowPart$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("LowPart"));
+		private static final OfInt LowPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("LowPart"));
 		
 		/**
 		 * Layout for field:
@@ -176,7 +177,7 @@ public class _LARGE_INTEGER {
 			return LowPart$LAYOUT;
 		}
 		
-		private static final long LowPart$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("LowPart"));
+		private static final long LowPart$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("LowPart"));
 		
 		/**
 		 * Offset for field:
@@ -208,7 +209,7 @@ public class _LARGE_INTEGER {
 			struct.set(LowPart$LAYOUT, LowPart$OFFSET, fieldValue);
 		}
 		
-		private static final OfInt HighPart$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("HighPart"));
+		private static final OfInt HighPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("HighPart"));
 		
 		/**
 		 * Layout for field:
@@ -220,7 +221,7 @@ public class _LARGE_INTEGER {
 			return HighPart$LAYOUT;
 		}
 		
-		private static final long HighPart$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("HighPart"));
+		private static final long HighPart$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("HighPart"));
 		
 		/**
 		 * Offset for field:
@@ -297,7 +298,7 @@ public class _LARGE_INTEGER {
 		}
 	}
 	
-	private static final GroupLayout u$LAYOUT = (GroupLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("u"));
+	private static final GroupLayout u$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("u"));
 	
 	/**
 	 * Layout for field:
@@ -312,7 +313,7 @@ public class _LARGE_INTEGER {
 		return u$LAYOUT;
 	}
 	
-	private static final long u$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("u"));
+	private static final long u$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("u"));
 	
 	/**
 	 * Offset for field:
@@ -353,7 +354,7 @@ public class _LARGE_INTEGER {
 		MemorySegment.copy(fieldValue, 0L, union, u$OFFSET, u$LAYOUT.byteSize());
 	}
 	
-	private static final OfLong QuadPart$LAYOUT = (OfLong)$LAYOUT.select(ValueLayout.PathElement.groupElement("QuadPart"));
+	private static final OfLong QuadPart$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("QuadPart"));
 	
 	/**
 	 * Layout for field:
@@ -365,7 +366,7 @@ public class _LARGE_INTEGER {
 		return QuadPart$LAYOUT;
 	}
 	
-	private static final long QuadPart$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("QuadPart"));
+	private static final long QuadPart$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("QuadPart"));
 	
 	/**
 	 * Offset for field:

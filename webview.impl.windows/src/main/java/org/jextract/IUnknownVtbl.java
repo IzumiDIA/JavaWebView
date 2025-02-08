@@ -2,15 +2,8 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
@@ -29,16 +22,16 @@ public class IUnknownVtbl {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("QueryInterface"),
-			Windows.C_POINTER.withName("AddRef"),
-			Windows.C_POINTER.withName("Release")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("QueryInterface"),
+			LayoutUtils.C_POINTER.withName("AddRef"),
+			LayoutUtils.C_POINTER.withName("Release")
 	).withName("IUnknownVtbl");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
@@ -61,10 +54,10 @@ public class IUnknownVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.IID_POINTER,
+				LayoutUtils.VOID_POINTER_POINTER
 		);
 		
 		/**
@@ -74,7 +67,7 @@ public class IUnknownVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -161,8 +154,8 @@ public class IUnknownVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -172,7 +165,7 @@ public class IUnknownVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -259,8 +252,8 @@ public class IUnknownVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -270,7 +263,7 @@ public class IUnknownVtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.

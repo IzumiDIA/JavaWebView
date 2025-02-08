@@ -2,15 +2,8 @@
 
 package org.jextract;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.Arena;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.GroupLayout;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
@@ -151,138 +144,138 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("QueryInterface"),
-			Windows.C_POINTER.withName("AddRef"),
-			Windows.C_POINTER.withName("Release"),
-			Windows.C_POINTER.withName("get_Settings"),
-			Windows.C_POINTER.withName("get_Source"),
-			Windows.C_POINTER.withName("Navigate"),
-			Windows.C_POINTER.withName("NavigateToString"),
-			Windows.C_POINTER.withName("add_NavigationStarting"),
-			Windows.C_POINTER.withName("remove_NavigationStarting"),
-			Windows.C_POINTER.withName("add_ContentLoading"),
-			Windows.C_POINTER.withName("remove_ContentLoading"),
-			Windows.C_POINTER.withName("add_SourceChanged"),
-			Windows.C_POINTER.withName("remove_SourceChanged"),
-			Windows.C_POINTER.withName("add_HistoryChanged"),
-			Windows.C_POINTER.withName("remove_HistoryChanged"),
-			Windows.C_POINTER.withName("add_NavigationCompleted"),
-			Windows.C_POINTER.withName("remove_NavigationCompleted"),
-			Windows.C_POINTER.withName("add_FrameNavigationStarting"),
-			Windows.C_POINTER.withName("remove_FrameNavigationStarting"),
-			Windows.C_POINTER.withName("add_FrameNavigationCompleted"),
-			Windows.C_POINTER.withName("remove_FrameNavigationCompleted"),
-			Windows.C_POINTER.withName("add_ScriptDialogOpening"),
-			Windows.C_POINTER.withName("remove_ScriptDialogOpening"),
-			Windows.C_POINTER.withName("add_PermissionRequested"),
-			Windows.C_POINTER.withName("remove_PermissionRequested"),
-			Windows.C_POINTER.withName("add_ProcessFailed"),
-			Windows.C_POINTER.withName("remove_ProcessFailed"),
-			Windows.C_POINTER.withName("AddScriptToExecuteOnDocumentCreated"),
-			Windows.C_POINTER.withName("RemoveScriptToExecuteOnDocumentCreated"),
-			Windows.C_POINTER.withName("ExecuteScript"),
-			Windows.C_POINTER.withName("CapturePreview"),
-			Windows.C_POINTER.withName("Reload"),
-			Windows.C_POINTER.withName("PostWebMessageAsJson"),
-			Windows.C_POINTER.withName("PostWebMessageAsString"),
-			Windows.C_POINTER.withName("add_WebMessageReceived"),
-			Windows.C_POINTER.withName("remove_WebMessageReceived"),
-			Windows.C_POINTER.withName("CallDevToolsProtocolMethod"),
-			Windows.C_POINTER.withName("get_BrowserProcessId"),
-			Windows.C_POINTER.withName("get_CanGoBack"),
-			Windows.C_POINTER.withName("get_CanGoForward"),
-			Windows.C_POINTER.withName("GoBack"),
-			Windows.C_POINTER.withName("GoForward"),
-			Windows.C_POINTER.withName("GetDevToolsProtocolEventReceiver"),
-			Windows.C_POINTER.withName("Stop"),
-			Windows.C_POINTER.withName("add_NewWindowRequested"),
-			Windows.C_POINTER.withName("remove_NewWindowRequested"),
-			Windows.C_POINTER.withName("add_DocumentTitleChanged"),
-			Windows.C_POINTER.withName("remove_DocumentTitleChanged"),
-			Windows.C_POINTER.withName("get_DocumentTitle"),
-			Windows.C_POINTER.withName("AddHostObjectToScript"),
-			Windows.C_POINTER.withName("RemoveHostObjectFromScript"),
-			Windows.C_POINTER.withName("OpenDevToolsWindow"),
-			Windows.C_POINTER.withName("add_ContainsFullScreenElementChanged"),
-			Windows.C_POINTER.withName("remove_ContainsFullScreenElementChanged"),
-			Windows.C_POINTER.withName("get_ContainsFullScreenElement"),
-			Windows.C_POINTER.withName("add_WebResourceRequested"),
-			Windows.C_POINTER.withName("remove_WebResourceRequested"),
-			Windows.C_POINTER.withName("AddWebResourceRequestedFilter"),
-			Windows.C_POINTER.withName("RemoveWebResourceRequestedFilter"),
-			Windows.C_POINTER.withName("add_WindowCloseRequested"),
-			Windows.C_POINTER.withName("remove_WindowCloseRequested"),
-			Windows.C_POINTER.withName("add_WebResourceResponseReceived"),
-			Windows.C_POINTER.withName("remove_WebResourceResponseReceived"),
-			Windows.C_POINTER.withName("NavigateWithWebResourceRequest"),
-			Windows.C_POINTER.withName("add_DOMContentLoaded"),
-			Windows.C_POINTER.withName("remove_DOMContentLoaded"),
-			Windows.C_POINTER.withName("get_CookieManager"),
-			Windows.C_POINTER.withName("get_Environment"),
-			Windows.C_POINTER.withName("TrySuspend"),
-			Windows.C_POINTER.withName("Resume"),
-			Windows.C_POINTER.withName("get_IsSuspended"),
-			Windows.C_POINTER.withName("SetVirtualHostNameToFolderMapping"),
-			Windows.C_POINTER.withName("ClearVirtualHostNameToFolderMapping"),
-			Windows.C_POINTER.withName("add_FrameCreated"),
-			Windows.C_POINTER.withName("remove_FrameCreated"),
-			Windows.C_POINTER.withName("add_DownloadStarting"),
-			Windows.C_POINTER.withName("remove_DownloadStarting"),
-			Windows.C_POINTER.withName("add_ClientCertificateRequested"),
-			Windows.C_POINTER.withName("remove_ClientCertificateRequested"),
-			Windows.C_POINTER.withName("OpenTaskManagerWindow"),
-			Windows.C_POINTER.withName("PrintToPdf"),
-			Windows.C_POINTER.withName("add_IsMutedChanged"),
-			Windows.C_POINTER.withName("remove_IsMutedChanged"),
-			Windows.C_POINTER.withName("get_IsMuted"),
-			Windows.C_POINTER.withName("put_IsMuted"),
-			Windows.C_POINTER.withName("add_IsDocumentPlayingAudioChanged"),
-			Windows.C_POINTER.withName("remove_IsDocumentPlayingAudioChanged"),
-			Windows.C_POINTER.withName("get_IsDocumentPlayingAudio"),
-			Windows.C_POINTER.withName("add_IsDefaultDownloadDialogOpenChanged"),
-			Windows.C_POINTER.withName("remove_IsDefaultDownloadDialogOpenChanged"),
-			Windows.C_POINTER.withName("get_IsDefaultDownloadDialogOpen"),
-			Windows.C_POINTER.withName("OpenDefaultDownloadDialog"),
-			Windows.C_POINTER.withName("CloseDefaultDownloadDialog"),
-			Windows.C_POINTER.withName("get_DefaultDownloadDialogCornerAlignment"),
-			Windows.C_POINTER.withName("put_DefaultDownloadDialogCornerAlignment"),
-			Windows.C_POINTER.withName("get_DefaultDownloadDialogMargin"),
-			Windows.C_POINTER.withName("put_DefaultDownloadDialogMargin"),
-			Windows.C_POINTER.withName("add_BasicAuthenticationRequested"),
-			Windows.C_POINTER.withName("remove_BasicAuthenticationRequested"),
-			Windows.C_POINTER.withName("CallDevToolsProtocolMethodForSession"),
-			Windows.C_POINTER.withName("add_ContextMenuRequested"),
-			Windows.C_POINTER.withName("remove_ContextMenuRequested"),
-			Windows.C_POINTER.withName("add_StatusBarTextChanged"),
-			Windows.C_POINTER.withName("remove_StatusBarTextChanged"),
-			Windows.C_POINTER.withName("get_StatusBarText"),
-			Windows.C_POINTER.withName("get_Profile"),
-			Windows.C_POINTER.withName("add_ServerCertificateErrorDetected"),
-			Windows.C_POINTER.withName("remove_ServerCertificateErrorDetected"),
-			Windows.C_POINTER.withName("ClearServerCertificateErrorActions"),
-			Windows.C_POINTER.withName("add_FaviconChanged"),
-			Windows.C_POINTER.withName("remove_FaviconChanged"),
-			Windows.C_POINTER.withName("get_FaviconUri"),
-			Windows.C_POINTER.withName("GetFavicon"),
-			Windows.C_POINTER.withName("Print"),
-			Windows.C_POINTER.withName("ShowPrintUI"),
-			Windows.C_POINTER.withName("PrintToPdfStream"),
-			Windows.C_POINTER.withName("PostSharedBufferToScript"),
-			Windows.C_POINTER.withName("add_LaunchingExternalUriScheme"),
-			Windows.C_POINTER.withName("remove_LaunchingExternalUriScheme"),
-			Windows.C_POINTER.withName("get_MemoryUsageTargetLevel"),
-			Windows.C_POINTER.withName("put_MemoryUsageTargetLevel"),
-			Windows.C_POINTER.withName("get_FrameId"),
-			Windows.C_POINTER.withName("ExecuteScriptWithResult"),
-			Windows.C_POINTER.withName("AddWebResourceRequestedFilterWithRequestSourceKinds"),
-			Windows.C_POINTER.withName("RemoveWebResourceRequestedFilterWithRequestSourceKinds")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("QueryInterface"),
+			LayoutUtils.C_POINTER.withName("AddRef"),
+			LayoutUtils.C_POINTER.withName("Release"),
+			LayoutUtils.C_POINTER.withName("get_Settings"),
+			LayoutUtils.C_POINTER.withName("get_Source"),
+			LayoutUtils.C_POINTER.withName("Navigate"),
+			LayoutUtils.C_POINTER.withName("NavigateToString"),
+			LayoutUtils.C_POINTER.withName("add_NavigationStarting"),
+			LayoutUtils.C_POINTER.withName("remove_NavigationStarting"),
+			LayoutUtils.C_POINTER.withName("add_ContentLoading"),
+			LayoutUtils.C_POINTER.withName("remove_ContentLoading"),
+			LayoutUtils.C_POINTER.withName("add_SourceChanged"),
+			LayoutUtils.C_POINTER.withName("remove_SourceChanged"),
+			LayoutUtils.C_POINTER.withName("add_HistoryChanged"),
+			LayoutUtils.C_POINTER.withName("remove_HistoryChanged"),
+			LayoutUtils.C_POINTER.withName("add_NavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("remove_NavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("add_FrameNavigationStarting"),
+			LayoutUtils.C_POINTER.withName("remove_FrameNavigationStarting"),
+			LayoutUtils.C_POINTER.withName("add_FrameNavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("remove_FrameNavigationCompleted"),
+			LayoutUtils.C_POINTER.withName("add_ScriptDialogOpening"),
+			LayoutUtils.C_POINTER.withName("remove_ScriptDialogOpening"),
+			LayoutUtils.C_POINTER.withName("add_PermissionRequested"),
+			LayoutUtils.C_POINTER.withName("remove_PermissionRequested"),
+			LayoutUtils.C_POINTER.withName("add_ProcessFailed"),
+			LayoutUtils.C_POINTER.withName("remove_ProcessFailed"),
+			LayoutUtils.C_POINTER.withName("AddScriptToExecuteOnDocumentCreated"),
+			LayoutUtils.C_POINTER.withName("RemoveScriptToExecuteOnDocumentCreated"),
+			LayoutUtils.C_POINTER.withName("ExecuteScript"),
+			LayoutUtils.C_POINTER.withName("CapturePreview"),
+			LayoutUtils.C_POINTER.withName("Reload"),
+			LayoutUtils.C_POINTER.withName("PostWebMessageAsJson"),
+			LayoutUtils.C_POINTER.withName("PostWebMessageAsString"),
+			LayoutUtils.C_POINTER.withName("add_WebMessageReceived"),
+			LayoutUtils.C_POINTER.withName("remove_WebMessageReceived"),
+			LayoutUtils.C_POINTER.withName("CallDevToolsProtocolMethod"),
+			LayoutUtils.C_POINTER.withName("get_BrowserProcessId"),
+			LayoutUtils.C_POINTER.withName("get_CanGoBack"),
+			LayoutUtils.C_POINTER.withName("get_CanGoForward"),
+			LayoutUtils.C_POINTER.withName("GoBack"),
+			LayoutUtils.C_POINTER.withName("GoForward"),
+			LayoutUtils.C_POINTER.withName("GetDevToolsProtocolEventReceiver"),
+			LayoutUtils.C_POINTER.withName("Stop"),
+			LayoutUtils.C_POINTER.withName("add_NewWindowRequested"),
+			LayoutUtils.C_POINTER.withName("remove_NewWindowRequested"),
+			LayoutUtils.C_POINTER.withName("add_DocumentTitleChanged"),
+			LayoutUtils.C_POINTER.withName("remove_DocumentTitleChanged"),
+			LayoutUtils.C_POINTER.withName("get_DocumentTitle"),
+			LayoutUtils.C_POINTER.withName("AddHostObjectToScript"),
+			LayoutUtils.C_POINTER.withName("RemoveHostObjectFromScript"),
+			LayoutUtils.C_POINTER.withName("OpenDevToolsWindow"),
+			LayoutUtils.C_POINTER.withName("add_ContainsFullScreenElementChanged"),
+			LayoutUtils.C_POINTER.withName("remove_ContainsFullScreenElementChanged"),
+			LayoutUtils.C_POINTER.withName("get_ContainsFullScreenElement"),
+			LayoutUtils.C_POINTER.withName("add_WebResourceRequested"),
+			LayoutUtils.C_POINTER.withName("remove_WebResourceRequested"),
+			LayoutUtils.C_POINTER.withName("AddWebResourceRequestedFilter"),
+			LayoutUtils.C_POINTER.withName("RemoveWebResourceRequestedFilter"),
+			LayoutUtils.C_POINTER.withName("add_WindowCloseRequested"),
+			LayoutUtils.C_POINTER.withName("remove_WindowCloseRequested"),
+			LayoutUtils.C_POINTER.withName("add_WebResourceResponseReceived"),
+			LayoutUtils.C_POINTER.withName("remove_WebResourceResponseReceived"),
+			LayoutUtils.C_POINTER.withName("NavigateWithWebResourceRequest"),
+			LayoutUtils.C_POINTER.withName("add_DOMContentLoaded"),
+			LayoutUtils.C_POINTER.withName("remove_DOMContentLoaded"),
+			LayoutUtils.C_POINTER.withName("get_CookieManager"),
+			LayoutUtils.C_POINTER.withName("get_Environment"),
+			LayoutUtils.C_POINTER.withName("TrySuspend"),
+			LayoutUtils.C_POINTER.withName("Resume"),
+			LayoutUtils.C_POINTER.withName("get_IsSuspended"),
+			LayoutUtils.C_POINTER.withName("SetVirtualHostNameToFolderMapping"),
+			LayoutUtils.C_POINTER.withName("ClearVirtualHostNameToFolderMapping"),
+			LayoutUtils.C_POINTER.withName("add_FrameCreated"),
+			LayoutUtils.C_POINTER.withName("remove_FrameCreated"),
+			LayoutUtils.C_POINTER.withName("add_DownloadStarting"),
+			LayoutUtils.C_POINTER.withName("remove_DownloadStarting"),
+			LayoutUtils.C_POINTER.withName("add_ClientCertificateRequested"),
+			LayoutUtils.C_POINTER.withName("remove_ClientCertificateRequested"),
+			LayoutUtils.C_POINTER.withName("OpenTaskManagerWindow"),
+			LayoutUtils.C_POINTER.withName("PrintToPdf"),
+			LayoutUtils.C_POINTER.withName("add_IsMutedChanged"),
+			LayoutUtils.C_POINTER.withName("remove_IsMutedChanged"),
+			LayoutUtils.C_POINTER.withName("get_IsMuted"),
+			LayoutUtils.C_POINTER.withName("put_IsMuted"),
+			LayoutUtils.C_POINTER.withName("add_IsDocumentPlayingAudioChanged"),
+			LayoutUtils.C_POINTER.withName("remove_IsDocumentPlayingAudioChanged"),
+			LayoutUtils.C_POINTER.withName("get_IsDocumentPlayingAudio"),
+			LayoutUtils.C_POINTER.withName("add_IsDefaultDownloadDialogOpenChanged"),
+			LayoutUtils.C_POINTER.withName("remove_IsDefaultDownloadDialogOpenChanged"),
+			LayoutUtils.C_POINTER.withName("get_IsDefaultDownloadDialogOpen"),
+			LayoutUtils.C_POINTER.withName("OpenDefaultDownloadDialog"),
+			LayoutUtils.C_POINTER.withName("CloseDefaultDownloadDialog"),
+			LayoutUtils.C_POINTER.withName("get_DefaultDownloadDialogCornerAlignment"),
+			LayoutUtils.C_POINTER.withName("put_DefaultDownloadDialogCornerAlignment"),
+			LayoutUtils.C_POINTER.withName("get_DefaultDownloadDialogMargin"),
+			LayoutUtils.C_POINTER.withName("put_DefaultDownloadDialogMargin"),
+			LayoutUtils.C_POINTER.withName("add_BasicAuthenticationRequested"),
+			LayoutUtils.C_POINTER.withName("remove_BasicAuthenticationRequested"),
+			LayoutUtils.C_POINTER.withName("CallDevToolsProtocolMethodForSession"),
+			LayoutUtils.C_POINTER.withName("add_ContextMenuRequested"),
+			LayoutUtils.C_POINTER.withName("remove_ContextMenuRequested"),
+			LayoutUtils.C_POINTER.withName("add_StatusBarTextChanged"),
+			LayoutUtils.C_POINTER.withName("remove_StatusBarTextChanged"),
+			LayoutUtils.C_POINTER.withName("get_StatusBarText"),
+			LayoutUtils.C_POINTER.withName("get_Profile"),
+			LayoutUtils.C_POINTER.withName("add_ServerCertificateErrorDetected"),
+			LayoutUtils.C_POINTER.withName("remove_ServerCertificateErrorDetected"),
+			LayoutUtils.C_POINTER.withName("ClearServerCertificateErrorActions"),
+			LayoutUtils.C_POINTER.withName("add_FaviconChanged"),
+			LayoutUtils.C_POINTER.withName("remove_FaviconChanged"),
+			LayoutUtils.C_POINTER.withName("get_FaviconUri"),
+			LayoutUtils.C_POINTER.withName("GetFavicon"),
+			LayoutUtils.C_POINTER.withName("Print"),
+			LayoutUtils.C_POINTER.withName("ShowPrintUI"),
+			LayoutUtils.C_POINTER.withName("PrintToPdfStream"),
+			LayoutUtils.C_POINTER.withName("PostSharedBufferToScript"),
+			LayoutUtils.C_POINTER.withName("add_LaunchingExternalUriScheme"),
+			LayoutUtils.C_POINTER.withName("remove_LaunchingExternalUriScheme"),
+			LayoutUtils.C_POINTER.withName("get_MemoryUsageTargetLevel"),
+			LayoutUtils.C_POINTER.withName("put_MemoryUsageTargetLevel"),
+			LayoutUtils.C_POINTER.withName("get_FrameId"),
+			LayoutUtils.C_POINTER.withName("ExecuteScriptWithResult"),
+			LayoutUtils.C_POINTER.withName("AddWebResourceRequestedFilterWithRequestSourceKinds"),
+			LayoutUtils.C_POINTER.withName("RemoveWebResourceRequestedFilterWithRequestSourceKinds")
 	).withName("ICoreWebView2_22Vtbl");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	
@@ -305,10 +298,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -318,7 +311,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_WebResourceResponseReceived.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_WebResourceResponseReceived.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -405,8 +398,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -417,7 +410,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_WebResourceResponseReceived.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_WebResourceResponseReceived.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -504,9 +497,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -516,7 +509,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(NavigateWithWebResourceRequest.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(NavigateWithWebResourceRequest.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -603,10 +596,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -616,7 +609,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_DOMContentLoaded.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_DOMContentLoaded.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -703,8 +696,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -715,7 +708,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DOMContentLoaded.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_DOMContentLoaded.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -802,9 +795,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -814,7 +807,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_CookieManager.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_CookieManager.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -901,9 +894,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -913,7 +906,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Environment.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_Environment.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1000,9 +993,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1012,7 +1005,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(TrySuspend.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(TrySuspend.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1099,8 +1092,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1110,7 +1103,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Resume.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Resume.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1197,9 +1190,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1209,7 +1202,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsSuspended.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsSuspended.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1296,11 +1289,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -1310,7 +1303,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(SetVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(SetVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1397,9 +1390,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1409,7 +1402,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(ClearVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(ClearVirtualHostNameToFolderMapping.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1496,10 +1489,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1509,7 +1502,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FrameCreated.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_FrameCreated.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1596,8 +1589,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1608,7 +1601,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FrameCreated.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_FrameCreated.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1695,10 +1688,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1708,7 +1701,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_DownloadStarting.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_DownloadStarting.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1795,8 +1788,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1807,7 +1800,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_DownloadStarting.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_DownloadStarting.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1894,10 +1887,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -1907,7 +1900,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ClientCertificateRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ClientCertificateRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -1994,8 +1987,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2006,7 +1999,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ClientCertificateRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ClientCertificateRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2093,8 +2086,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2104,7 +2097,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(OpenTaskManagerWindow.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(OpenTaskManagerWindow.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2191,11 +2184,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2205,7 +2198,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(PrintToPdf.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(PrintToPdf.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2292,10 +2285,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2305,7 +2298,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsMutedChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_IsMutedChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2392,8 +2385,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2404,7 +2397,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsMutedChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_IsMutedChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2491,9 +2484,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2503,7 +2496,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsMuted.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsMuted.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2590,9 +2583,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -2602,7 +2595,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_IsMuted.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_IsMuted.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2689,10 +2682,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2702,7 +2695,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2789,8 +2782,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2801,7 +2794,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_IsDocumentPlayingAudioChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2888,9 +2881,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -2900,7 +2893,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsDocumentPlayingAudio.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsDocumentPlayingAudio.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -2987,10 +2980,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3000,7 +2993,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3087,8 +3080,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -3099,7 +3092,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_IsDefaultDownloadDialogOpenChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3186,9 +3179,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3198,7 +3191,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_IsDefaultDownloadDialogOpen.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_IsDefaultDownloadDialogOpen.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3285,8 +3278,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3296,7 +3289,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(OpenDefaultDownloadDialog.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(OpenDefaultDownloadDialog.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3383,8 +3376,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3394,7 +3387,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(CloseDefaultDownloadDialog.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(CloseDefaultDownloadDialog.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3481,9 +3474,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3493,7 +3486,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3580,9 +3573,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -3592,7 +3585,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_DefaultDownloadDialogCornerAlignment.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3679,9 +3672,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3691,7 +3684,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3778,8 +3771,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				tagPOINT.layout()
 		);
 		
@@ -3790,7 +3783,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_DefaultDownloadDialogMargin.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3877,10 +3870,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -3890,7 +3883,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_BasicAuthenticationRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_BasicAuthenticationRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -3977,8 +3970,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -3989,7 +3982,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_BasicAuthenticationRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_BasicAuthenticationRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4076,12 +4069,12 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4091,7 +4084,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(CallDevToolsProtocolMethodForSession.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(CallDevToolsProtocolMethodForSession.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4178,10 +4171,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4191,7 +4184,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ContextMenuRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ContextMenuRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4278,8 +4271,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4290,7 +4283,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ContextMenuRequested.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ContextMenuRequested.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4377,10 +4370,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4390,7 +4383,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_StatusBarTextChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_StatusBarTextChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4477,8 +4470,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4489,7 +4482,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_StatusBarTextChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_StatusBarTextChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4576,9 +4569,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4588,7 +4581,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_StatusBarText.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_StatusBarText.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4675,9 +4668,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4687,7 +4680,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_Profile.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_Profile.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4774,10 +4767,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4787,7 +4780,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4874,8 +4867,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4886,7 +4879,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_ServerCertificateErrorDetected.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -4973,9 +4966,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -4985,7 +4978,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(ClearServerCertificateErrorActions.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(ClearServerCertificateErrorActions.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5072,10 +5065,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5085,7 +5078,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_FaviconChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_FaviconChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5172,8 +5165,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -5184,7 +5177,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_FaviconChanged.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_FaviconChanged.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5271,9 +5264,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5283,7 +5276,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_FaviconUri.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_FaviconUri.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5370,10 +5363,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5383,7 +5376,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(GetFavicon.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(GetFavicon.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5470,10 +5463,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5483,7 +5476,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(Print.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(Print.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5570,9 +5563,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -5582,7 +5575,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(ShowPrintUI.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(ShowPrintUI.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5669,10 +5662,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5682,7 +5675,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(PrintToPdfStream.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(PrintToPdfStream.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5769,11 +5762,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5783,7 +5776,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(PostSharedBufferToScript.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(PostSharedBufferToScript.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5870,10 +5863,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -5883,7 +5876,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(add_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(add_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -5970,8 +5963,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
 				EventRegistrationToken.layout()
 		);
 		
@@ -5982,7 +5975,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(remove_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(remove_LaunchingExternalUriScheme.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6069,9 +6062,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -6081,7 +6074,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6168,9 +6161,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -6180,7 +6173,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(put_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(put_MemoryUsageTargetLevel.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6267,9 +6260,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -6279,7 +6272,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(get_FrameId.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(get_FrameId.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6366,10 +6359,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_POINTER
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER
 		);
 		
 		/**
@@ -6379,7 +6372,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(ExecuteScriptWithResult.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(ExecuteScriptWithResult.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6466,11 +6459,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -6480,7 +6473,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(AddWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(AddWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
@@ -6567,11 +6560,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				Windows.C_LONG,
-				Windows.C_POINTER,
-				Windows.C_POINTER,
-				Windows.C_INT,
-				Windows.C_INT
+				LayoutUtils.C_LONG,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT
 		);
 		
 		/**
@@ -6581,7 +6574,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 			return $DESC;
 		}
 		
-		private static final MethodHandle UP$MH = Windows.upcallHandle(RemoveWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
+		private static final MethodHandle UP$MH = FFMUtils.upcallHandle(RemoveWebResourceRequestedFilterWithRequestSourceKinds.Function.class, "apply", $DESC);
 		
 		/**
 		 * Allocates a new upcall stub, whose implementation is defined by {@code fi}.

@@ -8,6 +8,7 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 
 /**
@@ -27,7 +28,7 @@ public class tagMINMAXINFO {
 		// Should not be called directly
 	}
 	
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
 			tagPOINT.layout().withName("ptReserved"),
 			tagPOINT.layout().withName("ptMaxSize"),
 			tagPOINT.layout().withName("ptMaxPosition"),
@@ -38,7 +39,7 @@ public class tagMINMAXINFO {
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	

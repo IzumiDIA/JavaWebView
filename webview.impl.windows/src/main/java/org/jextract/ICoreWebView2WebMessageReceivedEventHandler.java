@@ -4,14 +4,12 @@ package org.jextract;
 
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
-
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -26,18 +24,18 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 		// Should not be called directly
 	}
 	@SuppressWarnings("SpellCheckingInspection")
-	private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-			Windows.C_POINTER.withName("lpVtbl")
+	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
+			LayoutUtils.C_POINTER.withName("lpVtbl")
 	).withName("ICoreWebView2WebMessageReceivedEventHandler");
 	
 	/**
 	 * The layout of this struct
 	 */
-	public static GroupLayout layout() {
+	public static StructLayout layout() {
 		return $LAYOUT;
 	}
 	@SuppressWarnings("SpellCheckingInspection")
-	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lpVtbl"));
+	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Layout for field:
