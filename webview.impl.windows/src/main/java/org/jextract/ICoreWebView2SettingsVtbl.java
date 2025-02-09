@@ -8,7 +8,7 @@ import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2SettingsVtbl {
  *     HRESULT (*QueryInterface)(ICoreWebView2Settings *, const IID *const, void **) __attribute__((stdcall));
  *     ULONG (*AddRef)(ICoreWebView2Settings *) __attribute__((stdcall));
@@ -32,7 +32,7 @@ import java.util.function.Consumer;
  *     HRESULT (*get_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall));
  *     HRESULT (*put_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall));
  * }
- * }
+ *}
  */
 public class ICoreWebView2SettingsVtbl {
 	
@@ -72,9 +72,9 @@ public class ICoreWebView2SettingsVtbl {
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Settings *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class QueryInterface {
 		
@@ -90,7 +90,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
 				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
 				LayoutUtils.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
@@ -118,7 +118,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
 			} catch (Throwable ex$) {
@@ -127,13 +127,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Settings *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout QueryInterface$layout() {
 		return QueryInterface$LAYOUT;
@@ -143,9 +143,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Settings *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long QueryInterface$offset() {
 		return QueryInterface$OFFSET;
@@ -153,9 +153,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Settings *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment QueryInterface(MemorySegment struct) {
 		return struct.get(QueryInterface$LAYOUT, QueryInterface$OFFSET);
@@ -163,18 +163,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Settings *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void QueryInterface(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(QueryInterface$LAYOUT, QueryInterface$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class AddRef {
 		
@@ -190,7 +190,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.ULONG,
 				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
@@ -216,7 +216,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -225,13 +225,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout AddRef$layout() {
 		return AddRef$LAYOUT;
@@ -241,9 +241,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long AddRef$offset() {
 		return AddRef$OFFSET;
@@ -251,9 +251,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment AddRef(MemorySegment struct) {
 		return struct.get(AddRef$LAYOUT, AddRef$OFFSET);
@@ -261,18 +261,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void AddRef(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(AddRef$LAYOUT, AddRef$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Release {
 		
@@ -288,7 +288,7 @@ public class ICoreWebView2SettingsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.ULONG,
 				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
@@ -314,7 +314,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
 			} catch (Throwable ex$) {
@@ -323,13 +323,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Release$layout() {
 		return Release$LAYOUT;
@@ -339,9 +339,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Release$offset() {
 		return Release$OFFSET;
@@ -349,9 +349,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Release(MemorySegment struct) {
 		return struct.get(Release$LAYOUT, Release$OFFSET);
@@ -359,18 +359,30 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Settings *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Release(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
 	}
 	
+	private static final FunctionDescriptor
+			GET_SETTING = FunctionDescriptor.of(
+			LayoutUtils.HRESULT,
+			LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+			LayoutUtils.C_BOOL_POINTER
+	),
+			PUT_SETTING = FunctionDescriptor.of(
+					LayoutUtils.HRESULT,
+					LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+					LayoutUtils.C_BOOL
+			);
+	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsScriptEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_IsScriptEnabled {
 		
@@ -385,11 +397,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
-				LayoutUtils.C_BOOL_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -413,7 +421,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -422,13 +430,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsScriptEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsScriptEnabled"));
+	private static final AddressLayout get_IsScriptEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_IsScriptEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsScriptEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_IsScriptEnabled$layout() {
 		return get_IsScriptEnabled$LAYOUT;
@@ -438,9 +446,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsScriptEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_IsScriptEnabled$offset() {
 		return get_IsScriptEnabled$OFFSET;
@@ -448,9 +456,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsScriptEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_IsScriptEnabled(MemorySegment struct) {
 		return struct.get(get_IsScriptEnabled$LAYOUT, get_IsScriptEnabled$OFFSET);
@@ -458,18 +466,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsScriptEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_IsScriptEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_IsScriptEnabled$LAYOUT, get_IsScriptEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsScriptEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_IsScriptEnabled {
 		
@@ -484,11 +492,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -512,7 +516,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -521,13 +525,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsScriptEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsScriptEnabled"));
+	private static final AddressLayout put_IsScriptEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_IsScriptEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsScriptEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_IsScriptEnabled$layout() {
 		return put_IsScriptEnabled$LAYOUT;
@@ -537,9 +541,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsScriptEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_IsScriptEnabled$offset() {
 		return put_IsScriptEnabled$OFFSET;
@@ -547,9 +551,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsScriptEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_IsScriptEnabled(MemorySegment struct) {
 		return struct.get(put_IsScriptEnabled$LAYOUT, put_IsScriptEnabled$OFFSET);
@@ -557,18 +561,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsScriptEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_IsScriptEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_IsScriptEnabled$LAYOUT, put_IsScriptEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_IsWebMessageEnabled {
 		
@@ -583,11 +587,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -611,7 +611,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -620,13 +620,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsWebMessageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsWebMessageEnabled"));
+	private static final AddressLayout get_IsWebMessageEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_IsWebMessageEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_IsWebMessageEnabled$layout() {
 		return get_IsWebMessageEnabled$LAYOUT;
@@ -636,9 +636,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_IsWebMessageEnabled$offset() {
 		return get_IsWebMessageEnabled$OFFSET;
@@ -646,9 +646,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_IsWebMessageEnabled(MemorySegment struct) {
 		return struct.get(get_IsWebMessageEnabled$LAYOUT, get_IsWebMessageEnabled$OFFSET);
@@ -656,18 +656,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_IsWebMessageEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_IsWebMessageEnabled$LAYOUT, get_IsWebMessageEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_IsWebMessageEnabled {
 		
@@ -682,11 +682,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -710,7 +706,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -719,13 +715,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsWebMessageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsWebMessageEnabled"));
+	private static final AddressLayout put_IsWebMessageEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_IsWebMessageEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_IsWebMessageEnabled$layout() {
 		return put_IsWebMessageEnabled$LAYOUT;
@@ -735,9 +731,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_IsWebMessageEnabled$offset() {
 		return put_IsWebMessageEnabled$OFFSET;
@@ -745,9 +741,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_IsWebMessageEnabled(MemorySegment struct) {
 		return struct.get(put_IsWebMessageEnabled$LAYOUT, put_IsWebMessageEnabled$OFFSET);
@@ -755,18 +751,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsWebMessageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_IsWebMessageEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_IsWebMessageEnabled$LAYOUT, put_IsWebMessageEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_AreDefaultScriptDialogsEnabled {
 		
@@ -781,11 +777,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -809,7 +801,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -818,13 +810,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreDefaultScriptDialogsEnabled"));
+	private static final AddressLayout get_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_AreDefaultScriptDialogsEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_AreDefaultScriptDialogsEnabled$layout() {
 		return get_AreDefaultScriptDialogsEnabled$LAYOUT;
@@ -834,9 +826,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_AreDefaultScriptDialogsEnabled$offset() {
 		return get_AreDefaultScriptDialogsEnabled$OFFSET;
@@ -844,9 +836,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_AreDefaultScriptDialogsEnabled(MemorySegment struct) {
 		return struct.get(get_AreDefaultScriptDialogsEnabled$LAYOUT, get_AreDefaultScriptDialogsEnabled$OFFSET);
@@ -854,18 +846,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_AreDefaultScriptDialogsEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_AreDefaultScriptDialogsEnabled$LAYOUT, get_AreDefaultScriptDialogsEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_AreDefaultScriptDialogsEnabled {
 		
@@ -880,11 +872,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -908,7 +896,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -917,13 +905,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreDefaultScriptDialogsEnabled"));
+	private static final AddressLayout put_AreDefaultScriptDialogsEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_AreDefaultScriptDialogsEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_AreDefaultScriptDialogsEnabled$layout() {
 		return put_AreDefaultScriptDialogsEnabled$LAYOUT;
@@ -933,9 +921,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_AreDefaultScriptDialogsEnabled$offset() {
 		return put_AreDefaultScriptDialogsEnabled$OFFSET;
@@ -943,9 +931,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_AreDefaultScriptDialogsEnabled(MemorySegment struct) {
 		return struct.get(put_AreDefaultScriptDialogsEnabled$LAYOUT, put_AreDefaultScriptDialogsEnabled$OFFSET);
@@ -953,18 +941,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultScriptDialogsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_AreDefaultScriptDialogsEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_AreDefaultScriptDialogsEnabled$LAYOUT, put_AreDefaultScriptDialogsEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_IsStatusBarEnabled {
 		
@@ -979,11 +967,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1007,7 +991,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1016,13 +1000,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsStatusBarEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsStatusBarEnabled"));
+	private static final AddressLayout get_IsStatusBarEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_IsStatusBarEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_IsStatusBarEnabled$layout() {
 		return get_IsStatusBarEnabled$LAYOUT;
@@ -1032,9 +1016,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_IsStatusBarEnabled$offset() {
 		return get_IsStatusBarEnabled$OFFSET;
@@ -1042,9 +1026,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_IsStatusBarEnabled(MemorySegment struct) {
 		return struct.get(get_IsStatusBarEnabled$LAYOUT, get_IsStatusBarEnabled$OFFSET);
@@ -1052,18 +1036,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_IsStatusBarEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_IsStatusBarEnabled$LAYOUT, get_IsStatusBarEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_IsStatusBarEnabled {
 		
@@ -1078,11 +1062,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1106,7 +1086,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1115,13 +1095,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsStatusBarEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsStatusBarEnabled"));
+	private static final AddressLayout put_IsStatusBarEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_IsStatusBarEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_IsStatusBarEnabled$layout() {
 		return put_IsStatusBarEnabled$LAYOUT;
@@ -1131,9 +1111,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_IsStatusBarEnabled$offset() {
 		return put_IsStatusBarEnabled$OFFSET;
@@ -1141,9 +1121,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_IsStatusBarEnabled(MemorySegment struct) {
 		return struct.get(put_IsStatusBarEnabled$LAYOUT, put_IsStatusBarEnabled$OFFSET);
@@ -1151,18 +1131,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsStatusBarEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_IsStatusBarEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_IsStatusBarEnabled$LAYOUT, put_IsStatusBarEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_AreDevToolsEnabled {
 		
@@ -1177,11 +1157,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1205,7 +1181,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1214,13 +1190,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreDevToolsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreDevToolsEnabled"));
+	private static final AddressLayout get_AreDevToolsEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_AreDevToolsEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_AreDevToolsEnabled$layout() {
 		return get_AreDevToolsEnabled$LAYOUT;
@@ -1230,9 +1206,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_AreDevToolsEnabled$offset() {
 		return get_AreDevToolsEnabled$OFFSET;
@@ -1240,9 +1216,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_AreDevToolsEnabled(MemorySegment struct) {
 		return struct.get(get_AreDevToolsEnabled$LAYOUT, get_AreDevToolsEnabled$OFFSET);
@@ -1250,18 +1226,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_AreDevToolsEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_AreDevToolsEnabled$LAYOUT, get_AreDevToolsEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_AreDevToolsEnabled {
 		
@@ -1276,11 +1252,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1304,7 +1276,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1313,13 +1285,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreDevToolsEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreDevToolsEnabled"));
+	private static final AddressLayout put_AreDevToolsEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_AreDevToolsEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_AreDevToolsEnabled$layout() {
 		return put_AreDevToolsEnabled$LAYOUT;
@@ -1329,9 +1301,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_AreDevToolsEnabled$offset() {
 		return put_AreDevToolsEnabled$OFFSET;
@@ -1339,9 +1311,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_AreDevToolsEnabled(MemorySegment struct) {
 		return struct.get(put_AreDevToolsEnabled$LAYOUT, put_AreDevToolsEnabled$OFFSET);
@@ -1349,18 +1321,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDevToolsEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_AreDevToolsEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_AreDevToolsEnabled$LAYOUT, put_AreDevToolsEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_AreDefaultContextMenusEnabled {
 		
@@ -1375,11 +1347,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1403,7 +1371,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1412,13 +1380,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreDefaultContextMenusEnabled"));
+	private static final AddressLayout get_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_AreDefaultContextMenusEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_AreDefaultContextMenusEnabled$layout() {
 		return get_AreDefaultContextMenusEnabled$LAYOUT;
@@ -1428,9 +1396,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_AreDefaultContextMenusEnabled$offset() {
 		return get_AreDefaultContextMenusEnabled$OFFSET;
@@ -1438,9 +1406,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_AreDefaultContextMenusEnabled(MemorySegment struct) {
 		return struct.get(get_AreDefaultContextMenusEnabled$LAYOUT, get_AreDefaultContextMenusEnabled$OFFSET);
@@ -1448,18 +1416,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_AreDefaultContextMenusEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_AreDefaultContextMenusEnabled$LAYOUT, get_AreDefaultContextMenusEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_AreDefaultContextMenusEnabled {
 		
@@ -1474,11 +1442,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1502,7 +1466,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1511,13 +1475,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreDefaultContextMenusEnabled"));
+	private static final AddressLayout put_AreDefaultContextMenusEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_AreDefaultContextMenusEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_AreDefaultContextMenusEnabled$layout() {
 		return put_AreDefaultContextMenusEnabled$LAYOUT;
@@ -1527,9 +1491,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_AreDefaultContextMenusEnabled$offset() {
 		return put_AreDefaultContextMenusEnabled$OFFSET;
@@ -1537,9 +1501,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_AreDefaultContextMenusEnabled(MemorySegment struct) {
 		return struct.get(put_AreDefaultContextMenusEnabled$LAYOUT, put_AreDefaultContextMenusEnabled$OFFSET);
@@ -1547,18 +1511,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreDefaultContextMenusEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_AreDefaultContextMenusEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_AreDefaultContextMenusEnabled$LAYOUT, put_AreDefaultContextMenusEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_AreHostObjectsAllowed {
 		
@@ -1573,11 +1537,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1601,7 +1561,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1610,13 +1570,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_AreHostObjectsAllowed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_AreHostObjectsAllowed"));
+	private static final AddressLayout get_AreHostObjectsAllowed$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_AreHostObjectsAllowed"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_AreHostObjectsAllowed$layout() {
 		return get_AreHostObjectsAllowed$LAYOUT;
@@ -1626,9 +1586,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_AreHostObjectsAllowed$offset() {
 		return get_AreHostObjectsAllowed$OFFSET;
@@ -1636,9 +1596,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_AreHostObjectsAllowed(MemorySegment struct) {
 		return struct.get(get_AreHostObjectsAllowed$LAYOUT, get_AreHostObjectsAllowed$OFFSET);
@@ -1646,18 +1606,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_AreHostObjectsAllowed(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_AreHostObjectsAllowed$LAYOUT, get_AreHostObjectsAllowed$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_AreHostObjectsAllowed {
 		
@@ -1672,11 +1632,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, int _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1700,7 +1656,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1709,13 +1665,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_AreHostObjectsAllowed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_AreHostObjectsAllowed"));
+	private static final AddressLayout put_AreHostObjectsAllowed$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_AreHostObjectsAllowed"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_AreHostObjectsAllowed$layout() {
 		return put_AreHostObjectsAllowed$LAYOUT;
@@ -1725,9 +1681,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_AreHostObjectsAllowed$offset() {
 		return put_AreHostObjectsAllowed$OFFSET;
@@ -1735,9 +1691,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_AreHostObjectsAllowed(MemorySegment struct) {
 		return struct.get(put_AreHostObjectsAllowed$LAYOUT, put_AreHostObjectsAllowed$OFFSET);
@@ -1745,18 +1701,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_AreHostObjectsAllowed)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_AreHostObjectsAllowed(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_AreHostObjectsAllowed$LAYOUT, put_AreHostObjectsAllowed$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_IsZoomControlEnabled {
 		
@@ -1771,11 +1727,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1799,7 +1751,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1808,13 +1760,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsZoomControlEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsZoomControlEnabled"));
+	private static final AddressLayout get_IsZoomControlEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_IsZoomControlEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_IsZoomControlEnabled$layout() {
 		return get_IsZoomControlEnabled$LAYOUT;
@@ -1824,9 +1776,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_IsZoomControlEnabled$offset() {
 		return get_IsZoomControlEnabled$OFFSET;
@@ -1834,9 +1786,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_IsZoomControlEnabled(MemorySegment struct) {
 		return struct.get(get_IsZoomControlEnabled$LAYOUT, get_IsZoomControlEnabled$OFFSET);
@@ -1844,18 +1796,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_IsZoomControlEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_IsZoomControlEnabled$LAYOUT, get_IsZoomControlEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_IsZoomControlEnabled {
 		
@@ -1870,11 +1822,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_BOOL
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1898,7 +1846,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -1907,13 +1855,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsZoomControlEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsZoomControlEnabled"));
+	private static final AddressLayout put_IsZoomControlEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_IsZoomControlEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_IsZoomControlEnabled$layout() {
 		return put_IsZoomControlEnabled$LAYOUT;
@@ -1923,9 +1871,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_IsZoomControlEnabled$offset() {
 		return put_IsZoomControlEnabled$OFFSET;
@@ -1933,9 +1881,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_IsZoomControlEnabled(MemorySegment struct) {
 		return struct.get(put_IsZoomControlEnabled$LAYOUT, put_IsZoomControlEnabled$OFFSET);
@@ -1943,18 +1891,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsZoomControlEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_IsZoomControlEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_IsZoomControlEnabled$LAYOUT, put_IsZoomControlEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_IsBuiltInErrorPageEnabled {
 		
@@ -1969,11 +1917,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
+		private static final FunctionDescriptor $DESC = GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1997,7 +1941,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2006,13 +1950,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout get_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsBuiltInErrorPageEnabled"));
+	private static final AddressLayout get_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_IsBuiltInErrorPageEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_IsBuiltInErrorPageEnabled$layout() {
 		return get_IsBuiltInErrorPageEnabled$LAYOUT;
@@ -2022,9 +1966,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_IsBuiltInErrorPageEnabled$offset() {
 		return get_IsBuiltInErrorPageEnabled$OFFSET;
@@ -2032,9 +1976,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_IsBuiltInErrorPageEnabled(MemorySegment struct) {
 		return struct.get(get_IsBuiltInErrorPageEnabled$LAYOUT, get_IsBuiltInErrorPageEnabled$OFFSET);
@@ -2042,18 +1986,18 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_IsBuiltInErrorPageEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_IsBuiltInErrorPageEnabled$LAYOUT, get_IsBuiltInErrorPageEnabled$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_IsBuiltInErrorPageEnabled {
 		
@@ -2068,11 +2012,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, int _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT
-		);
+		private static final FunctionDescriptor $DESC = PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -2096,7 +2036,7 @@ public class ICoreWebView2SettingsVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
 			} catch (Throwable ex$) {
@@ -2105,13 +2045,13 @@ public class ICoreWebView2SettingsVtbl {
 		}
 	}
 	
-	private static final AddressLayout put_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsBuiltInErrorPageEnabled"));
+	private static final AddressLayout put_IsBuiltInErrorPageEnabled$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_IsBuiltInErrorPageEnabled"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_IsBuiltInErrorPageEnabled$layout() {
 		return put_IsBuiltInErrorPageEnabled$LAYOUT;
@@ -2121,9 +2061,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_IsBuiltInErrorPageEnabled$offset() {
 		return put_IsBuiltInErrorPageEnabled$OFFSET;
@@ -2131,9 +2071,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_IsBuiltInErrorPageEnabled(MemorySegment struct) {
 		return struct.get(put_IsBuiltInErrorPageEnabled$LAYOUT, put_IsBuiltInErrorPageEnabled$OFFSET);
@@ -2141,9 +2081,9 @@ public class ICoreWebView2SettingsVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsBuiltInErrorPageEnabled)(ICoreWebView2Settings *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_IsBuiltInErrorPageEnabled(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_IsBuiltInErrorPageEnabled$LAYOUT, put_IsBuiltInErrorPageEnabled$OFFSET, fieldValue);
@@ -2160,7 +2100,9 @@ public class ICoreWebView2SettingsVtbl {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

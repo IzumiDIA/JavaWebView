@@ -60,10 +60,10 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				LayoutUtils.IID_POINTER,
+				LayoutUtils.VOID_POINTER_POINTER
 		);
 		
 		/**
@@ -160,8 +160,8 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.ULONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER
 		);
 		
 		/**
@@ -258,8 +258,8 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.ULONG,
+				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER
 		);
 		
 		/**
@@ -356,9 +356,9 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				LayoutUtils.LPWSTR_POINTER
 		);
 		
 		/**
@@ -455,9 +455,9 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				LayoutUtils.LPWSTR_POINTER
 		);
 		
 		/**
@@ -554,9 +554,9 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				LayoutUtils.LPWSTR_POINTER
 		);
 		
 		/**

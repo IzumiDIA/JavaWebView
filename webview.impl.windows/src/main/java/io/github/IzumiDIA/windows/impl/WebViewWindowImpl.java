@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jextract.ICoreWebView2;
 import org.jextract.ICoreWebView2Vtbl;
 import org.jextract.ICoreWebView2Vtbl.PostWebMessageAsString;
+import org.jextract.ICoreWebView2WebMessageReceivedEventArgs;
 import org.jextract.ICoreWebView2WebMessageReceivedEventArgsVtbl;
 import org.jextract.ICoreWebView2WebMessageReceivedEventHandler;
 import org.jextract.MSG;
@@ -182,10 +183,11 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		}
 		
 		private int tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress) {
+			final var tryGetWebMessageAsStringFunctionPointer = ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString(
+					ICoreWebView2WebMessageReceivedEventArgs.lpVtbl(this.webMessageReceivedEventArgs)
+			);
 			return this.lastHResult = ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString.invoke(
-					ICoreWebView2WebMessageReceivedEventArgsVtbl.TryGetWebMessageAsString(
-							ICoreWebView2WebMessageReceivedEventHandler.lpVtbl(this.webMessageReceivedEventArgs)
-					),
+					tryGetWebMessageAsStringFunctionPointer,
 					this.webMessageReceivedEventArgs,
 					bufferAddress
 			);

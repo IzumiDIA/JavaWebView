@@ -70,6 +70,7 @@ public final class LayoutUtils {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPWSTR = C_POINTER.withTargetLayout(MemoryLayout.sequenceLayout(Long.MAX_VALUE / WCHAR.byteSize(), WCHAR));
+	public static final AddressLayout LPWSTR_POINTER = C_POINTER.withTargetLayout(LPWSTR);
 	/**
 	 * {@snippet lang = c:
 	 * typedef void *LPVOID
@@ -83,12 +84,16 @@ public final class LayoutUtils {
 	 *}
 	 */
 	public static final OfInt LONG = C_LONG;
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final OfInt HRESULT = LONG;
 	/**
 	 * {@snippet lang = c:
 	 * typedef unsigned long DWORD
 	 *}
 	 */
 	public static final OfInt DWORD = C_LONG;
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final OfInt ULONG = DWORD;
 	public static final AddressLayout C_BOOL_POINTER = LayoutUtils.C_POINTER.withTargetLayout(LayoutUtils.C_BOOL);
 	public static final AddressLayout VOID_POINTER_POINTER = LayoutUtils.C_POINTER.withTargetLayout(ValueLayout.ADDRESS);
 	/**
@@ -118,13 +123,6 @@ public final class LayoutUtils {
 	 *}
 	 */
 	public static final OfLong LONG_PTR = C_LONG_LONG;
-	
-	/**
-	 * {@snippet lang = c:
-	 * typedef LPCREATESTRUCTA LPCREATESTRUCT
-	 *}
-	 */
-	public static final AddressLayout LPCREATESTRUCT = C_POINTER;
 	/**
 	 * {@snippet lang = c:
 	 * typedef struct HICON__ {
@@ -170,6 +168,15 @@ public final class LayoutUtils {
 	public static final AddressLayout HWND = C_POINTER;
 	/**
 	 * {@snippet lang = c:
+	 * typedef struct HKEY__ {
+	 *     int unused;
+	 * } *HKEY
+	 *}
+	 */
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final AddressLayout HKEY = C_POINTER.withTargetLayout(HKEY__.layout());
+	/**
+	 * {@snippet lang = c:
 	 * typedef struct HINSTANCE__ {
 	 *     int unused;
 	 * } *HINSTANCE
@@ -177,6 +184,15 @@ public final class LayoutUtils {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout HINSTANCE = C_POINTER;
+	
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final AddressLayout LPCREATESTRUCTA = C_POINTER.withTargetLayout(tagCREATESTRUCTA.layout());
+	/**
+	 * {@snippet lang = c:
+	 * typedef LPCREATESTRUCTA LPCREATESTRUCT
+	 *}
+	 */
+	public static final AddressLayout LPCREATESTRUCT = LPCREATESTRUCTA;
 	/**
 	 * {@snippet lang = c:
 	 * typedef struct tagMINMAXINFO {
@@ -217,21 +233,15 @@ public final class LayoutUtils {
 	public static final AddressLayout LPRECT = C_POINTER.withTargetLayout(tagRECT.layout());
 	/**
 	 * {@snippet lang = c:
-	 * typedef struct HKEY__ {
-	 *     int unused;
-	 * } *HKEY
-	 *}
-	 */
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout HKEY = C_POINTER.withTargetLayout(HKEY__.layout());
-	/**
-	 * {@snippet lang = c:
 	 * typedef LARGE_INTEGER *PLARGE_INTEGER
 	 *}
 	 */
 	public static final AddressLayout PLARGE_INTEGER = C_POINTER.withTargetLayout(LARGE_INTEGER.layout());
 	public static final AddressLayout IID_POINTER = LayoutUtils.C_POINTER.withTargetLayout(IID.layout());
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout WNDPROC_POINTER = LayoutUtils.C_POINTER;
 	public static final AddressLayout I_CORE_WEB_VIEW_2_POINTER = C_POINTER.withTargetLayout(ICoreWebView2.layout());
 	public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());
+	public static final AddressLayout I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_HANDLER_POINTER = C_POINTER.withTargetLayout(ICoreWebView2WebMessageReceivedEventHandler.layout());
+	public static final AddressLayout I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2WebMessageReceivedEventArgs.layout());
 }

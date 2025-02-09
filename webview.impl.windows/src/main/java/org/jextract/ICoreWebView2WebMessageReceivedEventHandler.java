@@ -25,7 +25,7 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	}
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
-			LayoutUtils.C_POINTER.withName("lpVtbl")
+			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2WebMessageReceivedEventHandlerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2WebMessageReceivedEventHandler");
 	
 	/**
