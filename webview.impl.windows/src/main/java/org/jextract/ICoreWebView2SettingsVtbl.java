@@ -91,7 +91,7 @@ public class ICoreWebView2SettingsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+				ICoreWebView2Settings.POINTER$LAYOUT,
 				LayoutUtils.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
@@ -191,7 +191,7 @@ public class ICoreWebView2SettingsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
+				ICoreWebView2Settings.POINTER$LAYOUT
 		);
 		
 		/**
@@ -289,7 +289,7 @@ public class ICoreWebView2SettingsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
+				ICoreWebView2Settings.POINTER$LAYOUT
 		);
 		
 		/**
@@ -370,12 +370,12 @@ public class ICoreWebView2SettingsVtbl {
 	private static final FunctionDescriptor
 			GET_SETTING = FunctionDescriptor.of(
 			LayoutUtils.HRESULT,
-			LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+			ICoreWebView2Settings.POINTER$LAYOUT,
 			LayoutUtils.C_BOOL_POINTER
 	),
 			PUT_SETTING = FunctionDescriptor.of(
 					LayoutUtils.HRESULT,
-					LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+					ICoreWebView2Settings.POINTER$LAYOUT,
 					LayoutUtils.C_BOOL
 			);
 	

@@ -61,7 +61,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT,
 				LayoutUtils.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
@@ -161,7 +161,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT
 		);
 		
 		/**
@@ -259,7 +259,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT
 		);
 		
 		/**
@@ -357,7 +357,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT,
 				LayoutUtils.LPWSTR_POINTER
 		);
 		
@@ -456,7 +456,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT,
 				LayoutUtils.LPWSTR_POINTER
 		);
 		
@@ -555,7 +555,7 @@ public class ICoreWebView2WebMessageReceivedEventArgsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER,
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT,
 				LayoutUtils.LPWSTR_POINTER
 		);
 		

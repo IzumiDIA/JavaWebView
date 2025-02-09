@@ -126,4 +126,5 @@ public class ICoreWebView2 {
 		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
 	}
 	
+	public static final AddressLayout I_CORE_WEB_VIEW_2_POINTER = LayoutUtils.C_POINTER.withTargetLayout(layout());
 }

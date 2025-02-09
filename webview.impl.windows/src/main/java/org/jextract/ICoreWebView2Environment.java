@@ -25,7 +25,7 @@ public class ICoreWebView2Environment {
 	}
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
-			LayoutUtils.C_POINTER.withName("lpVtbl")
+			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2EnvironmentVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2Environment");
 	
 	/**
@@ -122,4 +122,6 @@ public class ICoreWebView2Environment {
 	public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
 		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
 	}
+	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 }

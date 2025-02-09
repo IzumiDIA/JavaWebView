@@ -25,7 +25,7 @@ public class ICoreWebView2Controller {
 	}
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
-			LayoutUtils.C_POINTER.withName("lpVtbl")
+			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2ControllerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2Controller");
 	
 	/**
@@ -34,6 +34,7 @@ public class ICoreWebView2Controller {
 	public static StructLayout layout() {
 		return $LAYOUT;
 	}
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	

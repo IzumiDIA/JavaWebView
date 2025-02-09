@@ -171,7 +171,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.C_LONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
 				LayoutUtils.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
@@ -271,7 +271,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER
 		);
 		
 		/**
@@ -369,7 +369,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER
 		);
 		
 		/**
@@ -467,8 +467,8 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
-				LayoutUtils.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2Settings.POINTER$LAYOUT
 		);
 		
 		/**
@@ -566,7 +566,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
 				LayoutUtils.LPWSTR_POINTER
 		);
 		
@@ -665,7 +665,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
 				LayoutUtils.LPCWSTR
 		);
 		
@@ -764,7 +764,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
 				LayoutUtils.LPCWSTR
 		);
 		
@@ -863,7 +863,7 @@ public class ICoreWebView2Vtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER
 		);

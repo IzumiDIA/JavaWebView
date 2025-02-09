@@ -4,7 +4,6 @@ package org.jextract;
 
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
@@ -124,4 +123,5 @@ public class ICoreWebView2Settings {
 		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
 	}
 	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 }

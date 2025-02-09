@@ -57,7 +57,7 @@ public class ICoreWebView2WebMessageReceivedEventHandlerVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_HANDLER_POINTER,
+				ICoreWebView2WebMessageReceivedEventHandler.POINTER$LAYOUT,
 				LayoutUtils.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
@@ -157,7 +157,7 @@ public class ICoreWebView2WebMessageReceivedEventHandlerVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.C_LONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_HANDLER_POINTER
+				ICoreWebView2WebMessageReceivedEventHandler.POINTER$LAYOUT
 		);
 		
 		/**
@@ -255,7 +255,7 @@ public class ICoreWebView2WebMessageReceivedEventHandlerVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_HANDLER_POINTER
+				ICoreWebView2WebMessageReceivedEventHandler.POINTER$LAYOUT
 		);
 		
 		/**
@@ -353,9 +353,9 @@ public class ICoreWebView2WebMessageReceivedEventHandlerVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_HANDLER_POINTER,
-				LayoutUtils.I_CORE_WEB_VIEW_2_POINTER,
-				LayoutUtils.I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER
+				ICoreWebView2WebMessageReceivedEventHandler.POINTER$LAYOUT,
+				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT
 		);
 		
 		/**

@@ -3,7 +3,6 @@ package org.jextract;
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Linker;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.ValueLayout;
 import java.lang.foreign.ValueLayout.*;
 
 public final class LayoutUtils {
@@ -39,6 +38,7 @@ public final class LayoutUtils {
 		C_LONG = (OfInt) canonicalLayouts.get("long");
 		C_LONG_DOUBLE = (OfDouble) canonicalLayouts.get("double");
 	}
+	public static final AddressLayout DOUBLE_POINTER = C_POINTER.withTargetLayout(LayoutUtils.C_DOUBLE);
 	public static final OfInt UINT = C_INT;
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final OfLong LONGLONG = C_LONG_LONG;
@@ -70,6 +70,7 @@ public final class LayoutUtils {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPWSTR = C_POINTER.withTargetLayout(MemoryLayout.sequenceLayout(Long.MAX_VALUE / WCHAR.byteSize(), WCHAR));
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPWSTR_POINTER = C_POINTER.withTargetLayout(LPWSTR);
 	/**
 	 * {@snippet lang = c:
@@ -94,8 +95,8 @@ public final class LayoutUtils {
 	public static final OfInt DWORD = C_LONG;
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final OfInt ULONG = DWORD;
-	public static final AddressLayout C_BOOL_POINTER = LayoutUtils.C_POINTER.withTargetLayout(LayoutUtils.C_BOOL);
-	public static final AddressLayout VOID_POINTER_POINTER = LayoutUtils.C_POINTER.withTargetLayout(ValueLayout.ADDRESS);
+	public static final AddressLayout C_BOOL_POINTER = C_POINTER.withTargetLayout(C_BOOL);
+	public static final AddressLayout VOID_POINTER_POINTER = C_POINTER.withTargetLayout(C_POINTER);
 	/**
 	 * {@snippet lang = c:
 	 * typedef LONG_PTR LRESULT
@@ -231,17 +232,14 @@ public final class LayoutUtils {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPRECT = C_POINTER.withTargetLayout(tagRECT.layout());
+	public static final AddressLayout RECT_POINTER = C_POINTER.withTargetLayout(tagRECT.layout());
 	/**
 	 * {@snippet lang = c:
 	 * typedef LARGE_INTEGER *PLARGE_INTEGER
 	 *}
 	 */
 	public static final AddressLayout PLARGE_INTEGER = C_POINTER.withTargetLayout(LARGE_INTEGER.layout());
-	public static final AddressLayout IID_POINTER = LayoutUtils.C_POINTER.withTargetLayout(IID.layout());
+	public static final AddressLayout IID_POINTER = C_POINTER.withTargetLayout(IID.layout());
 	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout WNDPROC_POINTER = LayoutUtils.C_POINTER;
-	public static final AddressLayout I_CORE_WEB_VIEW_2_POINTER = C_POINTER.withTargetLayout(ICoreWebView2.layout());
-	public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());
-	public static final AddressLayout I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_HANDLER_POINTER = C_POINTER.withTargetLayout(ICoreWebView2WebMessageReceivedEventHandler.layout());
-	public static final AddressLayout I_CORE_WEB_VIEW_2_WEB_MESSAGE_RECEIVED_EVENT_ARGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2WebMessageReceivedEventArgs.layout());
+	public static final AddressLayout WNDPROC_POINTER = C_POINTER;
 }

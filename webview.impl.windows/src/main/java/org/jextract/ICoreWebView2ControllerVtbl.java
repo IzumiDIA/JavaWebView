@@ -100,10 +100,10 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
+				LayoutUtils.IID_POINTER,
+				LayoutUtils.VOID_POINTER_POINTER
 		);
 		
 		/**
@@ -200,8 +200,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.ULONG,
+				ICoreWebView2Controller.POINTER$LAYOUT
 		);
 		
 		/**
@@ -298,8 +298,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.ULONG,
+				ICoreWebView2Controller.POINTER$LAYOUT
 		);
 		
 		/**
@@ -396,8 +396,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				LayoutUtils.C_BOOL_POINTER
 		);
 		
@@ -495,8 +495,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				LayoutUtils.C_BOOL
 		);
 		
@@ -594,9 +594,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
+				LayoutUtils.RECT_POINTER
 		);
 		
 		/**
@@ -693,8 +693,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				tagRECT.layout()
 		);
 		
@@ -792,9 +792,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER.withTargetLayout(LayoutUtils.C_DOUBLE)
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
+				LayoutUtils.DOUBLE_POINTER
 		);
 		
 		/**
@@ -891,8 +891,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				LayoutUtils.C_DOUBLE
 		);
 		
@@ -990,8 +990,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER
 		);
@@ -1090,8 +1090,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1189,8 +1189,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				tagRECT.layout(),
 				LayoutUtils.C_DOUBLE
 		);
@@ -1289,8 +1289,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				LayoutUtils.C_INT
 		);
 		
@@ -1388,8 +1388,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER
 		);
@@ -1488,8 +1488,8 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2Controller.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
