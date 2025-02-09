@@ -354,7 +354,7 @@ public class ICoreWebView2WebMessageReceivedEventHandlerVtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
 				ICoreWebView2WebMessageReceivedEventHandler.POINTER$LAYOUT,
-				ICoreWebView2.I_CORE_WEB_VIEW_2_POINTER,
+				ICoreWebView2.POINTER$LAYOUT,
 				ICoreWebView2WebMessageReceivedEventArgs.POINTER$LAYOUT
 		);
 		

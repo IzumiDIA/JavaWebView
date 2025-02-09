@@ -298,10 +298,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -398,8 +398,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -497,8 +497,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -596,10 +596,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -696,8 +696,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -795,8 +795,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -894,9 +894,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				ICoreWebView2Environment.POINTER_POINTER$LAYOUT
 		);
 		
 		/**
@@ -993,8 +993,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -1092,8 +1092,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT
 		);
 		
 		/**
@@ -1190,9 +1190,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -1289,10 +1289,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.LPCWSTR,
 				LayoutUtils.C_INT
 		);
 		
@@ -1347,7 +1347,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 	 * HRESULT (*SetVirtualHostNameToFolderMapping)(ICoreWebView2_22 *, LPCWSTR, LPCWSTR, COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND) __attribute__((stdcall))
 	 *}
 	 */
-	public static final long SetVirtualHostNameToFolderMapping$offset() {
+	public static long SetVirtualHostNameToFolderMapping$offset() {
 		return SetVirtualHostNameToFolderMapping$OFFSET;
 	}
 	
@@ -1390,9 +1390,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.LPCWSTR
 		);
 		
 		/**
@@ -1489,10 +1489,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -1589,8 +1589,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1688,10 +1688,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -1788,8 +1788,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -1887,10 +1887,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -1987,8 +1987,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2086,8 +2086,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT
 		);
 		
 		/**
@@ -2184,9 +2184,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.LPCWSTR,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER
 		);
@@ -2285,10 +2285,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -2385,8 +2385,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2484,9 +2484,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -2583,9 +2583,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.C_BOOL
 		);
 		
 		/**
@@ -2682,10 +2682,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -2782,8 +2782,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -2881,9 +2881,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -2980,10 +2980,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -3080,8 +3080,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -3179,9 +3179,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.C_BOOL_POINTER
 		);
 		
 		/**
@@ -3278,8 +3278,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT
 		);
 		
 		/**
@@ -3376,8 +3376,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT
 		);
 		
 		/**
@@ -3474,8 +3474,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -3573,8 +3573,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_INT
 		);
 		
@@ -3672,9 +3672,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.POINT_POINTER
 		);
 		
 		/**
@@ -3771,9 +3771,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				tagPOINT.layout()
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				POINT.layout()
 		);
 		
 		/**
@@ -3870,10 +3870,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -3915,7 +3915,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 	 * HRESULT (*add_BasicAuthenticationRequested)(ICoreWebView2_22 *, ICoreWebView2BasicAuthenticationRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
 	 *}
 	 */
-	public static final AddressLayout add_BasicAuthenticationRequested$layout() {
+	public static AddressLayout add_BasicAuthenticationRequested$layout() {
 		return add_BasicAuthenticationRequested$LAYOUT;
 	}
 	
@@ -3970,8 +3970,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4069,11 +4069,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.LPCWSTR,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -4171,10 +4171,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -4271,8 +4271,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4370,10 +4370,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -4470,8 +4470,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4569,9 +4569,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.LPWSTR_POINTER
 		);
 		
 		/**
@@ -4668,8 +4668,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -4767,10 +4767,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -4867,8 +4867,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -4966,8 +4966,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER
 		);
 		
@@ -5065,10 +5065,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -5165,8 +5165,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		
@@ -5264,9 +5264,9 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
+				LayoutUtils.LPWSTR_POINTER
 		);
 		
 		/**
@@ -5363,8 +5363,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_POINTER
 		);
@@ -5463,8 +5463,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER
 		);
@@ -5563,8 +5563,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_INT
 		);
 		
@@ -5662,8 +5662,8 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER
 		);
@@ -5762,11 +5762,11 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER
+				LayoutUtils.LPCWSTR
 		);
 		
 		/**
@@ -5863,10 +5863,10 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
+				ICoreWebView2_22.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**

@@ -25,7 +25,7 @@ public class IUnknown {
 	}
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
-			LayoutUtils.C_POINTER.withName("lpVtbl")
+			LayoutUtils.C_POINTER.withTargetLayout(IUnknownVtbl.layout()).withName("lpVtbl")
 	).withName("IUnknown");
 	
 	/**

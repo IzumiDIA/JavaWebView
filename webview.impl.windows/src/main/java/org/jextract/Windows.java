@@ -2681,7 +2681,7 @@ public class Windows {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_BOOL,
 				LayoutUtils.HWND,
-				LayoutUtils.C_INT,
+				LayoutUtils.UINT,
 				LayoutUtils.WPARAM,
 				LayoutUtils.LPARAM
 		);
@@ -2935,8 +2935,8 @@ public class Windows {
 	
 	private static class IsWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -3080,13 +3080,13 @@ public class Windows {
 	
 	private static class MoveWindow {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT,
-				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
-				LayoutUtils.C_INT
+				LayoutUtils.C_INT,
+				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -3133,7 +3133,7 @@ public class Windows {
 	
 	private static class SetWindowPos {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_INT,
@@ -3187,8 +3187,8 @@ public class Windows {
 	
 	private static class SetFocus {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HWND,
+				LayoutUtils.HWND
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -3331,9 +3331,9 @@ public class Windows {
 	
 	private static class SetWindowTextW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND,
+				LayoutUtils.LPCWSTR
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -3477,109 +3477,10 @@ public class Windows {
 		}
 	}
 	
-	private static class GetWindowLongA {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetWindowLongA"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * LONG GetWindowLongA(HWND hWnd, int nIndex)
-	 *}
-	 */
-	public static FunctionDescriptor GetWindowLongA$descriptor() {
-		return GetWindowLongA.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * LONG GetWindowLongA(HWND hWnd, int nIndex)
-	 *}
-	 */
-	public static MethodHandle GetWindowLongA$handle() {
-		return GetWindowLongA.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * LONG GetWindowLongA(HWND hWnd, int nIndex)
-	 *}
-	 */
-	public static int GetWindowLongA(MemorySegment hWnd, int nIndex) {
-		var mh$ = GetWindowLongA.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("GetWindowLongA", hWnd, nIndex);
-			}
-			return (int) mh$.invokeExact(hWnd, nIndex);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class SetWindowLongA {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetWindowLongA"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * LONG SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)
-	 *}
-	 */
-	public static FunctionDescriptor SetWindowLongA$descriptor() {
-		return SetWindowLongA.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * LONG SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)
-	 *}
-	 */
-	public static MethodHandle SetWindowLongA$handle() {
-		return SetWindowLongA.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * LONG SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)
-	 *}
-	 */
-	public static int SetWindowLongA(MemorySegment hWnd, int nIndex, int dwNewLong) {
-		var mh$ = SetWindowLongA.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("SetWindowLongA", hWnd, nIndex, dwNewLong);
-			}
-			return (int) mh$.invokeExact(hWnd, nIndex, dwNewLong);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
 	private static class GetWindowLongPtrW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG_LONG,
 				LayoutUtils.C_POINTER,
+				LayoutUtils.HWND,
 				LayoutUtils.C_INT
 		);
 		
@@ -4813,4 +4714,17 @@ public class Windows {
 			throw new AssertionError("should not reach here", ex$);
 		}
 	}
+	
+	public static final int
+			WM_DESTROY = 0x0002,
+			WM_SIZE = 0x0005,
+			WM_CLOSE = 0x0010,
+			WM_QUIT = 0x0012,
+			WM_SIZING = 0x0214,
+			WM_USER = 0x0400;
+	@SuppressWarnings({"SpellCheckingInspection", "PointlessBitwiseExpression"})
+	public static final int WS_OVERLAPPEDWINDOW = 0x00000000 | 0x00C00000 | 0x00080000 | 0x00040000 | 0x00020000 | 0x00010000;
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final int CW_USEDEFAULT = 0x80000000;
+	public static final int SW_SHOW = 5;
 }

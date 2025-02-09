@@ -15,8 +15,8 @@ import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.*;
 import org.jextract.ICoreWebView2WebMessageReceivedEventHandlerVtbl.Invoke;
+import org.jextract.LayoutUtils.PointerLayoutHolder;
 
-import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
@@ -26,8 +26,6 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 
 public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBuilder<HResult, EventExchangeImpl> {
-	private static final AddressLayout WEBVIEW_2_POINTER_LAYOUT = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2.layout());
-	private static final AddressLayout WEBVIEW_2_22_POINTER_LAYOUT = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2_22.layout());
 	private final WebViewControllerImpl webViewController;
 	private final PlatformWindow platformWindow;
 	private final MemorySegment webview2_PP;
@@ -53,11 +51,9 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 		this.webViewController = webViewController;
 		this.platformWindow = platformWindow;
 		this.webview2_PP = this.arena.allocateFrom(
-				ValueLayout.ADDRESS.withTargetLayout(
-						WEBVIEW_2_POINTER_LAYOUT
-				),
+				ICoreWebView2.POINTER_POINTER$LAYOUT,
 				this.arena.allocateFrom(
-						WEBVIEW_2_POINTER_LAYOUT,
+						ICoreWebView2.POINTER$LAYOUT,
 						MemorySegment.NULL
 				)
 		);
@@ -65,7 +61,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	@Override
 	public WebViewBuilderImpl setUserDataFolder(final Path userDataFolderPath) {
-		this.userDataFolder = userDataFolderPath != null ? userDataFolderPath.toAbsolutePath().toString() : null;
+		this.userDataFolder = userDataFolderPath != null ?
+				                      userDataFolderPath.toAbsolutePath().toString() : null;
 		return this;
 	}
 	
@@ -187,8 +184,6 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 			if ( !(hResult instanceof HResult.S_OK) ) {
 				throw new RuntimeException(hResult.toString());
 			}
-		} catch (final Throwable e) {
-			throw new RuntimeException(e);
 		}
 		final var webViewWindow = new WebViewWindowImpl(this.arena, this.platformWindow, this.webview2_PP);
 		this.webViewController.setCore(webViewWindow);
@@ -204,7 +199,8 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 						ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl::allocate,
 						(f, a) -> ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl.Invoke.allocate(f::invoke, a)
 				).wrapCallback(
-						this::coreWebView2ControllerCompletedHandlerInvoke,
+						(ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerSelf, errorCode, webView2Controller) ->
+								coreWebView2ControllerCompletedHandlerInvoke(ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerSelf, errorCode, webView2Controller).value(),
 						self ->
 								ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl.AddRef.invoke(
 										ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl.AddRef(
@@ -217,40 +213,46 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 		return controllerCompletedHandler;
 	}
 	
-	private int coreWebView2ControllerCompletedHandlerInvoke(
+	private HResult coreWebView2ControllerCompletedHandlerInvoke(
 			final MemorySegment ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerSelf,
 			final int errorCode,
 			final MemorySegment webView2Controller
 	) {
 		if ( !MemorySegment.NULL.equals(webView2Controller) ) {
-			var hResult = HResult.warpResult(this.getWebView2(webView2Controller));
+			final var hResult = HResult.warpResult(this.getWebView2(webView2Controller));
 			if ( !(hResult instanceof HResult.S_OK) ) {
 				throw new RuntimeException(hResult.toString());
 			}
 		}
-		final var S_OK = HResult.S_OK.SINGLETON.value();
 		final var webview2Pointer = this.getWebview2Pointer();
 		if ( this.needsExtension ) {
-			final var webview2_22_PP = this.getICoreWebView2_22(webview2Pointer);
-			final var webview2_22Pointer = webview2_22_PP.get(WEBVIEW_2_22_POINTER_LAYOUT, 0);
-			final var hResult = this.setVirtualHostNameToFolderMapping(webview2_22Pointer);
-			if ( hResult != S_OK ) {
+			final var hResult = this.extendedSetting(webview2Pointer);
+			if ( !(hResult instanceof HResult.S_OK) ) {
 				return hResult;
 			}
 		}
-		var hResult = this.putWebView2Settings(webview2Pointer);
-		if ( hResult != S_OK ) return hResult;
+		// 获取（可能更新后的）虚表指针
+		@SuppressWarnings("SpellCheckingInspection")
+		final var webview2lpVtbl = ICoreWebView2.lpVtbl(webview2Pointer);
+		var hResult = this.webView2Settings(webview2Pointer, webview2lpVtbl);
+		if ( !(hResult instanceof HResult.S_OK) ) return hResult;
 		hResult = this.configByController(webView2Controller);
-		if ( hResult != S_OK ) return hResult;
-		hResult = this.setWebMessageListener(webview2Pointer);
-		if ( hResult != S_OK ) return hResult;
+		if ( !(hResult instanceof HResult.S_OK) ) return hResult;
+		hResult = this.setWebMessageListener(webview2Pointer, webview2lpVtbl);
+		if ( !(hResult instanceof HResult.S_OK) ) return hResult;
 		return this.contentString != null ?
-				       this.navigateToString(webview2Pointer)
+				       this.navigateToString(webview2Pointer, webview2lpVtbl)
 				       :
 				       this.uriString != null ?
-						       this.navigate(webview2Pointer)
+						       this.navigate(webview2Pointer, webview2lpVtbl)
 						       :
-						       S_OK;
+						       HResult.S_OK.SINGLETON;
+	}
+	
+	private HResult extendedSetting(final MemorySegment webview2Pointer) {
+		final var webview2_22_PP = this.getICoreWebView2_22(webview2Pointer);
+		final var webview2_22Pointer = webview2_22_PP.get(ICoreWebView2_22.POINTER$LAYOUT, 0);
+		return this.setVirtualHostNameToFolderMapping(webview2_22Pointer);
 	}
 	
 	private int getWebView2(final MemorySegment controller) {
@@ -268,34 +270,43 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 		);
 	}
 	
-	private int configByController(final MemorySegment controller) {
+	private HResult configByController(final MemorySegment controller) {
+		@SuppressWarnings("SpellCheckingInspection")
 		final var webviewControllerlpVtbl = ICoreWebView2Controller.lpVtbl(controller);
 		final var bounds = tagRECT.allocate(this.arena);
-		this.platformWindow.getClientRect(bounds);
-		return ICoreWebView2ControllerVtbl.put_Bounds.invoke(
-				ICoreWebView2ControllerVtbl.put_Bounds(webviewControllerlpVtbl),
-				controller,
-				bounds
+		return this.platformWindow.getClientRect(bounds) ?
+				       HResult.warpResult(
+						       ICoreWebView2ControllerVtbl.put_Bounds.invoke(
+								       ICoreWebView2ControllerVtbl.put_Bounds(webviewControllerlpVtbl),
+								       controller,
+								       bounds
+						       )
+				       )
+				       :
+				       HResult.E_FAIL.SINGLETON;
+	}
+	
+	private HResult navigate(final MemorySegment webview2Pointer, @SuppressWarnings("SpellCheckingInspection") final MemorySegment webview2lpVtbl) {
+		return HResult.warpResult(
+				ICoreWebView2Vtbl.Navigate.invoke(
+						ICoreWebView2Vtbl.Navigate(
+								webview2lpVtbl
+						),
+						webview2Pointer,
+						this.uriString
+				)
 		);
 	}
 	
-	private int navigate(final MemorySegment webview2Pointer) {
-		return ICoreWebView2Vtbl.Navigate.invoke(
-				ICoreWebView2Vtbl.Navigate(
-						ICoreWebView2.lpVtbl(webview2Pointer)
-				),
-				webview2Pointer,
-				this.uriString
-		);
-	}
-	
-	private int navigateToString(final MemorySegment webview2Pointer) {
-		return ICoreWebView2Vtbl.NavigateToString.invoke(
-				ICoreWebView2Vtbl.NavigateToString(
-						ICoreWebView2.lpVtbl(webview2Pointer)
-				),
-				webview2Pointer,
-				this.contentString
+	private HResult navigateToString(final MemorySegment webview2Pointer, @SuppressWarnings("SpellCheckingInspection") final MemorySegment webview2lpVtbl) {
+		return HResult.warpResult(
+				ICoreWebView2Vtbl.NavigateToString.invoke(
+						ICoreWebView2Vtbl.NavigateToString(
+								webview2lpVtbl
+						),
+						webview2Pointer,
+						this.contentString
+				)
 		);
 	}
 	
@@ -332,25 +343,28 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	
 	private MemorySegment getICoreWebView2_22(final MemorySegment coreWebView2) {
 		final var webview2_22_PP = this.arena.allocateFrom(
-				ValueLayout.ADDRESS.withTargetLayout(WEBVIEW_2_22_POINTER_LAYOUT),
+				ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2_22.POINTER$LAYOUT),
 				this.arena.allocateFrom(
-						WEBVIEW_2_22_POINTER_LAYOUT,
+						ICoreWebView2_22.POINTER$LAYOUT,
 						MemorySegment.NULL
 				)
 		);
-		if (
+		final var hResult = HResult.warpResult(
 				ICoreWebView2Vtbl.QueryInterface.invoke(
 						ICoreWebView2Vtbl.QueryInterface(ICoreWebView2.lpVtbl(coreWebView2)),
 						coreWebView2,
 						ICoreWebView2_22Holder.IID_ICoreWebView2_22,
 						webview2_22_PP
-				) == HResult.S_OK.SINGLETON.value()
-		) return webview2_22_PP;
-		else throw new RuntimeException("Could not query ICoreWebView2_22.");
+				)
+		);
+		if ( hResult instanceof HResult.S_OK ) return webview2_22_PP;
+		else throw new RuntimeException("ICoreWebView2_22 could not be queried. " + hResult);
 	}
 	
-	private int putWebView2Settings(final MemorySegment webview2Pointer) {
-		final var settingsTargetLayout = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2Settings.layout());
+	private HResult webView2Settings(
+			final MemorySegment webview2Pointer, @SuppressWarnings("SpellCheckingInspection") final MemorySegment webview2lpVtbl
+	) {
+		final var settingsTargetLayout = PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER;
 		final var settings_PP = arena.allocateFrom(
 				ValueLayout.ADDRESS.withTargetLayout(
 						settingsTargetLayout
@@ -360,17 +374,23 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 						MemorySegment.NULL
 				)
 		);
-		ICoreWebView2Vtbl.get_Settings.invoke(
-				ICoreWebView2Vtbl.get_Settings(
-						ICoreWebView2.lpVtbl(webview2Pointer)
-				),
-				webview2Pointer,
-				settings_PP
+		final var hResult = HResult.warpResult(
+				ICoreWebView2Vtbl.get_Settings.invoke(
+						ICoreWebView2Vtbl.get_Settings(
+								webview2lpVtbl
+						),
+						webview2Pointer,
+						settings_PP
+				)
 		);
-		final var settings_P = settings_PP.get(settingsTargetLayout, 0);
-		@SuppressWarnings("SpellCheckingInspection")
-		final var settingsVtbl = ICoreWebView2Settings.lpVtbl(settings_P);
-		return this.putWebView2Settings(settingsVtbl, settings_P);
+		if ( hResult instanceof HResult.S_OK ) {
+			final var settings_P = settings_PP.get(settingsTargetLayout, 0);
+			@SuppressWarnings("SpellCheckingInspection")
+			final var settingsVtbl = ICoreWebView2Settings.lpVtbl(settings_P);
+			return HResult.warpResult(
+					this.putWebView2Settings(settingsVtbl, settings_P)
+			);
+		} else return hResult;
 	}
 	
 	private int putWebView2Settings(
@@ -419,35 +439,38 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 				       .orElse(HResult.S_OK.SINGLETON.value());
 	}
 	
-	private int setVirtualHostNameToFolderMapping(final MemorySegment webview2_22Pointer) {
-		if ( this.virtualHostNameToFolderMapping != null ) {
-			return ICoreWebView2_22Vtbl.SetVirtualHostNameToFolderMapping.invoke(
-					ICoreWebView2_22Vtbl.SetVirtualHostNameToFolderMapping(ICoreWebView2_22.lpVtbl(webview2_22Pointer)),
-					webview2_22Pointer,
-					this.virtualHostNameToFolderMapping.virtualHostName(),
-					this.virtualHostNameToFolderMapping.folderMapping(),
-					this.virtualHostNameToFolderMapping.accessKind()
-			);
-		} else return HResult.S_OK.SINGLETON.value();
-	}
-	
-	private int setWebMessageListener(final MemorySegment webview2Pointer) {
-		return this.messageReceivedEventHandler != null ?
-				       ICoreWebView2Vtbl.add_WebMessageReceived.invoke(
-						       ICoreWebView2Vtbl.add_WebMessageReceived(ICoreWebView2.lpVtbl(webview2Pointer)),
-						       webview2Pointer,
-						       this.messageReceivedEventHandler,
-						       MemorySegment.NULL
+	private HResult setVirtualHostNameToFolderMapping(final MemorySegment webview2_22Pointer) {
+		return this.virtualHostNameToFolderMapping != null ?
+				       HResult.warpResult(
+						       ICoreWebView2_22Vtbl.SetVirtualHostNameToFolderMapping.invoke(
+								       ICoreWebView2_22Vtbl.SetVirtualHostNameToFolderMapping(ICoreWebView2_22.lpVtbl(webview2_22Pointer)),
+								       webview2_22Pointer,
+								       this.virtualHostNameToFolderMapping.virtualHostName(),
+								       this.virtualHostNameToFolderMapping.folderMapping(),
+								       this.virtualHostNameToFolderMapping.accessKind()
+						       )
 				       )
 				       :
-				       HResult.S_OK.SINGLETON.value();
+				       HResult.S_OK.SINGLETON;
+	}
+	
+	private HResult setWebMessageListener(final MemorySegment webview2Pointer, @SuppressWarnings("SpellCheckingInspection") final MemorySegment webview2lpVtbl) {
+		return this.messageReceivedEventHandler != null ?
+				       HResult.warpResult(
+						       ICoreWebView2Vtbl.add_WebMessageReceived.invoke(
+								       ICoreWebView2Vtbl.add_WebMessageReceived(webview2lpVtbl),
+								       webview2Pointer,
+								       this.messageReceivedEventHandler,
+								       MemorySegment.NULL
+						       )
+				       ) : HResult.S_OK.SINGLETON;
 	}
 	
 	private MemorySegment getWebview2Pointer() {
-		return this.webview2_PP.get(WEBVIEW_2_POINTER_LAYOUT, 0);
+		return this.webview2_PP.get(ICoreWebView2.POINTER$LAYOUT, 0);
 	}
 	
-	@SuppressWarnings({"StaticMethodReferencedViaSubclass", "java:S3252"})
+	@SuppressWarnings("StaticMethodReferencedViaSubclass")
 	private static final class ICoreWebView2_22Holder {
 		private static final MemorySegment IID_ICoreWebView2_22 = IID.allocate(Arena.ofAuto());
 		

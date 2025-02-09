@@ -4,7 +4,6 @@ package org.jextract;
 
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
-import java.lang.foreign.GroupLayout;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
@@ -26,9 +25,9 @@ public class ICoreWebView2_22 {
 	}
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
-			LayoutUtils.C_POINTER.withName("lpVtbl")
+			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2_22Vtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2_22");
-	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2_22.layout());
 	/**
 	 * The layout of this struct
 	 */

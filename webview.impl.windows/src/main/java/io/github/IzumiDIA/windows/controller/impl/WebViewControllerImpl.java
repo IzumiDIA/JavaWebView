@@ -20,15 +20,8 @@ import java.lang.foreign.MemorySegment;
 import java.util.Optional;
 
 public class WebViewControllerImpl extends WindowsNativeObject implements WebViewController, WNDPROC.Function {
-	public static final int
-			WM_DESTROY = 0x0002,
-			WM_SIZE = 0x0005,
-			WM_CLOSE = 0x0010,
-			WM_QUIT = 0x0012,
-			WM_SIZING = 0x0214,
-			WM_USER = 0x0400,
-			EXECUTE_SCRIPT = WM_USER + 1,
-			EXIT_SUCCESS = 0;
+	public static final int EXECUTE_SCRIPT = Windows.WM_USER + 1;
+	public static final int EXIT_SUCCESS = 0;
 	private final MemorySegment bounds;
 	private final WindowOnCloseListener windowOnCloseListener;
 	private final WindowOnDestroyListener windowOnDestroyListener;
@@ -86,18 +79,18 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 	@Override
 	public long apply(final MemorySegment hWnd, final int message, final long wParam, final long lParam) {
 		switch (message) {
-			case WM_DESTROY -> Windows.PostQuitMessage(0);
-			case WM_SIZE -> {
+			case Windows.WM_DESTROY -> Windows.PostQuitMessage(0);
+			case Windows.WM_SIZE -> {
 				return this.webviewController != null ?
 						       this.putBounds(hWnd)
 						       :
 						       Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WM_CLOSE -> {
+			case Windows.WM_CLOSE -> {
 				this.windowOnCloseListener.onClose();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WM_QUIT -> {
+			case Windows.WM_QUIT -> {
 				this.windowOnDestroyListener.onDestroy();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}

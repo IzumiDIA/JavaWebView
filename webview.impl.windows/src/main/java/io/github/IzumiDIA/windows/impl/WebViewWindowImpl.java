@@ -10,26 +10,38 @@ import org.jextract.ICoreWebView2Vtbl;
 import org.jextract.ICoreWebView2Vtbl.PostWebMessageAsString;
 import org.jextract.ICoreWebView2WebMessageReceivedEventArgs;
 import org.jextract.ICoreWebView2WebMessageReceivedEventArgsVtbl;
-import org.jextract.ICoreWebView2WebMessageReceivedEventHandler;
+import org.jextract.LayoutUtils;
 import org.jextract.MSG;
-import org.jextract.Windows;
 
-import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.VarHandle;
 import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedTransferQueue;
 
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
-import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.WM_CLOSE;
+import static org.jextract.Windows.WM_CLOSE;
 
 public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWindow {
-	private static final AddressLayout ADDRESS_LAYOUT = ValueLayout.ADDRESS.withTargetLayout(ICoreWebView2.layout());
+	/**
+	 * A temporary replacement for <a title="Stable Value" href="https://openjdk.org/jeps/502">Stable Value</a>。
+	 */
+	private static final VarHandle HANDLE;
 	private final PlatformWindow platformWindow;
 	private final MemorySegment webview2_PP;
+	@SuppressWarnings("FieldMayBeFinal")
+	private MemorySegment webview2Pointer = null;
 	private final LinkedTransferQueue<String> scriptExecutionQueue = new LinkedTransferQueue<>();
+	
+	static {
+		try {
+			HANDLE = MethodHandles.lookup().findVarHandle(WebViewWindowImpl.class, "webview2Pointer", MemorySegment.class).withInvokeExactBehavior();
+		} catch (NoSuchFieldException | IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}
+	}
 	
 	public WebViewWindowImpl(final Arena arena, final PlatformWindow platformWindow, final MemorySegment webview2_PP) {
 		super(arena);
@@ -40,17 +52,22 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	@SuppressWarnings("java:S3252")
 	@Override
 	public void run() {
-		final var message = MSG.allocate(this.arena);
-		while ( Windows.GetMessageW(message, MemorySegment.NULL, 0, 0) ) {
-			if ( !Windows.TranslateMessage(message) ) {
-				Windows.DispatchMessageW(message);
+		final var message = new MSG(this.arena);
+		
+		try {
+			while ( message.getMessage(MemorySegment.NULL, 0, 0) ) {
+				if ( !message.translateMessage() ) {
+					message.dispatchMessage();
+				}
 			}
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
 		}
 	}
 	
 	@Override
 	public HResult executeScript(final @NotNull String javascript) {
-		final var webview2Pointer = this.webview2_PP.get(ADDRESS_LAYOUT, 0);
+		final var webview2Pointer = this.webview2Pointer();
 		return HResult.warpResult(
 				ICoreWebView2Vtbl.ExecuteScript.invoke(
 						ICoreWebView2Vtbl.ExecuteScript(
@@ -65,6 +82,21 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		);
 	}
 	
+	private MemorySegment webview2Pointer() {
+		var res = (MemorySegment) HANDLE.get(this);
+		if (res != null) {
+			return res;
+		}else {
+			synchronized (this) {
+				res = (MemorySegment) HANDLE.getVolatile(this);
+				if ( res == null ) {
+					HANDLE.setVolatile(this, res = this.webview2_PP.get(ICoreWebView2.POINTER$LAYOUT, 0));
+				}
+				return res;
+			}
+		}
+	}
+	
 	@Override
 	public boolean executeScriptAsync(final @NotNull String javascript) {
 		return this.scriptExecutionQueue.offer(javascript)
@@ -74,7 +106,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	
 	@Override
 	public HResult postWebMessageAsString(final @NotNull String messageToWebView) {
-		final var webview2Pointer = this.webview2_PP.get(ADDRESS_LAYOUT, 0);
+		final var webview2Pointer = this.webview2_PP.get(ICoreWebView2.POINTER$LAYOUT, 0);
 		return HResult.warpResult(
 				PostWebMessageAsString.invoke(
 						ICoreWebView2Vtbl.PostWebMessageAsString(
@@ -173,13 +205,12 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		
 		@Override
 		public String getString(final @NotNull MemorySegment bufferAddress) {
-			return bufferAddress.get(ValueLayout.ADDRESS, 0)
-					       .reinterpret(Integer.MAX_VALUE)
+			return bufferAddress.get(LayoutUtils.LPWSTR, 0)
 					       .getString(0, StandardCharsets.UTF_16LE);
 		}
 		
 		private MemorySegment createBuffer() {
-			return this.arena.allocateFrom(ValueLayout.ADDRESS, MemorySegment.NULL);
+			return this.arena.allocateFrom(LayoutUtils.LPWSTR, MemorySegment.NULL);
 		}
 		
 		private int tryGetWebMessageAsString(final @NotNull MemorySegment bufferAddress) {

@@ -28,6 +28,8 @@ public class ICoreWebView2ExecuteScriptCompletedHandler {
 			LayoutUtils.C_POINTER.withName("lpVtbl")
 	).withName("ICoreWebView2ExecuteScriptCompletedHandler");
 	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
+	
 	/**
 	 * The layout of this struct
 	 */

@@ -2,6 +2,8 @@
 
 package org.jextract;
 
+import org.jextract.LayoutUtils.PointerLayoutHolder;
+
 import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.invoke.MethodHandle;
@@ -91,7 +93,7 @@ public class ICoreWebView2SettingsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				ICoreWebView2Settings.POINTER$LAYOUT,
+				PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
 				LayoutUtils.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
@@ -191,7 +193,7 @@ public class ICoreWebView2SettingsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				ICoreWebView2Settings.POINTER$LAYOUT
+				PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
 		/**
@@ -289,7 +291,7 @@ public class ICoreWebView2SettingsVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.ULONG,
-				ICoreWebView2Settings.POINTER$LAYOUT
+				PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER
 		);
 		
 		/**
@@ -367,17 +369,22 @@ public class ICoreWebView2SettingsVtbl {
 		struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
 	}
 	
-	private static final FunctionDescriptor
-			GET_SETTING = FunctionDescriptor.of(
-			LayoutUtils.HRESULT,
-			ICoreWebView2Settings.POINTER$LAYOUT,
-			LayoutUtils.C_BOOL_POINTER
-	),
-			PUT_SETTING = FunctionDescriptor.of(
-					LayoutUtils.HRESULT,
-					ICoreWebView2Settings.POINTER$LAYOUT,
-					LayoutUtils.C_BOOL
-			);
+	private static final class Holder {
+		private Holder() {
+		
+		}
+		private static final FunctionDescriptor
+				GET_SETTING = FunctionDescriptor.of(
+				LayoutUtils.HRESULT,
+				PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+				LayoutUtils.C_BOOL_POINTER
+		);
+		private static final FunctionDescriptor PUT_SETTING = FunctionDescriptor.of(
+						LayoutUtils.HRESULT,
+						PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
+						LayoutUtils.C_BOOL
+				);
+	}
 	
 	/**
 	 * {@snippet lang = c:
@@ -397,7 +404,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -492,7 +499,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -587,7 +594,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -682,7 +689,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -777,7 +784,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -872,7 +879,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -967,7 +974,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1062,7 +1069,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1157,7 +1164,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1252,7 +1259,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1347,7 +1354,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1442,7 +1449,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1537,7 +1544,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1632,7 +1639,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, int _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1727,7 +1734,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1822,7 +1829,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, boolean _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -1917,7 +1924,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, MemorySegment _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = GET_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.GET_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer
@@ -2012,7 +2019,7 @@ public class ICoreWebView2SettingsVtbl {
 			int apply(MemorySegment _x0, int _x1);
 		}
 		
-		private static final FunctionDescriptor $DESC = PUT_SETTING;
+		private static final FunctionDescriptor $DESC = Holder.PUT_SETTING;
 		
 		/**
 		 * The descriptor of this function pointer

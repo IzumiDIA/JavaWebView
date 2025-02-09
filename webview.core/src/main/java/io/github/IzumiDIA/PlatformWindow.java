@@ -10,4 +10,7 @@ public interface PlatformWindow {
 	boolean postMessage(int message,
 	                    long wParam,
 	                    long lParam);
+	boolean setFocus();
+	boolean setWindowTitle(@NotNull String titleText);
+	boolean moveWindow(int x, int y, int newWidth, int newHeight, boolean repaint);
 }

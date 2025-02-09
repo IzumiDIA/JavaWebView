@@ -2,6 +2,7 @@
 
 package org.jextract;
 
+import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
@@ -123,4 +124,6 @@ public class EventRegistrationToken {
 	public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
 		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
 	}
+	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 }

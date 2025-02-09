@@ -20,11 +20,6 @@ import java.lang.foreign.MemorySegment;
 import java.util.Optional;
 
 public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuilder<WebViewControllerImpl> {
-	@SuppressWarnings({"SpellCheckingInspection", "PointlessBitwiseExpression"})
-	public static final int WS_OVERLAPPEDWINDOW = 0x00000000 | 0x00C00000 | 0x00080000 | 0x00040000 | 0x00020000 | 0x00010000;
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final int CW_USEDEFAULT = 0x80000000;
-	public static final int SW_SHOW = 5;
 	
 	private static final double SCALE_X, SCALE_Y;
 	
@@ -148,7 +143,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				windowClassNameSegment
 		);
 		if ( this.dimension == null ) {
-			this.dimension = new Dimension(CW_USEDEFAULT, CW_USEDEFAULT);
+			this.dimension = new Dimension(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
 		} else {
 			if ( this.position == null ) {
 				final var screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -159,9 +154,9 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 			}
 		}
 		if ( this.position == null ) {
-			this.position = new Point2D(CW_USEDEFAULT, CW_USEDEFAULT);
+			this.position = new Point2D(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
 		}
-		if ( Windows.RegisterClassExW(windowClass) != 0 ) {
+		if ( Windows.RegisterClassExW(this.windowClass) != 0 ) {
 			final var handleWindow = Windows.CreateWindowExW(
 					this.extendStyle,
 					windowClassNameSegment,
@@ -169,7 +164,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 							Optional.ofNullable(this.windowName)
 									.orElse("WebView2 Window")
 					),
-					WS_OVERLAPPEDWINDOW,
+					Windows.WS_OVERLAPPEDWINDOW,
 					this.position.x(),
 					this.position.y(),
 					this.dimension.width,
@@ -179,12 +174,15 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 					hInstance,
 					MemorySegment.NULL
 			);
-			if ( MemorySegment.NULL.equals(handleWindow) ) throw new RuntimeException();
-			else if ( Windows.ShowWindow(handleWindow, SW_SHOW) ) {
-				throw new RuntimeException();
-			} else {
-				if ( Windows.UpdateWindow(handleWindow) ) return new PlatformWindowImpl(handleWindow);
-				else throw new RuntimeException();
+			if ( MemorySegment.NULL.equals(handleWindow) ) throw new NullPointerException("The handle is null.");
+			else {
+				final var platformWindow = new PlatformWindowImpl(this.arena, handleWindow);
+				if ( platformWindow.showWindow(Windows.SW_SHOW) ) {
+					throw new IllegalStateException("The window was previously visible.");
+				} else {
+					if ( platformWindow.updateWindow() ) return platformWindow;
+					else throw new IllegalStateException("UpdateWindow function fails.");
+				}
 			}
 		} else throw new RuntimeException();
 	}

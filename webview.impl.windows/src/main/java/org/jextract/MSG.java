@@ -2,6 +2,10 @@
 
 package org.jextract;
 
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+
 /**
  * {@snippet lang=c :
  * typedef struct tagMSG {
@@ -15,8 +19,24 @@ package org.jextract;
  * }
  */
 public class MSG extends tagMSG {
+	private final MethodHandle getMessageHandle, translateMessageHandle, dispatchMessageHandle;
 	
-	MSG() {
-		// Should not be called directly
+	public MSG(final SegmentAllocator allocator) {
+		final var message = MSG.allocate(allocator);
+		this.getMessageHandle = Windows.GetMessageW$handle().bindTo(message);
+		this.translateMessageHandle = Windows.TranslateMessage$handle().bindTo(message);
+		this.dispatchMessageHandle = Windows.DispatchMessageW$handle().bindTo(message);
+	}
+	
+	public boolean getMessage(final MemorySegment hWnd, final int wMsgFilterMin, final int wMsgFilterMax) throws Throwable {
+		return (boolean) this.getMessageHandle.invokeExact(hWnd, wMsgFilterMin, wMsgFilterMax);
+	}
+	
+	public boolean translateMessage() throws Throwable {
+		return (boolean) this.translateMessageHandle.invokeExact();
+	}
+	
+	public long dispatchMessage() throws Throwable {
+		return (long) this.dispatchMessageHandle.invokeExact();
 	}
 }

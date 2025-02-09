@@ -2,6 +2,8 @@
 
 package org.jextract;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
@@ -12,21 +14,30 @@ import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2WebMessageReceivedEventHandler {
  *     struct ICoreWebView2WebMessageReceivedEventHandlerVtbl *lpVtbl;
  * }
- * }
+ *}
  */
 public class ICoreWebView2WebMessageReceivedEventHandler {
+	private final MemorySegment messageReceivedEventHandler;
 	
-	ICoreWebView2WebMessageReceivedEventHandler() {
-		// Should not be called directly
+	public ICoreWebView2WebMessageReceivedEventHandler(
+			@NotNull final SegmentAllocator allocator, @NotNull final MemorySegment messageReceivedEventHandlerVtbl
+	) {
+		ICoreWebView2WebMessageReceivedEventHandler.lpVtbl(
+				this.messageReceivedEventHandler = ICoreWebView2WebMessageReceivedEventHandler.allocate(allocator),
+				messageReceivedEventHandlerVtbl
+		);
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
 			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2WebMessageReceivedEventHandlerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2WebMessageReceivedEventHandler");
+	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 	
 	/**
 	 * The layout of this struct
@@ -34,26 +45,28 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	public static StructLayout layout() {
 		return $LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
-	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
+	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2WebMessageReceivedEventHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2WebMessageReceivedEventHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static long lpVtbl$offset() {
 		return lpVtbl$OFFSET;
@@ -61,9 +74,9 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2WebMessageReceivedEventHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpVtbl(MemorySegment struct) {
 		return struct.get(lpVtbl$LAYOUT, lpVtbl$OFFSET);
@@ -71,9 +84,9 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2WebMessageReceivedEventHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static void lpVtbl(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpVtbl$LAYOUT, lpVtbl$OFFSET, fieldValue);
@@ -90,7 +103,9 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
@@ -122,6 +137,4 @@ public class ICoreWebView2WebMessageReceivedEventHandler {
 	public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
 		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
 	}
-	
-	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 }

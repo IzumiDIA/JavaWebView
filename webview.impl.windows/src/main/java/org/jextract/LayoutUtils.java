@@ -167,6 +167,8 @@ public final class LayoutUtils {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout HWND = C_POINTER;
+	
+	public static final AddressLayout HWND_POINTER = C_POINTER.withTargetLayout(HWND);
 	/**
 	 * {@snippet lang = c:
 	 * typedef struct HKEY__ {
@@ -242,4 +244,14 @@ public final class LayoutUtils {
 	public static final AddressLayout IID_POINTER = C_POINTER.withTargetLayout(IID.layout());
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout WNDPROC_POINTER = C_POINTER;
+	public static final AddressLayout POINT_POINTER = C_POINTER.withTargetLayout(POINT.layout());
+	
+	public static final class PointerLayoutHolder {
+		private PointerLayoutHolder() {
+		
+		}
+		
+		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());
+		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER_POINTER = C_POINTER.withTargetLayout(I_CORE_WEB_VIEW_2_SETTINGS_POINTER);
+	}
 }

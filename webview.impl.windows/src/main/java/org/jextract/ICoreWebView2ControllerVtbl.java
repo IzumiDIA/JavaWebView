@@ -2184,9 +2184,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HWND_POINTER
 		);
 		
 		/**
@@ -2283,9 +2283,9 @@ public class ICoreWebView2ControllerVtbl {
 		}
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
+				LayoutUtils.HRESULT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HWND
 		);
 		
 		/**
@@ -2580,7 +2580,7 @@ public class ICoreWebView2ControllerVtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.C_LONG,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				ICoreWebView2.POINTER_POINTER$LAYOUT
 		);
 		
 		/**

@@ -53,16 +53,20 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 			final MemorySegment userDataDir,
 			final MemorySegment environmentOptions,
 			final MemorySegment coreWebView2EnvironmentCompletedHandler
-	) throws Throwable {
-		return HResult.warpResult(
-				(int) this.createWebViewEnvironmentWithOptionsInternal.invokeExact(
-						true,
-						runtimeType,
-						userDataDir,
-						environmentOptions,
-						coreWebView2EnvironmentCompletedHandler
-				)
-		);
+	) {
+		try {
+			return HResult.warpResult(
+					(int) this.createWebViewEnvironmentWithOptionsInternal.invokeExact(
+							true,
+							runtimeType,
+							userDataDir,
+							environmentOptions,
+							coreWebView2EnvironmentCompletedHandler
+					)
+			);
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
+		}
 	}
 	
 	@Override

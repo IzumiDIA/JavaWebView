@@ -25,7 +25,7 @@ public class ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
 	}
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
-			LayoutUtils.C_POINTER.withName("lpVtbl")
+			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler");
 	
 	/**
