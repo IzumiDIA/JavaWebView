@@ -14,7 +14,7 @@ final class TestBinding {
 			
 			final var platformWindow = webViewFactory.createPlatformWindowBuilder(arena)
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
-					                           .setLpSzClassName("Sample Window Class")
+					                           .setSzClassName("Sample Window Class")
 					                           .setWindowName("Binding URI WebView Window")
 					                           .setDimension((int) Math.floor(1920 * 0.75D), (int) Math.floor(1080 * 0.75D))
 					                           .buildWindow();

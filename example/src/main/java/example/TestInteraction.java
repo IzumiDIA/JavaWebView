@@ -14,7 +14,7 @@ final class TestInteraction {
 			
 			final var platformWindow = webViewFactory.createPlatformWindowBuilder(arena)
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
-					                           .setLpSzClassName("Sample Window Class")
+					                           .setSzClassName("Sample Window Class")
 					                           .setWindowName("Full Duplex Communication WebView Window")
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();

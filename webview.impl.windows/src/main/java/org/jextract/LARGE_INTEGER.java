@@ -2,8 +2,12 @@
 
 package org.jextract;
 
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef union _LARGE_INTEGER {
  *     struct {
  *         DWORD LowPart;
@@ -15,11 +19,23 @@ package org.jextract;
  *     } u;
  *     LONGLONG QuadPart;
  * } LARGE_INTEGER
- * }
+ *}
  */
 public class LARGE_INTEGER extends _LARGE_INTEGER {
 	
-	LARGE_INTEGER() {
-		// Should not be called directly
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(LARGE_INTEGER.layout());
+	
+	private final MethodHandle queryPerformanceCounterHandle;
+	
+	LARGE_INTEGER(final SegmentAllocator allocator) {
+		final var largeInteger = allocator.allocateFrom(
+				POINTER$LAYOUT,
+				LARGE_INTEGER.allocate(allocator)
+		);
+		this.queryPerformanceCounterHandle = Windows.QueryPerformanceCounter$handle().bindTo(largeInteger);
+	}
+	
+	public boolean queryPerformanceCounter() throws Throwable {
+		return (boolean) this.queryPerformanceCounterHandle.invokeExact();
 	}
 }

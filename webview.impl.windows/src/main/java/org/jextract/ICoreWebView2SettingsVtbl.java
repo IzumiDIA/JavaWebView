@@ -369,9 +369,12 @@ public class ICoreWebView2SettingsVtbl {
 		struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
 	}
 	
+	/**
+	 * Lazy loading is used to solve the problem of static initialized ring dependencies.
+	 */
 	private static final class Holder {
 		private Holder() {
-		
+			throw new UnsupportedOperationException();
 		}
 		private static final FunctionDescriptor
 				GET_SETTING = FunctionDescriptor.of(

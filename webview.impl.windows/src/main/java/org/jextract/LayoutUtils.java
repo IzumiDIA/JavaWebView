@@ -38,7 +38,7 @@ public final class LayoutUtils {
 		C_LONG = (OfInt) canonicalLayouts.get("long");
 		C_LONG_DOUBLE = (OfDouble) canonicalLayouts.get("double");
 	}
-	public static final AddressLayout DOUBLE_POINTER = C_POINTER.withTargetLayout(LayoutUtils.C_DOUBLE);
+	public static final AddressLayout DOUBLE_POINTER = C_POINTER.withTargetLayout(C_DOUBLE);
 	public static final OfInt UINT = C_INT;
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final OfLong LONGLONG = C_LONG_LONG;
@@ -132,7 +132,7 @@ public final class LayoutUtils {
 	 *}
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout HICON = C_POINTER;
+	public static final AddressLayout HICON = C_POINTER.withTargetLayout(HICON__.layout());
 	/**
 	 * {@snippet lang = c:
 	 * typedef HICON HCURSOR
@@ -148,7 +148,7 @@ public final class LayoutUtils {
 	 *}
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout HMENU = C_POINTER;
+	public static final AddressLayout HMENU = C_POINTER.withTargetLayout(HMENU__.layout());
 	/**
 	 * {@snippet lang = c:
 	 * typedef struct HBRUSH__ {
@@ -157,7 +157,7 @@ public final class LayoutUtils {
 	 *}
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout HBRUSH = C_POINTER;
+	public static final AddressLayout HBRUSH = C_POINTER.withTargetLayout(HBRUSH__.layout());
 	/**
 	 * {@snippet lang = c:
 	 * typedef struct HWND__ {
@@ -166,8 +166,9 @@ public final class LayoutUtils {
 	 *}
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout HWND = C_POINTER;
+	public static final AddressLayout HWND = C_POINTER.withTargetLayout(HWND__.layout());
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout HWND_POINTER = C_POINTER.withTargetLayout(HWND);
 	/**
 	 * {@snippet lang = c:
@@ -186,7 +187,9 @@ public final class LayoutUtils {
 	 *}
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout HINSTANCE = C_POINTER;
+	public static final AddressLayout HINSTANCE = C_POINTER.withTargetLayout(HINSTANCE__.layout());
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final AddressLayout HMODULE = HINSTANCE;
 	
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPCREATESTRUCTA = C_POINTER.withTargetLayout(tagCREATESTRUCTA.layout());
@@ -245,10 +248,15 @@ public final class LayoutUtils {
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout WNDPROC_POINTER = C_POINTER;
 	public static final AddressLayout POINT_POINTER = C_POINTER.withTargetLayout(POINT.layout());
+	@SuppressWarnings("SpellCheckingInspection")
+	public static final AddressLayout WNDCLASSEXW_POINTER = C_POINTER.withTargetLayout(WNDCLASSEXW.layout());
 	
+	/**
+	 * Lazy loading is used to solve the problem of static initialized ring dependencies.
+	 */
 	public static final class PointerLayoutHolder {
 		private PointerLayoutHolder() {
-		
+			throw new UnsupportedOperationException();
 		}
 		
 		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());

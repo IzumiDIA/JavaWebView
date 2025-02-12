@@ -14,7 +14,7 @@ final class TestPostMessageToBackend {
 			
 			final var platformWindow = webViewFactory.createPlatformWindowBuilder(arena)
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
-					                           .setLpSzClassName("Sample Window Class")
+					                           .setSzClassName("Sample Window Class")
 					                           .setWindowName("WebMessage Posting WebView Window")
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();

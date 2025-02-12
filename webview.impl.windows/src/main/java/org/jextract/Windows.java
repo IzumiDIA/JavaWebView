@@ -13,259 +13,6 @@ public class Windows {
 		// Should not be called directly
 	}
 	
-	private static class RtlCaptureContext {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlCaptureContext"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void RtlCaptureContext(PCONTEXT ContextRecord)
-	 *}
-	 */
-	public static FunctionDescriptor RtlCaptureContext$descriptor() {
-		return RtlCaptureContext.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void RtlCaptureContext(PCONTEXT ContextRecord)
-	 *}
-	 */
-	public static MethodHandle RtlCaptureContext$handle() {
-		return RtlCaptureContext.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void RtlCaptureContext(PCONTEXT ContextRecord)
-	 *}
-	 */
-	public static void RtlCaptureContext(MemorySegment ContextRecord) {
-		var mh$ = RtlCaptureContext.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("RtlCaptureContext", ContextRecord);
-			}
-			mh$.invokeExact(ContextRecord);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class RtlLookupFunctionEntry {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlLookupFunctionEntry"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * PRUNTIME_FUNCTION RtlLookupFunctionEntry(DWORD64 ControlPc, PDWORD64 ImageBase, PUNWIND_HISTORY_TABLE HistoryTable)
-	 *}
-	 */
-	public static FunctionDescriptor RtlLookupFunctionEntry$descriptor() {
-		return RtlLookupFunctionEntry.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * PRUNTIME_FUNCTION RtlLookupFunctionEntry(DWORD64 ControlPc, PDWORD64 ImageBase, PUNWIND_HISTORY_TABLE HistoryTable)
-	 *}
-	 */
-	public static MethodHandle RtlLookupFunctionEntry$handle() {
-		return RtlLookupFunctionEntry.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * PRUNTIME_FUNCTION RtlLookupFunctionEntry(DWORD64 ControlPc, PDWORD64 ImageBase, PUNWIND_HISTORY_TABLE HistoryTable)
-	 *}
-	 */
-	public static MemorySegment RtlLookupFunctionEntry(long ControlPc, MemorySegment ImageBase, MemorySegment HistoryTable) {
-		var mh$ = RtlLookupFunctionEntry.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("RtlLookupFunctionEntry", ControlPc, ImageBase, HistoryTable);
-			}
-			return (MemorySegment) mh$.invokeExact(ControlPc, ImageBase, HistoryTable);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class RtlUnwindEx {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlUnwindEx"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void RtlUnwindEx(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue, PCONTEXT ContextRecord, PUNWIND_HISTORY_TABLE HistoryTable)
-	 *}
-	 */
-	public static FunctionDescriptor RtlUnwindEx$descriptor() {
-		return RtlUnwindEx.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void RtlUnwindEx(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue, PCONTEXT ContextRecord, PUNWIND_HISTORY_TABLE HistoryTable)
-	 *}
-	 */
-	public static MethodHandle RtlUnwindEx$handle() {
-		return RtlUnwindEx.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void RtlUnwindEx(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue, PCONTEXT ContextRecord, PUNWIND_HISTORY_TABLE HistoryTable)
-	 *}
-	 */
-	public static void RtlUnwindEx(MemorySegment TargetFrame, MemorySegment TargetIp, MemorySegment ExceptionRecord, MemorySegment ReturnValue, MemorySegment ContextRecord, MemorySegment HistoryTable) {
-		var mh$ = RtlUnwindEx.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("RtlUnwindEx", TargetFrame, TargetIp, ExceptionRecord, ReturnValue, ContextRecord, HistoryTable);
-			}
-			mh$.invokeExact(TargetFrame, TargetIp, ExceptionRecord, ReturnValue, ContextRecord, HistoryTable);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class RtlVirtualUnwind {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_LONG_LONG,
-				LayoutUtils.C_LONG_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlVirtualUnwind"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * PEXCEPTION_ROUTINE RtlVirtualUnwind(DWORD HandlerType, DWORD64 ImageBase, DWORD64 ControlPc, PRUNTIME_FUNCTION FunctionEntry, PCONTEXT ContextRecord, PVOID *HandlerData, PDWORD64 EstablisherFrame, PKNONVOLATILE_CONTEXT_POINTERS ContextPointers)
-	 *}
-	 */
-	public static FunctionDescriptor RtlVirtualUnwind$descriptor() {
-		return RtlVirtualUnwind.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * PEXCEPTION_ROUTINE RtlVirtualUnwind(DWORD HandlerType, DWORD64 ImageBase, DWORD64 ControlPc, PRUNTIME_FUNCTION FunctionEntry, PCONTEXT ContextRecord, PVOID *HandlerData, PDWORD64 EstablisherFrame, PKNONVOLATILE_CONTEXT_POINTERS ContextPointers)
-	 *}
-	 */
-	public static MethodHandle RtlVirtualUnwind$handle() {
-		return RtlVirtualUnwind.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * PEXCEPTION_ROUTINE RtlVirtualUnwind(DWORD HandlerType, DWORD64 ImageBase, DWORD64 ControlPc, PRUNTIME_FUNCTION FunctionEntry, PCONTEXT ContextRecord, PVOID *HandlerData, PDWORD64 EstablisherFrame, PKNONVOLATILE_CONTEXT_POINTERS ContextPointers)
-	 *}
-	 */
-	public static MemorySegment RtlVirtualUnwind(int HandlerType, long ImageBase, long ControlPc, MemorySegment FunctionEntry, MemorySegment ContextRecord, MemorySegment HandlerData, MemorySegment EstablisherFrame, MemorySegment ContextPointers) {
-		var mh$ = RtlVirtualUnwind.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("RtlVirtualUnwind", HandlerType, ImageBase, ControlPc, FunctionEntry, ContextRecord, HandlerData, EstablisherFrame, ContextPointers);
-			}
-			return (MemorySegment) mh$.invokeExact(HandlerType, ImageBase, ControlPc, FunctionEntry, ContextRecord, HandlerData, EstablisherFrame, ContextPointers);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class RtlPcToFileHeader {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("RtlPcToFileHeader"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * PVOID RtlPcToFileHeader(PVOID PcValue, PVOID *BaseOfImage)
-	 *}
-	 */
-	public static FunctionDescriptor RtlPcToFileHeader$descriptor() {
-		return RtlPcToFileHeader.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * PVOID RtlPcToFileHeader(PVOID PcValue, PVOID *BaseOfImage)
-	 *}
-	 */
-	public static MethodHandle RtlPcToFileHeader$handle() {
-		return RtlPcToFileHeader.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * PVOID RtlPcToFileHeader(PVOID PcValue, PVOID *BaseOfImage)
-	 *}
-	 */
-	public static MemorySegment RtlPcToFileHeader(MemorySegment PcValue, MemorySegment BaseOfImage) {
-		var mh$ = RtlPcToFileHeader.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("RtlPcToFileHeader", PcValue, BaseOfImage);
-			}
-			return (MemorySegment) mh$.invokeExact(PcValue, BaseOfImage);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
 	private static class GetStdHandle {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_POINTER,
@@ -1338,8 +1085,8 @@ public class Windows {
 	
 	private static class QueryPerformanceCounter {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER
+				LayoutUtils.C_BOOL,
+				LARGE_INTEGER.POINTER$LAYOUT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -2191,101 +1938,6 @@ public class Windows {
 		}
 	}
 	
-	private static class GetStartupInfoW {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetStartupInfoW"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void GetStartupInfoW(LPSTARTUPINFOW lpStartupInfo)
-	 *}
-	 */
-	public static FunctionDescriptor GetStartupInfoW$descriptor() {
-		return GetStartupInfoW.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void GetStartupInfoW(LPSTARTUPINFOW lpStartupInfo)
-	 *}
-	 */
-	public static MethodHandle GetStartupInfoW$handle() {
-		return GetStartupInfoW.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void GetStartupInfoW(LPSTARTUPINFOW lpStartupInfo)
-	 *}
-	 */
-	public static void GetStartupInfoW(MemorySegment lpStartupInfo) {
-		var mh$ = GetStartupInfoW.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("GetStartupInfoW", lpStartupInfo);
-			}
-			mh$.invokeExact(lpStartupInfo);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class IsProcessorFeaturePresent {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("IsProcessorFeaturePresent"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL IsProcessorFeaturePresent(DWORD ProcessorFeature)
-	 *}
-	 */
-	public static FunctionDescriptor IsProcessorFeaturePresent$descriptor() {
-		return IsProcessorFeaturePresent.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL IsProcessorFeaturePresent(DWORD ProcessorFeature)
-	 *}
-	 */
-	public static MethodHandle IsProcessorFeaturePresent$handle() {
-		return IsProcessorFeaturePresent.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL IsProcessorFeaturePresent(DWORD ProcessorFeature)
-	 *}
-	 */
-	public static int IsProcessorFeaturePresent(int ProcessorFeature) {
-		var mh$ = IsProcessorFeaturePresent.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("IsProcessorFeaturePresent", ProcessorFeature);
-			}
-			return (int) mh$.invokeExact(ProcessorFeature);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
 	private static class GetSystemTimeAsFileTime {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
 				LayoutUtils.C_POINTER
@@ -2476,55 +2128,6 @@ public class Windows {
 				FFMUtils.traceDowncall("GetModuleHandleExW", dwFlags, lpModuleName, phModule);
 			}
 			return (boolean) mh$.invokeExact(dwFlags, lpModuleName, phModule);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class lstrcmpW {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("lstrcmpW"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * int lstrcmpW(LPCWSTR lpString1, LPCWSTR lpString2)
-	 *}
-	 */
-	public static FunctionDescriptor lstrcmpW$descriptor() {
-		return lstrcmpW.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * int lstrcmpW(LPCWSTR lpString1, LPCWSTR lpString2)
-	 *}
-	 */
-	public static MethodHandle lstrcmpW$handle() {
-		return lstrcmpW.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * int lstrcmpW(LPCWSTR lpString1, LPCWSTR lpString2)
-	 *}
-	 */
-	public static int lstrcmpW(MemorySegment lpString1, MemorySegment lpString2) {
-		var mh$ = lstrcmpW.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("lstrcmpW", lpString1, lpString2);
-			}
-			return (int) mh$.invokeExact(lpString1, lpString2);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2829,7 +2432,7 @@ public class Windows {
 	private static class RegisterClassExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_SHORT,
-				LayoutUtils.C_POINTER
+				LayoutUtils.WNDCLASSEXW_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -2877,18 +2480,18 @@ public class Windows {
 	private static class CreateWindowExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG,
+				LayoutUtils.DWORD,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.LPCWSTR,
+				LayoutUtils.DWORD,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				LayoutUtils.HWND,
+				LayoutUtils.HMENU,
+				LayoutUtils.HINSTANCE,
+				LayoutUtils.LPVOID
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -3627,9 +3230,9 @@ public class Windows {
 	private static class LoadImageA {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT,
+				LayoutUtils.HINSTANCE,
+				LayoutUtils.LPCSTR,
+				LayoutUtils.UINT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT
@@ -3922,101 +3525,6 @@ public class Windows {
 				FFMUtils.traceDowncall("GetACP");
 			}
 			return (int) mh$.invokeExact();
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class GetOEMCP {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetOEMCP"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * UINT GetOEMCP()
-	 *}
-	 */
-	public static FunctionDescriptor GetOEMCP$descriptor() {
-		return GetOEMCP.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * UINT GetOEMCP()
-	 *}
-	 */
-	public static MethodHandle GetOEMCP$handle() {
-		return GetOEMCP.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * UINT GetOEMCP()
-	 *}
-	 */
-	public static int GetOEMCP() {
-		var mh$ = GetOEMCP.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("GetOEMCP");
-			}
-			return (int) mh$.invokeExact();
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class GetCPInfo {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_BOOL,
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetCPInfo"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo)
-	 *}
-	 */
-	public static FunctionDescriptor GetCPInfo$descriptor() {
-		return GetCPInfo.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo)
-	 *}
-	 */
-	public static MethodHandle GetCPInfo$handle() {
-		return GetCPInfo.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo)
-	 *}
-	 */
-	public static boolean GetCPInfo(int CodePage, MemorySegment lpCPInfo) {
-		var mh$ = GetCPInfo.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("GetCPInfo", CodePage, lpCPInfo);
-			}
-			return (boolean) mh$.invokeExact(CodePage, lpCPInfo);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -4715,15 +4223,15 @@ public class Windows {
 		}
 	}
 	
+	@SuppressWarnings({"SpellCheckingInspection", "PointlessBitwiseExpression"})
 	public static final int
 			WM_DESTROY = 0x0002,
 			WM_SIZE = 0x0005,
 			WM_CLOSE = 0x0010,
 			WM_QUIT = 0x0012,
 			WM_SIZING = 0x0214,
-			WM_USER = 0x0400;
-	@SuppressWarnings({"SpellCheckingInspection", "PointlessBitwiseExpression"})
-	public static final int WS_OVERLAPPEDWINDOW = 0x00000000 | 0x00C00000 | 0x00080000 | 0x00040000 | 0x00020000 | 0x00010000;
+			WM_USER = 0x0400,
+			WS_OVERLAPPEDWINDOW = 0x00000000 | 0x00C00000 | 0x00080000 | 0x00040000 | 0x00020000 | 0x00010000;
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final int CW_USEDEFAULT = 0x80000000;
 	public static final int SW_SHOW = 5;

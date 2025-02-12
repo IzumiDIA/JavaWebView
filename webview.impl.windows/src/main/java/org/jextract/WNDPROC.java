@@ -28,7 +28,7 @@ public class WNDPROC {
 	
 	private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 			LayoutUtils.LRESULT,
-			LayoutUtils.HWND,
+			LayoutUtils.C_POINTER,
 			LayoutUtils.UINT,
 			LayoutUtils.WPARAM,
 			LayoutUtils.LPARAM

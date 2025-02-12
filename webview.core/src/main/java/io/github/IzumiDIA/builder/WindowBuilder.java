@@ -17,7 +17,7 @@ public interface WindowBuilder<T extends WebViewController> {
 	
 	WindowBuilder<T> setHandleCursor(final @NotNull MemorySegment handleCursor);
 	
-	WindowBuilder<T> setLpSzClassName(final @NotNull String windowClassName);
+	WindowBuilder<T> setSzClassName(final @NotNull String windowClassName);
 	
 	WindowBuilder<T> setHandleIconSmall(final @NotNull MemorySegment handleIconSmall);
 	

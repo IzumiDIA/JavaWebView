@@ -35,7 +35,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	private static final MemorySegment hInstance = Windows.GetModuleHandleA(MemorySegment.NULL);
 	private final MemorySegment windowClass;
 	
-	private String windowClassName;
+	private String windowClassName = null;
 	private int extendStyle = 0;
 	private String windowName = null;
 	private Point2D position = null;
@@ -46,12 +46,18 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		super(arena);
 		this.windowClass = WNDCLASSEXW.allocate(this.arena);
 		WNDCLASSEXW.cbSize(this.windowClass, 80);
+		WNDCLASSEXW.cbClsExtra(this.windowClass, 0);
+		WNDCLASSEXW.cbWndExtra(this.windowClass, 0);
 		WNDCLASSEXW.hInstance(
 				this.windowClass, hInstance
 		);
 		WNDCLASSEXW.hbrBackground(
-				this.windowClass, MemorySegment.ofAddress(Color.ACTIVEBORDER.ordinal()))
-		;
+				this.windowClass, MemorySegment.ofAddress(Color.ACTIVEBORDER.ordinal())
+		);
+		WNDCLASSEXW.lpszMenuName(
+				this.windowClass,
+				MemorySegment.NULL
+		);
 	}
 	
 	@SuppressWarnings("java:S3252")
@@ -95,7 +101,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	}
 	
 	@Override
-	public WindowBuilderImpl setLpSzClassName(final @NotNull String windowClassName) {
+	public WindowBuilderImpl setSzClassName(final @NotNull String windowClassName) {
 		this.windowClassName = windowClassName;
 		return this;
 	}

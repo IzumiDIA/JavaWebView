@@ -18,7 +18,7 @@ final class TestExecuteScript {
 			
 			final var platformWindow = webViewFactory.createPlatformWindowBuilder(arena)
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
-					                           .setLpSzClassName("Sample Window Class")
+					                           .setSzClassName("Sample Window Class")
 					                           .setWindowName("Script Executed WebView Window")
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();
@@ -48,7 +48,7 @@ final class TestExecuteScript {
 					.start(
 							() -> {
 								try {
-									Thread.sleep(3000);
+									Thread.sleep(3400);
 								} catch (InterruptedException e) {
 									throw new RuntimeException(e);
 								}
@@ -62,13 +62,12 @@ final class TestExecuteScript {
 										);
 										"""
 								);
-								System.out.println(
-										webViewWindow.executeScriptAsync(
-												"""
-												document.querySelector("body").style.backgroundColor = "blue";
-												"""
-										)
+								final var pushed = webViewWindow.executeScriptAsync(
+										"""
+										document.querySelector("body").style.backgroundColor = "blue";
+										"""
 								);
+								assert pushed;
 								try (var scanner = new Scanner(System.in, StandardCharsets.UTF_8)) {
 									String line;
 									while ( (line = scanner.nextLine()) != null ) {
