@@ -3227,52 +3227,52 @@ public class Windows {
 		}
 	}
 	
-	private static class LoadImageA {
+	private static class LoadImageW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_POINTER,
 				LayoutUtils.HINSTANCE,
-				LayoutUtils.LPCSTR,
+				LayoutUtils.LPCWSTR,
 				LayoutUtils.UINT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
-				LayoutUtils.C_INT
+				LayoutUtils.UINT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LoadImageA"),
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LoadImageW"),
 				DESC);
 	}
 	
 	/**
 	 * Function descriptor for:
 	 * {@snippet lang = c:
-	 * HANDLE LoadImageA(HINSTANCE hInst, LPCSTR name, UINT type, int cx, int cy, UINT fuLoad)
+	 * HANDLE LoadImageW(HINSTANCE hInst, LPCWSTR name, UINT type, int cx, int cy, UINT fuLoad)
 	 *}
 	 */
-	public static FunctionDescriptor LoadImageA$descriptor() {
-		return LoadImageA.DESC;
+	public static FunctionDescriptor LoadImageW$descriptor() {
+		return LoadImageW.DESC;
 	}
 	
 	/**
 	 * Downcall method handle for:
 	 * {@snippet lang = c:
-	 * HANDLE LoadImageA(HINSTANCE hInst, LPCSTR name, UINT type, int cx, int cy, UINT fuLoad)
+	 * HANDLE LoadImageW(HINSTANCE hInst, LPCWSTR name, UINT type, int cx, int cy, UINT fuLoad)
 	 *}
 	 */
-	public static MethodHandle LoadImageA$handle() {
-		return LoadImageA.HANDLE;
+	public static MethodHandle LoadImageW$handle() {
+		return LoadImageW.HANDLE;
 	}
 	
 	/**
 	 * {@snippet lang = c:
-	 * HANDLE LoadImageA(HINSTANCE hInst, LPCSTR name, UINT type, int cx, int cy, UINT fuLoad)
+	 * HANDLE LoadImageW(HINSTANCE hInst, LPCWSTR name, UINT type, int cx, int cy, UINT fuLoad)
 	 *}
 	 */
-	public static MemorySegment LoadImageA(MemorySegment hInst, MemorySegment name, int type, int cx, int cy, int fuLoad) {
-		var mh$ = LoadImageA.HANDLE;
+	public static MemorySegment LoadImageW(MemorySegment hInst, MemorySegment name, int type, int cx, int cy, int fuLoad) {
+		var mh$ = LoadImageW.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("LoadImageA", hInst, name, type, cx, cy, fuLoad);
+				FFMUtils.traceDowncall("LoadImageW", hInst, name, type, cx, cy, fuLoad);
 			}
 			return (MemorySegment) mh$.invokeExact(hInst, name, type, cx, cy, fuLoad);
 		} catch (Throwable ex$) {
@@ -3280,6 +3280,32 @@ public class Windows {
 		}
 	}
 	
+	private static class DestroyIcon {
+		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HICON
+		);
+		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DestroyIcon"),
+				DESC);
+	}
+	public static FunctionDescriptor DestroyIcon$descriptor() {
+		return DestroyIcon.DESC;
+	}
+	public static MethodHandle DestroyIconW$handle() {
+		return DestroyIcon.HANDLE;
+	}
+	public static boolean DestroyIcon(MemorySegment hIcon) {
+		var mh$ = DestroyIcon.HANDLE;
+		try {
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("DestroyIcon", hIcon);
+			}
+			return (boolean) mh$.invokeExact(hIcon);
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
+		}
+	}
 	private static class SetProcessDpiAwarenessContext {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_BOOL,
@@ -4235,4 +4261,9 @@ public class Windows {
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final int CW_USEDEFAULT = 0x80000000;
 	public static final int SW_SHOW = 5;
+	public static final int IMAGE_ICON = 1;
+	/**
+	 * Loads the standalone image from the file specified by name (icon, cursor, or bitmap file).
+	 */
+	public static final int LR_LOADFROMFILE = 0x00000010;
 }

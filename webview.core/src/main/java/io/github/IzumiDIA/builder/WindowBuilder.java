@@ -7,13 +7,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.lang.foreign.MemorySegment;
+import java.nio.file.Path;
 
 public interface WindowBuilder<T extends WebViewController> {
 	WindowBuilder<T> setStyle(final int style);
 	
 	WindowBuilder<T> setController(final @NotNull T webViewController);
 	
-	WindowBuilder<T> setHandleIcon(final @NotNull MemorySegment handleIcon);
+	WindowBuilder<T> setHandleIcon(final @NotNull Path iconFilePath);
 	
 	WindowBuilder<T> setHandleCursor(final @NotNull MemorySegment handleCursor);
 	

@@ -17,6 +17,7 @@ final class TestBasic {
 			
 			final var platformWindow = platformWindowBuilder
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
+					                           .setHandleIcon(Path.of("assets", "Icon.ico").toAbsolutePath())
 					                           .setWindowName("Basic WebView Window")
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();

@@ -17,6 +17,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.nio.file.Path;
 import java.util.Optional;
 
 public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuilder<WebViewControllerImpl> {
@@ -35,9 +36,8 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	private static final MemorySegment hInstance = Windows.GetModuleHandleA(MemorySegment.NULL);
 	private final MemorySegment windowClass;
 	
-	private String windowClassName = null;
 	private int extendStyle = 0;
-	private String windowName = null;
+	private String windowClassName = null, windowName = null, iconFilePath = null;
 	private Point2D position = null;
 	private Dimension dimension = null;
 	
@@ -82,9 +82,16 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	
 	@SuppressWarnings("java:S3252")
 	@Override
-	public WindowBuilderImpl setHandleIcon(final @NotNull MemorySegment handleIcon) {
-		WNDCLASSEXW.hIcon(this.windowClass, handleIcon);
-		return this;
+	public WindowBuilderImpl setHandleIcon(final @NotNull Path iconFilePath) {
+		if ( iconFilePath.isAbsolute() ) {
+			if ( !iconFilePath.endsWith(".ico") ) {
+				final var iconFile = iconFilePath.toFile();
+				if ( iconFile.isFile() && iconFile.canRead() ) {
+					this.iconFilePath = iconFilePath.toString();
+					return this;
+				}else throw new IllegalArgumentException("Path: [" + iconFile + "]. There is no readable file.");
+			}else throw new IllegalArgumentException("The file suffix extension does not match.");
+		}else throw new IllegalArgumentException("The path to the Icon file must be absolute.");
 	}
 	
 	@SuppressWarnings("java:S3252")
@@ -140,6 +147,21 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	@SuppressWarnings("java:S3252")
 	@Override
 	public PlatformWindow buildWindow() {
+		MemorySegment hIcon = null;
+		if ( this.iconFilePath != null ) {
+			hIcon = Windows.LoadImageW(
+					hInstance,
+					this.allocateString(this.iconFilePath),
+					Windows.IMAGE_ICON,
+					0,
+					0,
+					Windows.LR_LOADFROMFILE
+			);
+			WNDCLASSEXW.hIcon(
+					this.windowClass,
+					hIcon
+			);
+		}
 		final var windowClassNameSegment = this.allocateString(
 				Optional.ofNullable(this.windowClassName)
 						.orElseGet(this::toString)
@@ -186,6 +208,11 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				if ( platformWindow.showWindow(Windows.SW_SHOW) ) {
 					throw new IllegalStateException("The window was previously visible.");
 				} else {
+					if ( hIcon != null ) {
+						final var succeed = Windows.DestroyIcon(hIcon);
+						if ( succeed ) hIcon = null;
+						assert succeed;
+					}
 					if ( platformWindow.updateWindow() ) return platformWindow;
 					else throw new IllegalStateException("UpdateWindow function fails.");
 				}
