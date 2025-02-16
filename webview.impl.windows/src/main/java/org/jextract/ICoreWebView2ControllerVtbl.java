@@ -2,6 +2,8 @@
 
 package org.jextract;
 
+import org.jextract.LayoutUtils.PointerLayoutHolder;
+
 import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.invoke.MethodHandle;
@@ -102,7 +104,7 @@ public class ICoreWebView2ControllerVtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
 				ICoreWebView2Controller.POINTER$LAYOUT,
-				LayoutUtils.IID_POINTER,
+				PointerLayoutHolder.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
 		
@@ -2481,7 +2483,7 @@ public class ICoreWebView2ControllerVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
+				PointerLayoutHolder.I_CORE_WEB_VIEW_2_CONTROLLER_POINTER
 		);
 		
 		/**

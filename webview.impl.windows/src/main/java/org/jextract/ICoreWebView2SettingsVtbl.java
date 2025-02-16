@@ -94,7 +94,7 @@ public class ICoreWebView2SettingsVtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
 				PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
-				LayoutUtils.IID_POINTER,
+				PointerLayoutHolder.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
 		

@@ -18,6 +18,7 @@ final class TestWebGL {
 			
 			final var platformWindow = platformWindowBuilder
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
+					                           .setHandleIcon(Path.of("assets", "Icon.ico").toAbsolutePath())
 					                           .setWindowName("WebGL2 WebView Window")
 					                           .setDimension(1920 >>> 1, (int) Math.floor(1080 * 0.75D))
 					                           .buildWindow();

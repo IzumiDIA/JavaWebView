@@ -2,6 +2,8 @@
 
 package org.jextract;
 
+import org.jextract.LayoutUtils.PointerLayoutHolder;
+
 import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.invoke.MethodHandle;
@@ -58,7 +60,7 @@ public class ICoreWebView2WebMessageReceivedEventHandlerVtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
 				ICoreWebView2WebMessageReceivedEventHandler.POINTER$LAYOUT,
-				LayoutUtils.IID_POINTER,
+				PointerLayoutHolder.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
 		

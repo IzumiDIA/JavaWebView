@@ -2,6 +2,8 @@
 
 package org.jextract;
 
+import org.jextract.LayoutUtils.PointerLayoutHolder;
+
 import java.lang.foreign.*;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.invoke.MethodHandle;
@@ -3674,7 +3676,7 @@ public class ICoreWebView2_22Vtbl extends ICoreWebView2Vtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
 				ICoreWebView2_22.POINTER$LAYOUT,
-				LayoutUtils.POINT_POINTER
+				PointerLayoutHolder.POINT_POINTER
 		);
 		
 		/**

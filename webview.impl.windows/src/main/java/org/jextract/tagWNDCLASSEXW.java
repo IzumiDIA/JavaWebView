@@ -604,7 +604,9 @@ public class tagWNDCLASSEXW {
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
 	 */
 	public static MemorySegment allocate(SegmentAllocator allocator) {
-		return allocator.allocate(layout());
+		final var memorySegment = allocator.allocate(layout());
+		tagWNDCLASSEXW.hInstance(memorySegment, Windows.H_INSTANCE);
+		return memorySegment;
 	}
 	
 	/**

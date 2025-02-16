@@ -18,7 +18,7 @@ final class TestVirtualHostNameToFolderMapping {
 			final var platformWindow = platformWindowBuilder
 					                           .setController(webViewFactory.createControllerBuilder(arena).build())
 					                           .setHandleIcon(Path.of("assets", "Icon.ico").toAbsolutePath())
-					                           .setSzClassName("Sample Window Class")
+					                           .setClassName("Sample Window Class")
 					                           .setWindowName("Virtual Host Name Mapping To Folder WebView Window")
 					                           .setDimension(1920 >>> 1, 1080 >>> 1)
 					                           .buildWindow();

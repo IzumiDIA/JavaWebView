@@ -1,6 +1,11 @@
 package example;
 
+import io.github.IzumiDIA.PlatformWindow;
+import io.github.IzumiDIA.Result;
 import io.github.IzumiDIA.WebViewWindow;
+import io.github.IzumiDIA.WebViewWindow.WebMessageListener.EventExchange;
+import io.github.IzumiDIA.controller.WebViewController;
+import io.github.IzumiDIA.factory.WebViewFactory;
 
 import java.lang.foreign.Arena;
 import java.nio.file.Path;
@@ -13,14 +18,7 @@ final class TestBasic {
 			
 			final var webViewFactory = WebViewWindow.createFactory();
 			
-			final var platformWindowBuilder = webViewFactory.createPlatformWindowBuilder(arena);
-			
-			final var platformWindow = platformWindowBuilder
-					                           .setController(webViewFactory.createControllerBuilder(arena).build())
-					                           .setHandleIcon(Path.of("assets", "Icon.ico").toAbsolutePath())
-					                           .setWindowName("Basic WebView Window")
-					                           .setDimension(1920 >>> 1, 1080 >>> 1)
-					                           .buildWindow();
+			final var platformWindow = createPlatformWindow(webViewFactory, arena);
 			
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)
 					                          .enabledZoomControl(true)
@@ -39,5 +37,15 @@ final class TestBasic {
 			
 			webViewWindow.run();
 		}
+	}
+	
+	private static PlatformWindow createPlatformWindow(final WebViewFactory<WebViewController, Result, EventExchange> webViewFactory, final Arena arena) {
+		return webViewFactory.createPlatformWindowBuilder(arena)
+				       .setController(webViewFactory.createControllerBuilder(arena).build())
+				       .setHandleIcon(Path.of("assets", "Icon.ico").toAbsolutePath())
+				       .setWindowName("Basic WebView Window")
+				       .setDimension(1920 >>> 1, 1080 >>> 1)
+				       .setHandleIconSmall(Path.of("assets", "SmallIcon.ico").toAbsolutePath())
+				       .buildWindow();
 	}
 }

@@ -22,6 +22,7 @@ import java.util.Optional;
 
 public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuilder<WebViewControllerImpl> {
 	
+	private static final String DEFAULT_WINDOW_NAME = "WebView2 Window";
 	private static final double SCALE_X, SCALE_Y;
 	
 	static {
@@ -33,24 +34,23 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		SCALE_Y = defaultTransform.getScaleY();
 	}
 	
-	private static final MemorySegment hInstance = Windows.GetModuleHandleA(MemorySegment.NULL);
 	private final MemorySegment windowClass;
 	
 	private int extendStyle = 0;
-	private String windowClassName = null, windowName = null, iconFilePath = null;
+	private String windowClassName = null,
+			windowName = null,
+			iconFilePath = null,
+			smallIconFilePath = null;
 	private Point2D position = null;
 	private Dimension dimension = null;
+	private WebViewControllerImpl webViewController = null;
 	
-	@SuppressWarnings("java:S3252")
 	public WindowBuilderImpl(final Arena arena) {
 		super(arena);
 		this.windowClass = WNDCLASSEXW.allocate(this.arena);
 		WNDCLASSEXW.cbSize(this.windowClass, 80);
 		WNDCLASSEXW.cbClsExtra(this.windowClass, 0);
 		WNDCLASSEXW.cbWndExtra(this.windowClass, 0);
-		WNDCLASSEXW.hInstance(
-				this.windowClass, hInstance
-		);
 		WNDCLASSEXW.hbrBackground(
 				this.windowClass, MemorySegment.ofAddress(Color.ACTIVEBORDER.ordinal())
 		);
@@ -60,27 +60,18 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		);
 	}
 	
-	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setStyle(final int style) {
 		WNDCLASSEXW.style(this.windowClass, style);
 		return this;
 	}
 	
-	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setController(final @NotNull WebViewControllerImpl windowProcedure) {
-		WNDCLASSEXW.lpfnWndProc(
-				this.windowClass,
-				WNDPROC.allocate(
-						windowProcedure,
-						this.arena
-				)
-		);
+		this.webViewController = windowProcedure;
 		return this;
 	}
 	
-	@SuppressWarnings("java:S3252")
 	@Override
 	public WindowBuilderImpl setHandleIcon(final @NotNull Path iconFilePath) {
 		if ( iconFilePath.isAbsolute() ) {
@@ -89,35 +80,33 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				if ( iconFile.isFile() && iconFile.canRead() ) {
 					this.iconFilePath = iconFilePath.toString();
 					return this;
-				}else throw new IllegalArgumentException("Path: [" + iconFile + "]. There is no readable file.");
-			}else throw new IllegalArgumentException("The file suffix extension does not match.");
-		}else throw new IllegalArgumentException("The path to the Icon file must be absolute.");
+				} else throw new IllegalArgumentException("Path: [" + iconFile + "]. There is no readable file.");
+			} else throw new IllegalArgumentException("The file suffix extension does not match.");
+		} else throw new IllegalArgumentException("The path to the Icon file must be absolute.");
 	}
 	
-	@SuppressWarnings("java:S3252")
-	@Override
-	public WindowBuilderImpl setHandleCursor(final @NotNull MemorySegment handleCursor) {
-		WNDCLASSEXW.hCursor(this.windowClass, handleCursor);
-		return this;
-	}
-	
-	@SuppressWarnings("java:S3252")
 	public WindowBuilderImpl setBrushBackground(final @NotNull Color handleBrush) {
 		WNDCLASSEXW.hbrBackground(this.windowClass, MemorySegment.ofAddress(handleBrush.ordinal()));
 		return this;
 	}
 	
 	@Override
-	public WindowBuilderImpl setSzClassName(final @NotNull String windowClassName) {
+	public WindowBuilderImpl setClassName(final @NotNull String windowClassName) {
 		this.windowClassName = windowClassName;
 		return this;
 	}
 	
-	@SuppressWarnings("java:S3252")
 	@Override
-	public WindowBuilderImpl setHandleIconSmall(final @NotNull MemorySegment handleIconSmall) {
-		WNDCLASSEXW.hIconSm(this.windowClass, handleIconSmall);
-		return this;
+	public WindowBuilderImpl setHandleIconSmall(final @NotNull Path smallIconFilePath) {
+		if ( smallIconFilePath.isAbsolute() ) {
+			if ( !smallIconFilePath.endsWith(".ico") ) {
+				final var iconFile = smallIconFilePath.toFile();
+				if ( iconFile.isFile() && iconFile.canRead() ) {
+					this.smallIconFilePath = smallIconFilePath.toString();
+					return this;
+				} else throw new IllegalArgumentException("Path: [" + iconFile + "]. There is no readable file.");
+			} else throw new IllegalArgumentException("The file suffix extension does not match.");
+		} else throw new IllegalArgumentException("The path to the Icon file must be absolute.");
 	}
 	
 	@Override
@@ -144,24 +133,93 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		return this;
 	}
 	
-	@SuppressWarnings("java:S3252")
 	@Override
 	public PlatformWindow buildWindow() {
-		MemorySegment hIcon = null;
-		if ( this.iconFilePath != null ) {
-			hIcon = Windows.LoadImageW(
-					hInstance,
-					this.allocateString(this.iconFilePath),
-					Windows.IMAGE_ICON,
-					0,
-					0,
-					Windows.LR_LOADFROMFILE
+		if ( this.webViewController != null ) {
+			WNDCLASSEXW.lpfnWndProc(
+					this.windowClass,
+					WNDPROC.allocate(
+							this.webViewController,
+							this.arena
+					)
 			);
+			this.setHIcon();
+			this.setSmallHIcon();
+			final var windowClassNameSegment = this.setClassName();
+			if ( this.dimension == null ) {
+				this.dimension = new Dimension(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
+			} else if ( this.position == null ) {
+				final var screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+				this.position = new Point2D(
+						Math.max(((int) (screenSize.width * SCALE_X) - this.dimension.width) >> 1, 0),
+						Math.max(((int) (screenSize.height * SCALE_Y) - this.dimension.height) >> 1, 0)
+				);
+			}
+			if ( this.position == null ) {
+				this.position = new Point2D(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
+			}
+			if ( Windows.RegisterClassExW(this.windowClass) != 0 ) {
+				final var handleWindow = Windows.CreateWindowExW(
+						this.extendStyle,
+						windowClassNameSegment,
+						this.allocateString(
+								Optional.ofNullable(this.windowName)
+										.orElse(DEFAULT_WINDOW_NAME)
+						),
+						Windows.WS_OVERLAPPEDWINDOW,
+						this.position.x(),
+						this.position.y(),
+						this.dimension.width,
+						this.dimension.height,
+						MemorySegment.NULL,
+						MemorySegment.NULL,
+						MemorySegment.NULL
+				);
+				if ( MemorySegment.NULL.equals(handleWindow) ) throw new NullPointerException("The handle is null.");
+				else {
+					final var platformWindow = new PlatformWindowImpl(this.arena, handleWindow);
+					if ( platformWindow.showWindow(Windows.SW_SHOW) ) {
+						throw new IllegalStateException("The window was previously visible.");
+					} else {
+						if ( platformWindow.updateWindow() ) return platformWindow;
+						else throw new IllegalStateException("UpdateWindow function fails.");
+					}
+				}
+			} else throw new IllegalStateException("RegisterClassExW function fails.");
+		} else throw new IllegalArgumentException(new NullPointerException("The WebView Controller is null."));
+	}
+	
+	private void setHIcon() {
+		if ( this.iconFilePath != null ) {
 			WNDCLASSEXW.hIcon(
 					this.windowClass,
-					hIcon
+					Windows.LoadImageW(
+							this.allocateString(this.iconFilePath),
+							Windows.IMAGE_ICON,
+							0,
+							0,
+							Windows.LR_LOADFROMFILE
+					)
 			);
 		}
+	}
+	
+	private void setSmallHIcon() {
+		if ( this.smallIconFilePath != null ) {
+			WNDCLASSEXW.hIconSm(
+					this.windowClass,
+					Windows.LoadImageW(
+							this.allocateString(this.smallIconFilePath),
+							Windows.IMAGE_ICON,
+							0,
+							0,
+							Windows.LR_LOADFROMFILE
+					)
+			);
+		}
+	}
+	
+	private MemorySegment setClassName() {
 		final var windowClassNameSegment = this.allocateString(
 				Optional.ofNullable(this.windowClassName)
 						.orElseGet(this::toString)
@@ -170,53 +228,6 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				this.windowClass,
 				windowClassNameSegment
 		);
-		if ( this.dimension == null ) {
-			this.dimension = new Dimension(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
-		} else {
-			if ( this.position == null ) {
-				final var screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-				this.position = new Point2D(
-						Math.max(((int) (screenSize.width * SCALE_X) - this.dimension.width) >> 1, 0),
-						Math.max(((int) (screenSize.height * SCALE_Y) - this.dimension.height) >> 1, 0)
-				);
-			}
-		}
-		if ( this.position == null ) {
-			this.position = new Point2D(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
-		}
-		if ( Windows.RegisterClassExW(this.windowClass) != 0 ) {
-			final var handleWindow = Windows.CreateWindowExW(
-					this.extendStyle,
-					windowClassNameSegment,
-					this.allocateString(
-							Optional.ofNullable(this.windowName)
-									.orElse("WebView2 Window")
-					),
-					Windows.WS_OVERLAPPEDWINDOW,
-					this.position.x(),
-					this.position.y(),
-					this.dimension.width,
-					this.dimension.height,
-					MemorySegment.NULL,
-					MemorySegment.NULL,
-					hInstance,
-					MemorySegment.NULL
-			);
-			if ( MemorySegment.NULL.equals(handleWindow) ) throw new NullPointerException("The handle is null.");
-			else {
-				final var platformWindow = new PlatformWindowImpl(this.arena, handleWindow);
-				if ( platformWindow.showWindow(Windows.SW_SHOW) ) {
-					throw new IllegalStateException("The window was previously visible.");
-				} else {
-					if ( hIcon != null ) {
-						final var succeed = Windows.DestroyIcon(hIcon);
-						if ( succeed ) hIcon = null;
-						assert succeed;
-					}
-					if ( platformWindow.updateWindow() ) return platformWindow;
-					else throw new IllegalStateException("UpdateWindow function fails.");
-				}
-			}
-		} else throw new RuntimeException();
+		return windowClassNameSegment;
 	}
 }

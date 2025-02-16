@@ -10,6 +10,7 @@ import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.ICoreWebView2Controller;
 import org.jextract.ICoreWebView2ControllerVtbl;
+import org.jextract.ICoreWebView2ControllerVtbl.Close;
 import org.jextract.ICoreWebView2ControllerVtbl.put_Bounds;
 import org.jextract.WNDPROC;
 import org.jextract.Windows;
@@ -19,7 +20,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.util.Optional;
 
-public class WebViewControllerImpl extends WindowsNativeObject implements WebViewController, WNDPROC.Function {
+public class WebViewControllerImpl extends WindowsNativeObject implements WebViewController, WNDPROC.Function, AutoCloseable {
 	public static final int EXECUTE_SCRIPT = Windows.WM_USER + 1;
 	public static final int EXIT_SUCCESS = 0;
 	private final MemorySegment bounds;
@@ -132,5 +133,16 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 					Optional.ofNullable(this.windowOnDestroyListener).orElse(() -> {})
 			);
 		}
+	}
+	
+	@Override
+	public void close() {
+		final var hResult = HResult.warpResult(
+				Close.invoke(
+						ICoreWebView2ControllerVtbl.Close(this.webviewControllerlpVtbl),
+						this.webviewController
+				)
+		);
+		if ( !(hResult instanceof HResult.S_OK) ) throw new RuntimeException(hResult.toString());
 	}
 }

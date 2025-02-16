@@ -2,10 +2,13 @@
 
 package org.jextract;
 
+import org.jextract.LayoutUtils.PointerLayoutHolder;
+
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
 
 public class Windows {
 	
@@ -1037,7 +1040,7 @@ public class Windows {
 	
 	private static class FlsFree {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL,
 				LayoutUtils.C_LONG
 		);
 		
@@ -1071,13 +1074,13 @@ public class Windows {
 	 * BOOL FlsFree(DWORD dwFlsIndex)
 	 *}
 	 */
-	public static int FlsFree(int dwFlsIndex) {
+	public static boolean FlsFree(int dwFlsIndex) {
 		var mh$ = FlsFree.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
 				FFMUtils.traceDowncall("FlsFree", dwFlsIndex);
 			}
-			return (int) mh$.invokeExact(dwFlsIndex);
+			return (boolean) mh$.invokeExact(dwFlsIndex);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1993,9 +1996,12 @@ public class Windows {
 				LayoutUtils.DWORD
 		);
 		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleFileNameW"),
-				DESC);
+		public static final MethodHandle HANDLE =
+				Linker.nativeLinker()
+						.downcallHandle(
+								FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleFileNameW"),
+								DESC
+						).bindTo(H_INSTANCE);
 	}
 	
 	/**
@@ -2078,56 +2084,6 @@ public class Windows {
 				FFMUtils.traceDowncall("GetModuleHandleA", lpModuleName);
 			}
 			return (MemorySegment) mh$.invokeExact(lpModuleName);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class GetModuleHandleExW {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_BOOL,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleHandleExW"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL GetModuleHandleExW(DWORD dwFlags, LPCWSTR lpModuleName, HMODULE *phModule)
-	 *}
-	 */
-	public static FunctionDescriptor GetModuleHandleExW$descriptor() {
-		return GetModuleHandleExW.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL GetModuleHandleExW(DWORD dwFlags, LPCWSTR lpModuleName, HMODULE *phModule)
-	 *}
-	 */
-	public static MethodHandle GetModuleHandleExW$handle() {
-		return GetModuleHandleExW.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL GetModuleHandleExW(DWORD dwFlags, LPCWSTR lpModuleName, HMODULE *phModule)
-	 *}
-	 */
-	public static boolean GetModuleHandleExW(int dwFlags, MemorySegment lpModuleName, MemorySegment phModule) {
-		var mh$ = GetModuleHandleExW.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("GetModuleHandleExW", dwFlags, lpModuleName, phModule);
-			}
-			return (boolean) mh$.invokeExact(dwFlags, lpModuleName, phModule);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2431,8 +2387,8 @@ public class Windows {
 	
 	private static class RegisterClassExW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_SHORT,
-				LayoutUtils.WNDCLASSEXW_POINTER
+				LayoutUtils.ATOM,
+				PointerLayoutHolder.WNDCLASSEXW_POINTER
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -2494,9 +2450,15 @@ public class Windows {
 				LayoutUtils.LPVOID
 		);
 		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CreateWindowExW"),
-				DESC);
+		public static final MethodHandle HANDLE = MethodHandles.insertArguments(
+				Linker.nativeLinker()
+						.downcallHandle(
+								FFMUtils.SYMBOL_LOOKUP.findOrThrow("CreateWindowExW"),
+								DESC
+						),
+				10,
+				H_INSTANCE
+		);
 	}
 	
 	/**
@@ -2524,13 +2486,13 @@ public class Windows {
 	 * HWND CreateWindowExW(DWORD dwExStyle, LPCWSTR lpClassName, LPCWSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
 	 *}
 	 */
-	public static MemorySegment CreateWindowExW(int dwExStyle, MemorySegment lpClassName, MemorySegment lpWindowName, int dwStyle, int X, int Y, int nWidth, int nHeight, MemorySegment hWndParent, MemorySegment hMenu, MemorySegment hInstance, MemorySegment lpParam) {
+	public static MemorySegment CreateWindowExW(int dwExStyle, MemorySegment lpClassName, MemorySegment lpWindowName, int dwStyle, int X, int Y, int nWidth, int nHeight, MemorySegment hWndParent, MemorySegment hMenu, MemorySegment lpParam) {
 		var mh$ = CreateWindowExW.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("CreateWindowExW", dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+				FFMUtils.traceDowncall("CreateWindowExW", dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, lpParam);
 			}
-			return (MemorySegment) mh$.invokeExact(dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+			return (MemorySegment) mh$.invokeExact(dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, lpParam);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3238,9 +3200,12 @@ public class Windows {
 				LayoutUtils.UINT
 		);
 		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LoadImageW"),
-				DESC);
+		public static final MethodHandle HANDLE =
+				Linker.nativeLinker()
+						.downcallHandle(
+								FFMUtils.SYMBOL_LOOKUP.findOrThrow("LoadImageW"),
+								DESC
+						).bindTo(H_INSTANCE);
 	}
 	
 	/**
@@ -3268,13 +3233,13 @@ public class Windows {
 	 * HANDLE LoadImageW(HINSTANCE hInst, LPCWSTR name, UINT type, int cx, int cy, UINT fuLoad)
 	 *}
 	 */
-	public static MemorySegment LoadImageW(MemorySegment hInst, MemorySegment name, int type, int cx, int cy, int fuLoad) {
+	public static MemorySegment LoadImageW(MemorySegment name, int type, int cx, int cy, int fuLoad) {
 		var mh$ = LoadImageW.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("LoadImageW", hInst, name, type, cx, cy, fuLoad);
+				FFMUtils.traceDowncall("LoadImageW", name, type, cx, cy, fuLoad);
 			}
-			return (MemorySegment) mh$.invokeExact(hInst, name, type, cx, cy, fuLoad);
+			return (MemorySegment) mh$.invokeExact(name, type, cx, cy, fuLoad);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3289,12 +3254,15 @@ public class Windows {
 				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DestroyIcon"),
 				DESC);
 	}
+	
 	public static FunctionDescriptor DestroyIcon$descriptor() {
 		return DestroyIcon.DESC;
 	}
+	
 	public static MethodHandle DestroyIconW$handle() {
 		return DestroyIcon.HANDLE;
 	}
+	
 	public static boolean DestroyIcon(MemorySegment hIcon) {
 		var mh$ = DestroyIcon.HANDLE;
 		try {
@@ -3306,6 +3274,7 @@ public class Windows {
 			throw new AssertionError("should not reach here", ex$);
 		}
 	}
+	
 	private static class SetProcessDpiAwarenessContext {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_BOOL,
@@ -3464,7 +3433,7 @@ public class Windows {
 	
 	private static class IsValidCodePage {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL,
 				LayoutUtils.C_INT
 		);
 		
@@ -3498,13 +3467,13 @@ public class Windows {
 	 * BOOL IsValidCodePage(UINT CodePage)
 	 *}
 	 */
-	public static int IsValidCodePage(int CodePage) {
+	public static boolean IsValidCodePage(int CodePage) {
 		var mh$ = IsValidCodePage.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
 				FFMUtils.traceDowncall("IsValidCodePage", CodePage);
 			}
-			return (int) mh$.invokeExact(CodePage);
+			return (boolean) mh$.invokeExact(CodePage);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3706,7 +3675,7 @@ public class Windows {
 	
 	private static class WriteConsoleW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_LONG,
@@ -3744,13 +3713,13 @@ public class Windows {
 	 * BOOL WriteConsoleW(HANDLE hConsoleOutput, const void *lpBuffer, DWORD nNumberOfCharsToWrite, LPDWORD lpNumberOfCharsWritten, LPVOID lpReserved)
 	 *}
 	 */
-	public static int WriteConsoleW(MemorySegment hConsoleOutput, MemorySegment lpBuffer, int nNumberOfCharsToWrite, MemorySegment lpNumberOfCharsWritten, MemorySegment lpReserved) {
+	public static boolean WriteConsoleW(MemorySegment hConsoleOutput, MemorySegment lpBuffer, int nNumberOfCharsToWrite, MemorySegment lpNumberOfCharsWritten, MemorySegment lpReserved) {
 		var mh$ = WriteConsoleW.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
 				FFMUtils.traceDowncall("WriteConsoleW", hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
 			}
-			return (int) mh$.invokeExact(hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
+			return (boolean) mh$.invokeExact(hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3807,7 +3776,7 @@ public class Windows {
 	
 	private static class GetFileVersionInfoW {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
+				LayoutUtils.C_BOOL,
 				LayoutUtils.C_POINTER,
 				LayoutUtils.C_LONG,
 				LayoutUtils.C_LONG,
@@ -3844,13 +3813,13 @@ public class Windows {
 	 * BOOL GetFileVersionInfoW(LPCWSTR lptstrFilename, DWORD dwHandle, DWORD dwLen, LPVOID lpData)
 	 *}
 	 */
-	public static int GetFileVersionInfoW(MemorySegment lptstrFilename, int dwHandle, int dwLen, MemorySegment lpData) {
+	public static boolean GetFileVersionInfoW(MemorySegment lptstrFilename, int dwHandle, int dwLen, MemorySegment lpData) {
 		var mh$ = GetFileVersionInfoW.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
 				FFMUtils.traceDowncall("GetFileVersionInfoW", lptstrFilename, dwHandle, dwLen, lpData);
 			}
-			return (int) mh$.invokeExact(lptstrFilename, dwHandle, dwLen, lpData);
+			return (boolean) mh$.invokeExact(lptstrFilename, dwHandle, dwLen, lpData);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -4249,6 +4218,8 @@ public class Windows {
 		}
 	}
 	
+	static final MemorySegment H_INSTANCE = Windows.GetModuleHandleA(MemorySegment.NULL);
+	
 	@SuppressWarnings({"SpellCheckingInspection", "PointlessBitwiseExpression"})
 	public static final int
 			WM_DESTROY = 0x0002,
@@ -4265,5 +4236,6 @@ public class Windows {
 	/**
 	 * Loads the standalone image from the file specified by name (icon, cursor, or bitmap file).
 	 */
+	@SuppressWarnings("SpellCheckingInspection")
 	public static final int LR_LOADFROMFILE = 0x00000010;
 }

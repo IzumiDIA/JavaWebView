@@ -16,11 +16,9 @@ public interface WindowBuilder<T extends WebViewController> {
 	
 	WindowBuilder<T> setHandleIcon(final @NotNull Path iconFilePath);
 	
-	WindowBuilder<T> setHandleCursor(final @NotNull MemorySegment handleCursor);
+	WindowBuilder<T> setClassName(final @NotNull String windowClassName);
 	
-	WindowBuilder<T> setSzClassName(final @NotNull String windowClassName);
-	
-	WindowBuilder<T> setHandleIconSmall(final @NotNull MemorySegment handleIconSmall);
+	WindowBuilder<T> setHandleIconSmall(final @NotNull Path smallIconFilePath);
 	
 	WindowBuilder<T> setExtendStyle(final int extendStyle);
 	

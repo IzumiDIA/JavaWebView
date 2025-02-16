@@ -174,7 +174,7 @@ public class ICoreWebView2Vtbl {
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.C_LONG,
 				ICoreWebView2.POINTER$LAYOUT,
-				LayoutUtils.IID_POINTER,
+				PointerLayoutHolder.IID_POINTER,
 				LayoutUtils.VOID_POINTER_POINTER
 		);
 		

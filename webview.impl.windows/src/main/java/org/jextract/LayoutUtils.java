@@ -42,6 +42,7 @@ public final class LayoutUtils {
 	public static final OfInt UINT = C_INT;
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final OfLong LONGLONG = C_LONG_LONG;
+	public static final OfShort ATOM = C_SHORT;
 	/**
 	 * {@snippet lang = c:
 	 * typedef const CHAR *LPCSTR
@@ -244,22 +245,23 @@ public final class LayoutUtils {
 	 *}
 	 */
 	public static final AddressLayout PLARGE_INTEGER = C_POINTER.withTargetLayout(LARGE_INTEGER.layout());
-	public static final AddressLayout IID_POINTER = C_POINTER.withTargetLayout(IID.layout());
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout WNDPROC_POINTER = C_POINTER;
-	public static final AddressLayout POINT_POINTER = C_POINTER.withTargetLayout(POINT.layout());
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final AddressLayout WNDCLASSEXW_POINTER = C_POINTER.withTargetLayout(WNDCLASSEXW.layout());
 	
 	/**
 	 * Lazy loading is used to solve the problem of static initialized ring dependencies.
 	 */
 	public static final class PointerLayoutHolder {
+		public static final AddressLayout IID_POINTER = C_POINTER.withTargetLayout(IID.layout());
+		public static final AddressLayout POINT_POINTER = C_POINTER.withTargetLayout(POINT.layout());
+		@SuppressWarnings("SpellCheckingInspection")
+		public static final AddressLayout WNDCLASSEXW_POINTER = C_POINTER.withTargetLayout(WNDCLASSEXW.layout());
+		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());
+		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER_POINTER = C_POINTER.withTargetLayout(I_CORE_WEB_VIEW_2_SETTINGS_POINTER);
+		public static final AddressLayout I_CORE_WEB_VIEW_2_CONTROLLER_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Controller.layout());
+		
 		private PointerLayoutHolder() {
 			throw new UnsupportedOperationException();
 		}
-		
-		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());
-		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER_POINTER = C_POINTER.withTargetLayout(I_CORE_WEB_VIEW_2_SETTINGS_POINTER);
 	}
 }
