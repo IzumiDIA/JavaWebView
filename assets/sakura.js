@@ -178,8 +178,7 @@ function createShader(vtxSrc, frgSrc, uniformList, attrList) {
 		gl.deleteShader(fsh);
 		gl.linkProgram(program);
 		if ( !gl.getProgramParameter(program, gl.LINK_STATUS) ) {
-			const errLog = gl.getProgramInfoLog(program);
-			console.error(errLog);
+			console.error(gl.getProgramInfoLog(program));
 			return null;
 		}
 		if ( uniformList ) {
@@ -211,7 +210,7 @@ function unuseShader(program) {
 	gl.useProgram(null);
 }
 
-/////
+
 const projection = {
 	angle: 60,
 	nearFar: new Float32Array([0.1, 100.0]),
@@ -382,7 +381,7 @@ function renderPointFlowers() {
 		}
 	}
 	
-	for ( i = 0; i < pointFlower.numFlowers; i++ ) {
+	for ( i = 0; i < pointFlower.numFlowers; ++i ) {
 		prtcl = pointFlower.particles[i];
 		prtcl.update(timeInfo.delta, timeInfo.elapsed);
 		repeatPos(prtcl, 0, pointFlower.area.x);
@@ -438,7 +437,7 @@ function renderPointFlowers() {
 	
 	const pRog = pointFlower.program;
 	useShader(pRog);
-	const { uFade, uOffset, uProjection, uDOF, uModelView: uModelView, uResolution } = pRog.uniforms;
+	const { uFade, uOffset, uProjection, uDOF, uModelView, uResolution } = pRog.uniforms;
 	gl.uniformMatrix4fv(uProjection, false, projection.matrix);
 	gl.uniformMatrix4fv(uModelView, false, camera.matrix);
 	gl.uniform3fv(uResolution, renderSpec.array);
@@ -713,30 +712,26 @@ function makeCanvasFullScreen(canvas) {
 	canvas.height = fullH;
 }
 
-window.addEventListener(
-	"load",
-	() => {
-		const canvas = document.getElementById("sakura");
-		try {
-			makeCanvasFullScreen(canvas);
-			gl = canvas.getContext("webgl2");
-		}catch ( e ) {
-			alert("WebGL not supported." + e);
-			console.error(e);
-			return;
-		}
-		
-		window.addEventListener('resize', onResize);
-		
-		setViewports();
-		createScene();
-		initScene();
-		
-		timeInfo.start = new Date();
-		timeInfo.prev = timeInfo.start;
-		animate();
+window.onload = () => {
+	const canvas = document.getElementById("sakura");
+	try {
+		makeCanvasFullScreen(canvas);
+		gl = canvas.getContext("webgl2");
+	}catch ( e ) {
+		alert("WebGL not supported." + e);
+		console.error(e);
+		return;
 	}
-);
+	window.onresize = onResize;
+	
+	setViewports();
+	createScene();
+	initScene();
+	
+	timeInfo.start = new Date();
+	timeInfo.prev = timeInfo.start;
+	animate();
+};
 
 //set window.requestAnimationFrame
 ( (w, r) => {
