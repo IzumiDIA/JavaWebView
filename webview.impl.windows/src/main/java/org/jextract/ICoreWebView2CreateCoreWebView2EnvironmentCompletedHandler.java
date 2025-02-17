@@ -28,6 +28,7 @@ public class ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
 			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler");
 	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 	/**
 	 * The layout of this struct
 	 */

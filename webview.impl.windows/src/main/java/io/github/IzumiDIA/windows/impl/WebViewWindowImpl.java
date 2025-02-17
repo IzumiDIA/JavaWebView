@@ -22,7 +22,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedTransferQueue;
 
 import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
-import static org.jextract.Windows.WM_CLOSE;
+import static org.jextract.Windows.WindowMessages.CLOSE;
 
 public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWindow {
 	/**
@@ -131,7 +131,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	
 	@Override
 	public boolean terminate() {
-		return this.platformWindow.postMessage(WM_CLOSE, 0L, 0L);
+		return this.platformWindow.postMessage(CLOSE, 0L, 0L);
 	}
 	
 	public static final class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange {

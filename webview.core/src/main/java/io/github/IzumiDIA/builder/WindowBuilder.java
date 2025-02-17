@@ -12,6 +12,8 @@ import java.nio.file.Path;
 public interface WindowBuilder<T extends WebViewController> {
 	WindowBuilder<T> setStyle(final int style);
 	
+	WindowBuilder<T> setResizable(final boolean resizable);
+	
 	WindowBuilder<T> setController(final @NotNull T webViewController);
 	
 	WindowBuilder<T> setHandleIcon(final @NotNull Path iconFilePath);

@@ -27,7 +27,7 @@ public class ICoreWebView2CreateCoreWebView2ControllerCompletedHandler {
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
 			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2CreateCoreWebView2ControllerCompletedHandlerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2CreateCoreWebView2ControllerCompletedHandler");
-	
+	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 	/**
 	 * The layout of this struct
 	 */

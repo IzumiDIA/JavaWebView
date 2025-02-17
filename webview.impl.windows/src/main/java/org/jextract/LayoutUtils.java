@@ -238,7 +238,7 @@ public final class LayoutUtils {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final AddressLayout LPRECT = C_POINTER.withTargetLayout(tagRECT.layout());
-	public static final AddressLayout RECT_POINTER = C_POINTER.withTargetLayout(tagRECT.layout());
+	public static final AddressLayout RECT_POINTER = LPRECT;
 	/**
 	 * {@snippet lang = c:
 	 * typedef LARGE_INTEGER *PLARGE_INTEGER
@@ -258,7 +258,6 @@ public final class LayoutUtils {
 		public static final AddressLayout WNDCLASSEXW_POINTER = C_POINTER.withTargetLayout(WNDCLASSEXW.layout());
 		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Settings.layout());
 		public static final AddressLayout I_CORE_WEB_VIEW_2_SETTINGS_POINTER_POINTER = C_POINTER.withTargetLayout(I_CORE_WEB_VIEW_2_SETTINGS_POINTER);
-		public static final AddressLayout I_CORE_WEB_VIEW_2_CONTROLLER_POINTER = C_POINTER.withTargetLayout(ICoreWebView2Controller.layout());
 		
 		private PointerLayoutHolder() {
 			throw new UnsupportedOperationException();

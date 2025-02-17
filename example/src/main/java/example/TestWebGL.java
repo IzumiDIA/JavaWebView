@@ -21,6 +21,7 @@ final class TestWebGL {
 					                           .setHandleIcon(Path.of("assets", "Icon.ico").toAbsolutePath())
 					                           .setWindowName("WebGL2 WebView Window")
 					                           .setDimension(1920 >>> 1, (int) Math.floor(1080 * 0.75D))
+					                           .setResizable(true)
 					                           .buildWindow();
 			
 			final var webViewWindow = webViewFactory.createWebViewBuilder(arena, platformWindow)

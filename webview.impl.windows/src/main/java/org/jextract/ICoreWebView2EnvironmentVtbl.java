@@ -365,7 +365,7 @@ public class ICoreWebView2EnvironmentVtbl {
 				LayoutUtils.HRESULT,
 				ICoreWebView2Environment.POINTER$LAYOUT,
 				LayoutUtils.HWND,
-				LayoutUtils.C_POINTER
+				ICoreWebView2CreateCoreWebView2ControllerCompletedHandler.POINTER$LAYOUT
 		);
 		
 		/**
@@ -667,7 +667,7 @@ public class ICoreWebView2EnvironmentVtbl {
 				LayoutUtils.HRESULT,
 				ICoreWebView2Environment.POINTER$LAYOUT,
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
+				EventRegistrationToken.POINTER$LAYOUT
 		);
 		
 		/**
@@ -765,7 +765,7 @@ public class ICoreWebView2EnvironmentVtbl {
 		
 		private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
-				LayoutUtils.C_POINTER,
+				ICoreWebView2Environment.POINTER$LAYOUT,
 				EventRegistrationToken.layout()
 		);
 		

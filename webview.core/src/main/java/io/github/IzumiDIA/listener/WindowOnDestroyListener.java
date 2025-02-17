@@ -3,11 +3,6 @@ package io.github.IzumiDIA.listener;
 import java.util.EventListener;
 
 @FunctionalInterface
-public interface WindowOnDestroyListener extends EventListener, Runnable {
+public interface WindowOnDestroyListener extends EventListener {
 	void onDestroy();
-	
-	@Override
-	default void run() {
-		this.onDestroy();
-	}
 }

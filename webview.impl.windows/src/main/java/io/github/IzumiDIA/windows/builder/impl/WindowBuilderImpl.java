@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jextract.WNDCLASSEXW;
 import org.jextract.WNDPROC;
 import org.jextract.Windows;
+import org.jextract.Windows.WindowStyles;
 
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
@@ -44,6 +45,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	private Point2D position = null;
 	private Dimension dimension = null;
 	private WebViewControllerImpl webViewController = null;
+	private boolean resizable = false;
 	
 	public WindowBuilderImpl(final Arena arena) {
 		super(arena);
@@ -63,6 +65,12 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	@Override
 	public WindowBuilderImpl setStyle(final int style) {
 		WNDCLASSEXW.style(this.windowClass, style);
+		return this;
+	}
+	
+	@Override
+	public WindowBuilderImpl setResizable(final boolean resizable) {
+		this.resizable = resizable;
 		return this;
 	}
 	
@@ -166,7 +174,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 								Optional.ofNullable(this.windowName)
 										.orElse(DEFAULT_WINDOW_NAME)
 						),
-						Windows.WS_OVERLAPPEDWINDOW,
+						this.windowStyle() | WindowStyles.VISIBLE,
 						this.position.x(),
 						this.position.y(),
 						this.dimension.width,
@@ -178,12 +186,8 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				if ( MemorySegment.NULL.equals(handleWindow) ) throw new NullPointerException("The handle is null.");
 				else {
 					final var platformWindow = new PlatformWindowImpl(this.arena, handleWindow);
-					if ( platformWindow.showWindow(Windows.SW_SHOW) ) {
-						throw new IllegalStateException("The window was previously visible.");
-					} else {
-						if ( platformWindow.updateWindow() ) return platformWindow;
-						else throw new IllegalStateException("UpdateWindow function fails.");
-					}
+					if ( platformWindow.updateWindow() ) return platformWindow;
+					else throw new IllegalStateException("UpdateWindow function fails.");
 				}
 			} else throw new IllegalStateException("RegisterClassExW function fails.");
 		} else throw new IllegalArgumentException(new NullPointerException("The WebView Controller is null."));
@@ -229,5 +233,10 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				windowClassNameSegment
 		);
 		return windowClassNameSegment;
+	}
+	
+	private int windowStyle() {
+		if ( this.resizable ) return WindowStyles.OVERLAPPEDWINDOW;
+		else return WindowStyles.OVERLAPPEDWINDOW ^ WindowStyles.THICKFRAME;
 	}
 }

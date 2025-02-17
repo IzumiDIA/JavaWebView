@@ -31,6 +31,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class tagWNDCLASSEXW {
 	
 	tagWNDCLASSEXW() {
