@@ -1,7 +1,7 @@
 package example;
 
 import io.github.IzumiDIA.WebViewWindow;
-import io.github.IzumiDIA.constant.enums.COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND;
+import io.github.IzumiDIA.constant.enums.HostResourceAccessKind;
 
 import java.lang.foreign.Arena;
 import java.net.URI;
@@ -30,7 +30,7 @@ final class TestWebGPU {
 					                          .setVirtualHostNameToFolderMapping(
 													  "izumi",
 							                          Path.of("assets").toAbsolutePath(),
-							                          COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
+							                          HostResourceAccessKind.ALLOW
 					                          )
 					                          .navigate(URI.create("https://izumi/TestWebGPU.html"))
 					                          .buildWebView();

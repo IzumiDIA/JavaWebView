@@ -5,12 +5,10 @@ import io.github.IzumiDIA.Point2D;
 import io.github.IzumiDIA.controller.WebViewController;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
-import java.lang.foreign.MemorySegment;
+import java.awt.Dimension;
 import java.nio.file.Path;
 
 public interface WindowBuilder<T extends WebViewController> {
-	WindowBuilder<T> setStyle(final int style);
 	
 	WindowBuilder<T> setResizable(final boolean resizable);
 	
@@ -21,8 +19,6 @@ public interface WindowBuilder<T extends WebViewController> {
 	WindowBuilder<T> setClassName(final @NotNull String windowClassName);
 	
 	WindowBuilder<T> setHandleIconSmall(final @NotNull Path smallIconFilePath);
-	
-	WindowBuilder<T> setExtendStyle(final int extendStyle);
 	
 	WindowBuilder<T> setWindowName(final @NotNull String windowName);
 	

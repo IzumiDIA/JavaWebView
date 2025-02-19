@@ -13,14 +13,14 @@ import io.github.IzumiDIA.windows.impl.HResult.E_UNEXPECTED;
 import io.github.IzumiDIA.windows.impl.WebViewWindowImpl;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jetbrains.annotations.NotNull;
+import org.jextract.Constants;
+import org.jextract.Constants.SetWindowPosition;
 import org.jextract.ICoreWebView2Controller;
 import org.jextract.ICoreWebView2ControllerVtbl;
 import org.jextract.ICoreWebView2ControllerVtbl.Close;
 import org.jextract.ICoreWebView2ControllerVtbl.put_Bounds;
 import org.jextract.WNDPROC;
 import org.jextract.Windows;
-import org.jextract.Windows.SystemCommand;
-import org.jextract.Windows.WindowMessages;
 import org.jextract.tagRECT;
 
 import java.lang.foreign.Arena;
@@ -30,7 +30,8 @@ import java.lang.invoke.MethodHandles;
 import java.util.Optional;
 
 public class WebViewControllerImpl extends WindowsNativeObject implements WebViewController, WNDPROC.Function, AutoCloseable {
-	public static final int EXECUTE_SCRIPT = WindowMessages.USER + 1;
+	public static final int TO_FRONT = Constants.WindowMessages.USER + 1,
+			EXECUTE_SCRIPT = Constants.WindowMessages.USER + 2;
 	public static final int EXIT_SUCCESS = 0;
 	private final MemorySegment bounds;
 	private final MethodHandle windowGetClientRectHandle;
@@ -118,34 +119,35 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 	@Override
 	public long apply(final MemorySegment hWnd, final int message, final long wParam, final long lParam) {
 		switch (message) {
-			case WindowMessages.DESTROY -> Windows.PostQuitMessage(0);
-			case WindowMessages.SIZE -> {
+			case Constants.WindowMessages.DESTROY -> Windows.PostQuitMessage(0);
+			case Constants.WindowMessages.SIZE -> {
 				return this.webviewController != null ?
 						       this.putBounds(hWnd)
 						       :
 						       Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WindowMessages.WM_SETFOCUS -> {
+			case Constants.WindowMessages.WM_SETFOCUS -> {
 				this.windowOnGainedFocusListener.onGainedFocus();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WindowMessages.WM_KILLFOCUS -> {
+			case Constants.WindowMessages.WM_KILLFOCUS -> {
 				this.windowOnLostFocusListener.onLostFocus();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WindowMessages.CLOSE -> {
+			case Constants.WindowMessages.CLOSE -> {
 				this.windowOnCloseListener.onClose();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WindowMessages.QUIT -> {
+			case Constants.WindowMessages.QUIT -> {
 				this.windowOnDestroyListener.onDestroy();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
-			case WindowMessages.SYSCOMMAND -> {
-				if ( wParam == SystemCommand.MAXIMIZE ) this.windowOnMaximizeListener.onMaximize();
-				else if ( wParam == SystemCommand.MINIMIZE ) this.windowOnMinimizeListener.onMinimize();
+			case Constants.WindowMessages.SYSCOMMAND -> {
+				if ( wParam == Constants.SystemCommand.MAXIMIZE ) this.windowOnMaximizeListener.onMaximize();
+				else if ( wParam == Constants.SystemCommand.MINIMIZE ) this.windowOnMinimizeListener.onMinimize();
 				return Windows.DefWindowProcW(hWnd, message, wParam, lParam);
 			}
+			case TO_FRONT -> toFront(hWnd);
 			case EXECUTE_SCRIPT -> {
 				return this.webViewWindow.consumeScript().value();
 			}
@@ -154,6 +156,22 @@ public class WebViewControllerImpl extends WindowsNativeObject implements WebVie
 			}
 		}
 		return EXIT_SUCCESS;
+	}
+	
+	private static void toFront(final MemorySegment hWnd) {
+		final var allowed = Windows.AllowSetForegroundWindow();
+		assert allowed;
+		final var setWindowPos = Windows.SetWindowPos(
+				hWnd,
+				SetWindowPosition.HWND_TOP,
+				0, 0, 0, 0,
+				SetWindowPosition.SWP_NOMOVE | SetWindowPosition.SWP_NOSIZE | SetWindowPosition.SWP_SHOWWINDOW
+		);
+		assert setWindowPos;
+		final var setForegroundWindow = Windows.SetForegroundWindow(hWnd);
+		assert setForegroundWindow;
+		final var previous = Windows.SetFocus(hWnd);
+		assert previous != MemorySegment.NULL;
 	}
 	
 	public static class BuilderImpl implements Builder {

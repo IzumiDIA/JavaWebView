@@ -3,15 +3,14 @@ package io.github.IzumiDIA.windows.builder.impl;
 import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.Point2D;
 import io.github.IzumiDIA.builder.WindowBuilder;
-import io.github.IzumiDIA.constant.enums.Color;
 import io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl;
 import io.github.IzumiDIA.windows.impl.PlatformWindowImpl;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jetbrains.annotations.NotNull;
+import org.jextract.Constants;
 import org.jextract.WNDCLASSEXW;
 import org.jextract.WNDPROC;
 import org.jextract.Windows;
-import org.jextract.Windows.WindowStyles;
 
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
@@ -37,7 +36,6 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	
 	private final MemorySegment windowClass;
 	
-	private int extendStyle = 0;
 	private String windowClassName = null,
 			windowName = null,
 			iconFilePath = null,
@@ -50,22 +48,15 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	public WindowBuilderImpl(final Arena arena) {
 		super(arena);
 		this.windowClass = WNDCLASSEXW.allocate(this.arena);
-		WNDCLASSEXW.cbSize(this.windowClass, 80);
 		WNDCLASSEXW.cbClsExtra(this.windowClass, 0);
 		WNDCLASSEXW.cbWndExtra(this.windowClass, 0);
 		WNDCLASSEXW.hbrBackground(
-				this.windowClass, MemorySegment.ofAddress(Color.ACTIVEBORDER.ordinal())
+				this.windowClass, Windows.GetSysColorBrush(Constants.COLOR_WINDOW)
 		);
 		WNDCLASSEXW.lpszMenuName(
 				this.windowClass,
 				MemorySegment.NULL
 		);
-	}
-	
-	@Override
-	public WindowBuilderImpl setStyle(final int style) {
-		WNDCLASSEXW.style(this.windowClass, style);
-		return this;
 	}
 	
 	@Override
@@ -93,11 +84,6 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		} else throw new IllegalArgumentException("The path to the Icon file must be absolute.");
 	}
 	
-	public WindowBuilderImpl setBrushBackground(final @NotNull Color handleBrush) {
-		WNDCLASSEXW.hbrBackground(this.windowClass, MemorySegment.ofAddress(handleBrush.ordinal()));
-		return this;
-	}
-	
 	@Override
 	public WindowBuilderImpl setClassName(final @NotNull String windowClassName) {
 		this.windowClassName = windowClassName;
@@ -115,12 +101,6 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				} else throw new IllegalArgumentException("Path: [" + iconFile + "]. There is no readable file.");
 			} else throw new IllegalArgumentException("The file suffix extension does not match.");
 		} else throw new IllegalArgumentException("The path to the Icon file must be absolute.");
-	}
-	
-	@Override
-	public WindowBuilderImpl setExtendStyle(final int extendStyle) {
-		this.extendStyle = extendStyle;
-		return this;
 	}
 	
 	@Override
@@ -155,7 +135,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 			this.setSmallHIcon();
 			final var windowClassNameSegment = this.setClassName();
 			if ( this.dimension == null ) {
-				this.dimension = new Dimension(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
+				this.dimension = new Dimension(Constants.CW_USEDEFAULT, Constants.CW_USEDEFAULT);
 			} else if ( this.position == null ) {
 				final var screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 				this.position = new Point2D(
@@ -164,17 +144,17 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 				);
 			}
 			if ( this.position == null ) {
-				this.position = new Point2D(Windows.CW_USEDEFAULT, Windows.CW_USEDEFAULT);
+				this.position = new Point2D(Constants.CW_USEDEFAULT, Constants.CW_USEDEFAULT);
 			}
 			if ( Windows.RegisterClassExW(this.windowClass) != 0 ) {
 				final var handleWindow = Windows.CreateWindowExW(
-						this.extendStyle,
+						Constants.WS_EX_APPWINDOW,
 						windowClassNameSegment,
 						this.allocateString(
 								Optional.ofNullable(this.windowName)
 										.orElse(DEFAULT_WINDOW_NAME)
 						),
-						this.windowStyle() | WindowStyles.VISIBLE,
+						this.windowStyle() | Constants.WindowStyles.VISIBLE,
 						this.position.x(),
 						this.position.y(),
 						this.dimension.width,
@@ -199,10 +179,10 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 					this.windowClass,
 					Windows.LoadImageW(
 							this.allocateString(this.iconFilePath),
-							Windows.IMAGE_ICON,
+							Constants.IMAGE_ICON,
 							0,
 							0,
-							Windows.LR_LOADFROMFILE
+							Constants.LR_LOADFROMFILE
 					)
 			);
 		}
@@ -214,10 +194,10 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 					this.windowClass,
 					Windows.LoadImageW(
 							this.allocateString(this.smallIconFilePath),
-							Windows.IMAGE_ICON,
+							Constants.IMAGE_ICON,
 							0,
 							0,
-							Windows.LR_LOADFROMFILE
+							Constants.LR_LOADFROMFILE
 					)
 			);
 		}
@@ -236,7 +216,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 	}
 	
 	private int windowStyle() {
-		if ( this.resizable ) return WindowStyles.OVERLAPPEDWINDOW;
-		else return WindowStyles.OVERLAPPEDWINDOW ^ WindowStyles.THICKFRAME;
+		if ( this.resizable ) return Constants.WindowStyles.OVERLAPPEDWINDOW;
+		else return Constants.WindowStyles.OVERLAPPEDWINDOW ^ Constants.WindowStyles.THICKFRAME;
 	}
 }

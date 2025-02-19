@@ -21,8 +21,9 @@ import java.lang.invoke.MethodHandle;
 public class MSG extends tagMSG {
 	private final MethodHandle getMessageHandle, translateMessageHandle, dispatchMessageHandle;
 	
-	public MSG(final SegmentAllocator allocator) {
+	public MSG(final SegmentAllocator allocator, final MemorySegment hWnd) {
 		final var message = MSG.allocate(allocator);
+		MSG.hwnd(message, hWnd);
 		this.getMessageHandle = Windows.GetMessageW$handle().bindTo(message);
 		this.translateMessageHandle = Windows.TranslateMessage$handle().bindTo(message);
 		this.dispatchMessageHandle = Windows.DispatchMessageW$handle().bindTo(message);

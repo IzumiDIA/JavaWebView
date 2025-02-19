@@ -19,7 +19,7 @@ public class Windows {
 	private static class GetStdHandle {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG
+				LayoutUtils.DWORD
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -553,54 +553,6 @@ public class Windows {
 				FFMUtils.traceDowncall("OutputDebugStringW", lpOutputString);
 			}
 			mh$.invokeExact(lpOutputString);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class EncodePointer {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("EncodePointer"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * PVOID EncodePointer(PVOID Ptr)
-	 *}
-	 */
-	public static FunctionDescriptor EncodePointer$descriptor() {
-		return EncodePointer.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * PVOID EncodePointer(PVOID Ptr)
-	 *}
-	 */
-	public static MethodHandle EncodePointer$handle() {
-		return EncodePointer.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * PVOID EncodePointer(PVOID Ptr)
-	 *}
-	 */
-	public static MemorySegment EncodePointer(MemorySegment Ptr) {
-		var mh$ = EncodePointer.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("EncodePointer", Ptr);
-			}
-			return (MemorySegment) mh$.invokeExact(Ptr);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2001,7 +1953,7 @@ public class Windows {
 						.downcallHandle(
 								FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetModuleFileNameW"),
 								DESC
-						).bindTo(H_INSTANCE);
+						).bindTo(Constants.H_INSTANCE);
 	}
 	
 	/**
@@ -2084,6 +2036,106 @@ public class Windows {
 				FFMUtils.traceDowncall("GetModuleHandleA", lpModuleName);
 			}
 			return (MemorySegment) mh$.invokeExact(lpModuleName);
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
+		}
+	}
+	
+	private static class GetSysColorBrush {
+		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+				LayoutUtils.C_POINTER,
+				LayoutUtils.C_INT
+		);
+		public static final MethodHandle HANDLE = Linker.nativeLinker()
+				                                          .downcallHandle(
+						                                          FFMUtils.SYMBOL_LOOKUP.findOrThrow("GetSysColorBrush"),
+						                                          DESC
+				                                          );
+	}
+	
+	public static FunctionDescriptor GetSysColorBrush$descriptor() {
+		return GetSysColorBrush.DESC;
+	}
+	
+	public static MethodHandle GetSysColorBrush$handle() {
+		return GetSysColorBrush.HANDLE;
+	}
+	
+	public static MemorySegment GetSysColorBrush(final int nIndex) {
+		var mh$ = GetSysColorBrush.HANDLE;
+		try {
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("GetSysColorBrush", nIndex);
+			}
+			return (MemorySegment) mh$.invokeExact(nIndex);
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
+		}
+	}
+	
+	private static class SetForegroundWindow {
+		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+				LayoutUtils.C_BOOL,
+				LayoutUtils.HWND
+		);
+		public static final MethodHandle HANDLE = Linker.nativeLinker()
+				                                          .downcallHandle(
+						                                          FFMUtils.SYMBOL_LOOKUP.findOrThrow("SetForegroundWindow"),
+						                                          DESC
+				                                          );
+	}
+	
+	public static FunctionDescriptor SetForegroundWindow$descriptor() {
+		return SetForegroundWindow.DESC;
+	}
+	
+	public static MethodHandle SetForegroundWindowW$handle() {
+		return SetForegroundWindow.HANDLE;
+	}
+	
+	public static boolean SetForegroundWindow(final MemorySegment hWnd) {
+		var mh$ = SetForegroundWindow.HANDLE;
+		try {
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("SetForegroundWindow", hWnd);
+			}
+			return (boolean) mh$.invokeExact(hWnd);
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
+		}
+	}
+	
+	private static class AllowSetForegroundWindow {
+		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+				LayoutUtils.C_BOOL,
+				LayoutUtils.DWORD
+		);
+		public static final MethodHandle HANDLE = MethodHandles.insertArguments(
+				Linker.nativeLinker()
+						.downcallHandle(
+								FFMUtils.SYMBOL_LOOKUP.findOrThrow("AllowSetForegroundWindow"),
+								DESC
+						),
+				0,
+				(int) ProcessHandle.current().pid()
+		);
+	}
+	
+	public static FunctionDescriptor AllowSetForegroundWindow$descriptor() {
+		return AllowSetForegroundWindow.DESC;
+	}
+	
+	public static MethodHandle AllowSetForegroundWindow$handle() {
+		return AllowSetForegroundWindow.HANDLE;
+	}
+	
+	public static boolean AllowSetForegroundWindow() {
+		var mh$ = AllowSetForegroundWindow.HANDLE;
+		try {
+			if ( FFMUtils.TRACE_DOWNCALLS ) {
+				FFMUtils.traceDowncall("AllowSetForegroundWindow");
+			}
+			return (boolean) mh$.invokeExact();
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2457,7 +2509,7 @@ public class Windows {
 								DESC
 						),
 				10,
-				H_INSTANCE
+				Constants.H_INSTANCE
 		);
 	}
 	
@@ -2699,13 +2751,13 @@ public class Windows {
 	private static class SetWindowPos {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
 				LayoutUtils.C_BOOL,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_POINTER,
+				LayoutUtils.HWND,
+				LayoutUtils.HWND,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
 				LayoutUtils.C_INT,
-				LayoutUtils.C_INT
+				LayoutUtils.UINT
 		);
 		
 		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
@@ -2738,13 +2790,13 @@ public class Windows {
 	 * BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)
 	 *}
 	 */
-	public static int SetWindowPos(MemorySegment hWnd, MemorySegment hWndInsertAfter, int X, int Y, int cx, int cy, int uFlags) {
+	public static boolean SetWindowPos(MemorySegment hWnd, MemorySegment hWndInsertAfter, int X, int Y, int cx, int cy, int uFlags) {
 		var mh$ = SetWindowPos.HANDLE;
 		try {
 			if ( FFMUtils.TRACE_DOWNCALLS ) {
 				FFMUtils.traceDowncall("SetWindowPos", hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 			}
-			return (int) mh$.invokeExact(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
+			return (boolean) mh$.invokeExact(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2752,7 +2804,7 @@ public class Windows {
 	
 	private static class SetFocus {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.HWND,
+				LayoutUtils.C_POINTER,
 				LayoutUtils.HWND
 		);
 		
@@ -3205,7 +3257,7 @@ public class Windows {
 						.downcallHandle(
 								FFMUtils.SYMBOL_LOOKUP.findOrThrow("LoadImageW"),
 								DESC
-						).bindTo(H_INSTANCE);
+						).bindTo(Constants.H_INSTANCE);
 	}
 	
 	/**
@@ -4217,72 +4269,4 @@ public class Windows {
 			throw new AssertionError("should not reach here", ex$);
 		}
 	}
-	
-	static final MemorySegment H_INSTANCE = Windows.GetModuleHandleA(MemorySegment.NULL);
-	
-	
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final class WindowMessages {
-		
-		public static final int
-				DESTROY = 0x0002,
-				SIZE = 0x0005,
-				WM_SETFOCUS = 0x0007,
-				WM_KILLFOCUS = 0x0008,
-				CLOSE = 0x0010,
-				QUIT = 0x0012,
-				SYSCOMMAND = 0x0112,
-				SIZING = 0x0214,
-				USER = 0x0400;
-		
-		private WindowMessages() {
-			throw new UnsupportedOperationException();
-		}
-	}
-	
-	public static final class SystemCommand {
-		public static final int MINIMIZE = 0xF020,
-				MAXIMIZE = 0xF030,
-				CLOSE = 0xF060,
-				RESTORE = 0xF120;
-		
-		private SystemCommand() {
-			throw new UnsupportedOperationException();
-		}
-	}
-	
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final class WindowStyles {
-		private WindowStyles() {
-			throw new UnsupportedOperationException();
-		}
-		
-		public static final int
-				OVERLAPPED = 0x00000000,
-				CAPTION = 0x00C00000,
-				SYSMENU = 0x00080000,
-				THICKFRAME = 0x00040000,
-				MINIMIZEBOX = 0x00020000,
-				MAXIMIZEBOX = 0x00010000,
-				OVERLAPPEDWINDOW = OVERLAPPED |
-				                   CAPTION |
-				                   SYSMENU |
-				                   THICKFRAME |
-				                   MINIMIZEBOX |
-				                   MAXIMIZEBOX,
-				VISIBLE = 0x10000000;
-	}
-	
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final int CW_USEDEFAULT = 0x80000000;
-	
-	public static final int SW_SHOW = 5;
-	
-	public static final int IMAGE_ICON = 1;
-	
-	/**
-	 * Loads the standalone image from the file specified by name (icon, cursor, or bitmap file).
-	 */
-	@SuppressWarnings("SpellCheckingInspection")
-	public static final int LR_LOADFROMFILE = 0x00000010;
 }

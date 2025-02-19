@@ -1,7 +1,7 @@
 package example;
 
 import io.github.IzumiDIA.WebViewWindow;
-import io.github.IzumiDIA.constant.enums.COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND;
+import io.github.IzumiDIA.constant.enums.HostResourceAccessKind;
 
 import java.lang.foreign.Arena;
 import java.nio.file.Path;
@@ -27,7 +27,7 @@ final class TestVirtualHostNameToFolderMapping {
 					                          .setVirtualHostNameToFolderMapping(
 							                          "izumi-ryuu",
 							                          Path.of("assets").toAbsolutePath(),
-							                          COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND.ALLOW
+							                          HostResourceAccessKind.ALLOW
 					                          )
 					                          .enableDevTools(true)
 					                          .setUserDataFolder(Path.of(""))

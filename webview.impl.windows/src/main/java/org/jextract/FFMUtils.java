@@ -11,6 +11,7 @@ public final class FFMUtils {
 	private FFMUtils() {
 		// Should not be called directly
 	}
+	@SuppressWarnings("SpellCheckingInspection")
 	static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
 	
 	static final Arena LIBRARY_ARENA = Arena.ofAuto();
@@ -26,6 +27,7 @@ public final class FFMUtils {
 			                .or(SymbolLookup.loaderLookup())
 			                .or(Linker.nativeLinker().defaultLookup());
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	static void traceDowncall(String name, Object... args) {
 		String traceArgs = Arrays.stream(args)
 				                   .map(Object::toString)

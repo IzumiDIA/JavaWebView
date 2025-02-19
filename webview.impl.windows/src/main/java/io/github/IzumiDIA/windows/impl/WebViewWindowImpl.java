@@ -1,10 +1,11 @@
 package io.github.IzumiDIA.windows.impl;
 
-import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.WebViewWindow;
+import io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl;
 import io.github.IzumiDIA.windows.impl.HResult.E_UNEXPECTED;
 import io.github.IzumiDIA.windows.impl.HResult.S_OK;
 import org.jetbrains.annotations.NotNull;
+import org.jextract.Constants.WindowMessages;
 import org.jextract.ICoreWebView2;
 import org.jextract.ICoreWebView2Vtbl;
 import org.jextract.ICoreWebView2Vtbl.PostWebMessageAsString;
@@ -21,15 +22,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedTransferQueue;
 
-import static io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl.EXECUTE_SCRIPT;
-import static org.jextract.Windows.WindowMessages.CLOSE;
-
 public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWindow {
 	/**
 	 * A temporary replacement for <a title="Stable Value" href="https://openjdk.org/jeps/502">Stable Value</a>。
 	 */
 	private static final VarHandle HANDLE;
-	private final PlatformWindow platformWindow;
+	private final PlatformWindowImpl platformWindow;
 	private final MemorySegment webview2_PP;
 	@SuppressWarnings("FieldMayBeFinal")
 	private MemorySegment webview2Pointer = null;
@@ -43,16 +41,15 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		}
 	}
 	
-	public WebViewWindowImpl(final Arena arena, final PlatformWindow platformWindow, final MemorySegment webview2_PP) {
+	public WebViewWindowImpl(final Arena arena, final PlatformWindowImpl platformWindow, final MemorySegment webview2_PP) {
 		super(arena);
 		this.platformWindow = platformWindow;
 		this.webview2_PP = webview2_PP;
 	}
 	
-	@SuppressWarnings("java:S3252")
 	@Override
 	public void run() {
-		final var message = new MSG(this.arena);
+		final var message = new MSG(this.arena, this.platformWindow.getHandler());
 		
 		try {
 			while ( message.getMessage(MemorySegment.NULL, 0, 0) ) {
@@ -101,7 +98,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	public boolean executeScriptAsync(final @NotNull String javascript) {
 		return this.scriptExecutionQueue.offer(javascript)
 		       &&
-		       this.platformWindow.postMessage(EXECUTE_SCRIPT, 0L, 0L);
+		       this.platformWindow.postMessage(WebViewControllerImpl.EXECUTE_SCRIPT, 0L, 0L);
 	}
 	
 	@Override
@@ -131,7 +128,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 	
 	@Override
 	public boolean terminate() {
-		return this.platformWindow.postMessage(CLOSE, 0L, 0L);
+		return this.platformWindow.postMessage(WindowMessages.CLOSE, 0L, 0L);
 	}
 	
 	public static final class EventExchangeImpl extends WindowsNativeObject implements WebMessageListener.EventExchange {

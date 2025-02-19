@@ -1,6 +1,7 @@
 package io.github.IzumiDIA.windows.impl;
 
 import io.github.IzumiDIA.PlatformWindow;
+import io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.LayoutUtils;
 import org.jextract.Windows;
@@ -54,15 +55,6 @@ public class PlatformWindowImpl extends WindowsNativeObject implements PlatformW
 	}
 	
 	@Override
-	public boolean postMessage(final int message, final long wParam, final long lParam) {
-		try {
-			return (boolean) this.postMessageHandle.invokeExact(message, 0L, 0L);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	@Override
 	public boolean setFocus() {
 		try {
 			final var previousWindow = (MemorySegment) this.setFocusHandle.invokeExact();
@@ -90,6 +82,19 @@ public class PlatformWindowImpl extends WindowsNativeObject implements PlatformW
 	public boolean moveWindow(final int x, final int y, final int newWidth, final int newHeight, final boolean repaint) {
 		try {
 			return (boolean) this.moveWindowHandle.invokeExact(x, y, newWidth, newHeight, repaint);
+		} catch (Throwable ex$) {
+			throw new AssertionError("should not reach here", ex$);
+		}
+	}
+	
+	@Override
+	public boolean toFront() {
+		return this.postMessage(WebViewControllerImpl.TO_FRONT, 0L, 0L);
+	}
+	
+	public boolean postMessage(final int message, final long wParam, final long lParam) {
+		try {
+			return (boolean) this.postMessageHandle.invokeExact(message, wParam, lParam);
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}

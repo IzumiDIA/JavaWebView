@@ -11,6 +11,9 @@ import java.util.EventListener;
 import java.util.ServiceLoader;
 
 public interface WebViewWindow {
+	/**
+	 * Blocking execution.
+	 */
 	void run();
 	
 	Result executeScript(final @Language("JavaScript") @NotNull String javascript);

@@ -4,11 +4,12 @@ import io.github.IzumiDIA.PlatformWindow;
 import io.github.IzumiDIA.VirtualHostNameToFolderMapping;
 import io.github.IzumiDIA.WebViewWindow.WebMessageListener;
 import io.github.IzumiDIA.builder.WebViewBuilder;
-import io.github.IzumiDIA.constant.enums.COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND;
+import io.github.IzumiDIA.constant.enums.HostResourceAccessKind;
 import io.github.IzumiDIA.windows.controller.impl.WebViewControllerImpl;
 import io.github.IzumiDIA.windows.factory.IUnknownFactory;
 import io.github.IzumiDIA.windows.factory.impl.IUnknownFactoryImpl;
 import io.github.IzumiDIA.windows.impl.HResult;
+import io.github.IzumiDIA.windows.impl.PlatformWindowImpl;
 import io.github.IzumiDIA.windows.impl.WebViewWindowImpl;
 import io.github.IzumiDIA.windows.impl.WebViewWindowImpl.EventExchangeImpl;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
@@ -27,7 +28,7 @@ import java.util.stream.IntStream;
 
 public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBuilder<HResult, EventExchangeImpl> {
 	private final WebViewControllerImpl webViewController;
-	private final PlatformWindow platformWindow;
+	private final PlatformWindowImpl platformWindow;
 	private final MemorySegment webview2_PP;
 	private MemorySegment contentString = null, uriString = null;
 	private String userDataFolder = null;
@@ -45,7 +46,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	public WebViewBuilderImpl(
 			final WebViewControllerImpl webViewController,
 			final Arena arena,
-			final PlatformWindow platformWindow
+			final PlatformWindowImpl platformWindow
 	) {
 		super(arena);
 		this.webViewController = webViewController;
@@ -112,7 +113,7 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 	public WebViewBuilderImpl setVirtualHostNameToFolderMapping(
 			final @NotNull String virtualHostName,
 			final Path folderMapping,
-			final @NotNull COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND accessKind
+			final @NotNull HostResourceAccessKind accessKind
 	) {
 		this.virtualHostNameToFolderMapping = new VirtualHostNameToFolderMapping(
 				this.allocateString(virtualHostName),
