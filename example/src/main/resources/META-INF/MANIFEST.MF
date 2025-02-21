@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Enable-Native-Access: webview.impl.windows
+Enable-Native-Access: ALL_UNNAMED

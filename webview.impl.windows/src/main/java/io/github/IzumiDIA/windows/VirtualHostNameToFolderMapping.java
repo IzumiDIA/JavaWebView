@@ -1,4 +1,4 @@
-package io.github.IzumiDIA;
+package io.github.IzumiDIA.windows;
 
 import org.jetbrains.annotations.NotNull;
 

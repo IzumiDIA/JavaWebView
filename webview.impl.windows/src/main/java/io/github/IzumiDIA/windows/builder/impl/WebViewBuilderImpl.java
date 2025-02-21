@@ -1,7 +1,6 @@
 package io.github.IzumiDIA.windows.builder.impl;
 
-import io.github.IzumiDIA.PlatformWindow;
-import io.github.IzumiDIA.VirtualHostNameToFolderMapping;
+import io.github.IzumiDIA.windows.VirtualHostNameToFolderMapping;
 import io.github.IzumiDIA.WebViewWindow.WebMessageListener;
 import io.github.IzumiDIA.builder.WebViewBuilder;
 import io.github.IzumiDIA.constant.enums.HostResourceAccessKind;
@@ -385,55 +384,27 @@ public class WebViewBuilderImpl extends WindowsNativeObject implements WebViewBu
 				)
 		);
 		if ( hResult instanceof HResult.S_OK ) {
-			final var settings_P = settings_PP.get(settingsTargetLayout, 0);
-			@SuppressWarnings("SpellCheckingInspection")
-			final var settingsVtbl = ICoreWebView2Settings.lpVtbl(settings_P);
 			return HResult.warpResult(
-					this.putWebView2Settings(settingsVtbl, settings_P)
+					this.putWebView2Settings(
+							new ICoreWebView2Settings(
+									settings_PP.get(settingsTargetLayout, 0)
+							)
+					)
 			);
 		} else return hResult;
 	}
 	
 	private int putWebView2Settings(
-			@SuppressWarnings("SpellCheckingInspection") final MemorySegment settingsVtbl,
-			final MemorySegment settings_P
+			final ICoreWebView2Settings webView2Settings
 	) {
 		return IntStream.of(
-						ICoreWebView2SettingsVtbl.put_IsScriptEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_IsScriptEnabled(settingsVtbl),
-								settings_P,
-								this.enableScript
-						),
-						ICoreWebView2SettingsVtbl.put_IsWebMessageEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_IsWebMessageEnabled(settingsVtbl),
-								settings_P,
-								this.enableWebMessage
-						),
-						ICoreWebView2SettingsVtbl.put_AreDevToolsEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_AreDevToolsEnabled(settingsVtbl),
-								settings_P,
-								this.enableDevTools
-						),
-						ICoreWebView2SettingsVtbl.put_AreDefaultContextMenusEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_AreDefaultContextMenusEnabled(settingsVtbl),
-								settings_P,
-								this.enableContextMenu
-						),
-						ICoreWebView2SettingsVtbl.put_IsZoomControlEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_IsZoomControlEnabled(settingsVtbl),
-								settings_P,
-								this.enabledZoomControl
-						),
-						ICoreWebView2SettingsVtbl.put_IsStatusBarEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_IsStatusBarEnabled(settingsVtbl),
-								settings_P,
-								this.enableStatusBar
-						),
-						ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled.invoke(
-								ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled(settingsVtbl),
-								settings_P,
-								this.enabledDefaultScriptDialogs
-						)
+						webView2Settings.scriptEnabled.set(this.enableScript),
+						webView2Settings.webMessageEnabled.set(this.enableWebMessage),
+						webView2Settings.devToolsEnabled.set(this.enableDevTools),
+						webView2Settings.defaultContextMenusEnabled.set(this.enableContextMenu),
+						webView2Settings.zoomControlEnabled.set(this.enabledZoomControl),
+						webView2Settings.statusBarEnabled.set(this.enableStatusBar),
+						webView2Settings.defaultScriptDialogsEnabled.set(this.enabledDefaultScriptDialogs)
 				)
 				       .dropWhile(hResult -> hResult != HResult.S_OK.SINGLETON.value())
 				       .findFirst()

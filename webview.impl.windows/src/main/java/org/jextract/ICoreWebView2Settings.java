@@ -2,27 +2,62 @@
 
 package org.jextract;
 
+import org.jextract.ICoreWebView2SettingsVtbl.Holder;
+
 import java.lang.foreign.AddressLayout;
 import java.lang.foreign.Arena;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
+import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2Settings {
  *     struct ICoreWebView2SettingsVtbl *lpVtbl;
  * }
- * }
+ *}
  */
 public class ICoreWebView2Settings {
+	private final MemorySegment webview2SettingsPointer, lpVtbl;
 	
-	ICoreWebView2Settings() {
-		// Should not be called directly
+	public final IsScriptEnabled scriptEnabled;
+	
+	public final IsWebMessageEnabled webMessageEnabled;
+	
+	public final AreDefaultScriptDialogsEnabled defaultScriptDialogsEnabled;
+	
+	public final IsStatusBarEnabled statusBarEnabled;
+	
+	public final AreDevToolsEnabled devToolsEnabled;
+	
+	public final AreDefaultContextMenusEnabled defaultContextMenusEnabled;
+	
+	public final AreHostObjectsAllowed hostObjectsAllowed;
+	
+	public final IsZoomControlEnabled zoomControlEnabled;
+	
+	public final IsBuiltInErrorPageEnabled builtInErrorPageEnabled;
+	
+	public ICoreWebView2Settings(final MemorySegment webview2SettingsPointer) {
+		this.webview2SettingsPointer = webview2SettingsPointer;
+		this.lpVtbl = ICoreWebView2Settings.lpVtbl(this.webview2SettingsPointer);
+		final var nativeLinker = Linker.nativeLinker();
+		this.scriptEnabled = new IsScriptEnabled(nativeLinker);
+		this.webMessageEnabled = new IsWebMessageEnabled(nativeLinker);
+		this.defaultContextMenusEnabled = new AreDefaultContextMenusEnabled(nativeLinker);
+		this.defaultScriptDialogsEnabled = new AreDefaultScriptDialogsEnabled(nativeLinker);
+		this.statusBarEnabled = new IsStatusBarEnabled(nativeLinker);
+		this.devToolsEnabled = new AreDevToolsEnabled(nativeLinker);
+		this.hostObjectsAllowed = new AreHostObjectsAllowed(nativeLinker);
+		this.zoomControlEnabled = new IsZoomControlEnabled(nativeLinker);
+		this.builtInErrorPageEnabled = new IsBuiltInErrorPageEnabled(nativeLinker);
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
 			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2SettingsVtbl.layout()).withName("lpVtbl")
@@ -34,26 +69,28 @@ public class ICoreWebView2Settings {
 	public static StructLayout layout() {
 		return $LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
-	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
+	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2SettingsVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2SettingsVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static long lpVtbl$offset() {
 		return lpVtbl$OFFSET;
@@ -61,9 +98,9 @@ public class ICoreWebView2Settings {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2SettingsVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpVtbl(MemorySegment struct) {
 		return struct.get(lpVtbl$LAYOUT, lpVtbl$OFFSET);
@@ -71,9 +108,9 @@ public class ICoreWebView2Settings {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2SettingsVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static void lpVtbl(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpVtbl$LAYOUT, lpVtbl$OFFSET, fieldValue);
@@ -90,7 +127,9 @@ public class ICoreWebView2Settings {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
@@ -121,5 +160,243 @@ public class ICoreWebView2Settings {
 	 */
 	public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
 		return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+	}
+	
+	public final class IsScriptEnabled extends Setting {
+		private final MethodHandle get, set;
+		
+		private IsScriptEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+					ICoreWebView2SettingsVtbl.get_IsScriptEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+					ICoreWebView2SettingsVtbl.put_IsScriptEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class IsWebMessageEnabled extends Setting {
+		private final MethodHandle get, set;
+		
+		private IsWebMessageEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+					ICoreWebView2SettingsVtbl.get_IsWebMessageEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+					ICoreWebView2SettingsVtbl.put_IsWebMessageEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class AreDefaultScriptDialogsEnabled extends Setting {
+		private final MethodHandle get, set;
+		private AreDefaultScriptDialogsEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+								      ICoreWebView2SettingsVtbl.get_AreDefaultScriptDialogsEnabled(ICoreWebView2Settings.this.lpVtbl),
+								      Holder.GET_SETTING
+						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class IsStatusBarEnabled extends Setting {
+		private final MethodHandle get, set;
+		private IsStatusBarEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+								      ICoreWebView2SettingsVtbl.get_IsStatusBarEnabled(ICoreWebView2Settings.this.lpVtbl),
+								      Holder.GET_SETTING
+						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_IsStatusBarEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class AreDevToolsEnabled extends Setting {
+		private final MethodHandle get, set;
+		private AreDevToolsEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+								      ICoreWebView2SettingsVtbl.get_AreDevToolsEnabled(ICoreWebView2Settings.this.lpVtbl),
+								      Holder.GET_SETTING
+						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_AreDevToolsEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class AreDefaultContextMenusEnabled extends Setting {
+		private final MethodHandle get, set;
+		private AreDefaultContextMenusEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+								      ICoreWebView2SettingsVtbl.get_AreDefaultContextMenusEnabled(ICoreWebView2Settings.this.lpVtbl),
+								      Holder.GET_SETTING
+						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_AreDefaultContextMenusEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class AreHostObjectsAllowed extends Setting {
+		private final MethodHandle get, set;
+		private AreHostObjectsAllowed(final Linker linker) {
+			this.get = linker.downcallHandle(
+								      ICoreWebView2SettingsVtbl.get_AreHostObjectsAllowed(ICoreWebView2Settings.this.lpVtbl),
+								      Holder.GET_SETTING
+						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_AreHostObjectsAllowed(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class IsZoomControlEnabled extends Setting {
+		private final MethodHandle get, set;
+		private IsZoomControlEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+									      ICoreWebView2SettingsVtbl.get_IsZoomControlEnabled(ICoreWebView2Settings.this.lpVtbl),
+									      Holder.GET_SETTING
+							      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_IsZoomControlEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	public final class IsBuiltInErrorPageEnabled extends Setting {
+		private final MethodHandle get, set;
+		private IsBuiltInErrorPageEnabled(final Linker linker) {
+			this.get = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.get_IsBuiltInErrorPageEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.GET_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+			this.set = linker.downcallHandle(
+							      ICoreWebView2SettingsVtbl.put_IsBuiltInErrorPageEnabled(ICoreWebView2Settings.this.lpVtbl),
+							      Holder.PUT_SETTING
+					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+		}
+		
+		@Override
+		MethodHandle getHandle() {
+			return this.get;
+		}
+		
+		@Override
+		MethodHandle setHandle() {
+			return this.set;
+		}
+	}
+	
+	private abstract static class Setting {
+		abstract MethodHandle getHandle();
+		abstract MethodHandle setHandle();
+		public int get(final MemorySegment boolPointer) {
+			try {
+				return (int) this.getHandle().invokeExact(boolPointer);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
+		
+		public int set(final boolean flag) {
+			try {
+				return (int) this.setHandle().invokeExact(flag);
+			} catch (Throwable ex$) {
+				throw new AssertionError("should not reach here", ex$);
+			}
+		}
 	}
 }

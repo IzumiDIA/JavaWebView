@@ -372,17 +372,18 @@ public class ICoreWebView2SettingsVtbl {
 	/**
 	 * Lazy loading is used to solve the problem of static initialized ring dependencies.
 	 */
-	private static final class Holder {
+	static final class Holder {
 		private Holder() {
 			throw new UnsupportedOperationException();
 		}
-		private static final FunctionDescriptor
+		
+		static final FunctionDescriptor
 				GET_SETTING = FunctionDescriptor.of(
 				LayoutUtils.HRESULT,
 				PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
 				LayoutUtils.C_BOOL_POINTER
-		);
-		private static final FunctionDescriptor PUT_SETTING = FunctionDescriptor.of(
+		),
+				PUT_SETTING = FunctionDescriptor.of(
 						LayoutUtils.HRESULT,
 						PointerLayoutHolder.I_CORE_WEB_VIEW_2_SETTINGS_POINTER,
 						LayoutUtils.C_BOOL

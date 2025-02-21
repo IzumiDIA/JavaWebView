@@ -31,7 +31,6 @@
 				<configuration>
 					<archive>
 						<manifestEntries combine.children="append">
-							<Enable-Native-Access>${project.artifactId}</Enable-Native-Access>
 							<Specification-Title>Java WebView</Specification-Title>
 							<Specification-Version>1.0</Specification-Version>
 							<Specification-Vendor>${author.nickname}</Specification-Vendor>

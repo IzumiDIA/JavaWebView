@@ -15,12 +15,9 @@
 	</modules>
 	
 	<properties>
-		<java.version>23</java.version>
-		<author.nickname>Izumi Ryuu</author.nickname>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.compiler.release>${java.version}</maven.compiler.release>
+		<java.version>24</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<author.nickname>Izumi Ryuu</author.nickname>
 	</properties>
 	
 	<dependencyManagement>
@@ -29,27 +26,33 @@
 			<dependency>
 				<groupId>org.jetbrains</groupId>
 				<artifactId>annotations</artifactId>
-				<version>[26.0.1,)</version>
+				<version>[26.0.2,)</version>
 				<scope>compile</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>4.9.3.1</version>
+			</plugin>
+		</plugins>
+		
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.13.0</version>
+					<version>3.14.0</version>
 					<configuration>
 						<encoding>${project.build.sourceEncoding}</encoding>
 						<verbose>true</verbose>
+						<source>${java.version}</source>
 						<release>${java.version}</release>
 						<enablePreview>true</enablePreview>
-						<compilerArgs>
-							<compilerArg>--enable-preview</compilerArg>
-						</compilerArgs>
 					</configuration>
 				</plugin>
 				<plugin>

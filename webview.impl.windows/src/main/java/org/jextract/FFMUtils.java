@@ -27,12 +27,11 @@ public final class FFMUtils {
 			                .or(SymbolLookup.loaderLookup())
 			                .or(Linker.nativeLinker().defaultLookup());
 	
-	@SuppressWarnings("SpellCheckingInspection")
 	static void traceDowncall(String name, Object... args) {
 		String traceArgs = Arrays.stream(args)
 				                   .map(Object::toString)
 				                   .collect(Collectors.joining(", "));
-		System.out.printf("%s(%s)\n", name, traceArgs);
+		System.out.printf("%s(%s)%n", name, traceArgs);
 	}
 	
 	@SuppressWarnings("SpellCheckingInspection")
