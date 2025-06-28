@@ -23,6 +23,7 @@ public class ICoreWebView2Controller {
 	ICoreWebView2Controller() {
 		// Should not be called directly
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
 			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2ControllerVtbl.layout()).withName("lpVtbl")
@@ -34,6 +35,7 @@ public class ICoreWebView2Controller {
 	public static StructLayout layout() {
 		return $LAYOUT;
 	}
+	
 	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
@@ -47,6 +49,7 @@ public class ICoreWebView2Controller {
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	

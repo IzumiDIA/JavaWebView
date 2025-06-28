@@ -34,10 +34,11 @@ public final class LayoutUtils {
 		C_FLOAT = (OfFloat) canonicalLayouts.get("float");
 		C_DOUBLE = (OfDouble) canonicalLayouts.get("double");
 		C_POINTER = ((AddressLayout) canonicalLayouts.get("void*"))
-		                    .withTargetLayout(MemoryLayout.sequenceLayout(Long.MAX_VALUE, LayoutUtils.C_CHAR));
+				            .withTargetLayout(MemoryLayout.sequenceLayout(Long.MAX_VALUE, LayoutUtils.C_CHAR));
 		C_LONG = (OfInt) canonicalLayouts.get("long");
 		C_LONG_DOUBLE = (OfDouble) canonicalLayouts.get("double");
 	}
+	
 	public static final AddressLayout DOUBLE_POINTER = C_POINTER.withTargetLayout(C_DOUBLE);
 	public static final OfInt UINT = C_INT;
 	@SuppressWarnings("SpellCheckingInspection")

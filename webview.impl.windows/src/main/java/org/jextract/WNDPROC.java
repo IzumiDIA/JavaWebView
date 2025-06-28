@@ -9,9 +9,9 @@ import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef LRESULT (*WNDPROC)(HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))
- * }
+ *}
  */
 public class WNDPROC {
 	
@@ -56,7 +56,7 @@ public class WNDPROC {
 	/**
 	 * Invoke the upcall stub {@code funcPtr}, with given parameters
 	 */
-	public static long invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, long _x2, long _x3) {
+	public static long invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, long _x2, long _x3) {
 		try {
 			return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
 		} catch (Throwable ex$) {

@@ -9,13 +9,12 @@ import java.lang.foreign.MemoryLayout.PathElement;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
-import java.lang.foreign.ValueLayout;
 import java.lang.foreign.ValueLayout.OfInt;
 import java.lang.foreign.ValueLayout.OfLong;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * union _LARGE_INTEGER {
  *     struct {
  *         DWORD LowPart;
@@ -27,7 +26,7 @@ import java.util.function.Consumer;
  *     } u;
  *     LONGLONG QuadPart;
  * }
- * }
+ *}
  */
 public class _LARGE_INTEGER {
 	
@@ -51,13 +50,13 @@ public class _LARGE_INTEGER {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt LowPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("LowPart"));
+	private static final OfInt LowPart$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("LowPart"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD LowPart
-	 * }
+	 *}
 	 */
 	public static OfInt LowPart$layout() {
 		return LowPart$LAYOUT;
@@ -67,9 +66,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD LowPart
-	 * }
+	 *}
 	 */
 	public static long LowPart$offset() {
 		return LowPart$OFFSET;
@@ -77,9 +76,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD LowPart
-	 * }
+	 *}
 	 */
 	public static int LowPart(MemorySegment union) {
 		return union.get(LowPart$LAYOUT, LowPart$OFFSET);
@@ -87,21 +86,21 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD LowPart
-	 * }
+	 *}
 	 */
 	public static void LowPart(MemorySegment union, int fieldValue) {
 		union.set(LowPart$LAYOUT, LowPart$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt HighPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("HighPart"));
+	private static final OfInt HighPart$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("$anon$875:5"), PathElement.groupElement("HighPart"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG HighPart
-	 * }
+	 *}
 	 */
 	public static OfInt HighPart$layout() {
 		return HighPart$LAYOUT;
@@ -111,9 +110,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG HighPart
-	 * }
+	 *}
 	 */
 	public static long HighPart$offset() {
 		return HighPart$OFFSET;
@@ -121,9 +120,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG HighPart
-	 * }
+	 *}
 	 */
 	public static int HighPart(MemorySegment union) {
 		return union.get(HighPart$LAYOUT, HighPart$OFFSET);
@@ -131,21 +130,21 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG HighPart
-	 * }
+	 *}
 	 */
 	public static void HighPart(MemorySegment union, int fieldValue) {
 		union.set(HighPart$LAYOUT, HighPart$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct {
 	 *     DWORD LowPart;
 	 *     LONG HighPart;
 	 * }
-	 * }
+	 *}
 	 */
 	public static class u {
 		
@@ -165,13 +164,13 @@ public class _LARGE_INTEGER {
 			return $LAYOUT;
 		}
 		
-		private static final OfInt LowPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("LowPart"));
+		private static final OfInt LowPart$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("LowPart"));
 		
 		/**
 		 * Layout for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * DWORD LowPart
-		 * }
+		 *}
 		 */
 		public static OfInt LowPart$layout() {
 			return LowPart$LAYOUT;
@@ -181,9 +180,9 @@ public class _LARGE_INTEGER {
 		
 		/**
 		 * Offset for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * DWORD LowPart
-		 * }
+		 *}
 		 */
 		public static long LowPart$offset() {
 			return LowPart$OFFSET;
@@ -191,9 +190,9 @@ public class _LARGE_INTEGER {
 		
 		/**
 		 * Getter for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * DWORD LowPart
-		 * }
+		 *}
 		 */
 		public static int LowPart(MemorySegment struct) {
 			return struct.get(LowPart$LAYOUT, LowPart$OFFSET);
@@ -201,21 +200,21 @@ public class _LARGE_INTEGER {
 		
 		/**
 		 * Setter for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * DWORD LowPart
-		 * }
+		 *}
 		 */
 		public static void LowPart(MemorySegment struct, int fieldValue) {
 			struct.set(LowPart$LAYOUT, LowPart$OFFSET, fieldValue);
 		}
 		
-		private static final OfInt HighPart$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("HighPart"));
+		private static final OfInt HighPart$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("HighPart"));
 		
 		/**
 		 * Layout for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * LONG HighPart
-		 * }
+		 *}
 		 */
 		public static OfInt HighPart$layout() {
 			return HighPart$LAYOUT;
@@ -225,9 +224,9 @@ public class _LARGE_INTEGER {
 		
 		/**
 		 * Offset for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * LONG HighPart
-		 * }
+		 *}
 		 */
 		public static long HighPart$offset() {
 			return HighPart$OFFSET;
@@ -235,9 +234,9 @@ public class _LARGE_INTEGER {
 		
 		/**
 		 * Getter for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * LONG HighPart
-		 * }
+		 *}
 		 */
 		public static int HighPart(MemorySegment struct) {
 			return struct.get(HighPart$LAYOUT, HighPart$OFFSET);
@@ -245,9 +244,9 @@ public class _LARGE_INTEGER {
 		
 		/**
 		 * Setter for field:
-		 * {@snippet lang=c :
+		 * {@snippet lang = c:
 		 * LONG HighPart
-		 * }
+		 *}
 		 */
 		public static void HighPart(MemorySegment struct, int fieldValue) {
 			struct.set(HighPart$LAYOUT, HighPart$OFFSET, fieldValue);
@@ -264,7 +263,9 @@ public class _LARGE_INTEGER {
 		/**
 		 * The size (in bytes) of this struct
 		 */
-		public static long sizeof() { return layout().byteSize(); }
+		public static long sizeof() {
+			return layout().byteSize();
+		}
 		
 		/**
 		 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
@@ -298,16 +299,16 @@ public class _LARGE_INTEGER {
 		}
 	}
 	
-	private static final GroupLayout u$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("u"));
+	private static final GroupLayout u$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("u"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct {
 	 *     DWORD LowPart;
 	 *     LONG HighPart;
 	 * } u
-	 * }
+	 *}
 	 */
 	public static GroupLayout u$layout() {
 		return u$LAYOUT;
@@ -317,12 +318,12 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct {
 	 *     DWORD LowPart;
 	 *     LONG HighPart;
 	 * } u
-	 * }
+	 *}
 	 */
 	public static long u$offset() {
 		return u$OFFSET;
@@ -330,12 +331,12 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct {
 	 *     DWORD LowPart;
 	 *     LONG HighPart;
 	 * } u
-	 * }
+	 *}
 	 */
 	public static MemorySegment u(MemorySegment union) {
 		return union.asSlice(u$OFFSET, u$LAYOUT.byteSize());
@@ -343,24 +344,24 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct {
 	 *     DWORD LowPart;
 	 *     LONG HighPart;
 	 * } u
-	 * }
+	 *}
 	 */
 	public static void u(MemorySegment union, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, union, u$OFFSET, u$LAYOUT.byteSize());
 	}
 	
-	private static final OfLong QuadPart$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("QuadPart"));
+	private static final OfLong QuadPart$LAYOUT = (OfLong) $LAYOUT.select(PathElement.groupElement("QuadPart"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONGLONG QuadPart
-	 * }
+	 *}
 	 */
 	public static OfLong QuadPart$layout() {
 		return QuadPart$LAYOUT;
@@ -370,9 +371,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONGLONG QuadPart
-	 * }
+	 *}
 	 */
 	public static long QuadPart$offset() {
 		return QuadPart$OFFSET;
@@ -380,9 +381,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONGLONG QuadPart
-	 * }
+	 *}
 	 */
 	public static long QuadPart(MemorySegment union) {
 		return union.get(QuadPart$LAYOUT, QuadPart$OFFSET);
@@ -390,9 +391,9 @@ public class _LARGE_INTEGER {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONGLONG QuadPart
-	 * }
+	 *}
 	 */
 	public static void QuadPart(MemorySegment union, long fieldValue) {
 		union.set(QuadPart$LAYOUT, QuadPart$OFFSET, fieldValue);
@@ -409,7 +410,9 @@ public class _LARGE_INTEGER {
 	/**
 	 * The size (in bytes) of this union
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

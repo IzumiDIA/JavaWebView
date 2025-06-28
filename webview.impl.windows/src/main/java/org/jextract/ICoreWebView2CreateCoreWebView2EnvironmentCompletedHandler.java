@@ -12,49 +12,53 @@ import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
  *     struct ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl *lpVtbl;
  * }
- * }
+ *}
  */
 public class ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
 	
 	ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler() {
 		// Should not be called directly
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final StructLayout $LAYOUT = MemoryLayout.structLayout(
 			LayoutUtils.C_POINTER.withTargetLayout(ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl.layout()).withName("lpVtbl")
 	).withName("ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler");
 	
 	public static final AddressLayout POINTER$LAYOUT = LayoutUtils.C_POINTER.withTargetLayout(layout());
+	
 	/**
 	 * The layout of this struct
 	 */
 	public static StructLayout layout() {
 		return $LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
-	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
+	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static long lpVtbl$offset() {
 		return lpVtbl$OFFSET;
@@ -62,9 +66,9 @@ public class ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpVtbl(MemorySegment struct) {
 		return struct.get(lpVtbl$LAYOUT, lpVtbl$OFFSET);
@@ -72,9 +76,9 @@ public class ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandlerVtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static void lpVtbl(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpVtbl$LAYOUT, lpVtbl$OFFSET, fieldValue);
@@ -91,7 +95,9 @@ public class ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

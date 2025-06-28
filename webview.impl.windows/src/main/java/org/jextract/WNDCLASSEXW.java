@@ -3,7 +3,7 @@
 package org.jextract;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef struct tagWNDCLASSEXW {
  *     UINT cbSize;
  *     UINT style;
@@ -18,7 +18,7 @@ package org.jextract;
  *     LPCWSTR lpszClassName;
  *     HICON hIconSm;
  * } WNDCLASSEXW
- * }
+ *}
  */
 public class WNDCLASSEXW extends tagWNDCLASSEXW {
 	

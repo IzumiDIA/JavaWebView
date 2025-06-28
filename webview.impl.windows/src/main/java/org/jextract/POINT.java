@@ -3,12 +3,12 @@
 package org.jextract;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef struct tagPOINT {
  *     LONG x;
  *     LONG y;
  * } POINT
- * }
+ *}
  */
 public class POINT extends tagPOINT {
 	

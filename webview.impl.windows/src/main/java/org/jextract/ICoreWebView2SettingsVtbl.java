@@ -123,6 +123,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -221,6 +223,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -319,6 +323,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -435,6 +441,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -530,6 +538,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -625,6 +635,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -720,6 +732,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -815,6 +829,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -910,6 +926,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1005,6 +1023,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1100,6 +1120,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1195,6 +1217,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1290,6 +1314,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1385,6 +1411,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1480,6 +1508,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1575,6 +1605,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1670,6 +1702,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1765,6 +1799,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1860,6 +1896,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -1955,6 +1993,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -2050,6 +2090,8 @@ public class ICoreWebView2SettingsVtbl {
 		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}

@@ -214,15 +214,16 @@ public class ICoreWebView2Settings {
 	
 	public final class AreDefaultScriptDialogsEnabled extends Setting {
 		private final MethodHandle get, set;
+		
 		private AreDefaultScriptDialogsEnabled(final Linker linker) {
 			this.get = linker.downcallHandle(
-								      ICoreWebView2SettingsVtbl.get_AreDefaultScriptDialogsEnabled(ICoreWebView2Settings.this.lpVtbl),
-								      Holder.GET_SETTING
-						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_AreDefaultScriptDialogsEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_AreDefaultScriptDialogsEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -238,15 +239,16 @@ public class ICoreWebView2Settings {
 	
 	public final class IsStatusBarEnabled extends Setting {
 		private final MethodHandle get, set;
+		
 		private IsStatusBarEnabled(final Linker linker) {
 			this.get = linker.downcallHandle(
-								      ICoreWebView2SettingsVtbl.get_IsStatusBarEnabled(ICoreWebView2Settings.this.lpVtbl),
-								      Holder.GET_SETTING
-						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_IsStatusBarEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_IsStatusBarEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_IsStatusBarEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -262,15 +264,16 @@ public class ICoreWebView2Settings {
 	
 	public final class AreDevToolsEnabled extends Setting {
 		private final MethodHandle get, set;
+		
 		private AreDevToolsEnabled(final Linker linker) {
 			this.get = linker.downcallHandle(
-								      ICoreWebView2SettingsVtbl.get_AreDevToolsEnabled(ICoreWebView2Settings.this.lpVtbl),
-								      Holder.GET_SETTING
-						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_AreDevToolsEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_AreDevToolsEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_AreDevToolsEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -286,15 +289,16 @@ public class ICoreWebView2Settings {
 	
 	public final class AreDefaultContextMenusEnabled extends Setting {
 		private final MethodHandle get, set;
+		
 		private AreDefaultContextMenusEnabled(final Linker linker) {
 			this.get = linker.downcallHandle(
-								      ICoreWebView2SettingsVtbl.get_AreDefaultContextMenusEnabled(ICoreWebView2Settings.this.lpVtbl),
-								      Holder.GET_SETTING
-						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_AreDefaultContextMenusEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_AreDefaultContextMenusEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_AreDefaultContextMenusEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -310,15 +314,16 @@ public class ICoreWebView2Settings {
 	
 	public final class AreHostObjectsAllowed extends Setting {
 		private final MethodHandle get, set;
+		
 		private AreHostObjectsAllowed(final Linker linker) {
 			this.get = linker.downcallHandle(
-								      ICoreWebView2SettingsVtbl.get_AreHostObjectsAllowed(ICoreWebView2Settings.this.lpVtbl),
-								      Holder.GET_SETTING
-						      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_AreHostObjectsAllowed(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_AreHostObjectsAllowed(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_AreHostObjectsAllowed(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -334,15 +339,16 @@ public class ICoreWebView2Settings {
 	
 	public final class IsZoomControlEnabled extends Setting {
 		private final MethodHandle get, set;
+		
 		private IsZoomControlEnabled(final Linker linker) {
 			this.get = linker.downcallHandle(
-									      ICoreWebView2SettingsVtbl.get_IsZoomControlEnabled(ICoreWebView2Settings.this.lpVtbl),
-									      Holder.GET_SETTING
-							      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_IsZoomControlEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_IsZoomControlEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_IsZoomControlEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -358,15 +364,16 @@ public class ICoreWebView2Settings {
 	
 	public final class IsBuiltInErrorPageEnabled extends Setting {
 		private final MethodHandle get, set;
+		
 		private IsBuiltInErrorPageEnabled(final Linker linker) {
 			this.get = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.get_IsBuiltInErrorPageEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.GET_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.get_IsBuiltInErrorPageEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.GET_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 			this.set = linker.downcallHandle(
-							      ICoreWebView2SettingsVtbl.put_IsBuiltInErrorPageEnabled(ICoreWebView2Settings.this.lpVtbl),
-							      Holder.PUT_SETTING
-					      ).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
+					ICoreWebView2SettingsVtbl.put_IsBuiltInErrorPageEnabled(ICoreWebView2Settings.this.lpVtbl),
+					Holder.PUT_SETTING
+			).bindTo(ICoreWebView2Settings.this.webview2SettingsPointer);
 		}
 		
 		@Override
@@ -382,10 +389,14 @@ public class ICoreWebView2Settings {
 	
 	private abstract static class Setting {
 		abstract MethodHandle getHandle();
+		
 		abstract MethodHandle setHandle();
+		
 		public int get(final MemorySegment boolPointer) {
 			try {
 				return (int) this.getHandle().invokeExact(boolPointer);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
@@ -394,6 +405,8 @@ public class ICoreWebView2Settings {
 		public int set(final boolean flag) {
 			try {
 				return (int) this.setHandle().invokeExact(flag);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}

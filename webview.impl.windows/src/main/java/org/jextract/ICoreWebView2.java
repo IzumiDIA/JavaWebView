@@ -12,11 +12,11 @@ import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2 {
  *     struct ICoreWebView2Vtbl *lpVtbl;
  * }
- * }
+ *}
  */
 public class ICoreWebView2 {
 	
@@ -40,25 +40,26 @@ public class ICoreWebView2 {
 	}
 	
 	@SuppressWarnings("SpellCheckingInspection")
-	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("lpVtbl"));
+	private static final AddressLayout lpVtbl$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2Vtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpVtbl$layout() {
 		return lpVtbl$LAYOUT;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	private static final long lpVtbl$OFFSET = $LAYOUT.byteOffset(PathElement.groupElement("lpVtbl"));
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2Vtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static long lpVtbl$offset() {
 		return lpVtbl$OFFSET;
@@ -66,9 +67,9 @@ public class ICoreWebView2 {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2Vtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpVtbl(MemorySegment struct) {
 		return struct.get(lpVtbl$LAYOUT, lpVtbl$OFFSET);
@@ -76,9 +77,9 @@ public class ICoreWebView2 {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * struct ICoreWebView2Vtbl *lpVtbl
-	 * }
+	 *}
 	 */
 	public static void lpVtbl(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpVtbl$LAYOUT, lpVtbl$OFFSET, fieldValue);
@@ -95,7 +96,9 @@ public class ICoreWebView2 {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

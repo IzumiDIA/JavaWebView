@@ -8,6 +8,7 @@ import io.github.IzumiDIA.windows.impl.PlatformWindowImpl;
 import io.github.IzumiDIA.windows.impl.WindowsNativeObject;
 import org.jetbrains.annotations.NotNull;
 import org.jextract.Constants;
+import org.jextract.Constants.Color;
 import org.jextract.WNDCLASSEXW;
 import org.jextract.WNDPROC;
 import org.jextract.Windows;
@@ -51,7 +52,7 @@ public class WindowBuilderImpl extends WindowsNativeObject implements WindowBuil
 		WNDCLASSEXW.cbClsExtra(this.windowClass, 0);
 		WNDCLASSEXW.cbWndExtra(this.windowClass, 0);
 		WNDCLASSEXW.hbrBackground(
-				this.windowClass, Windows.GetSysColorBrush(Constants.COLOR_WINDOW)
+				this.windowClass, Windows.GetSysColorBrush(Color.$WINDOW)
 		);
 		WNDCLASSEXW.lpszMenuName(
 				this.windowClass,

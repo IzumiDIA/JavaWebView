@@ -13,4 +13,6 @@ public abstract class NativeObject {
 	}
 	
 	protected abstract MemorySegment allocateString(final @NotNull String string);
+	
+	protected abstract String getString(final @NotNull MemorySegment memorySegment);
 }

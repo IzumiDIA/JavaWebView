@@ -12,12 +12,12 @@ import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct tagPOINT {
  *     LONG x;
  *     LONG y;
  * }
- * }
+ *}
  */
 public class tagPOINT {
 	
@@ -37,13 +37,13 @@ public class tagPOINT {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt x$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("x"));
+	private static final OfInt x$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("x"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG x
-	 * }
+	 *}
 	 */
 	public static OfInt x$layout() {
 		return x$LAYOUT;
@@ -53,9 +53,9 @@ public class tagPOINT {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG x
-	 * }
+	 *}
 	 */
 	public static long x$offset() {
 		return x$OFFSET;
@@ -63,9 +63,9 @@ public class tagPOINT {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG x
-	 * }
+	 *}
 	 */
 	public static int x(MemorySegment struct) {
 		return struct.get(x$LAYOUT, x$OFFSET);
@@ -73,21 +73,21 @@ public class tagPOINT {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG x
-	 * }
+	 *}
 	 */
 	public static void x(MemorySegment struct, int fieldValue) {
 		struct.set(x$LAYOUT, x$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt y$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("y"));
+	private static final OfInt y$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("y"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG y
-	 * }
+	 *}
 	 */
 	public static OfInt y$layout() {
 		return y$LAYOUT;
@@ -97,9 +97,9 @@ public class tagPOINT {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG y
-	 * }
+	 *}
 	 */
 	public static long y$offset() {
 		return y$OFFSET;
@@ -107,9 +107,9 @@ public class tagPOINT {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG y
-	 * }
+	 *}
 	 */
 	public static int y(MemorySegment struct) {
 		return struct.get(y$LAYOUT, y$OFFSET);
@@ -117,9 +117,9 @@ public class tagPOINT {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG y
-	 * }
+	 *}
 	 */
 	public static void y(MemorySegment struct, int fieldValue) {
 		struct.set(y$LAYOUT, y$OFFSET, fieldValue);
@@ -136,7 +136,9 @@ public class tagPOINT {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

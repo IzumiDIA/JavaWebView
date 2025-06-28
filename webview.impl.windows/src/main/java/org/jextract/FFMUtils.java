@@ -11,6 +11,7 @@ public final class FFMUtils {
 	private FFMUtils() {
 		// Should not be called directly
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
 	
@@ -18,14 +19,12 @@ public final class FFMUtils {
 	
 	@SuppressWarnings("SpellCheckingInspection")
 	static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.libraryLookup(System.mapLibraryName("USER32"), LIBRARY_ARENA)
-			                .or(SymbolLookup.libraryLookup(System.mapLibraryName("ADVAPI32"), LIBRARY_ARENA))
-			                .or(SymbolLookup.libraryLookup(System.mapLibraryName("ole32"), LIBRARY_ARENA))
-			                .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHELL32"), LIBRARY_ARENA))
-			                .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHLWAPI"), LIBRARY_ARENA))
-			                .or(SymbolLookup.libraryLookup(System.mapLibraryName("VERSION"), LIBRARY_ARENA))
-			                .or(SymbolLookup.libraryLookup(System.mapLibraryName("KERNEL32"), LIBRARY_ARENA))
-			                .or(SymbolLookup.loaderLookup())
-			                .or(Linker.nativeLinker().defaultLookup());
+			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("KERNEL32"), LIBRARY_ARENA))
+			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("ADVAPI32"), LIBRARY_ARENA))
+			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("SHELL32"), LIBRARY_ARENA))
+			                                          .or(SymbolLookup.libraryLookup(System.mapLibraryName("VERSION"), LIBRARY_ARENA))
+			                                          .or(SymbolLookup.loaderLookup())
+			                                          .or(Linker.nativeLinker().defaultLookup());
 	
 	static void traceDowncall(String name, Object... args) {
 		String traceArgs = Arrays.stream(args)

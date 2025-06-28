@@ -10,7 +10,7 @@ import java.lang.invoke.MethodHandle;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct ICoreWebView2ControllerVtbl {
  *     HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall));
  *     ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall));
@@ -39,7 +39,7 @@ import java.util.function.Consumer;
  *     HRESULT (*Close)(ICoreWebView2Controller *) __attribute__((stdcall));
  *     HRESULT (*get_CoreWebView2)(ICoreWebView2Controller *, ICoreWebView2 **) __attribute__((stdcall));
  * }
- * }
+ *}
  */
 public class ICoreWebView2ControllerVtbl {
 	
@@ -84,9 +84,9 @@ public class ICoreWebView2ControllerVtbl {
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class QueryInterface {
 		
@@ -130,22 +130,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("QueryInterface"));
+	private static final AddressLayout QueryInterface$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("QueryInterface"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout QueryInterface$layout() {
 		return QueryInterface$LAYOUT;
@@ -155,9 +157,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long QueryInterface$offset() {
 		return QueryInterface$OFFSET;
@@ -165,9 +167,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment QueryInterface(MemorySegment struct) {
 		return struct.get(QueryInterface$LAYOUT, QueryInterface$OFFSET);
@@ -175,18 +177,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*QueryInterface)(ICoreWebView2Controller *, const IID *const, void **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void QueryInterface(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(QueryInterface$LAYOUT, QueryInterface$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class AddRef {
 		
@@ -228,22 +230,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout AddRef$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("AddRef"));
+	private static final AddressLayout AddRef$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("AddRef"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout AddRef$layout() {
 		return AddRef$LAYOUT;
@@ -253,9 +257,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long AddRef$offset() {
 		return AddRef$OFFSET;
@@ -263,9 +267,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment AddRef(MemorySegment struct) {
 		return struct.get(AddRef$LAYOUT, AddRef$OFFSET);
@@ -273,18 +277,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*AddRef)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void AddRef(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(AddRef$LAYOUT, AddRef$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Release {
 		
@@ -326,22 +330,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout Release$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Release"));
+	private static final AddressLayout Release$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Release"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Release$layout() {
 		return Release$LAYOUT;
@@ -351,9 +357,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Release$offset() {
 		return Release$OFFSET;
@@ -361,9 +367,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Release(MemorySegment struct) {
 		return struct.get(Release$LAYOUT, Release$OFFSET);
@@ -371,18 +377,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * ULONG (*Release)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Release(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Release$LAYOUT, Release$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_IsVisible {
 		
@@ -425,22 +431,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout get_IsVisible$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_IsVisible"));
+	private static final AddressLayout get_IsVisible$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_IsVisible"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_IsVisible$layout() {
 		return get_IsVisible$LAYOUT;
@@ -450,9 +458,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_IsVisible$offset() {
 		return get_IsVisible$OFFSET;
@@ -460,9 +468,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_IsVisible(MemorySegment struct) {
 		return struct.get(get_IsVisible$LAYOUT, get_IsVisible$OFFSET);
@@ -470,18 +478,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_IsVisible)(ICoreWebView2Controller *, BOOL *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_IsVisible(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_IsVisible$LAYOUT, get_IsVisible$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_IsVisible {
 		
@@ -524,22 +532,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, boolean _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, boolean _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout put_IsVisible$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_IsVisible"));
+	private static final AddressLayout put_IsVisible$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_IsVisible"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_IsVisible$layout() {
 		return put_IsVisible$LAYOUT;
@@ -549,9 +559,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_IsVisible$offset() {
 		return put_IsVisible$OFFSET;
@@ -559,9 +569,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_IsVisible(MemorySegment struct) {
 		return struct.get(put_IsVisible$LAYOUT, put_IsVisible$OFFSET);
@@ -569,18 +579,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_IsVisible)(ICoreWebView2Controller *, BOOL) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_IsVisible(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_IsVisible$LAYOUT, put_IsVisible$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_Bounds {
 		
@@ -623,22 +633,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout get_Bounds$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_Bounds"));
+	private static final AddressLayout get_Bounds$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_Bounds"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_Bounds$layout() {
 		return get_Bounds$LAYOUT;
@@ -648,9 +660,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_Bounds$offset() {
 		return get_Bounds$OFFSET;
@@ -658,9 +670,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_Bounds(MemorySegment struct) {
 		return struct.get(get_Bounds$LAYOUT, get_Bounds$OFFSET);
@@ -668,18 +680,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_Bounds)(ICoreWebView2Controller *, RECT *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_Bounds(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_Bounds$LAYOUT, get_Bounds$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_Bounds {
 		
@@ -722,22 +734,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout put_Bounds$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_Bounds"));
+	private static final AddressLayout put_Bounds$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_Bounds"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_Bounds$layout() {
 		return put_Bounds$LAYOUT;
@@ -747,9 +761,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_Bounds$offset() {
 		return put_Bounds$OFFSET;
@@ -757,9 +771,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_Bounds(MemorySegment struct) {
 		return struct.get(put_Bounds$LAYOUT, put_Bounds$OFFSET);
@@ -767,18 +781,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_Bounds)(ICoreWebView2Controller *, RECT) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_Bounds(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_Bounds$LAYOUT, put_Bounds$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_ZoomFactor {
 		
@@ -821,22 +835,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout get_ZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_ZoomFactor"));
+	private static final AddressLayout get_ZoomFactor$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_ZoomFactor"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_ZoomFactor$layout() {
 		return get_ZoomFactor$LAYOUT;
@@ -846,9 +862,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_ZoomFactor$offset() {
 		return get_ZoomFactor$OFFSET;
@@ -856,9 +872,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_ZoomFactor(MemorySegment struct) {
 		return struct.get(get_ZoomFactor$LAYOUT, get_ZoomFactor$OFFSET);
@@ -866,18 +882,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ZoomFactor)(ICoreWebView2Controller *, double *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_ZoomFactor(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_ZoomFactor$LAYOUT, get_ZoomFactor$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ZoomFactor)(ICoreWebView2Controller *, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_ZoomFactor {
 		
@@ -920,22 +936,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, double _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, double _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout put_ZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_ZoomFactor"));
+	private static final AddressLayout put_ZoomFactor$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_ZoomFactor"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ZoomFactor)(ICoreWebView2Controller *, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_ZoomFactor$layout() {
 		return put_ZoomFactor$LAYOUT;
@@ -945,9 +963,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ZoomFactor)(ICoreWebView2Controller *, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_ZoomFactor$offset() {
 		return put_ZoomFactor$OFFSET;
@@ -955,9 +973,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ZoomFactor)(ICoreWebView2Controller *, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_ZoomFactor(MemorySegment struct) {
 		return struct.get(put_ZoomFactor$LAYOUT, put_ZoomFactor$OFFSET);
@@ -965,18 +983,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ZoomFactor)(ICoreWebView2Controller *, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_ZoomFactor(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_ZoomFactor$LAYOUT, put_ZoomFactor$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ZoomFactorChanged)(ICoreWebView2Controller *, ICoreWebView2ZoomFactorChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_ZoomFactorChanged {
 		
@@ -1020,22 +1038,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout add_ZoomFactorChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_ZoomFactorChanged"));
+	private static final AddressLayout add_ZoomFactorChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_ZoomFactorChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ZoomFactorChanged)(ICoreWebView2Controller *, ICoreWebView2ZoomFactorChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_ZoomFactorChanged$layout() {
 		return add_ZoomFactorChanged$LAYOUT;
@@ -1045,9 +1065,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ZoomFactorChanged)(ICoreWebView2Controller *, ICoreWebView2ZoomFactorChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_ZoomFactorChanged$offset() {
 		return add_ZoomFactorChanged$OFFSET;
@@ -1055,9 +1075,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ZoomFactorChanged)(ICoreWebView2Controller *, ICoreWebView2ZoomFactorChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_ZoomFactorChanged(MemorySegment struct) {
 		return struct.get(add_ZoomFactorChanged$LAYOUT, add_ZoomFactorChanged$OFFSET);
@@ -1065,18 +1085,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_ZoomFactorChanged)(ICoreWebView2Controller *, ICoreWebView2ZoomFactorChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_ZoomFactorChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_ZoomFactorChanged$LAYOUT, add_ZoomFactorChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_ZoomFactorChanged {
 		
@@ -1119,22 +1139,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout remove_ZoomFactorChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_ZoomFactorChanged"));
+	private static final AddressLayout remove_ZoomFactorChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_ZoomFactorChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_ZoomFactorChanged$layout() {
 		return remove_ZoomFactorChanged$LAYOUT;
@@ -1144,9 +1166,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_ZoomFactorChanged$offset() {
 		return remove_ZoomFactorChanged$OFFSET;
@@ -1154,9 +1176,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_ZoomFactorChanged(MemorySegment struct) {
 		return struct.get(remove_ZoomFactorChanged$LAYOUT, remove_ZoomFactorChanged$OFFSET);
@@ -1164,18 +1186,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_ZoomFactorChanged)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_ZoomFactorChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_ZoomFactorChanged$LAYOUT, remove_ZoomFactorChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*SetBoundsAndZoomFactor)(ICoreWebView2Controller *, RECT, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class SetBoundsAndZoomFactor {
 		
@@ -1219,22 +1241,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout SetBoundsAndZoomFactor$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("SetBoundsAndZoomFactor"));
+	private static final AddressLayout SetBoundsAndZoomFactor$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("SetBoundsAndZoomFactor"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*SetBoundsAndZoomFactor)(ICoreWebView2Controller *, RECT, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout SetBoundsAndZoomFactor$layout() {
 		return SetBoundsAndZoomFactor$LAYOUT;
@@ -1244,9 +1268,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*SetBoundsAndZoomFactor)(ICoreWebView2Controller *, RECT, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long SetBoundsAndZoomFactor$offset() {
 		return SetBoundsAndZoomFactor$OFFSET;
@@ -1254,9 +1278,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*SetBoundsAndZoomFactor)(ICoreWebView2Controller *, RECT, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment SetBoundsAndZoomFactor(MemorySegment struct) {
 		return struct.get(SetBoundsAndZoomFactor$LAYOUT, SetBoundsAndZoomFactor$OFFSET);
@@ -1264,18 +1288,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*SetBoundsAndZoomFactor)(ICoreWebView2Controller *, RECT, double) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void SetBoundsAndZoomFactor(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(SetBoundsAndZoomFactor$LAYOUT, SetBoundsAndZoomFactor$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*MoveFocus)(ICoreWebView2Controller *, COREWEBVIEW2_MOVE_FOCUS_REASON) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class MoveFocus {
 		
@@ -1318,22 +1342,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout MoveFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("MoveFocus"));
+	private static final AddressLayout MoveFocus$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("MoveFocus"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*MoveFocus)(ICoreWebView2Controller *, COREWEBVIEW2_MOVE_FOCUS_REASON) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout MoveFocus$layout() {
 		return MoveFocus$LAYOUT;
@@ -1343,9 +1369,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*MoveFocus)(ICoreWebView2Controller *, COREWEBVIEW2_MOVE_FOCUS_REASON) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long MoveFocus$offset() {
 		return MoveFocus$OFFSET;
@@ -1353,9 +1379,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*MoveFocus)(ICoreWebView2Controller *, COREWEBVIEW2_MOVE_FOCUS_REASON) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment MoveFocus(MemorySegment struct) {
 		return struct.get(MoveFocus$LAYOUT, MoveFocus$OFFSET);
@@ -1363,18 +1389,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*MoveFocus)(ICoreWebView2Controller *, COREWEBVIEW2_MOVE_FOCUS_REASON) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void MoveFocus(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(MoveFocus$LAYOUT, MoveFocus$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_MoveFocusRequested)(ICoreWebView2Controller *, ICoreWebView2MoveFocusRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_MoveFocusRequested {
 		
@@ -1418,22 +1444,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout add_MoveFocusRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_MoveFocusRequested"));
+	private static final AddressLayout add_MoveFocusRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_MoveFocusRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_MoveFocusRequested)(ICoreWebView2Controller *, ICoreWebView2MoveFocusRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_MoveFocusRequested$layout() {
 		return add_MoveFocusRequested$LAYOUT;
@@ -1443,9 +1471,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_MoveFocusRequested)(ICoreWebView2Controller *, ICoreWebView2MoveFocusRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_MoveFocusRequested$offset() {
 		return add_MoveFocusRequested$OFFSET;
@@ -1453,9 +1481,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_MoveFocusRequested)(ICoreWebView2Controller *, ICoreWebView2MoveFocusRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_MoveFocusRequested(MemorySegment struct) {
 		return struct.get(add_MoveFocusRequested$LAYOUT, add_MoveFocusRequested$OFFSET);
@@ -1463,18 +1491,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_MoveFocusRequested)(ICoreWebView2Controller *, ICoreWebView2MoveFocusRequestedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_MoveFocusRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_MoveFocusRequested$LAYOUT, add_MoveFocusRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_MoveFocusRequested)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_MoveFocusRequested {
 		
@@ -1517,22 +1545,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout remove_MoveFocusRequested$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_MoveFocusRequested"));
+	private static final AddressLayout remove_MoveFocusRequested$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_MoveFocusRequested"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_MoveFocusRequested)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_MoveFocusRequested$layout() {
 		return remove_MoveFocusRequested$LAYOUT;
@@ -1542,9 +1572,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_MoveFocusRequested)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_MoveFocusRequested$offset() {
 		return remove_MoveFocusRequested$OFFSET;
@@ -1552,9 +1582,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_MoveFocusRequested)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_MoveFocusRequested(MemorySegment struct) {
 		return struct.get(remove_MoveFocusRequested$LAYOUT, remove_MoveFocusRequested$OFFSET);
@@ -1562,18 +1592,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_MoveFocusRequested)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_MoveFocusRequested(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_MoveFocusRequested$LAYOUT, remove_MoveFocusRequested$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_GotFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_GotFocus {
 		
@@ -1617,22 +1647,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout add_GotFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_GotFocus"));
+	private static final AddressLayout add_GotFocus$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_GotFocus"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_GotFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_GotFocus$layout() {
 		return add_GotFocus$LAYOUT;
@@ -1642,9 +1674,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_GotFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_GotFocus$offset() {
 		return add_GotFocus$OFFSET;
@@ -1652,9 +1684,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_GotFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_GotFocus(MemorySegment struct) {
 		return struct.get(add_GotFocus$LAYOUT, add_GotFocus$OFFSET);
@@ -1662,18 +1694,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_GotFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_GotFocus(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_GotFocus$LAYOUT, add_GotFocus$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_GotFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_GotFocus {
 		
@@ -1716,22 +1748,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout remove_GotFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_GotFocus"));
+	private static final AddressLayout remove_GotFocus$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_GotFocus"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_GotFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_GotFocus$layout() {
 		return remove_GotFocus$LAYOUT;
@@ -1741,9 +1775,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_GotFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_GotFocus$offset() {
 		return remove_GotFocus$OFFSET;
@@ -1751,9 +1785,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_GotFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_GotFocus(MemorySegment struct) {
 		return struct.get(remove_GotFocus$LAYOUT, remove_GotFocus$OFFSET);
@@ -1761,18 +1795,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_GotFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_GotFocus(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_GotFocus$LAYOUT, remove_GotFocus$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_LostFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_LostFocus {
 		
@@ -1816,22 +1850,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout add_LostFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_LostFocus"));
+	private static final AddressLayout add_LostFocus$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_LostFocus"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_LostFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_LostFocus$layout() {
 		return add_LostFocus$LAYOUT;
@@ -1841,9 +1877,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_LostFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_LostFocus$offset() {
 		return add_LostFocus$OFFSET;
@@ -1851,9 +1887,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_LostFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_LostFocus(MemorySegment struct) {
 		return struct.get(add_LostFocus$LAYOUT, add_LostFocus$OFFSET);
@@ -1861,18 +1897,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_LostFocus)(ICoreWebView2Controller *, ICoreWebView2FocusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_LostFocus(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_LostFocus$LAYOUT, add_LostFocus$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_LostFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_LostFocus {
 		
@@ -1915,22 +1951,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout remove_LostFocus$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_LostFocus"));
+	private static final AddressLayout remove_LostFocus$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_LostFocus"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_LostFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_LostFocus$layout() {
 		return remove_LostFocus$LAYOUT;
@@ -1940,9 +1978,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_LostFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_LostFocus$offset() {
 		return remove_LostFocus$OFFSET;
@@ -1950,9 +1988,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_LostFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_LostFocus(MemorySegment struct) {
 		return struct.get(remove_LostFocus$LAYOUT, remove_LostFocus$OFFSET);
@@ -1960,18 +1998,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_LostFocus)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_LostFocus(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_LostFocus$LAYOUT, remove_LostFocus$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_AcceleratorKeyPressed)(ICoreWebView2Controller *, ICoreWebView2AcceleratorKeyPressedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class add_AcceleratorKeyPressed {
 		
@@ -2015,22 +2053,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout add_AcceleratorKeyPressed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("add_AcceleratorKeyPressed"));
+	private static final AddressLayout add_AcceleratorKeyPressed$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("add_AcceleratorKeyPressed"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_AcceleratorKeyPressed)(ICoreWebView2Controller *, ICoreWebView2AcceleratorKeyPressedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout add_AcceleratorKeyPressed$layout() {
 		return add_AcceleratorKeyPressed$LAYOUT;
@@ -2040,9 +2080,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_AcceleratorKeyPressed)(ICoreWebView2Controller *, ICoreWebView2AcceleratorKeyPressedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long add_AcceleratorKeyPressed$offset() {
 		return add_AcceleratorKeyPressed$OFFSET;
@@ -2050,9 +2090,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_AcceleratorKeyPressed)(ICoreWebView2Controller *, ICoreWebView2AcceleratorKeyPressedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment add_AcceleratorKeyPressed(MemorySegment struct) {
 		return struct.get(add_AcceleratorKeyPressed$LAYOUT, add_AcceleratorKeyPressed$OFFSET);
@@ -2060,18 +2100,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*add_AcceleratorKeyPressed)(ICoreWebView2Controller *, ICoreWebView2AcceleratorKeyPressedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void add_AcceleratorKeyPressed(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(add_AcceleratorKeyPressed$LAYOUT, add_AcceleratorKeyPressed$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_AcceleratorKeyPressed)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class remove_AcceleratorKeyPressed {
 		
@@ -2114,22 +2154,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout remove_AcceleratorKeyPressed$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("remove_AcceleratorKeyPressed"));
+	private static final AddressLayout remove_AcceleratorKeyPressed$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("remove_AcceleratorKeyPressed"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_AcceleratorKeyPressed)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout remove_AcceleratorKeyPressed$layout() {
 		return remove_AcceleratorKeyPressed$LAYOUT;
@@ -2139,9 +2181,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_AcceleratorKeyPressed)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long remove_AcceleratorKeyPressed$offset() {
 		return remove_AcceleratorKeyPressed$OFFSET;
@@ -2149,9 +2191,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_AcceleratorKeyPressed)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment remove_AcceleratorKeyPressed(MemorySegment struct) {
 		return struct.get(remove_AcceleratorKeyPressed$LAYOUT, remove_AcceleratorKeyPressed$OFFSET);
@@ -2159,18 +2201,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*remove_AcceleratorKeyPressed)(ICoreWebView2Controller *, EventRegistrationToken) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void remove_AcceleratorKeyPressed(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(remove_AcceleratorKeyPressed$LAYOUT, remove_AcceleratorKeyPressed$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ParentWindow)(ICoreWebView2Controller *, HWND *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_ParentWindow {
 		
@@ -2213,22 +2255,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout get_ParentWindow$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_ParentWindow"));
+	private static final AddressLayout get_ParentWindow$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_ParentWindow"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ParentWindow)(ICoreWebView2Controller *, HWND *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_ParentWindow$layout() {
 		return get_ParentWindow$LAYOUT;
@@ -2238,9 +2282,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ParentWindow)(ICoreWebView2Controller *, HWND *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_ParentWindow$offset() {
 		return get_ParentWindow$OFFSET;
@@ -2248,9 +2292,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ParentWindow)(ICoreWebView2Controller *, HWND *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_ParentWindow(MemorySegment struct) {
 		return struct.get(get_ParentWindow$LAYOUT, get_ParentWindow$OFFSET);
@@ -2258,18 +2302,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_ParentWindow)(ICoreWebView2Controller *, HWND *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_ParentWindow(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_ParentWindow$LAYOUT, get_ParentWindow$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ParentWindow)(ICoreWebView2Controller *, HWND) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class put_ParentWindow {
 		
@@ -2312,22 +2356,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout put_ParentWindow$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("put_ParentWindow"));
+	private static final AddressLayout put_ParentWindow$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("put_ParentWindow"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ParentWindow)(ICoreWebView2Controller *, HWND) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout put_ParentWindow$layout() {
 		return put_ParentWindow$LAYOUT;
@@ -2337,9 +2383,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ParentWindow)(ICoreWebView2Controller *, HWND) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long put_ParentWindow$offset() {
 		return put_ParentWindow$OFFSET;
@@ -2347,9 +2393,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ParentWindow)(ICoreWebView2Controller *, HWND) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment put_ParentWindow(MemorySegment struct) {
 		return struct.get(put_ParentWindow$LAYOUT, put_ParentWindow$OFFSET);
@@ -2357,18 +2403,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*put_ParentWindow)(ICoreWebView2Controller *, HWND) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void put_ParentWindow(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(put_ParentWindow$LAYOUT, put_ParentWindow$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NotifyParentWindowPositionChanged)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class NotifyParentWindowPositionChanged {
 		
@@ -2410,22 +2456,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout NotifyParentWindowPositionChanged$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("NotifyParentWindowPositionChanged"));
+	private static final AddressLayout NotifyParentWindowPositionChanged$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("NotifyParentWindowPositionChanged"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NotifyParentWindowPositionChanged)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout NotifyParentWindowPositionChanged$layout() {
 		return NotifyParentWindowPositionChanged$LAYOUT;
@@ -2435,9 +2483,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NotifyParentWindowPositionChanged)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long NotifyParentWindowPositionChanged$offset() {
 		return NotifyParentWindowPositionChanged$OFFSET;
@@ -2445,9 +2493,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NotifyParentWindowPositionChanged)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment NotifyParentWindowPositionChanged(MemorySegment struct) {
 		return struct.get(NotifyParentWindowPositionChanged$LAYOUT, NotifyParentWindowPositionChanged$OFFSET);
@@ -2455,18 +2503,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*NotifyParentWindowPositionChanged)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void NotifyParentWindowPositionChanged(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(NotifyParentWindowPositionChanged$LAYOUT, NotifyParentWindowPositionChanged$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Close)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class Close {
 		
@@ -2508,22 +2556,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout Close$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("Close"));
+	private static final AddressLayout Close$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("Close"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Close)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout Close$layout() {
 		return Close$LAYOUT;
@@ -2533,9 +2583,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Close)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long Close$offset() {
 		return Close$OFFSET;
@@ -2543,9 +2593,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Close)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment Close(MemorySegment struct) {
 		return struct.get(Close$LAYOUT, Close$OFFSET);
@@ -2553,18 +2603,18 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*Close)(ICoreWebView2Controller *) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void Close(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(Close$LAYOUT, Close$OFFSET, fieldValue);
 	}
 	
 	/**
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CoreWebView2)(ICoreWebView2Controller *, ICoreWebView2 **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static class get_CoreWebView2 {
 		
@@ -2607,22 +2657,24 @@ public class ICoreWebView2ControllerVtbl {
 		/**
 		 * Invoke the upcall stub {@code funcPtr}, with given parameters
 		 */
-		public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+		public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
 			try {
 				return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+			} catch (Error | RuntimeException ex) {
+				throw ex;
 			} catch (Throwable ex$) {
 				throw new AssertionError("should not reach here", ex$);
 			}
 		}
 	}
 	
-	private static final AddressLayout get_CoreWebView2$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("get_CoreWebView2"));
+	private static final AddressLayout get_CoreWebView2$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("get_CoreWebView2"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CoreWebView2)(ICoreWebView2Controller *, ICoreWebView2 **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static AddressLayout get_CoreWebView2$layout() {
 		return get_CoreWebView2$LAYOUT;
@@ -2632,9 +2684,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CoreWebView2)(ICoreWebView2Controller *, ICoreWebView2 **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static long get_CoreWebView2$offset() {
 		return get_CoreWebView2$OFFSET;
@@ -2642,9 +2694,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CoreWebView2)(ICoreWebView2Controller *, ICoreWebView2 **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static MemorySegment get_CoreWebView2(MemorySegment struct) {
 		return struct.get(get_CoreWebView2$LAYOUT, get_CoreWebView2$OFFSET);
@@ -2652,9 +2704,9 @@ public class ICoreWebView2ControllerVtbl {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HRESULT (*get_CoreWebView2)(ICoreWebView2Controller *, ICoreWebView2 **) __attribute__((stdcall))
-	 * }
+	 *}
 	 */
 	public static void get_CoreWebView2(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(get_CoreWebView2$LAYOUT, get_CoreWebView2$OFFSET, fieldValue);
@@ -2671,7 +2723,9 @@ public class ICoreWebView2ControllerVtbl {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

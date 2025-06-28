@@ -2,21 +2,27 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.SequenceLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.foreign.ValueLayout;
 import java.lang.foreign.ValueLayout.OfInt;
 import java.lang.foreign.ValueLayout.OfShort;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct _GUID {
  *     unsigned long Data1;
  *     unsigned short Data2;
  *     unsigned short Data3;
  *     unsigned char Data4[8];
  * }
- * }
+ *}
  */
 public class _GUID {
 	
@@ -38,13 +44,13 @@ public class _GUID {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt Data1$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data1"));
+	private static final OfInt Data1$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("Data1"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned long Data1
-	 * }
+	 *}
 	 */
 	public static OfInt Data1$layout() {
 		return Data1$LAYOUT;
@@ -54,9 +60,9 @@ public class _GUID {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned long Data1
-	 * }
+	 *}
 	 */
 	public static long Data1$offset() {
 		return Data1$OFFSET;
@@ -64,9 +70,9 @@ public class _GUID {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned long Data1
-	 * }
+	 *}
 	 */
 	public static int Data1(MemorySegment struct) {
 		return struct.get(Data1$LAYOUT, Data1$OFFSET);
@@ -74,21 +80,21 @@ public class _GUID {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned long Data1
-	 * }
+	 *}
 	 */
 	public static void Data1(MemorySegment struct, int fieldValue) {
 		struct.set(Data1$LAYOUT, Data1$OFFSET, fieldValue);
 	}
 	
-	private static final OfShort Data2$LAYOUT = (OfShort)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data2"));
+	private static final OfShort Data2$LAYOUT = (OfShort) $LAYOUT.select(ValueLayout.PathElement.groupElement("Data2"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data2
-	 * }
+	 *}
 	 */
 	public static OfShort Data2$layout() {
 		return Data2$LAYOUT;
@@ -98,9 +104,9 @@ public class _GUID {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data2
-	 * }
+	 *}
 	 */
 	public static long Data2$offset() {
 		return Data2$OFFSET;
@@ -108,9 +114,9 @@ public class _GUID {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data2
-	 * }
+	 *}
 	 */
 	public static short Data2(MemorySegment struct) {
 		return struct.get(Data2$LAYOUT, Data2$OFFSET);
@@ -118,21 +124,21 @@ public class _GUID {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data2
-	 * }
+	 *}
 	 */
 	public static void Data2(MemorySegment struct, short fieldValue) {
 		struct.set(Data2$LAYOUT, Data2$OFFSET, fieldValue);
 	}
 	
-	private static final OfShort Data3$LAYOUT = (OfShort)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data3"));
+	private static final OfShort Data3$LAYOUT = (OfShort) $LAYOUT.select(ValueLayout.PathElement.groupElement("Data3"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data3
-	 * }
+	 *}
 	 */
 	public static OfShort Data3$layout() {
 		return Data3$LAYOUT;
@@ -142,9 +148,9 @@ public class _GUID {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data3
-	 * }
+	 *}
 	 */
 	public static long Data3$offset() {
 		return Data3$OFFSET;
@@ -152,9 +158,9 @@ public class _GUID {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data3
-	 * }
+	 *}
 	 */
 	public static short Data3(MemorySegment struct) {
 		return struct.get(Data3$LAYOUT, Data3$OFFSET);
@@ -162,33 +168,33 @@ public class _GUID {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned short Data3
-	 * }
+	 *}
 	 */
 	public static void Data3(MemorySegment struct, short fieldValue) {
 		struct.set(Data3$LAYOUT, Data3$OFFSET, fieldValue);
 	}
 	
-	private static final SequenceLayout Data4$LAYOUT = (SequenceLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("Data4"));
+	private static final SequenceLayout Data4$LAYOUT = (SequenceLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("Data4"));
+	private static final VarHandle Data4$ELEM_HANDLE = Data4$LAYOUT.varHandle(ValueLayout.PathElement.sequenceElement());
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static SequenceLayout Data4$layout() {
 		return Data4$LAYOUT;
 	}
-	
 	private static final long Data4$OFFSET = $LAYOUT.byteOffset(ValueLayout.PathElement.groupElement("Data4"));
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static long Data4$offset() {
 		return Data4$OFFSET;
@@ -196,9 +202,9 @@ public class _GUID {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static MemorySegment Data4(MemorySegment struct) {
 		return struct.asSlice(Data4$OFFSET, Data4$LAYOUT.byteSize());
@@ -206,42 +212,40 @@ public class _GUID {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static void Data4(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, Data4$OFFSET, Data4$LAYOUT.byteSize());
 	}
-	
-	private static final long[] Data4$DIMS = { 8 };
+	private static final long[] Data4$DIMS = {8};
 	
 	/**
 	 * Dimensions for array field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static long[] Data4$dimensions() {
 		return Data4$DIMS;
 	}
-	private static final VarHandle Data4$ELEM_HANDLE = Data4$LAYOUT.varHandle(ValueLayout.PathElement.sequenceElement());
 	
 	/**
 	 * Indexed getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static byte Data4(MemorySegment struct, long index0) {
-		return (byte)Data4$ELEM_HANDLE.get(struct, 0L, index0);
+		return (byte) Data4$ELEM_HANDLE.get(struct, 0L, index0);
 	}
 	
 	/**
 	 * Indexed setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * unsigned char Data4[8]
-	 * }
+	 *}
 	 */
 	public static void Data4(MemorySegment struct, long index0, byte fieldValue) {
 		Data4$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
@@ -258,7 +262,9 @@ public class _GUID {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

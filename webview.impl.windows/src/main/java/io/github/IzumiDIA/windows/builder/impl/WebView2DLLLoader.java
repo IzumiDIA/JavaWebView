@@ -15,7 +15,6 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SymbolLookup;
 import java.lang.foreign.ValueLayout;
 import java.lang.invoke.MethodHandle;
-import java.nio.charset.StandardCharsets;
 import java.util.function.Supplier;
 
 class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
@@ -115,7 +114,7 @@ class WebView2DLLLoader extends WindowsNativeObject implements AutoCloseable {
 					path,
 					cbPathPointer
 			);
-			if ( LSTATUS == 0 ) return path.getString(0, StandardCharsets.UTF_16LE);
+			if ( LSTATUS == 0 ) return WebView2DLLLoader.this.getString(path);
 			else throw new IllegalStateException("Unable to RegQueryValueExW. LSTATUS: " + LSTATUS);
 		}
 		

@@ -9,7 +9,7 @@ import java.lang.foreign.ValueLayout.OfLong;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct tagMSG {
  *     HWND hwnd;
  *     UINT message;
@@ -18,7 +18,7 @@ import java.util.function.Consumer;
  *     DWORD time;
  *     POINT pt;
  * }
- * }
+ *}
  */
 public class tagMSG {
 	
@@ -44,13 +44,13 @@ public class tagMSG {
 		return $LAYOUT;
 	}
 	
-	private static final AddressLayout hwnd$LAYOUT = (AddressLayout)$LAYOUT.select(PathElement.groupElement("hwnd"));
+	private static final AddressLayout hwnd$LAYOUT = (AddressLayout) $LAYOUT.select(PathElement.groupElement("hwnd"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwnd
-	 * }
+	 *}
 	 */
 	public static AddressLayout hwnd$layout() {
 		return hwnd$LAYOUT;
@@ -60,9 +60,9 @@ public class tagMSG {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwnd
-	 * }
+	 *}
 	 */
 	public static long hwnd$offset() {
 		return hwnd$OFFSET;
@@ -70,9 +70,9 @@ public class tagMSG {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwnd
-	 * }
+	 *}
 	 */
 	public static MemorySegment hwnd(MemorySegment struct) {
 		return struct.get(hwnd$LAYOUT, hwnd$OFFSET);
@@ -80,21 +80,21 @@ public class tagMSG {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwnd
-	 * }
+	 *}
 	 */
 	public static void hwnd(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(hwnd$LAYOUT, hwnd$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt message$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("message"));
+	private static final OfInt message$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("message"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * UINT message
-	 * }
+	 *}
 	 */
 	public static OfInt message$layout() {
 		return message$LAYOUT;
@@ -104,9 +104,9 @@ public class tagMSG {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * UINT message
-	 * }
+	 *}
 	 */
 	public static long message$offset() {
 		return message$OFFSET;
@@ -114,9 +114,9 @@ public class tagMSG {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * UINT message
-	 * }
+	 *}
 	 */
 	public static int message(MemorySegment struct) {
 		return struct.get(message$LAYOUT, message$OFFSET);
@@ -124,21 +124,21 @@ public class tagMSG {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * UINT message
-	 * }
+	 *}
 	 */
 	public static void message(MemorySegment struct, int fieldValue) {
 		struct.set(message$LAYOUT, message$OFFSET, fieldValue);
 	}
 	
-	private static final OfLong wParam$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("wParam"));
+	private static final OfLong wParam$LAYOUT = (OfLong) $LAYOUT.select(PathElement.groupElement("wParam"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * WPARAM wParam
-	 * }
+	 *}
 	 */
 	public static OfLong wParam$layout() {
 		return wParam$LAYOUT;
@@ -148,9 +148,9 @@ public class tagMSG {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * WPARAM wParam
-	 * }
+	 *}
 	 */
 	public static long wParam$offset() {
 		return wParam$OFFSET;
@@ -158,9 +158,9 @@ public class tagMSG {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * WPARAM wParam
-	 * }
+	 *}
 	 */
 	public static long wParam(MemorySegment struct) {
 		return struct.get(wParam$LAYOUT, wParam$OFFSET);
@@ -168,21 +168,21 @@ public class tagMSG {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * WPARAM wParam
-	 * }
+	 *}
 	 */
 	public static void wParam(MemorySegment struct, long fieldValue) {
 		struct.set(wParam$LAYOUT, wParam$OFFSET, fieldValue);
 	}
 	
-	private static final OfLong lParam$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("lParam"));
+	private static final OfLong lParam$LAYOUT = (OfLong) $LAYOUT.select(PathElement.groupElement("lParam"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPARAM lParam
-	 * }
+	 *}
 	 */
 	public static OfLong lParam$layout() {
 		return lParam$LAYOUT;
@@ -192,9 +192,9 @@ public class tagMSG {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPARAM lParam
-	 * }
+	 *}
 	 */
 	public static long lParam$offset() {
 		return lParam$OFFSET;
@@ -202,9 +202,9 @@ public class tagMSG {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPARAM lParam
-	 * }
+	 *}
 	 */
 	public static long lParam(MemorySegment struct) {
 		return struct.get(lParam$LAYOUT, lParam$OFFSET);
@@ -212,21 +212,21 @@ public class tagMSG {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPARAM lParam
-	 * }
+	 *}
 	 */
 	public static void lParam(MemorySegment struct, long fieldValue) {
 		struct.set(lParam$LAYOUT, lParam$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt time$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("time"));
+	private static final OfInt time$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("time"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD time
-	 * }
+	 *}
 	 */
 	public static OfInt time$layout() {
 		return time$LAYOUT;
@@ -236,9 +236,9 @@ public class tagMSG {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD time
-	 * }
+	 *}
 	 */
 	public static long time$offset() {
 		return time$OFFSET;
@@ -246,9 +246,9 @@ public class tagMSG {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD time
-	 * }
+	 *}
 	 */
 	public static int time(MemorySegment struct) {
 		return struct.get(time$LAYOUT, time$OFFSET);
@@ -256,21 +256,21 @@ public class tagMSG {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD time
-	 * }
+	 *}
 	 */
 	public static void time(MemorySegment struct, int fieldValue) {
 		struct.set(time$LAYOUT, time$OFFSET, fieldValue);
 	}
 	
-	private static final GroupLayout pt$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("pt"));
+	private static final GroupLayout pt$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("pt"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT pt
-	 * }
+	 *}
 	 */
 	public static GroupLayout pt$layout() {
 		return pt$LAYOUT;
@@ -280,9 +280,9 @@ public class tagMSG {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT pt
-	 * }
+	 *}
 	 */
 	public static long pt$offset() {
 		return pt$OFFSET;
@@ -290,9 +290,9 @@ public class tagMSG {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT pt
-	 * }
+	 *}
 	 */
 	public static MemorySegment pt(MemorySegment struct) {
 		return struct.asSlice(pt$OFFSET, pt$LAYOUT.byteSize());
@@ -300,9 +300,9 @@ public class tagMSG {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT pt
-	 * }
+	 *}
 	 */
 	public static void pt(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, pt$OFFSET, pt$LAYOUT.byteSize());
@@ -319,7 +319,9 @@ public class tagMSG {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

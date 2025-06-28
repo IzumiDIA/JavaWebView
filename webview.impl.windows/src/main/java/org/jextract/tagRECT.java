@@ -13,14 +13,14 @@ import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct tagRECT {
  *     LONG left;
  *     LONG top;
  *     LONG right;
  *     LONG bottom;
  * }
- * }
+ *}
  */
 public class tagRECT {
 	
@@ -42,13 +42,13 @@ public class tagRECT {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt left$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("left"));
+	private static final OfInt left$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("left"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG left
-	 * }
+	 *}
 	 */
 	public static OfInt left$layout() {
 		return left$LAYOUT;
@@ -58,9 +58,9 @@ public class tagRECT {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG left
-	 * }
+	 *}
 	 */
 	public static long left$offset() {
 		return left$OFFSET;
@@ -68,9 +68,9 @@ public class tagRECT {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG left
-	 * }
+	 *}
 	 */
 	public static int left(MemorySegment struct) {
 		return struct.get(left$LAYOUT, left$OFFSET);
@@ -78,21 +78,21 @@ public class tagRECT {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG left
-	 * }
+	 *}
 	 */
 	public static void left(MemorySegment struct, int fieldValue) {
 		struct.set(left$LAYOUT, left$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt top$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("top"));
+	private static final OfInt top$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("top"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG top
-	 * }
+	 *}
 	 */
 	public static OfInt top$layout() {
 		return top$LAYOUT;
@@ -102,9 +102,9 @@ public class tagRECT {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG top
-	 * }
+	 *}
 	 */
 	public static long top$offset() {
 		return top$OFFSET;
@@ -112,9 +112,9 @@ public class tagRECT {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG top
-	 * }
+	 *}
 	 */
 	public static int top(MemorySegment struct) {
 		return struct.get(top$LAYOUT, top$OFFSET);
@@ -122,21 +122,21 @@ public class tagRECT {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG top
-	 * }
+	 *}
 	 */
 	public static void top(MemorySegment struct, int fieldValue) {
 		struct.set(top$LAYOUT, top$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt right$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("right"));
+	private static final OfInt right$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("right"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG right
-	 * }
+	 *}
 	 */
 	public static OfInt right$layout() {
 		return right$LAYOUT;
@@ -146,9 +146,9 @@ public class tagRECT {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG right
-	 * }
+	 *}
 	 */
 	public static long right$offset() {
 		return right$OFFSET;
@@ -156,9 +156,9 @@ public class tagRECT {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG right
-	 * }
+	 *}
 	 */
 	public static int right(MemorySegment struct) {
 		return struct.get(right$LAYOUT, right$OFFSET);
@@ -166,21 +166,21 @@ public class tagRECT {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG right
-	 * }
+	 *}
 	 */
 	public static void right(MemorySegment struct, int fieldValue) {
 		struct.set(right$LAYOUT, right$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt bottom$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("bottom"));
+	private static final OfInt bottom$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("bottom"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG bottom
-	 * }
+	 *}
 	 */
 	public static OfInt bottom$layout() {
 		return bottom$LAYOUT;
@@ -190,9 +190,9 @@ public class tagRECT {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG bottom
-	 * }
+	 *}
 	 */
 	public static long bottom$offset() {
 		return bottom$OFFSET;
@@ -200,9 +200,9 @@ public class tagRECT {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG bottom
-	 * }
+	 *}
 	 */
 	public static int bottom(MemorySegment struct) {
 		return struct.get(bottom$LAYOUT, bottom$OFFSET);
@@ -210,9 +210,9 @@ public class tagRECT {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG bottom
-	 * }
+	 *}
 	 */
 	public static void bottom(MemorySegment struct, int fieldValue) {
 		struct.set(bottom$LAYOUT, bottom$OFFSET, fieldValue);
@@ -229,7 +229,9 @@ public class tagRECT {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

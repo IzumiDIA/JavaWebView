@@ -59,6 +59,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetStdHandle", nStdHandle);
 			}
 			return (MemorySegment) mh$.invokeExact(nStdHandle);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -108,6 +110,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetStdHandle", nStdHandle, hHandle);
 			}
 			return (boolean) mh$.invokeExact(nStdHandle, hHandle);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -162,6 +166,8 @@ public class Windows {
 				FFMUtils.traceDowncall("CreateFileW", lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
 			}
 			return (MemorySegment) mh$.invokeExact(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -210,6 +216,8 @@ public class Windows {
 				FFMUtils.traceDowncall("FindClose", hFindFile);
 			}
 			return (boolean) mh$.invokeExact(hFindFile);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -263,6 +271,8 @@ public class Windows {
 				FFMUtils.traceDowncall("FindFirstFileExW", lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
 			}
 			return (MemorySegment) mh$.invokeExact(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -312,6 +322,8 @@ public class Windows {
 				FFMUtils.traceDowncall("FindNextFileW", hFindFile, lpFindFileData);
 			}
 			return (boolean) mh$.invokeExact(hFindFile, lpFindFileData);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -361,6 +373,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetFileSizeEx", hFile, lpFileSize);
 			}
 			return (boolean) mh$.invokeExact(hFile, lpFileSize);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -409,6 +423,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetFileType", hFile);
 			}
 			return (int) mh$.invokeExact(hFile);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -460,99 +476,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetFilePointerEx", hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
 			}
 			return (boolean) mh$.invokeExact(hFile, liDistanceToMove, lpNewFilePointer, dwMoveMethod);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class IsDebuggerPresent {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_BOOL);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("IsDebuggerPresent"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL IsDebuggerPresent()
-	 *}
-	 */
-	public static FunctionDescriptor IsDebuggerPresent$descriptor() {
-		return IsDebuggerPresent.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL IsDebuggerPresent()
-	 *}
-	 */
-	public static MethodHandle IsDebuggerPresent$handle() {
-		return IsDebuggerPresent.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL IsDebuggerPresent()
-	 *}
-	 */
-	public static boolean IsDebuggerPresent() {
-		var mh$ = IsDebuggerPresent.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("IsDebuggerPresent");
-			}
-			return (boolean) mh$.invokeExact();
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class OutputDebugStringW {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("OutputDebugStringW"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void OutputDebugStringW(LPCWSTR lpOutputString)
-	 *}
-	 */
-	public static FunctionDescriptor OutputDebugStringW$descriptor() {
-		return OutputDebugStringW.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void OutputDebugStringW(LPCWSTR lpOutputString)
-	 *}
-	 */
-	public static MethodHandle OutputDebugStringW$handle() {
-		return OutputDebugStringW.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void OutputDebugStringW(LPCWSTR lpOutputString)
-	 *}
-	 */
-	public static void OutputDebugStringW(MemorySegment lpOutputString) {
-		var mh$ = OutputDebugStringW.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("OutputDebugStringW", lpOutputString);
-			}
-			mh$.invokeExact(lpOutputString);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -601,6 +526,8 @@ public class Windows {
 				FFMUtils.traceDowncall("CloseHandle", hObject);
 			}
 			return (boolean) mh$.invokeExact(hObject);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -651,6 +578,8 @@ public class Windows {
 				FFMUtils.traceDowncall("RaiseException", dwExceptionCode, dwExceptionFlags, nNumberOfArguments, lpArguments);
 			}
 			mh$.invokeExact(dwExceptionCode, dwExceptionFlags, nNumberOfArguments, lpArguments);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -699,6 +628,8 @@ public class Windows {
 				FFMUtils.traceDowncall("UnhandledExceptionFilter", ExceptionInfo);
 			}
 			return (int) mh$.invokeExact(ExceptionInfo);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -747,6 +678,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetUnhandledExceptionFilter", lpTopLevelExceptionFilter);
 			}
 			return (MemorySegment) mh$.invokeExact(lpTopLevelExceptionFilter);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -793,6 +726,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetLastError");
 			}
 			return (int) mh$.invokeExact();
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -840,199 +775,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetLastError", dwErrCode);
 			}
 			mh$.invokeExact(dwErrCode);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class FlsAlloc {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsAlloc"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * DWORD FlsAlloc(PFLS_CALLBACK_FUNCTION lpCallback)
-	 *}
-	 */
-	public static FunctionDescriptor FlsAlloc$descriptor() {
-		return FlsAlloc.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * DWORD FlsAlloc(PFLS_CALLBACK_FUNCTION lpCallback)
-	 *}
-	 */
-	public static MethodHandle FlsAlloc$handle() {
-		return FlsAlloc.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * DWORD FlsAlloc(PFLS_CALLBACK_FUNCTION lpCallback)
-	 *}
-	 */
-	public static int FlsAlloc(MemorySegment lpCallback) {
-		var mh$ = FlsAlloc.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("FlsAlloc", lpCallback);
-			}
-			return (int) mh$.invokeExact(lpCallback);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class FlsGetValue {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsGetValue"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * PVOID FlsGetValue(DWORD dwFlsIndex)
-	 *}
-	 */
-	public static FunctionDescriptor FlsGetValue$descriptor() {
-		return FlsGetValue.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * PVOID FlsGetValue(DWORD dwFlsIndex)
-	 *}
-	 */
-	public static MethodHandle FlsGetValue$handle() {
-		return FlsGetValue.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * PVOID FlsGetValue(DWORD dwFlsIndex)
-	 *}
-	 */
-	public static MemorySegment FlsGetValue(int dwFlsIndex) {
-		var mh$ = FlsGetValue.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("FlsGetValue", dwFlsIndex);
-			}
-			return (MemorySegment) mh$.invokeExact(dwFlsIndex);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class FlsSetValue {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_BOOL,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsSetValue"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL FlsSetValue(DWORD dwFlsIndex, PVOID lpFlsData)
-	 *}
-	 */
-	public static FunctionDescriptor FlsSetValue$descriptor() {
-		return FlsSetValue.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL FlsSetValue(DWORD dwFlsIndex, PVOID lpFlsData)
-	 *}
-	 */
-	public static MethodHandle FlsSetValue$handle() {
-		return FlsSetValue.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL FlsSetValue(DWORD dwFlsIndex, PVOID lpFlsData)
-	 *}
-	 */
-	public static boolean FlsSetValue(int dwFlsIndex, MemorySegment lpFlsData) {
-		var mh$ = FlsSetValue.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("FlsSetValue", dwFlsIndex, lpFlsData);
-			}
-			return (boolean) mh$.invokeExact(dwFlsIndex, lpFlsData);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class FlsFree {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_BOOL,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("FlsFree"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL FlsFree(DWORD dwFlsIndex)
-	 *}
-	 */
-	public static FunctionDescriptor FlsFree$descriptor() {
-		return FlsFree.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL FlsFree(DWORD dwFlsIndex)
-	 *}
-	 */
-	public static MethodHandle FlsFree$handle() {
-		return FlsFree.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL FlsFree(DWORD dwFlsIndex)
-	 *}
-	 */
-	public static boolean FlsFree(int dwFlsIndex) {
-		var mh$ = FlsFree.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("FlsFree", dwFlsIndex);
-			}
-			return (boolean) mh$.invokeExact(dwFlsIndex);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1081,6 +825,8 @@ public class Windows {
 				FFMUtils.traceDowncall("QueryPerformanceCounter", lpPerformanceCount);
 			}
 			return (int) mh$.invokeExact(lpPerformanceCount);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1128,6 +874,8 @@ public class Windows {
 				FFMUtils.traceDowncall("ReleaseSRWLockExclusive", SRWLock);
 			}
 			mh$.invokeExact(SRWLock);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1175,196 +923,8 @@ public class Windows {
 				FFMUtils.traceDowncall("AcquireSRWLockExclusive", SRWLock);
 			}
 			mh$.invokeExact(SRWLock);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class EnterCriticalSection {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("EnterCriticalSection"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static FunctionDescriptor EnterCriticalSection$descriptor() {
-		return EnterCriticalSection.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static MethodHandle EnterCriticalSection$handle() {
-		return EnterCriticalSection.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static void EnterCriticalSection(MemorySegment lpCriticalSection) {
-		var mh$ = EnterCriticalSection.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("EnterCriticalSection", lpCriticalSection);
-			}
-			mh$.invokeExact(lpCriticalSection);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class LeaveCriticalSection {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LeaveCriticalSection"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static FunctionDescriptor LeaveCriticalSection$descriptor() {
-		return LeaveCriticalSection.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static MethodHandle LeaveCriticalSection$handle() {
-		return LeaveCriticalSection.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static void LeaveCriticalSection(MemorySegment lpCriticalSection) {
-		var mh$ = LeaveCriticalSection.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("LeaveCriticalSection", lpCriticalSection);
-			}
-			mh$.invokeExact(lpCriticalSection);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class InitializeCriticalSectionAndSpinCount {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("InitializeCriticalSectionAndSpinCount"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL InitializeCriticalSectionAndSpinCount(LPCRITICAL_SECTION lpCriticalSection, DWORD dwSpinCount)
-	 *}
-	 */
-	public static FunctionDescriptor InitializeCriticalSectionAndSpinCount$descriptor() {
-		return InitializeCriticalSectionAndSpinCount.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL InitializeCriticalSectionAndSpinCount(LPCRITICAL_SECTION lpCriticalSection, DWORD dwSpinCount)
-	 *}
-	 */
-	public static MethodHandle InitializeCriticalSectionAndSpinCount$handle() {
-		return InitializeCriticalSectionAndSpinCount.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL InitializeCriticalSectionAndSpinCount(LPCRITICAL_SECTION lpCriticalSection, DWORD dwSpinCount)
-	 *}
-	 */
-	public static int InitializeCriticalSectionAndSpinCount(MemorySegment lpCriticalSection, int dwSpinCount) {
-		var mh$ = InitializeCriticalSectionAndSpinCount.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("InitializeCriticalSectionAndSpinCount", lpCriticalSection, dwSpinCount);
-			}
-			return (int) mh$.invokeExact(lpCriticalSection, dwSpinCount);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class DeleteCriticalSection {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("DeleteCriticalSection"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * void DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static FunctionDescriptor DeleteCriticalSection$descriptor() {
-		return DeleteCriticalSection.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * void DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static MethodHandle DeleteCriticalSection$handle() {
-		return DeleteCriticalSection.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * void DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-	 *}
-	 */
-	public static void DeleteCriticalSection(MemorySegment lpCriticalSection) {
-		var mh$ = DeleteCriticalSection.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("DeleteCriticalSection", lpCriticalSection);
-			}
-			mh$.invokeExact(lpCriticalSection);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1412,6 +972,8 @@ public class Windows {
 				FFMUtils.traceDowncall("WakeAllConditionVariable", ConditionVariable);
 			}
 			mh$.invokeExact(ConditionVariable);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1463,6 +1025,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SleepConditionVariableSRW", ConditionVariable, SRWLock, dwMilliseconds, Flags);
 			}
 			return (int) mh$.invokeExact(ConditionVariable, SRWLock, dwMilliseconds, Flags);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1510,6 +1074,8 @@ public class Windows {
 				FFMUtils.traceDowncall("InitializeSListHead", ListHead);
 			}
 			mh$.invokeExact(ListHead);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1558,6 +1124,8 @@ public class Windows {
 				FFMUtils.traceDowncall("InterlockedFlushSList", ListHead);
 			}
 			return (MemorySegment) mh$.invokeExact(ListHead);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1604,6 +1172,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetCurrentProcess");
 			}
 			return (MemorySegment) mh$.invokeExact();
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1651,6 +1221,8 @@ public class Windows {
 				FFMUtils.traceDowncall("ExitProcess", uExitCode);
 			}
 			mh$.invokeExact(uExitCode);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1697,202 +1269,13 @@ public class Windows {
 				FFMUtils.traceDowncall("GetCurrentThreadId");
 			}
 			return (int) mh$.invokeExact();
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
 	}
-	
-	private static class TlsAlloc {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsAlloc"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * DWORD TlsAlloc()
-	 *}
-	 */
-	public static FunctionDescriptor TlsAlloc$descriptor() {
-		return TlsAlloc.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * DWORD TlsAlloc()
-	 *}
-	 */
-	public static MethodHandle TlsAlloc$handle() {
-		return TlsAlloc.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * DWORD TlsAlloc()
-	 *}
-	 */
-	public static int TlsAlloc() {
-		var mh$ = TlsAlloc.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("TlsAlloc");
-			}
-			return (int) mh$.invokeExact();
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class TlsGetValue {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsGetValue"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * LPVOID TlsGetValue(DWORD dwTlsIndex)
-	 *}
-	 */
-	public static FunctionDescriptor TlsGetValue$descriptor() {
-		return TlsGetValue.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * LPVOID TlsGetValue(DWORD dwTlsIndex)
-	 *}
-	 */
-	public static MethodHandle TlsGetValue$handle() {
-		return TlsGetValue.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * LPVOID TlsGetValue(DWORD dwTlsIndex)
-	 *}
-	 */
-	public static MemorySegment TlsGetValue(int dwTlsIndex) {
-		var mh$ = TlsGetValue.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("TlsGetValue", dwTlsIndex);
-			}
-			return (MemorySegment) mh$.invokeExact(dwTlsIndex);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class TlsSetValue {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsSetValue"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)
-	 *}
-	 */
-	public static FunctionDescriptor TlsSetValue$descriptor() {
-		return TlsSetValue.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)
-	 *}
-	 */
-	public static MethodHandle TlsSetValue$handle() {
-		return TlsSetValue.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)
-	 *}
-	 */
-	public static int TlsSetValue(int dwTlsIndex, MemorySegment lpTlsValue) {
-		var mh$ = TlsSetValue.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("TlsSetValue", dwTlsIndex, lpTlsValue);
-			}
-			return (int) mh$.invokeExact(dwTlsIndex, lpTlsValue);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class TlsFree {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("TlsFree"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * BOOL TlsFree(DWORD dwTlsIndex)
-	 *}
-	 */
-	public static FunctionDescriptor TlsFree$descriptor() {
-		return TlsFree.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * BOOL TlsFree(DWORD dwTlsIndex)
-	 *}
-	 */
-	public static MethodHandle TlsFree$handle() {
-		return TlsFree.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * BOOL TlsFree(DWORD dwTlsIndex)
-	 *}
-	 */
-	public static int TlsFree(int dwTlsIndex) {
-		var mh$ = TlsFree.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("TlsFree", dwTlsIndex);
-			}
-			return (int) mh$.invokeExact(dwTlsIndex);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
+
 	private static class GetSystemTimeAsFileTime {
 		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
 				LayoutUtils.C_POINTER
@@ -1935,6 +1318,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetSystemTimeAsFileTime", lpSystemTimeAsFileTime);
 			}
 			mh$.invokeExact(lpSystemTimeAsFileTime);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -1988,6 +1373,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetModuleFileNameW", hModule, lpFilename, nSize);
 			}
 			return (int) mh$.invokeExact(hModule, lpFilename, nSize);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2036,6 +1423,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetModuleHandleA", lpModuleName);
 			}
 			return (MemorySegment) mh$.invokeExact(lpModuleName);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2068,6 +1457,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetSysColorBrush", nIndex);
 			}
 			return (MemorySegment) mh$.invokeExact(nIndex);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2100,6 +1491,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetForegroundWindow", hWnd);
 			}
 			return (boolean) mh$.invokeExact(hWnd);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2136,6 +1529,8 @@ public class Windows {
 				FFMUtils.traceDowncall("AllowSetForegroundWindow");
 			}
 			return (boolean) mh$.invokeExact();
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2187,6 +1582,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetMessageW", lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax);
 			}
 			return (boolean) mh$.invokeExact(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2235,6 +1632,8 @@ public class Windows {
 				FFMUtils.traceDowncall("TranslateMessage", lpMsg);
 			}
 			return (boolean) mh$.invokeExact(lpMsg);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2283,6 +1682,8 @@ public class Windows {
 				FFMUtils.traceDowncall("DispatchMessageW", lpMsg);
 			}
 			return (long) mh$.invokeExact(lpMsg);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2334,6 +1735,8 @@ public class Windows {
 				FFMUtils.traceDowncall("PostMessageW", hWnd, Msg, wParam, lParam);
 			}
 			return (boolean) mh$.invokeExact(hWnd, Msg, wParam, lParam);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2385,6 +1788,8 @@ public class Windows {
 				FFMUtils.traceDowncall("DefWindowProcW", hWnd, Msg, wParam, lParam);
 			}
 			return (long) mh$.invokeExact(hWnd, Msg, wParam, lParam);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2432,6 +1837,8 @@ public class Windows {
 				FFMUtils.traceDowncall("PostQuitMessage", nExitCode);
 			}
 			mh$.invokeExact(nExitCode);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2480,6 +1887,8 @@ public class Windows {
 				FFMUtils.traceDowncall("RegisterClassExW", x0);
 			}
 			return (short) mh$.invokeExact(x0);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2545,6 +1954,8 @@ public class Windows {
 				FFMUtils.traceDowncall("CreateWindowExW", dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, lpParam);
 			}
 			return (MemorySegment) mh$.invokeExact(dwExStyle, lpClassName, lpWindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, lpParam);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2593,6 +2004,8 @@ public class Windows {
 				FFMUtils.traceDowncall("IsWindow", hWnd);
 			}
 			return (int) mh$.invokeExact(hWnd);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2641,6 +2054,8 @@ public class Windows {
 				FFMUtils.traceDowncall("DestroyWindow", hWnd);
 			}
 			return (boolean) mh$.invokeExact(hWnd);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2690,6 +2105,8 @@ public class Windows {
 				FFMUtils.traceDowncall("ShowWindow", hWnd, nCmdShow);
 			}
 			return (boolean) mh$.invokeExact(hWnd, nCmdShow);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2743,6 +2160,8 @@ public class Windows {
 				FFMUtils.traceDowncall("MoveWindow", hWnd, X, Y, nWidth, nHeight, bRepaint);
 			}
 			return (int) mh$.invokeExact(hWnd, X, Y, nWidth, nHeight, bRepaint);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2797,6 +2216,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetWindowPos", hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 			}
 			return (boolean) mh$.invokeExact(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2845,6 +2266,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetFocus", hWnd);
 			}
 			return (MemorySegment) mh$.invokeExact(hWnd);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2893,6 +2316,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetSystemMetrics", nIndex);
 			}
 			return (int) mh$.invokeExact(nIndex);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2941,6 +2366,8 @@ public class Windows {
 				FFMUtils.traceDowncall("UpdateWindow", hWnd);
 			}
 			return (boolean) mh$.invokeExact(hWnd);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -2990,6 +2417,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetWindowTextW", hWnd, lpString);
 			}
 			return (int) mh$.invokeExact(hWnd, lpString);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3039,6 +2468,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetClientRect", hWnd, lpRect);
 			}
 			return (boolean) mh$.invokeExact(hWnd, lpRect);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3089,6 +2520,8 @@ public class Windows {
 				FFMUtils.traceDowncall("AdjustWindowRect", lpRect, dwStyle, bMenu);
 			}
 			return (boolean) mh$.invokeExact(lpRect, dwStyle, bMenu);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3138,6 +2571,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetWindowLongPtrW", hWnd, nIndex);
 			}
 			return (long) mh$.invokeExact(hWnd, nIndex);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3188,6 +2623,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetWindowLongPtrW", hWnd, nIndex, dwNewLong);
 			}
 			return (long) mh$.invokeExact(hWnd, nIndex, dwNewLong);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3236,6 +2673,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetParent", hWnd);
 			}
 			return (MemorySegment) mh$.invokeExact(hWnd);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3292,6 +2731,8 @@ public class Windows {
 				FFMUtils.traceDowncall("LoadImageW", name, type, cx, cy, fuLoad);
 			}
 			return (MemorySegment) mh$.invokeExact(name, type, cx, cy, fuLoad);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3322,6 +2763,8 @@ public class Windows {
 				FFMUtils.traceDowncall("DestroyIcon", hIcon);
 			}
 			return (boolean) mh$.invokeExact(hIcon);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3370,6 +2813,8 @@ public class Windows {
 				FFMUtils.traceDowncall("SetProcessDpiAwarenessContext", value);
 			}
 			return (boolean) mh$.invokeExact(value);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3423,6 +2868,8 @@ public class Windows {
 				FFMUtils.traceDowncall("MultiByteToWideChar", CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar);
 			}
 			return (int) mh$.invokeExact(CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3478,6 +2925,8 @@ public class Windows {
 				FFMUtils.traceDowncall("WideCharToMultiByte", CodePage, dwFlags, lpWideCharStr, cchWideChar, lpMultiByteStr, cbMultiByte, lpDefaultChar, lpUsedDefaultChar);
 			}
 			return (int) mh$.invokeExact(CodePage, dwFlags, lpWideCharStr, cchWideChar, lpMultiByteStr, cbMultiByte, lpDefaultChar, lpUsedDefaultChar);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3526,6 +2975,8 @@ public class Windows {
 				FFMUtils.traceDowncall("IsValidCodePage", CodePage);
 			}
 			return (boolean) mh$.invokeExact(CodePage);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3572,59 +3023,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetACP");
 			}
 			return (int) mh$.invokeExact();
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class LCMapStringW {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_INT,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_INT
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("LCMapStringW"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * int LCMapStringW(LCID Locale, DWORD dwMapFlags, LPCWSTR lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest)
-	 *}
-	 */
-	public static FunctionDescriptor LCMapStringW$descriptor() {
-		return LCMapStringW.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * int LCMapStringW(LCID Locale, DWORD dwMapFlags, LPCWSTR lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest)
-	 *}
-	 */
-	public static MethodHandle LCMapStringW$handle() {
-		return LCMapStringW.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * int LCMapStringW(LCID Locale, DWORD dwMapFlags, LPCWSTR lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest)
-	 *}
-	 */
-	public static int LCMapStringW(int Locale, int dwMapFlags, MemorySegment lpSrcStr, int cchSrc, MemorySegment lpDestStr, int cchDest) {
-		var mh$ = LCMapStringW.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("LCMapStringW", Locale, dwMapFlags, lpSrcStr, cchSrc, lpDestStr, cchDest);
-			}
-			return (int) mh$.invokeExact(Locale, dwMapFlags, lpSrcStr, cchSrc, lpDestStr, cchDest);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3671,6 +3071,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetConsoleOutputCP");
 			}
 			return (int) mh$.invokeExact();
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3720,6 +3122,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetConsoleMode", hConsoleHandle, lpMode);
 			}
 			return (boolean) mh$.invokeExact(hConsoleHandle, lpMode);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3772,6 +3176,8 @@ public class Windows {
 				FFMUtils.traceDowncall("WriteConsoleW", hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
 			}
 			return (boolean) mh$.invokeExact(hConsoleOutput, lpBuffer, nNumberOfCharsToWrite, lpNumberOfCharsWritten, lpReserved);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3821,6 +3227,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetFileVersionInfoSizeW", lptstrFilename, lpdwHandle);
 			}
 			return (int) mh$.invokeExact(lptstrFilename, lpdwHandle);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3872,6 +3280,8 @@ public class Windows {
 				FFMUtils.traceDowncall("GetFileVersionInfoW", lptstrFilename, dwHandle, dwLen, lpData);
 			}
 			return (boolean) mh$.invokeExact(lptstrFilename, dwHandle, dwLen, lpData);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3923,6 +3333,8 @@ public class Windows {
 				FFMUtils.traceDowncall("VerQueryValueW", pBlock, lpSubBlock, lplpBuffer, puLen);
 			}
 			return (int) mh$.invokeExact(pBlock, lpSubBlock, lplpBuffer, puLen);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -3971,6 +3383,8 @@ public class Windows {
 				FFMUtils.traceDowncall("RegCloseKey", hKey);
 			}
 			return (int) mh$.invokeExact(hKey);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -4023,6 +3437,8 @@ public class Windows {
 				FFMUtils.traceDowncall("RegOpenKeyExW", hKey, lpSubKey, ulOptions, samDesired, phkResult);
 			}
 			return (int) mh$.invokeExact(hKey, lpSubKey, ulOptions, samDesired, phkResult);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}
@@ -4076,195 +3492,8 @@ public class Windows {
 				FFMUtils.traceDowncall("RegQueryValueExW", hKey, lpValueName, lpReserved, lpType, lpData, lpcbData);
 			}
 			return (int) mh$.invokeExact(hKey, lpValueName, lpReserved, lpType, lpData, lpcbData);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class CoUninitialize {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid();
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoUninitialize"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * extern void CoUninitialize()
-	 *}
-	 */
-	public static FunctionDescriptor CoUninitialize$descriptor() {
-		return CoUninitialize.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * extern void CoUninitialize()
-	 *}
-	 */
-	public static MethodHandle CoUninitialize$handle() {
-		return CoUninitialize.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * extern void CoUninitialize()
-	 *}
-	 */
-	public static void CoUninitialize() {
-		var mh$ = CoUninitialize.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("CoUninitialize");
-			}
-			mh$.invokeExact();
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class CoInitializeEx {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_LONG,
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoInitializeEx"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * extern HRESULT CoInitializeEx(LPVOID pvReserved, DWORD dwCoInit)
-	 *}
-	 */
-	public static FunctionDescriptor CoInitializeEx$descriptor() {
-		return CoInitializeEx.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * extern HRESULT CoInitializeEx(LPVOID pvReserved, DWORD dwCoInit)
-	 *}
-	 */
-	public static MethodHandle CoInitializeEx$handle() {
-		return CoInitializeEx.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * extern HRESULT CoInitializeEx(LPVOID pvReserved, DWORD dwCoInit)
-	 *}
-	 */
-	public static int CoInitializeEx(MemorySegment pvReserved, int dwCoInit) {
-		var mh$ = CoInitializeEx.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("CoInitializeEx", pvReserved, dwCoInit);
-			}
-			return (int) mh$.invokeExact(pvReserved, dwCoInit);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class CoTaskMemAlloc {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-				LayoutUtils.C_POINTER,
-				LayoutUtils.C_LONG_LONG
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoTaskMemAlloc"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * extern LPVOID CoTaskMemAlloc(SIZE_T cb)
-	 *}
-	 */
-	public static FunctionDescriptor CoTaskMemAlloc$descriptor() {
-		return CoTaskMemAlloc.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * extern LPVOID CoTaskMemAlloc(SIZE_T cb)
-	 *}
-	 */
-	public static MethodHandle CoTaskMemAlloc$handle() {
-		return CoTaskMemAlloc.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * extern LPVOID CoTaskMemAlloc(SIZE_T cb)
-	 *}
-	 */
-	public static MemorySegment CoTaskMemAlloc(long cb) {
-		var mh$ = CoTaskMemAlloc.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("CoTaskMemAlloc", cb);
-			}
-			return (MemorySegment) mh$.invokeExact(cb);
-		} catch (Throwable ex$) {
-			throw new AssertionError("should not reach here", ex$);
-		}
-	}
-	
-	private static class CoTaskMemFree {
-		public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-				LayoutUtils.C_POINTER
-		);
-		
-		public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-				FFMUtils.SYMBOL_LOOKUP.findOrThrow("CoTaskMemFree"),
-				DESC);
-	}
-	
-	/**
-	 * Function descriptor for:
-	 * {@snippet lang = c:
-	 * extern void CoTaskMemFree(LPVOID pv)
-	 *}
-	 */
-	public static FunctionDescriptor CoTaskMemFree$descriptor() {
-		return CoTaskMemFree.DESC;
-	}
-	
-	/**
-	 * Downcall method handle for:
-	 * {@snippet lang = c:
-	 * extern void CoTaskMemFree(LPVOID pv)
-	 *}
-	 */
-	public static MethodHandle CoTaskMemFree$handle() {
-		return CoTaskMemFree.HANDLE;
-	}
-	
-	/**
-	 * {@snippet lang = c:
-	 * extern void CoTaskMemFree(LPVOID pv)
-	 *}
-	 */
-	public static void CoTaskMemFree(MemorySegment pv) {
-		var mh$ = CoTaskMemFree.HANDLE;
-		try {
-			if ( FFMUtils.TRACE_DOWNCALLS ) {
-				FFMUtils.traceDowncall("CoTaskMemFree", pv);
-			}
-			mh$.invokeExact(pv);
+		} catch (Error | RuntimeException ex) {
+			throw ex;
 		} catch (Throwable ex$) {
 			throw new AssertionError("should not reach here", ex$);
 		}

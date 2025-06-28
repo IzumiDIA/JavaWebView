@@ -13,12 +13,12 @@ import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct tagSIZE {
  *     LONG cx;
  *     LONG cy;
  * }
- * }
+ *}
  */
 public class tagSIZE {
 	
@@ -38,13 +38,13 @@ public class tagSIZE {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt cx$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cx"));
+	private static final OfInt cx$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("cx"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cx
-	 * }
+	 *}
 	 */
 	public static OfInt cx$layout() {
 		return cx$LAYOUT;
@@ -54,9 +54,9 @@ public class tagSIZE {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cx
-	 * }
+	 *}
 	 */
 	public static long cx$offset() {
 		return cx$OFFSET;
@@ -64,9 +64,9 @@ public class tagSIZE {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cx
-	 * }
+	 *}
 	 */
 	public static int cx(MemorySegment struct) {
 		return struct.get(cx$LAYOUT, cx$OFFSET);
@@ -74,21 +74,21 @@ public class tagSIZE {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cx
-	 * }
+	 *}
 	 */
 	public static void cx(MemorySegment struct, int fieldValue) {
 		struct.set(cx$LAYOUT, cx$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cy$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("cy"));
+	private static final OfInt cy$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("cy"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cy
-	 * }
+	 *}
 	 */
 	public static OfInt cy$layout() {
 		return cy$LAYOUT;
@@ -98,9 +98,9 @@ public class tagSIZE {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cy
-	 * }
+	 *}
 	 */
 	public static long cy$offset() {
 		return cy$OFFSET;
@@ -108,9 +108,9 @@ public class tagSIZE {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cy
-	 * }
+	 *}
 	 */
 	public static int cy(MemorySegment struct) {
 		return struct.get(cy$LAYOUT, cy$OFFSET);
@@ -118,9 +118,9 @@ public class tagSIZE {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG cy
-	 * }
+	 *}
 	 */
 	public static void cy(MemorySegment struct, int fieldValue) {
 		struct.set(cy$LAYOUT, cy$OFFSET, fieldValue);
@@ -137,7 +137,9 @@ public class tagSIZE {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

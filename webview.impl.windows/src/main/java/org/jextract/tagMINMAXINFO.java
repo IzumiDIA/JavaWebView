@@ -12,7 +12,7 @@ import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct tagMINMAXINFO {
  *     POINT ptReserved;
  *     POINT ptMaxSize;
@@ -20,7 +20,7 @@ import java.util.function.Consumer;
  *     POINT ptMinTrackSize;
  *     POINT ptMaxTrackSize;
  * }
- * }
+ *}
  */
 public class tagMINMAXINFO {
 	
@@ -43,13 +43,13 @@ public class tagMINMAXINFO {
 		return $LAYOUT;
 	}
 	
-	private static final GroupLayout ptReserved$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptReserved"));
+	private static final GroupLayout ptReserved$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("ptReserved"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptReserved
-	 * }
+	 *}
 	 */
 	public static GroupLayout ptReserved$layout() {
 		return ptReserved$LAYOUT;
@@ -59,9 +59,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptReserved
-	 * }
+	 *}
 	 */
 	public static long ptReserved$offset() {
 		return ptReserved$OFFSET;
@@ -69,9 +69,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptReserved
-	 * }
+	 *}
 	 */
 	public static MemorySegment ptReserved(MemorySegment struct) {
 		return struct.asSlice(ptReserved$OFFSET, ptReserved$LAYOUT.byteSize());
@@ -79,21 +79,21 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptReserved
-	 * }
+	 *}
 	 */
 	public static void ptReserved(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, ptReserved$OFFSET, ptReserved$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMaxSize$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMaxSize"));
+	private static final GroupLayout ptMaxSize$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("ptMaxSize"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxSize
-	 * }
+	 *}
 	 */
 	public static GroupLayout ptMaxSize$layout() {
 		return ptMaxSize$LAYOUT;
@@ -103,9 +103,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxSize
-	 * }
+	 *}
 	 */
 	public static long ptMaxSize$offset() {
 		return ptMaxSize$OFFSET;
@@ -113,9 +113,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxSize
-	 * }
+	 *}
 	 */
 	public static MemorySegment ptMaxSize(MemorySegment struct) {
 		return struct.asSlice(ptMaxSize$OFFSET, ptMaxSize$LAYOUT.byteSize());
@@ -123,21 +123,21 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxSize
-	 * }
+	 *}
 	 */
 	public static void ptMaxSize(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMaxSize$OFFSET, ptMaxSize$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMaxPosition$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMaxPosition"));
+	private static final GroupLayout ptMaxPosition$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("ptMaxPosition"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxPosition
-	 * }
+	 *}
 	 */
 	public static GroupLayout ptMaxPosition$layout() {
 		return ptMaxPosition$LAYOUT;
@@ -147,9 +147,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxPosition
-	 * }
+	 *}
 	 */
 	public static long ptMaxPosition$offset() {
 		return ptMaxPosition$OFFSET;
@@ -157,9 +157,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxPosition
-	 * }
+	 *}
 	 */
 	public static MemorySegment ptMaxPosition(MemorySegment struct) {
 		return struct.asSlice(ptMaxPosition$OFFSET, ptMaxPosition$LAYOUT.byteSize());
@@ -167,21 +167,21 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxPosition
-	 * }
+	 *}
 	 */
 	public static void ptMaxPosition(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMaxPosition$OFFSET, ptMaxPosition$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMinTrackSize$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMinTrackSize"));
+	private static final GroupLayout ptMinTrackSize$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("ptMinTrackSize"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMinTrackSize
-	 * }
+	 *}
 	 */
 	public static GroupLayout ptMinTrackSize$layout() {
 		return ptMinTrackSize$LAYOUT;
@@ -191,9 +191,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMinTrackSize
-	 * }
+	 *}
 	 */
 	public static long ptMinTrackSize$offset() {
 		return ptMinTrackSize$OFFSET;
@@ -201,9 +201,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMinTrackSize
-	 * }
+	 *}
 	 */
 	public static MemorySegment ptMinTrackSize(MemorySegment struct) {
 		return struct.asSlice(ptMinTrackSize$OFFSET, ptMinTrackSize$LAYOUT.byteSize());
@@ -211,21 +211,21 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMinTrackSize
-	 * }
+	 *}
 	 */
 	public static void ptMinTrackSize(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMinTrackSize$OFFSET, ptMinTrackSize$LAYOUT.byteSize());
 	}
 	
-	private static final GroupLayout ptMaxTrackSize$LAYOUT = (GroupLayout)$LAYOUT.select(PathElement.groupElement("ptMaxTrackSize"));
+	private static final GroupLayout ptMaxTrackSize$LAYOUT = (GroupLayout) $LAYOUT.select(PathElement.groupElement("ptMaxTrackSize"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxTrackSize
-	 * }
+	 *}
 	 */
 	public static GroupLayout ptMaxTrackSize$layout() {
 		return ptMaxTrackSize$LAYOUT;
@@ -235,9 +235,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxTrackSize
-	 * }
+	 *}
 	 */
 	public static long ptMaxTrackSize$offset() {
 		return ptMaxTrackSize$OFFSET;
@@ -245,9 +245,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxTrackSize
-	 * }
+	 *}
 	 */
 	public static MemorySegment ptMaxTrackSize(MemorySegment struct) {
 		return struct.asSlice(ptMaxTrackSize$OFFSET, ptMaxTrackSize$LAYOUT.byteSize());
@@ -255,9 +255,9 @@ public class tagMINMAXINFO {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * POINT ptMaxTrackSize
-	 * }
+	 *}
 	 */
 	public static void ptMaxTrackSize(MemorySegment struct, MemorySegment fieldValue) {
 		MemorySegment.copy(fieldValue, 0L, struct, ptMaxTrackSize$OFFSET, ptMaxTrackSize$LAYOUT.byteSize());
@@ -274,7 +274,9 @@ public class tagMINMAXINFO {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

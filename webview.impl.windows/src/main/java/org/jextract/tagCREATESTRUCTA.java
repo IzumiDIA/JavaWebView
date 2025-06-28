@@ -2,12 +2,18 @@
 
 package org.jextract;
 
-import java.lang.foreign.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.StructLayout;
+import java.lang.foreign.ValueLayout;
 import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct tagCREATESTRUCTA {
  *     LPVOID lpCreateParams;
  *     HINSTANCE hInstance;
@@ -22,7 +28,7 @@ import java.util.function.Consumer;
  *     LPCSTR lpszClass;
  *     DWORD dwExStyle;
  * }
- * }
+ *}
  */
 public class tagCREATESTRUCTA {
 	
@@ -54,13 +60,13 @@ public class tagCREATESTRUCTA {
 		return $LAYOUT;
 	}
 	
-	private static final AddressLayout lpCreateParams$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("lpCreateParams"));
+	private static final AddressLayout lpCreateParams$LAYOUT = (AddressLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("lpCreateParams"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPVOID lpCreateParams
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpCreateParams$layout() {
 		return lpCreateParams$LAYOUT;
@@ -70,9 +76,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPVOID lpCreateParams
-	 * }
+	 *}
 	 */
 	public static long lpCreateParams$offset() {
 		return lpCreateParams$OFFSET;
@@ -80,9 +86,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPVOID lpCreateParams
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpCreateParams(MemorySegment struct) {
 		return struct.get(lpCreateParams$LAYOUT, lpCreateParams$OFFSET);
@@ -90,21 +96,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPVOID lpCreateParams
-	 * }
+	 *}
 	 */
 	public static void lpCreateParams(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpCreateParams$LAYOUT, lpCreateParams$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hInstance$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("hInstance"));
+	private static final AddressLayout hInstance$LAYOUT = (AddressLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("hInstance"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HINSTANCE hInstance
-	 * }
+	 *}
 	 */
 	public static AddressLayout hInstance$layout() {
 		return hInstance$LAYOUT;
@@ -114,9 +120,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HINSTANCE hInstance
-	 * }
+	 *}
 	 */
 	public static long hInstance$offset() {
 		return hInstance$OFFSET;
@@ -124,9 +130,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HINSTANCE hInstance
-	 * }
+	 *}
 	 */
 	public static MemorySegment hInstance(MemorySegment struct) {
 		return struct.get(hInstance$LAYOUT, hInstance$OFFSET);
@@ -134,21 +140,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HINSTANCE hInstance
-	 * }
+	 *}
 	 */
 	public static void hInstance(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(hInstance$LAYOUT, hInstance$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hMenu$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("hMenu"));
+	private static final AddressLayout hMenu$LAYOUT = (AddressLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("hMenu"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HMENU hMenu
-	 * }
+	 *}
 	 */
 	public static AddressLayout hMenu$layout() {
 		return hMenu$LAYOUT;
@@ -158,9 +164,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HMENU hMenu
-	 * }
+	 *}
 	 */
 	public static long hMenu$offset() {
 		return hMenu$OFFSET;
@@ -168,9 +174,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HMENU hMenu
-	 * }
+	 *}
 	 */
 	public static MemorySegment hMenu(MemorySegment struct) {
 		return struct.get(hMenu$LAYOUT, hMenu$OFFSET);
@@ -178,21 +184,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HMENU hMenu
-	 * }
+	 *}
 	 */
 	public static void hMenu(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(hMenu$LAYOUT, hMenu$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout hwndParent$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("hwndParent"));
+	private static final AddressLayout hwndParent$LAYOUT = (AddressLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("hwndParent"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwndParent
-	 * }
+	 *}
 	 */
 	public static AddressLayout hwndParent$layout() {
 		return hwndParent$LAYOUT;
@@ -202,9 +208,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwndParent
-	 * }
+	 *}
 	 */
 	public static long hwndParent$offset() {
 		return hwndParent$OFFSET;
@@ -212,9 +218,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwndParent
-	 * }
+	 *}
 	 */
 	public static MemorySegment hwndParent(MemorySegment struct) {
 		return struct.get(hwndParent$LAYOUT, hwndParent$OFFSET);
@@ -222,21 +228,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * HWND hwndParent
-	 * }
+	 *}
 	 */
 	public static void hwndParent(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(hwndParent$LAYOUT, hwndParent$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cy$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("cy"));
+	private static final OfInt cy$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("cy"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cy
-	 * }
+	 *}
 	 */
 	public static OfInt cy$layout() {
 		return cy$LAYOUT;
@@ -246,9 +252,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cy
-	 * }
+	 *}
 	 */
 	public static long cy$offset() {
 		return cy$OFFSET;
@@ -256,9 +262,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cy
-	 * }
+	 *}
 	 */
 	public static int cy(MemorySegment struct) {
 		return struct.get(cy$LAYOUT, cy$OFFSET);
@@ -266,21 +272,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cy
-	 * }
+	 *}
 	 */
 	public static void cy(MemorySegment struct, int fieldValue) {
 		struct.set(cy$LAYOUT, cy$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt cx$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("cx"));
+	private static final OfInt cx$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("cx"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cx
-	 * }
+	 *}
 	 */
 	public static OfInt cx$layout() {
 		return cx$LAYOUT;
@@ -290,9 +296,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cx
-	 * }
+	 *}
 	 */
 	public static long cx$offset() {
 		return cx$OFFSET;
@@ -300,9 +306,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cx
-	 * }
+	 *}
 	 */
 	public static int cx(MemorySegment struct) {
 		return struct.get(cx$LAYOUT, cx$OFFSET);
@@ -310,21 +316,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int cx
-	 * }
+	 *}
 	 */
 	public static void cx(MemorySegment struct, int fieldValue) {
 		struct.set(cx$LAYOUT, cx$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt y$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("y"));
+	private static final OfInt y$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("y"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int y
-	 * }
+	 *}
 	 */
 	public static OfInt y$layout() {
 		return y$LAYOUT;
@@ -334,9 +340,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int y
-	 * }
+	 *}
 	 */
 	public static long y$offset() {
 		return y$OFFSET;
@@ -344,9 +350,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int y
-	 * }
+	 *}
 	 */
 	public static int y(MemorySegment struct) {
 		return struct.get(y$LAYOUT, y$OFFSET);
@@ -354,21 +360,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int y
-	 * }
+	 *}
 	 */
 	public static void y(MemorySegment struct, int fieldValue) {
 		struct.set(y$LAYOUT, y$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt x$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("x"));
+	private static final OfInt x$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("x"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int x
-	 * }
+	 *}
 	 */
 	public static OfInt x$layout() {
 		return x$LAYOUT;
@@ -378,9 +384,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int x
-	 * }
+	 *}
 	 */
 	public static long x$offset() {
 		return x$OFFSET;
@@ -388,9 +394,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int x
-	 * }
+	 *}
 	 */
 	public static int x(MemorySegment struct) {
 		return struct.get(x$LAYOUT, x$OFFSET);
@@ -398,21 +404,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int x
-	 * }
+	 *}
 	 */
 	public static void x(MemorySegment struct, int fieldValue) {
 		struct.set(x$LAYOUT, x$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt style$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("style"));
+	private static final OfInt style$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("style"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG style
-	 * }
+	 *}
 	 */
 	public static OfInt style$layout() {
 		return style$LAYOUT;
@@ -422,9 +428,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG style
-	 * }
+	 *}
 	 */
 	public static long style$offset() {
 		return style$OFFSET;
@@ -432,9 +438,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG style
-	 * }
+	 *}
 	 */
 	public static int style(MemorySegment struct) {
 		return struct.get(style$LAYOUT, style$OFFSET);
@@ -442,21 +448,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LONG style
-	 * }
+	 *}
 	 */
 	public static void style(MemorySegment struct, int fieldValue) {
 		struct.set(style$LAYOUT, style$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpszName$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("lpszName"));
+	private static final AddressLayout lpszName$LAYOUT = (AddressLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("lpszName"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszName
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpszName$layout() {
 		return lpszName$LAYOUT;
@@ -466,9 +472,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszName
-	 * }
+	 *}
 	 */
 	public static long lpszName$offset() {
 		return lpszName$OFFSET;
@@ -476,9 +482,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszName
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpszName(MemorySegment struct) {
 		return struct.get(lpszName$LAYOUT, lpszName$OFFSET);
@@ -486,21 +492,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszName
-	 * }
+	 *}
 	 */
 	public static void lpszName(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpszName$LAYOUT, lpszName$OFFSET, fieldValue);
 	}
 	
-	private static final AddressLayout lpszClass$LAYOUT = (AddressLayout)$LAYOUT.select(ValueLayout.PathElement.groupElement("lpszClass"));
+	private static final AddressLayout lpszClass$LAYOUT = (AddressLayout) $LAYOUT.select(ValueLayout.PathElement.groupElement("lpszClass"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszClass
-	 * }
+	 *}
 	 */
 	public static AddressLayout lpszClass$layout() {
 		return lpszClass$LAYOUT;
@@ -510,9 +516,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszClass
-	 * }
+	 *}
 	 */
 	public static long lpszClass$offset() {
 		return lpszClass$OFFSET;
@@ -520,9 +526,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszClass
-	 * }
+	 *}
 	 */
 	public static MemorySegment lpszClass(MemorySegment struct) {
 		return struct.get(lpszClass$LAYOUT, lpszClass$OFFSET);
@@ -530,21 +536,21 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * LPCSTR lpszClass
-	 * }
+	 *}
 	 */
 	public static void lpszClass(MemorySegment struct, MemorySegment fieldValue) {
 		struct.set(lpszClass$LAYOUT, lpszClass$OFFSET, fieldValue);
 	}
 	
-	private static final OfInt dwExStyle$LAYOUT = (OfInt)$LAYOUT.select(ValueLayout.PathElement.groupElement("dwExStyle"));
+	private static final OfInt dwExStyle$LAYOUT = (OfInt) $LAYOUT.select(ValueLayout.PathElement.groupElement("dwExStyle"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD dwExStyle
-	 * }
+	 *}
 	 */
 	public static OfInt dwExStyle$layout() {
 		return dwExStyle$LAYOUT;
@@ -554,9 +560,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD dwExStyle
-	 * }
+	 *}
 	 */
 	public static long dwExStyle$offset() {
 		return dwExStyle$OFFSET;
@@ -564,9 +570,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD dwExStyle
-	 * }
+	 *}
 	 */
 	public static int dwExStyle(MemorySegment struct) {
 		return struct.get(dwExStyle$LAYOUT, dwExStyle$OFFSET);
@@ -574,9 +580,9 @@ public class tagCREATESTRUCTA {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * DWORD dwExStyle
-	 * }
+	 *}
 	 */
 	public static void dwExStyle(MemorySegment struct, int fieldValue) {
 		struct.set(dwExStyle$LAYOUT, dwExStyle$OFFSET, fieldValue);
@@ -593,7 +599,9 @@ public class tagCREATESTRUCTA {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

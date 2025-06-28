@@ -14,11 +14,11 @@ import java.lang.foreign.ValueLayout.OfLong;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct EventRegistrationToken {
  *     long long value;
  * }
- * }
+ *}
  */
 public class EventRegistrationToken {
 	
@@ -37,13 +37,13 @@ public class EventRegistrationToken {
 		return $LAYOUT;
 	}
 	
-	private static final OfLong value$LAYOUT = (OfLong)$LAYOUT.select(PathElement.groupElement("value"));
+	private static final OfLong value$LAYOUT = (OfLong) $LAYOUT.select(PathElement.groupElement("value"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * long long value
-	 * }
+	 *}
 	 */
 	public static OfLong value$layout() {
 		return value$LAYOUT;
@@ -53,9 +53,9 @@ public class EventRegistrationToken {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * long long value
-	 * }
+	 *}
 	 */
 	public static long value$offset() {
 		return value$OFFSET;
@@ -63,9 +63,9 @@ public class EventRegistrationToken {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * long long value
-	 * }
+	 *}
 	 */
 	public static long value(MemorySegment struct) {
 		return struct.get(value$LAYOUT, value$OFFSET);
@@ -73,9 +73,9 @@ public class EventRegistrationToken {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * long long value
-	 * }
+	 *}
 	 */
 	public static void value(MemorySegment struct, long fieldValue) {
 		struct.set(value$LAYOUT, value$OFFSET, fieldValue);
@@ -92,7 +92,9 @@ public class EventRegistrationToken {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

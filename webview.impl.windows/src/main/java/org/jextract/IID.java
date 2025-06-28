@@ -3,9 +3,9 @@
 package org.jextract;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef GUID IID
- * }
+ *}
  */
 public class IID extends _GUID {
 	

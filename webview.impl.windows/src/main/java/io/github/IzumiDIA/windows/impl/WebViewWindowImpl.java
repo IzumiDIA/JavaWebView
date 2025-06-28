@@ -18,7 +18,6 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
-import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedTransferQueue;
 
@@ -202,8 +201,7 @@ public class WebViewWindowImpl extends WindowsNativeObject implements WebViewWin
 		
 		@Override
 		public String getString(final @NotNull MemorySegment bufferAddress) {
-			return bufferAddress.get(LayoutUtils.LPWSTR, 0)
-					       .getString(0, StandardCharsets.UTF_16LE);
+			return super.getString(bufferAddress.get(LayoutUtils.LPWSTR, 0));
 		}
 		
 		private MemorySegment createBuffer() {

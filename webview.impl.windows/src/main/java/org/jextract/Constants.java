@@ -60,6 +60,7 @@ public final class Constants {
 				                   MAXIMIZEBOX,
 				VISIBLE = 0x10000000;
 	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final int CW_USEDEFAULT = 0x80000000;
 	public static final int SW_SHOW = 5;
@@ -69,14 +70,23 @@ public final class Constants {
 	 */
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final int LR_LOADFROMFILE = 0x00000010;
-	public static final int COLOR_WINDOW = 5;
-	public static final int COLOR_WINDOWTEXT = 8;
-	public static final int COLOR_HIGHLIGHT = 13;
-	public static final int COLOR_HIGHLIGHTTEXT = 14;
-	public static final int COLOR_3DFACE = 15;
-	public static final int COLOR_GRAYTEXT = 17;
-	public static final int COLOR_BTNTEXT = 18;
-	public static final int COLOR_HOTLIGHT = 26;
+	
+	public static final class Color {
+		
+		private Color() {
+			throw new UnsupportedOperationException();
+		}
+		
+		public static final int $WINDOW = 5;
+		public static final int $WINDOWTEXT = 8;
+		public static final int $HIGHLIGHT = 13;
+		public static final int $HIGHLIGHTTEXT = 14;
+		public static final int $3DFACE = 15;
+		public static final int $GRAYTEXT = 17;
+		public static final int $BTNTEXT = 18;
+		public static final int $HOTLIGHT = 26;
+	}
+	
 	@SuppressWarnings("SpellCheckingInspection")
 	public static final int WS_EX_APPWINDOW = 0x00040000;
 	
@@ -86,6 +96,7 @@ public final class Constants {
 				SWP_NOMOVE = 0x0002,
 				SWP_SHOWWINDOW = 0x0040;
 		public static final MemorySegment HWND_TOP = MemorySegment.ofAddress(0);
+		
 		private SetWindowPosition() {
 			throw new UnsupportedOperationException();
 		}

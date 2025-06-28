@@ -13,11 +13,11 @@ import java.lang.foreign.ValueLayout.OfInt;
 import java.util.function.Consumer;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct HKEY__ {
  *     int unused;
  * }
- * }
+ *}
  */
 public class HKEY__ {
 	
@@ -37,13 +37,13 @@ public class HKEY__ {
 		return $LAYOUT;
 	}
 	
-	private static final OfInt unused$LAYOUT = (OfInt)$LAYOUT.select(PathElement.groupElement("unused"));
+	private static final OfInt unused$LAYOUT = (OfInt) $LAYOUT.select(PathElement.groupElement("unused"));
 	
 	/**
 	 * Layout for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int unused
-	 * }
+	 *}
 	 */
 	public static OfInt unused$layout() {
 		return unused$LAYOUT;
@@ -53,9 +53,9 @@ public class HKEY__ {
 	
 	/**
 	 * Offset for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int unused
-	 * }
+	 *}
 	 */
 	public static long unused$offset() {
 		return unused$OFFSET;
@@ -63,9 +63,9 @@ public class HKEY__ {
 	
 	/**
 	 * Getter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int unused
-	 * }
+	 *}
 	 */
 	public static int unused(MemorySegment struct) {
 		return struct.get(unused$LAYOUT, unused$OFFSET);
@@ -73,9 +73,9 @@ public class HKEY__ {
 	
 	/**
 	 * Setter for field:
-	 * {@snippet lang=c :
+	 * {@snippet lang = c:
 	 * int unused
-	 * }
+	 *}
 	 */
 	public static void unused(MemorySegment struct, int fieldValue) {
 		struct.set(unused$LAYOUT, unused$OFFSET, fieldValue);
@@ -92,7 +92,9 @@ public class HKEY__ {
 	/**
 	 * The size (in bytes) of this struct
 	 */
-	public static long sizeof() { return layout().byteSize(); }
+	public static long sizeof() {
+		return layout().byteSize();
+	}
 	
 	/**
 	 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

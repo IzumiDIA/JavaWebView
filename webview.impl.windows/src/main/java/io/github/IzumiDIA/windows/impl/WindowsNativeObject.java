@@ -15,4 +15,9 @@ public abstract class WindowsNativeObject extends NativeObject {
 	protected MemorySegment allocateString(final @NotNull String string) {
 		return this.arena.allocateFrom(string, StandardCharsets.UTF_16LE);
 	}
+	
+	@Override
+	protected String getString(final @NotNull MemorySegment memorySegment) {
+		return memorySegment.getString(0, StandardCharsets.UTF_16LE);
+	}
 }

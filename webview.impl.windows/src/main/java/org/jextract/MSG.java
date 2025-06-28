@@ -7,7 +7,7 @@ import java.lang.foreign.SegmentAllocator;
 import java.lang.invoke.MethodHandle;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef struct tagMSG {
  *     HWND hwnd;
  *     UINT message;
@@ -16,7 +16,7 @@ import java.lang.invoke.MethodHandle;
  *     DWORD time;
  *     POINT pt;
  * } MSG
- * }
+ *}
  */
 public class MSG extends tagMSG {
 	private final MethodHandle getMessageHandle, translateMessageHandle, dispatchMessageHandle;
